@@ -1,0 +1,19 @@
+<div v-if="$store.state.composantState">
+    <h1>{{$store.state.composantState.tag}}</h1>
+    <h3>{{$store.state.composantState.name}}</h3>
+    <h3>Portrait</h3>
+    <div v-for="item in $store.state.composantState.overview">
+        <div v-if="isRubric(item)">
+            <h1>{{item.title}}</h1>
+            <m-dynamic-template :template="item.content"></m-dynamic-template>
+        </div>
+        <div v-else-if="isDo(item)">
+            <h2>:)</h2>
+            <m-dynamic-template :template="item.content"></m-dynamic-template>
+        </div>
+        <div v-else="isDont(item)">
+            <h2>:(</h2>
+            <m-dynamic-template :template="item.content"></m-dynamic-template>
+        </div>
+    </div>
+</div>
