@@ -6,6 +6,7 @@ import Modul from './components/modul/modul';
 
 import boutons from 'modul-components/dist/buttons';
 import text from 'modul-components/dist/text';
+import directives from 'modul-components/dist/directives';
 
 import svc from 'modul-components/dist/services';
 
@@ -13,6 +14,7 @@ Vue.config.productionTip = false;
 
 Vue.use(boutons);
 Vue.use(text);
+Vue.use(directives);
 Vue.use(svc);
 
 const vue = new Vue({
