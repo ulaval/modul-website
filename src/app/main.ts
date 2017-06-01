@@ -6,18 +6,19 @@ import Modul from './components/modul/modul';
 import * as ModulActions from './store/actions';
 
 import { currentLang, FRENCH } from 'modul-components/dist/i18n';
-import boutons from 'modul-components/dist/buttons';
-import text from 'modul-components/dist/text';
-import directives from 'modul-components/dist/directives';
+import ButtonPlugin from 'modul-components/dist/button';
+import ListPlugin from 'modul-components/dist/list';
+import DynamicTemplatePlugin from 'modul-components/dist/dynamic-template';
+import BackgroundColorPlugin from 'modul-components/dist/background-color';
 
 import svc from 'modul-components/dist/services';
 
 async function main() {
     Vue.config.productionTip = false;
 
-    Vue.use(boutons);
-    Vue.use(text);
-    Vue.use(directives);
+    Vue.use(ButtonPlugin);
+    Vue.use(DynamicTemplatePlugin);
+    Vue.use(BackgroundColorPlugin);
     Vue.use(svc);
 
     currentLang(FRENCH);
