@@ -3,27 +3,47 @@ import { Action, ActionContext } from 'vuex';
 import { ModulState } from './modul-state';
 import { ModulMutations } from './mutations';
 import Meta from 'modul-components/dist/meta';
+import { FRENCH } from 'modul-components/dist/i18n';
 
-export class ModulActions {
-    public static COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
+export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
+export const COMPOSANT_GET: string = 'COMPOSANT_GET';
+export const MESSAGES_GET: string = 'MESSAGES_GET';
 
-    public static COMPOSANT_GET: string = 'COMPOSANT_GET';
+export const getComponentsMetaAction: Action<ModulState, ModulState> = async(context: ActionContext<ModulState, ModulState>, language: string) => {
+    return new Promise((resolve, reject) => {
+        if (!context.state.metaLoaded || context.state.metaLoaded != language) {
+            context.commit(ModulMutations.COMPONENTS_META_GET);
 
-    public static getComponentsMetaAction: Action<ModulState, ModulState> = (context: ActionContext<ModulState, ModulState>, language: string) => {
-        context.commit(ModulMutations.COMPONENTS_META_GET);
+            return (require as any).ensure(['modul-components/dist/meta-fr'], () => {
+                let metaModule = require('modul-components/dist/meta-fr');
+                Vue.use(metaModule.default, Meta);
+                context.commit(ModulMutations.COMPONENTS_META_GET_SUCCESS, FRENCH);
 
-        return (require as any).ensure(['modul-components/dist/meta-fr'], () => {
-            let a = require('modul-components/dist/meta-fr');
-            Vue.use(a.default, Meta);
-            context.commit(ModulMutations.COMPONENTS_META_GET_SUCCES);
+                if (context.state.composantState != null) {
+                    context.dispatch(COMPOSANT_GET, context.state.composantState.tag);
+                }
 
-            if (context.state.composantState != null) {
-                context.dispatch(ModulActions.COMPOSANT_GET, context.state.composantState.tag);
-            }
-        });
-    }
+                resolve();
+            });
+        }
+    });
+};
 
-    public static getComposantAction: Action<ModulState, ModulState> = (context: ActionContext<ModulState, ModulState>, tag: any) => {
-        context.commit(ModulMutations.COMPOSANT_GET, Meta.getMetaByLanguageAndTag('fr', tag));
-    }
-}
+export const getComposantAction: Action<ModulState, ModulState> = async(context: ActionContext<ModulState, ModulState>, tag: any) => {
+    context.commit(ModulMutations.COMPOSANT_GET, Meta.getMetaByLanguageAndTag(FRENCH, tag));
+};
+
+export const getMessagesAction: Action<ModulState, ModulState> = async(context: ActionContext<ModulState, ModulState>, language: string) => {
+    return new Promise((resolve, reject) => {
+        if (!context.state.languageLoaded || context.state.languageLoaded != language) {
+            context.commit(ModulMutations.MESSAGES_GET);
+
+            return (require as any).ensure(['../lang/fr/fr'], () => {
+                let languageModule = require('../lang/fr/fr');
+                Vue.use(languageModule.default, Meta);
+                context.commit(ModulMutations.MESSAGES_GET_SUCCESS, FRENCH);
+                resolve();
+            });
+        }
+    });
+};
