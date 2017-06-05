@@ -1,10 +1,10 @@
 import { PluginObject } from 'vue';
-import * as Messages from 'modul-components/dist/i18n';
+import { FRENCH } from 'modul-components/dist/utils/i18n';
 
-export class FrenchPlugin implements PluginObject<any> {
-    public install(v, options) {
-        Messages.addMessages(Messages.FRENCH, require('./modul.fr.json'));
+const FrenchPlugin: PluginObject<any> = {
+    install(v, options) {
+        (v as any).$i18n.addMessages(FRENCH, require('./modul.fr.json'));
     }
-}
+};
 
-export default new FrenchPlugin();
+export default FrenchPlugin;

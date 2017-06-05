@@ -1,5 +1,5 @@
 import { ComponentRoute } from './components-meta-state';
-import { ComponentMeta } from 'modul-components/dist/meta';
+import { ComponentMeta } from 'modul-components/dist/meta/meta';
 
 export class ModulState {
     public metaLoaded: string | undefined = undefined;

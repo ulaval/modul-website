@@ -1,7 +1,7 @@
 <div v-if="$store.state.composantState">
     <h1>{{$store.state.composantState.tag}}</h1>
     <h3>{{$store.state.composantState.name}}</h3>
-    <h3>Portrait</h3>
+    <h3><m-i18n msg="modul:overview"></m-i18n></h3>
     <div v-for="item in $store.state.composantState.overview">
         <div v-if="isRubric(item)">
             <h1>{{item.title}}</h1>

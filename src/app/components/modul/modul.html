@@ -1,8 +1,7 @@
-<!--Translate-->
 <div>
-    <router-link to="/normes-graphiques">Normes graphiques</router-link>
-    <router-link to="/regles-editoriales">Règles éditoriales</router-link>
-    <router-link to="/composants">Composants</router-link>
-    <router-link to="/ecosysteme">Écosystème</router-link>
+    <router-link :to="visualStandards"><m-i18n msg="modul:visual-standards"></m-i18n></router-link>
+    <router-link :to="writingRules"><m-i18n msg="modul:writing-rules"></m-i18n></router-link>
+    <router-link :to="components"><m-i18n msg="modul:components"></m-i18n></router-link>
+    <router-link :to="ecosystem"><m-i18n msg="modul:ecosystem"></m-i18n></router-link>
     <router-view></router-view>
 </div>
