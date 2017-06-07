@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './modul.html?style=./modul.scss';
-import {routes, COMPONENTS, ECOSYSTEM, VISUAL_STANDARDS, WRITING_RULES} from '@/app/router';
+import { routes, COMPONENTS, ECOSYSTEM, VISUAL_STANDARDS, WRITING_RULES } from '@/app/router';
 
 @WithRender
 @Component
