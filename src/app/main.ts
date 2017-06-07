@@ -8,8 +8,16 @@ import * as ModulActions from './store/actions';
 import MessagePlugin, { currentLang, FRENCH } from 'modul-components/dist/utils/i18n';
 import ComponentsPlugin from 'modul-components/dist/components';
 import DirectivesPlugin from 'modul-components/dist/directives';
+import UtilsPlugin, { UtilsPluginOptions } from 'modul-components/dist/utils';
 
 import svc from 'modul-components/dist/services/component-meta-impl';
+
+const utilsPluginOptions: UtilsPluginOptions = {
+    securityPluginOptions: {
+        protectedUrls: ['<url>'],
+        getToken: () => '<token>'
+    }
+};
 
 async function main() {
     Vue.config.productionTip = false;
@@ -17,6 +25,8 @@ async function main() {
     Vue.use(MessagePlugin);
     Vue.use(ComponentsPlugin);
     Vue.use(DirectivesPlugin);
+    Vue.use(UtilsPlugin, utilsPluginOptions);
+
     Vue.use(svc);
 
     currentLang(FRENCH);
