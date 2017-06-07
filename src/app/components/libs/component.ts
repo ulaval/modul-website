@@ -2,10 +2,10 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Watch } from 'vue-property-decorator';
 import WithRender from './component.html?style=./component.scss';
-import { ModulActions } from '@/app/store/actions';
-import { Overview, OverviewType } from 'modul-components/dist/meta';
+import * as ModulActions from '@/app/store/actions';
+import { Overview, OverviewType } from 'modul-components/dist/meta/meta';
 
-import { ServiceMixin } from 'modul-components/dist/services';
+import { ServiceMixin } from 'modul-components/dist/services/component-meta-impl';
 
 @WithRender
 @Component({
@@ -35,10 +35,5 @@ export class ComponentViewer extends Vue {
     @Watch('$route')
     private getMeta(): void {
         this.$store.dispatch(ModulActions.COMPOSANT_GET, this.$route.meta);
-        // console.log(this);
-        // console.log(this, (this as any).$aa, (this as any).$globalMixin);
-        // console.log('c', this.$options);
-        // ((this.$options as any).$serviceMixin as ServiceMixin).log('fjeiowfiowfw');
-        // ((this as any).$globalFunc).log('fjeiowfiowfw');
     }
 }

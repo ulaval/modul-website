@@ -6,19 +6,40 @@ import { WritingRules } from './components/writing-rules/writing-rules';
 import { Components } from './components/libs/components';
 import { ComponentViewer } from './components/libs/component';
 import { Ecosystem } from './components/ecosystem/ecosystem';
-import Meta from 'modul-components/dist/meta';
+import Meta from 'modul-components/dist/meta/meta';
+import { FRENCH } from 'modul-components/dist/utils/i18n';
 
 Vue.use(Router);
 
 const componentsChildren: RouteConfig[] = [];
 
-Meta.getTagsByLanguage('fr').forEach(tag => {
+Meta.getTagsByLanguage(FRENCH).forEach(tag => {
     componentsChildren.push({
         path: tag,
         meta: tag,
         component: ComponentViewer
     });
 });
+
+export type RoutePathMap = {
+    [path: string]: string;
+};
+
+export const VISUAL_STANDARDS: string = 'VISUAL_STANDARDS';
+export const WRITING_RULES: string = 'WRITING_RULES';
+export const COMPONENTS: string = 'COMPONENTS';
+export const ECOSYSTEM: string = 'ECOSYSTEM';
+export const VISUAL_STANDARDS_FR: string = 'normes-graphiques';
+export const WRITING_RULES_FR: string = 'regles-editoriales';
+export const COMPONENTS_FR: string = 'composants';
+export const ECOSYSTEM_FR: string = 'ecosysteme';
+
+export const routes: RoutePathMap = {
+    [VISUAL_STANDARDS]: VISUAL_STANDARDS_FR,
+    [WRITING_RULES]: WRITING_RULES_FR,
+    [COMPONENTS]: COMPONENTS_FR,
+    [ECOSYSTEM]: ECOSYSTEM_FR
+};
 
 export default new Router({
     mode: 'history',
@@ -28,20 +49,20 @@ export default new Router({
             component: UnifiedExperience
         },
         {
-            path: '/normes-graphiques',
+            path: '/' + routes[VISUAL_STANDARDS],
             component: VisualStandards
         },
         {
-            path: '/regles-editoriales',
+            path: '/' + routes[WRITING_RULES],
             component: WritingRules
         },
         {
-            path: '/composants',
+            path: '/' + routes[COMPONENTS],
             component: Components,
             children: componentsChildren
         },
         {
-            path: '/ecosysteme',
+            path: '/' + routes[ECOSYSTEM],
             component: Ecosystem
         }
     ]

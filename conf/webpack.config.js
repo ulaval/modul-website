@@ -50,7 +50,12 @@ module.exports = {
                             }
                         }
                     },
-                    'sass-loader'
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            includePaths: ["./node_modules/modul-components/dist/styles", "./src/styles"]
+                        }
+                    }
                 ]
             },
             {
@@ -59,6 +64,15 @@ module.exports = {
                 exclude: resolve('src/index.html'),
                 options: {
                     scoped: true
+                }
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader',
+                options: {
+                    removeTags: true,
+                    removingTags: ['desc', 'defs', 'style'],
+                    removeSVGTagAttrs: true
                 }
             },
             {
