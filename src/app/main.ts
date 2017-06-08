@@ -4,6 +4,7 @@ import store from './store';
 import router from './router';
 import Modul from './components/modul/modul';
 import * as ModulActions from './store/actions';
+import './styles/main.scss';
 
 import MessagePlugin, { currentLang, FRENCH } from 'modul-components/dist/utils/i18n';
 import ComponentsPlugin from 'modul-components/dist/components';

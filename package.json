@@ -68,7 +68,7 @@
         "chromedriver": "^2.27.2",
         "nightwatch": "^0.9.12",
         "selenium-server": "^3.0.1",
-        "modul-components": "^0.1.0"
+        "modul-components": "file://C:\\dev\\projets\\modul\\modul-components"
     },
     "repository": {
         "type": "git",

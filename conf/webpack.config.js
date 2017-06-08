@@ -49,14 +49,16 @@ module.exports = {
                                 ];
                             }
                         }
-                    },
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            includePaths: ["./node_modules/modul-components/dist/styles", "./src/styles"]
-                        }
                     }
                 ]
+            },
+            {
+                enforce: 'pre',
+                test: /\.scss$/,
+                loader: "sass-loader",
+                options: {
+                    includePaths: ["./node_modules/modul-components/dist/styles", "./src/app/styles"]
+                }
             },
             {
                 test: /\.html$/,
@@ -103,7 +105,7 @@ module.exports = {
         }),
         new CompressionPlugin(),
         new StyleLintPlugin({
-            configFile: 'conf/stylelint.json',
+            configFile: '.stylelintrc',
             emitErrors: false
         })
     ]

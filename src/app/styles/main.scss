@@ -1,18 +1,21 @@
-@charset 'UTF-8';
+@charset 'utf-8';
 
-// 1. Configuration and helpers
-@import
-  'abstracts/variables',
-  'abstracts/functions',
-  'abstracts/mixins';
+// ======================================================================
+//  Variables
+// ======================================================================
 
-// 2. Vendors
-@import
-  'vendor/normalize';
+// https://github.com/webpack-contrib/sass-loader#imports
+@import '~modul-components/dist/styles/abstracts/variables';
+// local import
+@import 'abstracts/variables';
 
-// 3. Base stuff
-@import
-  'base/base',
-  'base/fonts',
-  'base/typography',
-  'base/helpers';
+// ======================================================================
+//  HTML overide
+// ======================================================================
+
+// ======================================================================
+//  Base
+// ======================================================================
+
+@import '~modul-components/dist/styles/base/base';
+// @import 'base/base';
