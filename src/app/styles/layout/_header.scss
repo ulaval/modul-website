@@ -1,0 +1,96 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+// page de base
+$m-header--height: 70px;
+$m-footer--height: 120px;
+
+.modul-header {
+    transition: margin-top 0.3s ease;
+
+    // position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    height: $m-header--height;
+    box-shadow: 0 2px 2px 1px rgba($m-color--grey--light, 0.5);
+    background: $m-color--white;
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+
+    &__nav {
+        display: flex;
+        height: 100%;
+        align-content: space-between;
+        align-items: center;
+        margin-right: $m-padding * 2;
+    }
+
+    &__link {
+        font-weight: $m-font-weight--bold;
+        font-size: $m-font-size--s;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $m-color--grey--darker;
+
+        &:visited {
+            color: $m-color--grey--darker;
+        }
+
+        &:not(:last-child) {
+            padding-right: $m-padding * 2;
+        }
+
+        &.is-active {
+            color: $m-color--black;
+        }
+    }
+
+    &__search,
+    &__github {
+        background-color: $m-color--ul-blue;
+        display: flex;
+        height: 100%;
+        width: 60px;
+        justify-content: center;
+        align-items: center;
+        color: $m-color--white;
+    }
+}
+
+.modul {
+    padding-top: $m-header--height;
+}
+
+.modul-logo {
+    font-size: 20px;
+    flex: 1;
+    user-select: none;
+    margin: 0;
+    padding: 0 $m-padding--l;
+
+    a {
+        color: $m-color--black;
+        text-decoration: none;
+        font-weight: 400;
+    }
+
+    b {
+        font-weight: 600;
+        color: $m-color--ul-blue;
+    }
+
+    &.modul-logo--small {
+        font-size: 12px;
+    }
+}
+
+.test {
+    background-color: gray !important;
+    color: yellow !important;
+}

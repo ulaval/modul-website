@@ -1,0 +1,111 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the component page.
+// -----------------------------------------------------------------------------
+$m-component-page--header-height: calc(50vh - #{$m-header--height});
+$m-component-page--header-min-height: 200px;
+
+.modul-component-page {
+    &::before {
+        content: '';
+        display: block;
+        height: calc(#{$m-component-page--header-height} - #{$m-padding--l});
+        min-height: $m-component-page--header-min-height - $m-padding--l;
+    }
+}
+
+.modul-component-page__header {
+    position: fixed;
+    top: $m-header--height;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-width: $m-min-width;
+    z-index: 0;
+
+    &__wrap {
+        width: 100%;
+        max-width: $m-max-width;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $m-component-page--header-height;
+        min-height: $m-component-page--header-min-height;
+    }
+
+    &__arrow-left,
+    &__arrow-right {
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-size: 36px;
+        color: $m-color--ul-blue;
+    }
+
+    &__arrow-left {
+        left: 5px;
+    }
+
+    &__arrow-right {
+        right: 5px;
+    }
+}
+
+.modul-component-page__title {
+    font-size: 38px;
+    font-weight: $m-font-weight--black;
+    padding-right: $m-padding--l;
+    padding-bottom: $m-margin--s;
+    border-bottom: 3px solid $m-color--grey--light;
+}
+
+.modul-component-card {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    min-height: 200px;
+
+    &::before {
+        content: "";
+        display: block;
+        height: $m-padding--l;
+        position: absolute;
+        top: -$m-padding--l;
+        width: 100%;
+        background-color: $m-color--grey--lighter;
+    }
+
+    &:first-of-type {
+        &::before {
+            height: $m-padding--l*3;
+            top: -$m-padding--l*3;
+            background: -moz-linear-gradient(top, rgba($m-color--grey--lighter, 0) 0%, rgba($m-color--grey--lighter, 1) 100%);
+            background: -webkit-linear-gradient(top, rgba($m-color--grey--lighter, 0) 0%, rgba($m-color--grey--lighter, 1) 100%);
+            background: linear-gradient(to bottom, rgba($m-color--grey--lighter, 0) 0%, rgba($m-color--grey--lighter, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$m-color--grey--lighter}', endColorstr='#{$m-color--grey--lighter}', GradientType=0);
+        }
+    }
+
+    & + & {
+        margin-top: $m-padding--l;
+    }
+}
+
+
+.modul-component-card__figure {
+    background-color: $m-color--ul-blue;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 275px;
+}
+
+.modul-component-card__body {
+    padding: $m-padding;
+}

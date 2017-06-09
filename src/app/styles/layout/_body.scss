@@ -1,0 +1,13 @@
+.modul-body {
+    position: relative;
+    z-index: 2;
+    min-height: 1000px;
+    padding: $m-padding--l $m-padding--l $m-padding--l*2 $m-padding--l;
+    margin-bottom: $m-footer--height;
+    background: $m-color--grey--lighter;
+}
+
+.modul-page {
+    max-width: $m-max-width;
+    margin: 0 auto;
+}

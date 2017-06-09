@@ -1,7 +1,39 @@
-<div class="modul-entete">
-    <router-link :to="visualStandards"><m-i18n msg="modul:visual-standards"></m-i18n></router-link>
-    <router-link :to="writingRules"><m-i18n msg="modul:writing-rules"></m-i18n></router-link>
-    <router-link :to="components"><m-i18n msg="modul:components"></m-i18n></router-link>
-    <router-link :to="ecosystem"><m-i18n msg="modul:ecosystem"></m-i18n></router-link>
-    <router-view></router-view>
+<div class="modul">
+    <header class="modul-header">
+        <h1 class="modul-logo"><a href="">MOD<b>UL</b></a></h1>
+        <nav class="modul-header__nav">
+            <router-link :to="visualStandards" class="modul-header__link"><m-i18n msg="modul:visual-standards"></m-i18n></router-link>
+            <router-link :to="writingRules" class="modul-header__link"><m-i18n msg="modul:writing-rules"></m-i18n></router-link>
+            <router-link :to="components" class="modul-header__link"><m-i18n msg="modul:components"></m-i18n></router-link>
+            <router-link :to="ecosystem" class="modul-header__link"><m-i18n msg="modul:ecosystem"></m-i18n></router-link>
+        </nav>
+        <div class="modul-header__search">
+            <m-icon icon="recherche"></m-icon>
+        </div>
+        <div class="modul-header__github">
+            <m-icon></m-icon>
+        </div>
+    </header>
+
+    <main class="modul-body">
+        <div class="modul-page">
+            <router-view></router-view>
+        </div>
+    </main>
+
+    <footer class="modul-footer">
+        <div class="modul-footer__body">
+            <div class="modul-footer__logo">
+                <span>Propulsé par l'université Laval</span>
+            </div>
+            <div class="modul-footer__nav">
+                <a class="modul-footer__link" href="">Conditions d'utilisation</a>
+            </div>
+        </div>
+        <div class="modul-version">
+            <span class="modul-logo modul-logo--small"><a href="">MOD<b>UL</b></a></span>
+            <span>version 0.0.1</span>
+        </div>
+    </footer>
+
 </div>

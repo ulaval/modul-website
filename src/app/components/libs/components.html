@@ -1,7 +1,39 @@
-<div>
-    <h1><m-i18n msg="modul:components"></m-i18n></h1>
-    <div v-for="route in $store.state.componentRoutes">
-        <router-link :to="route.url">{{route.name}}</router-link>
-    </div>
+<div class="modul-component-page">
+    <section class="modul-component-page__header">
+        <div class="modul-component-page__header__wrap">
+            <h1 class="modul-component-page__title">
+                <m-i18n msg="modul:components"></m-i18n>
+            </h1>
+        </div>
+        <div class="modul-component-page__header__arrow-left">
+            <m-link>
+                <m-icon icon="chevron-gauche"></m-icon>
+            </m-link>
+        </div>
+        <div class="modul-component-page__header__arrow-right">
+            <m-link>
+                <m-icon icon="chevron-droit"></m-icon>
+            </m-link>
+        </div>
+    </section>
+
+    <article v-for="route in $store.state.componentRoutes" class="modul-component-card">
+        <div class="modul-component-card__figure">
+            <m-icon icon="chevron-droit"></m-icon>
+        </div>
+
+        <div class="modul-component-card__body">
+            <p>
+                <m-link>
+                    <router-link :to="route.url">{{route.name}}</router-link>
+                </m-link>
+            </p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, deleniti dolores facilis aut, maxime sequi
+                ullam suscipit deserunt quam obcaecati totam nisi magni ipsum ut dolorem fuga nostrum pariatur provident.</p>
+        </div>
+    </article>
+
     <router-view></router-view>
+
 </div>
