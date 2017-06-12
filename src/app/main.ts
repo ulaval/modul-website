@@ -6,7 +6,7 @@ import Modul from './components/modul/modul';
 import * as ModulActions from './store/actions';
 import './styles/main.scss';
 
-import MessagePlugin, { currentLang, FRENCH } from 'modul-components/dist/utils/i18n';
+import I18nPlugin, { currentLang, FRENCH } from 'modul-components/dist/utils/i18n';
 import ComponentsPlugin from 'modul-components/dist/components';
 import DirectivesPlugin from 'modul-components/dist/directives';
 import UtilsPlugin, { UtilsPluginOptions } from 'modul-components/dist/utils';
@@ -23,7 +23,7 @@ const utilsPluginOptions: UtilsPluginOptions = {
 async function main() {
     Vue.config.productionTip = false;
 
-    Vue.use(MessagePlugin);
+    Vue.use(I18nPlugin);
     Vue.use(ComponentsPlugin);
     Vue.use(DirectivesPlugin);
     Vue.use(UtilsPlugin, utilsPluginOptions);
