@@ -4,6 +4,7 @@ import { Watch } from 'vue-property-decorator';
 import WithRender from './component.html?style=./component.scss';
 import * as ModulActions from '@/app/store/actions';
 import { Overview, OverviewType } from 'modul-components/dist/meta/meta';
+import { ModulVue } from 'modul-components/dist/utils/vue';
 
 import { ServiceMixin } from 'modul-components/dist/services/component-meta-impl';
 
@@ -11,7 +12,7 @@ import { ServiceMixin } from 'modul-components/dist/services/component-meta-impl
 @Component({
     mixins: [ServiceMixin]
 })
-export class ComponentViewer extends Vue {
+export class ComponentViewer extends ModulVue {
     public mounted() {
         this.getMeta();
     }
@@ -26,6 +27,10 @@ export class ComponentViewer extends Vue {
 
     public isDont(item: Overview): boolean {
         return this.isOverviewType(item, 'dont');
+    }
+
+    public getItemContent(item: Overview): string {
+        return this.$i18n.translate(item.content);
     }
 
     private isOverviewType(item: Overview, type: OverviewType): boolean {

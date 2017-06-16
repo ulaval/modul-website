@@ -14,16 +14,22 @@ export const getComponentsMetaAction: Action<ModulState, ModulState> = async (co
         if (!context.state.metaLoaded || context.state.metaLoaded != language) {
             context.commit(ModulMutations.COMPONENTS_META_GET);
 
-            (require as any).ensure(['modul-components/dist/meta/meta-fr'], () => {
-                let metaModule = require('modul-components/dist/meta/meta-fr');
+            (require as any).ensure(['modul-components/dist/meta/meta-all'], () => {
+                let metaModule = require('modul-components/dist/meta/meta-all');
                 Vue.use(metaModule.default, Meta);
-                context.commit(ModulMutations.COMPONENTS_META_GET_SUCCESS, FRENCH);
 
-                if (context.state.composantState) {
-                    context.dispatch(COMPOSANT_GET, context.state.composantState.tag);
-                }
+                (require as any).ensure(['modul-components/dist/meta/meta-fr'], () => {
+                    let languageModule = require('modul-components/dist/meta/meta-fr');
+                    Vue.use(languageModule.default);
 
-                resolve();
+                    context.commit(ModulMutations.COMPONENTS_META_GET_SUCCESS, FRENCH);
+
+                    if (context.state.composantState) {
+                        context.dispatch(COMPOSANT_GET, context.state.composantState.tag);
+                    }
+
+                    resolve();
+                });
             });
         }
     });
