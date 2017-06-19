@@ -5,6 +5,10 @@
         "components": "Composants",
         "visual-standards": "Normes graphiques",
         "writing-rules": "Règles éditoriales",
-        "unified-experience": "Expérience unifiée"
+        "unified-experience": "Expérience unifiée",
+        "attributes": "Propriétés",
+        "attribute": "Propriété",
+        "value": "Valeur",
+        "description": "Description"
     }
 }
