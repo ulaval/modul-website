@@ -2,10 +2,6 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-// page de base
-$m-header--height: 70px;
-$m-footer--height: 120px;
-
 .modul-header {
     transition: margin-top 0.3s ease;
 
@@ -16,7 +12,7 @@ $m-footer--height: 120px;
     right: 0;
     z-index: 1000;
     width: 100%;
-    height: $m-header--height;
+    height: $modul-header--height;
     box-shadow: 0 2px 2px 1px rgba($m-color--grey--light, 0.5);
     background: $m-color--white;
     display: flex;
@@ -36,7 +32,7 @@ $m-footer--height: 120px;
         font-size: $m-font-size--s;
         text-transform: uppercase;
         text-decoration: none;
-        color: $m-color--grey--darker;
+        color: $modul-color--grey--dark;
 
         &:visited {
             color: $m-color--grey--darker;
@@ -51,12 +47,11 @@ $m-footer--height: 120px;
         }
     }
 
-    &__search,
-    &__github {
+    &__search {
         background-color: $m-color--ul-blue;
         display: flex;
         height: 100%;
-        width: 60px;
+        width: 70px;
         justify-content: center;
         align-items: center;
         color: $m-color--white;
@@ -64,7 +59,7 @@ $m-footer--height: 120px;
 }
 
 .modul {
-    padding-top: $m-header--height;
+    padding-top: $modul-header--height;
 }
 
 .modul-logo {
@@ -75,14 +70,14 @@ $m-footer--height: 120px;
     padding: 0 $m-padding--l;
 
     a {
-        color: $m-color--black;
+        color: $modul-color--grey--darker;
         text-decoration: none;
         font-weight: 400;
     }
 
     b {
         font-weight: 600;
-        color: $m-color--ul-blue;
+        color: $modul-color--grey--dark;
     }
 
     &.modul-logo--small {

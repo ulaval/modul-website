@@ -5,7 +5,7 @@
     ],
     "rules": {
         "indentation": 4,
-        "scss/dollar-variable-pattern": "^m-",
+        "scss/dollar-variable-pattern": "^modul-",
         "scss/selector-no-redundant-nesting-selector": true
     }
 }

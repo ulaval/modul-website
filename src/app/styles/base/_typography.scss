@@ -12,8 +12,10 @@ h5,
 .m-h3,
 .m-h4,
 .m-h5 {
+    color: $modul-color--grey--darker;
     font-weight: $m-font-weight--bold;
     line-height: 1;
+    text-transform: uppercase;
 }
 
 h4,
@@ -33,7 +35,7 @@ h1,
 
 h2,
 .m-h2 {
-    font-size: $m-font-size--h2;
+    font-size: 18px;
     margin: $m-padding--l 0 0 0;
 }
 

@@ -1,10 +1,9 @@
 .modul-body {
     position: relative;
     z-index: 2;
-    min-height: 1000px;
+    min-height: calc(100vh - #{$modul-footer--height + $modul-header--height*2}); // header + footer + margin
     padding: $m-padding--l $m-padding--l $m-padding--l*2 $m-padding--l;
-    margin-bottom: $m-footer--height;
-    background: $m-color--grey--lighter;
+    margin-bottom: $modul-header--height;
 }
 
 .modul-page {

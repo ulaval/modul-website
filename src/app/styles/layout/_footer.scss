@@ -3,19 +3,15 @@
 // -----------------------------------------------------------------------------
 
 .modul-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1;
-    height: $m-footer--height;
+    position: relative;
+    z-index: 3;
 }
 
 .modul-footer__body {
-    height: $m-header--height;
+    height: $modul-header--height;
     background-color: $m-color--white;
-    // margin-bottom: 60px;
-    border-top: 2px solid $m-color--grey--lighter;
-    box-shadow: 0 2px 2px 1px rgba($m-color--grey--light, 0.5);
+    border-top: 2px solid $modul-color--grey--light;
+    box-shadow: 0 0 4px 0 rgba($modul-color--grey--dark, 0.2);
     display: flex;
     width: 100%;
     justify-content: space-between;

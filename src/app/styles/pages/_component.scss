@@ -1,21 +1,22 @@
+//
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the component page.
 // -----------------------------------------------------------------------------
-$m-component-page--header-height: calc(50vh - #{$m-header--height});
-$m-component-page--header-min-height: 200px;
+$modul-component-page--header-height: calc(50vh - #{$modul-header--height});
+$modul-component-page--header-min-height: 200px;
 
 .modul-component-page {
     &::before {
         content: '';
         display: block;
-        height: calc(#{$m-component-page--header-height} - #{$m-padding--l});
-        min-height: $m-component-page--header-min-height - $m-padding--l;
+        height: calc(#{$modul-component-page--header-height} - #{$m-padding--l});
+        min-height: $modul-component-page--header-min-height - $m-padding--l;
     }
 }
 
 .modul-component-page__header {
     position: fixed;
-    top: $m-header--height;
+    top: $modul-header--height;
     right: 0;
     bottom: 0;
     left: 0;
@@ -30,8 +31,8 @@ $m-component-page--header-min-height: 200px;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: $m-component-page--header-height;
-        min-height: $m-component-page--header-min-height;
+        height: $modul-component-page--header-height;
+        min-height: $modul-component-page--header-min-height;
     }
 
     &__arrow-left,
@@ -54,58 +55,76 @@ $m-component-page--header-min-height: 200px;
     }
 }
 
-.modul-component-page__title {
+.modul-component-page__title.modul-component-page__title {
     font-size: 38px;
-    font-weight: $m-font-weight--black;
+    font-weight: 600;
     padding-right: $m-padding--l;
     padding-bottom: $m-margin--s;
-    border-bottom: 3px solid $m-color--grey--light;
+    border-bottom: 3px solid $modul-color--grey--darker;
 }
 
-.modul-component-card {
-    position: relative;
-    z-index: 2;
-    background-color: #fff;
-    border-radius: 4px;
-    display: flex;
-    min-height: 200px;
-
+.modul-component-page__body {
     &::before {
         content: "";
         display: block;
-        height: $m-padding--l;
         position: absolute;
-        top: -$m-padding--l;
         width: 100%;
-        background-color: $m-color--grey--lighter;
+        height: $m-padding--l*3;
+        top: -$m-padding--l*3;
+        background: -moz-linear-gradient(top, rgba($modul-body, 0) 0%, rgba($modul-body, 1) 100%);
+        background: -webkit-linear-gradient(top, rgba($modul-body, 0) 0%, rgba($modul-body, 1) 100%);
+        background: linear-gradient(to bottom, rgba($modul-body, 0) 0%, rgba($modul-body, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$modul-body}', endColorstr='#{$modul-body}', GradientType=0);
     }
 
-    &:first-of-type {
-        &::before {
-            height: $m-padding--l*3;
-            top: -$m-padding--l*3;
-            background: -moz-linear-gradient(top, rgba($m-color--grey--lighter, 0) 0%, rgba($m-color--grey--lighter, 1) 100%);
-            background: -webkit-linear-gradient(top, rgba($m-color--grey--lighter, 0) 0%, rgba($m-color--grey--lighter, 1) 100%);
-            background: linear-gradient(to bottom, rgba($m-color--grey--lighter, 0) 0%, rgba($m-color--grey--lighter, 1) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$m-color--grey--lighter}', endColorstr='#{$m-color--grey--lighter}', GradientType=0);
-        }
-    }
-
-    & + & {
-        margin-top: $m-padding--l;
-    }
+    position: relative;
+    z-index: 3;
+    background-color: $modul-body;
 }
 
 
-.modul-component-card__figure {
-    background-color: $m-color--ul-blue;
-    border-radius: 4px 0 0 4px;
+//////////////////////////////////////////////////////////////////
+$modul-component-padding: $m-padding--l;
+
+.modul-component {
+    background-color: $m-color--white;
+    margin-top: 100px; // temporaire
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 2px 2px 1px rgba($modul-color--grey--dark, 0.2);
+}
+
+.modul-component__header {
+    background-color: $modul-color--grey--darker;
+    padding: $modul-component-padding;
+    border-radius: $modul-border-radius $modul-border-radius 0 0;
+}
+
+.modul-component__preview {
+    padding: $modul-component-padding;
+}
+
+.modul-component__nav {
+    border-top: 4px solid $m-color--ul-yellow;
+    border-bottom: 1px solid $modul-color--grey;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 275px;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    > span {
+        padding: 20px;
+    }
 }
 
-.modul-component-card__body {
-    padding: $m-padding;
+.modul-component__title {
+    color: $m-color--white;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
+
+.modul-component__body {
+    padding: $modul-component-padding;
+}
+
