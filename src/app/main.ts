@@ -6,7 +6,7 @@ import Modul from './components/modul/modul';
 import * as ModulActions from './store/actions';
 import './styles/main.scss';
 
-import I18nPlugin, { currentLang, FRENCH } from 'modul-components/dist/utils/i18n';
+import I18nPlugin, { currentLang, FRENCH } from 'modul-components/dist/utils/i18n/i18n';
 import ComponentsPlugin from 'modul-components/dist/components';
 import DirectivesPlugin from 'modul-components/dist/directives';
 import UtilsPlugin, { UtilsPluginOptions } from 'modul-components/dist/utils';

@@ -7,13 +7,12 @@ import { Components } from './components/libs/components';
 import { ComponentViewer } from './components/libs/component';
 import { Ecosystem } from './components/ecosystem/ecosystem';
 import Meta from 'modul-components/dist/meta/meta';
-import { FRENCH } from 'modul-components/dist/utils/i18n';
 
 Vue.use(Router);
 
 const componentsChildren: RouteConfig[] = [];
 
-Meta.getTagsByLanguage(FRENCH).forEach(tag => {
+Meta.getTags().forEach(tag => {
     componentsChildren.push({
         path: tag,
         meta: tag,

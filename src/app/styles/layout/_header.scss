@@ -13,7 +13,7 @@
     z-index: 1000;
     width: 100%;
     height: $modul-header--height;
-    box-shadow: 0 2px 2px 1px rgba($m-color--grey--light, 0.5);
+    box-shadow: 0 2px 2px 1px rgba($m-color--grey-light, 0.5);
     background: $m-color--white;
     display: flex;
     align-content: space-between;
@@ -32,10 +32,10 @@
         font-size: $m-font-size--s;
         text-transform: uppercase;
         text-decoration: none;
-        color: $modul-color--grey--dark;
+        color: $m-color--grey-dark;
 
         &:visited {
-            color: $m-color--grey--darker;
+            color: $m-color--grey-darker;
         }
 
         &:not(:last-child) {
@@ -70,14 +70,14 @@
     padding: 0 $m-padding--l;
 
     a {
-        color: $modul-color--grey--darker;
+        color: $m-color--grey-darker;
         text-decoration: none;
         font-weight: 400;
     }
 
     b {
         font-weight: 600;
-        color: $modul-color--grey--dark;
+        color: $m-color--grey-dark;
     }
 
     &.modul-logo--small {

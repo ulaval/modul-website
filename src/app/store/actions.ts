@@ -3,7 +3,7 @@ import { Action, ActionContext } from 'vuex';
 import { ModulState } from './modul-state';
 import { ModulMutations } from './mutations';
 import Meta from 'modul-components/dist/meta/meta';
-import Messages, { FRENCH } from 'modul-components/dist/utils/i18n';
+import Messages, { FRENCH } from 'modul-components/dist/utils/i18n/i18n';
 
 export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
 export const COMPOSANT_GET: string = 'COMPOSANT_GET';
@@ -36,7 +36,7 @@ export const getComponentsMetaAction: Action<ModulState, ModulState> = async (co
 };
 
 export const getComposantAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, tag: any) => {
-    context.commit(ModulMutations.COMPOSANT_GET, Meta.getMetaByLanguageAndTag(FRENCH, tag));
+    context.commit(ModulMutations.COMPOSANT_GET, Meta.getMetaByTag(tag));
 };
 
 export const getMessagesAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, language: string) => {

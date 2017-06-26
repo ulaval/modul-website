@@ -8,7 +8,7 @@
         "clean": "rimraf dist",
         "relink": "rimraf node_modules/modul-components && npm i",
         "dev": "webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 8083 --open --history-api-fallback",
-        "build": "webpack --config conf/webpack.config.js --colors",
+        "build": "webpack --config conf/webpack.config.js --colors --optimize-minimize",
         "prod": "http-server dist -p 8083 -g -o",
         "unit": "karma start conf/karma.conf.js --browsers PhantomJS --single-run",
         "unitall": "karma start conf/karma.conf.js --single-run",
@@ -68,7 +68,7 @@
         "chromedriver": "^2.27.2",
         "nightwatch": "^0.9.12",
         "selenium-server": "^3.0.1",
-        "modul-components": "file://C:\\dev\\projets\\modul\\modul-components"
+        "modul-components": "^0.1.0"
     },
     "repository": {
         "type": "git",

@@ -19,8 +19,8 @@ export class ModulMutations {
     }
 
     public static getComponentsMetaSucces: Mutation<ModulState> = (state: ModulState, language: string) => {
-        Meta.getTagsByLanguage(language).forEach(tag => {
-            let component: ComponentMeta = Meta.getMetaByLanguageAndTag(language, tag);
+        Meta.getTags().forEach(tag => {
+            let component: ComponentMeta = Meta.getMetaByTag(tag);
             state.componentRoutes.push({
                 url: '/composants/' + tag,
                 name: component.name ? component.name : ''
