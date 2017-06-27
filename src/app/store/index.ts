@@ -21,7 +21,10 @@ const mutations: MutationTree<ModulState> = {
     [ModulMutations.COMPOSANT_GET]: ModulMutations.getComposantSucces,
     // Messages
     [ModulMutations.MESSAGES_GET]: ModulMutations.getMessages,
-    [ModulMutations.MESSAGES_GET_SUCCESS]: ModulMutations.getMessagesSucces
+    [ModulMutations.MESSAGES_GET_SUCCESS]: ModulMutations.getMessagesSucces,
+    // Icons
+    [ModulMutations.ICONS_GET]: ModulMutations.getIcons,
+    [ModulMutations.ICONS_GET_SUCCESS]: ModulMutations.getIconsSucces
 };
 
 const actions: Vuex.ActionTree<ModulState, ModulState> = {
@@ -29,8 +32,10 @@ const actions: Vuex.ActionTree<ModulState, ModulState> = {
     [ModulActions.COMPONENTS_META_GET]: ModulActions.getComponentsMetaAction,
     // Component
     [ModulActions.COMPOSANT_GET]: ModulActions.getComposantAction,
-    // Messsages
-    [ModulActions.MESSAGES_GET]: ModulActions.getMessagesAction
+    // Messages
+    [ModulActions.MESSAGES_GET]: ModulActions.getMessagesAction,
+    // Icons
+    [ModulActions.ICONS_GET]: ModulActions.getIconsAction
 };
 
 const store: ModulStore = new ModulStore({

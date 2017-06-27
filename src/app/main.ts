@@ -32,6 +32,7 @@ async function main() {
 
     currentLang(FRENCH);
     await store.dispatchAsync(ModulActions.MESSAGES_GET, FRENCH);
+    await store.dispatchAsync(ModulActions.ICONS_GET, 'website');
 
     const vue = new Vue({
         router,

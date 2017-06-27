@@ -12,6 +12,9 @@ export class ModulMutations {
     public static MESSAGES_GET: string = 'MESSAGES_GET';
     public static MESSAGES_GET_SUCCESS: string = 'MESSAGES_GET_SUCCESS';
 
+    public static ICONS_GET: string = 'ICONS_GET';
+    public static ICONS_GET_SUCCESS: string = 'ICONS_GET_SUCCESS';
+
     // Components
     public static getComponentsMeta: Mutation<ModulState> = (state: ModulState) => {
         state.metaLoaded = undefined;
@@ -41,5 +44,14 @@ export class ModulMutations {
 
     public static getMessagesSucces: Mutation<ModulState> = (state: ModulState, language: string) => {
         state.languageLoaded = language;
+    }
+
+    // Icons
+    public static getIcons: Mutation<ModulState> = (state: ModulState) => {
+        state.iconsLoaded = undefined;
+    }
+
+    public static getIconsSucces: Mutation<ModulState> = (state: ModulState, icons: string) => {
+        state.iconsLoaded = icons;
     }
 }

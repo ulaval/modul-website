@@ -8,6 +8,7 @@ import Messages, { FRENCH } from 'modul-components/dist/utils/i18n/i18n';
 export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
 export const COMPOSANT_GET: string = 'COMPOSANT_GET';
 export const MESSAGES_GET: string = 'MESSAGES_GET';
+export const ICONS_GET: string = 'ICONS_GET';
 
 export const getComponentsMetaAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, language: string) => {
     return new Promise((resolve, reject) => {
@@ -48,6 +49,21 @@ export const getMessagesAction: Action<ModulState, ModulState> = async (context:
                 let languageModule = require('../lang/fr/fr');
                 Vue.use(languageModule.default);
                 context.commit(ModulMutations.MESSAGES_GET_SUCCESS, FRENCH);
+                resolve();
+            });
+        }
+    });
+};
+
+export const getIconsAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, icons: string) => {
+    return new Promise((resolve, reject) => {
+        if (!context.state.iconsLoaded || context.state.iconsLoaded != icons) {
+            context.commit(ModulMutations.ICONS_GET);
+
+            (require as any).ensure(['../utils/svg'], () => {
+                let svgModule = require('../utils/svg');
+                Vue.use(svgModule.default);
+                context.commit(ModulMutations.ICONS_GET_SUCCESS, icons);
                 resolve();
             });
         }
