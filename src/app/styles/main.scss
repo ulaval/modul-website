@@ -5,7 +5,7 @@
 // ======================================================================
 
 // https://github.com/webpack-contrib/sass-loader#imports
-@import '~modul-components/dist/styles/abstracts/variables';
+@import '~@ulaval/modul-components/dist/styles/abstracts/variables';
 // local import
 @import 'abstracts/variables';
 
@@ -17,7 +17,7 @@
 //  Base
 // ======================================================================
 
-@import '~modul-components/dist/styles/base/base';
+@import '~@ulaval/modul-components/dist/styles/base/base';
 @import 'base/base';
 @import 'base/typography';
 

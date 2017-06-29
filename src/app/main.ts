@@ -6,12 +6,12 @@ import Modul from './components/modul/modul';
 import * as ModulActions from './store/actions';
 import './styles/main.scss';
 
-import I18nPlugin, { currentLang, FRENCH } from 'modul-components/dist/utils/i18n/i18n';
-import ComponentsPlugin from 'modul-components/dist/components';
-import DirectivesPlugin from 'modul-components/dist/directives';
-import UtilsPlugin, { UtilsPluginOptions } from 'modul-components/dist/utils';
+import I18nPlugin, { currentLang, FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import ComponentsPlugin from '@ulaval/modul-components/dist/components';
+import DirectivesPlugin from '@ulaval/modul-components/dist/directives';
+import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils';
 
-import svc from 'modul-components/dist/services/component-meta-impl';
+import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
 
 const utilsPluginOptions: UtilsPluginOptions = {
     securityPluginOptions: {

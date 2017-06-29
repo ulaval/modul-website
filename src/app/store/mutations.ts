@@ -1,7 +1,7 @@
 import { Mutation } from 'vuex';
 import { ModulState } from './modul-state';
 import { ComponentRoute } from './components-meta-state';
-import Meta, { ComponentMeta } from 'modul-components/dist/meta/meta';
+import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
 export class ModulMutations {
     public static COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';

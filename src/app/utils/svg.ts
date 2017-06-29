@@ -1,5 +1,5 @@
 import { PluginObject } from 'vue';
-import { SpritesService } from 'modul-components/dist/utils/svg/sprites';
+import { SpritesService } from '@ulaval/modul-components/dist/utils/svg/sprites';
 
 const SvgPlugin: PluginObject<any> = {
     install(v, options) {

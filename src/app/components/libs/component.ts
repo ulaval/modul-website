@@ -3,10 +3,10 @@ import Component from 'vue-class-component';
 import { Watch } from 'vue-property-decorator';
 import WithRender from './component.html?style=./component.scss';
 import * as ModulActions from '@/app/store/actions';
-import Meta, { ComponentMeta, ComponentAttribute, Overview, OverviewType } from 'modul-components/dist/meta/meta';
-import { ModulVue } from 'modul-components/dist/utils/vue/vue';
+import Meta, { ComponentMeta, ComponentAttribute, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 
-import { ServiceMixin } from 'modul-components/dist/services/component-meta-impl';
+import { ServiceMixin } from '@ulaval/modul-components/dist/services/component-meta-impl';
 
 const BOOLEAN_TYPE: string = 'boolean';
 

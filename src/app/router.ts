@@ -6,7 +6,7 @@ import { WritingRules } from './components/writing-rules/writing-rules';
 import { Components } from './components/libs/components';
 import { ComponentViewer } from './components/libs/component';
 import { Ecosystem } from './components/ecosystem/ecosystem';
-import Meta from 'modul-components/dist/meta/meta';
+import Meta from '@ulaval/modul-components/dist/meta/meta';
 
 Vue.use(Router);
 

@@ -2,8 +2,8 @@ import Vue from 'vue';
 import { Action, ActionContext } from 'vuex';
 import { ModulState } from './modul-state';
 import { ModulMutations } from './mutations';
-import Meta from 'modul-components/dist/meta/meta';
-import Messages, { FRENCH } from 'modul-components/dist/utils/i18n/i18n';
+import Meta from '@ulaval/modul-components/dist/meta/meta';
+import Messages, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 
 export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
 export const COMPOSANT_GET: string = 'COMPOSANT_GET';
@@ -15,12 +15,12 @@ export const getComponentsMetaAction: Action<ModulState, ModulState> = async (co
         if (!context.state.metaLoaded || context.state.metaLoaded != language) {
             context.commit(ModulMutations.COMPONENTS_META_GET);
 
-            (require as any).ensure(['modul-components/dist/meta/meta-all'], () => {
-                let metaModule = require('modul-components/dist/meta/meta-all');
+            (require as any).ensure(['@ulaval/modul-components/dist/meta/meta-all'], () => {
+                let metaModule = require('@ulaval/modul-components/dist/meta/meta-all');
                 Vue.use(metaModule.default, Meta);
 
-                (require as any).ensure(['modul-components/dist/meta/meta-fr'], () => {
-                    let languageModule = require('modul-components/dist/meta/meta-fr');
+                (require as any).ensure(['@ulaval/modul-components/dist/meta/meta-fr'], () => {
+                    let languageModule = require('@ulaval/modul-components/dist/meta/meta-fr');
                     Vue.use(languageModule.default);
 
                     context.commit(ModulMutations.COMPONENTS_META_GET_SUCCESS, FRENCH);

@@ -57,7 +57,7 @@ module.exports = {
                 test: /\.scss$/,
                 loader: "sass-loader",
                 options: {
-                    includePaths: ["./node_modules/modul-components/dist/styles", "./src/app/styles"]
+                    includePaths: ["./node_modules/@ulaval/modul-components/dist/styles", "./src/app/styles"]
                 }
             },
             {
