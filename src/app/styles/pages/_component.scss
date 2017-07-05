@@ -56,11 +56,22 @@ $modul-component-page--header-min-height: 200px;
 }
 
 .modul-component-page__title.modul-component-page__title {
-    font-size: 38px;
-    font-weight: 600;
-    padding-right: $m-padding--l;
-    padding-bottom: $m-margin--s;
-    border-bottom: 3px solid $modul-color--grey--darker;
+    .m-text-field__input {
+        font-size: 38px;
+        font-weight: 600;
+        border-bottom: 3px solid $modul-color--grey--darker;
+        margin: 0;
+        color: $modul-color--grey--darker;
+    }
+
+    .m-text-field__input-line {
+        height: 3px;
+    }
+
+    // tempo
+    .m-text-field__transparent {
+        display: none;
+    }
 }
 
 .modul-component-page__body {
@@ -82,6 +93,19 @@ $modul-component-page--header-min-height: 200px;
     background-color: $modul-body;
 }
 
+// .slide-fade-enter-active {
+//     transition: all 0.3s ease;
+// }
+
+// .slide-fade-leave-active {
+//     transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+// .slide-fade-enter,
+// .slide-fade-leave-to {
+//     transform: translateX(10px);
+//     opacity: 0;
+// }
 
 //////////////////////////////////////////////////////////////////
 $modul-component-padding: $m-padding--l;
