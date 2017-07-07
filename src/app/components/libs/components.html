@@ -1,65 +1,66 @@
 <div class="modul-component-page">
-    <section class="modul-component-page__header" :style="{'z-index' : zindex}">
+    <section class="modul-component-page__header" :style="{'zIndex' : setZindex}">
+
         <div class="modul-component-page__header__wrap">
-            <div class="modul-component-page__title">
+            <div ref="dropdown" class="modul-component-page__title">
                 <m-dropdown :elements="$store.state.componentRoutes" :get-text-element="getComponentsName" @elementSelected="toSelectedComponent($event)"
-                    :selectedElement="currentComponent" is-sort="false"></m-dropdown>
+                    :default-first-element="true" :is-open="isListOpened" @isOpen="setIsListOpened($event)" :selectedElement="currentComponent"
+                    is-sort="false"></m-dropdown>
             </div>
 
-            <h1 class="modul-component-page__title">
-                {{isListOpen}}
-            </h1>
+            <!--<h1 class="modul-component-page__title">
+                {{getIsListOpened}}
+            </h1>-->
         </div>
-        <div class="modul-component-page__header__arrow-left" v-if="!isPageComponent">
-            <m-link mode="button">
-                <span @click="getPreviusComponent()"><</span>
-            </m-link>
+        <div class="modul-component-page__arrow-left" v-if="!isPageComponent">
+            <a href="#" @click.prevent="getPreviusComponent()">
+                <span><</span>
+            </a>
         </div>
-        <div class="modul-component-page__header__arrow-right" v-if="!isPageComponent">
-            <m-link mode="button">
-                <span @click="getNextComponent()">></span>
-            </m-link>
+        <div class="modul-component-page__arrow-right" v-if="!isPageComponent">
+            <a href="#" @click.prevent="getNextComponent()">
+                <span>></span>
+            </a>
         </div>
     </section>
 
-    <transition name="slide-fade">
-        <div class="modul-component-page__body" v-if="isPageComponent">
-            <m-link mode="button">
-                <div @click="toComponent(route)" v-for="(route, index) in $store.state.componentRoutes" class="modul-card">
-                    <article class="modul-card__body">
-                        <div class="modul-card__figure">
-                            <m-icon name="search"></m-icon>
-                        </div>
+    <!--<transition name="slide-fade" mode="out-in" appear>-->
+    <div class="modul-component-page__body" v-if="isPageComponent">
+        <transition-group name="slide-fade" tag="article" appear>
+            <article @click="toComponent(route)" :key="route" v-for="(route, index) in $store.state.componentRoutes" class="modul-card">
 
-                        <div class="modul-card__content">
+                <!--<div class="modul-card__body">-->
+                <div class="modul-card__figure">
+                    <m-icon name="search"></m-icon>
+                </div>
 
-                            <header>
-                                <h2 class="modul-card__title m-no-margin-top">
-                                    <!--<m-link :url="route.url">-->
-                                    <m-i18n :i18n-key="route.name"></m-i18n>
-                                    <!--</m-link>-->
-                                </h2>
-                                <span class="modul-card__tagname">
+                <div class="modul-card__content">
+
+                    <header>
+                        <h2 class="modul-card__title m-no-margin-top">
+                            <!--<m-link :url="route.url">-->
+                            <m-i18n :i18n-key="route.name"></m-i18n>
+                            <!--</m-link>-->
+                        </h2>
+                        <span class="modul-card__tagname">
                         <m-i18n :i18n-key="route.name"></m-i18n>
 
                     </span>
-                            </header>
+                    </header>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, deleniti dolores facilis aut,
-                                maxime sequi ullam suscipit deserunt quam obcaecati totam nisi magni ipsum ut dolorem fuga
-                                nostrum pariatur provident.
-                            </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, deleniti dolores facilis aut, maxime
+                        sequi ullam suscipit deserunt quam obcaecati totam nisi magni ipsum ut dolorem fuga nostrum pariatur
+                        provident.
+                    </p>
 
 
-                        </div>
-                    </article>
                 </div>
-            </m-link>
-        </div>
-    </transition>
+                <!--</div>-->
+            </article>
+        </transition-group>
+    </div>
 
-    <transition name="slide-fade">
-        <router-view></router-view>
-    </transition>
+    <router-view></router-view>
+    <!--</transition>-->
 
 </div>

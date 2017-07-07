@@ -6,16 +6,13 @@
     box-shadow: 0 2px 2px 1px rgba($modul-color--grey--dark, 0.2);
     text-decoration: none;
     color: $m-color--text;
-    display: block;
+    display: flex;
+    min-height: 200px;
+    cursor: pointer;
 
     & + & {
         margin-top: $m-padding--l;
     }
-}
-
-.modul-card__body {
-    display: flex;
-    min-height: 200px;
 }
 
 .modul-card__figure {

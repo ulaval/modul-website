@@ -22,7 +22,9 @@
 
     <main class="modul-body">
         <div class="modul-page">
-            <router-view></router-view>
+            <transition name="slide-fade" mode="out-in" appear>
+                <router-view></router-view>
+            </transition>
         </div>
     </main>
 
