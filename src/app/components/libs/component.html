@@ -1,5 +1,5 @@
-<transition name="slide-fade" mode="out-in">
-    <div class="modul-component" v-if="!getIsPageComponent">
+<div class="modul-component" v-if="!getIsPageComponent">
+    <transition name="slide-fade" mode="out-in">
 
         <div class="modul-component-page__header__wrap">
             <div ref="dropdown" class="modul-component-page__title">
@@ -22,8 +22,8 @@
                 <span>></span>
             </a>
         </div>
-    </section>
-    <transition name="slide-fade" mode="out-in">
+        </section>
+
         <div class="modul-component" v-if="$store.state.composantState">
 
             <header class="modul-component__header">
