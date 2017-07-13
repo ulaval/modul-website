@@ -17,8 +17,10 @@ const mutations: MutationTree<ModulState> = {
     // Components
     [ModulMutations.COMPONENTS_META_GET]: ModulMutations.getComponentsMeta,
     [ModulMutations.COMPONENTS_META_GET_SUCCESS]: ModulMutations.getComponentsMetaSucces,
+    // Category
+    [ModulMutations.CATEGORY_GET]: ModulMutations.getCategorySucces,
     // Component
-    [ModulMutations.COMPOSANT_GET]: ModulMutations.getComposantSucces,
+    [ModulMutations.COMPONENT_GET]: ModulMutations.getComponentSucces,
     // Messages
     [ModulMutations.MESSAGES_GET]: ModulMutations.getMessages,
     [ModulMutations.MESSAGES_GET_SUCCESS]: ModulMutations.getMessagesSucces,
@@ -30,8 +32,10 @@ const mutations: MutationTree<ModulState> = {
 const actions: Vuex.ActionTree<ModulState, ModulState> = {
     // Components
     [ModulActions.COMPONENTS_META_GET]: ModulActions.getComponentsMetaAction,
+    // Category
+    [ModulActions.CATEGORY_GET]: ModulActions.getCategoryAction,
     // Component
-    [ModulActions.COMPOSANT_GET]: ModulActions.getComposantAction,
+    [ModulActions.COMPONENT_GET]: ModulActions.getComponentAction,
     // Messages
     [ModulActions.MESSAGES_GET]: ModulActions.getMessagesAction,
     // Icons

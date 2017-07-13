@@ -1,33 +1,33 @@
 <div class="modul-component-page">
-    <section class="modul-component-page__header" :style="{'zIndex' : setZindex}">
+    <section class="modul-component-page__header" :style="{'zIndex' : zIndex}">
 
         <div class="modul-component-page__header__wrap">
             <div ref="dropdown" class="modul-component-page__title">
-                <m-dropdown :elements="$store.state.componentRoutes" :get-text-element="getComponentsName" @elementSelected="toSelectedComponent($event)"
-                    :default-first-element="true" :is-open="isListOpened" @isOpen="setIsListOpened($event)" :selectedElement="currentComponent"
-                    is-sort="false"></m-dropdown>
+                <m-dropdown :elements="categories" :get-text-element="getText" @elementSelected="onCategorySelected($event)"
+                    :default-first-element="true" @open="onOpen($event)" :selectedElement="selectedCategory" :sort="false">
+                </m-dropdown>
             </div>
 
             <!--<h1 class="modul-component-page__title">
                 {{getIsListOpened}}
             </h1>-->
         </div>
-        <div class="modul-component-page__arrow-left" v-if="!isPageComponent">
-            <a href="#" @click.prevent="getPreviusComponent()">
-                <span><</span>
+        <div class="modul-component-page__arrow-left">
+            <a href="#" @click.prevent="getPreviousCategory()">
+                <span>&lt;</span>
             </a>
         </div>
-        <div class="modul-component-page__arrow-right" v-if="!isPageComponent">
-            <a href="#" @click.prevent="getNextComponent()">
-                <span>></span>
+        <div class="modul-component-page__arrow-right">
+            <a href="#" @click.prevent="getNextCategory()">
+                <span>&gt;</span>
             </a>
         </div>
     </section>
 
     <!--<transition name="slide-fade" mode="out-in" appear>-->
-    <div class="modul-component-page__body" v-if="isPageComponent">
+    <div class="modul-component-page__body">
         <transition-group name="slide-fade" tag="article" appear>
-            <article @click="toComponent(route)" :key="route" v-for="(route, index) in $store.state.componentRoutes" class="modul-card">
+            <article @click="onComponentClick(meta.tag)" :key="meta.tag" v-for="meta in categoryComponents" class="modul-card">
 
                 <!--<div class="modul-card__body">-->
                 <div class="modul-card__figure">
@@ -39,11 +39,11 @@
                     <header>
                         <h2 class="modul-card__title m-no-margin-top">
                             <!--<m-link :url="route.url">-->
-                            <m-i18n :i18n-key="route.name"></m-i18n>
+                            <m-i18n :i18n-key="meta.name"></m-i18n>
                             <!--</m-link>-->
                         </h2>
                         <span class="modul-card__tagname">
-                        <m-i18n :i18n-key="route.name"></m-i18n>
+                        <m-i18n :i18n-key="meta.name"></m-i18n>
 
                     </span>
                     </header>
@@ -60,7 +60,6 @@
         </transition-group>
     </div>
 
-    <router-view></router-view>
     <!--</transition>-->
 
 </div>

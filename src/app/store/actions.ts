@@ -6,7 +6,8 @@ import Meta from '@ulaval/modul-components/dist/meta/meta';
 import Messages, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 
 export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
-export const COMPOSANT_GET: string = 'COMPOSANT_GET';
+export const CATEGORY_GET: string = 'CATEGORY_GET';
+export const COMPONENT_GET: string = 'COMPONENT_GET';
 export const MESSAGES_GET: string = 'MESSAGES_GET';
 export const ICONS_GET: string = 'ICONS_GET';
 
@@ -25,8 +26,8 @@ export const getComponentsMetaAction: Action<ModulState, ModulState> = async (co
 
                     context.commit(ModulMutations.COMPONENTS_META_GET_SUCCESS, FRENCH);
 
-                    if (context.state.composantState) {
-                        context.dispatch(COMPOSANT_GET, context.state.composantState.tag);
+                    if (context.state.component) {
+                        context.dispatch(COMPONENT_GET, context.state.component.tag);
                     }
 
                     resolve();
@@ -36,8 +37,12 @@ export const getComponentsMetaAction: Action<ModulState, ModulState> = async (co
     });
 };
 
-export const getComposantAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, tag: any) => {
-    context.commit(ModulMutations.COMPOSANT_GET, Meta.getMetaByTag(tag));
+export const getCategoryAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, category: string) => {
+    context.commit(ModulMutations.CATEGORY_GET, category);
+};
+
+export const getComponentAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, tag: string) => {
+    context.commit(ModulMutations.COMPONENT_GET, Meta.getMetaByTag(tag));
 };
 
 export const getMessagesAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, language: string) => {

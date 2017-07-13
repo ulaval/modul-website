@@ -1,114 +1,114 @@
 import Vue from 'vue';
-import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import Component from 'vue-class-component';
 import WithRender from './components.html?style=./components.scss';
+import { ModulWebsite } from '../modul-website';
 import * as ModulActions from '@/app/store/actions';
-import Meta, { ComponentMeta, ComponentAttribute, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
-import { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
-const ZINDEX: Number = 200;
+const ZINDEX: number = 200;
+
+type Category = {
+    id: string;
+    text: string;
+};
+
+type CategoryIndexMap = {
+    [id: string]: number;
+};
 
 @WithRender
 @Component
-export class Components extends ModulVue {
+export class Components extends ModulWebsite {
 
-    private currentComponent: Object = this.$store.state.componentRoutes[0];
-    private zIndex: Number = 0;
-    private isScrolling: Boolean = false;
-    private hasScrolled: Boolean = false;
-    private isListOpened: Boolean = false;
-    private scrollPosition: Number = 0;
-    private bodyElement: HTMLElement = document.body;
+    // private isScrolling: Boolean = false;
+    private hasScrolled: boolean = false;
+    private isListOpened: boolean = false;
+    // private scrollPosition: Number = 0;
+    // private bodyElement: HTMLElement = document.body;
 
-    private storeReady: boolean = this.$store.state.componentRoutes != undefined ? true : false;
+    private categories: Category[] = [];
+    private categoriesMap: CategoryIndexMap = {};
 
-    private getComponentsName(element: any): String {
-        let name: string = 'default'; // todo, remove when data will all be completed
-        if (element.element.name != '') {
-            name = this.$i18n.translate(element.element.name);
-        }
-        return name;
+    protected beforeMount(): void {
+        Meta.getCategories().forEach(category => {
+            this.categories.push({
+                id: category,
+                text: this.$i18n.translate(category)
+            });
+        });
+
+        this.categories.sort((a, b) => {
+            return a.text < b.text ? -1 : (a.text > b.text ? 1 : 0);
+        });
+
+        this.categories.forEach((category, index) => this.categoriesMap[category.id] = index);
     }
 
-    private get isPageComponent(): Boolean {
-        let isPageComponent: boolean;
-
-        if (this.$route.path == '/composants') {
-            isPageComponent = true;
-        } else {
-            isPageComponent = false;
-        }
-
-        return isPageComponent;
+    private getText(category: Category): string {
+        return category.text;
     }
 
-    private getPreviusComponent(): void {
+    private onCategorySelected(category: Category): void {
+        this.$store.dispatch(ModulActions.CATEGORY_GET, category.id);
+    }
 
-        let activePath = this.$route.path;
-        let i: number = 0;
-        let max: number = this.$store.state.componentRoutes.length - 1;
-        let index: number = max;
-        for (i; i < this.$store.state.componentRoutes.length; i++) {
-            if (this.$store.state.componentRoutes[i].url == activePath) {
-                if (i != 0) {
-                    index = i - 1;
-                    break;
-                }
+    private getPreviousCategory(): void {
+        if (this.state.category) {
+            let index: number = this.categoriesMap[this.state.category];
+            index--;
+            if (index < 0) {
+                index = this.categories.length - 1;
             }
+            this.$store.dispatch(ModulActions.CATEGORY_GET, this.categories[index].id);
         }
-
-        this.currentComponent = this.$store.state.componentRoutes[index];
-        this.$router.push(this.$store.state.componentRoutes[index].url);
     }
 
-    private getNextComponent(): void {
-
-        let activePath = this.$route.path;
-        let i: number = 0;
-        let index: number = 0;
-        let max: number = this.$store.state.componentRoutes.length - 1;
-        for (i; i < this.$store.state.componentRoutes.length; i++) {
-            if (this.$store.state.componentRoutes[i].url == activePath) {
-                if (i != max) {
-                    index = i + 1;
-                    break;
-                }
+    private getNextCategory(): void {
+        if (this.state.category) {
+            let index: number = this.categoriesMap[this.state.category];
+            index++;
+            if (index >= this.categories.length) {
+                index = 0;
             }
-        }
-
-        this.currentComponent = this.$store.state.componentRoutes[index];
-        this.$router.push(this.$store.state.componentRoutes[index].url);
-    }
-
-    private toComponent(route): void {
-        if (route.url != '') {
-            this.currentComponent = route;
-            this.$router.push(route.url);
-            this.bodyElement.scrollTop = 0;
+            this.$store.dispatch(ModulActions.CATEGORY_GET, this.categories[index].id);
         }
     }
 
-    private toSelectedComponent(event): void {
-        this.currentComponent = event;
-        this.$router.push(event.url);
+    private get categoryComponents(): ComponentMeta[] {
+        let result: ComponentMeta[] = [];
+        if (this.state.category) {
+            result = Meta.getMetaByCategory(this.state.category);
+        }
+        return result;
     }
 
-    private setIsListOpened(isListOpened): void {
+    private get selectedCategory(): Category | undefined {
+        let result: Category | undefined = undefined;
+        if (this.state.category) {
+            result = this.categories[this.categoriesMap[this.state.category]];
+        }
+        return result;
+    }
+
+    private onComponentClick(tag: string): void {
+        this.$router.push(this.state.componentRoutes[tag].url);
+    }
+
+    private onOpen(isListOpened: boolean): void {
         this.isListOpened = isListOpened;
         // reset the scroll
         this.hasScrolled = false;
     }
 
-    private get setZindex(): Number {
-
+    private get zIndex(): number {
         if (this.isListOpened && !this.hasScrolled) {
-            this.zIndex = ZINDEX;
+            return ZINDEX;
         } else {
-            this.zIndex = 0;
+            return 0;
         }
-
-        return this.zIndex;
     }
+
+    /*
 
     // private animDropDownOnScroll(scrollPosition): void {
     //     let position = this.$refs.dropdown['scrollHeight'];
@@ -140,13 +140,11 @@ export class Components extends ModulVue {
     }
 
     private mounted(): void {
-        this.$store.dispatch(ModulActions.COMPONENTS_META_GET, FRENCH);
         window.addEventListener('scroll', this.onScroll);
         console.log(this.$store.state.componentRoutes);
-
     }
 
     private destroyed() {
         window.removeEventListener('mousedown', this.onScroll);
-    }
+    } */
 }

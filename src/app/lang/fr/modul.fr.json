@@ -9,6 +9,7 @@
         "attributes": "Propriétés",
         "attribute": "Propriété",
         "value": "Valeur",
-        "description": "Description"
+        "description": "Description",
+        "components-url": "composants"
     }
 }

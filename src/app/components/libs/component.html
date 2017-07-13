@@ -1,81 +1,106 @@
-<transition name="slide-fade" mode="out-in">
-    <div class="modul-component" v-if="$store.state.composantState">
+<div class="modul-component-page">
+    <section class="modul-component-page__header" :style="{'zIndex' : setZindex}">
 
-        <header class="modul-component__header">
-            <h2 class="modul-component__title">
-                <m-icon name="chevron-gauche"></m-icon>{{$store.state.composantState.tag}}
-                <m-icon name="chevron-droit"></m-icon>
-            </h2>
-        </header>
+        <div class="modul-component-page__header__wrap">
+            <div ref="dropdown" class="modul-component-page__title">
+                <m-dropdown :elements="$store.state.componentRoutes" :get-text-element="getComponentsName" @elementSelected="toSelectedComponent($event)"
+                    :default-first-element="true" :is-open="isListOpened" @isOpen="setIsListOpened($event)" :selectedElement="currentComponent"
+                    is-sort="false"></m-dropdown>
+            </div>
 
-        <div class="modul-component__preview">
-            <p>DÉMO</p>
+            <!--<h1 class="modul-component-page__title">
+                {{getIsListOpened}}
+            </h1>-->
         </div>
+        <div class="modul-component-page__arrow-left" v-if="!isPageComponent">
+            <a href="#" @click.prevent="getPreviusComponent()">
+                <span><</span>
+            </a>
+        </div>
+        <div class="modul-component-page__arrow-right" v-if="!isPageComponent">
+            <a href="#" @click.prevent="getNextComponent()">
+                <span>></span>
+            </a>
+        </div>
+    </section>
+    <transition name="slide-fade" mode="out-in">
+        <div class="modul-component" v-if="$store.state.composantState">
 
-        <div class="modul-component__nav">
-            <!--<span>
+            <header class="modul-component__header">
+                <h2 class="modul-component__title">
+                    <m-icon name="chevron-gauche"></m-icon>{{$store.state.composantState.tag}}
+                    <m-icon name="chevron-droit"></m-icon>
+                </h2>
+            </header>
+
+            <div class="modul-component__preview">
+                <p>DÉMO</p>
+            </div>
+
+            <div class="modul-component__nav">
+                <!--<span>
             <m-i18n :i18n-key="$store.state.composantState.name"></m-i18n>
         </span>-->
-            <span>
-            <m-i18n i18n-key="modul:overview"></m-i18n>
-        </span>
-            <span>
-            <m-i18n i18n-key="modul:attributes"></m-i18n>
-        </span>
-        </div>
+                <span>
+                    <m-i18n i18n-key="modul:overview"></m-i18n>
+                </span>
+                <span>
+                    <m-i18n i18n-key="modul:attributes"></m-i18n>
+                </span>
+            </div>
 
-        <div class="modul-component__body">
+            <div class="modul-component__body">
 
-            <div v-for="(item, index) in $store.state.composantState.overview">
-                <template v-if="isRubric(item)">
-                    <h3 :class="{'m-no-margin-top' : index == 0}">
-                        <m-i18n :i18n-key="item.title"></m-i18n>
-                    </h3>
-                    <p>
+                <div v-for="(item, index) in $store.state.composantState.overview">
+                    <template v-if="isRubric(item)">
+                        <h3 :class="{'m-no-margin-top' : index == 0}">
+                            <m-i18n :i18n-key="item.title"></m-i18n>
+                        </h3>
+                        <p>
+                            <m-dynamic-template :template="getItemContent(item)"></m-dynamic-template>
+                        </p>
+
+                    </template>
+                    <template v-else-if="isDo(item)">
+                        <h2>:)</h2>
                         <m-dynamic-template :template="getItemContent(item)"></m-dynamic-template>
-                    </p>
+                    </template>
+                    <template v-else="isDont(item)">
+                        <h2>:(</h2>
+                        <m-dynamic-template :template="getItemContent(item)"></m-dynamic-template>
+                    </template>
+                </div>
 
-                </template>
-                <template v-else-if="isDo(item)">
-                    <h2>:)</h2>
-                    <m-dynamic-template :template="getItemContent(item)"></m-dynamic-template>
-                </template>
-                <template v-else="isDont(item)">
-                    <h2>:(</h2>
-                    <m-dynamic-template :template="getItemContent(item)"></m-dynamic-template>
-                </template>
-            </div>
-
-            <div v-for="attribute in getAttributes($store.state.composantState)">
-                <table>
-                    <thead>
-                        <th>
-                            <m-i18n i18n-key="modul:attribute"></m-i18n>
-                        </th>
-                        <th>
-                            <m-i18n i18n-key="modul:value"></m-i18n>
-                        </th>
-                        <th>
-                            <m-i18n i18n-key="modul:description"></m-i18n>
-                        </th>
-                    </thead>
-                    <tr>
-                        <td><b>{{attribute}}</b>:{{getAttribute(attribute).type}}</td>
-                        <td>
-                            <span v-for="(value, index) in getValues(getAttribute(attribute))" :class="{default: isDefault(getAttribute(attribute), value)}">{{value}}
+                <div v-for="attribute in getAttributes($store.state.composantState)">
+                    <table>
+                        <thead>
+                            <th>
+                                <m-i18n i18n-key="modul:attribute"></m-i18n>
+                            </th>
+                            <th>
+                                <m-i18n i18n-key="modul:value"></m-i18n>
+                            </th>
+                            <th>
+                                <m-i18n i18n-key="modul:description"></m-i18n>
+                            </th>
+                        </thead>
+                        <tr>
+                            <td><b>{{attribute}}</b>:{{getAttribute(attribute).type}}</td>
+                            <td>
+                                <span v-for="(value, index) in getValues(getAttribute(attribute))" :class="{default: isDefault(getAttribute(attribute), value)}">{{value}}
                             <span v-if="index < getValuesCount(getAttribute(attribute)) - 1">/</span>
-                            <span></span>
-                            </span>
-                        </td>
-                        <td>
-                            <span><m-i18n :i18n-key="getAttribute(attribute).description"></m-i18n></span>
-                        </td>
-                    </tr>
-                </table>
+                                <span></span>
+                                </span>
+                            </td>
+                            <td>
+                                <span><m-i18n :i18n-key="getAttribute(attribute).description"></m-i18n></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
             </div>
-
+            <router-view></router-view>
         </div>
-
-
-    </div>
-</transition>
+    </transition>
+</div>
