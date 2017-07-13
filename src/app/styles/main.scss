@@ -20,6 +20,7 @@
 @import '~@ulaval/modul-components/dist/styles/base/base';
 @import 'base/base';
 @import 'base/typography';
+@import 'base/animations';
 
 // ======================================================================
 //  Layout
@@ -27,6 +28,7 @@
 @import 'layout/header';
 @import 'layout/body';
 @import 'layout/footer';
+@import 'layout/menu';
 
 // ======================================================================
 //  Pages

@@ -1,5 +1,5 @@
-<div class="modul-component-page">
-    <section class="modul-component-page__header" :style="{'zIndex' : setZindex}">
+<transition name="slide-fade" mode="out-in">
+    <div class="modul-component" v-if="!getIsPageComponent">
 
         <div class="modul-component-page__header__wrap">
             <div ref="dropdown" class="modul-component-page__title">
