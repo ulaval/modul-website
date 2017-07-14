@@ -1,4 +1,13 @@
+html {
+    overflow-y: scroll;
+}
+
 body,
 .modul-body {
     background-color: $modul-body;
+}
+
+.test {
+    background-color: gray !important;
+    color: yellow !important;
 }

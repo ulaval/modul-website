@@ -1,50 +1,28 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+.modul {
+    padding-top: $modul-header--height;
+}
 
 .modul-header {
-    transition: margin-top 0.3s ease;
 
-    // position: relative;
+    // menu opening animation
+    transition: background-color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1001;
     width: 100%;
     height: $modul-header--height;
-    box-shadow: 0 2px 2px 1px rgba($m-color--grey-light, 0.5);
     background: $m-color--white;
     display: flex;
     align-content: space-between;
     align-items: center;
 
-    &__nav {
-        display: flex;
-        height: 100%;
-        align-content: space-between;
-        align-items: center;
-        margin-right: $m-padding * 2;
-    }
-
-    &__link {
-        font-weight: $m-font-weight--bold;
-        font-size: $m-font-size--s;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: $m-color--grey-dark;
-
-        &:visited {
-            color: $m-color--grey-darker;
-        }
-
-        &:not(:last-child) {
-            padding-right: $m-padding * 2;
-        }
-
-        &.is-active {
-            color: $m-color--black;
-        }
+    &:not(&--menu-is-open) {
+        box-shadow: 0 2px 2px 1px rgba($m-color--grey-light, 0.5);
     }
 
     &__search {
@@ -56,10 +34,91 @@
         align-items: center;
         color: $m-color--white;
     }
+
+    // menu opening animation
+    &.modul-header--menu-is-open {
+        background-color: $modul-color--grey--darker;
+    }
 }
 
-.modul {
-    padding-top: $modul-header--height;
+.modul-header__nav {
+    display: flex;
+    height: 100%;
+    align-content: space-between;
+    align-items: center;
+    margin-right: $m-padding * 2;
+
+    .modul-header:not(.modul-header--home) & {
+        flex: 1;
+    }
+}
+
+.modul-header__link {
+    &,
+    &:visited {
+        color: $modul-color--fadded-dark-grey;
+    }
+
+    font-weight: $m-font-weight--black;
+    font-size: $m-font-size--s;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+
+    &:not(:last-child) {
+        padding-right: $m-padding * 2;
+    }
+
+    // square dot
+    &::after {
+        content: "";
+        display: inline-block;
+        background-color: $modul-color--fadded-dark-grey;
+        width: 4px;
+        height: 4px;
+        margin-left: 4px;
+        transition: background-color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+    }
+
+    // modifiers
+    &:hover,
+    &.router-link-active {
+        color: $m-color--black;
+    }
+
+    &.router-link-active::after {
+        background-color: $m-color--yellow;
+    }
+
+    &:hover::after {
+        background-color: $m-color--black;
+    }
+
+    // when menu is open
+    .modul-header--menu-is-open & {
+        &,
+        &:visited {
+            color: $modul-color--fadded-grey;
+        }
+
+        // square dot
+        &::after {
+            background-color: $modul-color--fadded-grey;
+        }
+
+        &:hover,
+        &.router-link-active {
+            color: $m-color--white;
+        }
+
+        &.router-link-active::after {
+            background-color: $m-color--yellow;
+        }
+
+        &:hover::after {
+            background-color: $m-color--white;
+        }
+    }
 }
 
 .modul-logo {
@@ -68,24 +127,32 @@
     user-select: none;
     margin: 0;
     padding: 0 $m-padding--l;
+    transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
 
-    a {
-        color: $m-color--grey-darker;
+    &,
+    a,
+    a:visited {
+        color: $modul-color--grey--darker;
         text-decoration: none;
         font-weight: 400;
     }
 
     b {
         font-weight: 600;
-        color: $m-color--grey-dark;
+        color: $modul-color--grey--darker;
     }
 
     &.modul-logo--small {
         font-size: 12px;
     }
-}
 
-.test {
-    background-color: gray !important;
-    color: yellow !important;
+    // when menu is open
+    .modul-header--menu-is-open & {
+        &,
+        a,
+        a:visited,
+        b {
+            color: $m-color--white;
+        }
+    }
 }

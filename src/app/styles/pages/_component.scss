@@ -89,23 +89,6 @@ $modul-component-page--header-min-height: 200px;
     background-color: $modul-body;
 }
 
-.slide-fade-enter-active {
-    transition: all 0.5s ease;
-}
-
-.slide-fade-leave-active {
-    transition: all 0.5s ease;
-}
-
-.slide-fade-enter,
-.slide-fade-leave-to {
-    opacity: 0;
-}
-
-.slide-fade-enter {
-    transform: translateY(30px);
-}
-
 //////////////////////////////////////////////////////////////////
 $modul-component-padding: $m-padding--l;
 
