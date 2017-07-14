@@ -1,8 +1,12 @@
-import { ComponentRoute } from './components-meta-state';
 import { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
-export type ComponentRouteMap = {
-    [key: string]: ComponentRoute;
+export interface RouteInfo {
+    url: string;
+    name: string;
+}
+
+export type RouteMap = {
+    [key: string]: RouteInfo;
 };
 
 export class ModulState {
@@ -10,7 +14,8 @@ export class ModulState {
     public languageLoaded: string | undefined = undefined;
     public iconsLoaded: string | undefined = undefined;
 
-    public componentRoutes: ComponentRouteMap = {};
+    public categoryRoutes: RouteMap = {};
+    public componentRoutes: RouteMap = {};
     public component: ComponentMeta | undefined = undefined;
     public category: string | undefined = undefined;
 }

@@ -11,40 +11,39 @@ export const COMPONENT_GET: string = 'COMPONENT_GET';
 export const MESSAGES_GET: string = 'MESSAGES_GET';
 export const ICONS_GET: string = 'ICONS_GET';
 
+// COMPONENTS_META_GET
 export const getComponentsMetaAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, language: string) => {
     return new Promise((resolve, reject) => {
         if (!context.state.metaLoaded || context.state.metaLoaded != language) {
             context.commit(ModulMutations.COMPONENTS_META_GET);
 
-            (require as any).ensure(['@ulaval/modul-components/dist/meta/meta-all'], () => {
-                let metaModule = require('@ulaval/modul-components/dist/meta/meta-all');
-                Vue.use(metaModule.default, Meta);
+            (require as any).ensure(['@ulaval/modul-components/dist/meta/meta-fr'], () => {
+                let languageModule = require('@ulaval/modul-components/dist/meta/meta-fr');
+                Vue.use(languageModule.default);
 
-                (require as any).ensure(['@ulaval/modul-components/dist/meta/meta-fr'], () => {
-                    let languageModule = require('@ulaval/modul-components/dist/meta/meta-fr');
-                    Vue.use(languageModule.default);
+                context.commit(ModulMutations.COMPONENTS_META_GET_SUCCESS, FRENCH);
 
-                    context.commit(ModulMutations.COMPONENTS_META_GET_SUCCESS, FRENCH);
+                if (context.state.component) {
+                    context.dispatch(COMPONENT_GET, context.state.component.tag);
+                }
 
-                    if (context.state.component) {
-                        context.dispatch(COMPONENT_GET, context.state.component.tag);
-                    }
-
-                    resolve();
-                });
+                resolve();
             });
         }
     });
 };
 
+// CATEGORY_GET
 export const getCategoryAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, category: string) => {
     context.commit(ModulMutations.CATEGORY_GET, category);
 };
 
+// COMPONENT_GET
 export const getComponentAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, tag: string) => {
     context.commit(ModulMutations.COMPONENT_GET, Meta.getMetaByTag(tag));
 };
 
+// MESSAGES_GET
 export const getMessagesAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, language: string) => {
     return new Promise((resolve, reject) => {
         if (!context.state.languageLoaded || context.state.languageLoaded != language) {
@@ -60,6 +59,7 @@ export const getMessagesAction: Action<ModulState, ModulState> = async (context:
     });
 };
 
+// ICONS_GET
 export const getIconsAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, icons: string) => {
     return new Promise((resolve, reject) => {
         if (!context.state.iconsLoaded || context.state.iconsLoaded != icons) {

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './components.html?style=./components.scss';
+import { Watch } from 'vue-property-decorator';
 import { ModulWebsite } from '../modul-website';
 import * as ModulActions from '@/app/store/actions';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
@@ -44,12 +45,21 @@ export class Components extends ModulWebsite {
         this.categories.forEach((category, index) => this.categoriesMap[category.id] = index);
     }
 
+    protected mounted(): void {
+        this.getMeta();
+    }
+
+    @Watch('$route')
+    private getMeta(): void {
+        this.$store.dispatch(ModulActions.CATEGORY_GET, this.$route.meta);
+    }
+
     private getText(category: Category): string {
         return category.text;
     }
 
     private onCategorySelected(category: Category): void {
-        this.$store.dispatch(ModulActions.CATEGORY_GET, category.id);
+        this.navigateToCategory(category.id);
     }
 
     private getPreviousCategory(): void {
@@ -59,7 +69,7 @@ export class Components extends ModulWebsite {
             if (index < 0) {
                 index = this.categories.length - 1;
             }
-            this.$store.dispatch(ModulActions.CATEGORY_GET, this.categories[index].id);
+            this.navigateToCategory(this.categories[index].id);
         }
     }
 
@@ -70,28 +80,22 @@ export class Components extends ModulWebsite {
             if (index >= this.categories.length) {
                 index = 0;
             }
-            this.$store.dispatch(ModulActions.CATEGORY_GET, this.categories[index].id);
+            this.navigateToCategory(this.categories[index].id);
         }
     }
 
-    private get categoryComponents(): ComponentMeta[] {
-        let result: ComponentMeta[] = [];
-        if (this.state.category) {
-            result = Meta.getMetaByCategory(this.state.category);
-        }
-        return result;
+    private navigateToCategory(category: string): void {
+        this.$router.push(this.state.categoryRoutes[category].url);
     }
 
     private get selectedCategory(): Category | undefined {
         let result: Category | undefined = undefined;
         if (this.state.category) {
             result = this.categories[this.categoriesMap[this.state.category]];
+        } else {
+            result = this.categories[this.categoriesMap[this.$route.meta]];
         }
         return result;
-    }
-
-    private onComponentClick(tag: string): void {
-        this.$router.push(this.state.componentRoutes[tag].url);
     }
 
     private onOpen(isListOpened: boolean): void {

@@ -18,9 +18,9 @@ const mutations: MutationTree<ModulState> = {
     [ModulMutations.COMPONENTS_META_GET]: ModulMutations.getComponentsMeta,
     [ModulMutations.COMPONENTS_META_GET_SUCCESS]: ModulMutations.getComponentsMetaSucces,
     // Category
-    [ModulMutations.CATEGORY_GET]: ModulMutations.getCategorySucces,
+    [ModulMutations.CATEGORY_GET]: ModulMutations.getCategory,
     // Component
-    [ModulMutations.COMPONENT_GET]: ModulMutations.getComponentSucces,
+    [ModulMutations.COMPONENT_GET]: ModulMutations.getComponent,
     // Messages
     [ModulMutations.MESSAGES_GET]: ModulMutations.getMessages,
     [ModulMutations.MESSAGES_GET_SUCCESS]: ModulMutations.getMessagesSucces,
