@@ -3,8 +3,9 @@
 
         <div class="modul-component-page__header__wrap">
             <div ref="dropdown" class="modul-component-page__title">
-                <m-dropdown :elements="categories" :get-text-element="getText" @elementSelected="onCategorySelected($event)"
-                    :default-first-element="true" @open="onOpen($event)" :selectedElement="selectedCategory" :sort="false">
+                <m-dropdown :elements="categories" width-from-css="true" :get-text-element="getText" @elementSelected="onCategorySelected($event)"
+                    :default-first-element="true" :open="listOpened" @open="onOpen($event)" :selectedElement="selectedCategory"
+                    :sort="false">
                 </m-dropdown>
             </div>
 
@@ -42,17 +43,15 @@
                             <m-i18n :i18n-key="meta.name"></m-i18n>
                             <!--</m-link>-->
                         </h2>
-                        <span class="modul-card__tagname">
-                        <m-i18n :i18n-key="meta.name"></m-i18n>
 
-                    </span>
+                        <m-i18n class="modul-card__tagname" :i18n-key="meta.name"></m-i18n>
+
                     </header>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, deleniti dolores facilis aut, maxime
                         sequi ullam suscipit deserunt quam obcaecati totam nisi magni ipsum ut dolorem fuga nostrum pariatur
                         provident.
                     </p>
-
 
                 </div>
                 <!--</div>-->

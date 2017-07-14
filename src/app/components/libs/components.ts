@@ -20,11 +20,11 @@ type CategoryIndexMap = {
 @Component
 export class Components extends ModulWebsite {
 
-    // private isScrolling: Boolean = false;
+    private isScrolling: Boolean = false;
     private hasScrolled: boolean = false;
-    private isListOpened: boolean = false;
-    // private scrollPosition: Number = 0;
-    // private bodyElement: HTMLElement = document.body;
+    private listOpened: boolean = false;
+    private scrollPosition: Number = 0;
+    private bodyElement: HTMLElement = document.body;
 
     private categories: Category[] = [];
     private categoriesMap: CategoryIndexMap = {};
@@ -42,6 +42,7 @@ export class Components extends ModulWebsite {
         });
 
         this.categories.forEach((category, index) => this.categoriesMap[category.id] = index);
+
     }
 
     private getText(category: Category): string {
@@ -94,38 +95,31 @@ export class Components extends ModulWebsite {
         this.$router.push(this.state.componentRoutes[tag].url);
     }
 
-    private onOpen(isListOpened: boolean): void {
-        this.isListOpened = isListOpened;
+    private onOpen(listOpened: boolean): void {
+        this.listOpened = listOpened;
         // reset the scroll
         this.hasScrolled = false;
     }
 
     private get zIndex(): number {
-        if (this.isListOpened && !this.hasScrolled) {
+        if (this.listOpened && !this.hasScrolled) {
             return ZINDEX;
         } else {
             return 0;
         }
     }
 
-    /*
-
-    // private animDropDownOnScroll(scrollPosition): void {
-    //     let position = this.$refs.dropdown['scrollHeight'];
-    //     this.$refs.dropdown['style'].transform = 'translate3d(0,' + (position + scrollPosition) + ', 0)';
-    // }
-
     // https://gomakethings.com/detecting-when-a-visitor-has-stopped-scrolling-with-vanilla-javascript/
     private onScroll(): void {
 
-        let isScrolling;
+        let isScrolling: any = undefined;
 
         // Clear our timeout throughout the scroll
         window.clearTimeout(isScrolling);
 
         this.isScrolling = true;
         this.hasScrolled = true;
-        this.isListOpened = false;
+        this.listOpened = false;
 
         // Set a timeout to run after scrolling ends
         isScrolling = setTimeout(() => {
@@ -133,7 +127,6 @@ export class Components extends ModulWebsite {
             // Run the callback
             this.isScrolling = false;
             this.scrollPosition = this.bodyElement.scrollTop;
-            // console.log('Scrolling has stopped: ' + this.scrollPosition);
 
         }, 66);
 
@@ -141,10 +134,9 @@ export class Components extends ModulWebsite {
 
     private mounted(): void {
         window.addEventListener('scroll', this.onScroll);
-        console.log(this.$store.state.componentRoutes);
     }
 
     private destroyed() {
         window.removeEventListener('mousedown', this.onScroll);
-    } */
+    }
 }

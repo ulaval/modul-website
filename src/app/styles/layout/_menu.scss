@@ -14,18 +14,16 @@
     background: $modul-color--grey--dark;
     padding: $m-padding--l*2 $m-padding--l $m-padding--l*2 $m-padding--l;
     color: $modul-color--grey--light;
-
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .modul-menu__list {
-    float: left;
+    list-style: none;
     padding: 0 16px;
     min-width: 320px;
+    margin: 0 0 28px;
 }
 
 .modul-menu__title {
@@ -52,7 +50,7 @@
 
     text-decoration: none;
     display: block;
-    margin: 20px 0;
+    margin: 14px 0;
     padding: 8px $modul-menu-offset-left 4px;
     margin-left: -$modul-menu-offset-left;
     border-left: 2px solid transparent;
