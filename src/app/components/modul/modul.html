@@ -1,5 +1,5 @@
-<div class="modul">
-    <header ref="header" class="modul-header" :class="{'modul-header--menu-is-open' : menuOpen, 'modul-header--home' : isHome}">
+<div class="modul" :class="{'modul--menu-is-open' : menuOpen, 'modul--at-home' : isHome}">
+    <header ref="header" class="modul-header">
         <h1 class="modul-logo" v-if="isHome">
             <router-link to="/">MOD<b>UL</b></router-link>
         </h1>
@@ -50,7 +50,7 @@
         <nav class="modul-menu" v-if="headerAnimationCompleted">
             <ul v-for="category in categories" class="modul-menu__list">
                 <li>
-                    <span @click="onCategoryClick(category)" class="modul-menu__title">
+                    <span @click="onCategoryClick(category)" class="modul-u--highlighted-title">
                         <span>{{category.text}}</span>
                     </span>
                 </li>

@@ -21,7 +21,7 @@
     align-content: space-between;
     align-items: center;
 
-    &:not(&--menu-is-open) {
+    .modul:not(.modul--menu-is-open):not(.modul--at-home) & {
         box-shadow: 0 2px 2px 1px rgba($m-color--grey-light, 0.5);
     }
 
@@ -36,8 +36,12 @@
     }
 
     // menu opening animation
-    &.modul-header--menu-is-open {
+    .modul--menu-is-open & {
         background-color: $modul-color--grey--darker;
+    }
+
+    .modul--at-home:not(.modul--menu-is-open) & {
+        background-color: $modul-color--grey--dark;
     }
 }
 
@@ -48,7 +52,7 @@
     align-items: center;
     margin-right: $m-padding * 2;
 
-    .modul-header:not(.modul-header--home) & {
+    .modul:not(.modul--at-home) & {
         flex: 1;
     }
 }
@@ -95,7 +99,8 @@
     }
 
     // when menu is open
-    .modul-header--menu-is-open & {
+    .modul--at-home &,
+    .modul--menu-is-open & {
         &,
         &:visited {
             color: $modul-color--fadded-grey;
@@ -147,7 +152,8 @@
     }
 
     // when menu is open
-    .modul-header--menu-is-open & {
+    .modul--at-home &,
+    .modul--menu-is-open & {
         &,
         a,
         a:visited,

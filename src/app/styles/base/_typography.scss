@@ -106,3 +106,20 @@ small {
 a {
     color: $m-color--primary;
 }
+
+.modul-u--highlighted-title {
+    margin: 0;
+    position: relative;
+    color: $m-color--white;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &::before {
+        content: "";
+        display: block;
+        margin-bottom: 16px;
+        width: 32px;
+        height: 4px;
+        background-color: $modul-color--yellow;
+    }
+}
