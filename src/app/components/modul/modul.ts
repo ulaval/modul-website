@@ -93,12 +93,12 @@ export default class Modul extends ModulWebsite {
 
         } else {
 
-            this.$mWindow.stopScollBody();
             let anim = setTimeout(() => {
                 this.headerAnimationCompleted = true;
             }, CSS_ANIMATION_HEADER_DURATION);
 
             this.menuOpen = true;
+            this.$mWindow.stopScollBody();
         }
 
         clearTimeout(anim);

@@ -9,7 +9,7 @@
     display: flex;
     align-content: center;
     background-color: $modul-color--grey--dark;
-    background-image: url(/assets/grid.svg), linear-gradient(to bottom, rgba(44, 61, 68, 1) 35%, rgba(31, 49, 57, 1) 100%);
+    background-image: url(/assets/grid.svg), linear-gradient(to bottom, rgba($modul-color--grey--dark, 1) 35%, rgba($modul-color--grey--darker, 1) 100%);
     z-index: 1;
     position: fixed;
 }
@@ -123,14 +123,16 @@
 .modul-design {
     position: relative;
     z-index: 2;
-    margin-top: 100vh;
+    margin-top: 150vh;
 }
 
 .modul-design__header {
     background-color: $modul-color--grey--dark;
+    background-image: linear-gradient(to bottom, rgba($modul-color--grey--darker, 1) 0%, rgba($modul-color--grey--dark, 1) 30%);
     padding: $m-padding--xl $m-padding--l;
     display: flex;
     color: $m-color--white;
+    position: relative;
 
     > div {
         flex: 1;

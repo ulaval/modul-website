@@ -3,8 +3,8 @@
 
         <div class="modul-component-page__header__wrap">
             <div ref="dropdown" class="modul-component-page__title">
-                <m-dropdown :elements="components" :get-text-element="getText" @elementSelected="onComponentSelected($event)"
-                    :default-first-element="false" @open="onOpen($event)" :selectedElement="selectedComponent" :sort="false">
+                <m-dropdown :elements="components" :get-text-element="getText" @elementSelected="onComponentSelected($event)" :default-first-element="false"
+                    @open="onOpen($event)" :selectedElement="selectedComponent" :sort="false">
                 </m-dropdown>
             </div>
         </div>
@@ -20,5 +20,7 @@
         </div>
     </section>
 
-    <router-view></router-view>
+    <transition name="slide-fade" mode="out-in">
+        <router-view></router-view>
+    </transition>
 </div>

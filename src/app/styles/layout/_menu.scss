@@ -26,6 +26,12 @@
     margin: 0 0 28px;
 }
 
+.modul-menu__title {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .modul-menu__link {
     $modul-menu-transition-duration: 0.7s;
 

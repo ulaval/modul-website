@@ -11,23 +11,21 @@
             <router-link :to="writingRules" class="modul-header__link">
                 <m-i18n i18n-key="modul:writing-rules"></m-i18n>
             </router-link>
-            <router-link :to="components" class="modul-header__link">
+            <a href="#" @click.prevent="showMenu()" class="modul-header__link">
                 <m-i18n i18n-key="modul:components"></m-i18n>
-            </router-link>
+            </a>
             <router-link :to="ecosystem" class="modul-header__link">
                 <m-i18n i18n-key="modul:ecosystem"></m-i18n>
             </router-link>
         </nav>
-        <div class="modul-header__search" @click="showMenu()">
+        <div class="modul-header__search">
             <m-icon name="search"></m-icon>
         </div>
     </header>
 
     <main class="modul-body">
         <div class="modul-page">
-            <transition name="slide-fade" mode="out-in" appear>
-                <router-view></router-view>
-            </transition>
+            <router-view></router-view>
         </div>
     </main>
 
@@ -50,7 +48,7 @@
         <nav class="modul-menu" v-if="headerAnimationCompleted">
             <ul v-for="category in categories" class="modul-menu__list">
                 <li>
-                    <span @click="onCategoryClick(category)" class="modul-u--highlighted-title">
+                    <span @click="onCategoryClick(category)" class="modul-menu__title modul-u--highlighted-title">
                         <span>{{category.text}}</span>
                     </span>
                 </li>

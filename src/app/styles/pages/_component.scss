@@ -35,6 +35,9 @@ $modul-component-page--header-min-height: 200px;
     &__arrow-right {
         right: 5px;
     }
+
+    width: 100%;
+    max-width: 1000px;
 }
 
 .modul-component-page__header {
@@ -87,6 +90,7 @@ $modul-component-page--header-min-height: 200px;
     position: relative;
     z-index: 3;
     background-color: $modul-body;
+    max-width: 1000px;
 }
 
 //////////////////////////////////////////////////////////////////
