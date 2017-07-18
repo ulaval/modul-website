@@ -6,6 +6,7 @@ import { WritingRules } from './components/writing-rules/writing-rules';
 import { Category } from './components/libs/category';
 import { Components } from './components/libs/components';
 import { ComponentViewer } from './components/libs/component';
+import { ComponentDetails } from './components/libs/component-details';
 import { ComponentOverview } from './components/libs/component-overview';
 import { ComponentProperties } from './components/libs/component-properties';
 import { Ecosystem } from './components/ecosystem/ecosystem';
@@ -56,17 +57,45 @@ export const ROUTES: RoutePathMap = {
     [CATEGORY_NAVIGATION]: CATEGORY_NAVIGATION_FR
 };
 
+const modulRoutes: RouteConfig[] = [];
 const categoryRoutes: RouteConfig[] = [];
+const componentRoutes: RouteConfig[] = [];
 
 Meta.getCategories().forEach(category => {
     categoryRoutes.push({
-        path: `/${ROUTES[COMPONENTS]}/${ROUTES[category]}`,
+        path: ROUTES[category],
         meta: category,
         component: Category
     });
+
+    modulRoutes.push({
+        path: `/${ROUTES[COMPONENTS]}/${ROUTES[category]}/all`,
+        component: ComponentViewer,
+        children: componentRoutes
+    });
+
+    Meta.getMetaByCategory(category).forEach(componentMeta => {
+        componentRoutes.push({
+            path: `/${ROUTES[COMPONENTS]}/${ROUTES[category]}/${componentMeta.tag}`,
+            meta: componentMeta.tag,
+            component: ComponentDetails,
+            children: [
+                {
+                    path: ROUTES[COMPONENT_PROPERTIES],
+                    meta: componentMeta.tag,
+                    component: ComponentProperties
+                },
+                {
+                    path: '',
+                    meta: componentMeta.tag,
+                    component: ComponentOverview
+                }
+            ]
+        });
+    });
 });
 
-const modulRoutes: RouteConfig[] = [
+modulRoutes.push(
     {
         path: '/',
         component: UnifiedExperience
@@ -88,27 +117,7 @@ const modulRoutes: RouteConfig[] = [
         path: '/' + ROUTES[ECOSYSTEM],
         component: Ecosystem
     }
-];
-
-Meta.getTags().forEach(tag => {
-    modulRoutes.push({
-        path: `/${ROUTES[COMPONENTS]}/${tag}`,
-        meta: tag,
-        component: ComponentViewer,
-        children: [
-            {
-                path: ROUTES[COMPONENT_PROPERTIES],
-                meta: tag,
-                component: ComponentProperties
-            },
-            {
-                path: '',
-                meta: tag,
-                component: ComponentOverview
-            }
-        ]
-    });
-});
+);
 
 export default new Router({
     mode: 'history',

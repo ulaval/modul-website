@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Mutation } from 'vuex';
 import { ModulState } from './modul-state';
-import { ROUTES } from '../router';
+import { ROUTES, COMPONENTS } from '../router';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
@@ -27,19 +27,17 @@ export class ModulMutations {
     // Components - COMPONENTS_META_GET_SUCCESS
     public static getComponentsMetaSucces: Mutation<ModulState> = (state: ModulState, language: string) => {
         let i18n: Messages = (Vue as any).$i18n;
-        let componentUrlPart: string = i18n.translate('modul:components-url') + '/';
+        let componentUrlPart: string = '/' + ROUTES[COMPONENTS] + '/';
 
         Meta.getCategories().forEach(category => {
-            let categoryUrl: string = ROUTES[category];
-
             state.categoryRoutes[category] = {
-                url: '/' + componentUrlPart + categoryUrl,
+                url: componentUrlPart + ROUTES[category],
                 name: i18n.translate(category)
             };
 
             Meta.getMetaByCategory(category).forEach(meta => {
                 state.componentRoutes[meta.tag] = {
-                    url: '/' + componentUrlPart + meta.tag,
+                    url: componentUrlPart + ROUTES[category] + '/' + meta.tag,
                     name: meta.name ? meta.name : ''
                 };
             });
