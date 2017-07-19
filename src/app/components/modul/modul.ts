@@ -3,6 +3,7 @@ import { ModulWebsite } from '../modul-website';
 import Component from 'vue-class-component';
 import WithRender from './modul.html?style=./modul.scss';
 import * as ModulActions from '@/app/store/actions';
+import { Watch } from 'vue-property-decorator';
 import { ROUTES, COMPONENTS, ECOSYSTEM, VISUAL_STANDARDS, WRITING_RULES } from '@/app/router';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
@@ -71,37 +72,45 @@ export default class Modul extends ModulWebsite {
 
     private onComponentClick(tag: string): void {
         this.$router.push(this.state.componentRoutes[tag].url);
-        this.showMenu();
+        this.closeMenu();
     }
 
     private onCategoryClick(category: Category): void {
         this.$router.push(this.state.categoryRoutes[category.id].url);
-        this.showMenu();
+        this.closeMenu();
     }
 
     private showMenu(): void {
 
-        this.headerAnimationCompleted = false;
-        let anim: any = undefined;
+        if (this.menuOpen) {
+
+            this.closeMenu();
+
+        } else {
+            this.menuOpen = true;
+
+            let anim = setTimeout(() => {
+                this.headerAnimationCompleted = true;
+                this.$mWindow.stopScollBody();
+            }, CSS_ANIMATION_HEADER_DURATION);
+
+        }
+
+    }
+
+    @Watch('$route')
+    private closeMenu(): void {
 
         if (this.menuOpen) {
+
+            this.headerAnimationCompleted = false;
 
             let anim = setTimeout(() => {
                 this.menuOpen = false;
                 this.$mWindow.activeScollBody();
             }, CSS_ANIMATION_MENU_DURATION);
 
-        } else {
-
-            let anim = setTimeout(() => {
-                this.headerAnimationCompleted = true;
-            }, CSS_ANIMATION_HEADER_DURATION);
-
-            this.menuOpen = true;
-            this.$mWindow.stopScollBody();
         }
-
-        clearTimeout(anim);
 
     }
 

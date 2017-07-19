@@ -221,3 +221,34 @@
         margin: $m-padding;
     }
 }
+
+// modul-novelty
+
+.modul-novelty {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background-color: $modul-color--grey--dark;
+    padding: 0 $m-padding--l $m-padding--xl;
+
+    &__content {
+        color: $m-color--white;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: $m-padding--xl;
+    }
+}
+
+.modul-novelty__title {
+    background-color: $modul-color--yellow;
+    color: $modul-color--grey--dark;
+    text-transform: uppercase;
+    font-size: 32px;
+    padding: 10px;
+    margin: 0;
+    display: inline-block;
+    font-weight: $m-font-weight--black;
+    margin-top: -30px;
+    margin-bottom: $m-padding;
+}

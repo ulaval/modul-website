@@ -20,10 +20,21 @@
     padding: 0 $m-padding--l;
 }
 
+.modul-footer__link {
+    &,
+    &:visited {
+        color: $modul-color--grey--dark;
+        text-decoration: none;
+    }
+}
+
 .modul-version {
     padding: $m-padding;
     text-align: center;
     font-size: 12px;
-    // color: $m-color--grey;
-    // background-color: $modul-color--grey--dark;
+
+    .modul--at-home & {
+        background-color: $modul-color--grey--dark;
+        color: $modul-color--grey;
+    }
 }

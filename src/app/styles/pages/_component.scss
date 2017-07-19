@@ -38,6 +38,7 @@ $modul-component-page--header-min-height: 200px;
 
     width: 100%;
     max-width: 1000px;
+    padding: 0 $m-padding--l;
 }
 
 .modul-component-page__header {
@@ -90,7 +91,6 @@ $modul-component-page--header-min-height: 200px;
     position: relative;
     z-index: 3;
     background-color: $modul-body;
-    max-width: 1000px;
 }
 
 //////////////////////////////////////////////////////////////////

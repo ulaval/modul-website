@@ -156,7 +156,10 @@
     .modul--menu-is-open & {
         &,
         a,
-        a:visited,
+        a:visited {
+            color: $modul-color--grey;
+        }
+
         b {
             color: $m-color--white;
         }
