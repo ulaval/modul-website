@@ -1,3 +1,22 @@
-<div>
-    overview
+<div class="modul-component__body">
+
+    <div v-for="(item, index) in state.component.overview">
+        <template v-if="isRubric(item)">
+            <h3 :class="{'m-no-margin-top' : index == 0}">
+                <m-i18n :i18n-key="item.title"></m-i18n>
+            </h3>
+            <p>
+                <m-dynamic-template :template="getItemContent(item)"></m-dynamic-template>
+            </p>
+        </template>
+        <template v-else-if="isDo(item)">
+            <h2>:)</h2>
+            <m-dynamic-template :template="getItemContent(item)"></m-dynamic-template>
+        </template>
+        <template v-else="isDont(item)">
+            <h2>:(</h2>
+            <m-dynamic-template :template="getItemContent(item)"></m-dynamic-template>
+        </template>
+    </div>
+
 </div>

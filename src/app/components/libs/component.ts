@@ -23,6 +23,7 @@ export class ComponentViewer extends ModulWebsite {
 
     private hasScrolled: boolean = false;
     private isListOpened: boolean = false;
+    // private translatedCategory: string = '';
 
     private components: Component[] = [];
     private componentsMap: ComponentIndexMap = {};
@@ -44,11 +45,26 @@ export class ComponentViewer extends ModulWebsite {
             });
 
             this.components.forEach((component, index) => this.componentsMap[component.tag] = index);
+
         }
     }
 
     protected mounted(): void {
         this.getMeta();
+    }
+
+    private back(category): void {
+        this.$router.push(this.state.categoryRoutes[category].url);
+    }
+
+    private get translatedCategory(): string {
+
+        if (this.state.component && this.state.component.category) {
+            return this.$i18n.translate(this.state.component.category);
+        } else {
+            return '';
+        }
+
     }
 
     @Watch('$route')

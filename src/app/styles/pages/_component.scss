@@ -94,8 +94,6 @@ $modul-component-page--header-min-height: 200px;
 }
 
 //////////////////////////////////////////////////////////////////
-$modul-component-padding: $m-padding--l;
-
 .modul-component {
     background-color: $m-color--white;
     position: relative;
@@ -105,12 +103,29 @@ $modul-component-padding: $m-padding--l;
 
 .modul-component__header {
     background-color: $modul-color--grey--darker;
-    padding: $modul-component-padding;
+    padding: $m-padding--l;
     border-radius: $modul-border-radius $modul-border-radius 0 0;
 }
 
 .modul-component__preview {
-    padding: $modul-component-padding;
+    padding: $m-padding--xl $m-padding--l;
+}
+
+.modul-component__back {
+    text-decoration: none;
+    font-size: 10px;
+    display: inline-flex;
+    align-items: center;
+    margin-top: $m-padding;
+    margin-left: $m-padding--l;
+    // font-weight: $m-font-weight--black;
+    position: relative;
+    z-index: 4;
+
+    > span {
+        font-size: 14px;
+        margin-left: 4px;
+    }
 }
 
 .modul-component__nav {
@@ -118,12 +133,29 @@ $modul-component-padding: $m-padding--l;
     border-bottom: 1px solid $modul-color--grey;
     display: flex;
     align-items: center;
-    text-transform: uppercase;
-    font-weight: 400;
+}
 
-    > span {
-        padding: 20px;
+.modul-component__link {
+    &,
+    &:visited {
+        color: $modul-color--fadded-dark-grey;
     }
+
+    font-weight: $m-font-weight--black;
+    font-size: $m-font-size--s;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+
+    &:hover,
+    &:focus,
+    .router-link-active {
+        color: $modul-color--grey--darker;
+    }
+
+    padding: 20px;
+    display: block;
+    text-decoration: none;
 }
 
 .modul-component__title {
@@ -134,6 +166,6 @@ $modul-component-padding: $m-padding--l;
 }
 
 .modul-component__body {
-    padding: $modul-component-padding;
+    padding: $m-padding--l;
 }
 

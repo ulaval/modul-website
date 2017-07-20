@@ -3,8 +3,8 @@ import Router, { RouteConfig } from 'vue-router';
 import { UnifiedExperience } from './components/unified-experience/unified-experience';
 import { VisualStandards } from './components/visual-standards/visual-standards';
 import { WritingRules } from './components/writing-rules/writing-rules';
+import { CategoryList } from './components/libs/category-list';
 import { Category } from './components/libs/category';
-import { Components } from './components/libs/components';
 import { ComponentViewer } from './components/libs/component';
 import { ComponentDetails } from './components/libs/component-details';
 import { ComponentOverview } from './components/libs/component-overview';
@@ -27,6 +27,7 @@ export const WRITING_RULES: string = 'WRITING_RULES';
 export const COMPONENTS: string = 'COMPONENTS';
 export const ECOSYSTEM: string = 'ECOSYSTEM';
 export const COMPONENT_PROPERTIES: string = 'COMPONENT_PROPERTIES';
+export const COMPONENT_OVERVIEW: string = 'COMPONENT_OVERVIEW';
 
 export const VISUAL_STANDARDS_FR: string = 'normes-graphiques';
 export const WRITING_RULES_FR: string = 'regles-editoriales';
@@ -42,6 +43,7 @@ export const CATEGORY_NAVIGATION_FR: string = 'navigation';
 export const CATEGORY_SEARCH_SORT_FR: string = 'recherche-tri';
 
 export const COMPONENT_PROPERTIES_FR: string = 'proprietes';
+export const COMPONENT_OVERVIEW_FR: string = 'portrait';
 
 export const ROUTES: RoutePathMap = {
     [VISUAL_STANDARDS]: VISUAL_STANDARDS_FR,
@@ -49,6 +51,7 @@ export const ROUTES: RoutePathMap = {
     [COMPONENTS]: COMPONENTS_FR,
     [ECOSYSTEM]: ECOSYSTEM_FR,
     [COMPONENT_PROPERTIES]: COMPONENT_PROPERTIES_FR,
+    [COMPONENT_OVERVIEW]: COMPONENT_OVERVIEW_FR,
     [CATEGORY_COMUNICATION]: CATEGORY_COMMUNICATION_FR,
     [CATEGORY_CONTENT]: CATEGORY_CONTENT_FR,
     [CATEGORY_FORMS]: CATEGORY_FORMS_FR,
@@ -65,7 +68,7 @@ Meta.getCategories().forEach(category => {
     categoryRoutes.push({
         path: ROUTES[category],
         meta: category,
-        component: Category
+        component: CategoryList
     });
 
     modulRoutes.push({
@@ -86,7 +89,13 @@ Meta.getCategories().forEach(category => {
                     component: ComponentProperties
                 },
                 {
+                    path: ROUTES[COMPONENT_OVERVIEW],
+                    meta: componentMeta.tag,
+                    component: ComponentOverview
+                },
+                {
                     path: '',
+                    redirect: ROUTES[COMPONENT_OVERVIEW],
                     meta: componentMeta.tag,
                     component: ComponentOverview
                 }
@@ -110,7 +119,7 @@ modulRoutes.push(
     },
     {
         path: '/' + ROUTES[COMPONENTS],
-        component: Components,
+        component: Category,
         children: categoryRoutes
     },
     {

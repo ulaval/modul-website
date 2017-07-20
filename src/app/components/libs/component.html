@@ -1,6 +1,9 @@
 <div class="modul-component-page">
     <section class="modul-component-page__header" :style="{'zIndex' : zIndex}">
-
+        <a href="#" @click.prevent="back(state.component.category)" class="modul-component__back">
+            <m-icon name="left-chevron"></m-icon>
+            <span>{{translatedCategory}}</span>
+        </a>
         <div class="modul-component-page__header__wrap">
             <div ref="dropdown" class="modul-component-page__title">
                 <m-dropdown :elements="components" :get-text-element="getText" @elementSelected="onComponentSelected($event)" :default-first-element="false"
@@ -10,12 +13,12 @@
         </div>
         <div class="modul-component-page__arrow-left">
             <a href="#" @click.prevent="getPreviousComponent()">
-                <span>&lt;</span>
+                <m-icon name="left-chevron"></m-icon>
             </a>
         </div>
         <div class="modul-component-page__arrow-right">
             <a href="#" @click.prevent="getNextComponent()">
-                <span>&gt;</span>
+                <m-icon name="right-chevron"></m-icon>
             </a>
         </div>
     </section>
