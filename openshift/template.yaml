@@ -1,0 +1,94 @@
+kind: Template
+apiVersion: v1
+metadata:
+  name: template-ul
+  annotations:
+    openshift.io/display-name: template-ul
+    description: ''
+    tags: ''
+    iconClass: icon-node
+    template.openshift.io/long-description: ''
+    template.openshift.io/provider-display-name: Université Laval
+message: ''
+labels:
+  template: template-ul
+objects:
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: "${NOMENV}"
+  spec:
+    ports:
+    - name: web
+      port: 8083
+      targetPort: 8083
+    selector:
+      name: "${NOMENV}"
+- kind: Route
+  apiVersion: v1
+  metadata:
+    name: "${NOMENV}"
+  spec:
+    host: "${APPLICATION_DOMAIN}"
+    port:
+      targetPort: web
+    path: /
+    to:
+      kind: Service
+      name: "${NOMENV}"
+- kind: DeploymentConfig
+  apiVersion: v1
+  metadata:
+    name: "${NOMENV}"
+  spec:
+    strategy:
+      type: "Rolling"
+    replicas: 1
+    selector:
+      name: "${NOMENV}"
+    template:
+      metadata:
+        labels:
+          name: "${NOMENV}"
+      spec:
+        containers:
+          - name: "container-${NOMENV}"
+            image: ${IMAGE}
+            ports:
+            - containerPort: 8083
+            resources:
+              limits:
+                memory: "${MEMORY_LIMIT}"
+            env: []
+            imagePullPolicy: "Always"
+            readinessProbe:
+              timeoutSeconds: 3
+              initialDelaySeconds: 5
+              httpGet:
+                path: "/"
+                port: 8083
+            livenessProbe:
+              timeoutSeconds: 3
+              initialDelaySeconds: 10
+              httpGet:
+                path: "/"
+                port: 8083
+parameters:
+- name: NOMENV
+  displayName: Nom de l'environnement
+  required: true
+  value: dev
+- name: IMAGE
+  displayName: Tag de l'image docker
+  required: true
+  value: docker-local.maven.at.ulaval.ca/ena2/modul-website:latest
+- name: MEMORY_LIMIT
+  displayName: Memory Limit
+  description: Maximum amount of memory the container can use.
+  required: true
+  value: 1024Mi
+- name: APPLICATION_DOMAIN
+  displayName: Application Hostname
+  description: The exposed hostname that will route to the Node.js service, if left
+    blank a value will be defaulted.
+  value: ''
