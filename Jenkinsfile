@@ -3,8 +3,19 @@ pipeline {
 
     stages {
         stage('Build') {
+            agent {
+                docker {
+                    image 'node:7.10.1-alpine'
+                }
+            }
+
             steps {
-                echo 'Building..'
+                echo 'Building...'
+
+                withNPM() {
+                    echo "npm install..."
+                    sh 'npm install'
+                }
             }
         }
         stage('Test') {
