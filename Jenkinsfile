@@ -12,10 +12,10 @@ pipeline {
             steps {
                 echo 'Building...'
 
-                withNPM() {
+                //withNPM() {
                     echo "npm install..."
                     sh 'npm install'
-                }
+                //}
             }
         }
         stage('Test') {
