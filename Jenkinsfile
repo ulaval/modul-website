@@ -45,6 +45,12 @@ pipeline {
         }
 
         stage('Docker') {
+            agent {
+                docker {
+                    image 'node:8.2-alpine'
+                    reuseNode true
+                }
+            }
 
             steps {
                 sh 'npm run docker-build'
