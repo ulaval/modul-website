@@ -1,5 +1,10 @@
 pipeline {
-    agent { docker 'node:8.2-alpine' }
+    agent any
+
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timestamps()
+    }
 
     environment {
         // Pour éviter une erreur: EACCES: permission denied, mkdir '/.npm'
@@ -8,12 +13,8 @@ pipeline {
 
     stages {
         stage('Build') {
+            agent { docker 'node:8.2-alpine' }
 
-            /*agent {
-                docker {
-                    image 'node:8.2-alpine'
-                }
-            }*/
             steps {
                 sh 'pwd'
                 echo 'Clean up...'
