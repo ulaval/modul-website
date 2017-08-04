@@ -27,7 +27,7 @@ pipeline {
                 sh 'npm run build'
 
                 echo "Packaging..."
-                sh 'npm package'
+                sh 'npm pack'
 
                 stash includes: 'modul-website-*.tgz', name: 'pack'
             }
