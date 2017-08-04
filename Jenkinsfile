@@ -16,12 +16,12 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent {
-                docker {
+            agent { docker 'node:8.2-alpine'}
+                /*docker {
                     image 'node:8.2-alpine'
                     reuseNode true
                 }
-            }
+            }*/
 
             steps {
                 sh 'pwd'
