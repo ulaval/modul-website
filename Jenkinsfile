@@ -10,19 +10,29 @@ pipeline {
             }
 
             steps {
-                echo 'Building...'
+                echo 'Clean up...'
+                sh 'rm -rf dist'
+                sh 'rm -rf node_modules'
 
-                //withNPM() {
-                    echo "npm install..."
-                    sh 'npm install'
-                //}
+                echo "npm install..."
+                sh 'npm install'
+
+                echo "npm run build..."
+                sh 'npm run build'
+
+                echo "npm run build..."
+                sh 'npm run package'
+
+                stash includes: 'modul-website-*.tgz', name: 'pack'
             }
         }
+
         stage('Test') {
             steps {
                 echo 'Testing..'
             }
         }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
