@@ -2,6 +2,7 @@ pipeline {
     // Pour être certain que tous les stages travail dans le même workspace
     agent any
 
+
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
         timestamps()
@@ -16,12 +17,12 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent { docker 'node:8.2-alpine'}
-                /*docker {
+            agent {
+                docker {
                     image 'node:8.2-alpine'
                     reuseNode true
                 }
-            }*/
+            }
 
             steps {
                 sh 'pwd'
@@ -45,25 +46,12 @@ pipeline {
         }
 
         stage('Docker') {
-            agent {
-                docker {
-                    image 'node:8.2-alpine'
-                    reuseNode true
-                }
-            }
-
             steps {
-                sh 'docker build -t docker-local.maven.at.ulaval.ca/modul/modul-website:$npm_package_version .'
+                sh 'docker build -t docker-local.maven.at.ulaval.ca/modul/modul-website:latest .'
 
                 withDockerRegistry(url: DOCKER_REPOSITORY_URL, credentialsId: 'artifactory-docker-registry-credential') {
-                    sh 'npm run docker-push'
+                    sh 'docker push docker-local.maven.at.ulaval.ca/modul/modul-website:latest'
                 }
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
             }
         }
     }
