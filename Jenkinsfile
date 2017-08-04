@@ -1,6 +1,11 @@
 pipeline {
     agent { docker 'node:8.2-alpine' }
 
+    environment {
+        // Pour éviter une erreur: EACCES: permission denied, mkdir '/.npm'
+        npm_config_cache = npm-cache
+    }
+
     stages {
         stage('Build') {
 
