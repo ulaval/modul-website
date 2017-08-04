@@ -1,12 +1,7 @@
 pipeline {
     // Pour être certain que tous les stages travail dans le même workspace
-    // agent {label 'worker'}
     agent {
-        docker {
-            image 'node:8.2-alpine'
-            reuseNode true
-            label 'worker'
-        }
+        label 'worker'
     }
 
     options {
@@ -23,6 +18,13 @@ pipeline {
 
     stages {
         stage('Build') {
+            agent {
+                docker {
+                    image 'node:8.2-alpine'
+                    reuseNode true
+                }
+            }
+
             steps {
                 sh 'pwd'
                 echo 'Clean up...'
@@ -45,6 +47,13 @@ pipeline {
         }
 
         stage('Docker') {
+            agent {
+                docker {
+                    image 'node:8.2-alpine'
+                    reuseNode true
+                }
+            }
+
             steps {
                 sh 'docker build -t docker-local.maven.at.ulaval.ca/modul/modul-website:$npm_package_version .'
 
