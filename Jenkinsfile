@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Pour éviter une erreur: EACCES: permission denied, mkdir '/.npm'
-        npm_config_cache = npm-cache
+        npm_config_cache = 'npm-cache'
     }
 
     stages {
