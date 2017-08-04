@@ -47,15 +47,13 @@ pipeline {
 
         stage('Docker') {
             steps {
-                // Pour extraire le numéro de version du package.json
-                sh ''' PACKAGE_VERSION=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g') '''
-
-                // Création de l'image
-                sh 'docker build -t docker-local.maven.at.ulaval.ca/modul/modul-website:$PACKAGE_VERSION .'
-
-                // Déploiement de l'image
+                // Création et Déploiement de l'image
                 withDockerRegistry(url: DOCKER_REPOSITORY_URL, credentialsId: 'artifactory-docker-registry-credential') {
-                    sh 'docker push docker-local.maven.at.ulaval.ca/modul/modul-website:$PACKAGE_VERSION'
+
+                    sh ''' \
+                    PACKAGE_VERSION=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g') \
+                    && docker build -q -t docker-local.maven.at.ulaval.ca/modul/modul-website:$PACKAGE_VERSION . \
+                    && docker push docker-local.maven.at.ulaval.ca/modul/modul-website:$PACKAGE_VERSION'''
                 }
             }
         }
