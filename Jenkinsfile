@@ -5,8 +5,8 @@ pipeline {
         docker {
             image 'node:8.2-alpine'
             reuseNode true
+            label 'worker'
         }
-        label 'worker'
     }
 
     options {
