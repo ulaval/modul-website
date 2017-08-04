@@ -29,7 +29,7 @@ pipeline {
                 echo "Packaging..."
                 sh 'npm pack'
 
-                stash includes: 'modul-website-*.tgz', name: 'pack'
+                stash includes: 'ulaval-modul-website-*.tgz', name: 'pack'
             }
         }
 
