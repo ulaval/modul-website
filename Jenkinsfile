@@ -47,10 +47,15 @@ pipeline {
 
         stage('Docker') {
             steps {
-                sh 'docker build -t docker-local.maven.at.ulaval.ca/modul/modul-website:latest .'
+                // Pour extraire le numéro de version du package.json
+                sh ''' PACKAGE_VERSION=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g') '''
 
+                // Création de l'image
+                sh 'docker build -t docker-local.maven.at.ulaval.ca/modul/modul-website:$PACKAGE_VERSION .'
+
+                // Déploiement de l'image
                 withDockerRegistry(url: DOCKER_REPOSITORY_URL, credentialsId: 'artifactory-docker-registry-credential') {
-                    sh 'docker push docker-local.maven.at.ulaval.ca/modul/modul-website:latest'
+                    sh 'docker push docker-local.maven.at.ulaval.ca/modul/modul-website:$PACKAGE_VERSION'
                 }
             }
         }
