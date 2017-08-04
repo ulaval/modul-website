@@ -1,8 +1,6 @@
 pipeline {
     // Pour être certain que tous les stages travail dans le même workspace
-    agent {
-        label 'worker'
-    }
+    agent any
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
