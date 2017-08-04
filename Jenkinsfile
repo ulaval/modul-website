@@ -1,6 +1,13 @@
 pipeline {
     // Pour être certain que tous les stages travail dans le même workspace
-    agent {label 'worker'}
+    // agent {label 'worker'}
+    agent {
+        docker {
+            image 'node:8.2-alpine'
+            reuseNode true
+        }
+        label 'worker'
+    }
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -16,13 +23,6 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent {
-                docker {
-                    image 'node:8.2-alpine'
-                    reuseNode true
-                }
-            }
-
             steps {
                 sh 'pwd'
                 echo 'Clean up...'
@@ -45,15 +45,8 @@ pipeline {
         }
 
         stage('Docker') {
-            agent {
-                docker {
-                    image 'node:8.2-alpine'
-                    reuseNode true
-                }
-            }
-
             steps {
-                sh 'npm run docker-build'
+                sh 'docker build -t docker-local.maven.at.ulaval.ca/modul/modul-website:$npm_package_version .'
 
                 withDockerRegistry(url: DOCKER_REPOSITORY_URL, credentialsId: 'artifactory-docker-registry-credential') {
                     sh 'npm run docker-push'
