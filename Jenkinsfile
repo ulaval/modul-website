@@ -1,5 +1,6 @@
 pipeline {
-    agent any
+    // Pour être certain que tous les stages travail dans le même workspace
+    agent {label 'whatever'}
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -9,11 +10,18 @@ pipeline {
     environment {
         // Pour éviter une erreur: EACCES: permission denied, mkdir '/.npm'
         npm_config_cache = 'npm-cache'
+        DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
+        DOCKER_REPOSITORY_URL = 'https://docker-local.maven.at.ulaval.ca'
     }
 
     stages {
         stage('Build') {
-            agent { docker 'node:8.2-alpine' }
+            agent {
+                docker {
+                    image 'node:8.2-alpine'
+                    reuseNode true
+                }
+            }
 
             steps {
                 sh 'pwd'
@@ -26,17 +34,24 @@ pipeline {
 
                 echo "Building..."
                 sh 'npm run build'
-
-                echo "Packaging..."
-                sh 'npm pack'
-
-                stash includes: 'ulaval-modul-website-*.tgz', name: 'pack'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing...'
+                echo 'TO BE DONE !'
+            }
+        }
+
+        stage('Docker') {
+
+            steps {
+                sh 'npm run docker-build'
+
+                withDockerRegistry(url: DOCKER_REPOSITORY_URL, credentialsId: 'artifactory-docker-registry-credential') {
+                    sh 'npm run docker-push'
+                }
             }
         }
 

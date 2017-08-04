@@ -1,6 +1,6 @@
 {
     "name": "@ulaval/modul-website",
-    "version": "0.1.0",
+    "version": "0.1.0-openshift",
     "description": "MODUL web application.",
     "author": "Martin Simard <martin.simard@dti.ulaval.ca>",
     "private": true,
@@ -17,9 +17,9 @@
         "test": "npm run unitall && npm run e2e",
         "tslint": "tslint -c conf/tslint.json -e 'src/**/*.d.ts' -e 'tests/unit/**/*.d.ts' -s node_modules/custom-tslint-formatters/formatters -t grouped 'src/**/*.ts' 'tests/unit/**/*.ts' 'tests/e2e/*.ts'",
         "stylelint": "stylelint \"src/**/*.css\" \"src/**/*.scss\" --config conf/stylelint.json",
-        "docker-build": "docker build -t docker-local.maven.at.ulaval.ca/ena2/modul-website:latest .",
-        "docker-run": "docker run -it --net=host --rm --name c1 docker-local.maven.at.ulaval.ca/ena2/modul-website:latest",
-        "docker-push": "docker push docker-local.maven.at.ulaval.ca/ena2/modul-website:latest"
+        "docker-build": "docker build -t docker-local.maven.at.ulaval.ca/modul/modul-website:$npm_package_version .",
+        "docker-run": "docker run -it --net=host --rm --name c1 docker-local.maven.at.ulaval.ca/modul/modul-website:$npm_package_version",
+        "docker-push": "docker push docker-local.maven.at.ulaval.ca/modul/modul-website:$npm_package_version"
     },
     "dependencies": {},
     "devDependencies": {
