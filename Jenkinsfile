@@ -20,14 +20,14 @@ pipeline {
                 sh 'rm -rf dist'
                 sh 'rm -rf node_modules'
 
-                echo "npm install..."
+                echo "Initializing npm..."
                 sh 'npm install'
 
-                echo "npm run build..."
+                echo "Building..."
                 sh 'npm run build'
 
-                echo "npm run build..."
-                sh 'npm run package'
+                echo "Packaging..."
+                sh 'npm package'
 
                 stash includes: 'modul-website-*.tgz', name: 'pack'
             }
