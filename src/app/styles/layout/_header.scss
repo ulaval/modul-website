@@ -91,7 +91,7 @@
     }
 
     &.router-link-active::after {
-        background-color: $m-color--yellow;
+        background-color: $m-color--active;
     }
 
     &:hover::after {
@@ -117,7 +117,7 @@
         }
 
         &.router-link-active::after {
-            background-color: $m-color--yellow;
+            background-color: $m-color--active;
         }
 
         &:hover::after {
