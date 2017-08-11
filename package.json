@@ -7,15 +7,17 @@
     "scripts": {
         "clean": "rimraf dist",
         "relink": "rimraf node_modules/@ulaval/modul-components && npm i",
-        "dev": "webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 8083 --open --history-api-fallback",
+        "dev": "npm run mdToAssets && webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 8083 --open --history-api-fallback",
         "build": "webpack --config conf/webpack.config.js --colors --optimize-minimize",
+        "mdToAssets": "rimraf src/assets/md && copyfiles -u 6 \"./node_modules/@ulaval/modul-components/dist/**/*.md\" src/assets/md",
         "prod": "http-server dist -p 8083 -g -o",
         "unit": "karma start conf/karma.conf.js --browsers PhantomJS --single-run",
         "unitall": "karma start conf/karma.conf.js --single-run",
         "e2e": "node tests/e2e/index.js",
         "test": "npm run unitall && npm run e2e",
         "tslint": "tslint -c conf/tslint.json -e 'src/**/*.d.ts' -e 'tests/unit/**/*.d.ts' -s node_modules/custom-tslint-formatters/formatters -t grouped 'src/**/*.ts' 'tests/unit/**/*.ts' 'tests/e2e/*.ts'",
-        "stylelint": "stylelint \"src/**/*.css\" \"src/**/*.scss\" --config conf/stylelint.json"
+        "stylelint": "stylelint \"src/**/*.css\" \"src/**/*.scss\" --config conf/stylelint.json",
+        "prepack": "npm run clean && npm run build"
     },
     "dependencies": {},
     "devDependencies": {
@@ -26,6 +28,7 @@
         "awesome-typescript-loader": "^3.1.3",
         "axios": "^0.16.1",
         "bundle-loader": "^0.5.5",
+        "copyfiles": "^1.2.0",
         "chromedriver": "^2.27.2",
         "compression-webpack-plugin": "^0.4.0",
         "css-loader": "^0.28.1",

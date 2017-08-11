@@ -10,7 +10,9 @@ export class ModulMutations {
     public static COMPONENTS_META_GET_SUCCESS: string = 'COMPONENTS_META_GET_SUCCES';
 
     public static CATEGORY_GET: string = 'CATEGORY_GET';
-    public static COMPONENT_GET: string = 'COMPOSANT_GET';
+    public static COMPONENT_GET: string = 'COMPONENT_GET';
+    public static COMPONENT_MARKDOWN_GET: string = 'COMPONENT_MARKDOWN_GET';
+    public static COMPONENT_MARKDOWN_GET_SUCCESS: string = 'COMPONENT_MARKDOWN_GET_SUCCESS';
 
     public static MESSAGES_GET: string = 'MESSAGES_GET';
     public static MESSAGES_GET_SUCCESS: string = 'MESSAGES_GET_SUCCESS';
@@ -54,6 +56,16 @@ export class ModulMutations {
     // Component - COMPONENT_GET
     public static getComponent: Mutation<ModulState> = (state: ModulState, component: ComponentMeta) => {
         state.component = component;
+    }
+
+    // Component - COMPONENT_MARKDOWN_GET
+    public static getComponentMarkdown: Mutation<ModulState> = (state: ModulState) => {
+        state.componentMarkdown = undefined;
+    }
+
+    // Component - COMPONENT_MARKDOWN_GET_SUCCESS
+    public static getComponentMarkdownSuccess: Mutation<ModulState> = (state: ModulState, markdown: string) => {
+        state.componentMarkdown = markdown;
     }
 
     // Messages

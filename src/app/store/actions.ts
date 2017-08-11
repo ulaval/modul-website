@@ -2,14 +2,21 @@ import Vue from 'vue';
 import { Action, ActionContext } from 'vuex';
 import { ModulState } from './modul-state';
 import { ModulMutations } from './mutations';
-import Meta from '@ulaval/modul-components/dist/meta/meta';
+import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import Messages, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import { RestAdapter } from '@ulaval/modul-components/dist/utils/http/rest';
 
 export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
 export const CATEGORY_GET: string = 'CATEGORY_GET';
 export const COMPONENT_GET: string = 'COMPONENT_GET';
+export const COMPONENT_MARKDOWN_GET: string = 'COMPONENT_MARKDOWN_GET';
 export const MESSAGES_GET: string = 'MESSAGES_GET';
 export const ICONS_GET: string = 'ICONS_GET';
+
+interface MarkdownPayload {
+    restAdapter: RestAdapter;
+    markdown: string;
+}
 
 // COMPONENTS_META_GET
 export const getComponentsMetaAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, language: string) => {
@@ -40,7 +47,16 @@ export const getCategoryAction: Action<ModulState, ModulState> = async (context:
 
 // COMPONENT_GET
 export const getComponentAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, tag: string) => {
-    context.commit(ModulMutations.COMPONENT_GET, Meta.getMetaByTag(tag));
+    let meta: ComponentMeta = Meta.getMetaByTag(tag);
+    context.commit(ModulMutations.COMPONENT_GET, meta);
+};
+
+// COMPONENT_MARKDOWN_GET
+export const getComponentMarkdownAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, markdown: MarkdownPayload) => {
+    context.commit(ModulMutations.COMPONENT_MARKDOWN_GET);
+    markdown.restAdapter.execute({method: 'get', rawUrl: `/assets/md/${markdown.markdown}.fr.md`}).then((md) => {
+        context.commit(ModulMutations.COMPONENT_MARKDOWN_GET_SUCCESS, (md as any).data);
+    });
 };
 
 // MESSAGES_GET

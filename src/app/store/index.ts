@@ -21,6 +21,8 @@ const mutations: MutationTree<ModulState> = {
     [ModulMutations.CATEGORY_GET]: ModulMutations.getCategory,
     // Component
     [ModulMutations.COMPONENT_GET]: ModulMutations.getComponent,
+    [ModulMutations.COMPONENT_MARKDOWN_GET]: ModulMutations.getComponentMarkdown,
+    [ModulMutations.COMPONENT_MARKDOWN_GET_SUCCESS]: ModulMutations.getComponentMarkdownSuccess,
     // Messages
     [ModulMutations.MESSAGES_GET]: ModulMutations.getMessages,
     [ModulMutations.MESSAGES_GET_SUCCESS]: ModulMutations.getMessagesSucces,
@@ -36,6 +38,7 @@ const actions: Vuex.ActionTree<ModulState, ModulState> = {
     [ModulActions.CATEGORY_GET]: ModulActions.getCategoryAction,
     // Component
     [ModulActions.COMPONENT_GET]: ModulActions.getComponentAction,
+    [ModulActions.COMPONENT_MARKDOWN_GET]: ModulActions.getComponentMarkdownAction,
     // Messages
     [ModulActions.MESSAGES_GET]: ModulActions.getMessagesAction,
     // Icons

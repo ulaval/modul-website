@@ -13,6 +13,10 @@ import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/u
 
 import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
 
+import { DO_NAME, MDo } from './components/do/do';
+import { DONT_NAME, MDont } from './components/dont/dont';
+import { MARKDOWN_NAME, MMarkdown } from './components/markdown/markdown';
+
 const utilsPluginOptions: UtilsPluginOptions = {
     securityPluginOptions: {
         protectedUrls: ['<url>'],
@@ -29,6 +33,10 @@ async function main() {
     Vue.use(UtilsPlugin, utilsPluginOptions);
 
     Vue.use(svc);
+
+    Vue.component(DO_NAME, MDo);
+    Vue.component(DONT_NAME, MDont);
+    Vue.component(MARKDOWN_NAME, MMarkdown);
 
     currentLang(FRENCH);
     await store.dispatchAsync(ModulActions.MESSAGES_GET, FRENCH);

@@ -17,5 +17,6 @@ export class ModulState {
     public categoryRoutes: RouteMap = {};
     public componentRoutes: RouteMap = {};
     public component: ComponentMeta | undefined = undefined;
+    public componentMarkdown: string | undefined = undefined;
     public category: string | undefined = undefined;
 }
