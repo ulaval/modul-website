@@ -1,19 +1,9 @@
-html {
-    overflow-y: scroll;
-}
 
+html,
 body,
 .modul-body {
     background-color: $modul-body;
 }
-
-// .modul {
-//     background-color: $modul-body;
-
-//     &.modul--at-home {
-//         background-color: $modul-body;
-//     }
-// }
 
 .test {
     background-color: gray !important;

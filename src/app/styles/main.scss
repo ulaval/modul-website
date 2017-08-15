@@ -6,6 +6,7 @@
 
 // https://github.com/webpack-contrib/sass-loader#imports
 @import '~@ulaval/modul-components/dist/styles/abstracts/variables';
+@import '~@ulaval/modul-components/dist/styles/abstracts/var-color-calendar';
 // local import
 @import 'abstracts/variables';
 
@@ -17,7 +18,14 @@
 //  Base
 // ======================================================================
 
+@import '~@ulaval/modul-components/dist/styles/base/fonts';
 @import '~@ulaval/modul-components/dist/styles/base/base';
+@import '~@ulaval/modul-components/dist/styles/base/typography';
+@import '~@ulaval/modul-components/dist/styles/base/layout';
+@import '~@ulaval/modul-components/dist/styles/base/utils';
+@import '~@ulaval/modul-components/dist/styles/base/bullet-list';
+@import '~@ulaval/modul-components/dist/styles/base/animations';
+
 @import 'base/base';
 @import 'base/typography';
 @import 'base/animations';

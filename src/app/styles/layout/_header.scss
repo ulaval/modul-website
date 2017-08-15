@@ -40,8 +40,8 @@
         background-color: $modul-color--grey--darker;
     }
 
-    .modul--at-home:not(.modul--menu-is-open) & {
-        background-color: $modul-color--grey--dark;
+    .modul--at-home & {
+        background-color: $modul-color--grey--darker;
     }
 }
 

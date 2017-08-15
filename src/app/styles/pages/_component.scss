@@ -103,7 +103,7 @@ $modul-component-page--header-min-height: 200px;
 
 .modul-component__header {
     background-color: $modul-color--grey--darker;
-    padding: $m-padding--l;
+    padding: $m-margin--l $m-padding;
     border-radius: $modul-border-radius $modul-border-radius 0 0;
 }
 
