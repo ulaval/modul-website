@@ -154,8 +154,6 @@
     }
 }
 
-/////////////////
-
 .modul-home-design,
 .modul-home-content,
 .modul-home-novelty {
@@ -261,8 +259,14 @@
     }
 
     .m-panel {
+        transition: 0.3s transform ease;
         width: calc(50% - #{$m-padding});
         margin-bottom: $m-padding--l;
+        cursor: pointer;
+
+        &:hover {
+            transform: translate3d(0, -10px, 0);
+        }
     }
 }
 
