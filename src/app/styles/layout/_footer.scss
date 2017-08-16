@@ -12,7 +12,6 @@
     height: $modul-header--height;
     background-color: $m-color--white;
     border-top: 2px solid $modul-color--grey--light;
-    box-shadow: 0 0 4px 0 rgba($modul-color--grey--dark, 0.2);
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -28,12 +27,16 @@
     }
 }
 
-.modul-version {
+.modul-footer__version {
     padding: $m-padding;
     text-align: center;
-    font-size: 12px;
 
-    .modul--at-home & {
+    &,
+    .modul-logo {
+        font-size: $m-font-size--s;
+    }
+
+    .modul--black-template & {
         background-color: $modul-color--grey--dark;
         color: $modul-color--grey;
     }

@@ -1,22 +1,34 @@
-<div class="modul" :class="{'modul--menu-is-open' : menuOpen, 'modul--at-home' : isHome}">
+<div class="modul" :class="{'modul--menu-is-open' : menuOpen, 'modul--at-home' : isHome, 'modul--black-template' : isHome}">
     <header ref="header" class="modul-header">
-        <h1 class="modul-logo" v-if="isHome">
+        <h1 v-if="isHome" class="modul-logo">
             <router-link to="/">MOD<b>UL</b></router-link>
         </h1>
+        <div v-if="!isHome" class="modul-logo">
+            <router-link to="/">MOD<b>UL</b></router-link>
+        </div>
         <nav class="modul-header__nav">
-            <router-link v-if="!isHome" class="modul-logo" to="/">MOD<b>UL</b></router-link>
-            <router-link :to="visualStandards" class="modul-header__link">
-                <m-i18n i18n-key="modul:visual-standards"></m-i18n>
-            </router-link>
-            <router-link :to="writingRules" class="modul-header__link">
-                <m-i18n i18n-key="modul:writing-rules"></m-i18n>
-            </router-link>
-            <a href="#" @click.prevent="showMenu()" class="modul-header__link">
-                <m-i18n i18n-key="modul:components"></m-i18n>
-            </a>
-            <router-link :to="ecosystem" class="modul-header__link">
-                <m-i18n i18n-key="modul:ecosystem"></m-i18n>
-            </router-link>
+            <ul>
+                <li>
+                    <router-link :to="visualStandards" class="modul-header__link">
+                        <m-i18n i18n-key="modul:visual-standards"></m-i18n>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="writingRules" class="modul-header__link">
+                        <m-i18n i18n-key="modul:writing-rules"></m-i18n>
+                    </router-link>
+                </li>
+                <li>
+                    <a href="#" @click.prevent="showMenu()" class="modul-header__link">
+                        <m-i18n i18n-key="modul:components"></m-i18n>
+                    </a>
+                </li>
+                <li>
+                    <router-link :to="ecosystem" class="modul-header__link">
+                        <m-i18n i18n-key="modul:ecosystem"></m-i18n>
+                    </router-link>
+                </li>
+            </ul>
         </nav>
         <div class="modul-header__search">
             <m-icon name="search"></m-icon>
@@ -38,8 +50,8 @@
                 <a class="modul-footer__link" href="">Conditions d'utilisation</a>
             </div>
         </div>
-        <div class="modul-version">
-            <span class="modul-logo modul-logo--small"><a href="">MOD<b>UL</b></a></span>
+        <div class="modul-footer__version">
+            <span class="modul-logo"><a href="">MOD<b>UL</b></a></span>
             <span>version 0.0.1</span>
         </div>
     </footer>
@@ -48,9 +60,9 @@
         <nav class="modul-menu" v-if="headerAnimationCompleted">
             <ul v-for="category in categories" class="modul-menu__list">
                 <li>
-                    <span @click="onCategoryClick(category)" class="modul-menu__title modul-u--highlighted-title">
+                    <h2 @click="onCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--highlighted-title">
                         <span>{{category.text}}</span>
-                    </span>
+                    </h2>
                 </li>
                 <li v-for="component in getCategoryComponents(category.id)">
                     <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">

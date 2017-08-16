@@ -1,58 +1,58 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+$modul-menu--list-max-width: 300px;
 
 .modul-menu {
     position: fixed;
-    z-index: 1000;
-    overflow-y: auto;
-    overflow-x: hidden;
     top: $modul-header--height;
-    left: 0;
     right: 0;
     bottom: 0;
-    background: $modul-color--grey--dark;
-    padding: $m-padding--l*2 $m-padding--l $m-padding--l*2 $m-padding--l;
-    color: $modul-color--grey--light;
+    left: 0;
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    background: $modul-color--grey--dark;
+    color: $modul-color--grey--light;
+    padding: $m-padding--l*2 $m-padding--l $m-padding--l*2 $m-padding--l;
 }
+
 
 .modul-menu__list {
     list-style: none;
-    padding: 0 16px;
-    min-width: 320px;
-    margin: 0 0 28px;
+    min-width: $modul-menu--list-max-width;
+    margin: 0 $m-padding $m-padding--l 0;
+
+    &:last-child {
+        margin-right: 0;
+    }
 }
 
 .modul-menu__title {
-    &:hover {
-        cursor: pointer;
+    cursor: pointer;
+    margin-bottom: $m-margin;
+
+    &:active {
+        outline: none;
     }
 }
 
 .modul-menu__link {
     $modul-menu-transition-duration: 0.7s;
-    $modul-menu-offset-left: 8px;
+    $modul-menu-offset-left: $m-padding--s + 2;
 
     text-decoration: none;
     display: block;
-    margin: 14px 0;
-    padding: 8px $modul-menu-offset-left 4px;
+    padding: $m-padding--s $modul-menu-offset-left $m-padding--s;
     margin-left: -$modul-menu-offset-left;
     border-left: 2px solid transparent;
     transition: background-color #{$modul-menu-transition-duration} ease, border-color #{$modul-menu-transition-duration} ease, margin-left #{$modul-menu-transition-duration} ease;
     position: relative;
     background-color: transparent;
-
-    span {
-        display: block;
-        color: rgba($modul-color--grey, 0.7);
-        transition: color #{$modul-menu-transition-duration} ease;
-        position: relative;
-        z-index: 2;
-    }
+    outline: none;
 
     &::after {
         content: "";
@@ -66,7 +66,8 @@
         z-index: 1;
     }
 
-    &:hover {
+    &:hover,
+    &:focus{
         border-left-color: $m-color--white;
         background-color: $modul-color--grey--darker;
         margin-left: 0;
@@ -74,6 +75,14 @@
         .modul-menu__label {
             color: $m-color--white;
         }
+    }
+
+    span {
+        display: block;
+        color: rgba($modul-color--grey, 0.7);
+        transition: color #{$modul-menu-transition-duration} ease;
+        position: relative;
+        z-index: 2;
     }
 }
 

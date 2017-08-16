@@ -98,13 +98,12 @@ $modul-component-page--header-min-height: 200px;
     background-color: $m-color--white;
     position: relative;
     z-index: 3;
-    box-shadow: 0 2px 2px 1px rgba($modul-color--grey--dark, 0.2);
+    box-shadow: $m-box-shadow;
 }
 
 .modul-component__header {
     background-color: $modul-color--grey--darker;
-    padding: $m-margin--l $m-padding;
-    border-radius: $modul-border-radius $modul-border-radius 0 0;
+    padding: 19px $m-padding;
 }
 
 .modul-component__preview {

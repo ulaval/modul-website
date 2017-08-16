@@ -3,7 +3,7 @@
     z-index: 2;
     min-height: calc(100vh - #{$modul-footer--height + $modul-header--height*2}); // header + footer + margin
 
-    .modul:not(.modul--at-home) & {
+    .modul:not(.modul--black-template) & {
         margin-bottom: $modul-header--height;
         padding: $m-padding--l $m-padding--l $m-padding--l*2 $m-padding--l;
     }

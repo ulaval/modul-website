@@ -263,8 +263,10 @@
         width: calc(50% - #{$m-padding});
         margin-bottom: $m-padding--l;
         cursor: pointer;
+        outline: none;
 
-        &:hover {
+        &:hover,
+        &:focus {
             transform: translate3d(0, -10px, 0);
         }
     }

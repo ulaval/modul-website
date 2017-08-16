@@ -14,7 +14,7 @@ h5,
 .modul-u--h5 {
     color: $modul-color--grey--darker;
     font-weight: $m-font-weight--black;
-    line-height: 1;
+    line-height: 1.2;
     text-transform: uppercase;
 }
 
@@ -35,31 +35,26 @@ h1,
 
 h2,
 .modul-u--h2 {
-    font-size: 18px;
+    font-size: 22px;
     margin: $m-padding--l 0 0 0;
 }
 
 h3,
 .modul-u--h3 {
-    font-size: $m-font-size--h3;
+    font-size: 20px;
     margin: $m-padding--l 0 0 0;
 }
 
 h4,
 .modul-u--h4 {
-    font-size: $m-font-size--h4;
+    font-size: 18px;
 }
 
 h5,
-.modul-u--h5 {
-    font-size: $m-font-size--h5;
-}
-
+.modul-u--h5,
 h6,
 .modul-u--h6 {
-    font-weight: $m-font-weight--regular;
-    font-size: $m-font-size--h6;
-    line-height: 1;
+    font-size: 16px;
 }
 
 // ======================================================================

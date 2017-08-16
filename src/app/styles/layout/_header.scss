@@ -6,7 +6,6 @@
 }
 
 .modul-header {
-
     // menu opening animation
     transition: background-color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
     position: fixed;
@@ -14,15 +13,16 @@
     left: 0;
     right: 0;
     z-index: 1001;
-    width: 100%;
-    height: $modul-header--height;
-    background: $m-color--white;
     display: flex;
     align-content: space-between;
     align-items: center;
+    width: 100%;
+    height: $modul-header--height;
+    background: $m-color--white;
+    padding-left: $m-padding--l;
 
-    .modul:not(.modul--menu-is-open):not(.modul--at-home) & {
-        box-shadow: 0 2px 2px 1px rgba($m-color--grey-light, 0.5);
+    .modul:not(.modul--menu-is-open):not(.modul--black-template) & {
+        box-shadow: $m-box-shadow--s;
     }
 
     &__search {
@@ -33,6 +33,11 @@
         justify-content: center;
         align-items: center;
         color: $m-color--white;
+
+        .m-icon {
+            font-size: 22px;
+            stroke-width: 10px;
+        }
     }
 
     // menu opening animation
@@ -40,7 +45,7 @@
         background-color: $modul-color--grey--darker;
     }
 
-    .modul--at-home & {
+    .modul--black-template & {
         background-color: $modul-color--grey--darker;
     }
 }
@@ -50,42 +55,36 @@
     height: 100%;
     align-content: space-between;
     align-items: center;
-    margin-right: $m-padding * 2;
+    margin-right: $m-padding--l;
 
-    .modul:not(.modul--at-home) & {
-        flex: 1;
+    ul {
+        display: flex;
+        list-style: none;
+
+        li {
+            &:not(:last-child) {
+                margin-right: $m-margin--l;
+            }
+        }
     }
 }
 
 .modul-header__link {
-    &,
-    &:visited {
-        color: $modul-color--fadded-dark-grey;
-    }
-
     font-weight: $m-font-weight--black;
     font-size: $m-font-size--s;
     text-transform: uppercase;
     text-decoration: none;
     transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+    outline: none;
 
-    &:not(:last-child) {
-        padding-right: $m-padding * 2;
-    }
-
-    // square dot
-    &::after {
-        content: "";
-        display: inline-block;
-        background-color: $modul-color--fadded-dark-grey;
-        width: 4px;
-        height: 4px;
-        margin-left: 4px;
-        transition: background-color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+    &,
+    &:visited {
+        color: $modul-color--fadded-dark-grey;
     }
 
     // modifiers
     &:hover,
+    &:focus,
     &.router-link-active {
         color: $m-color--black;
     }
@@ -99,19 +98,15 @@
     }
 
     // when menu is open
-    .modul--at-home &,
+    .modul--black-template &,
     .modul--menu-is-open & {
         &,
         &:visited {
             color: $modul-color--fadded-grey;
         }
 
-        // square dot
-        &::after {
-            background-color: $modul-color--fadded-grey;
-        }
-
         &:hover,
+        &:focus,
         &.router-link-active {
             color: $m-color--white;
         }
@@ -131,35 +126,27 @@
     flex: 1;
     user-select: none;
     margin: 0;
-    padding: 0 $m-padding--l;
     transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
 
     &,
     a,
     a:visited {
-        color: $modul-color--grey--darker;
         text-decoration: none;
-        font-weight: 400;
+        font-weight: $m-font-weight;
+        color: $modul-color--grey--darker;
     }
 
     b {
-        font-weight: 600;
+        font-weight: $m-font-weight--black;
         color: $modul-color--grey--darker;
     }
 
-    &.modul-logo--small {
-        font-size: 12px;
-    }
-
     // when menu is open
-    .modul--at-home &,
+    .modul--black-template &,
     .modul--menu-is-open & {
         &,
         a,
-        a:visited {
-            color: $modul-color--grey;
-        }
-
+        a:visited,
         b {
             color: $m-color--white;
         }

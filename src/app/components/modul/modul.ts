@@ -75,9 +75,10 @@ export default class Modul extends ModulWebsite {
         this.closeMenu();
     }
 
-    private onCategoryClick(category: Category): void {
+    private onCategoryClick(event: MouseEvent, category: Category): void {
         this.$router.push(this.state.categoryRoutes[category.id].url);
         this.closeMenu();
+        event.currentTarget['blur']();
     }
 
     private showMenu(): void {
