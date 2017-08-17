@@ -3,14 +3,17 @@
 // This file contains styles that are specific to the component page.
 // -----------------------------------------------------------------------------
 $modul-component-page--header-height: calc(50vh - #{$modul-header--height});
-$modul-component-page--header-min-height: 200px;
+$modul-component-page--header-min-height: 250px;
 
 .modul-component-page {
+    width: 100%;
+    max-width: $m-max-width - $m-padding--xl;
+
     &::before {
         content: '';
         display: block;
-        height: calc(#{$modul-component-page--header-height} - #{$m-padding--l});
-        min-height: $modul-component-page--header-min-height - $m-padding--l;
+        height: $modul-component-page--header-height;
+        min-height: $modul-component-page--header-min-height;
     }
 
     &__arrow-left,
@@ -22,46 +25,48 @@ $modul-component-page--header-min-height: 200px;
         align-items: center;
         height: 100%;
 
-        .m-button.m-button {
-            transition: 0.45s transform ease, 0.3s background ease, 0.3s border ease !important;
-            width: 50px;
-            height: 50px;
-            font-size: 18px;
+        .m-button.m-button.m-button {
+            width: $m-padding--l;
+            height: 64px;
+            font-size: 14px;
             stroke-width: 2px;
             border-radius: 0;
-            border-radius: 50%;
-            padding: 10px;
+            padding: 0;
             transform-origin: 50%;
 
             .m-u--visually-hidden {
                 position: absolute;
             }
+
+            .m-icon {
+                transition: 0.45s transform ease;
+            }
         }
     }
 
     &__arrow-left {
-        left: $m-padding--l;
+        left: 0;
 
-        .m-button.m-button {
+        .m-button {
             &:hover {
-                transform: rotate(-360deg);
+                .m-icon {
+                    transform: rotate(-360deg);
+                }
             }
         }
     }
 
     &__arrow-right {
-        right: $m-padding--l;
+        right: 0;
 
-        .m-button.m-button {
+        .m-button {
             &:hover {
-                transform: rotate(360deg);
+                .m-icon {
+                    transform: rotate(360deg);
+                }
             }
         }
     }
-
-    width: 100%;
-    max-width: 1000px;
-    padding: 0 $m-padding--l;
 }
 
 .modul-component-page__header {

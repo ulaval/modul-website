@@ -1,7 +1,7 @@
 <!--<transition name="slide-fade" mode="out-in" appear>-->
 <div class="modul-component-page__body">
     <transition-group name="slide-fade" tag="article" appear>
-        <article @click="onComponentClick(meta.tag)" :key="meta.tag" v-for="meta in categoryComponents" class="modul-card">
+        <article @click="onComponentClick(meta.tag)" :key="meta.tag" v-for="meta in categoryComponents" class="modul-card" tabindex="0">
 
             <!--<div class="modul-card__body">-->
             <div class="modul-card__figure">
@@ -11,15 +11,8 @@
             <div class="modul-card__content">
 
                 <header>
-                    <h2 class="modul-card__title m-u--no-margin-top">
-                        <!--<m-link :url="route.url">-->
-                        <m-i18n :k="meta.name"></m-i18n>
-                        <!--</m-link>-->
-                    </h2>
-                    <span class="modul-card__tagname">
-                        <m-i18n :k="meta.name"></m-i18n>
-
-                    </span>
+                    <h2 class="modul-card__title m-u--no-margin-top"><m-i18n :k="meta.name"></m-i18n></h2>
+                    <span class="modul-card__tagname"><m-i18n :k="meta.name"></m-i18n></span>
                 </header>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, deleniti dolores facilis aut, maxime sequi

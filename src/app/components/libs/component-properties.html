@@ -1,6 +1,5 @@
 <div class="modul-component__body">
-
-    <div v-for="attribute in getAttributes(state.component)">
+    <m-table>
         <table>
             <thead>
                 <th>
@@ -13,12 +12,11 @@
                     <m-i18n k="modul:description"></m-i18n>
                 </th>
             </thead>
-            <tr>
-                <td><b>{{attribute}}</b>:{{getAttribute(attribute).type}}</td>
-                <td>
-                    <span v-for="(value, index) in getValues(getAttribute(attribute))" :class="{default: isDefault(getAttribute(attribute), value)}">{{value}}
+            <tr v-for="attribute in getAttributes(state.component)">
+                <td><strong>{{attribute}}</strong>:{{getAttribute(attribute).type}}</td>
+                <td style="text-align: center">
+                    <span v-for="(value, index) in getValues(getAttribute(attribute))" :class="{ 'm-u--font-weight--bold': isDefault(getAttribute(attribute), value)}">{{value}}
                             <span v-if="index < getValuesCount(getAttribute(attribute)) - 1">/</span>
-                    <span></span>
                     </span>
                 </td>
                 <td>
@@ -26,6 +24,5 @@
                 </td>
             </tr>
         </table>
-    </div>
-
+    </m-table>
 </div>
