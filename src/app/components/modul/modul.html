@@ -10,22 +10,22 @@
             <ul>
                 <li>
                     <router-link :to="visualStandards" class="modul-header__link">
-                        <m-i18n i18n-key="modul:visual-standards"></m-i18n>
+                        <m-i18n k="modul:visual-standards"></m-i18n>
                     </router-link>
                 </li>
                 <li>
                     <router-link :to="writingRules" class="modul-header__link">
-                        <m-i18n i18n-key="modul:writing-rules"></m-i18n>
+                        <m-i18n k="modul:writing-rules"></m-i18n>
                     </router-link>
                 </li>
                 <li>
                     <a href="#" @click.prevent="showMenu()" class="modul-header__link">
-                        <m-i18n i18n-key="modul:components"></m-i18n>
+                        <m-i18n k="modul:components"></m-i18n>
                     </a>
                 </li>
                 <li>
                     <router-link :to="ecosystem" class="modul-header__link">
-                        <m-i18n i18n-key="modul:ecosystem"></m-i18n>
+                        <m-i18n k="modul:ecosystem"></m-i18n>
                     </router-link>
                 </li>
             </ul>
@@ -66,7 +66,7 @@
                 </li>
                 <li v-for="component in getCategoryComponents(category.id)">
                     <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
-                        <m-i18n :i18n-key="component.name" class="modul-menu__label"></m-i18n>
+                        <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
                         <!-- <span class="modul-menu__translation">Accordion</span> -->
                     </a>
                 </li>

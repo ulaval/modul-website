@@ -4,13 +4,13 @@
         <table>
             <thead>
                 <th>
-                    <m-i18n i18n-key="modul:attribute"></m-i18n>
+                    <m-i18n k="modul:attribute"></m-i18n>
                 </th>
                 <th>
-                    <m-i18n i18n-key="modul:value"></m-i18n>
+                    <m-i18n k="modul:value"></m-i18n>
                 </th>
                 <th>
-                    <m-i18n i18n-key="modul:description"></m-i18n>
+                    <m-i18n k="modul:description"></m-i18n>
                 </th>
             </thead>
             <tr>
@@ -22,7 +22,7 @@
                     </span>
                 </td>
                 <td>
-                    <span><m-i18n :i18n-key="getAttribute(attribute).description"></m-i18n></span>
+                    <span><m-i18n :k="getAttribute(attribute).description"></m-i18n></span>
                 </td>
             </tr>
         </table>
