@@ -20,7 +20,6 @@ $modul-menu--list-max-width: 300px;
     padding: $m-padding--l*2 $m-padding--l $m-padding--l*2 $m-padding--l;
 }
 
-
 .modul-menu__list {
     list-style: none;
     min-width: $modul-menu--list-max-width;
@@ -42,6 +41,7 @@ $modul-menu--list-max-width: 300px;
 
 .modul-menu__link {
     $modul-menu-transition-duration: 0.7s;
+
     $modul-menu-offset-left: $m-padding--s + 2;
 
     text-decoration: none;
@@ -67,7 +67,7 @@ $modul-menu--list-max-width: 300px;
     }
 
     &:hover,
-    &:focus{
+    &:focus {
         border-left-color: $m-color--white;
         background-color: $modul-color--grey--darker;
         margin-left: 0;

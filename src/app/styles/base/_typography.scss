@@ -61,7 +61,6 @@ h6,
 //  links
 // ======================================================================
 
-
 .modul-u--highlighted-title {
     margin: 0;
     position: relative;
@@ -72,7 +71,7 @@ h6,
     &::before {
         content: "";
         display: block;
-        margin-bottom: 16px;
+        margin-bottom: $m-padding;
         width: 32px;
         height: 4px;
         background-color: $modul-color--yellow;

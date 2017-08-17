@@ -15,7 +15,6 @@ $modul-component-page--header-min-height: 200px;
 
     &__arrow-left,
     &__arrow-right {
-
         position: fixed;
         top: 0;
         bottom: 0;
@@ -152,26 +151,24 @@ $modul-component-page--header-min-height: 200px;
 }
 
 .modul-component__link {
-    &,
-    &:visited {
-        color: $modul-color--fadded-dark-grey;
-    }
-
+    transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+    display: block;
+    padding: 20px;
     font-weight: $m-font-weight--black;
     font-size: $m-font-size--s;
     text-transform: uppercase;
     text-decoration: none;
-    transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+
+    &,
+    &:visited {
+        color: $modul-color--fadded-dark-grey;
+    }
 
     &:hover,
     &:focus,
     .router-link-active {
         color: $modul-color--grey--darker;
     }
-
-    padding: 20px;
-    display: block;
-    text-decoration: none;
 }
 
 .modul-component__title {
