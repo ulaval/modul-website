@@ -15,25 +15,49 @@ $modul-component-page--header-min-height: 200px;
 
     &__arrow-left,
     &__arrow-right {
-        position: absolute;
+
+        position: fixed;
         top: 0;
+        bottom: 0;
         display: flex;
         align-items: center;
         height: 100%;
-        font-size: 36px;
-        color: $m-color--ul-blue;
 
-        a {
-            text-decoration: none;
+        .m-button.m-button {
+            transition: 0.45s transform ease, 0.3s background ease, 0.3s border ease !important;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            stroke-width: 2px;
+            border-radius: 0;
+            border-radius: 50%;
+            padding: 10px;
+            transform-origin: 50%;
+
+            .m-u--visually-hidden {
+                position: absolute;
+            }
         }
     }
 
     &__arrow-left {
-        left: 5px;
+        left: $m-padding--l;
+
+        .m-button.m-button {
+            &:hover {
+                transform: rotate(-360deg);
+            }
+        }
     }
 
     &__arrow-right {
-        right: 5px;
+        right: $m-padding--l;
+
+        .m-button.m-button {
+            &:hover {
+                transform: rotate(360deg);
+            }
+        }
     }
 
     width: 100%;
@@ -42,15 +66,14 @@ $modul-component-page--header-min-height: 200px;
 }
 
 .modul-component-page__header {
-    position: fixed;
-    top: $modul-header--height;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    min-width: $m-min-width;
-    z-index: 0;
-
     &__wrap {
+        position: fixed;
+        top: $modul-header--height;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-width: $m-min-width;
+        z-index: 0;
         width: 100%;
         max-width: $m-max-width;
         margin: 0 auto;
@@ -107,23 +130,17 @@ $modul-component-page--header-min-height: 200px;
 }
 
 .modul-component__preview {
-    padding: $m-padding--xl $m-padding--l;
+    padding: $m-padding--l $m-padding--l;
 }
 
 .modul-component__back {
-    text-decoration: none;
-    font-size: 10px;
-    display: inline-flex;
-    align-items: center;
-    margin-top: $m-padding;
-    margin-left: $m-padding--l;
-    // font-weight: $m-font-weight--black;
-    position: relative;
-    z-index: 4;
-
-    > span {
-        font-size: 14px;
-        margin-left: 4px;
+    &.m-link.m-link {
+        position: fixed;
+        top: $modul-header--height;
+        left: 0;
+        z-index: 2;
+        margin-top: $m-padding;
+        margin-left: $m-padding--l;
     }
 }
 
@@ -166,5 +183,12 @@ $modul-component-page--header-min-height: 200px;
 
 .modul-component__body {
     padding: $m-padding--l;
+
+    > :first-child {
+        &,
+        > :first-child {
+            margin-top: 0;
+        }
+    }
 }
 

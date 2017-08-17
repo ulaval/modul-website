@@ -1,5 +1,11 @@
 .modul-home {
     width: 100%;
+
+    &::before {
+        content: '';
+        display: block;
+        height: 110vh;
+    }
 }
 
 .modul-home-experiment__body,
@@ -11,15 +17,17 @@
 }
 
 .modul-home-experiment {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
     padding: $m-padding--l $m-padding--l $m-padding--xl $m-padding--l;
     width: 100%;
-    min-height: calc(100vh - #{$modul-header--height});
+    min-height: 500px;
     display: flex;
     align-content: center;
     background-color: $modul-color--grey--darker;
     background-image: url(/assets/grid.svg);
-    z-index: 1;
-    position: fixed;
 
     &__body,
     &__footer {
@@ -120,14 +128,22 @@
     }
 
     &__footer {
+        transition: 0.6s transform ease;
+        transform: translate3d(0, 38px, 0);
         position: absolute !important;
         bottom: 0;
         left: 50%;
         margin-left: -75px;
         flex-direction: column;
+        cursor: pointer;
 
         .m-button.m-button {
+            margin-top: $m-margin;
             border-radius: 0;
+        }
+
+        &:hover {
+            transform: translate3d(0, 0, 0);
         }
     }
 
@@ -170,7 +186,7 @@
 }
 
 .modul-home-design {
-    margin-top: 150vh;
+    // margin-top: 150vh;
     background: $modul-color--grey--dark;
     padding: $m-padding--xl $m-padding--l;
     color: $m-color--white;

@@ -1,9 +1,8 @@
 <div class="modul-component-page">
+    <m-link mode="button" class="modul-component__back" @click="back(state.component.category)">
+        <m-icon name="left-chevron" slot="icon-left"></m-icon> {{translatedCategory}}
+    </m-link>
     <section class="modul-component-page__header" :style="{'zIndex' : zIndex}">
-        <a href="#" @click.prevent="back(state.component.category)" class="modul-component__back">
-            <m-icon name="left-chevron"></m-icon>
-            <span>{{translatedCategory}}</span>
-        </a>
         <div class="modul-component-page__header__wrap">
             <div ref="dropdown" class="modul-component-page__title">
                 <m-select :elements="components" :get-text-element="getText" @elementSelected="onComponentSelected($event)" :default-first-element="false"
@@ -12,14 +11,16 @@
             </div>
         </div>
         <div class="modul-component-page__arrow-left">
-            <a href="#" @click.prevent="getPreviousComponent()">
+            <m-button@click="getPreviousComponent()">
                 <m-icon name="left-chevron"></m-icon>
-            </a>
+                <span class="m-u--visually-hidden">Naviguer vers le composant précédent</span>
+                </m-button>
         </div>
         <div class="modul-component-page__arrow-right">
-            <a href="#" @click.prevent="getNextComponent()">
+            <m-button @click="getNextComponent()">
                 <m-icon name="right-chevron"></m-icon>
-            </a>
+                <span class="m-u--visually-hidden">Naviguer vers le prochain composant</span>
+            </m-button>
         </div>
     </section>
 

@@ -1,6 +1,5 @@
 <div class="modul-component-page">
     <section class="modul-component-page__header" :style="{'zIndex' : zIndex}">
-
         <div class="modul-component-page__header__wrap">
             <div ref="dropdown" class="modul-component-page__title">
                 <m-select :elements="categories" :get-text-element="getText" @elementSelected="onCategorySelected($event)" :default-first-element="false"
@@ -9,14 +8,14 @@
             </div>
         </div>
         <div class="modul-component-page__arrow-left">
-            <a href="#" @click.prevent="getPreviousCategory()">
+            <m-button @click="getPreviousCategory()">
                 <m-icon name="left-chevron"></m-icon>
-            </a>
+            </m-button>
         </div>
         <div class="modul-component-page__arrow-right">
-            <a href="#" @click.prevent="getNextCategory()">
+            <m-button @click="getNextCategory()">
                 <m-icon name="right-chevron"></m-icon>
-            </a>
+            </m-button>
         </div>
     </section>
     <!-- <transition name="slide-fade" mode="out-in" appear> -->

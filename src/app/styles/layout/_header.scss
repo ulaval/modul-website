@@ -1,9 +1,6 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
-.modul {
-    padding-top: $modul-header--height;
-}
 
 .modul-header {
     // menu opening animation
@@ -26,13 +23,15 @@
     }
 
     &__search {
-        background-color: $m-color--ul-blue;
         display: flex;
-        height: 100%;
-        width: 70px;
         justify-content: center;
         align-items: center;
-        color: $m-color--white;
+        width: $modul-header--height;
+        height: $modul-header--height;
+
+        &.m-button.m-button  {
+            border-radius: 0;
+        }
 
         .m-icon {
             font-size: 22px;

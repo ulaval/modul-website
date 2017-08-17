@@ -8,8 +8,8 @@ import { ROUTES, COMPONENTS, ECOSYSTEM, VISUAL_STANDARDS, WRITING_RULES } from '
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
 // animation constant shared with css in header.scss and menu.scss
-const CSS_ANIMATION_HEADER_DURATION: Number = 500;
-const CSS_ANIMATION_MENU_DURATION: Number = 800;
+const CSS_ANIMATION_HEADER_DURATION: Number = 100;
+const CSS_ANIMATION_MENU_DURATION: Number = 650;
 
 type Category = {
     id: string;
