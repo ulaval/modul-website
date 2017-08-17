@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router, { RouteConfig } from 'vue-router';
-import { UnifiedExperience } from './components/unified-experience/unified-experience';
+import { HomePage } from './components/home/home';
 import { VisualStandards } from './components/visual-standards/visual-standards';
 import { WritingRules } from './components/writing-rules/writing-rules';
 import { CategoryList } from './components/libs/category-list';
@@ -107,7 +107,7 @@ Meta.getCategories().forEach(category => {
 modulRoutes.push(
     {
         path: '/',
-        component: UnifiedExperience
+        component: HomePage
     },
     {
         path: '/' + ROUTES[VISUAL_STANDARDS],

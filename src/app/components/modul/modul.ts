@@ -82,17 +82,15 @@ export default class Modul extends ModulWebsite {
     }
 
     private showMenu(): void {
-
         if (this.menuOpen) {
-
             this.closeMenu();
-
         } else {
             this.menuOpen = true;
 
             let anim = setTimeout(() => {
                 this.headerAnimationCompleted = true;
                 this.$mWindow.stopScollBody();
+                this.$emit('openMenu');
             }, CSS_ANIMATION_HEADER_DURATION);
 
         }
@@ -103,12 +101,13 @@ export default class Modul extends ModulWebsite {
     private closeMenu(): void {
 
         if (this.menuOpen) {
-
             this.headerAnimationCompleted = false;
 
             let anim = setTimeout(() => {
                 this.menuOpen = false;
+
                 this.$mWindow.activeScollBody();
+                this.$emit('closeMenu');
             }, CSS_ANIMATION_MENU_DURATION);
 
         }
