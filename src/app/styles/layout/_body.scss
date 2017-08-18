@@ -1,7 +1,7 @@
 .modul-body {
     position: relative;
     z-index: 2;
-    flex: 1;
+    flex: 1 1 auto;
 
     .modul:not(.modul--black-template) & {
         padding: $m-padding--l $m-padding--l $m-padding--l*2 $m-padding--l;
