@@ -86,11 +86,14 @@ export default class Modul extends ModulWebsite {
             this.closeMenu();
         } else {
             this.menuOpen = true;
-
             let anim = setTimeout(() => {
                 this.headerAnimationCompleted = true;
                 this.$mWindow.stopScollBody();
                 this.$emit('openMenu');
+                this.$nextTick(() => {
+                    let menu: HTMLElement = this.$refs.menu as HTMLElement;
+                    menu.focus();
+                });
             }, CSS_ANIMATION_HEADER_DURATION);
 
         }

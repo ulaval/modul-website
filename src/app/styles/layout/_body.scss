@@ -1,21 +1,28 @@
+.modul-body-container {
+    height: 100%;
+
+    @include m-is-ie() {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+}
+
 .modul-body {
     position: relative;
     z-index: 2;
-    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: $modul-header--height;
+    height: 100%;
 
-    .modul:not(.modul--black-template) & {
-        padding: $m-padding--l $m-padding--l $m-padding--l*2 $m-padding--l;
+    @include m-is-ie() {
+        min-height: 100vh;
     }
 }
 
 .modul-page {
-    display: flex;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
-    max-width: 100%;
-
-    // .modul:not(.modul--at-home) & {
-    //     max-width: $m-max-width;
-    //     margin: 0 auto;
-    // }
+    position: relative;
+    z-index: 1;
+    flex: 1 1 auto;
 }

@@ -7,7 +7,9 @@ $modul-component-page--header-min-height: 250px;
 
 .modul-component-page {
     width: 100%;
+    margin: 0 auto;
     max-width: $m-max-width - $m-padding--xl;
+    padding: 0 $m-padding--l $m-padding--l*2 $m-padding--l;
 
     &::before {
         content: '';

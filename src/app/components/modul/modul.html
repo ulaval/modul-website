@@ -32,32 +32,11 @@
         </nav>
         <m-button class="modul-header__search">
             <m-icon name="search"></m-icon>
-        </m-button >
+        </m-button>
     </header>
 
-    <main class="modul-body">
-        <div class="modul-page">
-            <router-view></router-view>
-        </div>
-    </main>
-
-    <footer class="modul-footer">
-        <div class="modul-footer__body">
-            <div class="modul-footer__logo">
-                <span>Propulsé par l'université Laval</span>
-            </div>
-            <div class="modul-footer__nav">
-                <a class="modul-footer__link" href="">Conditions d'utilisation</a>
-            </div>
-        </div>
-        <div class="modul-footer__version">
-            <span class="modul-logo"><a href="">MOD<b>UL</b></a></span>
-            <span>version 0.0.1</span>
-        </div>
-    </footer>
-
     <transition name="modul-menu">
-        <nav class="modul-menu" v-if="headerAnimationCompleted">
+        <nav class="modul-menu" v-if="headerAnimationCompleted" tabindex="0" ref="menu">
             <ul v-for="category in categories" class="modul-menu__list">
                 <li>
                     <h2 @click="onCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--highlighted-title">
@@ -67,10 +46,31 @@
                 <li v-for="component in getCategoryComponents(category.id)">
                     <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
                         <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
-                        <!-- <span class="modul-menu__translation">Accordion</span> -->
                     </a>
                 </li>
             </ul>
         </nav>
     </transition>
+
+    <div class="modul-body-container">
+        <div class="modul-body">
+            <main class="modul-page">
+                <router-view></router-view>
+            </main>
+            <footer class="modul-footer">
+                <div class="modul-footer__body">
+                    <div class="modul-footer__logo">
+                        <span>Propulsé par l'université Laval</span>
+                    </div>
+                    <div class="modul-footer__nav">
+                        <a class="modul-footer__link" href="">Conditions d'utilisation</a>
+                    </div>
+                </div>
+                <div class="modul-footer__version">
+                    <span class="modul-logo"><a href="">MOD<b>UL</b></a></span>
+                    <span>version 0.0.1</span>
+                </div>
+            </footer>
+        </div>
+    </div>
 </div>

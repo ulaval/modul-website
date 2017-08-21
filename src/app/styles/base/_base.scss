@@ -1,19 +1,12 @@
-
 html,
 body,
 .modul-body {
-    background-color: $modul-body;
+    background: $modul-body;
 }
 
-.modul,
-.modul-container {
-    height: 100%;
-}
-
+.modul-container,
 .modul {
-    padding-top: $modul-header--height;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
 }
 
 .test {
