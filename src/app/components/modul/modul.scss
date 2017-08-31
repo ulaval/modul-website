@@ -1,1 +1,53 @@
-// @import '../styles/main.scss'
+@import '../../styles/shared-styles';
+
+.modul-search-card {
+    position: relative;
+    transition: 0.3s transform ease;
+    text-decoration: none;
+    color: $m-color--text;
+    display: flex;
+    min-height: 100px;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+}
+
+.modul-search-card__content {
+    padding: $m-padding;
+    border-bottom: 1px solid $m-color--grey-light;
+    width: calc(100% - 150px);
+}
+
+.modul-search-card__figure {
+    background-color: $m-color--ul-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 150px;
+    background-size: 50%;
+    background-image: url(/assets/accordion.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    border-bottom: 1px solid #006698;
+    padding: $m-padding;
+}
+
+.modul-search-card__subtitle {
+    display: block;
+    margin-top: 4px;
+    font-size: $m-font-size--s;
+    color: $m-color--grey-darker;
+    font-style: italic;
+}
+
+.search-anim-enter-active,
+.search-anim-leave-active {
+    transition: all 0.5s;
+}
+
+.search-anim-enter,
+.search-anim-leave-to {
+    opacity: 0;
+    transform: translateX(-10px);
+}

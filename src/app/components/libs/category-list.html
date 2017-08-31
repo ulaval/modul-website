@@ -1,27 +1,26 @@
 <!--<transition name="slide-fade" mode="out-in" appear>-->
 <div class="modul-component-page__body">
-    <transition-group name="slide-fade" tag="article" appear>
-        <article @click="onComponentClick(meta.tag)" :key="meta.tag" v-for="meta in categoryComponents" class="modul-card" tabindex="0">
 
-            <!--<div class="modul-card__body">-->
-            <div class="modul-card__figure">
-                <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
-            </div>
+    <article @click="onComponentClick(meta.tag)" :key="meta.tag" v-for="meta in categoryComponents" class="modul-card" tabindex="0">
 
-            <div class="modul-card__content">
+        <div class="modul-card__figure">
+            <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
+        </div>
 
-                <header>
-                    <h2 class="modul-card__title m-u--no-margin-top"><m-i18n :k="meta.name"></m-i18n></h2>
-                    <span class="modul-card__tagname"><m-i18n :k="meta.name"></m-i18n></span>
-                </header>
+        <div class="modul-card__content">
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, deleniti dolores facilis aut, maxime sequi
-                    ullam suscipit deserunt quam obcaecati totam nisi magni ipsum ut dolorem fuga nostrum pariatur provident.
-                </p>
+            <header>
+                <h2 class="modul-card__title m-u--no-margin-top">
+                    <m-i18n :k="meta.name"></m-i18n>
+                </h2>
+                <span class="modul-card__tagname"><m-i18n :k="meta.name"></m-i18n></span>
+            </header>
 
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, deleniti dolores facilis aut, maxime sequi
+                ullam suscipit deserunt quam obcaecati totam nisi magni ipsum ut dolorem fuga nostrum pariatur provident.
+            </p>
 
-            </div>
-            <!--</div>-->
-        </article>
-    </transition-group>
+        </div>
+
+    </article>
 </div>

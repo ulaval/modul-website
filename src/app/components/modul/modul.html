@@ -30,9 +30,43 @@
                 </li>
             </ul>
         </nav>
-        <m-button class="modul-header__search">
+
+        <m-button @click="toggleSearch()" class="modul-header__search">
             <m-icon name="search"></m-icon>
         </m-button>
+
+        <m-sidebar :open="isSearchOpen" from="right" width="40vw" class-name="modul-search-sidebar" :paddingBody="false" classNamePortalTarget="modul-search-sidebar">
+
+            <template slot="header">
+                <m-icon name="search"></m-icon>
+                <input type="text" v-model="searchModel" @key value="Rechercher un composant" class="modul-search-input">
+            </template>
+
+            <template slot="body">
+                <transition-group name="search-anim" tag="ul">
+                    <li class="modul-search-card" @click="onComponentClick(item.tag)" v-for="item in searchResult" key="item.tag">
+
+                        <div class="modul-search-card__figure">
+                            <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
+                        </div>
+
+                        <div class="modul-search-card__content">
+
+                            <p class="m-u--h4 m-u--no-margin-top">
+                                {{item.text}}
+                            </p>
+                            <p class="modul-search-card__subtitle">
+                                {{item.category}}
+                            </p>
+
+                        </div>
+
+                    </li>
+                </transition-group>
+            </template>
+
+        </m-sidebar>
+
     </header>
 
     <transition name="modul-menu">
@@ -73,4 +107,5 @@
             </footer>
         </div>
     </div>
+
 </div>

@@ -105,11 +105,6 @@ $modul-component-page--header-min-height: 250px;
         height: 3px;
     }
 
-    // tempo
-    .m-text-field__input__default-text {
-        display: none;
-    }
-
     .m-text-field__input {
         background: transparent;
         height: auto;
@@ -128,6 +123,7 @@ $modul-component-page--header-min-height: 250px;
     position: relative;
     z-index: 3;
     box-shadow: $m-box-shadow;
+    min-height: 750px;
 }
 
 .modul-component__header {
@@ -141,7 +137,7 @@ $modul-component-page--header-min-height: 250px;
 
 .modul-component__back {
     &.m-link.m-link {
-        position: fixed;
+        position: fixed !important;
         top: $modul-header--height;
         left: 0;
         z-index: 2;

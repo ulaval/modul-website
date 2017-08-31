@@ -23,7 +23,7 @@
     &:hover {
         .modul-card {
             &__figure {
-                background: $m-color--interactive-light;
+                background-color: $m-color--interactive-light;
             }
         }
     }
@@ -32,7 +32,7 @@
     &:active {
         .modul-card {
             &__figure {
-                background: $m-color--interactive-dark;
+                background-color: $m-color--interactive-dark;
             }
         }
     }
@@ -45,6 +45,11 @@
     align-items: center;
     justify-content: center;
     flex: 0 1 275px;
+    background-size: 75%;
+    background-image: url(/assets/accordion.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
 }
 
 .modul-card__content {
@@ -52,10 +57,6 @@
     padding: $m-padding*2;
     flex: 1 2 auto;
 }
-
-// .modul-card__title {
-//     color: $m-color--black;
-// }
 
 .modul-card__tagname {
     display: block;
