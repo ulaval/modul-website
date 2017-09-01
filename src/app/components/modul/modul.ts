@@ -107,7 +107,6 @@ export default class Modul extends ModulWebsite {
             }, CSS_ANIMATION_HEADER_DURATION);
 
         }
-
     }
 
     // public hightlight(words, query): void {
@@ -118,8 +117,7 @@ export default class Modul extends ModulWebsite {
     //     return words.replace(query, '<span class=\'test2\'>' + query + '</span>')
     // });
 
-    public searchData(): any[] {
-
+    private searchData(): any[] {
         return Object.keys(Meta.getMeta()).map(key => {
             let nameObj: {};
             if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {
@@ -158,11 +156,9 @@ export default class Modul extends ModulWebsite {
 
     private toggleSearch(): void {
         this.searchOpen = !this.searchOpen;
-
         if (this.searchOpen) {
             this.components = this.searchData();
         }
-
     }
 
     @Watch('$route')

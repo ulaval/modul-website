@@ -31,12 +31,11 @@
             </ul>
         </nav>
 
-        <m-button @click="toggleSearch()" class="modul-header__search">
+        <m-button @click="toggleSearch" class="modul-header__search">
             <m-icon name="search"></m-icon>
         </m-button>
 
-        <m-sidebar :open="isSearchOpen" from="right" width="40vw" class-name="modul-search-sidebar" :paddingBody="false" classNamePortalTarget="modul-search-sidebar">
-
+        <m-sidebar :open="searchOpen" from="right" width="400px" @open="searchOpen = true" @close="searchOpen = false" class-name="modul-search-sidebar" :paddingBody="false" classNamePortalTarget="modul-search-sidebar">
             <template slot="header">
                 <m-icon name="search"></m-icon>
                 <input type="text" v-model="searchModel" @key value="Rechercher un composant" class="modul-search-input">
