@@ -1,5 +1,5 @@
-<div class="modul" :class="{'modul--menu-is-open' : menuOpen, 'modul--at-home' : isHome, 'modul--black-template' : isHome}">
-    <header ref="header" class="modul-header">
+<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHome, 'modul--is-black-template' : isHome}" :dynamic-header="false">
+    <div slot="header" ref="header" class="modul-header">
         <h1 v-if="isHome" class="modul-logo">
             <router-link to="/">MOD<b>UL</b></router-link>
         </h1>
@@ -35,7 +35,8 @@
             <m-icon name="search"></m-icon>
         </m-button>
 
-        <m-sidebar :open="searchOpen" from="right" width="400px" @open="searchOpen = true" @close="searchOpen = false" class-name="modul-search-sidebar" :paddingBody="false" classNamePortalTarget="modul-search-sidebar">
+        <m-sidebar :open="searchOpen" from="right" width="400px" @open="searchOpen = true" @close="searchOpen = false" class-name="modul-search-sidebar"
+            :paddingBody="false" classNamePortalTarget="modul-search-sidebar">
             <template slot="header">
                 <m-icon name="search"></m-icon>
                 <input type="text" v-model="searchModel" @key value="Rechercher un composant" class="modul-search-input">
@@ -44,11 +45,9 @@
             <template slot="body">
                 <transition-group name="search-anim" tag="ul">
                     <li class="modul-search-card" @click="onComponentClick(item.tag)" v-for="item in searchResult" key="item.tag">
-
                         <div class="modul-search-card__figure">
                             <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
                         </div>
-
                         <div class="modul-search-card__content">
 
                             <p class="m-u--h4 m-u--no-margin-top">
@@ -57,18 +56,13 @@
                             <p class="modul-search-card__subtitle">
                                 {{item.category}}
                             </p>
-
                         </div>
-
                     </li>
                 </transition-group>
             </template>
-
         </m-sidebar>
-
-    </header>
-
-    <transition name="modul-menu">
+    </div>
+    <transition name="modul--is">
         <nav class="modul-menu" v-if="headerAnimationCompleted" tabindex="0" ref="menu">
             <ul v-for="category in categories" class="modul-menu__list">
                 <li>
@@ -85,26 +79,23 @@
         </nav>
     </transition>
 
-    <div class="modul-body-container">
-        <div class="modul-body">
-            <main class="modul-page">
-                <router-view></router-view>
-            </main>
-            <footer class="modul-footer">
-                <div class="modul-footer__body">
-                    <div class="modul-footer__logo">
-                        <span>Propulsé par l'université Laval</span>
-                    </div>
-                    <div class="modul-footer__nav">
-                        <a class="modul-footer__link" href="">Conditions d'utilisation</a>
-                    </div>
-                </div>
-                <div class="modul-footer__version">
-                    <span class="modul-logo"><a href="">MOD<b>UL</b></a></span>
-                    <span>version 0.0.1</span>
-                </div>
-            </footer>
+    <div class="modul-body">
+        <router-view></router-view>
+    </div>
+
+    <div slot="footer" class="modul-footer">
+        <div class="modul-footer__body">
+            <div class="modul-footer__logo">
+                <span>Propulsé par l'université Laval</span>
+            </div>
+            <div class="modul-footer__nav">
+                <a class="modul-footer__link" href="">Conditions d'utilisation</a>
+            </div>
+        </div>
+        <div class="modul-footer__version">
+            <span class="modul-logo"><a href="">MOD<b>UL</b></a></span>
+            <span>version 0.0.1</span>
         </div>
     </div>
 
-</div>
+</m-flex-template>

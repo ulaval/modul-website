@@ -1,14 +1,8 @@
 
-// temp
-html,
-body {
-    height: auto !important;
-}
-
 html,
 body,
 .modul-body {
-    background: $modul-body;
+    background: $modul-color--body;
 }
 
 .modul-container,

@@ -2,14 +2,54 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
+.modul {
+    &.modul--is-menu-open,
+    &.modul--is-black-template {
+        .modul-header {
+            background: $modul-color--grey--darker;
+
+            &__link {
+                &,
+                &:visited {
+                    color: $modul-color--fadded-grey;
+                }
+
+                &:hover,
+                &:focus,
+                &.router-link-active {
+                    color: $m-color--white;
+                }
+
+                &.router-link-active::after {
+                    background-color: $m-color--active;
+                }
+
+                &:hover::after {
+                    background-color: $m-color--white;
+                }
+            }
+        }
+
+        .modul-logo {
+            &,
+            a,
+            a:visited,
+            b {
+                color: $m-color--white;
+            }
+        }
+    }
+
+    &:not(.modul--is-menu-open):not(.modul--is-black-template) {
+        .modul-header {
+            box-shadow: $m-box-shadow--s;
+        }
+    }
+}
+
 .modul-header {
     // menu opening animation
     transition: background-color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
     width: 100%;
     height: $modul-header--height;
     background: $m-color--white;
@@ -17,10 +57,6 @@
     align-content: space-between;
     align-items: center;
     padding-left: $m-padding--l;
-
-    .modul:not(.modul--menu-is-open):not(.modul--black-template) & {
-        box-shadow: $m-box-shadow--s;
-    }
 
     &__search {
         display: flex;
@@ -42,15 +78,6 @@
             font-size: 22px;
             stroke-width: 10px;
         }
-    }
-
-    // menu opening animation
-    .modul--menu-is-open & {
-        background-color: $modul-color--grey--darker;
-    }
-
-    .modul--black-template & {
-        background-color: $modul-color--grey--darker;
     }
 }
 
@@ -86,7 +113,6 @@
         color: $modul-color--fadded-dark-grey;
     }
 
-    // modifiers
     &:hover,
     &:focus,
     &.router-link-active {
@@ -99,29 +125,6 @@
 
     &:hover::after {
         background-color: $m-color--black;
-    }
-
-    // when menu is open
-    .modul--black-template &,
-    .modul--menu-is-open & {
-        &,
-        &:visited {
-            color: $modul-color--fadded-grey;
-        }
-
-        &:hover,
-        &:focus,
-        &.router-link-active {
-            color: $m-color--white;
-        }
-
-        &.router-link-active::after {
-            background-color: $m-color--active;
-        }
-
-        &:hover::after {
-            background-color: $m-color--white;
-        }
     }
 }
 
@@ -143,17 +146,6 @@
     b {
         font-weight: $m-font-weight--black;
         color: $modul-color--grey--darker;
-    }
-
-    // when menu is open
-    .modul--black-template &,
-    .modul--menu-is-open & {
-        &,
-        a,
-        a:visited,
-        b {
-            color: $m-color--white;
-        }
     }
 }
 

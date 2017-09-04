@@ -5,14 +5,13 @@ $modul-menu--list-max-width: 300px;
 
 .modul-menu {
     position: fixed;
-    z-index: 98;
-    overflow-y: auto;
-    overflow-x: hidden;
     top: $modul-header--height;
     right: 0;
     bottom: 0;
     left: 0;
-    // z-index: 1000;
+    z-index: 99;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -20,90 +19,103 @@ $modul-menu--list-max-width: 300px;
     color: $modul-color--grey--light;
     padding: $m-padding--l*2 $m-padding--l $m-padding--l*2 $m-padding--l;
     outline: none;
-}
 
-.modul-menu__list {
-    list-style: none;
-    min-width: $modul-menu--list-max-width;
-    margin: 0 $m-padding $m-padding--l 0;
+    &.modul--is- {
+        &enter-active {
+            transition: transform #{$modul-CSS_ANIMATION_MENU_DURATION} ease;
+        }
 
-    &:last-child {
-        margin-right: 0;
-    }
-}
+        &leave-active {
+            transition: transform #{$modul-CSS_ANIMATION_MENU_DURATION} ease;
+        }
 
-.modul-menu__title {
-    cursor: pointer;
-    margin-bottom: $m-margin;
-
-    &:active {
-        outline: none;
-    }
-}
-
-.modul-menu__link {
-    $modul-menu-transition-duration: 0.7s;
-
-    $modul-menu-offset-left: $m-padding--s + 2;
-
-    text-decoration: none;
-    display: block;
-    padding: $m-padding--s $modul-menu-offset-left $m-padding--s;
-    margin-left: -$modul-menu-offset-left;
-    border-left: 2px solid transparent;
-    transition: background-color #{$modul-menu-transition-duration} ease, border-color #{$modul-menu-transition-duration} ease, margin-left #{$modul-menu-transition-duration} ease;
-    position: relative;
-    background-color: transparent;
-    outline: none;
-
-    &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba($modul-color--grey--dark, 100%) 100%);
-        z-index: 1;
-    }
-
-    &:hover,
-    &:focus {
-        border-left-color: $m-color--white;
-        background-color: $modul-color--grey--darker;
-        margin-left: 0;
-
-        .modul-menu__label {
-            color: $m-color--white;
+        &leave-active,
+        &enter {
+            transform: translate3d(0, -100%, 0);
         }
     }
 
-    span {
-        display: block;
-        color: rgba($modul-color--grey, 0.7);
-        transition: color #{$modul-menu-transition-duration} ease;
-        position: relative;
-        z-index: 2;
+    &__list {
+        list-style: none;
+        min-width: $modul-menu--list-max-width;
+        margin: 0 $m-padding $m-padding--l 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
-}
 
-.modul-menu__translation {
-    font-style: italic;
-    font-weight: 300;
-    font-size: 14px;
-}
+    &__title {
+        cursor: pointer;
+        margin-bottom: $m-margin;
+        outline: none;
 
-// menu opening animation
-.modul-menu-enter-active {
-    transition: transform #{$modul-CSS_ANIMATION_MENU_DURATION} ease;
-}
+        &:active {
+            outline: none;
+        }
 
-.modul-menu-leave-active {
-    transition: transform #{$modul-CSS_ANIMATION_MENU_DURATION} ease;
-}
+        &:hover,
+        &:focus {
+            &::before {
+                width: 64px;
+            }
+        }
 
-.modul-menu-leave-active,
-.modul-menu-enter {
-    transform: translateY(-100%);
+        &::before {
+            transition: width 0.3s ease;
+        }
+    }
+
+    &__link {
+        $modul-menu-transition-duration: 0.7s;
+
+        $modul-menu-offset-left: $m-padding--s + 2;
+
+        text-decoration: none;
+        display: block;
+        padding: $m-padding--s $modul-menu-offset-left $m-padding--s;
+        margin-left: -$modul-menu-offset-left;
+        border-left: 2px solid transparent;
+        transition: background-color #{$modul-menu-transition-duration} ease, border-color #{$modul-menu-transition-duration} ease, margin-left #{$modul-menu-transition-duration} ease;
+        position: relative;
+        background-color: transparent;
+        outline: none;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba($modul-color--grey--dark, 100%) 100%);
+            z-index: 1;
+        }
+
+        &:hover,
+        &:focus {
+            border-left-color: $m-color--white;
+            background-color: $modul-color--grey--darker;
+            margin-left: 0;
+
+            .modul-menu__label {
+                color: $m-color--white;
+            }
+        }
+
+        span {
+            display: block;
+            color: rgba($modul-color--grey, 0.7);
+            transition: color #{$modul-menu-transition-duration} ease;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &__translation {
+        font-style: italic;
+        font-weight: 300;
+        font-size: 14px;
+    }
 }

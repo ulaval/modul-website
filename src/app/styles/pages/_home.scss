@@ -123,6 +123,10 @@
                 font-size: $m-font-size--l;
                 line-height: 1.4;
             }
+
+            > :first-child {
+                margin-top: 0;
+            }
         }
     }
 
@@ -173,7 +177,6 @@
 }
 
 .modul-home-design {
-    // margin-top: 150vh;
     background: $modul-color--grey--dark;
     padding: $m-padding--xl $m-padding--l;
     color: $m-color--white;

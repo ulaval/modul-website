@@ -1,6 +1,14 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+.modul {
+    &.modul--is-black-template {
+        .modul-footer__version {
+            background-color: $modul-color--grey--dark;
+            color: $modul-color--grey;
+        }
+    }
+}
 
 .modul-footer {
     position: relative;
@@ -34,10 +42,5 @@
     &,
     .modul-logo {
         font-size: $m-font-size--s;
-    }
-
-    .modul--black-template & {
-        background-color: $modul-color--grey--dark;
-        color: $modul-color--grey;
     }
 }
