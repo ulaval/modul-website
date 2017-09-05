@@ -10,6 +10,7 @@
         "attributes": "Propriétés",
         "attribute": "Propriété",
         "value": "Valeur",
-        "description": "Description"
+        "description": "Description",
+        "preview-non-dispo": "Apercu non disponible pour le moment"
     }
 }

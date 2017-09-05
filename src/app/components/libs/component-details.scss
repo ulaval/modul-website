@@ -1,1 +1,65 @@
-//
+@import '../../styles/shared-styles';
+
+.modul-component {
+    background-color: $m-color--white;
+    position: relative;
+    z-index: 3;
+    box-shadow: $m-box-shadow;
+    min-height: 750px;
+}
+
+.modul-component__header {
+    background-color: $modul-color--grey--darker;
+    padding: 19px $m-padding;
+}
+
+.modul-component__preview {
+    padding: $m-padding--l $m-padding--l;
+}
+
+.modul-component__nav {
+    border-top: 4px solid $m-color--ul-yellow;
+    border-bottom: 1px solid $modul-color--grey;
+    display: flex;
+    align-items: center;
+}
+
+.modul-component__link {
+    transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+    display: block;
+    padding: 20px;
+    font-weight: $m-font-weight--black;
+    font-size: $m-font-size--s;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &,
+    &:visited {
+        color: $modul-color--fadded-dark-grey;
+    }
+
+    &:hover,
+    &:focus,
+    .router-link-active {
+        color: $modul-color--grey--darker;
+    }
+}
+
+.modul-component__title {
+    color: $m-color--white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.modul-component__body {
+    padding: $m-padding--l;
+
+    > :first-child {
+        &,
+        > :first-child {
+            margin-top: 0;
+        }
+    }
+}
+

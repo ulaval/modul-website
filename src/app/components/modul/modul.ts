@@ -109,9 +109,7 @@ export default class Modul extends ModulWebsite {
         }
     }
 
-    // public hightlight(words, query): void {
-    //     return words.replace(query, '<span class=\'test2\'>' + query + '</span>')
-    // }
+    private searchData(): any[] {
 
     // Vue.filter('highlight', function(words, query){
     //     return words.replace(query, '<span class=\'test2\'>' + query + '</span>')
@@ -125,13 +123,13 @@ export default class Modul extends ModulWebsite {
                     tag: Meta.getMeta()[key].tag,
                     category: this.$i18n.translate(Meta.getMeta()[key].category),
                     text: this.$i18n.translate(Meta.getMeta()[key].name)
-                }
+                };
             } else {
                 nameObj = {
                     tag: Meta.getMeta()[key].tag,
                     category: 'Null',
                     text: 'Null'
-                }
+                };
             }
             return nameObj;
         }, this);
@@ -142,7 +140,7 @@ export default class Modul extends ModulWebsite {
         let filtereComponents: any[] = [];
         if (this.searchModel != '') {
             filtereComponents = this.components.filter((element) => {
-                let textToSearch = element.category + " " + element.text;
+                let textToSearch = element.category + ' ' + element.text;
                 return normalizeString(textToSearch).match(normalizeString(this.searchModel));
             });
         }

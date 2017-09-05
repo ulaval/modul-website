@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import WithRender from './component.html?style=./component.scss';
+import WithRender from './component.html';
 import { Watch } from 'vue-property-decorator';
 import * as ModulActions from '@/app/store/actions';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import WithRender from './category.html?style=./category.scss';
+import WithRender from './category.html';
 import { Watch } from 'vue-property-decorator';
 import { ModulWebsite } from '../modul-website';
 import * as ModulActions from '@/app/store/actions';

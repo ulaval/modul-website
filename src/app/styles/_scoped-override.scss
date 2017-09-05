@@ -1,0 +1,19 @@
+.modul-component-page__title.modul-component-page__title {
+    .m-text-field__input {
+        font-size: 38px;
+        font-weight: 600;
+        margin: 0;
+        color: $modul-color--grey--darker;
+        border-bottom-width: 3px;
+    }
+
+    .m-text-field__input-line {
+        height: 3px;
+    }
+
+    // temp
+    .m-text-field__input__default-text {
+        opacity: 1 !important;
+        color: $modul-color--grey--darker;
+    }
+}
