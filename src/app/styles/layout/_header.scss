@@ -51,20 +51,33 @@
     // menu opening animation
     transition: background-color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
     width: 100%;
-    height: $modul-header--height;
+    height: $modul-header--height--s;
     background: $m-color--white;
     display: flex;
     align-content: space-between;
     align-items: center;
-    padding-left: $m-padding--l;
+    padding-left: $m-padding;
+
+    @media (min-width: $m-bp--min--xs) {
+        height: $modul-header--height;
+    }
+
+    @media (min-width: $m-bp--min--s) {
+        padding-left: $m-padding--l;
+    }
 
     &__search {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: $modul-header--height;
-        height: $modul-header--height;
+        width: $modul-header--height--s;
+        height: $modul-header--height--s;
         cursor: pointer;
+
+        @media (min-width: $m-bp--min--xs) {
+            width: $modul-header--height;
+            height: $modul-header--height;
+        }
 
         .modul--black-template & {
             color: $m-color--white;
@@ -150,27 +163,54 @@
 }
 
 .modul-search-sidebar.modul-search-sidebar {
-    .m-base-window__article {
-        max-height: none !important;
-        height: 100vh;
-    }
 
-    .m-base-window__header {
-        display: flex !important;
-        height: $modul-header--height;
-        font-size: 18px;
-        padding-right: $modul-header--height !important;
-    }
+    .m-base-window {
+        &__article {
+            bottom: 0;
+        }
 
-    .m-base-window__body {
-        height: calc(100% - #{$modul-header--height});
-    }
+        &__header {
+            display: flex !important;
+            height: $modul-header--height--s;
+            padding-right: $modul-header--height--s !important;
+            flex: 0 0 $modul-header--height--s;
+            font-size: 18px;
 
-    .m-base-window__header__close-button {
-        background-color: $m-color--ul-blue !important;
-        border-radius: 0 !important;
-        height: $modul-header--height;
-        width: $modul-header--height;
+            @media (min-width: $m-bp--min--xs) {
+                height: $modul-header--height;
+                padding-right: $modul-header--height !important;
+                flex: 0 0 $modul-header--height;
+            }
+
+            &__close-button {
+                &.m-button.m-button {
+                    transition: background 0.3s ease;
+                    background: $m-color--ul-blue;
+                    border-radius: 0;
+                    height: $modul-header--height--s;
+                    width: $modul-header--height--s;
+                    color: $m-color--white;
+
+                    @media (min-width: $m-bp--min--xs) {
+                        height: $modul-header--height;
+                        width: $modul-header--height;
+                    }
+
+                    &:hover {
+                        background: $m-color--interactive-light;
+                    }
+
+                    &:active,
+                    &:focus {
+                        background: $m-color--interactive-dark;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }
 

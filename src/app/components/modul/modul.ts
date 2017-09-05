@@ -6,6 +6,7 @@ import * as ModulActions from '@/app/store/actions';
 import { Watch } from 'vue-property-decorator';
 import { ROUTES, COMPONENTS, ECOSYSTEM, VISUAL_STANDARDS, WRITING_RULES } from '@/app/router';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 
 // animation constant shared with css in header.scss and menu.scss
@@ -28,7 +29,9 @@ type CategoryIndexMap = {
 };
 
 @WithRender
-@Component
+@Component({
+    mixins: [MediaQueries]
+})
 export default class Modul extends ModulWebsite {
 
     private menuOpen: boolean = false;
@@ -36,6 +39,7 @@ export default class Modul extends ModulWebsite {
     private headerAnimationCompleted: boolean = false;
     private categories: Category[] = [];
     private searchModel: string = '';
+    private searchWidth: string = '400px';
 
     private components: Component[] = [];
 
@@ -50,6 +54,15 @@ export default class Modul extends ModulWebsite {
         this.categories.sort((a, b) => {
             return a.text < b.text ? -1 : (a.text > b.text ? 1 : 0);
         });
+    }
+
+    protected mounted(): void {
+        this.isMqMinSChanged(this.as<MediaQueriesMixin>().isMqMinS)
+    }
+
+    @Watch('isMqMinS')
+    private isMqMinSChanged(value): void {
+        this.searchWidth = value ? '400px' : '100%';
     }
 
     private get isHome(): boolean {

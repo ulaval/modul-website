@@ -1,8 +1,14 @@
 @import '../../styles/shared-styles';
 
+.modul-search-sidebar {
+    ul {
+        margin: 0;
+    }
+}
+
 .modul-search-card {
     position: relative;
-    transition: 0.3s transform ease;
+    transition: transform 0.3s ease;
     text-decoration: none;
     color: $m-color--text;
     display: flex;
@@ -10,44 +16,66 @@
     cursor: pointer;
     outline: none;
     width: 100%;
+
+    &:hover {
+        .modul-search-card {
+            &__figure {
+                background-color: $m-color--interactive-light;
+            }
+        }
+    }
+
+    &:active,
+    &:focus {
+        .modul-search-card {
+            &__figure {
+                background-color: $m-color--interactive-dark;
+            }
+        }
+    }
+
+    &__content {
+        padding: $m-padding;
+        border-bottom: 1px solid $m-color--grey-light;
+        width: calc(100% - 150px);
+    }
+
+    &__figure {
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 1 150px;
+        background-color: $m-color--interactive;
+        background-size: 50%;
+        background-image: url(/assets/accordion.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-blend-mode: multiply;
+        border-bottom: 1px solid #006698;
+        padding: $m-padding;
+    }
+
+    &__subtitle {
+        display: block;
+        margin-top: 4px;
+        font-size: $m-font-size--s;
+        color: $m-color--grey-darker;
+        font-style: italic;
+    }
+
+    &.modul--is {
+        &-enter-active,
+        &-leave-active {
+            transition: transform 0.45s ease, opacity 0.3s linear;
+        }
+
+        &-enter,
+        &-leave-to {
+            opacity: 0;
+            transform: translate3d(-$m-margin, 0, 0);
+        }
+    }
 }
 
-.modul-search-card__content {
-    padding: $m-padding;
-    border-bottom: 1px solid $m-color--grey-light;
-    width: calc(100% - 150px);
-}
 
-.modul-search-card__figure {
-    background-color: $m-color--ul-blue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 1 150px;
-    background-size: 50%;
-    background-image: url(/assets/accordion.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: multiply;
-    border-bottom: 1px solid #006698;
-    padding: $m-padding;
-}
-
-.modul-search-card__subtitle {
-    display: block;
-    margin-top: 4px;
-    font-size: $m-font-size--s;
-    color: $m-color--grey-darker;
-    font-style: italic;
-}
-
-.search-anim-enter-active,
-.search-anim-leave-active {
-    transition: all 0.5s;
-}
-
-.search-anim-enter,
-.search-anim-leave-to {
-    opacity: 0;
-    transform: translateX(-10px);
-}

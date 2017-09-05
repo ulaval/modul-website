@@ -6,7 +6,7 @@
         <div v-if="!isHome" class="modul-logo">
             <router-link to="/">MOD<b>UL</b></router-link>
         </div>
-        <nav class="modul-header__nav">
+        <nav class="modul-header__nav" v-if="isMqMinS">
             <ul>
                 <li>
                     <router-link :to="visualStandards" class="modul-header__link">
@@ -35,27 +35,23 @@
             <m-icon name="search"></m-icon>
         </m-button>
 
-        <m-sidebar :open="searchOpen" from="right" width="400px" @open="searchOpen = true" @close="searchOpen = false" class-name="modul-search-sidebar"
+        <m-sidebar :open="searchOpen" from="right" :width="searchWidth" @open="searchOpen = true" @close="searchOpen = false" class-name="modul-search-sidebar"
             :paddingBody="false" classNamePortalTarget="modul-search-sidebar">
             <template slot="header">
                 <m-icon name="search"></m-icon>
-                <input type="text" v-model="searchModel" @key value="Rechercher un composant" class="modul-search-input">
+                <input type="text" v-model="searchModel" placeholder="Rechercher" value="Rechercher un composant" class="modul-search-input">
             </template>
 
             <template slot="body">
-                <transition-group name="search-anim" tag="ul">
-                    <li class="modul-search-card" @click="onComponentClick(item.tag)" v-for="item in searchResult" key="item.tag">
+                <transition-group name="modul--is" tag="ul">
+                    <li class="modul-search-card" @click="onComponentClick(item.tag)" v-for="item in searchResult" key="item.tag" tabindex="0">
                         <div class="modul-search-card__figure">
                             <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
                         </div>
                         <div class="modul-search-card__content">
 
-                            <p class="m-u--h4 m-u--no-margin-top">
-                                {{item.text}}
-                            </p>
-                            <p class="modul-search-card__subtitle">
-                                {{item.category}}
-                            </p>
+                            <p class="m-u--h4 m-u--no-margin-top">{{ item.text }}</p>
+                            <p class="modul-search-card__subtitle">{{ item.category }}</p>
                         </div>
                     </li>
                 </transition-group>
@@ -88,7 +84,7 @@
             <div class="modul-footer__logo">
                 <span>Propulsé par l'université Laval</span>
             </div>
-            <div class="modul-footer__nav">
+            <div class="modul-footer__nav" v-if="isMqMinS">
                 <a class="modul-footer__link" href="">Conditions d'utilisation</a>
             </div>
         </div>

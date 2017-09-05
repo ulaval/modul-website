@@ -5,61 +5,59 @@
     position: relative;
     z-index: 3;
     box-shadow: $m-box-shadow;
-    min-height: 750px;
-}
 
-.modul-component__header {
-    background-color: $modul-color--grey--darker;
-    padding: 19px $m-padding;
-}
-
-.modul-component__preview {
-    padding: $m-padding--l $m-padding--l;
-}
-
-.modul-component__nav {
-    border-top: 4px solid $m-color--ul-yellow;
-    border-bottom: 1px solid $modul-color--grey;
-    display: flex;
-    align-items: center;
-}
-
-.modul-component__link {
-    transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
-    display: block;
-    padding: 20px;
-    font-weight: $m-font-weight--black;
-    font-size: $m-font-size--s;
-    text-transform: uppercase;
-    text-decoration: none;
-
-    &,
-    &:visited {
-        color: $modul-color--fadded-dark-grey;
+    &__header {
+        background-color: $modul-color--grey--darker;
+        padding: 19px $m-padding;
     }
 
-    &:hover,
-    &:focus,
-    .router-link-active {
-        color: $modul-color--grey--darker;
+    &__preview {
+        padding: $m-padding--l $m-padding--l;
     }
-}
 
-.modul-component__title {
-    color: $m-color--white;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
+    &__nav {
+        border-top: 4px solid $m-color--ul-yellow;
+        border-bottom: 1px solid $modul-color--grey;
+        display: flex;
+        align-items: center;
+    }
 
-.modul-component__body {
-    padding: $m-padding--l;
+    &__link {
+        transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+        display: block;
+        padding: 20px;
+        font-weight: $m-font-weight--black;
+        font-size: $m-font-size--s;
+        text-transform: uppercase;
+        text-decoration: none;
 
-    > :first-child {
         &,
+        &:visited {
+            color: $modul-color--fadded-dark-grey;
+        }
+
+        &:hover,
+        &:focus,
+        .router-link-active {
+            color: $modul-color--grey--darker;
+        }
+    }
+
+    &__title {
+        color: $m-color--white;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &__body {
+        padding: $m-padding--l;
+
         > :first-child {
-            margin-top: 0;
+            &,
+            > :first-child {
+                margin-top: 0;
+            }
         }
     }
 }
-
