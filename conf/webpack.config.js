@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const path = require("path");
+// var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -108,5 +109,6 @@ module.exports = {
             configFile: '.stylelintrc',
             emitErrors: false
         })
+        // , new BundleAnalyzerPlugin()
     ]
 }
