@@ -194,8 +194,10 @@ $modul-home-design--width--l: 270px;
         position: fixed;
         bottom: 0;
         left: 50%;
-        margin-left: -75px;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        margin-left: -75px;
         cursor: pointer;
 
         .m-button.m-button {
@@ -206,17 +208,24 @@ $modul-home-design--width--l: 270px;
         &:hover {
             transform: translate3d(0, 0, 0);
         }
+
+        &__chevron {
+            position: relative;
+            font-size: 40px;
+            color: $m-color--ul-blue;
+
+            &:first-child {
+                top: 8px;
+                font-size: 20px;
+            }
+
+            &:nth-child(2) {
+                top: 6px;
+                font-size: 30px;
+            }
+        }
     }
 
-    &__chevrons {
-        font-size: 40px;
-        color: $m-color--ul-blue;
-    }
-}
-
-.modul-home-experiment__chevron.modul-home-experiment__chevron.modul-home-experiment__chevron {
-    display: block;
-    margin: 0 auto;
 }
 
 .modul-home-design,
