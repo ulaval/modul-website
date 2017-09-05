@@ -44,7 +44,7 @@
 
             <template slot="body">
                 <transition-group name="modul--is" tag="ul">
-                    <li class="modul-search-card" @click="onComponentClick(item.tag)" v-for="item in searchResult" key="item.tag" tabindex="0">
+                    <li tabindex="0" class="modul-search-card" @click="onComponentClick(item.tag)" @keyup.enter="onComponentClick(item.tag)" v-for="item in searchResult" key="item.tag">
                         <div class="modul-search-card__figure">
                             <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
                         </div>

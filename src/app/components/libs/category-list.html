@@ -1,7 +1,7 @@
 <!--<transition name="slide-fade" mode="out-in" appear>-->
 <div class="modul-component-page__body">
 
-    <article @click="onComponentClick(meta.tag)" :key="meta.tag" v-for="meta in categoryComponents" class="modul-card" tabindex="0">
+    <article @click="onComponentClick(meta.tag)" @keyup.enter="onComponentClick(meta.tag)" :key="meta.tag" v-for="meta in categoryComponents" class="modul-card" tabindex="0">
 
         <div class="modul-card__figure">
             <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
