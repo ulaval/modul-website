@@ -109,8 +109,6 @@ export default class Modul extends ModulWebsite {
         }
     }
 
-    private searchData(): any[] {
-
     // Vue.filter('highlight', function(words, query){
     //     return words.replace(query, '<span class=\'test2\'>' + query + '</span>')
     // });
