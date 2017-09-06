@@ -4,7 +4,10 @@ pipeline {
 
 
     options {
+        // Discarter après 10 builds
         buildDiscarder(logRotator(numToKeepStr: '10'))
+
+        // Ajouter les timestamps dans le log
         timestamps()
     }
 
@@ -50,10 +53,29 @@ pipeline {
                 // Création et Déploiement de l'image
                 withDockerRegistry(url: DOCKER_REPOSITORY_URL, credentialsId: 'artifactory-docker-registry-credential') {
 
+                    // -q = quiet
+                    // -t = tag
                     sh ''' \
                     PACKAGE_VERSION=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g') \
                     && docker build -q -t docker-local.maven.at.ulaval.ca/modul/modul-website:$PACKAGE_VERSION . \
                     && docker push docker-local.maven.at.ulaval.ca/modul/modul-website:$PACKAGE_VERSION'''
+                }
+            }
+        }
+
+        stage('Déployer dans OpenShift') {
+            steps {
+                script {
+                    openshift.withCluster( 'pca.exp.ulaval.ca' ) {
+                        openshift.withProject( 'modul-website' ) {
+                            def dcSelector = openshift.selector( 'deploymentconfig/dev' )
+                            def result = dcSelector.deploy('--latest')
+                            echo "Deploy status: ${result.out}"
+
+                            // Attendre la fin du déploiement
+                            dcSelector.rollout().status("-w")
+                        }
+                    }
                 }
             }
         }
