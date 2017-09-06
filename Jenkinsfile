@@ -66,14 +66,15 @@ pipeline {
         stage('Déployer dans OpenShift') {
             steps {
                 script {
-                    openshift.withCluster( 'pca.exp.ulaval.ca' ) {
+                    openshift.withCluster( 'modul-website' ) {
                         openshift.withProject( 'modul-website' ) {
                             def dcSelector = openshift.selector( 'deploymentconfig/dev' )
-                            def result = dcSelector.deploy('--latest')
-                            echo "Deploy status: ${result.out}"
+                            def rolloutManager = dcSelector.rollout();
+                            def result = rolloutManager.latest();
+                            echo "Deploy status: ${result.out} ${result.err}"
 
                             // Attendre la fin du déploiement
-                            dcSelector.rollout().status("-w")
+                            rolloutManager.status("-w")
                         }
                     }
                 }
