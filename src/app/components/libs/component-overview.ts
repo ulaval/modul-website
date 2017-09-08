@@ -12,17 +12,29 @@ export class ComponentOverview extends ModulWebsite {
 
     protected mounted(): void {
         this.getOverview();
+        this.getMdPreview();
     }
 
     @Watch('$route')
     protected getOverview(): void {
         if (this.state.component) {
-            this.$store.dispatch(ModulActions.COMPONENT_MARKDOWN_GET, {
+            this.$store.dispatch(ModulActions.COMPONENT_DOCUMENTATION_GET, {
                 restAdapter: this.$http,
                 markdown: this.state.component.overview
             });
         }
     }
+
+    @Watch('$route')
+    protected getMdPreview(): void {
+        if (this.state.component && this.state.component.preview != false && this.state.component.preview != true) {
+            this.$store.dispatch(ModulActions.COMPONENT_PREVIEW_GET, {
+                restAdapter: this.$http,
+                markdown: this.state.component.preview
+            });
+        }
+    }
+
 
     private isOverviewType(item: Overview, type: OverviewType): boolean {
         return item.type == type;
