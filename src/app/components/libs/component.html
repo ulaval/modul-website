@@ -12,7 +12,7 @@
         <div class="modul-component-page__header__wrap">
             <div ref="dropdown" class="modul-component-page__title">
 
-                <m-dropdown width="400px" @elementSelected="onComponentSelected($event)">
+                <m-dropdown @elementSelected="onComponentSelected($event)">
                     <m-dropdown-item v-for="component in components"   :value="component" :label="component.text"></m-dropdown-item>
                 </m-dropdown>
 
