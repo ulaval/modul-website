@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Mutation } from 'vuex';
+import { Mutation, Getter } from 'vuex';
 import { ModulState } from './modul-state';
 import { ROUTES, COMPONENTS } from '../router';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
@@ -11,8 +11,12 @@ export class ModulMutations {
 
     public static CATEGORY_GET: string = 'CATEGORY_GET';
     public static COMPONENT_GET: string = 'COMPONENT_GET';
-    public static COMPONENT_MARKDOWN_GET: string = 'COMPONENT_MARKDOWN_GET';
-    public static COMPONENT_MARKDOWN_GET_SUCCESS: string = 'COMPONENT_MARKDOWN_GET_SUCCESS';
+
+    // preview MD
+    public static COMPONENT_DOCUMENTATION_GET: string = 'COMPONENT_DOCUMENTATION_GET';
+    public static COMPONENT_DOCUMENTATION_GET_SUCCESS: string = 'COMPONENT_DOCUMENTATION_GET_SUCCESS';
+    public static COMPONENT_PREVIEW_GET: string = 'COMPONENT_PREVIEW_GET';
+    public static COMPONENT_PREVIEW_GET_SUCCESS: string = 'COMPONENT_PREVIEW_GET_SUCCESS';
 
     public static MESSAGES_GET: string = 'MESSAGES_GET';
     public static MESSAGES_GET_SUCCESS: string = 'MESSAGES_GET_SUCCESS';
@@ -58,14 +62,23 @@ export class ModulMutations {
         state.component = component;
     }
 
-    // Component - COMPONENT_MARKDOWN_GET
-    public static getComponentMarkdown: Mutation<ModulState> = (state: ModulState) => {
+    // Component - COMPONENT_DOCUMENTATION_GET
+    public static getComponentOverview: Mutation<ModulState> = (state: ModulState) => {
         state.componentMarkdown = undefined;
     }
 
-    // Component - COMPONENT_MARKDOWN_GET_SUCCESS
-    public static getComponentMarkdownSuccess: Mutation<ModulState> = (state: ModulState, markdown: string) => {
+    // Component - COMPONENT_DOCUMENTATION_GET_SUCCESS
+    public static getComponentOverviewSuccess: Mutation<ModulState> = (state: ModulState, markdown: string) => {
         state.componentMarkdown = markdown;
+    }
+
+    // Component - COMPONENT_PREVIEW_GET
+    public static getComponentPreview: Mutation<ModulState> = (state: ModulState) => {
+        state.componentMarkdownPreview = undefined;
+    }
+    // Component - COMPONENT_PREVIEW_GET_SUCCESS
+    public static getComponentPreviewSuccess: Mutation<ModulState> = (state: ModulState, markdown: string) => {
+        state.componentMarkdownPreview = markdown;
     }
 
     // Messages
@@ -85,4 +98,8 @@ export class ModulMutations {
     public static getIconsSucces: Mutation<ModulState> = (state: ModulState, icons: string) => {
         state.iconsLoaded = icons;
     }
+
+    // public static getPreview: Getter<ModulState, ModulState> = (state: ModulState, getters) => {
+    //     return state.componentMarkdownPreview;
+    // }
 }

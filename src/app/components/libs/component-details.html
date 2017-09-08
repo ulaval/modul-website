@@ -10,13 +10,16 @@
             </header>
 
             <div class="modul-component__preview">
-                <template v-if="state.component.preview">
+                <template v-if="state.component.preview == true">
                     <m-dynamic-template :template="htmlTag"></m-dynamic-template>
                 </template>
-                <span v-else>
+                <span v-else-if="state.component.preview == false">
                     <m-message state="information" :closeButton="false">
                         <m-i18n k="modul:preview-non-dispo"></m-i18n>
                     </m-message>
+                </span>
+                <span v-else>
+                    <m-markdown :template="markdownPreview"></m-markdown>
                 </span>
             </div>
 

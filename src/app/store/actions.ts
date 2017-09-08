@@ -5,11 +5,14 @@ import { ModulMutations } from './mutations';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import Messages, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { RestAdapter } from '@ulaval/modul-components/dist/utils/http/rest';
+import { HttpService } from '@ulaval/modul-components/dist/utils/http/http';
+
 
 export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
 export const CATEGORY_GET: string = 'CATEGORY_GET';
 export const COMPONENT_GET: string = 'COMPONENT_GET';
-export const COMPONENT_MARKDOWN_GET: string = 'COMPONENT_MARKDOWN_GET';
+export const COMPONENT_DOCUMENTATION_GET: string = 'COMPONENT_DOCUMENTATION_GET';
+export const COMPONENT_PREVIEW_GET: string = 'COMPONENT_PREVIEW_GET';
 export const MESSAGES_GET: string = 'MESSAGES_GET';
 export const ICONS_GET: string = 'ICONS_GET';
 
@@ -52,10 +55,18 @@ export const getComponentAction: Action<ModulState, ModulState> = async (context
 };
 
 // COMPONENT_MARKDOWN_GET
-export const getComponentMarkdownAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, markdown: MarkdownPayload) => {
-    context.commit(ModulMutations.COMPONENT_MARKDOWN_GET);
+export const getComponentDocumentationAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, markdown: MarkdownPayload) => {
+    context.commit(ModulMutations.COMPONENT_DOCUMENTATION_GET);
     markdown.restAdapter.execute({method: 'get', rawUrl: `/assets/md/${markdown.markdown}.fr.md`}).then((md) => {
-        context.commit(ModulMutations.COMPONENT_MARKDOWN_GET_SUCCESS, (md as any).data);
+        context.commit(ModulMutations.COMPONENT_DOCUMENTATION_GET_SUCCESS, (md as any).data);
+    });
+};
+
+// COMPONENT_PREVIEW_GET
+export const getComponentPreviewAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, markdown: MarkdownPayload) => {
+    context.commit(ModulMutations.COMPONENT_PREVIEW_GET);
+    markdown.restAdapter.execute({method: 'get', rawUrl: `/assets/md/${markdown.markdown}.fr.md`}).then((md) => {
+        context.commit(ModulMutations.COMPONENT_PREVIEW_GET_SUCCESS, (md as any).data);
     });
 };
 

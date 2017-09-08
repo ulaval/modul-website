@@ -57,7 +57,7 @@ export default class Modul extends ModulWebsite {
     }
 
     protected mounted(): void {
-        this.isMqMinSChanged(this.as<MediaQueriesMixin>().isMqMinS)
+        this.isMqMinSChanged(this.as<MediaQueriesMixin>().isMqMinS);
     }
 
     @Watch('isMqMinS')
