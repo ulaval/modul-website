@@ -23,7 +23,6 @@ export class ComponentViewer extends ModulWebsite {
 
     private hasScrolled: boolean = false;
     private isListOpened: boolean = false;
-    // private translatedCategory: string = '';
 
     private components: Component[] = [];
     private componentsMap: ComponentIndexMap = {};

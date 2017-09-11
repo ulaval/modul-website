@@ -194,8 +194,10 @@ $modul-home-design--width--l: 270px;
         position: fixed;
         bottom: 0;
         left: 50%;
-        margin-left: -75px;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        margin-left: -75px;
         cursor: pointer;
 
         .m-button.m-button {
@@ -206,17 +208,23 @@ $modul-home-design--width--l: 270px;
         &:hover {
             transform: translate3d(0, 0, 0);
         }
-    }
 
-    &__chevrons {
-        font-size: 40px;
-        color: $m-color--ul-blue;
-    }
-}
+        &__chevron {
+            position: relative;
+            font-size: 40px;
+            color: $m-color--ul-blue;
 
-.modul-home-experiment__chevron.modul-home-experiment__chevron.modul-home-experiment__chevron {
-    display: block;
-    margin: 0 auto;
+            &:first-child {
+                top: 8px;
+                font-size: 20px;
+            }
+
+            &:nth-child(2) {
+                top: 6px;
+                font-size: 30px;
+            }
+        }
+    }
 }
 
 .modul-home-design,
@@ -382,12 +390,12 @@ $modul-home-design--width--l: 270px;
         &__title {
             transform: translateY(-50%);
             display: inline-block;
-            padding: 10px;
+            padding: 10px 14px;
             margin: 0;
             background: $modul-color--yellow;
             color: $modul-color--grey--dark;
             text-transform: uppercase;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: $m-font-weight--black;
         }
     }

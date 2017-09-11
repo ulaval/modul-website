@@ -18,5 +18,6 @@ export class ModulState {
     public componentRoutes: RouteMap = {};
     public component: ComponentMeta | undefined = undefined;
     public componentMarkdown: string | undefined = undefined;
+    public componentMarkdownPreview: string | undefined = undefined;
     public category: string | undefined = undefined;
 }

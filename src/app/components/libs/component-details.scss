@@ -6,13 +6,15 @@
     z-index: 3;
     box-shadow: $m-box-shadow;
 
-    &__header {
-        background-color: $modul-color--grey--darker;
-        padding: 19px $m-padding;
+    &__header,
+    &__preview,
+    &__body {
+        padding: $m-padding--l;
     }
 
-    &__preview {
-        padding: $m-padding--l $m-padding--l;
+    &__header {
+        background-color: $modul-color--grey--darker;
+        padding: $m-padding;
     }
 
     &__nav {
@@ -51,7 +53,6 @@
     }
 
     &__body {
-        padding: $m-padding--l;
 
         > :first-child {
             &,

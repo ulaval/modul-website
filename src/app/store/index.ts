@@ -1,7 +1,8 @@
 import Vue from 'vue';
-import Vuex, { MutationTree, Dispatch, DispatchOptions } from 'vuex';
+import Vuex, { MutationTree, ActionTree, GetterTree, Dispatch, DispatchOptions } from 'vuex';
 import { ModulState } from './modul-state';
 import * as ModulActions from './actions';
+import * as ModulGetters from './getters';
 import { ModulMutations } from './mutations';
 
 Vue.use(Vuex);
@@ -19,10 +20,13 @@ const mutations: MutationTree<ModulState> = {
     [ModulMutations.COMPONENTS_META_GET_SUCCESS]: ModulMutations.getComponentsMetaSucces,
     // Category
     [ModulMutations.CATEGORY_GET]: ModulMutations.getCategory,
-    // Component
+    // Component markdown overview
     [ModulMutations.COMPONENT_GET]: ModulMutations.getComponent,
-    [ModulMutations.COMPONENT_MARKDOWN_GET]: ModulMutations.getComponentMarkdown,
-    [ModulMutations.COMPONENT_MARKDOWN_GET_SUCCESS]: ModulMutations.getComponentMarkdownSuccess,
+    [ModulMutations.COMPONENT_DOCUMENTATION_GET]: ModulMutations.getComponentOverview,
+    [ModulMutations.COMPONENT_DOCUMENTATION_GET_SUCCESS]: ModulMutations.getComponentOverviewSuccess,
+    // component markdown preview
+    [ModulMutations.COMPONENT_PREVIEW_GET]: ModulMutations.getComponentPreview,
+    [ModulMutations.COMPONENT_PREVIEW_GET_SUCCESS]: ModulMutations.getComponentPreviewSuccess,
     // Messages
     [ModulMutations.MESSAGES_GET]: ModulMutations.getMessages,
     [ModulMutations.MESSAGES_GET_SUCCESS]: ModulMutations.getMessagesSucces,
@@ -31,25 +35,34 @@ const mutations: MutationTree<ModulState> = {
     [ModulMutations.ICONS_GET_SUCCESS]: ModulMutations.getIconsSucces
 };
 
-const actions: Vuex.ActionTree<ModulState, ModulState> = {
+const actions: ActionTree<ModulState, ModulState> = {
     // Components
     [ModulActions.COMPONENTS_META_GET]: ModulActions.getComponentsMetaAction,
     // Category
     [ModulActions.CATEGORY_GET]: ModulActions.getCategoryAction,
     // Component
     [ModulActions.COMPONENT_GET]: ModulActions.getComponentAction,
-    [ModulActions.COMPONENT_MARKDOWN_GET]: ModulActions.getComponentMarkdownAction,
+    [ModulActions.COMPONENT_DOCUMENTATION_GET]: ModulActions.getComponentDocumentationAction,
+    [ModulActions.COMPONENT_PREVIEW_GET]: ModulActions.getComponentPreviewAction,
     // Messages
     [ModulActions.MESSAGES_GET]: ModulActions.getMessagesAction,
     // Icons
     [ModulActions.ICONS_GET]: ModulActions.getIconsAction
 };
 
+const getters: GetterTree<ModulState, ModulState> = {
+    [ModulGetters.GET_COMPONENT_META]: ModulGetters.getComponentMeta,
+    [ModulGetters.GET_MARKDOWN_PREVIEW]: ModulGetters.getMarkdownPreview,
+    [ModulGetters.GET_MARKDOWN_DOCUMENTATION]: ModulGetters.getMarkdownDocumentation
+};
+
 const store: ModulStore = new ModulStore({
     // strict: true, // TODO debug mode only
     state: modulState,
     mutations: mutations,
-    actions: actions
+    actions: actions,
+    getters: getters,
+    strict: true
 });
 
 export default store;

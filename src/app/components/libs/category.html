@@ -3,8 +3,8 @@
         <div class="modul-component-page__header__wrap">
             <div ref="dropdown" class="modul-component-page__title">
 
-                <m-dropdown width="400px" @elementSelected="onCategorySelected($event)">
-                    <m-dropdown-item v-for="category in categories" :selected="component == selectedComponent" :value="category" :label="category.text"></m-dropdown-item>
+                <m-dropdown @elementSelected="onCategorySelected($event)">
+                    <m-dropdown-item v-for="category in categories" :value="category" :label="category.text" :selected="category == selectedCategory"></m-dropdown-item>
                 </m-dropdown>
 
             </div>
