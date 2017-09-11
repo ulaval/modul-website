@@ -1,7 +1,7 @@
 <div class="modul-home">
     <section class="modul-home-experiment">
         <article class="modul-home-experiment__body">
-            <header class="modul-home-experiment__body__header-container">
+            <header class="modul-home-experiment__body__header-container" :style="{ top: experimentTitlePosition + 'px'}">
                 <h2 class="modul-home-experiment__body__header">
                     <m-i18n class="modul-home-experiment__body__header-title" k="modul:unified-experience-title-a"></m-i18n>
                     <m-i18n class="modul-home-experiment__body__header-subtitle" k="modul:unified-experience-title-b"></m-i18n>
@@ -10,7 +10,7 @@
                     </span>
                 </h2>
             </header>
-            <div class="modul-home-experiment__body__content">
+            <div class="modul-home-experiment__body__content" :style="{ top: experimentContentPosition + 'px'}">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti nesciunt illo consectetur eveniet. Tempore
                     laborum atque natus id neque optio ipsum! Molestiae sequi aspernatur, nihil voluptatum explicabo maiores.
                     Vel, eveniet!</p>
@@ -26,10 +26,10 @@
         </div>
     </section>
 
-    <section class="modul-home-design">
+    <section class="modul-home-design" ref="design">
         <article class="modul-home-design__article">
-            <section class="modul-home-design__template" aria-hidden="true">
-                <article class="modul-home-design__template-container">
+            <section class="modul-home-design__template-container" aria-hidden="true">
+                <article class="modul-home-design__template" :style="{ width: designTemplateWidth + 'px' }">
                     <header class="modul-home-design__template__header">
                         <m-icon class="modul-home-design__template__header-logo" name="heraldry"></m-icon>
                         <nav class="modul-home-design__template__header-nav">
@@ -47,7 +47,7 @@
                     <footer class="modul-home-design__template__footer"></footer>
                 </article>
             </section>
-            <section class="modul-home-design__body">
+            <section class="modul-home-design__body" ref="designBody">
                 <h2 class="modul-u--highlighted-title">Design <br>adaptatif</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga dolore facere accusamus rerum non, quis, id
                     quasi aut reprehenderit, dignissimos perferendis. Lorem ipsum dolor sit amet, consectetur adipisicing

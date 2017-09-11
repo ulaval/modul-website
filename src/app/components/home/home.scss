@@ -79,6 +79,7 @@ $modul-home-design--width--l: 270px;
             }
 
             &-container {
+                position: relative;
                 display: flex;
                 justify-content: center;
 
@@ -145,6 +146,7 @@ $modul-home-design--width--l: 270px;
         }
 
         &__content {
+            position: relative;
             color: $m-color--white;
 
             @media (max-width: $m-bp--max--s) {
@@ -235,7 +237,7 @@ $modul-home-design--width--l: 270px;
     padding: $m-padding--xl $m-padding--l;
 }
 
-.modul-home-design__template,
+.modul-home-design__template-container,
 .modul-home-design__body,
 .modul-home-experiment__body__header-container,
 .modul-home-experiment__body__content {
@@ -266,9 +268,15 @@ $modul-home-design--width--l: 270px;
     }
 
     &__template {
-        @media (max-width: $m-bp--max--s) {
-            max-width: $modul-home-design--max-width;
-            margin: 0 auto;
+        &-container {
+            display: flex;
+            justify-content: flex-end;
+
+            @media (max-width: $m-bp--max--s) {
+                max-width: $modul-home-design--max-width;
+                margin: 0 auto;
+                justify-content: center;
+            }
         }
 
         &__header,
@@ -293,7 +301,6 @@ $modul-home-design--width--l: 270px;
 
         &__body {
             display: flex;
-            justify-content: space-between;
             margin: $m-margin 0;
 
             &-content,
@@ -310,6 +317,7 @@ $modul-home-design--width--l: 270px;
             }
 
             &-aside {
+                margin-left: $m-margin;
                 width: 30%;
             }
         }
@@ -320,11 +328,47 @@ $modul-home-design--width--l: 270px;
 
         li {
             display: inline-block;
-            background: $modul-color--yellow;
+            border: 1px solid $modul-color--yellow;
             border-radius: 4px;
+            background: rgba($modul-color--yellow, 0.3);
             width: 50px;
             height: 12px;
             margin: 0 4px;
+        }
+
+        &[max-width~="329px"] {
+            .modul-home-design__template {
+                &__body {
+                    flex-direction: column;
+
+                    &-content,
+                    &-aside {
+                        width: 100%;
+                    }
+
+                    &-content {
+                        height: 140px;
+                    }
+
+                    &-aside {
+                        margin: $m-margin 0 0 0;
+                        height: 70px - $m-margin;
+                    }
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 18px;
+            }
+
+            li {
+                width: 20px;
+                height: 4px;
+                display: block;
+            }
         }
     }
 
