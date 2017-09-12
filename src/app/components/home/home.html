@@ -18,7 +18,7 @@
 
         </article>
 
-        <div class="modul-home-experiment__footer">
+        <div class="modul-home-experiment__footer" v-m-scroll-to="[ '#design', 'slow']">
             <m-icon class="modul-home-experiment__footer__chevron" name="down-chevron"></m-icon>
             <m-icon class="modul-home-experiment__footer__chevron" name="down-chevron"></m-icon>
             <m-icon class="modul-home-experiment__footer__chevron" name="down-chevron"></m-icon>
@@ -26,7 +26,7 @@
         </div>
     </section>
 
-    <section class="modul-home-design" ref="design">
+    <section id="design" class="modul-home-design" ref="design">
         <article class="modul-home-design__article">
             <section class="modul-home-design__template-container" aria-hidden="true">
                 <article class="modul-home-design__template" :style="{ width: designTemplateWidth + 'px' }">
