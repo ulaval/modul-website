@@ -111,7 +111,7 @@ export default class Modul extends ModulWebsite {
             this.menuOpen = true;
             let anim = setTimeout(() => {
                 this.headerAnimationCompleted = true;
-                this.$mWindow.stopScollBody();
+                this.$modul.stopScollBody();
                 this.$emit('openMenu');
                 this.$nextTick(() => {
                     let menu: HTMLElement = this.$refs.menu as HTMLElement;
@@ -179,7 +179,7 @@ export default class Modul extends ModulWebsite {
             let anim = setTimeout(() => {
                 this.menuOpen = false;
 
-                this.$mWindow.activeScollBody();
+                this.$modul.activeScollBody();
                 this.$emit('closeMenu');
             }, CSS_ANIMATION_MENU_DURATION);
 

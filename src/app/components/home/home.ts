@@ -17,12 +17,12 @@ export class HomePage extends ModulVue {
     protected mounted(): void {
         this.setParallaxEffect();
         ElementQueries.init();
-        this.$mWindow.event.$on('scroll', this.onScroll);
+        this.$modul.event.$on('scroll', this.onScroll);
     }
 
     protected destroyed(): void {
         ElementQueries.detach();
-        this.$mWindow.event.$off('scroll', this.onScroll);
+        this.$modul.event.$off('scroll', this.onScroll);
     }
 
     private onScroll(): void {
@@ -30,7 +30,7 @@ export class HomePage extends ModulVue {
     }
 
     private setParallaxEffect() {
-        let scrollY: number = this.$mWindow.scrollPosition == 0 ? this.$mWindow.stopScrollPosition : this.$mWindow.scrollPosition;
+        let scrollY: number = this.$modul.scrollPosition == 0 ? this.$modul.stopScrollPosition : this.$modul.scrollPosition;
         let designTop: number = (this.$refs.design as HTMLElement).getBoundingClientRect().top - 60;
         let designTemplateMaxWidth: number = (this.$refs.designBody as HTMLElement).clientWidth;
         let designTemplateWidthRemaining: number = designTemplateMaxWidth - this.designTemplateMinWidth;
