@@ -34,8 +34,8 @@ export class HomePage extends ModulVue {
         let designTop: number = (this.$refs.design as HTMLElement).getBoundingClientRect().top - 60;
         let designTemplateMaxWidth: number = (this.$refs.designBody as HTMLElement).clientWidth;
         let designTemplateWidthRemaining: number = designTemplateMaxWidth - this.designTemplateMinWidth;
-        this.experimentContentPosition = scrollY / 20;
-        this.experimentTitlePosition = - (scrollY / 12);
+        this.experimentContentPosition = scrollY / 18;
+        this.experimentTitlePosition = - (scrollY / 18);
         if (designTop >= 0) {
             this.designTemplateWidth = designTop <= designTemplateWidthRemaining ? designTemplateMaxWidth - designTop : this.designTemplateMinWidth;
         } else {
