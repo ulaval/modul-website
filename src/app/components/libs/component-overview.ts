@@ -35,7 +35,6 @@ export class ComponentOverview extends ModulWebsite {
         }
     }
 
-
     private isOverviewType(item: Overview, type: OverviewType): boolean {
         return item.type == type;
     }

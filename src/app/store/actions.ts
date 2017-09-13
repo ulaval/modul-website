@@ -7,7 +7,6 @@ import Messages, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n'
 import { RestAdapter } from '@ulaval/modul-components/dist/utils/http/rest';
 import { HttpService } from '@ulaval/modul-components/dist/utils/http/http';
 
-
 export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
 export const CATEGORY_GET: string = 'CATEGORY_GET';
 export const COMPONENT_GET: string = 'COMPONENT_GET';
