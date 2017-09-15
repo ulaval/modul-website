@@ -26,6 +26,7 @@ export class Category extends ModulWebsite {
     private listOpened: boolean = false;
     private scrollPosition: Number = 0;
     private bodyElement: HTMLElement = document.body;
+    private dropdownModel: ICategory | undefined;
 
     private categories: ICategory[] = [];
     private categoriesMap: CategoryIndexMap = {};
@@ -49,6 +50,7 @@ export class Category extends ModulWebsite {
     protected mounted(): void {
         this.getMeta();
         window.addEventListener('scroll', this.onScroll);
+        console.log('mounted: ', this.selectedCategory);
     }
 
     protected destroyed() {
@@ -66,6 +68,7 @@ export class Category extends ModulWebsite {
 
     private onCategorySelected(category: ICategory): void {
         this.navigateToCategory(category.id);
+        console.log('onCategorySelected: ', this.selectedCategory);
     }
 
     private getPreviousCategory(): void {
@@ -75,7 +78,9 @@ export class Category extends ModulWebsite {
             if (index < 0) {
                 index = this.categories.length - 1;
             }
+            console.log('getPreviousCategory: ', this.selectedCategory);
             this.navigateToCategory(this.categories[index].id);
+
         }
     }
 
@@ -86,12 +91,15 @@ export class Category extends ModulWebsite {
             if (index >= this.categories.length) {
                 index = 0;
             }
+            console.log('getPreviousCategory: ', this.selectedCategory);
             this.navigateToCategory(this.categories[index].id);
         }
     }
 
     private navigateToCategory(category: string): void {
         this.$router.push(this.state.categoryRoutes[category].url);
+        // console.log('navigateToCategory: ', this.state.category, this.selectedCategory);
+
     }
 
     private get selectedCategory(): ICategory | undefined {
