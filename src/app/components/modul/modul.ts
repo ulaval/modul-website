@@ -12,6 +12,7 @@ import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: Number = 100;
 const CSS_ANIMATION_MENU_DURATION: Number = 650;
+const MENU_ID: string = 'ModulMenu';
 
 type Category = {
     id: string;
@@ -111,7 +112,7 @@ export default class Modul extends ModulWebsite {
             this.menuOpen = true;
             let anim = setTimeout(() => {
                 this.headerAnimationCompleted = true;
-                this.$modul.stopScollBody();
+                this.$modul.addWindow(MENU_ID);
                 this.$emit('openMenu');
                 this.$nextTick(() => {
                     let menu: HTMLElement = this.$refs.menu as HTMLElement;
@@ -170,6 +171,16 @@ export default class Modul extends ModulWebsite {
         }
     }
 
+    private startCloseSearch() {
+        if (this.menuOpen) {
+            let duration: number = Number(this.$modul.backdropTransitionDuration.slice(0, this.$modul.backdropTransitionDuration.length - 1)) * 1000;
+            this.$modul.setBackdropOpacity('0');
+            setTimeout(() => {
+                this.$modul.removeBackdrop();
+            }, duration);
+        }
+    }
+
     @Watch('$route')
     private closeMenu(): void {
 
@@ -179,7 +190,7 @@ export default class Modul extends ModulWebsite {
             let anim = setTimeout(() => {
                 this.menuOpen = false;
 
-                this.$modul.activeScollBody();
+                this.$modul.deleteWindow(MENU_ID);
                 this.$emit('closeMenu');
             }, CSS_ANIMATION_MENU_DURATION);
 
