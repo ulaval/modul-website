@@ -1,19 +1,45 @@
 .modul-component-page__title.modul-component-page__title {
     .m-text-field {
-        &__input {
-            font-size: 38px;
-            font-weight: 600;
-            margin: 0;
-            color: $modul-color--grey--darker;
-            border-bottom-width: 3px;
+        min-width: 180px;
 
-            &-line {
-                height: 3px;
+        &:not(.m--is-focus) {
+            &.m--no-value {
+                .m-text-field {
+                    &__input-container::before {
+                        border-color: $modul-color--grey-darker;
+                    }
+                }
             }
 
-            &__default-text {
-                opacity: 1 !important;
-                color: $modul-color--grey--darker;
+            .m-text-field {
+                &__icon.m--is-dropdown {
+                    color: $modul-color--grey-darker;
+
+                    &:hover {
+                        .m-icon {
+                            color: $modul-color--black-grey-dark;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__input {
+            font-size: 38px;
+            font-weight: $m-font-weight--black;
+            color: $modul-color--black-grey-dark;
+            border-bottom-width: 3px;
+            padding-right: $m-padding--s;
+
+            &-container {
+                &::before {
+                    border-bottom-width: 3px;
+                    border-color: $modul-color--black-grey-dark;
+                }
+
+                &::after {
+                    height: 3px;
+                }
             }
         }
     }

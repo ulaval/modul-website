@@ -32,7 +32,7 @@ $modul-home-design--width--l: 270px;
     min-height: 480px;
     overflow-y: auto;
     padding: $m-padding--l $m-padding $m-padding--xl $m-padding;
-    background-color: $modul-color--grey--darker;
+    background-color: $modul-color--black-grey-dark;
     background-image: url(/assets/grid.svg);
 
     @media (max-width: $m-bp--max--s) {
@@ -58,7 +58,7 @@ $modul-home-design--width--l: 270px;
         bottom: 0;
         left: 0;
         content: '';
-        background: linear-gradient(to bottom, $modul-color--grey--darker 35%, rgba($modul-color--grey--darker, 0.4) 100%);
+        background: linear-gradient(to bottom, $modul-color--black-grey-dark 35%, rgba($modul-color--black-grey-dark, 0.4) 100%);
     }
 
     &__body {
@@ -102,7 +102,7 @@ $modul-home-design--width--l: 270px;
             }
 
             &-subtitle {
-                color: $modul-color--grey--dark;
+                color: $modul-color--black-grey;
                 background: $modul-color--yellow;
                 font-weight: $m-font-weight--black;
                 font-size: 48px;
@@ -211,7 +211,7 @@ $modul-home-design--width--l: 270px;
             transform: translate3d(0, 0, 0);
         }
 
-        &__chevron {
+        &__arrow {
             position: relative;
             font-size: 40px;
             color: $m-color--ul-blue;
@@ -247,7 +247,7 @@ $modul-home-design--width--l: 270px;
 }
 
 .modul-home-design {
-    background: $modul-color--grey--dark;
+    background: $modul-color--black-grey;
     padding: $m-padding--l $m-padding;
     color: $m-color--white;
 
@@ -420,7 +420,7 @@ $modul-home-design--width--l: 270px;
 
 .modul-home-novelty {
     &-container {
-        background-color: $modul-color--grey--dark;
+        background-color: $modul-color--black-grey;
         padding: 0 $m-padding--s $m-padding--l;
 
         @media (min-width: $m-bp--min--s) {
@@ -437,7 +437,7 @@ $modul-home-design--width--l: 270px;
             padding: 10px 14px;
             margin: 0;
             background: $modul-color--yellow;
-            color: $modul-color--grey--dark;
+            color: $modul-color--black-grey;
             text-transform: uppercase;
             font-size: 28px;
             font-weight: $m-font-weight--black;

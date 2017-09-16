@@ -6,12 +6,12 @@
     &.modul--is-menu-open,
     &.modul--is-black-template {
         .modul-header {
-            background: $modul-color--grey--darker;
+            background: $modul-color--black-grey-dark;
 
             &__link {
                 &,
                 &:visited {
-                    color: $modul-color--fadded-grey;
+                    color: $modul-color--grey-dark;
                 }
 
                 &:hover,
@@ -123,7 +123,7 @@
 
     &,
     &:visited {
-        color: $modul-color--fadded-dark-grey;
+        color: $modul-color--grey-darker;
     }
 
     &:hover,
@@ -153,12 +153,12 @@
     a:visited {
         text-decoration: none;
         font-weight: $m-font-weight;
-        color: $modul-color--grey--darker;
+        color: $modul-color--black-grey-dark;
     }
 
     b {
         font-weight: $m-font-weight--black;
-        color: $modul-color--grey--darker;
+        color: $modul-color--black-grey-dark;
     }
 }
 

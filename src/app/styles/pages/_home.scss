@@ -26,7 +26,7 @@
     min-height: 500px;
     display: flex;
     align-content: center;
-    background-color: $modul-color--grey--darker;
+    background-color: $modul-color--black-grey-dark;
     background-image: url(/assets/grid.svg);
 
     &__body,
@@ -41,7 +41,7 @@
         bottom: 0;
         left: 0;
         content: '';
-        background: linear-gradient(to bottom, $modul-color--grey--darker 35%, rgba($modul-color--grey--darker, 0.4) 100%);
+        background: linear-gradient(to bottom, $modul-color--black-grey-dark 35%, rgba($modul-color--black-grey-dark, 0.4) 100%);
     }
 
     &__body {
@@ -69,7 +69,7 @@
             }
 
             &-subtitle {
-                color: $modul-color--grey--dark;
+                color: $modul-color--black-grey;
                 background: $modul-color--yellow;
                 font-weight: $m-font-weight--black;
                 font-size: 60px;
@@ -149,14 +149,9 @@
             transform: translate3d(0, 0, 0);
         }
     }
-
-    &__chevrons {
-        font-size: 40px;
-        color: $m-color--ul-blue;
-    }
 }
 
-.modul-home-experiment__chevron.modul-home-experiment__chevron.modul-home-experiment__chevron {
+.modul-home-experiment__arrow.modul-home-experiment__carrow.modul-home-experiment__arrow {
     display: block;
     margin: 0 auto;
 }
@@ -177,7 +172,7 @@
 }
 
 .modul-home-design {
-    background: $modul-color--grey--dark;
+    background: $modul-color--black-grey;
     padding: $m-padding--xl $m-padding--l;
     color: $m-color--white;
 
@@ -279,7 +274,7 @@
 }
 
 .modul-home-novelty {
-    background-color: $modul-color--grey--dark;
+    background-color: $modul-color--black-grey;
     padding: 0 $m-padding--l $m-padding--xl;
 
     &__header {
@@ -291,7 +286,7 @@
             padding: 10px;
             margin: 0;
             background: $modul-color--yellow;
-            color: $modul-color--grey--dark;
+            color: $modul-color--black-grey;
             text-transform: uppercase;
             font-size: 32px;
             font-weight: $m-font-weight--black;

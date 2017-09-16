@@ -1,11 +1,11 @@
 <div class="modul-component-page">
     <m-link mode="button" class="modul-component__back" @click="back(state.component.category)">
-        <m-icon name="left-chevron" slot="icon-left"></m-icon> {{translatedCategory}}
+        <m-icon name="left-arrow" slot="icon-left"></m-icon> {{translatedCategory}}
     </m-link>
     <section class="modul-component-page__header" :style="{'zIndex' : zIndex}">
         <m-link mode="button" @click="back(state.component.category)" class="modul-component__back">
             <template slot="icon-left">
-                <m-icon name="left-chevron"></m-icon>
+                <m-icon name="left-arrow"></m-icon>
             </template>
             <span>{{translatedCategory}}</span>
         </m-link>
@@ -20,13 +20,13 @@
         </div>
         <div class="modul-component-page__arrow-left">
             <m-button@click="getPreviousComponent()">
-                <m-icon name="left-chevron"></m-icon>
+                <m-icon name="left-arrow"></m-icon>
                 <span class="m-u--visually-hidden">Naviguer vers le composant précédent</span>
                 </m-button>
         </div>
         <div class="modul-component-page__arrow-right">
             <m-button @click="getNextComponent()">
-                <m-icon name="right-chevron"></m-icon>
+                <m-icon name="right-arrow"></m-icon>
                 <span class="m-u--visually-hidden">Naviguer vers le prochain composant</span>
             </m-button>
         </div>

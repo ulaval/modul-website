@@ -4,7 +4,7 @@
 .modul {
     &.modul--is-black-template {
         .modul-footer__version {
-            background-color: $modul-color--grey--dark;
+            background-color: $modul-color--black-grey;
             color: $modul-color--grey;
         }
     }
@@ -19,7 +19,7 @@
 .modul-footer__body {
     height: $modul-header--height;
     background-color: $m-color--white;
-    border-top: 2px solid $modul-color--grey--light;
+    border-top: 2px solid $modul-color--grey-light;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -30,7 +30,7 @@
 .modul-footer__link {
     &,
     &:visited {
-        color: $modul-color--grey--dark;
+        color: $modul-color--black-grey;
         text-decoration: none;
     }
 }

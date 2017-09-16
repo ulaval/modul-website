@@ -16,13 +16,13 @@ export class HomePage extends ModulVue {
 
     protected mounted(): void {
         this.setParallaxEffect();
-        ElementQueries.init();
         this.$modul.event.$on('scroll', this.onScroll);
+        ElementQueries.init();
     }
 
-    protected destroyed(): void {
-        ElementQueries.detach();
+    protected beforeDestroy(): void {
         this.$modul.event.$off('scroll', this.onScroll);
+        ElementQueries.detach();
     }
 
     private onScroll(): void {

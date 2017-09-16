@@ -26,7 +26,7 @@
         justify-content: center;
         height: calc(50vh - 60px);
         min-height: 250px;
-        background-color: $modul-color--grey--darker;
+        background-color: $modul-color--black-grey-dark;
         background-image: url(/assets/grid.svg);
 
         &::before {
@@ -37,7 +37,7 @@
             left: 0;
             z-index: 0;
             content: '';
-            background: linear-gradient(to bottom, $modul-color--grey--darker 35%, rgba($modul-color--grey--darker, 0.4) 100%);
+            background: linear-gradient(to bottom, $modul-color--black-grey-dark 35%, rgba($modul-color--black-grey-dark, 0.4) 100%);
         }
 
         &-title­ {
@@ -58,7 +58,7 @@
         margin: 0 auto;
 
         &__header {
-            background-color: $modul-color--grey--dark;
+            background-color: $modul-color--black-grey;
 
             &-wrap {
                 margin: 0 auto;

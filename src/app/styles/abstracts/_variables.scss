@@ -1,11 +1,15 @@
 
-$modul-color--grey--darker: #1f3139;
-$modul-color--grey--dark: #2c3d44;
+$modul-color--black-grey-dark: #1f3139;
+$modul-color--black-grey: #2c3d44;
+$modul-color--black-grey-light: #314B51;
+
+$modul-color--grey-darker: #6F777D;
+$modul-color--grey-dark: #A1A9AC;
 $modul-color--grey: #d8dbdd;
-$modul-color--grey--light: #f7f8f8;
+$modul-color--grey-light: #f7f8f8;
+
+
 $modul-color--yellow: #ffbe3a;
-$modul-color--fadded-grey: rgba($modul-color--grey, 0.7);
-$modul-color--fadded-dark-grey: rgba($modul-color--grey--dark, 0.7);
 $modul-color--body: $modul-color--grey;
 
 // layout
