@@ -9,7 +9,7 @@ $modul-home-design--width--l: 270px;
     &::before {
         content: '';
         display: block;
-        height: 140vh;
+        height: 120vh;
     }
 }
 
@@ -180,7 +180,7 @@ $modul-home-design--width--l: 270px;
                 line-height: 1.4;
 
                 @media (min-width: $m-bp--min--xs) {
-                    font-size: $m-font-size--l;
+                    font-size: 20px;
                 }
             }
 
@@ -379,6 +379,12 @@ $modul-home-design--width--l: 270px;
 
         @media (min-width: $m-bp--min--s) {
             padding-left: $m-padding--l;
+        }
+
+        p {
+            @media (min-width: $m-bp--min--s) {
+                width: 200px;
+            }
         }
     }
 }
