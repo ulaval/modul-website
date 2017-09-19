@@ -22,7 +22,7 @@ export class HomePage extends ModulVue {
 
     protected beforeDestroy(): void {
         this.$modul.event.$off('scroll', this.onScroll);
-        ElementQueries.detach();
+        ElementQueries.detach(this.$el);
     }
 
     private onScroll(): void {
