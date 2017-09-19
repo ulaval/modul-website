@@ -9,7 +9,7 @@ $modul-home-design--width--l: 270px;
     &::before {
         content: '';
         display: block;
-        height: 110vh;
+        height: 140vh;
     }
 }
 
@@ -191,15 +191,14 @@ $modul-home-design--width--l: 270px;
     }
 
     &__footer {
-        transition: 0.6s transform ease;
-        transform: translate3d(0, 38px, 0);
+        transition: transform 0.6s ease, bottom 0.2s ease;
+        transform: translate3d(-50%, 38px, 0);
         position: fixed;
         bottom: 0;
         left: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-left: -75px;
         cursor: pointer;
 
         .m-button.m-button {
@@ -208,7 +207,8 @@ $modul-home-design--width--l: 270px;
         }
 
         &:hover {
-            transform: translate3d(0, 0, 0);
+            bottom: 0 !important;
+            transform: translate3d(-50%, 0, 0);
         }
 
         &__arrow {
