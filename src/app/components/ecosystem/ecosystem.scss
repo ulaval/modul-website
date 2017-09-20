@@ -76,10 +76,33 @@
         &__content {
             border-top: 4px solid $modul-color--yellow;
 
+            &-nav {
+                position: relative;
+
+                .m-nav-bar {
+                    margin: 0 auto;
+                    max-width: 872px;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: $m-color--grey;
+                }
+            }
+
             &-wrap {
                 margin: 0 auto;
                 max-width: 936px;
-                padding: 32px;
+                padding: 16px 32px 32px;
+
+                .tabs {
+                    width: 100%;
+                }
             }
         }
     }
