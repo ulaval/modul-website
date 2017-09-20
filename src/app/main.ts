@@ -1,4 +1,4 @@
-import './polyfills';
+import '@ulaval/modul-components/dist/utils/polyfills';
 import Vue from 'vue';
 import store from './store';
 import router from './router';
