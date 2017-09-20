@@ -79,9 +79,10 @@
             &-nav {
                 position: relative;
 
-                .m-nav-bar {
+                &__wrap {
                     margin: 0 auto;
-                    max-width: 872px;
+                    max-width: 936px;
+                    padding: 0 32px;
                 }
 
                 &::before {
