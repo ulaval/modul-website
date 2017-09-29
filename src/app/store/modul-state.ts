@@ -9,6 +9,10 @@ export type RouteMap = {
     [key: string]: RouteInfo;
 };
 
+export type CategoryMap = {
+    [key: string]: string
+};
+
 export class ModulState {
     public metaLoaded: string | undefined = undefined;
     public languageLoaded: string | undefined = undefined;
@@ -16,6 +20,8 @@ export class ModulState {
 
     public categoryRoutes: RouteMap = {};
     public componentRoutes: RouteMap = {};
+    public categoriesText: CategoryMap = {};
+
     public component: ComponentMeta | undefined = undefined;
     public componentMarkdown: string | undefined = undefined;
     public componentMarkdownPreview: string | undefined = undefined;

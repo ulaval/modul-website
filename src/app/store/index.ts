@@ -3,7 +3,7 @@ import Vuex, { MutationTree, ActionTree, GetterTree, Dispatch, DispatchOptions }
 import { ModulState } from './modul-state';
 import * as ModulActions from './actions';
 import * as ModulGetters from './getters';
-import { ModulMutations } from './mutations';
+import * as ModulMutations from './mutations';
 
 Vue.use(Vuex);
 
@@ -38,8 +38,6 @@ const mutations: MutationTree<ModulState> = {
 const actions: ActionTree<ModulState, ModulState> = {
     // Components
     [ModulActions.COMPONENTS_META_GET]: ModulActions.getComponentsMetaAction,
-    // Category
-    [ModulActions.CATEGORY_GET]: ModulActions.getCategoryAction,
     // Component
     [ModulActions.COMPONENT_GET]: ModulActions.getComponentAction,
     [ModulActions.COMPONENT_DOCUMENTATION_GET]: ModulActions.getComponentDocumentationAction,
@@ -51,6 +49,7 @@ const actions: ActionTree<ModulState, ModulState> = {
 };
 
 const getters: GetterTree<ModulState, ModulState> = {
+    [ModulGetters.GET_CATEGORIES_SORTED]: ModulGetters.getCategoriesSorted,
     [ModulGetters.GET_COMPONENT_META]: ModulGetters.getComponentMeta,
     [ModulGetters.GET_MARKDOWN_PREVIEW]: ModulGetters.getMarkdownPreview,
     [ModulGetters.GET_MARKDOWN_DOCUMENTATION]: ModulGetters.getMarkdownDocumentation

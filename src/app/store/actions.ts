@@ -1,26 +1,18 @@
 import Vue from 'vue';
 import { Action, ActionContext } from 'vuex';
 import { ModulState } from './modul-state';
-import { ModulMutations } from './mutations';
+import * as ModulMutations from './mutations';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import Messages, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { RestAdapter } from '@ulaval/modul-components/dist/utils/http/rest';
 import { HttpService } from '@ulaval/modul-components/dist/utils/http/http';
-
-export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
-export const CATEGORY_GET: string = 'CATEGORY_GET';
-export const COMPONENT_GET: string = 'COMPONENT_GET';
-export const COMPONENT_DOCUMENTATION_GET: string = 'COMPONENT_DOCUMENTATION_GET';
-export const COMPONENT_PREVIEW_GET: string = 'COMPONENT_PREVIEW_GET';
-export const MESSAGES_GET: string = 'MESSAGES_GET';
-export const ICONS_GET: string = 'ICONS_GET';
 
 interface MarkdownPayload {
     restAdapter: RestAdapter;
     markdown: string;
 }
 
-// COMPONENTS_META_GET
+export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
 export const getComponentsMetaAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, language: string) => {
     return new Promise((resolve, reject) => {
         if (!context.state.metaLoaded || context.state.metaLoaded != language) {
@@ -42,18 +34,13 @@ export const getComponentsMetaAction: Action<ModulState, ModulState> = async (co
     });
 };
 
-// CATEGORY_GET
-export const getCategoryAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, category: string) => {
-    context.commit(ModulMutations.CATEGORY_GET, category);
-};
-
-// COMPONENT_GET
+export const COMPONENT_GET: string = 'COMPONENT_GET';
 export const getComponentAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, tag: string) => {
     let meta: ComponentMeta = Meta.getMetaByTag(tag);
     context.commit(ModulMutations.COMPONENT_GET, meta);
 };
 
-// COMPONENT_MARKDOWN_GET
+export const COMPONENT_DOCUMENTATION_GET: string = 'COMPONENT_DOCUMENTATION_GET';
 export const getComponentDocumentationAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, markdown: MarkdownPayload) => {
     context.commit(ModulMutations.COMPONENT_DOCUMENTATION_GET);
     markdown.restAdapter.execute({method: 'get', rawUrl: `/assets/md/${markdown.markdown}.fr.md`}).then((md) => {
@@ -61,7 +48,7 @@ export const getComponentDocumentationAction: Action<ModulState, ModulState> = a
     });
 };
 
-// COMPONENT_PREVIEW_GET
+export const COMPONENT_PREVIEW_GET: string = 'COMPONENT_PREVIEW_GET';
 export const getComponentPreviewAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, markdown: MarkdownPayload) => {
     context.commit(ModulMutations.COMPONENT_PREVIEW_GET);
     markdown.restAdapter.execute({method: 'get', rawUrl: `/assets/md/${markdown.markdown}.fr.md`}).then((md) => {
@@ -69,7 +56,7 @@ export const getComponentPreviewAction: Action<ModulState, ModulState> = async (
     });
 };
 
-// MESSAGES_GET
+export const MESSAGES_GET: string = 'MESSAGES_GET';
 export const getMessagesAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, language: string) => {
     return new Promise((resolve, reject) => {
         if (!context.state.languageLoaded || context.state.languageLoaded != language) {
@@ -85,7 +72,7 @@ export const getMessagesAction: Action<ModulState, ModulState> = async (context:
     });
 };
 
-// ICONS_GET
+export const ICONS_GET: string = 'ICONS_GET';
 export const getIconsAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, icons: string) => {
     return new Promise((resolve, reject) => {
         if (!context.state.iconsLoaded || context.state.iconsLoaded != icons) {
