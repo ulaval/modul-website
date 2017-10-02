@@ -5,25 +5,19 @@ import { ROUTES, COMPONENTS } from '../router';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
-// preview MD
-export const COMPONENT_DOCUMENTATION_GET: string = 'COMPONENT_DOCUMENTATION_GET';
-export const COMPONENT_DOCUMENTATION_GET_SUCCESS: string = 'COMPONENT_DOCUMENTATION_GET_SUCCESS';
-export const COMPONENT_PREVIEW_GET: string = 'COMPONENT_PREVIEW_GET';
-export const COMPONENT_PREVIEW_GET_SUCCESS: string = 'COMPONENT_PREVIEW_GET_SUCCESS';
-
 export const MESSAGES_GET: string = 'MESSAGES_GET';
 export const MESSAGES_GET_SUCCESS: string = 'MESSAGES_GET_SUCCESS';
 
 export const ICONS_GET: string = 'ICONS_GET';
 export const ICONS_GET_SUCCESS: string = 'ICONS_GET_SUCCESS';
 
-export const COMPONENTS_META_GET: string = 'COMPONENTS_META_GET';
+export const COMPONENTS_META_GET: string = 'M_COMPONENTS_META_GET';
 export const getComponentsMeta: Mutation<ModulState> = (state: ModulState) => {
-    state.metaLoaded = undefined;
+    state.metaLanguageLoaded = null;
     state.componentRoutes = {};
 };
 
-export const COMPONENTS_META_GET_SUCCESS: string = 'COMPONENTS_META_GET_SUCCES';
+export const COMPONENTS_META_GET_SUCCESS: string = 'M_COMPONENTS_META_GET_SUCCES';
 export const getComponentsMetaSucces: Mutation<ModulState> = (state: ModulState, language: string) => {
     let i18n: Messages = (Vue as any).$i18n;
     let componentUrlPart: string = '/' + ROUTES[COMPONENTS] + '/';
@@ -44,51 +38,63 @@ export const getComponentsMetaSucces: Mutation<ModulState> = (state: ModulState,
         });
     });
 
-    state.metaLoaded = language;
+    state.metaLanguageLoaded = language;
 };
 
-export const CATEGORY_GET: string = 'getCategory';
+export const CATEGORY_GET: string = 'M_CATEGORY_GET';
 export const getCategory: Mutation<ModulState> = (state: ModulState, category: string) => {
-    state.category = category;
+    if (category != undefined && Object.keys(category).length > 0) {
+        state.category = category;
+
+        state.componentsText = {};
+
+        let i18n: Messages = (Vue as any).$i18n;
+        Meta.getMetaByCategory(category).forEach(meta => {
+            state.componentsText[meta.tag] = meta.name ? i18n.translate(meta.name) : meta.tag;
+        });
+    }
 };
 
-export const COMPONENT_GET: string = 'COMPONENT_GET';
-export const getComponent: Mutation<ModulState> = (state: ModulState, component: ComponentMeta) => {
-    state.component = component;
+export const COMPONENT_GET: string = 'M_COMPONENT_GET';
+export const getComponent: Mutation<ModulState> = (state: ModulState, tag: string) => {
+    let meta: ComponentMeta = Meta.getMetaByTag(tag);
+    state.component = meta;
+    state.componentMarkdownOverview = null;
+    state.componentMarkdownPreview = null;
 };
 
-// Component - COMPONENT_DOCUMENTATION_GET
-export const getComponentOverview: Mutation<ModulState> = (state: ModulState) => {
-    state.componentMarkdown = undefined;
-};
+// export const COMPONENT_DOCUMENTATION_GET: string = 'M_COMPONENT_DOCUMENTATION_GET';
+// export const getComponentOverview: Mutation<ModulState> = (state: ModulState) => {
+//     state.componentMarkdown = null;
+// };
 
-// Component - COMPONENT_DOCUMENTATION_GET_SUCCESS
+export const COMPONENT_OVERVIEW_GET_SUCCESS: string = 'M_COMPONENT_OVERVIEW_GET_SUCCESS';
 export const getComponentOverviewSuccess: Mutation<ModulState> = (state: ModulState, markdown: string) => {
-    state.componentMarkdown = markdown;
+    state.componentMarkdownOverview = markdown;
 };
 
-// Component - COMPONENT_PREVIEW_GET
-export const getComponentPreview: Mutation<ModulState> = (state: ModulState) => {
-    state.componentMarkdownPreview = undefined;
-};
+// export const COMPONENT_PREVIEW_GET: string = 'M_COMPONENT_PREVIEW_GET';
+// export const getComponentPreview: Mutation<ModulState> = (state: ModulState) => {
+//     state.componentMarkdownPreview = null;
+// };
 
-// Component - COMPONENT_PREVIEW_GET_SUCCESS
+export const COMPONENT_PREVIEW_GET_SUCCESS: string = 'M_COMPONENT_PREVIEW_GET_SUCCESS';
 export const getComponentPreviewSuccess: Mutation<ModulState> = (state: ModulState, markdown: string) => {
     state.componentMarkdownPreview = markdown;
 };
 
 // Messages
 export const getMessages: Mutation<ModulState> = (state: ModulState) => {
-    state.languageLoaded = undefined;
+    state.messagesLanguageLoaded = null;
 };
 
 export const getMessagesSucces: Mutation<ModulState> = (state: ModulState, language: string) => {
-    state.languageLoaded = language;
+    state.messagesLanguageLoaded = language;
 };
 
 // Icons
 export const getIcons: Mutation<ModulState> = (state: ModulState) => {
-    state.iconsLoaded = undefined;
+    state.iconsLoaded = null;
 };
 
 export const getIconsSucces: Mutation<ModulState> = (state: ModulState, icons: string) => {

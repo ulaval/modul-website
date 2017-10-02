@@ -95,9 +95,7 @@ Meta.getCategories().forEach(category => {
                 },
                 {
                     path: '',
-                    redirect: ROUTES[COMPONENT_OVERVIEW],
-                    meta: componentMeta.tag,
-                    component: ComponentOverview
+                    redirect: ROUTES[COMPONENT_OVERVIEW]
                 }
             ]
         });
@@ -130,7 +128,7 @@ modulRoutes.push(
 
 export default new Router({
     mode: 'history',
-    routes: modulRoutes,
+    routes: modulRoutes/*,
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
             return savedPosition;
@@ -139,5 +137,5 @@ export default new Router({
             return { selector: to.hash };
         }
         return { x: 0, y: 0 };
-    }
+    }*/
 });

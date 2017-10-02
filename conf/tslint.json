@@ -32,6 +32,6 @@
         ],
         "no-empty": false,
         "no-debugger": true,
-        "no-null-keyword": true
+        "no-null-keyword": false
     }
 }

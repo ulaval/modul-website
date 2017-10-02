@@ -3,50 +3,16 @@ import Component from 'vue-class-component';
 import WithRender from './component.html';
 import { Watch } from 'vue-property-decorator';
 import * as ModulActions from '@/app/store/actions';
-import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import * as ModulGetters from '@/app/store/getters';
 import { ModulWebsite } from '../modul-website';
 
 const ZINDEX: number = 200;
-
-type Component = {
-    tag: string;
-    text: string;
-};
-
-type ComponentIndexMap = {
-    [tag: string]: number;
-};
 
 @WithRender
 @Component
 export class ComponentViewer extends ModulWebsite {
 
-    private hasScrolled: boolean = false;
-    private isListOpened: boolean = false;
-
-    private components: Component[] = [];
-    private componentsMap: ComponentIndexMap = {};
-
-    protected beforeMount(): void {
-        let tag: string = this.$route.meta;
-        let meta: ComponentMeta = Meta.getMetaByTag(tag);
-
-        if (meta && meta.category) {
-            Meta.getMetaByCategory(meta.category).forEach(component => {
-                this.components.push({
-                    tag: component.tag,
-                    text: component.name ? this.$i18n.translate(component.name) : component.tag
-                });
-            });
-
-            this.components.sort((a, b) => {
-                return a.text < b.text ? -1 : (a.text > b.text ? 1 : 0);
-            });
-
-            this.components.forEach((component, index) => this.componentsMap[component.tag] = index);
-
-        }
-    }
+    private listOpened: boolean = false;
 
     protected mounted(): void {
         this.getMeta();
@@ -56,14 +22,12 @@ export class ComponentViewer extends ModulWebsite {
         this.$router.push(this.state.categoryRoutes[category].url);
     }
 
-    private get translatedCategory(): string {
+    private get components(): string[] {
+        return this.$store.getters[ModulGetters.GET_COMPONENTS_SORTED_BY_CATEGORY];
+    }
 
-        if (this.state.component && this.state.component.category) {
-            return this.$i18n.translate(this.state.component.category);
-        } else {
-            return '';
-        }
-
+    private get translatedCategory(): string | undefined {
+        return this.state.category ? this.state.categoriesText[this.state.category] : undefined;
     }
 
     @Watch('$route')
@@ -71,33 +35,43 @@ export class ComponentViewer extends ModulWebsite {
         this.$store.dispatch(ModulActions.COMPONENT_GET, this.$route.meta);
     }
 
-    private getText(component: Component): string {
-        return component.text;
+    private get selectedComponent(): string | undefined {
+        return this.state.component ? this.state.component.tag : undefined;
     }
 
-    private onComponentSelected(component: Component): void {
-        this.navigateToComponent(component.tag);
+    private set selectedComponent(tag: string | undefined) {
+        if (tag) {
+            this.$router.push(this.state.componentRoutes[tag].url);
+        }
+    }
+
+    private getComponentName(tag: string): string {
+        return this.state.componentsText[tag];
+    }
+
+    private get hasSelectedComponent(): boolean {
+        return this.selectedComponent != undefined ? Object.keys(this.selectedComponent).length > 0 : false;
     }
 
     private getPreviousComponent(): void {
-        if (this.state.component) {
-            let index: number = this.componentsMap[this.state.component.tag];
+        if (this.selectedComponent) {
+            let index: number = this.components.indexOf(this.selectedComponent);
             index--;
             if (index < 0) {
                 index = this.components.length - 1;
             }
-            this.navigateToComponent(this.components[index].tag);
+            this.selectedComponent = this.components[index];
         }
     }
 
     private getNextComponent(): void {
-        if (this.state.component) {
-            let index: number = this.componentsMap[this.state.component.tag];
+        if (this.selectedComponent) {
+            let index: number = this.components.indexOf(this.selectedComponent);
             index++;
             if (index >= this.components.length) {
                 index = 0;
             }
-            this.navigateToComponent(this.components[index].tag);
+            this.selectedComponent = this.components[index];
         }
     }
 
@@ -105,27 +79,15 @@ export class ComponentViewer extends ModulWebsite {
         this.$router.push(this.state.componentRoutes[component].url);
     }
 
-    private onOpen(isListOpened: boolean): void {
-        this.isListOpened = isListOpened;
-        // reset the scroll
-        this.hasScrolled = false;
+    private onOpen(): void {
+        this.listOpened = true;
     }
 
-    private get selectedComponent(): Component | undefined {
-        let result: Component | undefined = undefined;
-        if (this.state.component) {
-            result = this.components[this.componentsMap[this.state.component.tag]];
-        } else {
-            result = this.components[this.componentsMap[this.$route.meta]];
-        }
-        return result;
+    private onClose(): void {
+        this.listOpened = false;
     }
 
     private get zIndex(): number {
-        if (this.isListOpened && !this.hasScrolled) {
-            return ZINDEX;
-        } else {
-            return 0;
-        }
+        return this.listOpened ? ZINDEX : 0;
     }
 }

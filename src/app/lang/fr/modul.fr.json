@@ -11,7 +11,7 @@
         "attribute": "Propriété",
         "value": "Valeur",
         "description": "Description",
-        "preview-non-dispo": "Apercu non disponible pour le moment",
+        "preview-not-available": "Apercu non disponible pour le moment",
         "do": "À faire",
         "dont": "À éviter"
     }

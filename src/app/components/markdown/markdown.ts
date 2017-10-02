@@ -15,7 +15,7 @@ export class MMarkdown extends Vue {
     private get propTemplate(): string {
         let result = '';
         if (this.template) {
-            result = this.renderer.render(this.template).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+            result = this.renderer.render(this.template).replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
         }
         return result;
     }

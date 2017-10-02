@@ -3,22 +3,11 @@ import Component from 'vue-class-component';
 import WithRender from './category.html';
 import { Watch } from 'vue-property-decorator';
 import { ModulWebsite } from '../modul-website';
-import * as ModulActions from '@/app/store/actions';
 import * as ModulMutations from '@/app/store/mutations';
 import * as ModulGetters from '@/app/store/getters';
 // import StoreMixinMap, { StoreMixin } from '@/app/store/store-mixin';
-import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
 const ZINDEX: number = 200;
-
-type ICategory = {
-    id: string;
-    text: string;
-};
-
-type CategoryIndexMap = {
-    [id: string]: number;
-};
 
 @WithRender
 @Component
@@ -46,28 +35,18 @@ export class Category extends ModulWebsite {
         this.$store.commit(ModulMutations.CATEGORY_GET, this.$route.meta);
     }
 
-    private getText(category: ICategory): string {
-        return category.text;
+    private get selectedCategory(): string | null {
+        return this.state.category;
     }
 
-    private get selectedCategory(): string | undefined {
-        if (this.state.category) {
-            return this.state.category;
-        } else {
-            return undefined;
+    private set selectedCategory(category: string | null) {
+        if (category) {
+            this.$router.push(this.state.categoryRoutes[category].url);
         }
-    }
-
-    private set selectedCategory(category: string | undefined) {
-        this.$store.commit(ModulMutations.CATEGORY_GET, category);
     }
 
     private get hasSelectedCategory(): boolean {
-        if (this.selectedCategory != undefined) {
-            return Object.keys(this.selectedCategory).length > 0;
-        } else {
-            return false;
-        }
+        return this.selectedCategory != undefined ? Object.keys(this.selectedCategory).length > 0 : false;
     }
 
     private getPreviousCategory(): void {
@@ -77,7 +56,7 @@ export class Category extends ModulWebsite {
             if (index < 0) {
                 index = this.categories.length - 1;
             }
-            this.onSelectedCategory(this.categories[index]);
+            this.selectedCategory = this.categories[index];
         }
     }
 
@@ -88,12 +67,8 @@ export class Category extends ModulWebsite {
             if (index >= this.categories.length) {
                 index = 0;
             }
-            this.onSelectedCategory(this.categories[index]);
+            this.selectedCategory = this.categories[index];
         }
-    }
-
-    private onSelectedCategory(category: string): void {
-        this.$router.push(this.state.categoryRoutes[category].url);
     }
 
     private onOpen(): void {

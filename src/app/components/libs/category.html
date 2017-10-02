@@ -2,7 +2,7 @@
     <section class="modul-component-page__header">
         <div class="modul-component-page__header__wrap" :style="{'zIndex' : zIndex}">
             <div ref="dropdown" class="modul-component-page__title">
-                <m-dropdown width="700px" v-model="selectedCategory" @change="onSelectedCategory" @open="onOpen" @close="onClose">
+                <m-dropdown v-model="selectedCategory" @open="onOpen" @close="onClose">
                     <m-dropdown-item v-for="category in categories" :value="category" :label="getCategoryName(category)">
                     </m-dropdown-item>
                 </m-dropdown>

@@ -9,21 +9,22 @@ export type RouteMap = {
     [key: string]: RouteInfo;
 };
 
-export type CategoryMap = {
+export type KeyMap = {
     [key: string]: string
 };
 
 export class ModulState {
-    public metaLoaded: string | undefined = undefined;
-    public languageLoaded: string | undefined = undefined;
-    public iconsLoaded: string | undefined = undefined;
+    public metaLanguageLoaded: string | null = null;
+    public messagesLanguageLoaded: string | null = null;
+    public iconsLoaded: string | null = null;
 
     public categoryRoutes: RouteMap = {};
     public componentRoutes: RouteMap = {};
-    public categoriesText: CategoryMap = {};
+    public categoriesText: KeyMap = {};
+    public componentsText: KeyMap = {};
 
-    public component: ComponentMeta | undefined = undefined;
-    public componentMarkdown: string | undefined = undefined;
-    public componentMarkdownPreview: string | undefined = undefined;
-    public category: string | undefined = undefined;
+    public component: ComponentMeta | null = null;
+    public componentMarkdownPreview: string | null = null;
+    public componentMarkdownOverview: string | null = null;
+    public category: string | null = null;
 }
