@@ -88,6 +88,11 @@ $modul-home-design--width--l: 270px;
                 }
             }
 
+            &-title,
+            &-subtitle {
+                text-transform: uppercase;
+            }
+
             &-title {
                 display: block;
                 color: $m-color--white;

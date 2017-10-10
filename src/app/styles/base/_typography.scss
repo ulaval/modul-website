@@ -2,11 +2,6 @@
 //  Titles
 // ======================================================================
 
-h1,
-h2,
-h3,
-h4,
-h5,
 .modul-u--h1,
 .modul-u--h2,
 .modul-u--h3,
@@ -18,41 +13,33 @@ h5,
     text-transform: uppercase;
 }
 
-h4,
-h5,
-h6,
 .modul-u--h4,
 .modul-u--h5,
 .modul-u--h6 {
     margin: $m-margin--l 0 0 0;
 }
 
-h1,
 .modul-u--h1 {
     font-size: $m-font-size--h1;
     margin: 0;
 }
 
-h2,
 .modul-u--h2 {
     font-size: 22px;
     margin: $m-padding--l 0 0 0;
 }
 
-h3,
 .modul-u--h3 {
     font-size: 20px;
     margin: $m-padding--l 0 0 0;
 }
 
-h4,
 .modul-u--h4 {
     font-size: 18px;
 }
 
-h5,
+
 .modul-u--h5,
-h6,
 .modul-u--h6 {
     font-size: 16px;
 }
@@ -63,9 +50,8 @@ h6,
 
 .modul-u--highlighted-title {
     margin: 0;
-    position: relative;
     color: $m-color--white;
-    text-transform: uppercase;
+    position: relative;
     text-decoration: none;
 
     &::before {

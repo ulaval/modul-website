@@ -1,4 +1,4 @@
-.modul-component-page__title.modul-component-page__title {
+.modul-light-header__title.modul-light-header__title {
     .m-text-field {
         min-width: 180px;
 
@@ -25,11 +25,12 @@
         }
 
         &__input {
-            font-size: 38px;
-            font-weight: $m-font-weight--black;
-            color: $modul-color--black-grey-dark;
+            font-size: 36px; // magic number
             border-bottom-width: 3px;
             padding-right: $m-padding--s;
+            text-transform: uppercase;
+            font-weight: $m-font-weight--black;
+            color: $modul-color--black-grey-dark;
 
             &-container {
                 &::before {

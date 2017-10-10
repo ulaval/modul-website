@@ -1,28 +1,22 @@
 <div class="modul-component-page">
-    <m-link mode="button" class="modul-component__back" @click="back(state.component.category)">
-        <m-icon name="left-arrow" slot="icon-left"></m-icon> {{translatedCategory}}
-    </m-link>
-    <section class="modul-component-page__header" :style="{'zIndex' : zIndex}">
-        <m-link mode="button" @click="back(state.component.category)" class="modul-component__back">
-            <template slot="icon-left">
-                <m-icon name="left-arrow"></m-icon>
-            </template>
-            <span>{{translatedCategory}}</span>
+    <section class="modul-light-header" :style="{'zIndex' : zIndex}">
+        <m-link class="modul-back-link" mode="button" :icon="true" :icon-name="left-arrow" @click="back(state.component.category)">
+            {{translatedCategory}}
         </m-link>
-        <div class="modul-component-page__header__wrap">
-            <div ref="dropdown" class="modul-component-page__title">
+        <div class="modul-light-header__wrap">
+            <div ref="dropdown" class="modul-light-header__title">
                 <m-dropdown v-model="selectedComponent" @open="onOpen" @close="onClose">
                     <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
                 </m-dropdown>
             </div>
         </div>
-        <div class="modul-component-page__arrow-left" v-if="hasSelectedComponent">
+        <div class="modul-light-header__arrow-left" v-if="hasSelectedComponent">
             <m-button @click="getPreviousComponent()">
                 <m-icon name="left-arrow"></m-icon>
                 <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le composant précédent</span> -->
                 </m-button>
         </div>
-        <div class="modul-component-page__arrow-right" v-if="hasSelectedComponent">
+        <div class="modul-light-header__arrow-right" v-if="hasSelectedComponent">
             <m-button @click="getNextComponent()">
                 <m-icon name="right-arrow"></m-icon>
                 <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le prochain composant</span> -->

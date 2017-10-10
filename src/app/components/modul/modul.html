@@ -62,7 +62,7 @@
         <nav class="modul-menu" v-if="headerAnimationCompleted" tabindex="0" ref="menu">
             <ul v-for="category in categories" class="modul-menu__list">
                 <li>
-                    <h2 @click="onCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--highlighted-title">
+                    <h2 @click="onCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
                         <span>{{category.text}}</span>
                     </h2>
                 </li>
