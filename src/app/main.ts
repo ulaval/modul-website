@@ -13,7 +13,8 @@ import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/u
 
 import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
 
-import { DO_DONT_NAME, ModulDoDont } from './components/do-dont/do-dont';
+import { DO_NAME, MDo } from './components/do/do';
+import { DONT_NAME, MDont } from './components/dont/dont';
 import { MARKDOWN_NAME, MMarkdown } from './components/markdown/markdown';
 
 const utilsPluginOptions: UtilsPluginOptions = {
@@ -33,7 +34,8 @@ async function main() {
 
     Vue.use(svc);
 
-    Vue.component(DO_DONT_NAME, ModulDoDont);
+    Vue.component(DO_NAME, MDo);
+    Vue.component(DONT_NAME, MDont);
     Vue.component(MARKDOWN_NAME, MMarkdown);
 
     currentLang(FRENCH);

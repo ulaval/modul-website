@@ -1,9 +1,0 @@
-<article class="modul-do-dont" :class="{ 'modul--is-mode-do': mode=='do', 'modul--is-mode-dont': mode=='dont' }">
-    <h2 class="modul-do-dont__header" >
-        <m-i18n k="modul:do" v-if="mode=='do'"></m-i18n>
-        <m-i18n k="modul:dont" v-if="mode=='dont'"></m-i18n>
-    </h2>
-    <div class="modul-do-dont__body">
-        <slot></slot>
-    </div>
-</article>
