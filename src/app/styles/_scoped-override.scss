@@ -32,6 +32,10 @@
             font-weight: $m-font-weight--black;
             color: $modul-color--black-grey-dark;
 
+            &::after {
+                display: none;
+            }
+
             &-container {
                 &::before {
                     border-bottom-width: 3px;

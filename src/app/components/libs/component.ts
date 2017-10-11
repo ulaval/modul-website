@@ -87,6 +87,10 @@ export class ComponentViewer extends ModulWebsite {
         this.listOpened = false;
     }
 
+    // private set selectedComponent(selected: Component | undefined) {
+    //     this.internalSelected = selected;
+    // }
+
     private get zIndex(): number {
         return this.listOpened ? ZINDEX : 0;
     }
