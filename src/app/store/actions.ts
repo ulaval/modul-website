@@ -18,8 +18,8 @@ export const getComponentsMetaAction: Action<ModulState, ModulState> = async (co
         if (!context.state.metaLanguageLoaded || context.state.metaLanguageLoaded != language) {
             context.commit(ModulMutations.COMPONENTS_META_GET);
 
-            (require as any).ensure(['@ulaval/modul-components/dist/meta/meta-fr'], () => {
-                let languageModule = require('@ulaval/modul-components/dist/meta/meta-fr');
+            (require as any).ensure(['../meta/meta-fr'], () => {
+                let languageModule = require('../meta/meta-fr');
                 Vue.use(languageModule.default);
 
                 context.commit(ModulMutations.COMPONENTS_META_GET_SUCCESS, FRENCH);

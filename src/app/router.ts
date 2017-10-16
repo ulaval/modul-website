@@ -13,7 +13,7 @@ import { Ecosystem } from './components/ecosystem/ecosystem';
 import Meta from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, {
     CATEGORY_COMUNICATION, CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_INDICATORS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_SEARCH_SORT
-} from '@ulaval/modul-components/dist/meta/meta-all';
+} from './meta/meta-all';
 
 Vue.use(Router);
 Vue.use(MetaAll, Meta);
