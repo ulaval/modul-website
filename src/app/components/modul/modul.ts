@@ -4,7 +4,7 @@ import Component from 'vue-class-component';
 import WithRender from './modul.html?style=./modul.scss';
 import * as ModulActions from '@/app/store/actions';
 import { Watch } from 'vue-property-decorator';
-import { ROUTES, COMPONENTS, ECOSYSTEM, VISUAL_STANDARDS, WRITING_RULES } from '@/app/router';
+import { ROUTES, COMPONENTS, ECOSYSTEM, GETTING_STARTED, VISUAL_STANDARDS, WRITING_STANDARDS, CODING_STANDARDS } from '@/app/router';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
@@ -74,12 +74,20 @@ export default class Modul extends ModulWebsite {
         return isHome;
     }
 
+private get gettingStarted(): string {
+        return '/' + ROUTES[GETTING_STARTED];
+    }
+
     private get visualStandards(): string {
         return '/' + ROUTES[VISUAL_STANDARDS];
     }
 
-    private get writingRules(): string {
-        return '/' + ROUTES[WRITING_RULES];
+    private get writingStandards(): string {
+        return '/' + ROUTES[WRITING_STANDARDS];
+    }
+
+    private get codingStandards(): string {
+        return '/' + ROUTES[CODING_STANDARDS];
     }
 
     private get componentsRoute(): string {
