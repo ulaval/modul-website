@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import Router, { RouteConfig } from 'vue-router';
 import { HomePage } from './components/home/home';
+import { GettingStarted } from './components/getting-started/getting-started';
+import { CodingStandards } from './components/coding-standards/coding-standards';
 import { VisualStandards } from './components/visual-standards/visual-standards';
-import { WritingRules } from './components/writing-rules/writing-rules';
+import { WritingStandards } from './components/writing-standards/writing-standards';
 import { CategoryList } from './components/libs/category-list';
 import { Category } from './components/libs/category';
 import { ComponentViewer } from './components/libs/component';
@@ -22,15 +24,19 @@ export type RoutePathMap = {
     [path: string]: string;
 };
 
+export const GETTING_STARTED: string = 'GETTING_STARTED';
+export const CODING_STANDARDS: string = 'CODING_STANDARDS';
 export const VISUAL_STANDARDS: string = 'VISUAL_STANDARDS';
-export const WRITING_RULES: string = 'WRITING_RULES';
+export const WRITING_STANDARDS: string = 'WRITING_STANDARDS';
 export const COMPONENTS: string = 'COMPONENTS';
 export const ECOSYSTEM: string = 'ECOSYSTEM';
 export const COMPONENT_PROPERTIES: string = 'COMPONENT_PROPERTIES';
 export const COMPONENT_OVERVIEW: string = 'COMPONENT_OVERVIEW';
 
+export const GETTING_STARTED_FR: string = 'demarrer-modul';
+export const CODING_STANDARDS_FR: string = 'normes-developpement';
 export const VISUAL_STANDARDS_FR: string = 'normes-graphiques';
-export const WRITING_RULES_FR: string = 'regles-editoriales';
+export const WRITING_STANDARDS_FR: string = 'normes-editoriales';
 export const COMPONENTS_FR: string = 'composants';
 export const ECOSYSTEM_FR: string = 'ecosysteme';
 
@@ -46,8 +52,10 @@ export const COMPONENT_PROPERTIES_FR: string = 'proprietes';
 export const COMPONENT_OVERVIEW_FR: string = 'portrait';
 
 export const ROUTES: RoutePathMap = {
+    [GETTING_STARTED]: GETTING_STARTED_FR,
+    [CODING_STANDARDS]: CODING_STANDARDS_FR,
     [VISUAL_STANDARDS]: VISUAL_STANDARDS_FR,
-    [WRITING_RULES]: WRITING_RULES_FR,
+    [WRITING_STANDARDS]: WRITING_STANDARDS_FR,
     [COMPONENTS]: COMPONENTS_FR,
     [ECOSYSTEM]: ECOSYSTEM_FR,
     [COMPONENT_PROPERTIES]: COMPONENT_PROPERTIES_FR,
@@ -108,12 +116,20 @@ modulRoutes.push(
         component: HomePage
     },
     {
+        path: '/' + ROUTES[GETTING_STARTED],
+        component: GettingStarted
+    },
+    {
+        path: '/' + ROUTES[CODING_STANDARDS],
+        component: CodingStandards
+    },
+    {
         path: '/' + ROUTES[VISUAL_STANDARDS],
         component: VisualStandards
     },
     {
-        path: '/' + ROUTES[WRITING_RULES],
-        component: WritingRules
+        path: '/' + ROUTES[WRITING_STANDARDS],
+        component: WritingStandards
     },
     {
         path: '/' + ROUTES[COMPONENTS],

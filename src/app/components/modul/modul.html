@@ -9,13 +9,23 @@
         <nav class="modul-header__nav" v-if="isMqMinS">
             <ul>
                 <li>
+                    <router-link :to="gettingStarted" class="modul-header__link">
+                        <m-i18n k="modul:getting-started"></m-i18n>
+                    </router-link>
+                </li>
+                <li>
                     <router-link :to="visualStandards" class="modul-header__link">
                         <m-i18n k="modul:visual-standards"></m-i18n>
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="writingRules" class="modul-header__link">
-                        <m-i18n k="modul:writing-rules"></m-i18n>
+                    <router-link :to="writingStandards" class="modul-header__link">
+                        <m-i18n k="modul:writing-standards"></m-i18n>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="codingStandards" class="modul-header__link">
+                        <m-i18n k="modul:coding-standards"></m-i18n>
                     </router-link>
                 </li>
                 <li>
