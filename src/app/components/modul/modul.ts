@@ -74,7 +74,7 @@ export default class Modul extends ModulWebsite {
         return isHome;
     }
 
-private get gettingStarted(): string {
+    private get gettingStarted(): string {
         return '/' + ROUTES[GETTING_STARTED];
     }
 
@@ -94,10 +94,10 @@ private get gettingStarted(): string {
         return '/' + ROUTES[COMPONENTS];
     }
 
-//   private get ecosystem(): string {
-//       return '/' + ROUTES[ECOSYSTEM];
-//   }
-//
+    //   private get ecosystem(): string {
+    //       return '/' + ROUTES[ECOSYSTEM];
+    //   }
+    //
     private getCategoryComponents(category): ComponentMeta[] {
         return Meta.getMetaByCategory(category);
     }
