@@ -94,10 +94,10 @@ private get gettingStarted(): string {
         return '/' + ROUTES[COMPONENTS];
     }
 
-    private get ecosystem(): string {
-        return '/' + ROUTES[ECOSYSTEM];
-    }
-
+//   private get ecosystem(): string {
+//       return '/' + ROUTES[ECOSYSTEM];
+//   }
+//
     private getCategoryComponents(category): ComponentMeta[] {
         return Meta.getMetaByCategory(category);
     }
