@@ -10,12 +10,14 @@ import I18nPlugin, { currentLang, FRENCH } from '@ulaval/modul-components/dist/u
 import ComponentsPlugin from '@ulaval/modul-components/dist/components';
 import DirectivesPlugin from '@ulaval/modul-components/dist/directives';
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils';
+// import PreviewPlugin from '@ulaval/modul-components/dist/utils';
 
 import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
 
 import { DO_NAME, MDo } from './components/do/do';
 import { DONT_NAME, MDont } from './components/dont/dont';
 import { MARKDOWN_NAME, MMarkdown } from './components/markdown/markdown';
+import { PREVIEW_NAME, MPreview } from './components/preview/preview';
 
 const utilsPluginOptions: UtilsPluginOptions = {
     securityPluginOptions: {
@@ -37,6 +39,7 @@ async function main() {
     Vue.component(DO_NAME, MDo);
     Vue.component(DONT_NAME, MDont);
     Vue.component(MARKDOWN_NAME, MMarkdown);
+    Vue.component(PREVIEW_NAME, MPreview);
 
     currentLang(FRENCH);
     await store.dispatchAsync(ModulActions.MESSAGES_GET, FRENCH);

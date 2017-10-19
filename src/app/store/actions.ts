@@ -57,7 +57,7 @@ export const COMPONENT_PREVIEW_GET: string = 'A_COMPONENT_PREVIEW_GET';
 export const getComponentPreviewAction: Action<ModulState, ModulState> = async (context: ActionContext<ModulState, ModulState>, markdown: MarkdownPayload) => {
     // context.commit(ModulMutations.COMPONENT_PREVIEW_GET);
     if (context.state.componentMarkdownPreview == null && typeof context.state.component.preview === 'string') {
-        markdown.restAdapter.execute({ method: 'get', rawUrl: `/assets/md/${context.state.component.preview}.fr.md` }).then((md) => {
+        markdown.restAdapter.execute({ method: 'get', rawUrl: `/assets/md/${context.state.component.tag}.preview.fr.md` }).then((md) => {
             context.commit(ModulMutations.COMPONENT_PREVIEW_GET_SUCCESS, (md as any).data);
         });
     }
