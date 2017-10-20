@@ -33,11 +33,11 @@
                         <m-i18n k="modul:components"></m-i18n>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <router-link :to="ecosystem" class="modul-header__link">
                         <m-i18n k="modul:ecosystem"></m-i18n>
                     </router-link>
-                </li>
+                </li> -->
             </ul>
         </nav>
 
@@ -69,7 +69,7 @@
         </m-sidebar>
     </div>
     <transition name="modul--is">
-        <nav class="modul-menu" v-if="headerAnimationCompleted" tabindex="0" ref="menu">
+        <nav class="modul-menu" v-if="headerAnimationCompleted && isMqMinS" tabindex="0" ref="menu">
             <ul v-for="category in categories" class="modul-menu__list">
                 <li>
                     <h2 @click="onCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
@@ -82,6 +82,9 @@
                     </a>
                 </li>
             </ul>
+        </nav>
+        <nav class="modul-menu" v-if="headerAnimationCompleted && !isMqMinS" tabindex="0" ref="menu">
+            menu mobile
         </nav>
     </transition>
 
