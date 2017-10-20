@@ -1,7 +1,11 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id vestibulum sapien. Suspendisse nec maximus mauris, sit amet porta nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus lectus metus, pretium at dui quis, pulvinar facilisis augue.
+## Utilisation
+### Boite principale
+Une boite principale est utilisée pour grouper et mettre en évidence du contenu de même nature. Deux styles de boites principales peuvent être utilisés, en fonction de l'importance à accorder au contenu.
 
----
-## Règles
-Ut ac semper ligula. In a elit ac odio eleifend dapibus eu consequat ligula. Nulla dignissim magna felis, a placerat nisl fringilla vel. Nulla facilisi. Proin tortor erat, bibendum eget turpis commodo, accumsan laoreet ipsum.
+#### Sans entête
+Il est possible d'utiliser la boite principale sans entête avec un titre, mais ce n'est pas obligatoire. Le style du titre n'est pas normé et est à la discrétion de l'analyste. Il doit donc être spécifié au dossier fonctionnel comme composant de type *Texte affiché*.
+### Boite secondaire
+Une boite secondaire est utilisée pour grouper du contenu de même nature, sans que ce soit nécessaire de mettre de l'emphase sur ce contenu.
 
-> In a elit ac odio eleifend dapibus eu consequat ligula. Nulla dignissim magna felis, a placerat nisl fringilla vel.
+#### Sans entête
+Il est possible d'utiliser la boite principale sans entête avec un titre, mais ce n'est pas obligatoire. Le style du titre n'est pas normé et est à la discrétion de l'analyste. Il doit donc être spécifié au dossier fonctionnel comme composant de type *Texte affiché*.

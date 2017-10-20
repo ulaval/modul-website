@@ -1,8 +1,5 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id vestibulum sapien. Suspendisse nec maximus mauris, sit amet porta nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus lectus metus, pretium at dui quis, pulvinar facilisis augue.
+## Utilisation
+L'interrupteur permet d'activer ou d'inactiver une option ou encore de faire un choix parmi deux états mutuellement exclusifs.
 
----
-## Règles
-Ut ac semper ligula. In a elit ac odio eleifend dapibus eu consequat ligula. Nulla dignissim magna felis, a placerat nisl fringilla vel. Nulla facilisi. Proin tortor erat, bibendum eget turpis commodo, accumsan laoreet ipsum.
-
-> In a elit ac odio eleifend dapibus eu consequat ligula. Nulla dignissim magna felis, a placerat nisl fringilla vel.
-
+### Libellé
+Le libellé (représentant l'option) est toujours placé à droite du bouton. Dans certaines situations, par exemple si on désire aligner plusieurs interrupteurs l'un sous l'autre, il peut être utile de placer le libellé à gauche. Dans ce cas, il suffit de ne pas associer le libellé au composant et de le placer manuellement à gauche.

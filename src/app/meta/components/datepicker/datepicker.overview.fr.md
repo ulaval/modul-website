@@ -1,7 +1,22 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id vestibulum sapien. Suspendisse nec maximus mauris, sit amet porta nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus lectus metus, pretium at dui quis, pulvinar facilisis augue.
+## Utilisation
+Le sélecteur de date est utilisé pour permettre à l'utilisateur de sélectionner une date.
 
 ---
-## Règles
-Ut ac semper ligula. In a elit ac odio eleifend dapibus eu consequat ligula. Nulla dignissim magna felis, a placerat nisl fringilla vel. Nulla facilisi. Proin tortor erat, bibendum eget turpis commodo, accumsan laoreet ipsum.
+## Caractéristiques
+### Date
+Le format de date retenu pour la saisie et la modification est le suivant : AAAA-MM-JJ
+2015-01-15
 
-> In a elit ac odio eleifend dapibus eu consequat ligula. Nulla dignissim magna felis, a placerat nisl fringilla vel.
+Il doit être utilisé chaque fois qu'une date peut être inscrite ou modifiée par un utilisateur. Ce format est automatiquement appliqué lorsque l'utilisateur passe par le sélecteur de date.
+
+### Semaine
+La semaine débute le dimanche ou le lundi, en fonction de la valeur définie dans la préférence utilisateur associée. Si aucune préférence n'est définie, la semaine débute le dimanche.
+
+### Date sélectionnée
+La date sélectionnée est toujours affichée dans une pastille bleue.
+
+### Date du jour
+La date du jour est toujours affichée sur fond bleu, sauf lorsqu'elle est sélectionnée.
+
+### Navigation
+Il est possible de naviguer dans le sélecteur de date à l'aide de flèches permettant de passer au mois suivant ou précédent.
