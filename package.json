@@ -9,7 +9,7 @@
         "relink": "rimraf node_modules/@ulaval/modul-components && npm i",
         "dev": "npm run mdToAssets && webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 8083 --open --history-api-fallback",
         "build": "webpack --config conf/webpack.config.js --colors --optimize-minimize",
-        "mdToAssets": "rimraf src/assets/md && copyfiles -u 5 \"./src/app/meta/components/**/*.md\" src/assets/md && copyfiles -u 5 \"./src/app/meta/directives/**/*.md\" src/assets/md",
+        "mdToAssets": "rimraf src/assets/md && copyfiles -u 5 \"./src/app/meta/components/**/*.md\" src/assets/md && copyfiles -u 5 \"./src/app/meta/directives/**/*.md\" src/assets/md && copyfiles -u 5 \"./src/app/meta/components/**/*.js\" src/assets/md",
         "prod": "http-server dist -p 8083 -g -o",
         "unit": "karma start conf/karma.conf.js --browsers PhantomJS --single-run",
         "unitall": "karma start conf/karma.conf.js --single-run",
