@@ -25,13 +25,13 @@ export class MPreview extends Vue {
             <m-radio ref="c" value="radio3">Item 3</m-radio>
         </m-radio-group>
     </div>`,
-        data: function () {
+        data: function() {
             return {
                 position: 'right'
             };
         },
         methods: {
-            changePosition: function () {
+            changePosition: function() {
                 this.position = 'right';
             }
         }
@@ -43,13 +43,13 @@ export class MPreview extends Vue {
             <m-radio ref="a" position="left" value="radio1">Item 1</m-radio>
         </m-radio-group>
     </div>`,
-        data: function () {
+        data: function() {
             return {
                 position: 'right'
             };
         },
         methods: {
-            changePosition: function () {
+            changePosition: function() {
                 this.position = 'right';
             }
         }

@@ -1,0 +1,48 @@
+<div class="modul-visual-standards">
+    <section class="modul-visual-standards__header">
+        <div class="modul-visual-standards__header-title­">
+            <h1 v-if="hasHeader">
+                <slot name="header"></slot>
+            </h1>
+            <h1 v-else>{{ defaultTitle }}</h1>
+        </div>
+    </section>
+    <section class="modul-visual-standards__body">
+        <header class="modul-visual-standards__body__header">
+            <div class="modul-visual-standards__body__header-wrap">
+                <p v-if="hasIntroduction">
+                    <slot name="introduction"></slot>
+                </p>
+                <p v-else>{{ introMessage }}</p>
+            </div>
+        </header>
+        <div class="modul-visual-standards__body__content">
+            <div class="modul-visual-standards__body__content-wrap" v-if="hasBody">
+                <slot name="body"></slot>
+            </div>
+            <div class="modul-visual-standards__body__content-wrap" v-else>
+                <h2>{{ bodyMessage }}</h2>
+                <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
+                    Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse culpa
+                    minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur. Ipsum nisi
+                    sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat sint sit non et
+                    non labore adipisicing id.</p>
+                <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
+                    Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse culpa
+                    minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur. Ipsum nisi
+                    sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat sint sit non et
+                    non labore adipisicing id.</p>
+                <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
+                    Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse culpa
+                    minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur. Ipsum nisi
+                    sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat sint sit non et
+                    non labore adipisicing id.</p>
+                <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
+                    Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse culpa
+                    minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur. Ipsum nisi
+                    sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat sint sit non et
+                    non labore adipisicing id.</p>
+            </div>
+        </div>
+    </section>
+</div>
