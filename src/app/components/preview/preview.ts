@@ -65,7 +65,7 @@ export class MPreview extends Vue {
 
         setTimeout(() => {
             this.template = require('../../../assets/md/m-dropdown.preview.fr.js').default;
-            this.template = require(this.src).default;
+            // this.template = require(this.src).default;
             // this.template = require(path).default;
         }, 3000);
     }
