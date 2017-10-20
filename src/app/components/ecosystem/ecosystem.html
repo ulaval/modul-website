@@ -1,34 +1,20 @@
-<div class="modul-ecosystem">
-    <section class="modul-ecosystem__header">
-        <div class="modul-ecosystem__header-title­">
-            <h1>
-                <m-i18n k="modul:ecosystem"></m-i18n>
-            </h1>
-        </div>
-    </section>
-    <section class="modul-ecosystem__body">
-        <header class="modul-ecosystem__body__header">
-            <div class="modul-ecosystem__body__header-wrap">
-                <p>Aliquip ad eu reprehenderit laborum. Labore exercitation irure non amet qui officia consectetur. Exercitation
-                    consectetur do enim non ea cillum laborum tempor adipisicing proident dolor dolore. Minim anim fugiat
-                    consectetur tempor irure mollit veniam magna fugiat. Dolore culpa consectetur sit deserunt est veniam
-                    mollit officia mollit ut consequat elit laboris.</p>
-            </div>
-        </header>
-        <div class="modul-ecosystem__body__content">
-            <div class="modul-ecosystem__body__content-nav">
-                <div class="modul-ecosystem__body__content-nav__wrap">
-                    <m-nav-bar skin="arrow">
-                        <m-nav-bar-item>Cadre applicatif</m-nav-bar-item>
-                        <m-nav-bar-item>Moyen de communication</m-nav-bar-item>
-                    </m-nav-bar>
-                </div>
-            </div>
-            <div class="modul-ecosystem__body__content-wrap">
-                <m-accordion></m-accordion>
-                <m-accordion></m-accordion>
-                <m-accordion></m-accordion>
-            </div>
-        </div>
-    </section>
-</div>
+<modul-page-template>
+    <span slot="header">
+        <m-i18n k="modul:ecosystem"></m-i18n>
+    </span>
+    <span slot="preview">
+        <p>Aliquip ad eu reprehenderit laborum. Labore exercitation irure non amet qui officia consectetur. Exercitation consectetur
+            do enim non ea cillum laborum tempor adipisicing proident dolor dolore. Minim anim fugiat consectetur tempor
+            irure mollit veniam magna fugiat. Dolore culpa consectetur sit deserunt est veniam mollit officia mollit ut consequat
+            elit laboris.</p>
+    </span>
+    <span slot="body">
+        <m-nav-bar skin="arrow">
+            <m-nav-bar-item>Cadre applicatif</m-nav-bar-item>
+            <m-nav-bar-item>Moyen de communication</m-nav-bar-item>
+        </m-nav-bar>
+        <m-accordion></m-accordion>
+        <m-accordion></m-accordion>
+        <m-accordion></m-accordion>
+    </span>
+</modul-page-template>

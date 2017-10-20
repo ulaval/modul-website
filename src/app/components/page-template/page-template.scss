@@ -65,21 +65,24 @@
                 max-width: 936px;
                 padding: 64px 32px;
 
-                p:first-child {
-                    margin: 0;
+                p,
+                ul,
+                li {
                     color: #fff;
                     font-size: 20px;
+
+                    &:first-child {
+                        margin: 0;
+                    }
                 }
             }
         }
 
         &__content {
-            border-top: 4px solid $modul-color--yellow;
-
             &-wrap {
                 margin: 0 auto;
                 max-width: 936px;
-                padding: 0 32px;
+                padding: 0 32px 32px;
 
                 .tabs {
                     width: 100%;

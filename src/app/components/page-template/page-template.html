@@ -10,10 +10,12 @@
     <section class="modul-visual-standards__body">
         <header class="modul-visual-standards__body__header">
             <div class="modul-visual-standards__body__header-wrap">
-                <p v-if="hasIntroduction">
-                    <slot name="introduction"></slot>
-                </p>
-                <p v-else>{{ introMessage }}</p>
+                <div v-if="hasPreview">
+                    <slot name="preview"></slot>
+                </div>
+                <div v-else>
+                    <p>{{ introMessage }}</p>
+                </div>
             </div>
         </header>
         <div class="modul-visual-standards__body__content">
