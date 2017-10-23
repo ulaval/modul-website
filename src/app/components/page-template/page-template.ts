@@ -11,7 +11,7 @@ export class MPageTemplate extends Vue {
 
     private defaultTitle: string = 'Add a title';
     private headerMessage: string = 'You must put a title in the header slot';
-    private introMessage: string = 'You must put text in the preview slot';
+    private previewMessage: string = 'You must put text in the preview slot';
     private bodyMessage: string = 'You must put content in the body slot';
 
     protected mounted(): void {
@@ -20,7 +20,7 @@ export class MPageTemplate extends Vue {
         }
 
         if (!this.hasPreview) {
-            console.error(this.introMessage);
+            console.error(this.previewMessage);
         }
 
         if (!this.hasBody) {
@@ -37,7 +37,6 @@ export class MPageTemplate extends Vue {
     }
 
     private get hasBody(): boolean {
-
         return !!this.$slots.body;
     }
 }
