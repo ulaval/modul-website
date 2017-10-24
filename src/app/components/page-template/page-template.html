@@ -1,15 +1,15 @@
-<div class="modul-visual-standards">
-    <section class="modul-visual-standards__header">
-        <div class="modul-visual-standards__header-title­">
+<div class="modul-page-template">
+    <section class="modul-page-template__header">
+        <div class="modul-page-template__header-title­">
             <h1 v-if="hasHeader">
                 <slot name="header"></slot>
             </h1>
             <h1 v-else>{{ defaultTitle }}</h1>
         </div>
     </section>
-    <section class="modul-visual-standards__body">
-        <header class="modul-visual-standards__body__header">
-            <div class="modul-visual-standards__body__header-wrap">
+    <section class="modul-page-template__body">
+        <header class="modul-page-template__body__header">
+            <div class="modul-page-template__body__header-wrap">
                 <div v-if="hasPreview">
                     <slot name="preview"></slot>
                 </div>
@@ -18,11 +18,11 @@
                 </div>
             </div>
         </header>
-        <div class="modul-visual-standards__body__content">
-            <div class="modul-visual-standards__body__content-wrap" v-if="hasBody">
+        <div class="modul-page-template__body__content">
+            <div class="modul-page-template__body__content-wrap" v-if="hasBody">
                 <slot name="body"></slot>
             </div>
-            <div class="modul-visual-standards__body__content-wrap" v-else>
+            <div class="modul-page-template__body__content-wrap" v-else>
                 <h2>{{ bodyMessage }}</h2>
                 <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
                     Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse culpa

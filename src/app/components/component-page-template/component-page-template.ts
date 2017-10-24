@@ -23,7 +23,7 @@ export class MComponentPageTemplate extends Vue {
         }
     }
 
-    private get hasBackLink(): boolean {
+    private get hasBacklink(): boolean {
         return !!this.$slots.backlink;
     }
 
