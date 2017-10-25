@@ -12,7 +12,7 @@
                     <m-i18n k="modul:description"></m-i18n>
                 </th>
             </thead>
-            <tr v-for="attribute in getAttributes(state.component)">
+            <tr v-for="attribute in getAttributes(component)">
                 <td><strong>{{attribute}}</strong>:{{getAttribute(attribute).type}}</td>
                 <td style="text-align: center">
                     <span v-for="(value, index) in getValues(getAttribute(attribute))" :class="{ 'm-u--font-weight--bold': isDefault(getAttribute(attribute), value)}">{{value}}

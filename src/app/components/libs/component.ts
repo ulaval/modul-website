@@ -2,9 +2,11 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './component.html';
 import { Watch } from 'vue-property-decorator';
-import * as ModulActions from '@/app/store/actions';
-import * as ModulGetters from '@/app/store/getters';
+import * as ComponentsActions from '@/app/store/modules/components/actions';
+import * as ComponentsGetters from '@/app/store/modules/components/getters';
+import { KeyMap, RouteMap, ComponentsState } from '@/app/store/modules/components/components-state';
 import { ModulWebsite } from '../modul-website';
+import { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
 const ZINDEX: number = 200;
 
@@ -19,34 +21,41 @@ export class ComponentViewer extends ModulWebsite {
     }
 
     private back(category): void {
-        this.$router.push(this.state.categoryRoutes[category].url);
+        this.$router.push(this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES][category].url);
     }
 
     private get components(): string[] {
-        return this.$store.getters[ModulGetters.GET_COMPONENTS_SORTED_BY_CATEGORY];
+        return this.$store.getters[ComponentsGetters.GET_COMPONENTS_SORTED_BY_CATEGORY];
     }
 
     private get translatedCategory(): string | undefined {
-        return this.state.category ? this.state.categoriesText[this.state.category] : undefined;
+        let category: string = this.$store.getters[ComponentsGetters.GET_CATEGORY];
+        return category ? this.$store.getters[ComponentsGetters.GET_CATEGORIES_TEXT][category] : undefined;
     }
 
     @Watch('$route')
     private getMeta(): void {
-        this.$store.dispatch(ModulActions.COMPONENT_GET, this.$route.meta);
+        this.$store.dispatch(ComponentsActions.COMPONENT_GET, this.$route.meta);
+    }
+
+    private get component(): ComponentMeta {
+        return this.$store.getters[ComponentsGetters.GET_COMPONENT];
     }
 
     private get selectedComponent(): string | undefined {
-        return this.state.component ? this.state.component.tag : undefined;
+        let componentMeta: ComponentMeta = this.$store.getters[ComponentsGetters.GET_COMPONENT];
+        return componentMeta ? componentMeta.tag : undefined;
     }
 
     private set selectedComponent(tag: string | undefined) {
         if (tag) {
-            this.$router.push(this.state.componentRoutes[tag].url);
+            this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][tag].url);
         }
     }
 
     private getComponentName(tag: string): string {
-        return this.state.componentsText[tag];
+        let keyMap: KeyMap = this.$store.getters[ComponentsGetters.GET_COMPONENTS_TEXT];
+        return keyMap[tag];
     }
 
     private get hasSelectedComponent(): boolean {
@@ -76,7 +85,7 @@ export class ComponentViewer extends ModulWebsite {
     }
 
     private navigateToComponent(component: string): void {
-        this.$router.push(this.state.componentRoutes[component].url);
+        this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][component].url);
     }
 
     private onOpen(): void {

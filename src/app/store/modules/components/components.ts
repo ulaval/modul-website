@@ -40,7 +40,13 @@ const actions: ActionTree<ComponentsState, ComponentsState> = {
 
 const getters: GetterTree<ComponentsState, ComponentsState> = {
     [Getters.GET_CATEGORIES_SORTED]: Getters.getCategoriesSorted,
+    [Getters.GET_CATEGORIES_TEXT]: Getters.getCategoriesText,
+    [Getters.GET_CATEGORY]: Getters.getCategory,
+    [Getters.GET_CATEGORY_ROUTES]: Getters.getCategoryRoutes,
     [Getters.GET_COMPONENTS_SORTED_BY_CATEGORY]: Getters.getComponentsSortedByCategory,
+    [Getters.GET_COMPONENTS_TEXT]: Getters.getComponentsText,
+    [Getters.GET_COMPONENT]: Getters.getComponent,
+    [Getters.GET_COMPONENT_ROUTES]: Getters.getComponentRoutes,
     [Getters.GET_COMPONENT_META]: Getters.getComponentMeta,
     [Getters.GET_MARKDOWN_PREVIEW]: Getters.getMarkdownPreview,
     [Getters.GET_MARKDOWN_OVERVIEW]: Getters.getMarkdownOverview

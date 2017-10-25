@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { ModulWebsite } from '../modul-website';
 import Component from 'vue-class-component';
 import WithRender from './modul.html?style=./modul.scss';
-import * as ModulActions from '@/app/store/actions';
+import * as ModulActions from '@/app/store/modules/components/actions';
 import { Watch } from 'vue-property-decorator';
 import { ROUTES, COMPONENTS, ECOSYSTEM, GETTING_STARTED, VISUAL_STANDARDS, WRITING_STANDARDS, CODING_STANDARDS } from '@/app/router';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';

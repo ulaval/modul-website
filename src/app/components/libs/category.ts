@@ -3,8 +3,9 @@ import Component from 'vue-class-component';
 import WithRender from './category.html';
 import { Watch } from 'vue-property-decorator';
 import { ModulWebsite } from '../modul-website';
-import * as ModulMutations from '@/app/store/mutations';
-import * as ModulGetters from '@/app/store/getters';
+import * as ComponentsMutations from '@/app/store/modules/components/mutations';
+import * as ComponentsGetters from '@/app/store/modules/components/getters';
+import { RouteMap, KeyMap } from '@/app/store/modules/components/components-state';
 // import StoreMixinMap, { StoreMixin } from '@/app/store/store-mixin';
 
 const ZINDEX: number = 200;
@@ -23,26 +24,38 @@ export class Category extends ModulWebsite {
     }
 
     private get categories(): string[] {
-        return this.$store.getters[ModulGetters.GET_CATEGORIES_SORTED];
+        return this.$store.getters[ComponentsGetters.GET_CATEGORIES_SORTED];
+    }
+
+    private get category(): string | null {
+        return this.$store.getters[ComponentsGetters.GET_CATEGORY];
+    }
+
+    private get categoriesText(): KeyMap {
+        return this.$store.getters[ComponentsGetters.GET_CATEGORIES_TEXT];
     }
 
     private getCategoryName(category: string): string {
-        return this.state.categoriesText[category];
+        return this.categoriesText[category];
     }
 
     @Watch('$route')
     private getMeta(): void {
-        this.$store.commit(ModulMutations.CATEGORY_GET, this.$route.meta);
+        this.$store.commit(ComponentsMutations.CATEGORY_GET, this.$route.meta);
     }
 
     private get selectedCategory(): string | null {
-        return this.state.category;
+        return this.category;
     }
 
     private set selectedCategory(category: string | null) {
         if (category) {
-            this.$router.push(this.state.categoryRoutes[category].url);
+            this.$router.push(this.categoryRoutes[category].url);
         }
+    }
+
+    private get categoryRoutes(): RouteMap {
+        return this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES];
     }
 
     private get hasSelectedCategory(): boolean {

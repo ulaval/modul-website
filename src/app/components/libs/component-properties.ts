@@ -3,12 +3,17 @@ import Component from 'vue-class-component';
 import WithRender from './component-properties.html?style=./component-properties.scss';
 import { ModulWebsite } from '../modul-website';
 import Meta, { ComponentMeta, ComponentAttribute, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
+import * as ComponentsGetters from '@/app/store/modules/components/getters';
 
 const BOOLEAN_TYPE: string = 'boolean';
 
 @WithRender
 @Component
 export class ComponentProperties extends ModulWebsite {
+
+    private get components(): ComponentMeta | null[] {
+        return this.$store.getters[ComponentsGetters.GET_COMPONENTS_SORTED_BY_CATEGORY];
+    }
 
     private getAttributes(meta: ComponentMeta): string[] {
         return Meta.getComponentAttributes(meta);
@@ -17,8 +22,8 @@ export class ComponentProperties extends ModulWebsite {
     private getAttribute(tag: string): ComponentAttribute | undefined {
         let result: ComponentAttribute | undefined;
 
-        if (this.state.component && this.state.component.attributes) {
-            result = this.state.component.attributes[tag];
+        if (this.components && this.components.attributes) {
+            result = this.components.attributes[tag];
         }
 
         return result;
