@@ -13,7 +13,7 @@
                         <m-i18n k="modul:getting-started"></m-i18n>
                     </router-link>
                 </li>
-                <li>
+                <!-- <li>
                     <router-link :to="visualStandards" class="modul-header__link">
                         <m-i18n k="modul:visual-standards"></m-i18n>
                     </router-link>
@@ -27,9 +27,14 @@
                     <router-link :to="codingStandards" class="modul-header__link">
                         <m-i18n k="modul:coding-standards"></m-i18n>
                     </router-link>
+                </li> -->
+                <li>
+                    <a href="#" @click.prevent="showMenu('standards')" class="modul-header__link">
+                        <m-i18n k="modul:standards"></m-i18n>
+                    </a>
                 </li>
                 <li>
-                    <a href="#" @click.prevent="showMenu()" class="modul-header__link">
+                    <a href="#" @click.prevent="showMenu('components')" class="modul-header__link">
                         <m-i18n k="modul:components"></m-i18n>
                     </a>
                 </li>

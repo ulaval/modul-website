@@ -4,6 +4,8 @@ import { ModulState } from './modul-state';
 import * as ModulActions from './actions';
 import * as ModulGetters from './getters';
 import * as ModulMutations from './mutations';
+import { components } from './modules/components/components';
+import { standards } from './modules/standards/standards';
 
 Vue.use(Vuex);
 
@@ -58,12 +60,11 @@ const getters: GetterTree<ModulState, ModulState> = {
 };
 
 const store: ModulStore = new ModulStore({
-    // strict: true, // TODO debug mode only
-    state: modulState,
-    mutations: mutations,
-    actions: actions,
-    getters: getters,
-    strict: true
+    strict: true, // TODO debug mode only
+    modules: {
+        components: components,
+        standards: standards
+    }
 });
 
 export default store;
