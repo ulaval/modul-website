@@ -18,8 +18,8 @@ import { DO_NAME, MDo } from './components/do/do';
 import { DONT_NAME, MDont } from './components/dont/dont';
 import { MARKDOWN_NAME, MMarkdown } from './components/markdown/markdown';
 import { PREVIEW_NAME, MPreview } from './components/preview/preview';
-import { PAGE_TEMPLATE_NAME, MPageTemplate } from './components/page-template/page-template';
-import { COMPONENT_PAGE_TEMPLATE_NAME, MComponentPageTemplate } from './components/component-page-template/component-page-template';
+import { DARK_TEMPLATE_NAME, MDarkTemplate } from './components/dark-template/dark-template';
+import { LIGHT_TEMPLATE_NAME, MLightTemplate } from './components/light-template/light-template';
 
 const utilsPluginOptions: UtilsPluginOptions = {
     securityPluginOptions: {
@@ -42,8 +42,8 @@ async function main() {
     Vue.component(DONT_NAME, MDont);
     Vue.component(MARKDOWN_NAME, MMarkdown);
     Vue.component(PREVIEW_NAME, MPreview);
-    Vue.component(PAGE_TEMPLATE_NAME, MPageTemplate);
-    Vue.component(COMPONENT_PAGE_TEMPLATE_NAME, MComponentPageTemplate);
+    Vue.component(DARK_TEMPLATE_NAME, MDarkTemplate);
+    Vue.component(LIGHT_TEMPLATE_NAME, MLightTemplate);
 
     currentLang(FRENCH);
     await store.dispatchAsync(ModulActions.MESSAGES_GET, FRENCH);

@@ -2,12 +2,12 @@ import Vue from 'vue';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import WithRender from './page-template.html?style=./page-template.scss';
+import WithRender from './dark-template.html?style=./dark-template.scss';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
 @WithRender
 @Component
-export class MPageTemplate extends Vue {
+export class MDarkTemplate extends Vue {
 
     private defaultTitle: string = 'Add a title';
     private headerMessage: string = 'You must put a title in the header slot';
@@ -40,12 +40,12 @@ export class MPageTemplate extends Vue {
         return !!this.$slots.body;
     }
 }
-export const PAGE_TEMPLATE_NAME: string = 'modul-page-template';
+export const DARK_TEMPLATE_NAME: string = 'modul-dark-template';
 
-const PageTemplatePlugin: PluginObject<any> = {
+const DarkTemplatePlugin: PluginObject<any> = {
     install(v, options) {
-        v.component(PAGE_TEMPLATE_NAME, MPageTemplate);
+        v.component(DARK_TEMPLATE_NAME, MDarkTemplate);
     }
 };
 
-export default PageTemplatePlugin;
+export default DarkTemplatePlugin;
