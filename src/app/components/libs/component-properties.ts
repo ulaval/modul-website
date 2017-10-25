@@ -11,11 +11,7 @@ const BOOLEAN_TYPE: string = 'boolean';
 @Component
 export class ComponentProperties extends ModulWebsite {
 
-    private get components(): ComponentMeta {
-        return this.$store.getters[ComponentsGetters.GET_COMPONENTS_SORTED_BY_CATEGORY];
-    }
-
-    private get component(): ComponentMeta {
+    private get component(): ComponentMeta | null {
         return this.$store.getters[ComponentsGetters.GET_COMPONENT];
     }
 

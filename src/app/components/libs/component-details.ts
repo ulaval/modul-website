@@ -22,7 +22,7 @@ export class ComponentDetails extends ModulWebsite {
         return this.$store.getters[ComponentsGetters.GET_MARKDOWN_PREVIEW];
     }
 
-    private get component(): string {
+    private get component(): ComponentMeta | null {
         return this.$store.getters[ComponentsGetters.GET_COMPONENT];
     }
 
@@ -35,8 +35,8 @@ export class ComponentDetails extends ModulWebsite {
     }
 
     private get htmlTag(): string {
-        if (this.$store.getters[ComponentsGetters.GET_COMPONENT]) {
-            return `<${this.$store.getters[ComponentsGetters.GET_COMPONENT].tag}></${this.$store.getters[ComponentsGetters.GET_COMPONENT].tag}>`;
+        if (this.component) {
+            return `<${this.component.tag}></${this.component.tag}>`;
         } else {
             return '';
         }

@@ -38,13 +38,12 @@ export class ComponentViewer extends ModulWebsite {
         this.$store.dispatch(ComponentsActions.COMPONENT_GET, this.$route.meta);
     }
 
-    private get component(): ComponentMeta {
+    private get component(): ComponentMeta | null {
         return this.$store.getters[ComponentsGetters.GET_COMPONENT];
     }
 
     private get selectedComponent(): string | undefined {
-        let componentMeta: ComponentMeta = this.$store.getters[ComponentsGetters.GET_COMPONENT];
-        return componentMeta ? componentMeta.tag : undefined;
+        return this.component ? this.component.tag : undefined;
     }
 
     private set selectedComponent(tag: string | undefined) {
