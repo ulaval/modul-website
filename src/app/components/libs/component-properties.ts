@@ -11,8 +11,12 @@ const BOOLEAN_TYPE: string = 'boolean';
 @Component
 export class ComponentProperties extends ModulWebsite {
 
-    private get components(): ComponentMeta | null[] {
+    private get components(): ComponentMeta {
         return this.$store.getters[ComponentsGetters.GET_COMPONENTS_SORTED_BY_CATEGORY];
+    }
+
+    private get component(): ComponentMeta {
+        return this.$store.getters[ComponentsGetters.GET_COMPONENT];
     }
 
     private getAttributes(meta: ComponentMeta): string[] {
@@ -22,8 +26,8 @@ export class ComponentProperties extends ModulWebsite {
     private getAttribute(tag: string): ComponentAttribute | undefined {
         let result: ComponentAttribute | undefined;
 
-        if (this.components && this.components.attributes) {
-            result = this.components.attributes[tag];
+        if (this.component && this.component.attributes) {
+            result = this.component.attributes[tag];
         }
 
         return result;
