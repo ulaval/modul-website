@@ -1,9 +1,9 @@
-<section class="modul-component-page">
-    <header class="modul-light-header" :style="{'zIndex' : zIndex}">
-        <span class="modul-back-link" v-if="hasBacklink">
+<section class="modul-light-template">
+    <header class="modul-light-template__header" :style="{'zIndex' : zIndex}">
+        <span class="modul-light-template__header__back-link" v-if="hasBacklink">
             <slot name="backlink"></slot>
         </span>
-        <div class="modul-light-header__wrap">
+        <div class="modul-light-template__header__wrap">
             <div ref="dropdown" class="modul-light-header__title" v-if="hasHeader">
                 <slot name="header"></slot>
             </div>
@@ -11,19 +11,19 @@
                 <h1>{{ defaultTitle }}</h1>
             </div>
         </div>
-        <div class="modul-light-header__arrow-left" v-if="hasLeftArrow">
+        <div class="modul-light-template__header__arrow-left" v-if="hasLeftArrow">
             <slot name="leftArrow"></slot>
         </div>
-        <div class="modul-light-header__arrow-right" v-if="hasRightArrow">
+        <div class="modul-light-template__header__arrow-right" v-if="hasRightArrow">
             <slot name="rightArrow"></slot>
         </div>
     </header>
-    <div class="modul-component-page__body">
+    <div class="modul-light-template__body">
         <transition name="slide-fade" mode="out-in" appear>
-            <div class="modul-component-page__body__container" v-if="hasBody">
+            <div class="modul-light-template__body__container" v-if="hasBody">
                 <slot name="body"></slot>
             </div>
-            <div class="modul-component-page__body__container" v-else>
+            <div class="modul-light-template__body__container" v-else>
                 <m-panel>
                     <h2>{{ bodyMessage }}</h2>
                     <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.

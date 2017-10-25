@@ -2,12 +2,12 @@ import Vue from 'vue';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import WithRender from './component-page-template.html?style=./component-page-template.scss';
+import WithRender from './light-template.html?style=./light-template.scss';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
 @WithRender
 @Component
-export class MComponentPageTemplate extends Vue {
+export class MLightTemplate extends Vue {
 
     private defaultTitle: string = 'Add a dropdown';
     private headerMessage: string = 'You must put a dropdown in the header slot';
@@ -43,12 +43,12 @@ export class MComponentPageTemplate extends Vue {
         return !!this.$slots.body;
     }
 }
-export const COMPONENT_PAGE_TEMPLATE_NAME: string = 'modul-component-page-template';
+export const LIGHT_TEMPLATE_NAME: string = 'modul-light-template';
 
-const ComponentPageTemplatePlugin: PluginObject<any> = {
+const LightTemplatePlugin: PluginObject<any> = {
     install(v, options) {
-        v.component(COMPONENT_PAGE_TEMPLATE_NAME, MComponentPageTemplate);
+        v.component(LIGHT_TEMPLATE_NAME, MLightTemplate);
     }
 };
 
-export default ComponentPageTemplatePlugin;
+export default LightTemplatePlugin;
