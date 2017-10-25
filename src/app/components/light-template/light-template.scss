@@ -3,7 +3,7 @@
 $modul-light-header--height: calc(50vh - #{$modul-header--height});
 $modul-light-header--min-height: 250px;
 
-.modul-component-page {
+.modul-light-template {
     width: 100%;
     margin: 0 auto;
     max-width: $m-max-width - $m-padding--xl;
@@ -16,7 +16,7 @@ $modul-light-header--min-height: 250px;
         min-height: $modul-light-header--min-height;
     }
 
-    .modul-light-header {
+    &__header {
         &__wrap {
             position: fixed;
             top: $modul-header--height;
@@ -91,7 +91,7 @@ $modul-light-header--min-height: 250px;
             }
         }
 
-        .modul-back-link {
+        &__back-link {
             position: fixed !important;
             top: $modul-header--height;
             left: 0;
@@ -101,7 +101,7 @@ $modul-light-header--min-height: 250px;
         }
     }
 
-    .modul-component-page__body {
+    &___body {
         position: relative;
         z-index: 3;
 
