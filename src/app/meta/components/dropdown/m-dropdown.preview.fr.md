@@ -1,1 +1,1 @@
-<modul-preview src="../../../../dist/assets/md/m-dropdown.preview.fr.js"></modul-preview>
+<modul-preview src="m-dropdown.preview.fr"></modul-preview>

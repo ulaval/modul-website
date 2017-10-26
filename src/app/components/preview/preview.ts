@@ -25,7 +25,7 @@ export class MPreview extends Vue {
             <m-radio ref="c" value="radio3">Item 3</m-radio>
         </m-radio-group>
     </div>`,
-        data: function() {
+        data: function () {
             return {
                 position: 'right'
             };
@@ -43,7 +43,7 @@ export class MPreview extends Vue {
             <m-radio ref="a" position="left" value="radio1">Item 1</m-radio>
         </m-radio-group>
     </div>`,
-        data: function() {
+        data: function () {
             return {
                 position: 'right'
             };
@@ -59,30 +59,16 @@ export class MPreview extends Vue {
         this.template = this.a;
     }
 
-    // protected mounted(): void {
-    //     let path = '../../..' + this.src;
-    //     console.log(this.src);
-    //     console.log(path);
+    protected mounted(): void {
+        let vm = this;
+        (require as any)(['bundle-loader!../../../assets/md/' + vm.src + '.js'], function (waitForChunk) {
+            waitForChunk(function (chunk) {
+                console.log(vm.src);
+                vm.template = chunk.default;
+            });
+        });
 
-    //     setTimeout(() => {
-    //         // this.template = require('../../../assets/md/m-dropdown.preview.fr.js').default;
-    //         // this.template = require(this.src).default;
-    //         // this.template = require(path).default;
-    //         // let bundle = (require as any)(['bundle-loader!' + path]);
-    //         // function(waitForChunk) {
-    //         //     console.log(bundle);
-    //         // };
-
-    //         let dynamicLoad = (require as any)(['bundle-loader!' + path]);
-    //         dynamicLoad(function (loadedModule) {
-    //             this.template = dynamicLoad.default;
-    //             console.log(loadedModule);
-    //         });
-
-    //         // this.template = bundle.default;
-    //     }, 3000);
-
-    // }
+    }
 
     private get preview(): string {
         this.template = Vue.component(this.jim, this.template);
