@@ -31,7 +31,7 @@ export class MPreview extends Vue {
             };
         },
         methods: {
-            changePosition: function () {
+            changePosition: function() {
                 this.position = 'right';
             }
         }
@@ -49,7 +49,7 @@ export class MPreview extends Vue {
             };
         },
         methods: {
-            changePosition: function () {
+            changePosition: function() {
                 this.position = 'right';
             }
         }
