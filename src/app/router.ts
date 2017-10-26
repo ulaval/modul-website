@@ -11,6 +11,7 @@ import { ComponentViewer } from './components/libs/component';
 import { ComponentDetails } from './components/libs/component-details';
 import { ComponentOverview } from './components/libs/component-overview';
 import { ComponentProperties } from './components/libs/component-properties';
+import { ComponentVariants } from './components/libs/component-variants';
 import { Ecosystem } from './components/ecosystem/ecosystem';
 import Meta from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, {
@@ -32,6 +33,7 @@ export const COMPONENTS: string = 'COMPONENTS';
 export const ECOSYSTEM: string = 'ECOSYSTEM';
 export const COMPONENT_PROPERTIES: string = 'COMPONENT_PROPERTIES';
 export const COMPONENT_OVERVIEW: string = 'COMPONENT_OVERVIEW';
+export const COMPONENT_VARIANT: string = 'COMPONENT_VARIANT';
 
 export const GETTING_STARTED_FR: string = 'demarrer-modul';
 export const CODING_STANDARDS_FR: string = 'normes-developpement';
@@ -50,6 +52,7 @@ export const CATEGORY_SEARCH_SORT_FR: string = 'recherche-tri';
 
 export const COMPONENT_PROPERTIES_FR: string = 'proprietes';
 export const COMPONENT_OVERVIEW_FR: string = 'portrait';
+export const COMPONENT_VARIANT_FR: string = 'variants';
 
 export const ROUTES: RoutePathMap = {
     [GETTING_STARTED]: GETTING_STARTED_FR,
@@ -60,6 +63,7 @@ export const ROUTES: RoutePathMap = {
     [ECOSYSTEM]: ECOSYSTEM_FR,
     [COMPONENT_PROPERTIES]: COMPONENT_PROPERTIES_FR,
     [COMPONENT_OVERVIEW]: COMPONENT_OVERVIEW_FR,
+    [COMPONENT_VARIANT]: COMPONENT_VARIANT_FR,
     [CATEGORY_COMUNICATION]: CATEGORY_COMMUNICATION_FR,
     [CATEGORY_CONTENT]: CATEGORY_CONTENT_FR,
     [CATEGORY_FORMS]: CATEGORY_FORMS_FR,
@@ -95,6 +99,11 @@ Meta.getCategories().forEach(category => {
                     path: ROUTES[COMPONENT_PROPERTIES],
                     meta: componentMeta.tag,
                     component: ComponentProperties
+                },
+                {
+                    path: ROUTES[COMPONENT_VARIANT],
+                    meta: componentMeta.tag,
+                    component: ComponentVariants
                 },
                 {
                     path: ROUTES[COMPONENT_OVERVIEW],

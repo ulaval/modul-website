@@ -5,6 +5,7 @@ import { Prop } from 'vue-property-decorator';
 import WithRender from './preview.html';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import DynamicTemplate from '@ulaval/modul-components/dist/components/dynamic-template/dynamic-template';
+import { log } from 'util';
 
 @WithRender
 @Component
@@ -12,7 +13,6 @@ export class MPreview extends Vue {
     @Prop()
     public src: string;
 
-    // private preview: object = {};
     private template: any = {};
     private js: any = {};
     private jim: string = 'carrey';
@@ -31,7 +31,7 @@ export class MPreview extends Vue {
             };
         },
         methods: {
-            changePosition: function() {
+            changePosition: function () {
                 this.position = 'right';
             }
         }
@@ -49,7 +49,7 @@ export class MPreview extends Vue {
             };
         },
         methods: {
-            changePosition: function() {
+            changePosition: function () {
                 this.position = 'right';
             }
         }
@@ -59,16 +59,30 @@ export class MPreview extends Vue {
         this.template = this.a;
     }
 
-    protected mounted(): void {
-        let path = '../../..' + this.src;
-        console.log(this.src);
+    // protected mounted(): void {
+    //     let path = '../../..' + this.src;
+    //     console.log(this.src);
+    //     console.log(path);
 
-        setTimeout(() => {
-            this.template = require('../../../assets/md/m-dropdown.preview.fr.js').default;
-            // this.template = require(this.src).default;
-            // this.template = require(path).default;
-        }, 3000);
-    }
+    //     setTimeout(() => {
+    //         // this.template = require('../../../assets/md/m-dropdown.preview.fr.js').default;
+    //         // this.template = require(this.src).default;
+    //         // this.template = require(path).default;
+    //         // let bundle = (require as any)(['bundle-loader!' + path]);
+    //         // function(waitForChunk) {
+    //         //     console.log(bundle);
+    //         // };
+
+    //         let dynamicLoad = (require as any)(['bundle-loader!' + path]);
+    //         dynamicLoad(function (loadedModule) {
+    //             this.template = dynamicLoad.default;
+    //             console.log(loadedModule);
+    //         });
+
+    //         // this.template = bundle.default;
+    //     }, 3000);
+
+    // }
 
     private get preview(): string {
         this.template = Vue.component(this.jim, this.template);
