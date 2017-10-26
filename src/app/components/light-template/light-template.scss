@@ -1,38 +1,47 @@
 @import '../../styles/shared-styles';
 
-$modul-light-template--height: calc(50vh - #{$modul-header--height});
-$modul-light-template--min-height: 250px;
-
 .modul-light-template {
     width: 100%;
     margin: 0 auto;
     max-width: $m-max-width - $m-padding--xl;
     padding: 0 $m-padding--l $m-padding--l*2 $m-padding--l;
 
+    &::before,
+    &__header {
+        height: calc(50vh - #{$modul-header--height--s});
+        min-height: 250px;
+
+        @media (min-width: $m-bp--min--xs) {
+            height: calc(50vh - #{$modul-header--height});
+        }
+    }
+
     &::before {
         content: '';
         display: block;
-        height: $modul-light-template--height;
-        min-height: $modul-light-template--min-height;
     }
 
     &__header {
-        &__title {
-            position: fixed;
+        position: fixed;
+        top: $modul-header--height;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-width: $m-min-width;
+        z-index: 0;
+        width: 100%;
+        max-width: $m-max-width;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: $m-bp--min--xs) {
             top: $modul-header--height;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            min-width: $m-min-width;
-            z-index: 0;
-            width: 100%;
-            max-width: $m-max-width;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: $modul-light-template--height;
-            min-height: $modul-light-template--min-height;
+        }
+
+        &__title {
+            position: relative;
         }
 
         &__arrow-left,
