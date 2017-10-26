@@ -1,7 +1,7 @@
 @import '../../styles/shared-styles';
 
-$modul-light-header--height: calc(50vh - #{$modul-header--height});
-$modul-light-header--min-height: 250px;
+$modul-light-template--height: calc(50vh - #{$modul-header--height});
+$modul-light-template--min-height: 250px;
 
 .modul-light-template {
     width: 100%;
@@ -12,12 +12,12 @@ $modul-light-header--min-height: 250px;
     &::before {
         content: '';
         display: block;
-        height: $modul-light-header--height;
-        min-height: $modul-light-header--min-height;
+        height: $modul-light-template--height;
+        min-height: $modul-light-template--min-height;
     }
 
     &__header {
-        &__wrap {
+        &__title {
             position: fixed;
             top: $modul-header--height;
             right: 0;
@@ -31,8 +31,8 @@ $modul-light-header--min-height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: $modul-light-header--height;
-            min-height: $modul-light-header--min-height;
+            height: $modul-light-template--height;
+            min-height: $modul-light-template--min-height;
         }
 
         &__arrow-left,
@@ -109,6 +109,7 @@ $modul-light-header--min-height: 250px;
             background-color: $m-color--grey;
             position: relative;
             z-index: 3;
+            box-shadow: $m-box-shadow;
         }
     }
 }

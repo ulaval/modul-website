@@ -1,10 +1,19 @@
 <div class="modul-dark-template">
     <section class="modul-dark-template__header">
-        <div class="modul-dark-template__header-title­">
-            <h1 v-if="hasHeader">
+        <span class="modul-dark-template__header__back-link" v-if="hasBacklink">
+            <slot name="backlink"></slot>
+        </span>
+        <div class="modul-dark-template__header__title­">
+            <span v-if="hasHeader">
                 <slot name="header"></slot>
-            </h1>
+            </span>
             <h1 v-else>{{ defaultTitle }}</h1>
+        </div>
+        <div class="modul-dark-template__header__arrow-left" v-if="hasLeftArrow">
+            <slot name="leftArrow"></slot>
+        </div>
+        <div class="modul-dark-template__header__arrow-right" v-if="hasRightArrow">
+            <slot name="rightArrow"></slot>
         </div>
     </section>
     <section class="modul-dark-template__body">

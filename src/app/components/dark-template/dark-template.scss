@@ -50,7 +50,7 @@
             background: linear-gradient(to bottom, $modul-color--black-grey-dark 35%, rgba($modul-color--black-grey-dark, 0.4) 100%);
         }
 
-        &-title­ {
+        &__title­ {
             position: relative;
 
             h1 {
@@ -58,6 +58,72 @@
                 font-size: 42px;
                 font-weight: 700;
             }
+        }
+
+        &__arrow-left,
+        &__arrow-right {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            z-index: 3;
+
+            .m-button.m-button.m-button {
+                width: $m-padding--l;
+                min-width: $m-padding--l;
+                height: 52px; // Magic number
+                min-height: 52px; // Magic number
+                font-size: 14px;
+                stroke-width: 2px;
+                border-radius: 0;
+                padding: 0;
+                transform-origin: 50%;
+                background: $m-color--interactive;
+                color: #fff;
+
+                .m-u--visually-hidden {
+                    position: absolute;
+                }
+
+                .m-icon {
+                    transition: 0.45s transform ease;
+                }
+            }
+        }
+
+        &__arrow-left {
+            left: 0;
+
+            .m-button {
+                &:hover {
+                    .m-icon {
+                        transform: rotate(-360deg);
+                    }
+                }
+            }
+        }
+
+        &__arrow-right {
+            right: 0;
+
+            .m-button {
+                &:hover {
+                    .m-icon {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+
+        &__back-link {
+            position: fixed !important;
+            top: $modul-header--height;
+            left: 0;
+            z-index: 2;
+            margin-top: $m-padding;
+            margin-left: $m-padding--l;
         }
     }
 

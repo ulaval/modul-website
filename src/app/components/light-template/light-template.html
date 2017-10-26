@@ -3,13 +3,11 @@
         <span class="modul-light-template__header__back-link" v-if="hasBacklink">
             <slot name="backlink"></slot>
         </span>
-        <div class="modul-light-template__header__wrap">
-            <div ref="dropdown" class="modul-light-header__title" v-if="hasHeader">
+        <div class="modul-light-template__header__title">
+            <span v-if="hasHeader">
                 <slot name="header"></slot>
-            </div>
-            <div v-else>
-                <h1>{{ defaultTitle }}</h1>
-            </div>
+            </span>
+            <h1 v-else>{{ defaultTitle }}</h1>
         </div>
         <div class="modul-light-template__header__arrow-left" v-if="hasLeftArrow">
             <slot name="leftArrow"></slot>
