@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import WithRender from './component-variants.html';
+import WithRender from './component-variants.html?style=./component-variants.scss';
 import { ModulWebsite } from '../modul-website';
 import Meta, { ComponentMeta, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
 import * as ModulActions from '@/app/store/actions';

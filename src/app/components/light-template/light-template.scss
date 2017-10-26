@@ -101,15 +101,14 @@ $modul-light-header--min-height: 250px;
         }
     }
 
-    &___body {
+    &__body {
         position: relative;
         z-index: 3;
 
         &__container {
-            background-color: $m-color--white;
+            background-color: $m-color--grey;
             position: relative;
             z-index: 3;
-            box-shadow: $m-box-shadow;
         }
     }
 }

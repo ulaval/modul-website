@@ -1,30 +1,27 @@
-<div class="modul-component-page">
-    <section class="modul-light-header" :style="{'zIndex' : zIndex}">
+<modul-light-template>
+    <span slot="backlink">
         <m-link class="modul-back-link" mode="button" :icon="true" :icon-name="left-arrow" @click="back(state.component.category)">
             {{translatedCategory}}
         </m-link>
-        <div class="modul-light-header__wrap">
-            <div ref="dropdown" class="modul-light-header__title">
-                <m-dropdown v-model="selectedComponent" @open="onOpen" @close="onClose" width="100%">
-                    <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
-                </m-dropdown>
-            </div>
-        </div>
-        <div class="modul-light-header__arrow-left" v-if="hasSelectedComponent">
-            <m-button @click="getPreviousComponent()">
-                <m-icon name="left-arrow"></m-icon>
-                <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le composant précédent</span> -->
-                </m-button>
-        </div>
-        <div class="modul-light-header__arrow-right" v-if="hasSelectedComponent">
-            <m-button @click="getNextComponent()">
-                <m-icon name="right-arrow"></m-icon>
-                <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le prochain composant</span> -->
-            </m-button>
-        </div>
-    </section>
-
-    <transition name="slide-fade">
+    </span>
+    <span slot="header">
+        <m-dropdown v-model="selectedComponent" @open="onOpen" @close="onClose" width="100%">
+            <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
+        </m-dropdown>
+    </span>
+    <span slot="leftArrow">
+        <m-button @click="getPreviousComponent()">
+            <m-icon name="left-arrow"></m-icon>
+            <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le composant précédent</span> -->
+        </m-button>
+    </span>
+    <span slot="rightArrow">
+        <m-button @click="getNextComponent()">
+            <m-icon name="right-arrow"></m-icon>
+            <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le prochain composant</span> -->
+        </m-button>
+    </span>
+    <div slot="body">
         <router-view></router-view>
-    </transition>
-</div>
+    </div>
+</modul-light-template>
