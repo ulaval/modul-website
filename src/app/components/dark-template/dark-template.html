@@ -9,12 +9,6 @@
             </span>
             <h1 v-else>{{ defaultTitle }}</h1>
         </div>
-        <div class="modul-dark-template__header__arrow-left" v-if="hasLeftArrow">
-            <slot name="leftArrow"></slot>
-        </div>
-        <div class="modul-dark-template__header__arrow-right" v-if="hasRightArrow">
-            <slot name="rightArrow"></slot>
-        </div>
     </section>
     <section class="modul-dark-template__body">
         <header class="modul-dark-template__body__header">
@@ -27,6 +21,12 @@
                 </div>
             </div>
         </header>
+        <div class="modul-dark-template__body__arrow-left" v-if="hasLeftArrow">
+            <slot name="leftArrow"></slot>
+        </div>
+        <div class="modul-dark-template__body__arrow-right" v-if="hasRightArrow">
+            <slot name="rightArrow"></slot>
+        </div>
         <div class="modul-dark-template__body__content">
             <div class="modul-dark-template__body__content-wrap" v-if="hasBody">
                 <slot name="body"></slot>
