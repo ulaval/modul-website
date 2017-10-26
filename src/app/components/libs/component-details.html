@@ -1,44 +1,39 @@
-<div class="modul-component-page__body">
-    <transition name="slide-fade" mode="out-in" appear>
-        <div class="modul-component" v-if="state.component">
+<div class="modul-component-details">
+    <div class="modul-component" v-if="state.component">
+        <header class="modul-component-details__header">
+            <h2 class="modul-component-details__title">
+                <m-icon name="left-arrow" class="modul-component-details__title__arrow"></m-icon>{{state.component.tag}}
+                <m-icon name="right-arrow" class="modul-component-details__title__arrow"></m-icon>
+            </h2>
+        </header>
 
-            <header class="modul-component__header">
-                <h2 class="modul-component__title">
-                    <m-icon name="left-arrow" class="modul-component__title__arrow"></m-icon>{{state.component.tag}}
-                    <m-icon name="right-arrow" class="modul-component__title__arrow"></m-icon>
-                </h2>
-            </header>
-
-            <div class="modul-component__preview">
-                <template v-if="state.component.preview == true">
-                    <m-dynamic-template :template="htmlTag"></m-dynamic-template>
-                </template>
-                <span v-else-if="state.component.preview == false">
-                    <m-message state="information" :closeButton="false">
-                        <m-i18n k="modul:preview-not-available"></m-i18n>
-                    </m-message>
-                </span>
-                <span v-else>
-                    <m-markdown :template="markdownPreview"></m-markdown>
-                </span>
-            </div>
-
-            <div class="modul-component__nav">
-
-                <router-link :to="overview" class="modul-component__link">
-                    <m-i18n k="modul:overview"></m-i18n>
-                </router-link>
-
-                <router-link :to="properties" class="modul-component__link">
-                    <m-i18n k="modul:attributes"></m-i18n>
-                </router-link>
-
-                <router-link :to="variant" class="modul-component__link">
-                    <m-i18n k="modul:variants"></m-i18n>
-                </router-link>
-
-            </div>
-            <router-view></router-view>
+        <div class="modul-component-details__preview">
+            <template v-if="state.component.preview == true">
+                <m-dynamic-template :template="htmlTag"></m-dynamic-template>
+            </template>
+            <span v-else-if="state.component.preview == false">
+                <m-message state="information" :closeButton="false">
+                    <m-i18n k="modul:preview-not-available"></m-i18n>
+                </m-message>
+            </span>
+            <span v-else>
+                <m-markdown :template="markdownPreview"></m-markdown>
+            </span>
         </div>
-    </transition>
+
+        <div class="modul-component-details__nav">
+            <router-link :to="overview" class="modul-component-details__link">
+                <m-i18n k="modul:overview"></m-i18n>
+            </router-link>
+
+            <router-link :to="properties" class="modul-component-details__link">
+                <m-i18n k="modul:attributes"></m-i18n>
+            </router-link>
+
+            <router-link :to="variant" class="modul-component-details__link">
+                <m-i18n k="modul:variants"></m-i18n>
+            </router-link>
+        </div>
+        <router-view></router-view>
+    </div>
 </div>
