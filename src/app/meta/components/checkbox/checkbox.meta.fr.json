@@ -1,5 +1,6 @@
 {
     "m-checkbox-meta": {
-        "name": "Boîte à cocher"
+        "name": "Boîte à cocher",
+        "position-desc": "Default value is 'left'."
     }
 }

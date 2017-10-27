@@ -3,6 +3,10 @@ Une fenêtre de dialogue initie toujours un dialogue avec l'utilisateur, suite �
 
 Pour tous les autres cas où il faut afficher du contenu tout en gardant l'utilisateur en contexte de la page, il faut utiliser le composant fenêtre secondaire.
 
+### Bonnes pratiques
+* Fournir un bouton «fermer» visible pour permettre aux utilisateurs de revenir sur la page sous-jacente.
+* Assurez-vous que la boîte de dialogue est visuellement distincte de la page d'arrière-plan en la rendant plus petite et en utilisant un masque translucide pour obscurcir l'arrière-plan, ce qui indique que le contenu sous-jacent n'est pas actif et permet à l'utilisateur de savoir qu'ils n'ont pas réellement navigué vers une nouvelle page.
+
 ---
 ## Caractéristiques
 ### Contenu
@@ -19,3 +23,8 @@ Le contenu d'une fenêtre de dialogue doit toujours être complètement visible 
 
 ### Fermeture
 Une fenêtre de dialogue ne contient jamais de bouton de fermeture (X en haut à gauche), puisque idéalement l'utilisateur doit prendre action. Il est néanmoins permis d'utiliser un lien Fermer centré sous les boutons, permettant de fermer la fenêtre lorsque les actions proposées sont facultatives. Toutefois, lorsqu'un bouton Annuler est présent, il est fortement déconseillé d'utiliser le lien de fermeture, puisque ces options sont mutuellement exclusives.
+
+---
+## Accessibilité
+* Fournir un accès au contenu et aux champs en rendant le contenu de la fenêtre de dialogue accessible au clavier.
+* Permettant à la touche Échap de fermer la fenêtre de dialogue.
