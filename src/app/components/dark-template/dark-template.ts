@@ -28,8 +28,20 @@ export class MDarkTemplate extends Vue {
         }
     }
 
+    private get hasBacklink(): boolean {
+        return !!this.$slots.backlink;
+    }
+
     private get hasHeader(): boolean {
         return !!this.$slots.header;
+    }
+
+    private get hasLeftArrow(): boolean {
+        return !!this.$slots.leftArrow;
+    }
+
+    private get hasRightArrow(): boolean {
+        return !!this.$slots.rightArrow;
     }
 
     private get hasPreview(): boolean {

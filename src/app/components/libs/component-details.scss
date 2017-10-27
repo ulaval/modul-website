@@ -1,14 +1,13 @@
 @import '../../styles/shared-styles';
 
-.modul-component {
+.modul-component-details {
     background-color: $m-color--white;
     position: relative;
     z-index: 3;
     box-shadow: $m-box-shadow;
 
     &__header,
-    &__preview,
-    &__body {
+    &__preview {
         padding: $m-padding--l $m-margin--l;
     }
 
@@ -65,15 +64,6 @@
 
             &:last-child {
                 margin-left: $m-margin--xs;
-            }
-        }
-    }
-
-    &__body {
-        > :first-child {
-            &,
-            > :first-child {
-                margin-top: 0;
             }
         }
     }

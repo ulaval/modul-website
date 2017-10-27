@@ -1,25 +1,23 @@
-<div class="modul-component-page">
-    <section class="modul-light-header">
-        <div class="modul-light-header__wrap" :style="{'zIndex' : zIndex}">
-            <div ref="dropdown" class="modul-light-header__title">
-                <m-dropdown v-model="selectedCategory" @open="onOpen" @close="onClose">
-                    <m-dropdown-item v-for="category in categories" :value="category" :label="getCategoryName(category)">
-                    </m-dropdown-item>
-                </m-dropdown>
-            </div>
-        </div>
-        <div class="modul-light-header__arrow-left" v-if="hasSelectedCategory">
-            <m-button @click="getPreviousCategory()">
-                <m-icon name="left-arrow"></m-icon>
-            </m-button>
-        </div>
-        <div class="modul-light-header__arrow-right" v-if="hasSelectedCategory">
-            <m-button @click="getNextCategory()">
-                <m-icon name="right-arrow"></m-icon>
-            </m-button>
-        </div>
-    </section>
-    <transition name="search-anim" appear>
+<modul-light-template>
+    <span slot="header">
+        <m-dropdown v-model="selectedCategory" @open="onOpen" @close="onClose">
+            <m-dropdown-item v-for="category in categories" :value="category" :label="getCategoryName(category)">
+            </m-dropdown-item>
+        </m-dropdown>
+    </span>
+    <span slot="leftArrow">
+        <m-button @click="getPreviousCategory()">
+            <m-icon name="left-arrow"></m-icon>
+            <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie précédent</span> -->
+        </m-button>
+    </span>
+    <span slot="rightArrow">
+        <m-button @click="getNextCategory()">
+            <m-icon name="right-arrow"></m-icon>
+            <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie suivante</span> -->
+        </m-button>
+    </span>
+    <div slot="body">
         <router-view></router-view>
-    </transition>
-</div>
+    </div>
+</modul-light-template>

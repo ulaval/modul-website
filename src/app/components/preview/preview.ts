@@ -5,6 +5,7 @@ import { Prop } from 'vue-property-decorator';
 import WithRender from './preview.html';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import DynamicTemplate from '@ulaval/modul-components/dist/components/dynamic-template/dynamic-template';
+import { log } from 'util';
 
 @WithRender
 @Component
@@ -12,7 +13,6 @@ export class MPreview extends Vue {
     @Prop()
     public src: string;
 
-    // private preview: object = {};
     private template: any = {};
     private js: any = {};
     private jim: string = 'carrey';
@@ -60,14 +60,14 @@ export class MPreview extends Vue {
     }
 
     protected mounted(): void {
-        let path = '../../..' + this.src;
-        console.log(this.src);
+        let vm = this;
+        (require as any)(['bundle-loader!../../../assets/md/' + vm.src + '.js'], function(waitForChunk) {
+            waitForChunk(function(chunk) {
+                console.log(vm.src);
+                vm.template = chunk.default;
+            });
+        });
 
-        setTimeout(() => {
-            this.template = require('../../../assets/md/m-dropdown.preview.fr.js').default;
-            // this.template = require(this.src).default;
-            // this.template = require(path).default;
-        }, 3000);
     }
 
     private get preview(): string {
