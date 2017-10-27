@@ -8,10 +8,7 @@
         </header>
 
         <div class="modul-component-details__preview">
-            <template v-if="component.preview == true">
-                <m-dynamic-template :template="htmlTag"></m-dynamic-template>
-            </template>
-            <span v-else-if="component.preview == false">
+            <span v-if="component.preview == false">
                 <m-message state="information" :closeButton="false">
                     <m-i18n k="modul:preview-not-available"></m-i18n>
                 </m-message>

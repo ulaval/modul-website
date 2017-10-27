@@ -1,0 +1,21 @@
+<m-table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Title</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+    </tbody>
+</m-table>

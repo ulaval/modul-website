@@ -49,6 +49,7 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(FRENCH, require('./components/tooltip/tooltip.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/upload/upload.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./directives/ripple-effect/ripple-effect.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./directives/scroll-to/scroll-to.meta.fr.json'));
         } else {
             throw new Error('FrenchMetaPlugin.install -> You must use the i18n plugin.');
         }

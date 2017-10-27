@@ -1,5 +1,6 @@
 {
     "m-panel-meta": {
-        "name": "Panneau"
+        "name": "Panneau",
+        "mode-desc": "Default value is 'primary'."
     }
 }

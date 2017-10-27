@@ -1,5 +1,6 @@
 {
     "m-switch-meta": {
-        "name": "Interrupteur"
+        "name": "Interrupteur",
+        "position-desc": "Default value is 'left'."
     }
 }
