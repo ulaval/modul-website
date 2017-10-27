@@ -37,19 +37,19 @@ export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payl
     state.metaLanguageLoaded = payload.language;
 };
 
-// export const CATEGORY_GET: string = 'M_CATEGORY_GET';
-// export const getCategory: Mutation<PagesState> = (state: PagesState, category: string) => {
-//     if (category != undefined && Object.keys(category).length > 0) {
-//         state.category = category;
+export const PAGE_GET: string = 'M_PAGE_GET';
+export const getPage: Mutation<PagesState> = (state: PagesState, idPage: string) => {
+    if (idPage != undefined && Object.keys(idPage).length > 0) {
+        state.page = idPage;
 
-//         state.componentsText = {};
+        state.tabsText = {};
 
-//         let i18n: Messages = (Vue as any).$i18n;
-//         Meta.getMetaByCategory(category).forEach(meta => {
-//             state.componentsText[meta.tag] = meta.name ? i18n.translate(meta.name) : meta.tag;
-//         });
-//     }
-// };
+        let i18n: Messages = (Vue as any).$i18n;
+        // Meta.getMetaByCategory(category).forEach(meta => {
+        //     state.componentsText[meta.tag] = meta.name ? i18n.translate(meta.name) : meta.tag;
+        // });
+    }
+};
 
 export const TAB_GET: string = 'M_TAB_GET';
 export const getTab: Mutation<PagesState> = (state: PagesState, tag: string) => {

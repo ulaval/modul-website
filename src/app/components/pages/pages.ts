@@ -2,18 +2,18 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './pages.html';
 import { Watch } from 'vue-property-decorator';
-import * as ComponentsActions from '@/app/store/modules/components/actions';
-import * as ComponentsGetters from '@/app/store/modules/components/getters';
+import * as PagesActions from '@/app/store/modules/pages/actions';
+import * as PagesGetters from '@/app/store/modules/pages/getters';
 import { KeyMap, RouteMap, ComponentsState } from '@/app/store/modules/components/components-state';
 import { ModulWebsite } from '../modul-website';
 import { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
-import { Page, Tab } from './page';
+import { Page, Tab, Standards } from './page';
 
 const ZINDEX: number = 200;
 
 @WithRender
 @Component
-export class ComponentViewer extends ModulWebsite {
+export class PageViewer extends ModulWebsite {
 
     private listOpened: boolean = false;
 
@@ -21,72 +21,60 @@ export class ComponentViewer extends ModulWebsite {
         this.getMeta();
     }
 
-    private back(category): void {
-        this.$router.push(this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES][category].url);
-    }
-
-    private get components(): string[] {
-        return this.$store.getters[ComponentsGetters.GET_COMPONENTS_SORTED_BY_CATEGORY];
-    }
-
-    private get translatedCategory(): string | undefined {
-        let category: string = this.$store.getters[ComponentsGetters.GET_CATEGORY];
-        return category ? this.$store.getters[ComponentsGetters.GET_CATEGORIES_TEXT][category] : undefined;
+    private get pages(): string[] {
+        let pagesObj: Pages = this.$route.matched[0].props.valueOf()['default']['sectionObj'];
+        return pagesObj.getPages();
     }
 
     @Watch('$route')
     private getMeta(): void {
-        this.$store.dispatch(ComponentsActions.COMPONENT_GET, this.$route.meta);
+        this.$store.dispatch(PagesActions.PAGE_GET, this.$route.meta);
     }
 
-    private get component(): ComponentMeta | null {
-        return this.$store.getters[ComponentsGetters.GET_COMPONENT];
+    private get page(): string | null {
+        return this.$store.getters[PagesGetters.GET_PAGE];
     }
 
-    private get selectedComponent(): string | undefined {
-        return this.component ? this.component.tag : undefined;
+    private get selectedPage(): string | undefined {
+        return this.page ? this.page : undefined;
     }
 
-    private set selectedComponent(tag: string | undefined) {
-        if (tag) {
-            this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][tag].url);
+    private set selectedPage(id: string | undefined) {
+        if (id) {
+            this.$router.push(this.$store.getters[PagesGetters.GET_PAGE_ROUTES][id].url);
         }
     }
 
-    private getComponentName(tag: string): string {
-        let keyMap: KeyMap = this.$store.getters[ComponentsGetters.GET_COMPONENTS_TEXT];
-        return keyMap[tag];
+    private getPageName(id: string): string {
+        let keyMap: KeyMap = this.$store.getters[PagesGetters.GET_PAGES_TEXT];
+        return keyMap[id];
     }
 
-    private get hasSelectedComponent(): boolean {
-        return this.selectedComponent != undefined ? Object.keys(this.selectedComponent).length > 0 : false;
-    }
-
-    private getPreviousComponent(): void {
-        if (this.selectedComponent) {
-            let index: number = this.components.indexOf(this.selectedComponent);
+    private getPreviousPage(): void {
+        if (this.selectedPage) {
+            let index: number = this.pages.indexOf(this.selectedPage);
             index--;
             if (index < 0) {
-                index = this.components.length - 1;
+                index = this.pages.length - 1;
             }
-            this.selectedComponent = this.components[index];
+            this.selectedPage = this.pages[index];
         }
     }
 
-    private getNextComponent(): void {
-        if (this.selectedComponent) {
-            let index: number = this.components.indexOf(this.selectedComponent);
+    private getNextPage(): void {
+        if (this.selectedPage) {
+            let index: number = this.pages.indexOf(this.selectedPage);
             index++;
-            if (index >= this.components.length) {
+            if (index >= this.pages.length) {
                 index = 0;
             }
-            this.selectedComponent = this.components[index];
+            this.selectedPage = this.pages[index];
         }
     }
 
-    private navigateToComponent(component: string): void {
-        this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][component].url);
-    }
+    // private navigateToComponent(component: string): void {
+    //     this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][component].url);
+    // }
 
     private onOpen(): void {
         this.listOpened = true;

@@ -24,5 +24,5 @@ export class PagesState {
 
     public tab: Tab | null = null;
     public tabMarkdown: string | null = null;
-    public page: Page | null = null;
+    public page: string | null = null;
 }

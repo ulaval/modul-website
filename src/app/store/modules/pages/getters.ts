@@ -28,8 +28,8 @@ import * as strUtils from '@ulaval/modul-components/dist/utils/str/str';
 //     return state.categoryRoutes;
 // };
 
-// export const GET_COMPONENTS_SORTED_BY_CATEGORY: string = 'G_GET_COMPONENTS_SORTED_BY_CATEGORY';
-// export const getComponentsSortedByCategory: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, category: string) => {
+// export const GET_PAGES: string = 'G_GET_PAGES';
+// export const getPages: Getter<PagesState, PagesState> = (state: PagesState) => {
 //     return Object.keys(state.componentsText).filter(key => state.componentsText.hasOwnProperty(key)).sort((a, b) => {
 //         let left: string = strUtils.normalizeString(state.componentsText[a]);
 //         let right: string = strUtils.normalizeString(state.componentsText[b]);
@@ -37,15 +37,15 @@ import * as strUtils from '@ulaval/modul-components/dist/utils/str/str';
 //     });
 // };
 
-// export const GET_COMPONENTS_TEXT: string = 'G_GET_COMPONENT_TEXT';
-// export const getComponentsText: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, getters) => {
-//     return state.componentsText;
-// };
+export const GET_PAGES_TEXT: string = 'G_GET_PAGES_TEXT';
+export const getPagesText: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
+    return state.pagesText;
+};
 
-// export const GET_COMPONENT: string = 'G_GET_COMPONENT';
-// export const getComponent: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, getters) => {
-//     return state.component;
-// };
+export const GET_PAGE: string = 'G_GET_PAGE';
+export const getPage: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
+    return state.page;
+};
 
 export const GET_PAGE_ROUTES: string = 'G_GET_PAGES_ROUTES';
 export const getPageRoutes: Getter<PagesState, PagesState> = (state: PagesState, getters) => {

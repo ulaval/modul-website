@@ -12,11 +12,13 @@ import { ComponentDetails } from './components/libs/component-details';
 import { ComponentOverview } from './components/libs/component-overview';
 import { ComponentProperties } from './components/libs/component-properties';
 import { ComponentVariants } from './components/libs/component-variants';
+import { PageViewer } from './components/pages/pages';
 import { Ecosystem } from './components/ecosystem/ecosystem';
 import Meta from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, {
     CATEGORY_COMUNICATION, CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_INDICATORS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_SEARCH_SORT
 } from './meta/meta-all';
+import { Page, Standards } from '@/app/components/pages/page';
 
 Vue.use(Router);
 Vue.use(MetaAll, Meta);
@@ -120,6 +122,7 @@ export const ROUTES: RoutePathMap = {
 const modulRoutes: RouteConfig[] = [];
 const categoryRoutes: RouteConfig[] = [];
 const componentRoutes: RouteConfig[] = [];
+const standardsRoutes: RouteConfig[] = [];
 
 Meta.getCategories().forEach(category => {
     categoryRoutes.push({
@@ -164,6 +167,45 @@ Meta.getCategories().forEach(category => {
     });
 });
 
+Standards.getPages().forEach(page => {
+    standardsRoutes.push({
+        path: ROUTES[page],
+        meta: page,
+        component: PageViewer,
+        props: {sectionObj: Standards}
+    });
+
+    Standards.getPageTabs(page).forEach(tab => {
+        standardsRoutes.push({
+            path: `/${ROUTES[STANDARDS]}/${ROUTES[page]}/${tab.id}`,
+            meta: tab.id,
+            component: PageViewer,
+            props: {sectionObj: Standards},
+            children: [
+                {
+                    path: ROUTES[COMPONENT_PROPERTIES],
+                    meta: tab.id,
+                    component: ComponentProperties
+                }
+                // {
+                //     path: ROUTES[COMPONENT_VARIANT],
+                //     meta: componentMeta.tag,
+                //     component: ComponentVariants
+                // },
+                // {
+                //     path: ROUTES[COMPONENT_OVERVIEW],
+                //     meta: componentMeta.tag,
+                //     component: ComponentOverview
+                // },
+                // {
+                //     path: '',
+                //     redirect: ROUTES[COMPONENT_OVERVIEW]
+                // }
+            ]
+        });
+    });
+});
+
 modulRoutes.push(
     {
         path: '/',
@@ -174,21 +216,15 @@ modulRoutes.push(
         component: GettingStarted
     },
     {
-        path: '/' + ROUTES[CODING_STANDARDS],
-        component: CodingStandards
-    },
-    {
-        path: '/' + ROUTES[VISUAL_STANDARDS],
-        component: VisualStandards
-    },
-    {
-        path: '/' + ROUTES[WRITING_STANDARDS],
-        component: WritingStandards
-    },
-    {
         path: '/' + ROUTES[COMPONENTS],
         component: Category,
         children: categoryRoutes
+    },
+    {
+        path: '/' + ROUTES[STANDARDS],
+        component: PageViewer,
+        children: standardsRoutes,
+        props: {sectionObj: Standards}
     },
     {
         path: '/' + ROUTES[ECOSYSTEM],

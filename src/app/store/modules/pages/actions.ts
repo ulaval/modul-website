@@ -26,14 +26,15 @@ export const getPagesMetaAction: Action<PagesState, PagesState> = async (context
     });
 };
 
-// export const COMPONENT_GET: string = 'A_COMPONENT_GET';
-// export const getComponentAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, tag: string) => {
-//     if (context.state.component == null || context.state.component.tag != tag) {
-//         let meta: ComponentMeta = Meta.getMetaByTag(tag);
-//         context.commit(Mutations.CATEGORY_GET, meta.category);
-//         context.commit(Mutations.COMPONENT_GET, tag);
-//     }
-// };
+export const PAGE_GET: string = 'A_PAGE_GET';
+export const getPageAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, id: string) => {
+    if (context.state.page == null || context.state.page != id) {
+
+        // let meta: ComponentMeta = Meta.getMetaByTag(tag);
+        context.commit(Mutations.PAGE_GET, id);
+        // context.commit(Mutations.COMPONENT_GET, tag);
+    }
+};
 
 // export const COMPONENT_OVERVIEW_GET: string = 'A_COMPONENT_OVERVIEW_GET';
 // export const getComponentOverviewAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, markdown: MarkdownPayload) => {

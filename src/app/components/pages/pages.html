@@ -1,4 +1,4 @@
-<div class="modul-component-page">
+<!-- <div class="modul-component-page">
     <section class="modul-light-header" :style="{'zIndex' : zIndex}">
         <m-link class="modul-back-link" mode="button" :icon="true" :icon-name="left-arrow" @click="back(component.category)">
             {{translatedCategory}}
@@ -13,13 +13,11 @@
         <div class="modul-light-header__arrow-left" v-if="hasSelectedComponent">
             <m-button @click="getPreviousComponent()">
                 <m-icon name="left-arrow"></m-icon>
-                <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le composant précédent</span> -->
                 </m-button>
         </div>
         <div class="modul-light-header__arrow-right" v-if="hasSelectedComponent">
             <m-button @click="getNextComponent()">
                 <m-icon name="right-arrow"></m-icon>
-                <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le prochain composant</span> -->
             </m-button>
         </div>
     </section>
@@ -27,7 +25,7 @@
     <transition name="slide-fade">
         <router-view></router-view>
     </transition>
-</div>
+</div> -->
 <!-- <modul-dark-template>
     <span slot="backlink">
         <m-link class="modul-back-link" mode="button" :icon="true" :icon-name="left-arrow" @click="back(component.category)">
@@ -53,3 +51,26 @@
         <router-view></router-view>
     </span>
 </modul-dark-template> -->
+
+<modul-dark-template>
+    <span slot="header">
+        <m-dropdown v-model="selectedPage" @open="onOpen" @close="onClose" width="100%">
+            <m-dropdown-item v-for="page in pages" :value="page" :label="getPageName(page)"></m-dropdown-item>
+        </m-dropdown>
+    </span>
+    <span slot="leftArrow">
+        <m-button @click="getPreviousPage()">
+            <m-icon name="left-arrow"></m-icon>
+            <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la page précédente</span> -->
+        </m-button>
+    </span>
+    <span slot="rightArrow">
+        <m-button @click="getNextPage()">
+            <m-icon name="right-arrow"></m-icon>
+            <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la prochaine page</span> -->
+        </m-button>
+    </span>
+    <div slot="body">
+        <router-view></router-view>
+    </div>
+</modul-dark-template>
