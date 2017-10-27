@@ -19,6 +19,11 @@ export class PageViewer extends ModulWebsite {
 
     protected mounted(): void {
         this.getMeta();
+        this.getSummary();
+    }
+
+    protected updated(): void {
+        this.getSummary();
     }
 
     private get pages(): string[] {
@@ -43,6 +48,16 @@ export class PageViewer extends ModulWebsite {
         if (id) {
             this.$router.push(this.$store.getters[PagesGetters.GET_PAGE_ROUTES][id].url);
         }
+    }
+
+    private getSummary(): void {
+        this.$store.dispatch(PagesActions.PAGE_SUMMARY_GET, {
+            restAdapter: this.$http
+        });
+    }
+
+    private get summaryMarkdown(): string {
+        return this.$store.getters[PagesGetters.GET_MARKDOWN_SUMMARY];
     }
 
     private getPageName(id: string): string {
@@ -71,10 +86,6 @@ export class PageViewer extends ModulWebsite {
             this.selectedPage = this.pages[index];
         }
     }
-
-    // private navigateToComponent(component: string): void {
-    //     this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][component].url);
-    // }
 
     private onOpen(): void {
         this.listOpened = true;

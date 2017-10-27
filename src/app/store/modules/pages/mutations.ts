@@ -58,10 +58,10 @@ export const getTab: Mutation<PagesState> = (state: PagesState, tag: string) => 
     state.tabMarkdown = null;
 };
 
-// export const COMPONENT_OVERVIEW_GET_SUCCESS: string = 'M_COMPONENT_OVERVIEW_GET_SUCCESS';
-// export const getComponentOverviewSuccess: Mutation<PagesState> = (state: PagesState, markdown: string) => {
-//     state.componentMarkdownOverview = markdown;
-// };
+export const PAGE_SUMMARY_GET_SUCCESS: string = 'M_PAGE_SUMMARY_GET_SUCCESS';
+export const getPageSummarySuccess: Mutation<PagesState> = (state: PagesState, markdown: string) => {
+    state.pageSummaryMarkdown = markdown;
+};
 
 // export const COMPONENT_PREVIEW_GET_SUCCESS: string = 'M_COMPONENT_PREVIEW_GET_SUCCESS';
 // export const getComponentPreviewSuccess: Mutation<PagesState> = (state: PagesState, markdown: string) => {

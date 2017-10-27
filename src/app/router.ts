@@ -13,6 +13,7 @@ import { ComponentOverview } from './components/libs/component-overview';
 import { ComponentProperties } from './components/libs/component-properties';
 import { ComponentVariants } from './components/libs/component-variants';
 import { PageViewer } from './components/pages/pages';
+import { PageDetails } from './components/pages/page-details';
 import { Ecosystem } from './components/ecosystem/ecosystem';
 import Meta from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, {
@@ -171,7 +172,7 @@ Standards.getPages().forEach(page => {
     standardsRoutes.push({
         path: ROUTES[page],
         meta: page,
-        component: PageViewer,
+        component: PageDetails,
         props: {sectionObj: Standards}
     });
 
@@ -179,14 +180,14 @@ Standards.getPages().forEach(page => {
         standardsRoutes.push({
             path: `/${ROUTES[STANDARDS]}/${ROUTES[page]}/${tab.id}`,
             meta: tab.id,
-            component: PageViewer,
+            component: PageDetails,
             props: {sectionObj: Standards},
             children: [
                 {
                     path: ROUTES[COMPONENT_PROPERTIES],
                     meta: tab.id,
                     component: ComponentProperties
-                }
+                },
                 // {
                 //     path: ROUTES[COMPONENT_VARIANT],
                 //     meta: componentMeta.tag,
@@ -197,10 +198,10 @@ Standards.getPages().forEach(page => {
                 //     meta: componentMeta.tag,
                 //     component: ComponentOverview
                 // },
-                // {
-                //     path: '',
-                //     redirect: ROUTES[COMPONENT_OVERVIEW]
-                // }
+                {
+                    path: '',
+                    redirect: ROUTES[COMPONENT_OVERVIEW]
+                }
             ]
         });
     });

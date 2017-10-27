@@ -58,10 +58,10 @@ export const getPageRoutes: Getter<PagesState, PagesState> = (state: PagesState,
 //     return state.componentMarkdownPreview;
 // };
 
-// export const GET_MARKDOWN_OVERVIEW: string = 'G_GET_MARKDOWN_OVERVIEW';
-// export const getMarkdownOverview: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, getters) => {
-//     return state.componentMarkdownOverview;
-// };
+export const GET_MARKDOWN_SUMMARY: string = 'G_GET_MARKDOWN_SUMMARY';
+export const getMarkdownSummary: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
+    return state.pageSummaryMarkdown;
+};
 
 export const GET_COMPONENT_META: string = 'G_GET_COMPONENT_META';
 export const getComponentMeta: Getter<PagesState, PagesState> = (state: PagesState, getters) => {

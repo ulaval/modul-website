@@ -36,14 +36,14 @@ export const getPageAction: Action<PagesState, PagesState> = async (context: Act
     }
 };
 
-// export const COMPONENT_OVERVIEW_GET: string = 'A_COMPONENT_OVERVIEW_GET';
-// export const getComponentOverviewAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, markdown: MarkdownPayload) => {
-//     if (context.state.componentMarkdownOverview == null && context.state.component.overview) {
-//         markdown.restAdapter.execute({ method: 'get', rawUrl: `/assets/md/${context.state.component.overview}.fr.md` }).then((md) => {
-//             context.commit(Mutations.COMPONENT_OVERVIEW_GET_SUCCESS, (md as any).data);
-//         });
-//     }
-// };
+export const PAGE_SUMMARY_GET: string = 'A_PAGE_SUMMARY_GET';
+export const getPageSummaryAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, markdown: MarkdownPayload) => {
+    if (context.state.pageSummaryMarkdown == null && context.state.page) {
+        markdown.restAdapter.execute({ method: 'get', rawUrl: `/app/content/${context.state.page}/${context.state.page}.summary.fr.md` }).then((md) => {
+            context.commit(Mutations.PAGE_SUMMARY_GET_SUCCESS, (md as any).data);
+        });
+    }
+};
 
 // export const COMPONENT_PREVIEW_GET: string = 'A_COMPONENT_PREVIEW_GET';
 // export const getComponentPreviewAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, markdown: MarkdownPayload) => {

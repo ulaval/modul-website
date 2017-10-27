@@ -1,7 +1,7 @@
 import { Pages } from './pages';
 
 export class Page {
-    public preview: string;
+    public summary: string;
     public tabs: Tab[];
 
     constructor(public id: string) {
