@@ -22,6 +22,7 @@ export class PagesState {
     public pagesText: KeyMap = {};
     public tabsText: KeyMap = {};
 
+    public tabs: Tab[] | null = null;
     public tab: Tab | null = null;
     public tabMarkdown: string | null = null;
     public page: string | null = null;

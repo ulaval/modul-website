@@ -43,6 +43,7 @@ export const getPage: Mutation<PagesState> = (state: PagesState, idPage: string)
         state.page = idPage;
 
         state.tabsText = {};
+        state.pageSummaryMarkdown = null;
 
         let i18n: Messages = (Vue as any).$i18n;
         // Meta.getMetaByCategory(category).forEach(meta => {

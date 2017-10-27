@@ -52,6 +52,11 @@ export const getPageRoutes: Getter<PagesState, PagesState> = (state: PagesState,
     return state.pageRoutes;
 };
 
+export const GET_TABS: string = 'G_GET_TABS';
+export const getTabs: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
+    return state.tabs;
+};
+
 // // getter for preview markdown
 // export const GET_MARKDOWN_PREVIEW: string = 'G_GET_MARKDOWN_PREVIEW';
 // export const getMarkdownPreview: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, getters) => {

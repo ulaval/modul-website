@@ -40,6 +40,7 @@ const getters: GetterTree<PagesState, PagesState> = {
     [Getters.GET_PAGES_TEXT]: Getters.getPagesText,
     [Getters.GET_PAGE]: Getters.getPage,
     [Getters.GET_PAGE_ROUTES]: Getters.getPageRoutes,
+    [Getters.GET_TABS]: Getters.getTabs,
     // [Getters.GET_COMPONENT_META]: Getters.getComponentMeta,
     // [Getters.GET_MARKDOWN_PREVIEW]: Getters.getMarkdownPreview,
     [Getters.GET_MARKDOWN_SUMMARY]: Getters.getMarkdownSummary

@@ -19,11 +19,6 @@ export class PageViewer extends ModulWebsite {
 
     protected mounted(): void {
         this.getMeta();
-        this.getSummary();
-    }
-
-    protected updated(): void {
-        this.getSummary();
     }
 
     private get pages(): string[] {
@@ -33,7 +28,14 @@ export class PageViewer extends ModulWebsite {
 
     @Watch('$route')
     private getMeta(): void {
+        let pagesObj: Pages = this.$route.matched[0].props.valueOf()['default']['sectionObj'];
+        // Faire un dispatch pour mettre dans Tabs
+        console.log(pagesObj.getPageTabs(this.$route.meta));
+
         this.$store.dispatch(PagesActions.PAGE_GET, this.$route.meta);
+        this.$store.dispatch(PagesActions.PAGE_SUMMARY_GET, {
+            restAdapter: this.$http
+        });
     }
 
     private get page(): string | null {
@@ -48,12 +50,6 @@ export class PageViewer extends ModulWebsite {
         if (id) {
             this.$router.push(this.$store.getters[PagesGetters.GET_PAGE_ROUTES][id].url);
         }
-    }
-
-    private getSummary(): void {
-        this.$store.dispatch(PagesActions.PAGE_SUMMARY_GET, {
-            restAdapter: this.$http
-        });
     }
 
     private get summaryMarkdown(): string {

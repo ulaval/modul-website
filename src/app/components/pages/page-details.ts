@@ -27,6 +27,10 @@ export class PageDetails extends ModulWebsite {
         return this.$store.getters[PagesGetters.GET_PAGE];
     }
 
+    private get tabs(): ComponentMeta | null {
+        return this.$store.getters[PagesGetters.GET_TABS];
+    }
+
     private get properties(): string {
         return ROUTES[COMPONENT_PROPERTIES];
     }
