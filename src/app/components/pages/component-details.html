@@ -1,0 +1,40 @@
+<div class="modul-component-page__body">
+    <transition name="slide-fade" mode="out-in" appear>
+        <div class="modul-component" v-if="component">
+
+            <header class="modul-component__header">
+                <h2 class="modul-component__title">
+                    <m-icon name="left-arrow" class="modul-component__title__arrow"></m-icon>{{component.tag}}
+                    <m-icon name="right-arrow" class="modul-component__title__arrow"></m-icon>
+                </h2>
+            </header>
+
+            <div class="modul-component__preview">
+                <template v-if="component.preview == true">
+                    <m-dynamic-template :template="htmlTag"></m-dynamic-template>
+                </template>
+                <span v-else-if="component.preview == false">
+                    <m-message state="information" :closeButton="false">
+                        <m-i18n k="modul:preview-not-available"></m-i18n>
+                    </m-message>
+                </span>
+                <span v-else>
+                    <m-markdown :template="markdownPreview"></m-markdown>
+                </span>
+            </div>
+
+            <div class="modul-component__nav">
+
+                <router-link :to="overview" class="modul-component__link">
+                    <m-i18n k="modul:overview"></m-i18n>
+                </router-link>
+
+                <router-link :to="properties" class="modul-component__link">
+                    <m-i18n k="modul:attributes"></m-i18n>
+                </router-link>
+
+            </div>
+            <router-view></router-view>
+        </div>
+    </transition>
+</div>

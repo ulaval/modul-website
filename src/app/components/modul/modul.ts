@@ -4,10 +4,13 @@ import Component from 'vue-class-component';
 import WithRender from './modul.html?style=./modul.scss';
 import * as ModulActions from '@/app/store/modules/components/actions';
 import { Watch } from 'vue-property-decorator';
-import { ROUTES, COMPONENTS, ECOSYSTEM, GETTING_STARTED, VISUAL_STANDARDS, WRITING_STANDARDS, CODING_STANDARDS } from '@/app/router';
+import { ROUTES, COMPONENTS, ECOSYSTEM, GETTING_STARTED, STANDARDS } from '@/app/router';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
+import * as ComponentsGetters from '@/app/store/modules/components/getters';
+import * as PagesGetters from '@/app/store/modules/pages/getters';
+import { Page, Standards } from '@/app/components/pages/page';
 
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: Number = 100;
@@ -38,7 +41,9 @@ export default class Modul extends ModulWebsite {
     private menuOpen: boolean = false;
     private searchOpen: boolean = false;
     private headerAnimationCompleted: boolean = false;
-    private categories: Category[] = [];
+    private section: string = '';
+    private categoriesComponent: Category[] = [];
+    private pagesStandards: Category[] = [];
     private searchModel: string = '';
     private searchWidth: string = '400px';
 
@@ -46,14 +51,22 @@ export default class Modul extends ModulWebsite {
 
     protected beforeMount(): void {
         Meta.getCategories().forEach(category => {
-            this.categories.push({
+            this.categoriesComponent.push({
                 id: category,
                 text: this.$i18n.translate(category)
             });
         });
 
-        this.categories.sort((a, b) => {
+        this.categoriesComponent.sort((a, b) => {
             return a.text < b.text ? -1 : (a.text > b.text ? 1 : 0);
+        });
+
+        // Aller chercher les pages des normes
+        Standards.getPages().forEach(page => {
+            this.pagesStandards.push({
+                id: page,
+                text: this.$i18n.translate('name:' + page)
+            });
         });
     }
 
@@ -78,20 +91,8 @@ export default class Modul extends ModulWebsite {
         return '/' + ROUTES[GETTING_STARTED];
     }
 
-    private get visualStandards(): string {
-        return '/' + ROUTES[VISUAL_STANDARDS];
-    }
-
-    private get writingStandards(): string {
-        return '/' + ROUTES[WRITING_STANDARDS];
-    }
-
-    private get codingStandards(): string {
-        return '/' + ROUTES[CODING_STANDARDS];
-    }
-
-    private get componentsRoute(): string {
-        return '/' + ROUTES[COMPONENTS];
+    private get standards(): string {
+        return '/' + ROUTES[STANDARDS];
     }
 
     //   private get ecosystem(): string {
@@ -103,20 +104,26 @@ export default class Modul extends ModulWebsite {
     }
 
     private onComponentClick(tag: string): void {
-        this.$router.push(this.state.componentRoutes[tag].url);
+        this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][tag].url);
         this.searchOpen = false;
     }
 
-    private onCategoryClick(event: MouseEvent, category: Category): void {
-        this.$router.push(this.state.categoryRoutes[category.id].url);
+    private onComponentCategoryClick(event: MouseEvent, category: Category): void {
+        this.$router.push(this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES][category.id].url);
         this.closeMenu();
         event.currentTarget['blur']();
     }
 
-    private showMenu(): void {
+    private onPageClick(page: Page): void {
+        this.$router.push(this.$store.getters[PagesGetters.GET_PAGE_ROUTES][page.id].url);
+        this.searchOpen = false;
+    }
+
+    private showMenu(section: string): void {
         if (this.menuOpen) {
             this.closeMenu();
         } else {
+            this.section = section;
             this.menuOpen = true;
             let anim = setTimeout(() => {
                 this.headerAnimationCompleted = true;

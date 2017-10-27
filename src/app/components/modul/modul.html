@@ -29,13 +29,13 @@
                     </router-link>
                 </li> -->
                 <li>
-                    <a href="#" @click.prevent="showMenu('standards')" class="modul-header__link">
-                        <m-i18n k="modul:standards"></m-i18n>
+                    <a href="#" @click.prevent="showMenu('components')" class="modul-header__link">
+                        <m-i18n k="modul:components"></m-i18n>
                     </a>
                 </li>
                 <li>
-                    <a href="#" @click.prevent="showMenu('components')" class="modul-header__link">
-                        <m-i18n k="modul:components"></m-i18n>
+                    <a href="#" @click.prevent="showMenu('standards')" class="modul-header__link">
+                        <m-i18n k="modul:standards"></m-i18n>
                     </a>
                 </li>
                 <!-- <li>
@@ -75,18 +75,29 @@
     </div>
     <transition name="modul--is">
         <nav class="modul-menu" v-if="headerAnimationCompleted && isMqMinS" tabindex="0" ref="menu">
-            <ul v-for="category in categories" class="modul-menu__list">
-                <li>
-                    <h2 @click="onCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
-                        <span>{{category.text}}</span>
-                    </h2>
-                </li>
-                <li v-for="component in getCategoryComponents(category.id)">
-                    <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
-                        <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
-                    </a>
-                </li>
-            </ul>
+            <template v-if="section == 'components'">
+                <ul v-for="category in categoriesComponent" class="modul-menu__list">
+                    <li>
+                        <h2 @click="onComponentCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
+                            <span>{{category.text}}</span>
+                        </h2>
+                    </li>
+                    <li v-for="component in getCategoryComponents(category.id)">
+                        <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
+                            <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
+                        </a>
+                    </li>
+                </ul>
+            </template>
+            <template v-else>
+                <ul v-for="page in pagesStandards" class="modul-menu__list">
+                    <li>
+                        <h2 @click="onPageClick(page)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
+                            <span>{{page.text}}</span>
+                        </h2>
+                    </li>
+                 </ul>
+            </template>
         </nav>
         <nav class="modul-menu" v-if="headerAnimationCompleted && !isMqMinS" tabindex="0" ref="menu">
             menu mobile

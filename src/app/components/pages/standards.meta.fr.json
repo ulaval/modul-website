@@ -1,0 +1,25 @@
+{
+    "name": {
+        "unified-experience": "Expérience unifiée",
+
+        "responsive-design": "Design adaptatif",
+
+        "writing-standards": "Normes éditoriales",
+        "writing-standards.editorial-tone": "Ton rédactionnel",
+        "writing-standards.formats": "Formats",
+        "writing-standards.punctuation": "Ponctuation",
+        "writing-standards.glossary": "Glossaire",
+        "writing-standards.message-bank": "Banque de messages",
+
+        "visual-standards": "Normes graphiques",
+        "visual-standards.colors": "Couleurs et thèmes",
+        "visual-standards.iconography": "Iconographie",
+        "visual-standards.typography-styles": "Typographie et styles",
+        "visual-standards.images-videos": "Images et vidéos",
+
+        "coding-standards": "Normes de développement",
+        "coding-standards.css-sass": "CSS / SASS",
+        "coding-standards.typescript": "Typescript",
+        "coding-standards.accessibility": "Accessibilité"
+    }
+}

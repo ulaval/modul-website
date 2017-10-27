@@ -6,6 +6,7 @@ const FrenchPlugin: PluginObject<any> = {
     install(v, options) {
         v.use(ComponentsFrenchPlugin);
         (v as any).$i18n.addMessages(FRENCH, require('./modul.fr.json'));
+        (v as any).$i18n.addMessages(FRENCH, require('@/app/components/pages/standards.meta.fr.json'));
     }
 };
 

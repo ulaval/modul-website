@@ -3,7 +3,9 @@ import Vue from 'vue';
 import store from './store';
 import router from './router';
 import Modul from './components/modul/modul';
-import * as ModulActions from './store/actions';
+import * as ComponentActions from './store/modules/components/actions';
+import * as PageActions from './store/modules/pages/actions';
+import { Standards } from '@/app/components/pages/page';
 import './styles/main.scss';
 
 import I18nPlugin, { currentLang, FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
@@ -46,9 +48,11 @@ async function main() {
     Vue.component(LIGHT_TEMPLATE_NAME, MLightTemplate);
 
     currentLang(FRENCH);
-    await store.dispatchAsync(ModulActions.MESSAGES_GET, FRENCH);
-    await store.dispatchAsync(ModulActions.ICONS_GET, 'website');
-    await store.dispatchAsync(ModulActions.COMPONENTS_META_GET, FRENCH);
+    await store.dispatchAsync(ComponentActions.MESSAGES_GET, FRENCH);
+    await store.dispatchAsync(ComponentActions.ICONS_GET, 'website');
+    await store.dispatchAsync(ComponentActions.COMPONENTS_META_GET, FRENCH);
+
+    store.dispatchAsync(PageActions.PAGES_META_GET, {language: FRENCH, sectionObj: Standards});
 
     const vue = new Vue({
         router,
