@@ -1,1 +1,0 @@
-<modul-preview src="m-dialog-window.preview.fr"></modul-preview>

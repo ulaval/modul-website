@@ -3,7 +3,7 @@ import {
     ACCORDION_NAME, ACCORDION_GROUP_NAME, BULLET_LIST_NAME, BUTTON_NAME, BUTTON_GROUP_NAME, LIST_ITEM_NAME, CHECKBOX_NAME, DATEPICKER_NAME, DIALOG_NAME, DROPDOWN_NAME, DROPDOWN_GROUP_NAME, DROPDOWN_ITEM_NAME, DYNAMIC_TEMPLATE_NAME, FLEX_TEMPLATE_NAME, I18N_NAME, LIMIT_TEXT_NAME, ICON_NAME, INPUT_STYLE_NAME, LINK_NAME, MESSAGE_NAME, MODAL_NAME, NAV_BAR_NAME, NAV_BAR_ITEM_NAME, OPTIONS_MENU_NAME, PANEL_NAME, POPPER_NAME, POPUP_NAME, RADIO_NAME, RADIO_GROUP_NAME, SCROLL_TOP_NAME, SIDEBAR_NAME, SPINNER_NAME, STATUS_NAME, STEP_NAME, SWITCH_NAME, TABLE_NAME, TABS_NAME, TEMPLATE_NAME, TEXT_FIELD_NAME,
     TIMEPICKER_NAME, TOOLTIP_NAME, UPLOAD_NAME, UPLOAD_INPUT_NAME, UPLOAD_DRAGDROP_NAME, UPLOAD_FILESLIST_NAME
 } from '@ulaval/modul-components/dist/components/component-names';
-import { RIPPLE_EFFECT_NAME } from '@ulaval/modul-components/dist/directives/directive-names';
+import { RIPPLE_EFFECT_NAME, SCROLL_TO_NAME } from '@ulaval/modul-components/dist/directives/directive-names';
 import { Meta } from '@ulaval/modul-components/dist/meta/meta';
 
 // should be i18n key format
@@ -43,7 +43,7 @@ export class MetaAll implements PluginObject<any> {
         meta.mergeComponentMeta(MESSAGE_NAME, require('@ulaval/modul-components/dist/components/message/message.meta.json'), CATEGORY_COMUNICATION);
         meta.mergeComponentMeta(MODAL_NAME, require('@ulaval/modul-components/dist/components/modal-window/modal-window.meta.json'), CATEGORY_COMUNICATION);
         meta.mergeComponentMeta(NAV_BAR_NAME, require('@ulaval/modul-components/dist/components/nav-bar/nav-bar.meta.json'), CATEGORY_NAVIGATION);
-        meta.mergeComponentMeta(NAV_BAR_NAME, require('@ulaval/modul-components/dist/components/nav-bar-item/nav-bar-item.meta.json'), CATEGORY_NAVIGATION);
+        meta.mergeComponentMeta(NAV_BAR_ITEM_NAME, require('@ulaval/modul-components/dist/components/nav-bar-item/nav-bar-item.meta.json'), CATEGORY_NAVIGATION);
         meta.mergeComponentMeta(OPTIONS_MENU_NAME, require('@ulaval/modul-components/dist/components/options-menu/options-menu.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(PANEL_NAME, require('@ulaval/modul-components/dist/components/panel/panel.meta.json'), CATEGORY_LAYOUT);
         meta.mergeComponentMeta(POPPER_NAME, require('@ulaval/modul-components/dist/components/popper/popper.meta.json'), CATEGORY_LAYOUT);
@@ -64,6 +64,7 @@ export class MetaAll implements PluginObject<any> {
         meta.mergeComponentMeta(TOOLTIP_NAME, require('@ulaval/modul-components/dist/components/tooltip/tooltip.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(UPLOAD_NAME, require('@ulaval/modul-components/dist/components/upload/upload.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(RIPPLE_EFFECT_NAME, require('@ulaval/modul-components/dist/directives/ripple-effect/ripple-effect.meta.json'), CATEGORY_LAYOUT);
+        meta.mergeComponentMeta(SCROLL_TO_NAME, require('@ulaval/modul-components/dist/directives/scroll-to/scroll-to.meta.json'), CATEGORY_NAVIGATION);
     }
 }
 
