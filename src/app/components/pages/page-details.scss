@@ -4,17 +4,6 @@
     background-color: $m-color--white;
     position: relative;
     z-index: 3;
-    box-shadow: $m-box-shadow;
-
-    &__header,
-    &__preview {
-        padding: $m-padding--l $m-margin--l;
-    }
-
-    &__header {
-        background-color: $modul-color--black-grey-dark;
-        padding: $m-padding $m-margin--l;
-    }
 
     &__nav {
         border-top: 4px solid $m-color--ul-yellow;
@@ -41,30 +30,6 @@
         &:focus,
         .router-link-active {
             color: $modul-color--black-grey-dark;
-        }
-    }
-
-    &__title {
-        color: $m-color--white;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        font-size: 20px; //magic number
-        font-weight: $m-font-weight;
-
-        &__arrow {
-            &.m-icon {
-                font-size: 10px; //Magic number
-                stroke-width: 3px;
-            }
-
-            &:first-child {
-                margin-right: $m-margin--xs;
-            }
-
-            &:last-child {
-                margin-left: $m-margin--xs;
-            }
         }
     }
 }
