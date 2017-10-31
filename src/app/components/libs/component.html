@@ -4,11 +4,11 @@
             {{translatedCategory}}
         </m-link>
     </span>
-    <span slot="header">
+    <div slot="header">
         <m-dropdown v-model="selectedComponent" @open="onOpen" @close="onClose" width="100%">
             <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
         </m-dropdown>
-    </span>
+    </div>
     <span slot="leftArrow">
         <m-button @click="getPreviousComponent()">
             <m-icon name="left-arrow"></m-icon>
