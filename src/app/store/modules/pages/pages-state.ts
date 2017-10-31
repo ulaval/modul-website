@@ -1,5 +1,3 @@
-import { Page, Tab } from '@/app/components/pages/page';
-
 export interface RouteInfo {
     url: string;
     name: string;
@@ -22,8 +20,8 @@ export class PagesState {
     public pagesText: KeyMap = {};
     public tabsText: KeyMap = {};
 
-    public tabs: Tab[] | null = null;
-    public tab: Tab | null = null;
+    public tabs: string[] | null = null;
+    public tab: string | null = null;
     public tabMarkdown: string | null = null;
     public page: string | null = null;
     public pageSummaryMarkdown: string | null = null;

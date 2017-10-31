@@ -22,7 +22,6 @@ const mutations: MutationTree<PagesState> = {
 const actions: ActionTree<PagesState, PagesState> = {
     // Pages
     [Actions.PAGES_META_GET]: Actions.getPagesMetaAction,
-    // Page
     [Actions.PAGE_GET]: Actions.getPageAction,
     [Actions.PAGE_SUMMARY_GET]: Actions.getPageSummaryAction,
     [Actions.PAGE_TABS_GET]: Actions.getPageTabsAction,

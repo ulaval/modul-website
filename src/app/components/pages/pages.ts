@@ -4,10 +4,9 @@ import WithRender from './pages.html';
 import { Watch } from 'vue-property-decorator';
 import * as PagesActions from '@/app/store/modules/pages/actions';
 import * as PagesGetters from '@/app/store/modules/pages/getters';
-import { KeyMap, RouteMap, ComponentsState } from '@/app/store/modules/components/components-state';
+import { KeyMap, RouteMap } from '@/app/store/modules/components/components-state';
 import { ModulWebsite } from '../modul-website';
-import { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
-import { Page, Tab, Standards } from './page';
+import { Page, Standards } from './page';
 
 const ZINDEX: number = 200;
 
@@ -111,8 +110,8 @@ export class Pages {
         return idCategories;
     }
 
-    public getPageTabs(idPage: string): Tab[] {
-        let tabs: Tab[] = [];
+    public getPageTabs(idPage: string): string[] {
+        let tabs: string[] = [];
 
         for (let page of this.pages) {
             if (page.id == idPage) {

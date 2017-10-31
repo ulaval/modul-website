@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import { Getter } from 'vuex';
 import { PagesState } from './pages-state';
-import { Page, Tab } from '@/app/components/pages/page';
-import * as strUtils from '@ulaval/modul-components/dist/utils/str/str';
 
 export const GET_PAGES_TEXT: string = 'G_GET_PAGES_TEXT';
 export const getPagesText: Getter<PagesState, PagesState> = (state: PagesState, getters) => {

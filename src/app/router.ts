@@ -20,7 +20,7 @@ import Meta from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, {
     CATEGORY_COMUNICATION, CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_INDICATORS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_SEARCH_SORT
 } from './meta/meta-all';
-import { Page, Tab, Standards } from '@/app/components/pages/page';
+import { Page, Standards } from '@/app/components/pages/page';
 
 Vue.use(Router);
 Vue.use(MetaAll, Meta);
@@ -176,42 +176,27 @@ Standards.getPages().forEach(page => {
         component: PageDetails,
         props: {sectionObj: Standards}
     });
-
-    // Standards.getPageTabs(page).forEach(tab => {
-    //     standardsRoutes.push({
-    //         path: `/${ROUTES[STANDARDS]}/${ROUTES[page]}/${tab.id}`,
-    //         meta: tab.id,
-    //         component: PageOverview,
-    //         props: {sectionObj: Standards},
-    //     });
-    // });
 });
 
 let indexPage: number = 0;
 let pages: string[] = Standards.getPages();
 
 for (let i = 0; i < pages.length; i++) {
-    let tabs: Tab[] = Standards.getPageTabs(pages[i]);
+    let tabs: string[] = Standards.getPageTabs(pages[i]);
 
     if (tabs.length > 0) {
         standardsRoutes[i].children = [];
 
         for (let j = 0; j < tabs.length; j++) {
             standardsRoutes[i].children.push({
-                path: `/${ROUTES[STANDARDS]}/${ROUTES[pages[i]]}/${tabs[j].id}`,
-                meta: tabs[j].id,
+                path: ROUTES[tabs[j]],
+                meta: pages[i],
                 component: PageTab,
                 props: {sectionObj: Standards}
             });
         }
     }
 }
-// Standards.getPages().forEach(page => {
-//     Standards.getPageTabs(page).forEach(tab => {
-//     });
-
-//     indexPage++;
-// });
 
 modulRoutes.push(
     {

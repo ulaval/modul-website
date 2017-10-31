@@ -6,7 +6,6 @@ import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import Messages, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { RestAdapter } from '@ulaval/modul-components/dist/utils/http/rest';
 import { HttpService } from '@ulaval/modul-components/dist/utils/http/http';
-import { Tab } from '@/app/components/pages/page';
 
 interface MarkdownPayload {
     restAdapter: RestAdapter;
@@ -19,7 +18,7 @@ export const getPagesMetaAction: Action<PagesState, PagesState> = async (context
         context.commit(Mutations.PAGES_META_GET_SUCCESS, payload);
 
         if (context.state.tab) {
-            context.commit(Mutations.TAB_GET, context.state.tab.id);
+            context.commit(Mutations.TAB_GET, context.state.tab);
         }
 
         resolve();
@@ -47,7 +46,7 @@ export const getPageSummaryAction: Action<PagesState, PagesState> = async (conte
 };
 
 export const PAGE_TABS_GET: string = 'A_PAGE_TABS_GET';
-export const getPageTabsAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, tabs: Tab[]) => {
+export const getPageTabsAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, tabs: string[]) => {
     if (context.state.tabs == null) {
         context.commit(Mutations.PAGE_TABS_GET, tabs);
     }

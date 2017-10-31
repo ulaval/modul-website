@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './page-tab.html?style=./page-tab.scss';
 import { ModulWebsite } from '../modul-website';
-import Meta, { ComponentMeta, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
 import * as PagesActions from '@/app/store/modules/pages/actions';
 import * as PagesGetters from '@/app/store/modules/pages/getters';
 

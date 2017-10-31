@@ -4,10 +4,6 @@ import { PagesState } from './pages-state';
 import { ROUTES, STANDARDS } from '../../../router';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
-import { Page, Tab } from '@/app/components/pages/page';
-
-// export const MESSAGES_GET: string = 'MESSAGES_GET';
-// export const MESSAGES_GET_SUCCESS: string = 'MESSAGES_GET_SUCCESS';
 
 export const PAGES_META_GET_SUCCESS: string = 'M_PAGES_META_GET_SUCCESS';
 export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payload) => {
@@ -26,10 +22,10 @@ export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payl
         };
 
         payload.sectionObj.getPageTabs(page).forEach(tab => {
-            state.tabsText[tab.id] = i18n.translate(`name:${page}.${tab.id}`);
-            state.tagRoutes[tab.id] = {
-                url: pageUrlPart + ROUTES[page] + '/' + tab.id,
-                name: tab.id ? state.tabsText[tab.id] : ''
+            state.tabsText[tab] = i18n.translate(`name:${page}.${tab}`);
+            state.tagRoutes[tab] = {
+                url: pageUrlPart + ROUTES[page] + '/' + tab,
+                name: tab ? state.tabsText[tab] : ''
             };
         });
     });
@@ -43,13 +39,10 @@ export const getPage: Mutation<PagesState> = (state: PagesState, idPage: string)
         state.page = idPage;
 
         state.tabs = null;
+        state.tab = null;
         state.tabsText = {};
         state.pageSummaryMarkdown = null;
-
-        let i18n: Messages = (Vue as any).$i18n;
-        // Meta.getMetaByCategory(category).forEach(meta => {
-        //     state.componentsText[meta.tag] = meta.name ? i18n.translate(meta.name) : meta.tag;
-        // });
+        state.tabMarkdown = null;
     }
 };
 
@@ -66,7 +59,8 @@ export const getPageSummarySuccess: Mutation<PagesState> = (state: PagesState, m
 };
 
 export const PAGE_TABS_GET: string = 'M_PAGE_TABS_GET';
-export const getPageTabs: Mutation<PagesState> = (state: PagesState, tabs: Tab[]) => {
+export const getPageTabs: Mutation<PagesState> = (state: PagesState, tabs: string[]) => {
+    state.tab = tabs[0];
     state.tabs = tabs;
 };
 
