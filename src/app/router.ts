@@ -14,12 +14,13 @@ import { ComponentProperties } from './components/libs/component-properties';
 import { ComponentVariants } from './components/libs/component-variants';
 import { PageViewer } from './components/pages/pages';
 import { PageDetails } from './components/pages/page-details';
+import { PageTab } from './components/pages/page-tab';
 import { Ecosystem } from './components/ecosystem/ecosystem';
 import Meta from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, {
     CATEGORY_COMUNICATION, CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_INDICATORS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_SEARCH_SORT
 } from './meta/meta-all';
-import { Page, Standards } from '@/app/components/pages/page';
+import { Page, Tab, Standards } from '@/app/components/pages/page';
 
 Vue.use(Router);
 Vue.use(MetaAll, Meta);
@@ -176,36 +177,41 @@ Standards.getPages().forEach(page => {
         props: {sectionObj: Standards}
     });
 
-    Standards.getPageTabs(page).forEach(tab => {
-        standardsRoutes.push({
-            path: `/${ROUTES[STANDARDS]}/${ROUTES[page]}/${tab.id}`,
-            meta: tab.id,
-            component: PageDetails,
-            props: {sectionObj: Standards},
-            children: [
-                {
-                    path: ROUTES[COMPONENT_PROPERTIES],
-                    meta: tab.id,
-                    component: ComponentProperties
-                },
-                // {
-                //     path: ROUTES[COMPONENT_VARIANT],
-                //     meta: componentMeta.tag,
-                //     component: ComponentVariants
-                // },
-                // {
-                //     path: ROUTES[COMPONENT_OVERVIEW],
-                //     meta: componentMeta.tag,
-                //     component: ComponentOverview
-                // },
-                {
-                    path: '',
-                    redirect: ROUTES[COMPONENT_OVERVIEW]
-                }
-            ]
-        });
-    });
+    // Standards.getPageTabs(page).forEach(tab => {
+    //     standardsRoutes.push({
+    //         path: `/${ROUTES[STANDARDS]}/${ROUTES[page]}/${tab.id}`,
+    //         meta: tab.id,
+    //         component: PageOverview,
+    //         props: {sectionObj: Standards},
+    //     });
+    // });
 });
+
+let indexPage: number = 0;
+let pages: string[] = Standards.getPages();
+
+for (let i = 0; i < pages.length; i++) {
+    let tabs: Tab[] = Standards.getPageTabs(pages[i]);
+
+    if (tabs.length > 0) {
+        standardsRoutes[i].children = [];
+
+        for (let j = 0; j < tabs.length; j++) {
+            standardsRoutes[i].children.push({
+                path: `/${ROUTES[STANDARDS]}/${ROUTES[pages[i]]}/${tabs[j].id}`,
+                meta: tabs[j].id,
+                component: PageTab,
+                props: {sectionObj: Standards}
+            });
+        }
+    }
+}
+// Standards.getPages().forEach(page => {
+//     Standards.getPageTabs(page).forEach(tab => {
+//     });
+
+//     indexPage++;
+// });
 
 modulRoutes.push(
     {

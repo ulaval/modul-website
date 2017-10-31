@@ -70,20 +70,7 @@ export const getPageTabs: Mutation<PagesState> = (state: PagesState, tabs: Tab[]
     state.tabs = tabs;
 };
 
-// export const COMPONENT_PREVIEW_GET_SUCCESS: string = 'M_COMPONENT_PREVIEW_GET_SUCCESS';
-// export const getComponentPreviewSuccess: Mutation<PagesState> = (state: PagesState, markdown: string) => {
-//     state.componentMarkdownPreview = markdown;
-// };
-
-// // Messages
-// export const getMessages: Mutation<PagesState> = (state: PagesState) => {
-//     state.messagesLanguageLoaded = null;
-// };
-
-// export const getMessagesSucces: Mutation<PagesState> = (state: PagesState, language: string) => {
-//     state.messagesLanguageLoaded = language;
-// };
-
-    // public static getPreview: Getter<ModulState, ModulState> = (state: ModulState, getters) => {
-    //     return state.componentMarkdownPreview;
-    // }
+export const PAGE_TAB_GET_SUCCESS: string = 'M_PAGE_TAB_GET_SUCCESS';
+export const getPageTabSuccess: Mutation<PagesState> = (state: PagesState, markdown: string) => {
+    state.tabMarkdown = markdown;
+};

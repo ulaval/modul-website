@@ -8,19 +8,15 @@ import * as Mutations from './mutations';
 const pagesState: PagesState = new PagesState();
 const mutations: MutationTree<PagesState> = {
     // Pages
-    // [Mutations.PAGES_META_GET]: Mutations.getPagesMeta,
     [Mutations.PAGES_META_GET_SUCCESS]: Mutations.getPagesMetaSucces,
-    // Category
+    // Page
     [Mutations.PAGE_GET]: Mutations.getPage,
-    // Page markdown overview
+    // Tab
     [Mutations.TAB_GET]: Mutations.getTab,
+    [Mutations.PAGE_TABS_GET]: Mutations.getPageTabs,
+    // Markdown
     [Mutations.PAGE_SUMMARY_GET_SUCCESS]: Mutations.getPageSummarySuccess,
-    [Mutations.PAGE_TABS_GET]: Mutations.getPageTabs// ,
-     // Page markdown summary
-    // [Mutations.PAGE_PREVIEW_GET_SUCCESS]: Mutations.getPagePreviewSuccess,
-    // Messages
-    // [Mutations.MESSAGES_GET]: Mutations.getMessages,
-    // [Mutations.MESSAGES_GET_SUCCESS]: Mutations.getMessagesSucces
+    [Mutations.PAGE_TAB_GET_SUCCESS]: Mutations.getPageTabSuccess
 };
 
 const actions: ActionTree<PagesState, PagesState> = {
@@ -29,23 +25,17 @@ const actions: ActionTree<PagesState, PagesState> = {
     // Page
     [Actions.PAGE_GET]: Actions.getPageAction,
     [Actions.PAGE_SUMMARY_GET]: Actions.getPageSummaryAction,
-    [Actions.PAGE_TABS_GET]: Actions.getPageTabsAction// ,
-     // [Actions.PAGE_PREVIEW_GET]: Actions.getPagePreviewAction
+    [Actions.PAGE_TABS_GET]: Actions.getPageTabsAction,
+    [Actions.PAGE_TAB_GET]: Actions.getPageTabAction
 };
 
 const getters: GetterTree<PagesState, PagesState> = {
-    // [Getters.GET_CATEGORIES_SORTED]: Getters.getCategoriesSorted,
-    // [Getters.GET_CATEGORIES_TEXT]: Getters.getCategoriesText,
-    // [Getters.GET_CATEGORY]: Getters.getCategory,
-    // [Getters.GET_CATEGORY_ROUTES]: Getters.getCategoryRoutes,
-    // [Getters.GET_PAGES]: Getters.getPages,
     [Getters.GET_PAGES_TEXT]: Getters.getPagesText,
     [Getters.GET_PAGE]: Getters.getPage,
     [Getters.GET_PAGE_ROUTES]: Getters.getPageRoutes,
     [Getters.GET_TABS]: Getters.getTabs,
-    // [Getters.GET_COMPONENT_META]: Getters.getComponentMeta,
-    // [Getters.GET_MARKDOWN_PREVIEW]: Getters.getMarkdownPreview,
-    [Getters.GET_MARKDOWN_SUMMARY]: Getters.getMarkdownSummary
+    [Getters.GET_MARKDOWN_SUMMARY]: Getters.getMarkdownSummary,
+    [Getters.GET_MARKDOWN_TAB]: Getters.getMarkdownTab
 };
 
 export const pages = {

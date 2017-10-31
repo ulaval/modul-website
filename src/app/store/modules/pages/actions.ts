@@ -53,11 +53,11 @@ export const getPageTabsAction: Action<PagesState, PagesState> = async (context:
     }
 };
 
-// export const COMPONENT_PREVIEW_GET: string = 'A_COMPONENT_PREVIEW_GET';
-// export const getComponentPreviewAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, markdown: MarkdownPayload) => {
-//     if (context.state.componentMarkdownPreview == null && typeof context.state.component.preview === 'string') {
-//         markdown.restAdapter.execute({ method: 'get', rawUrl: `/assets/md/${context.state.component.tag}.preview.fr.md` }).then((md) => {
-//             context.commit(Mutations.COMPONENT_PREVIEW_GET_SUCCESS, (md as any).data);
-//         });
-//     }
-// };
+export const PAGE_TAB_GET: string = 'A_PAGE_TAB_GET';
+export const getPageTabAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, markdown: MarkdownPayload) => {
+    if (context.state.tabMarkdown == null && context.state.tab) {
+        markdown.restAdapter.execute({ method: 'get', rawUrl: `/app/content/${context.state.page}/${context.state.page}.${context.state.tab}.fr.md` }).then((md) => {
+            context.commit(Mutations.PAGE_TAB_GET_SUCCESS, (md as any).data);
+        });
+    }
+};
