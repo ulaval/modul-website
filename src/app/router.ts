@@ -33,7 +33,9 @@ export const GETTING_STARTED: string = 'GETTING_STARTED';
 export const COMPONENTS: string = 'COMPONENTS';
 export const STANDARDS: string = 'STANDARDS';
 export const UNIFIED_EXPERIENCE: string = 'unified-experience';
+export const UNIFIED_EXPERIENCE_OVERVIEW: string = 'overview-unified-experience';
 export const RESPONSIVE_DESIGN: string = 'responsive-design';
+export const RESPONSIVE_DESIGN_OVERVIEW: string = 'overview-responsive-design';
 export const WRITING_STANDARDS: string = 'writing-standards';
 export const WRITING_STANDARDS_EDITORIAL_TONE: string = 'editorial-tone';
 export const WRITING_STANDARDS_FORMAT: string = 'formats';
@@ -58,7 +60,9 @@ export const GETTING_STARTED_FR: string = 'demarrer-modul';
 export const COMPONENTS_FR: string = 'composants';
 export const STANDARDS_FR: string = 'normes';
 export const UNIFIED_EXPERIENCE_FR: string = 'experience-unifiee';
+export const UNIFIED_EXPERIENCE_OVERVIEW_FR: string = 'vue-globale-experience-unifiee';
 export const RESPONSIVE_DESIGN_FR: string = 'design-adaptatif';
+export const RESPONSIVE_DESIGN_OVERVIEW_FR: string = 'vue-globale-design-adaptatif';
 export const WRITING_STANDARDS_FR: string = 'normes-editoriales';
 export const WRITING_STANDARDS_EDITORIAL_TONE_FR: string = 'ton-redactionnel';
 export const WRITING_STANDARDS_FORMAT_FR: string = 'formats';
@@ -93,7 +97,9 @@ export const ROUTES: RoutePathMap = {
     [COMPONENTS]: COMPONENTS_FR,
     [STANDARDS]: STANDARDS_FR,
     [UNIFIED_EXPERIENCE]: UNIFIED_EXPERIENCE_FR,
+    [UNIFIED_EXPERIENCE_OVERVIEW]: UNIFIED_EXPERIENCE_OVERVIEW_FR,
     [RESPONSIVE_DESIGN]: RESPONSIVE_DESIGN_FR,
+    [RESPONSIVE_DESIGN_OVERVIEW]: RESPONSIVE_DESIGN_OVERVIEW_FR,
     [WRITING_STANDARDS]: WRITING_STANDARDS_FR,
     [WRITING_STANDARDS_EDITORIAL_TONE]: WRITING_STANDARDS_EDITORIAL_TONE_FR,
     [WRITING_STANDARDS_FORMAT]: WRITING_STANDARDS_FORMAT_FR,

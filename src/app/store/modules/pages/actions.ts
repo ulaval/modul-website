@@ -16,23 +16,14 @@ export const PAGES_META_GET: string = 'A_PAGES_META_GET';
 export const getPagesMetaAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, payload) => {
     return new Promise((resolve, reject) => {
         context.commit(Mutations.PAGES_META_GET_SUCCESS, payload);
-
-        if (context.state.tab) {
-            context.commit(Mutations.TAB_GET, context.state.tab);
-        }
-
         resolve();
-
     });
 };
 
 export const PAGE_GET: string = 'A_PAGE_GET';
 export const getPageAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, id: string) => {
     if (context.state.page == null || context.state.page != id) {
-
-        // let meta: ComponentMeta = Meta.getMetaByTag(tag);
         context.commit(Mutations.PAGE_GET, id);
-        // context.commit(Mutations.COMPONENT_GET, tag);
     }
 };
 
@@ -47,8 +38,15 @@ export const getPageSummaryAction: Action<PagesState, PagesState> = async (conte
 
 export const PAGE_TABS_GET: string = 'A_PAGE_TABS_GET';
 export const getPageTabsAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, tabs: string[]) => {
-    if (context.state.tabs == null) {
+    if (context.state.tabs == null || context.state.tabs != tabs) {
         context.commit(Mutations.PAGE_TABS_GET, tabs);
+    }
+};
+
+export const TAB_GET: string = 'A_TAB_GET';
+export const getTabAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, tab: string) => {
+    if (context.state.tab == null || context.state.tab != tab) {
+        context.commit(Mutations.TAB_GET, tab);
     }
 };
 

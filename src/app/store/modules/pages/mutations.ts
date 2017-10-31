@@ -11,7 +11,7 @@ export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payl
     let pageUrlPart: string = '/' + ROUTES[STANDARDS] + '/';
 
     state.metaLanguageLoaded = null;
-    state.tagRoutes = {};
+    state.tabRoutes = {};
 
     payload.sectionObj.getPages().forEach(page => {
         state.pagesText[page] = i18n.translate('name:' + page);
@@ -22,10 +22,9 @@ export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payl
         };
 
         payload.sectionObj.getPageTabs(page).forEach(tab => {
-            state.tabsText[tab] = i18n.translate(`name:${page}.${tab}`);
-            state.tagRoutes[tab] = {
+            state.tabRoutes[tab] = {
                 url: pageUrlPart + ROUTES[page] + '/' + tab,
-                name: tab ? state.tabsText[tab] : ''
+                name: i18n.translate(`name:${page}.${tab}`)
             };
         });
     });
@@ -37,19 +36,13 @@ export const PAGE_GET: string = 'M_PAGE_GET';
 export const getPage: Mutation<PagesState> = (state: PagesState, idPage: string) => {
     if (idPage != undefined && Object.keys(idPage).length > 0) {
         state.page = idPage;
-
-        state.tabs = null;
-        state.tab = null;
-        state.tabsText = {};
         state.pageSummaryMarkdown = null;
-        state.tabMarkdown = null;
     }
 };
 
 export const TAB_GET: string = 'M_TAB_GET';
-export const getTab: Mutation<PagesState> = (state: PagesState, tag: string) => {
-    let meta: ComponentMeta = Meta.getMetaByTag(tag);
-    // state.tab = meta;
+export const getTab: Mutation<PagesState> = (state: PagesState, tab: string) => {
+    state.tab = tab;
     state.tabMarkdown = null;
 };
 
@@ -60,8 +53,9 @@ export const getPageSummarySuccess: Mutation<PagesState> = (state: PagesState, m
 
 export const PAGE_TABS_GET: string = 'M_PAGE_TABS_GET';
 export const getPageTabs: Mutation<PagesState> = (state: PagesState, tabs: string[]) => {
-    state.tab = tabs[0];
     state.tabs = tabs;
+    state.tab = tabs[0] ? tabs[0] : null;
+    state.tabMarkdown = null;
 };
 
 export const PAGE_TAB_GET_SUCCESS: string = 'M_PAGE_TAB_GET_SUCCESS';

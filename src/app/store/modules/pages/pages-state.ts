@@ -16,9 +16,8 @@ export class PagesState {
     public messagesLanguageLoaded: string | null = null;
 
     public pageRoutes: RouteMap = {};
-    public tagRoutes: RouteMap = {};
+    public tabRoutes: RouteMap = {};
     public pagesText: KeyMap = {};
-    public tabsText: KeyMap = {};
 
     public tabs: string[] | null = null;
     public tab: string | null = null;

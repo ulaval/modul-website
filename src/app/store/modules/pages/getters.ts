@@ -22,6 +22,11 @@ export const getTabs: Getter<PagesState, PagesState> = (state: PagesState, gette
     return state.tabs;
 };
 
+export const GET_TAB: string = 'G_GET_TAB';
+export const getTab: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
+    return state.tab;
+};
+
 export const GET_MARKDOWN_SUMMARY: string = 'G_GET_MARKDOWN_SUMMARY';
 export const getMarkdownSummary: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
     return state.pageSummaryMarkdown;
@@ -30,9 +35,4 @@ export const getMarkdownSummary: Getter<PagesState, PagesState> = (state: PagesS
 export const GET_MARKDOWN_TAB: string = 'G_GET_MARKDOWN_TAB';
 export const getMarkdownTab: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
     return state.tabMarkdown;
-};
-
-export const GET_COMPONENT_META: string = 'G_GET_COMPONENT_META';
-export const getComponentMeta: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
-    return state.tab;
 };

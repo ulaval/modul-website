@@ -15,6 +15,7 @@ const ZINDEX: number = 200;
 export class PageViewer extends ModulWebsite {
 
     private listOpened: boolean = false;
+    private tab: string | null = null;
 
     protected mounted(): void {
         this.getMeta();
@@ -34,6 +35,7 @@ export class PageViewer extends ModulWebsite {
             restAdapter: this.$http
         });
         this.$store.dispatch(PagesActions.PAGE_TABS_GET, (pagesObj.getPageTabs(this.$route.meta)));
+        // this.$store.dispatch(PagesActions.PAGE_TABS_GET, (pagesObj.getPageTabs(this.$route.meta)));
     }
 
     private get page(): string | null {

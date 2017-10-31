@@ -3,8 +3,8 @@
 
         <div class="modul-u--nav-bar">
             <m-nav-bar skin="arrow">
-                <m-nav-bar-item v-for="tab in tabs">
-                    <router-link :to="getRoute(tab)" @click="onClick(tab)" class="modul-u--nav-bar__item">
+                <m-nav-bar-item v-for="tab in tabs" @click="onClick(tab)">
+                    <router-link :to="getRoute(tab)" class="modul-u--nav-bar__item">
                         <m-i18n :k="getKey(tab)"></m-i18n>
                     </router-link>
                 </m-nav-bar-item>

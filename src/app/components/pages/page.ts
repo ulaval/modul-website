@@ -14,10 +14,14 @@ let page: Page;
 
 // unified-experience
 page = new Page('unified-experience');
+page.tabs.push('overview-unified-experience');
+
 Standards.pages.push(page);
 
 // responsive-design
 page = new Page('responsive-design');
+page.tabs.push('overview-responsive-design');
+
 Standards.pages.push(page);
 
 // writing-standards

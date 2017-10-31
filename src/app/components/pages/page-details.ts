@@ -26,6 +26,6 @@ export class PageDetails extends ModulWebsite {
     }
 
     private onClick(tabId: string): void {
-        // this.$store.dispatch(PagesActions.)
+        this.$store.dispatch(PagesActions.TAB_GET, tabId);
     }
 }

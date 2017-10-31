@@ -25,6 +25,7 @@ const actions: ActionTree<PagesState, PagesState> = {
     [Actions.PAGE_GET]: Actions.getPageAction,
     [Actions.PAGE_SUMMARY_GET]: Actions.getPageSummaryAction,
     [Actions.PAGE_TABS_GET]: Actions.getPageTabsAction,
+    [Actions.TAB_GET]: Actions.getTabAction,
     [Actions.PAGE_TAB_GET]: Actions.getPageTabAction
 };
 
@@ -33,6 +34,7 @@ const getters: GetterTree<PagesState, PagesState> = {
     [Getters.GET_PAGE]: Getters.getPage,
     [Getters.GET_PAGE_ROUTES]: Getters.getPageRoutes,
     [Getters.GET_TABS]: Getters.getTabs,
+    [Getters.GET_TAB]: Getters.getTab,
     [Getters.GET_MARKDOWN_SUMMARY]: Getters.getMarkdownSummary,
     [Getters.GET_MARKDOWN_TAB]: Getters.getMarkdownTab
 };

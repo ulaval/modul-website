@@ -1,8 +1,10 @@
 {
     "name": {
         "unified-experience": "Expérience unifiée",
+        "unified-experience.overview-unified-experience": "Vue globale",
 
         "responsive-design": "Design adaptatif",
+        "responsive-design.overview-responsive-design": "Vue globale",
 
         "writing-standards": "Normes éditoriales",
         "writing-standards.editorial-tone": "Ton rédactionnel",
