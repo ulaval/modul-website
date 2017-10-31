@@ -1,9 +1,9 @@
-<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHome, 'modul--is-black-template' : isHome}" :dynamic-header="false">
+<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isBlackHeader, 'modul--is-black-template' : isBlackHeader}" :dynamic-header="false">
     <div slot="header" ref="header" class="modul-header">
-        <h1 v-if="isHome" class="modul-logo">
+        <h1 v-if="isBlackHeader" class="modul-logo">
             <router-link to="/">MOD<b>UL</b></router-link>
         </h1>
-        <div v-if="!isHome" class="modul-logo">
+        <div v-if="!isBlackHeader" class="modul-logo">
             <router-link to="/">MOD<b>UL</b></router-link>
         </div>
         <nav class="modul-header__nav" v-if="isMqMinS">
