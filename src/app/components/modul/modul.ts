@@ -79,6 +79,14 @@ export default class Modul extends ModulWebsite {
         this.searchWidth = value ? '400px' : '100%';
     }
 
+    private get isHome(): boolean {
+        let isHome = false;
+        if (this.$route.path == '/') {
+            isHome = true;
+        }
+        return isHome;
+    }
+
     private get isBlackHeader(): boolean {
         let isBlackHeader = false;
         if (this.$route.path == '/' || this.$route.path == this.gettingStarted || (this.$route.path as any).startsWith(this.standards)) {
