@@ -5,31 +5,15 @@
     position: relative;
     z-index: 3;
 
-    &__nav {
-        border-top: 4px solid $m-color--ul-yellow;
-        border-bottom: 1px solid $modul-color--grey;
-        display: flex;
-        align-items: center;
+    .m-nav-bar {
+        margin: 0 auto;
+        max-width: $modul-max-width;
+        padding: 0 20px; // Magic number
     }
 
-    &__link {
-        transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
-        display: block;
-        padding: 20px;
-        font-weight: $m-font-weight--black;
-        font-size: $m-font-size--s;
-        text-transform: uppercase;
-        text-decoration: none;
-
-        &,
-        &:visited {
-            color: $modul-color--black-grey-dark;
-        }
-
-        &:hover,
-        &:focus,
-        .router-link-active {
-            color: $modul-color--black-grey-dark;
-        }
+    &__body {
+        margin: 0 auto;
+        max-width: $modul-max-width;
+        padding: 0 $m-padding--l $m-padding--l;
     }
 }

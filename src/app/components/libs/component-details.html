@@ -18,18 +18,24 @@
             </span>
         </div>
 
-        <div class="modul-component-details__nav">
-            <router-link :to="overview" class="modul-component-details__link">
-                <m-i18n k="modul:overview"></m-i18n>
-            </router-link>
-
-            <router-link :to="properties" class="modul-component-details__link">
-                <m-i18n k="modul:attributes"></m-i18n>
-            </router-link>
-
-            <router-link :to="variant" class="modul-component-details__link">
-                <m-i18n k="modul:variants"></m-i18n>
-            </router-link>
+        <div class="modul-u--nav-bar">
+            <m-nav-bar skin="arrow">
+                <m-nav-bar-item>
+                    <router-link :to="overview" class="modul-u--nav-bar__item">
+                        <m-i18n k="modul:overview"></m-i18n>
+                    </router-link>
+                </m-nav-bar-item>
+                <m-nav-bar-item>
+                    <router-link :to="properties" class="modul-u--nav-bar__item">
+                        <m-i18n k="modul:attributes"></m-i18n>
+                    </router-link>
+                </m-nav-bar-item>
+                <m-nav-bar-item>
+                    <router-link :to="variant" class="modul-u--nav-bar__item">
+                        <m-i18n k="modul:variants"></m-i18n>
+                    </router-link>
+                </m-nav-bar-item>
+            </m-nav-bar>
         </div>
         <router-view></router-view>
     </div>

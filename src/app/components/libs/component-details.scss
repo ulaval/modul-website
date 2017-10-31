@@ -16,32 +16,8 @@
         padding: $m-padding $m-margin--l;
     }
 
-    &__nav {
-        border-top: 4px solid $m-color--ul-yellow;
-        border-bottom: 1px solid $modul-color--grey;
-        display: flex;
-        align-items: center;
-    }
-
-    &__link {
-        transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
-        display: block;
-        padding: 20px;
-        font-weight: $m-font-weight--black;
-        font-size: $m-font-size--s;
-        text-transform: uppercase;
-        text-decoration: none;
-
-        &,
-        &:visited {
-            color: $modul-color--black-grey-dark;
-        }
-
-        &:hover,
-        &:focus,
-        .router-link-active {
-            color: $modul-color--black-grey-dark;
-        }
+    .m-nav-bar {
+        padding: 0 12px; // Magic number
     }
 
     &__title {

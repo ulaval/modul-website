@@ -81,8 +81,8 @@
 
             &-wrap {
                 margin: 0 auto;
-                max-width: 936px;
-                padding: 64px 32px;
+                max-width: $modul-max-width;
+                padding: $m-padding--xl $m-padding--l;
 
                 p,
                 ul,
@@ -156,10 +156,6 @@
 
         &__content {
             &-wrap {
-                margin: 0 auto;
-                max-width: 936px;
-                padding: 0 32px 32px;
-
                 .tabs {
                     width: 100%;
                 }

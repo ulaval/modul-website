@@ -19,7 +19,7 @@
 .modul-footer__body {
     height: $modul-header--height;
     background-color: $m-color--white;
-    border-top: 2px solid $modul-color--grey-light;
+    border-top: $m-border-width--s solid $m-color--grey;
     display: flex;
     width: 100%;
     justify-content: space-between;
