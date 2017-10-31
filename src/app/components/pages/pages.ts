@@ -29,13 +29,12 @@ export class PageViewer extends ModulWebsite {
     @Watch('$route')
     private getMeta(): void {
         let pagesObj: Pages = this.$route.matched[0].props.valueOf()['default']['sectionObj'];
-        // Faire un dispatch pour mettre dans Tabs
-        console.log(pagesObj.getPageTabs(this.$route.meta));
 
         this.$store.dispatch(PagesActions.PAGE_GET, this.$route.meta);
         this.$store.dispatch(PagesActions.PAGE_SUMMARY_GET, {
             restAdapter: this.$http
         });
+        this.$store.dispatch(PagesActions.PAGE_TABS_GET, (pagesObj.getPageTabs(this.$route.meta)));
     }
 
     private get page(): string | null {

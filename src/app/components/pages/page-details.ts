@@ -39,6 +39,10 @@ export class PageDetails extends ModulWebsite {
         return ROUTES[COMPONENT_OVERVIEW];
     }
 
+    private getKey(tabId: string): string {
+        return `name:${this.page}.${tabId}`;
+    }
+
     // private get htmlTag(): string {
     //     if (this.page) {
     //         return `<${this.page}></${this.page}>`;

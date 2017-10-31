@@ -1,18 +1,11 @@
 <div class="modul-page-details">
     <div class="modul-page" v-if="page">
-        <!-- <router-link v-for="tab in tabs" :to="tab.id" class="modul-component-details__link">
-                <m-i18n k="tab.id"></m-i18n>
-            </router-link> -->
+
         <div class="modul-u--nav-bar">
             <m-nav-bar skin="arrow">
-                <m-nav-bar-item>
-                    <router-link :to="overview" class="modul-u--nav-bar__item">
-                        <m-i18n k="modul:overview"></m-i18n>
-                    </router-link>
-                </m-nav-bar-item>
-                <m-nav-bar-item>
-                    <router-link :to="properties" class="modul-u--nav-bar__item">
-                        <m-i18n k="modul:attributes"></m-i18n>
+                <m-nav-bar-item v-for="tab in tabs">
+                    <router-link :to="tab.id" class="modul-u--nav-bar__item">
+                        <m-i18n :k="getKey(tab.id)"></m-i18n>
                     </router-link>
                 </m-nav-bar-item>
             </m-nav-bar>

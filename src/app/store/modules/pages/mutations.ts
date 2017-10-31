@@ -42,6 +42,7 @@ export const getPage: Mutation<PagesState> = (state: PagesState, idPage: string)
     if (idPage != undefined && Object.keys(idPage).length > 0) {
         state.page = idPage;
 
+        state.tabs = null;
         state.tabsText = {};
         state.pageSummaryMarkdown = null;
 
@@ -62,6 +63,11 @@ export const getTab: Mutation<PagesState> = (state: PagesState, tag: string) => 
 export const PAGE_SUMMARY_GET_SUCCESS: string = 'M_PAGE_SUMMARY_GET_SUCCESS';
 export const getPageSummarySuccess: Mutation<PagesState> = (state: PagesState, markdown: string) => {
     state.pageSummaryMarkdown = markdown;
+};
+
+export const PAGE_TABS_GET: string = 'M_PAGE_TABS_GET';
+export const getPageTabs: Mutation<PagesState> = (state: PagesState, tabs: Tab[]) => {
+    state.tabs = tabs;
 };
 
 // export const COMPONENT_PREVIEW_GET_SUCCESS: string = 'M_COMPONENT_PREVIEW_GET_SUCCESS';

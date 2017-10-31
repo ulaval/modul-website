@@ -14,8 +14,9 @@ const mutations: MutationTree<PagesState> = {
     [Mutations.PAGE_GET]: Mutations.getPage,
     // Page markdown overview
     [Mutations.TAB_GET]: Mutations.getTab,
-    [Mutations.PAGE_SUMMARY_GET_SUCCESS]: Mutations.getPageSummarySuccess// ,
-    // Page markdown summary
+    [Mutations.PAGE_SUMMARY_GET_SUCCESS]: Mutations.getPageSummarySuccess,
+    [Mutations.PAGE_TABS_GET]: Mutations.getPageTabs// ,
+     // Page markdown summary
     // [Mutations.PAGE_PREVIEW_GET_SUCCESS]: Mutations.getPagePreviewSuccess,
     // Messages
     // [Mutations.MESSAGES_GET]: Mutations.getMessages,
@@ -27,8 +28,9 @@ const actions: ActionTree<PagesState, PagesState> = {
     [Actions.PAGES_META_GET]: Actions.getPagesMetaAction,
     // Page
     [Actions.PAGE_GET]: Actions.getPageAction,
-    [Actions.PAGE_SUMMARY_GET]: Actions.getPageSummaryAction// ,
-    // [Actions.PAGE_PREVIEW_GET]: Actions.getPagePreviewAction
+    [Actions.PAGE_SUMMARY_GET]: Actions.getPageSummaryAction,
+    [Actions.PAGE_TABS_GET]: Actions.getPageTabsAction// ,
+     // [Actions.PAGE_PREVIEW_GET]: Actions.getPagePreviewAction
 };
 
 const getters: GetterTree<PagesState, PagesState> = {
