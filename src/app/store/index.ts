@@ -9,7 +9,7 @@ import { pages } from './modules/pages/pages';
 
 Vue.use(Vuex);
 
-class ModulStore extends Vuex.Store<ModulState> {
+class ModulStore extends Vuex.Store<any> {
     public async dispatchAsync(type: string, payload?: any, options?: DispatchOptions): Promise<any[]> {
         return await this.dispatch(type, payload, options);
     }
