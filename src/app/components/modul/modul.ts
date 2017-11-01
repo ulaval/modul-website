@@ -128,9 +128,11 @@ export default class Modul extends ModulWebsite {
     }
 
     private showMenu(section: string): void {
-        if (this.menuOpen) {
+        if (this.menuOpen && this.section == section) {
             this.closeMenu();
-        } else {
+        } else if (this.menuOpen && this.section != section) {
+            this.section = section;
+        } else if (!this.menuOpen) {
             this.section = section;
             this.menuOpen = true;
             let anim = setTimeout(() => {
@@ -142,7 +144,6 @@ export default class Modul extends ModulWebsite {
                     menu.focus();
                 });
             }, CSS_ANIMATION_HEADER_DURATION);
-
         }
     }
 
@@ -206,19 +207,14 @@ export default class Modul extends ModulWebsite {
 
     @Watch('$route')
     private closeMenu(): void {
-
         if (this.menuOpen) {
             this.headerAnimationCompleted = false;
-
             let anim = setTimeout(() => {
                 this.menuOpen = false;
-
                 // this.$modul.deleteWindow(MENU_ID);
                 this.$emit('closeMenu');
             }, CSS_ANIMATION_MENU_DURATION);
-
         }
-
     }
 
     // private beforeEnter(el: HTMLElement, done): void {
