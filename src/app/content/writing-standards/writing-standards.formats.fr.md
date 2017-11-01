@@ -1,5 +1,3 @@
-Formats
-
 Par souci d'uniformité, certaines informations sont toujours présentées selon des formats prédéfinis.
 
 ## Date et heure
@@ -17,7 +15,7 @@ Le format long est le suivant : JJ mois AAAA. Il s'agit du format privilégié e
 ### Format court
 Le format court utilise le même modèle que le format long, sauf que le mois est abrégé. Ce format doit être utilisé lorsque l'espace est restreint, mais qu'il demeure pertinent d'afficher la date sous forme alphanumérique ( 15 janv. 2015).
 
-###P remier du mois
+### Premier du mois
 Lorsque la date affichée correspond au premier du mois, on utilise toujours l'exposant er , peu importe qu'on utilise le format long ou le format court (1er mars 2016).
 
 ### Heure

@@ -1,9 +1,5 @@
-Couleurs
-
-## Couleurs
 Outre leur fonction esthétique, les couleurs établissent un «système visuel»  (design system), c’est-à-dire un code  donnant des indications à l’utilisateur sur les fonctions, les  comportements et l'utilisation des éléments d’interface. Ainsi, les couleurs peuvent servir à illustrer des états (p. ex. actif, publié), des comportements (p. ex. éléments cliquables) ou pour mettre l’accent sur des éléments de contenu (p. ex. message d’erreur, message d’avertissement). Un choix de couleurs judicieux et cohérent d’une page à une autre facilite l’apprentissage du système visuel par l’utilisateur, puisque les couleurs sont invariablement associées à un même type de comportement ou à un même type d’état.
 
----
 ### Couleurs officielles de l’Université Laval
 Trois couleurs forment l’identité visuelle de l’Université Laval :  le bleu, le jaune et le rouge.  Les normes graphiques UL régissent l’utilisation de ces couleurs  et elles  doivent être respectées.
 

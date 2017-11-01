@@ -1,8 +1,5 @@
-## Iconographie
-
 Les icônes réduisent la densité informationnelle d’une page et  améliorent ainsi l’ergonomie d’une interface. Pour être efficaces, les icônes doivent être significatives, reconnaissables, distinguables, intuitives et comprises rapidement par tout utilisateur. Le principe est d’utiliser un objet connu qui suggère sa propre utilisation. En imitant le fonctionnement d’un objet familier, l’icône permet à l’utilisateur de comprendre plus facilement l’utilisation d’une fonction de l’interface. Par exemple, la loupe suggère une action de recherche, la poubelle suggère une action de suppression . Les icônes de modUL  illustrent majoritairement une action que l’utilisateur peut poser. Elles doivent donc jouer un rôle fonctionnel dans tout composant. Il est recommandé de garder une uniformité et une cohérence dans l’utilisation des icônes.
 
----
 ### Caractéristiques
 Les icônes sont par défaut :
 * filaires (seulement des traits de contour, sans couleur de fond)

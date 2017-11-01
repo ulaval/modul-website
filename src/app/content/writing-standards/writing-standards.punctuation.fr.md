@@ -1,5 +1,3 @@
-Ponctuation
-
 ## Règles de ponctuation
 La ponctuation répond à un besoin de logique. Elle permet d’avoir des rapports syntaxiques entre les éléments d’une phrase (séparation, regroupement) et de diviser logiquement un texte (transition, explication, opposition). Ainsi, la ponctuation facilite la lecture et la compréhension d’un contenu.
 

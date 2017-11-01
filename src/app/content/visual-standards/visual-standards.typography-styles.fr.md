@@ -1,14 +1,11 @@
-Typographie et styles
-
 ## Typographie
 La typographie influence la lisibilité et l’efficacité d’un message et facilite le processus de compréhension et d’assimilation de l’information. Un texte bien formaté permet de mettre l’accent sur le contenu et non sur l’effort nécessaire pour le lire.
 * Disponible sur  Google fonts et libre de droits, la famille de caractères à utiliser dans tout composant est «Source Sans Pro».
 * Deux polices de caractères peuvent être utilisées:
     * Source Sans Pro, light, 300 pour le texte courant
     * Source Sans Pro, normal, 400 pour les titres, les  sous-titres ou la mise en évidence.
----
 
-## Styles CSS
+## Styles
 L’utilisation des styles CSS permet d’obtenir une mise en forme rapide et automatique du contenu. Ceux-ci sont déjà prédéfinis de manière à respecter le design de monPortail. Ainsi lorsque des modifications sont apportées au styles CSS, elles se répercutent automatiquement dans l’application.
 
 L’utilisation des styles CSS (classe CSS utilitaire) permet de personnaliser les balises HTML, d’ajouter des styles manquants à un élément ou d’écraser un autre style.Lorsqu’un style a une portée délimitée (style scope), il se peut que les classes CSS ne fonctionnent pas selon le contexte.
