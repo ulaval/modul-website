@@ -198,7 +198,7 @@ for (let i = 0; i < pages.length; i++) {
                 path: ROUTES[tabs[j]],
                 meta: pages[i],
                 component: PageTab,
-                props: {sectionObj: Standards}
+                props: {sectionObj: Standards, tab: tabs[j]}
             });
         }
     }

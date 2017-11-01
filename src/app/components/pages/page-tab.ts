@@ -10,6 +10,9 @@ import * as PagesGetters from '@/app/store/modules/pages/getters';
 export class PageTab extends ModulWebsite {
 
     protected mounted(): void {
+        if (this.$route.matched[2]) {
+            this.$store.dispatch(PagesActions.TAB_GET, this.$route.matched[2].props.valueOf()['default']['tab']);
+        }
         this.getTab();
     }
 

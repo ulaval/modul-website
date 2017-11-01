@@ -35,7 +35,6 @@ export class PageViewer extends ModulWebsite {
             restAdapter: this.$http
         });
         this.$store.dispatch(PagesActions.PAGE_TABS_GET, (pagesObj.getPageTabs(this.$route.meta)));
-        // this.$store.dispatch(PagesActions.PAGE_TABS_GET, (pagesObj.getPageTabs(this.$route.meta)));
     }
 
     private get page(): string | null {
