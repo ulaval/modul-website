@@ -135,7 +135,7 @@ export default class Modul extends ModulWebsite {
             this.menuOpen = true;
             let anim = setTimeout(() => {
                 this.headerAnimationCompleted = true;
-                this.$modul.addWindow(MENU_ID);
+                // this.$modul.addWindow(MENU_ID);
                 this.$emit('openMenu');
                 this.$nextTick(() => {
                     let menu: HTMLElement = this.$refs.menu as HTMLElement;
@@ -196,11 +196,11 @@ export default class Modul extends ModulWebsite {
 
     private startCloseSearch() {
         if (this.menuOpen) {
-            let duration: number = Number(this.$modul.backdropTransitionDuration.slice(0, this.$modul.backdropTransitionDuration.length - 1)) * 1000;
-            this.$modul.setBackdropOpacity('0');
-            setTimeout(() => {
-                this.$modul.removeBackdrop();
-            }, duration);
+            // let duration: number = Number(this.$modul.backdropTransitionDuration.slice(0, this.$modul.backdropTransitionDuration.length - 1)) * 1000;
+            // this.$modul.setBackdropOpacity('0');
+            // setTimeout(() => {
+            //     this.$modul.removeBackdrop();
+            // }, duration);
         }
     }
 
@@ -213,7 +213,7 @@ export default class Modul extends ModulWebsite {
             let anim = setTimeout(() => {
                 this.menuOpen = false;
 
-                this.$modul.deleteWindow(MENU_ID);
+                // this.$modul.deleteWindow(MENU_ID);
                 this.$emit('closeMenu');
             }, CSS_ANIMATION_MENU_DURATION);
 
