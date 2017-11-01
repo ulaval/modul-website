@@ -201,6 +201,11 @@ for (let i = 0; i < pages.length; i++) {
                 props: {sectionObj: Standards, tab: tabs[j]}
             });
         }
+
+        standardsRoutes[i].children.push({
+            path: '',
+            redirect: ROUTES[tabs[0]]
+        });
     }
 }
 

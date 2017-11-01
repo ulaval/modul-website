@@ -54,7 +54,7 @@ export const getPageSummarySuccess: Mutation<PagesState> = (state: PagesState, m
 export const PAGE_TABS_GET: string = 'M_PAGE_TABS_GET';
 export const getPageTabs: Mutation<PagesState> = (state: PagesState, tabs: string[]) => {
     state.tabs = tabs;
-    state.tab = tabs[0] ? tabs[0] : null;
+    state.tab = null;
     state.tabMarkdown = null;
 };
 
