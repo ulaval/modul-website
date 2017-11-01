@@ -27,13 +27,13 @@ export class MPreview extends Vue {
 
     protected mounted(): void {
         let vm = this;
-        (require as any)(['bundle-loader!../../../assets/md/' + vm.src + '.js'], function(waitForChunk) {
+        let s: string = '../../../assets/md/' + vm.src + '.js';
+        (require as any)(['bundle-loader!' + s], function(waitForChunk) {
             waitForChunk(function(chunk) {
                 console.log(vm.src);
                 vm.template = chunk.default;
             });
         });
-
     }
 
     private get preview(): string {
