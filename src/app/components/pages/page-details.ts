@@ -17,6 +17,10 @@ export class PageDetails extends ModulWebsite {
         return this.$store.getters[PagesGetters.GET_TABS];
     }
 
+    private get currentTab(): string | null {
+        return this.$store.getters[PagesGetters.GET_TAB];
+    }
+
     private getRoute(tabId: string): string {
         return `/${ROUTES[STANDARDS]}/${ROUTES[this.page]}/${ROUTES[tabId]}`;
     }
