@@ -10,7 +10,7 @@ import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/m
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import * as PagesGetters from '@/app/store/modules/pages/getters';
-import { Page, Standards } from '@/app/components/pages/page';
+import { Page, Standards, GettingStarted } from '@/app/components/pages/page';
 
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: Number = 100;
@@ -61,7 +61,7 @@ export default class Modul extends ModulWebsite {
             return a.text < b.text ? -1 : (a.text > b.text ? 1 : 0);
         });
 
-        // Aller chercher les pages des normes
+        // Aller chercher les pages des normes pour le menu
         Standards.getPages().forEach(page => {
             this.pagesStandards.push({
                 id: page,

@@ -30,6 +30,7 @@ export class PageViewer extends ModulWebsite {
     private getMeta(): void {
         let pagesObj: Pages = this.$route.matched[0].props.valueOf()['default']['sectionObj'];
 
+        this.$store.dispatch(PagesActions.SECTION_GET, this.$route.meta);
         this.$store.dispatch(PagesActions.PAGE_GET, this.$route.meta);
         this.$store.dispatch(PagesActions.PAGE_SUMMARY_GET, {
             restAdapter: this.$http

@@ -2,6 +2,11 @@ import Vue from 'vue';
 import { Getter } from 'vuex';
 import { PagesState } from './pages-state';
 
+export const GET_SECTION: string = 'G_GET_SECTION';
+export const getSection: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
+    return state.section;
+};
+
 export const GET_PAGES_TEXT: string = 'G_GET_PAGES_TEXT';
 export const getPagesText: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
     return state.pagesText;

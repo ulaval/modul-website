@@ -18,6 +18,7 @@ class ModulStore extends Vuex.Store<any> {
 const store: ModulStore = new ModulStore({
     strict: true, // TODO debug mode only
     modules: {
+        gettingStarted: pages,
         components: components,
         standards: pages
     }

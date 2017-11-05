@@ -6,11 +6,26 @@ import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import Messages, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { RestAdapter } from '@ulaval/modul-components/dist/utils/http/rest';
 import { HttpService } from '@ulaval/modul-components/dist/utils/http/http';
+import { Standards, GettingStarted } from '@/app/components/pages/page';
+import { STANDARDS, GETTING_STARTED } from '../../../router';
 
 interface MarkdownPayload {
     restAdapter: RestAdapter;
     markdown: string;
 }
+
+export const SECTION_GET: string = 'A_SECTION_GET';
+export const getSectionAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, section: string) => {
+    let sectionRoute: string;
+
+    if (section == GETTING_STARTED) {
+        sectionRoute = STANDARDS;
+    } else {
+        sectionRoute = GETTING_STARTED;
+    }
+
+    context.commit(Mutations.PAGE_GET, sectionRoute);
+};
 
 export const PAGES_META_GET: string = 'A_PAGES_META_GET';
 export const getPagesMetaAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, payload) => {

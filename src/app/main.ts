@@ -5,7 +5,7 @@ import router from './router';
 import Modul from './components/modul/modul';
 import * as ComponentActions from './store/modules/components/actions';
 import * as PageActions from './store/modules/pages/actions';
-import { Standards } from '@/app/components/pages/page';
+import { Standards, GettingStarted } from '@/app/components/pages/page';
 import './styles/main.scss';
 
 import I18nPlugin, { currentLang, FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
@@ -52,6 +52,7 @@ async function main() {
     await store.dispatchAsync(ComponentActions.ICONS_GET, 'website');
     await store.dispatchAsync(ComponentActions.COMPONENTS_META_GET, FRENCH);
 
+    store.dispatchAsync(PageActions.PAGES_META_GET, {language: FRENCH, sectionObj: GettingStarted});
     store.dispatchAsync(PageActions.PAGES_META_GET, {language: FRENCH, sectionObj: Standards});
 
     const vue = new Vue({
