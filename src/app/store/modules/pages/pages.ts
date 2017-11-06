@@ -7,7 +7,6 @@ import * as Mutations from './mutations';
 
 const pagesState: PagesState = new PagesState();
 const mutations: MutationTree<PagesState> = {
-    [Mutations.SECTION_GET]: Mutations.getSection,
     // Pages
     [Mutations.PAGES_META_GET_SUCCESS]: Mutations.getPagesMetaSucces,
     // Page
@@ -22,7 +21,6 @@ const mutations: MutationTree<PagesState> = {
 
 const actions: ActionTree<PagesState, PagesState> = {
     // Pages
-    [Actions.SECTION_GET]: Actions.getSectionAction,
     [Actions.PAGES_META_GET]: Actions.getPagesMetaAction,
     [Actions.PAGE_GET]: Actions.getPageAction,
     [Actions.PAGE_SUMMARY_GET]: Actions.getPageSummaryAction,
@@ -32,7 +30,6 @@ const actions: ActionTree<PagesState, PagesState> = {
 };
 
 const getters: GetterTree<PagesState, PagesState> = {
-    [Getters.GET_SECTION]: Getters.getSection,
     [Getters.GET_PAGES_TEXT]: Getters.getPagesText,
     [Getters.GET_PAGE]: Getters.getPage,
     [Getters.GET_PAGE_ROUTES]: Getters.getPageRoutes,

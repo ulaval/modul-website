@@ -12,10 +12,6 @@ export type KeyMap = {
 };
 
 export class PagesState {
-    public metaLanguageLoaded: string | null = null;
-    public messagesLanguageLoaded: string | null = null;
-
-    public section: string | null = null;
     public pageRoutes: RouteMap = {};
     public tabRoutes: RouteMap = {};
     public pagesText: KeyMap = {};

@@ -9,16 +9,20 @@ import * as PagesGetters from '@/app/store/modules/pages/getters';
 @WithRender
 @Component
 export class PageDetails extends ModulWebsite {
+    private get section(): string {
+        return this.$store.getters[PagesGetters.GET_SECTION] + '/';
+    }
+
     private get page(): string {
-        return this.$store.getters[PagesGetters.GET_PAGE];
+        return this.$store.getters[this.section + PagesGetters.GET_PAGE];
     }
 
     private get tabs(): string | null {
-        return this.$store.getters[PagesGetters.GET_TABS];
+        return this.$store.getters[this.section + PagesGetters.GET_TABS];
     }
 
     private get currentTab(): string | null {
-        return this.$store.getters[PagesGetters.GET_TAB];
+        return this.$store.getters[this.section + PagesGetters.GET_TAB];
     }
 
     private getRoute(tabId: string): string {
@@ -30,6 +34,6 @@ export class PageDetails extends ModulWebsite {
     }
 
     private onClick(tabId: string): void {
-        this.$store.dispatch(PagesActions.TAB_GET, tabId);
+        this.$store.dispatch(this.section + PagesActions.TAB_GET, tabId);
     }
 }

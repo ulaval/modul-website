@@ -122,8 +122,8 @@ export default class Modul extends ModulWebsite {
         event.currentTarget['blur']();
     }
 
-    private onPageClick(page: Page): void {
-        this.$router.push(this.$store.getters[PagesGetters.GET_PAGE_ROUTES][page.id].url);
+    private onPageClick(page: Page, section: string): void {
+        this.$router.push(this.$store.getters[section + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
         this.searchOpen = false;
     }
 

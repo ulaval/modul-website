@@ -8,8 +8,8 @@ export class Page {
     }
 }
 
-export const Standards: Pages = new Pages();
-export const GettingStarted: Pages = new Pages();
+export const GettingStarted: Pages = new Pages('gettingStarted');
+export const Standards: Pages = new Pages('standards');
 
 let pageGettingStarted: Page;
 
@@ -63,3 +63,5 @@ pageStandard.tabs.push('typescript');
 pageStandard.tabs.push('accessibility');
 
 Standards.pages.push(pageStandard);
+
+export const Sections: string[] = [GettingStarted.section, Standards.section];

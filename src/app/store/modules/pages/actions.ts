@@ -1,30 +1,28 @@
 import Vue from 'vue';
 import { Action, ActionContext } from 'vuex';
+import { SectionsState } from './sections-state';
 import { PagesState } from './pages-state';
 import * as Mutations from './mutations';
-import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
-import Messages, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { RestAdapter } from '@ulaval/modul-components/dist/utils/http/rest';
-import { HttpService } from '@ulaval/modul-components/dist/utils/http/http';
-import { Standards, GettingStarted } from '@/app/components/pages/page';
-import { STANDARDS, GETTING_STARTED } from '../../../router';
 
 interface MarkdownPayload {
     restAdapter: RestAdapter;
     markdown: string;
 }
 
+export const SECTIONS_META_GET: string = 'A_SECTIONS_META_GET';
+export const getMetaSectionsAction: Action<SectionsState, SectionsState> = async (context: ActionContext<SectionsState, SectionsState>, payload) => {
+    context.commit(Mutations.SECTIONS_META_GET, payload);
+};
+
+export const SECTIONS_GET: string = 'A_SECTIONS_GET';
+export const getSectionsAction: Action<SectionsState, SectionsState> = async (context: ActionContext<SectionsState, SectionsState>, sections: string[]) => {
+    context.commit(Mutations.SECTIONS_GET, sections);
+};
+
 export const SECTION_GET: string = 'A_SECTION_GET';
-export const getSectionAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, section: string) => {
-    let sectionRoute: string;
-
-    if (section == GETTING_STARTED) {
-        sectionRoute = STANDARDS;
-    } else {
-        sectionRoute = GETTING_STARTED;
-    }
-
-    context.commit(Mutations.PAGE_GET, sectionRoute);
+export const getSectionAction: Action<SectionsState, SectionsState> = async (context: ActionContext<SectionsState, SectionsState>, section: string) => {
+    context.commit(Mutations.SECTION_GET, section);
 };
 
 export const PAGES_META_GET: string = 'A_PAGES_META_GET';
