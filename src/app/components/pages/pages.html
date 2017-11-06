@@ -1,19 +1,20 @@
 <modul-dark-template>
     <div slot="header">
-        <m-dropdown v-model="selectedPage" @open="onOpen" @close="onClose" width="100%">
+        <m-dropdown v-if="showNav" v-model="selectedPage" @open="onOpen" @close="onClose" width="100%">
             <m-dropdown-item v-for="page in pages" :value="page" :label="getPageName(page)"></m-dropdown-item>
         </m-dropdown>
+        <h2 v-if="!showNav" class="m-text-field__input">{{ getPageName(pages[0]) }}</h2>
     </div>
     <div slot="preview">
         <m-markdown :template="summaryMarkdown"></m-markdown>
     </div>
-    <span slot="leftArrow">
+    <span slot="leftArrow" v-if="showNav">
         <m-button @click="getPreviousPage()">
             <m-icon name="left-arrow"></m-icon>
             <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la page précédente</span> -->
         </m-button>
     </span>
-    <span slot="rightArrow">
+    <span slot="rightArrow" v-if="showNav">
         <m-button @click="getNextPage()">
             <m-icon name="right-arrow"></m-icon>
             <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la prochaine page</span> -->

@@ -72,6 +72,10 @@ export class PageViewer extends ModulWebsite {
         return this.$store.getters[this.section + PagesGetters.GET_MARKDOWN_SUMMARY];
     }
 
+    private get showNav(): boolean {
+        return this.pages.length > 1;
+    }
+
     private getPageName(id: string): string {
         let keyMap: KeyMap = this.$store.getters[this.section + PagesGetters.GET_PAGES_TEXT];
         return keyMap[id];
