@@ -1,4 +1,9 @@
 <m-modal>
-    <m-button>Modal</m-button>
-    <span slot="body">Dolor id occaecat mollit ad cillum sint enim deserunt sit proident. Veniam eu occaecat consequat et nulla consectetur. Deserunt culpa ullamco consequat elit non nulla proident. Officia qui sunt veniam ex cillum aute incididunt labore incididunt. Consectetur et Lorem anim aute ullamco incididunt non cillum eu magna ut officia nulla adipisicing. Cupidatat excepteur quis ex minim aliquip duis pariatur dolore culpa anim consectetur.</span>
+    <m-button slot="trigger">m-modal</m-button>
+    <span slot="header">Dolore consectetur in sunt consequat veniam enim nulla minim aliqua qui pariatur nostrud.</span>
+    <h2>Nisi cillum excepteur consequat voluptate excepteur incididunt ullamco dolor.</h2>
+    <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim
+        elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor
+        tempor in in nostrud reprehenderit minim culpa incididunt.</p>
+    <span slot="footer">Consectetur dolore commodo voluptate est laborum ex nulla.</span>
 </m-modal>
