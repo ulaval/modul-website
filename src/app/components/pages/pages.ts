@@ -7,6 +7,7 @@ import * as PagesGetters from '@/app/store/modules/pages/getters';
 import { KeyMap, RouteMap } from '@/app/store/modules/components/components-state';
 import { ModulWebsite } from '../modul-website';
 import { Page, Standards } from './page';
+import { STANDARDS, GETTING_STARTED } from './../../router';
 
 const ZINDEX: number = 200;
 
@@ -16,7 +17,7 @@ export class PageViewer extends ModulWebsite {
     private listOpened: boolean = false;
     private tab: string | null = null;
 
-    protected mounted(): void {
+    protected created(): void {
         this.getMeta();
     }
 
@@ -28,7 +29,15 @@ export class PageViewer extends ModulWebsite {
     @Watch('$route')
     private getMeta(): void {
         let pagesObj: Pages = this.$route.matched[0].props.valueOf()['default']['sectionObj'];
-        this.$store.dispatch(PagesActions.SECTION_GET, pagesObj.section);
+        let route: string | null;
+
+        if (pagesObj.section === 'standards') {
+            route = STANDARDS;
+        } else if (pagesObj.section === 'gettingStarted') {
+            route = GETTING_STARTED;
+        }
+
+        this.$store.dispatch(PagesActions.SECTION_GET, { section: pagesObj.section, route: route });
 
         this.$store.dispatch(this.section + PagesActions.PAGE_GET, this.$route.meta);
         this.$store.dispatch(this.section + PagesActions.PAGE_SUMMARY_GET, {

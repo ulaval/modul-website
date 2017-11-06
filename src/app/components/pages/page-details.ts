@@ -13,6 +13,10 @@ export class PageDetails extends ModulWebsite {
         return this.$store.getters[PagesGetters.GET_SECTION] + '/';
     }
 
+    private get sectionRoute(): string {
+        return this.$store.getters[PagesGetters.GET_SECTION_ROUTE];
+    }
+
     private get page(): string {
         return this.$store.getters[this.section + PagesGetters.GET_PAGE];
     }
@@ -26,7 +30,7 @@ export class PageDetails extends ModulWebsite {
     }
 
     private getRoute(tabId: string): string {
-        return `/${ROUTES[STANDARDS]}/${ROUTES[this.page]}/${ROUTES[tabId]}`;
+        return `/${ROUTES[this.sectionRoute]}/${ROUTES[this.page]}/${ROUTES[tabId]}`;
     }
 
     private getKey(tabId: string): string {

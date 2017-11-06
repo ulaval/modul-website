@@ -21,8 +21,8 @@ export const getSectionsAction: Action<SectionsState, SectionsState> = async (co
 };
 
 export const SECTION_GET: string = 'A_SECTION_GET';
-export const getSectionAction: Action<SectionsState, SectionsState> = async (context: ActionContext<SectionsState, SectionsState>, section: string) => {
-    context.commit(Mutations.SECTION_GET, section);
+export const getSectionAction: Action<SectionsState, SectionsState> = async (context: ActionContext<SectionsState, SectionsState>, payload) => {
+    context.commit(Mutations.SECTION_GET, payload);
 };
 
 export const PAGES_META_GET: string = 'A_PAGES_META_GET';

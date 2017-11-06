@@ -21,7 +21,8 @@ const actions: ActionTree<SectionsState, SectionsState> = {
 
 const getters: GetterTree<SectionsState, SectionsState> = {
     [Getters.GET_SECTIONS]: Getters.getSections,
-    [Getters.GET_SECTION]: Getters.getSection
+    [Getters.GET_SECTION]: Getters.getSection,
+    [Getters.GET_SECTION_ROUTE]: Getters.getSectionRoute
 };
 
 export const sections = {

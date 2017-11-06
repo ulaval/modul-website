@@ -96,7 +96,7 @@ export default class Modul extends ModulWebsite {
     }
 
     private get gettingStarted(): string {
-        return '/' + ROUTES[GETTING_STARTED];
+        return '/' + ROUTES[GETTING_STARTED] + '/' + ROUTES[GETTING_STARTED];
     }
 
     private get standards(): string {

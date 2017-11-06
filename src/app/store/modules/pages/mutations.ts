@@ -21,9 +21,12 @@ export const getSections: Mutation<SectionsState> = (state: SectionsState, secti
 };
 
 export const SECTION_GET: string = 'M_SECTION_GET';
-export const getSection: Mutation<SectionsState> = (state: SectionsState, section: string) => {
-    if (section != undefined) {
-        state.section = section;
+export const getSection: Mutation<SectionsState> = (state: SectionsState, payload) => {
+    if (payload.section != undefined) {
+        state.section = payload.section;
+    }
+    if (payload.route != undefined) {
+        state.sectionRoute = payload.route;
     }
 };
 
