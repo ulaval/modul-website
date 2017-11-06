@@ -1,1 +1,1 @@
-<m-radio>Radio</m-radio>
+<m-radio>m-radio</m-radio>
