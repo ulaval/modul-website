@@ -26,10 +26,6 @@ export class ComponentDetails extends ModulWebsite {
         return this.$store.getters[ComponentsGetters.GET_COMPONENT];
     }
 
-    private get currentTab(): string | null {
-        return this.$store.getters[ComponentsGetters.GET_COMPONENT];
-    }
-
     private get properties(): string {
         return ROUTES[COMPONENT_PROPERTIES];
     }
