@@ -16,7 +16,7 @@ export class PageViewer extends ModulWebsite {
     private listOpened: boolean = false;
     private tab: string | null = null;
 
-    protected mounted(): void {
+    protected created(): void {
         this.getMeta();
     }
 

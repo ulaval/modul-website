@@ -26,7 +26,7 @@ export class PageDetails extends ModulWebsite {
     }
 
     private getRoute(tabId: string): string {
-        return `/${ROUTES[STANDARDS]}/${ROUTES[this.page]}/${ROUTES[tabId]}`;
+        return `/${ROUTES[this.$route.matched[0].props.valueOf()['default']['sectionObj'].section]}/${ROUTES[this.page]}/${ROUTES[tabId]}`;
     }
 
     private getKey(tabId: string): string {
