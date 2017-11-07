@@ -23,21 +23,35 @@
         white-space: nowrap;
     }
 
-    .modul-footer__logo-svg {
-        height: 40px;
-        margin-left: 12px;
+    &__link {
+        width: 100px;
+        margin-left: $m-padding;
+        transition: transform $m-transition-duration ease;
+
+        svg {
+            width: 100%;
+        }
+
+        &:hover,
+        &:focus {
+            transform: scale(1.05);
+            outline: none;
+        }
+
+        &:active {
+            transform: none;
+        }
     }
 }
 
 .modul-footer__body {
-    height: $modul-header--height;
     background-color: $m-color--white;
     border-top: $m-border-width--s solid $m-color--grey;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 0 $m-padding--l;
+    padding: $m-padding $m-padding--l;
 }
 
 .modul-footer__link {
