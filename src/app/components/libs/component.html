@@ -1,27 +1,19 @@
 <modul-light-template>
-    <span slot="backlink">
-        <m-link mode="button" iconName="left-arrow" @click="back(component.category)">
-            {{translatedCategory}}
-        </m-link>
-    </span>
-    <div slot="header">
-        <m-dropdown class="modul-u--dropdown-light" v-model="selectedComponent" @open="onOpen" @close="onClose" width="auto">
-            <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
-        </m-dropdown>
-    </div>
-    <span slot="leftArrow">
-        <m-button @click="getPreviousComponent()">
-            <m-icon name="left-arrow"></m-icon>
-            <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le composant précédent</span> -->
-        </m-button>
-    </span>
-    <span slot="rightArrow">
-        <m-button @click="getNextComponent()">
-            <m-icon name="right-arrow"></m-icon>
-            <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le prochain composant</span> -->
-        </m-button>
-    </span>
-    <div slot="body">
+    <m-link slot="backlink" mode="button" iconName="left-arrow" @click="back(component.category)">
+        {{translatedCategory}}
+    </m-link>
+    <m-dropdown slot="header" class="modul-u--dropdown-light" v-model="selectedComponent" @open="onOpen" @close="onClose" width="auto">
+        <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
+    </m-dropdown>
+    <m-button @click="getPreviousComponent()" slot="leftArrow">
+        <m-icon name="left-arrow"></m-icon>
+        <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le composant précédent</span> -->
+    </m-button>
+    <m-button @click="getNextComponent()" slot="rightArrow">
+        <m-icon name="right-arrow"></m-icon>
+        <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le prochain composant</span> -->
+    </m-button>
+    <template slot="body">
         <router-view></router-view>
-    </div>
+    </template>
 </modul-light-template>
