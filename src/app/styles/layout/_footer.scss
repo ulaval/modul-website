@@ -16,6 +16,19 @@
     background-color: $modul-color--grey;
 }
 
+.modul-footer__logo {
+    span {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    .modul-footer__logo-svg {
+        height: 40px;
+        margin-left: 12px;
+    }
+}
+
 .modul-footer__body {
     height: $modul-header--height;
     background-color: $m-color--white;
