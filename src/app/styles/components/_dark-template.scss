@@ -2,7 +2,7 @@
     &__body {
         &__arrow-left,
         &__arrow-right {
-            .m-button {
+            button {
                 .m-icon {
                     transition: 0.45s transform ease;
                 }
@@ -12,7 +12,7 @@
         &__arrow-left {
             left: 0;
 
-            .m-button {
+            button {
                 &:hover {
                     .m-icon {
                         transform: rotate(-360deg);
@@ -24,7 +24,7 @@
         &__arrow-right {
             right: 0;
 
-            .m-button {
+            button {
                 &:hover {
                     .m-icon {
                         transform: rotate(360deg);

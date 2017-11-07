@@ -65,33 +65,6 @@
     @media (min-width: $m-bp--min--s) {
         padding-left: $m-padding--l;
     }
-
-    &__search {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: $modul-header--height--s;
-        height: $modul-header--height--s;
-        cursor: pointer;
-
-        @media (min-width: $m-bp--min--xs) {
-            width: $modul-header--height;
-            height: $modul-header--height;
-        }
-
-        .modul--black-template & {
-            color: $m-color--white;
-        }
-
-        &.m-button.m-button {
-            border-radius: 0;
-        }
-
-        .m-icon {
-            font-size: 22px;
-            stroke-width: 10px;
-        }
-    }
 }
 
 .modul-header__nav {
@@ -162,61 +135,53 @@
     }
 }
 
-.modul-search-sidebar.modul-search-sidebar {
-    .m-base-window {
-        &__article {
-            bottom: 0;
-        }
+// .modul-search-sidebar.modul-search-sidebar {
+//     .m-base-window {
+//         &__article {
+//             bottom: 0;
+//         }
 
-        &__header {
-            display: flex !important;
-            height: $modul-header--height--s;
-            padding-right: $modul-header--height--s !important;
-            flex: 0 0 $modul-header--height--s;
-            font-size: 18px;
+//         &__header {
+//             display: flex !important;
+//             height: $modul-header--height--s;
+//             padding-right: $modul-header--height--s !important;
+//             flex: 0 0 $modul-header--height--s;
+//             font-size: 18px;
 
-            @media (min-width: $m-bp--min--xs) {
-                height: $modul-header--height;
-                padding-right: $modul-header--height !important;
-                flex: 0 0 $modul-header--height;
-            }
+//             @media (min-width: $m-bp--min--xs) {
+//                 height: $modul-header--height;
+//                 padding-right: $modul-header--height !important;
+//                 flex: 0 0 $modul-header--height;
+//             }
 
-            &__close-button {
-                &.m-button.m-button {
-                    transition: background 0.3s ease;
-                    background: $m-color--ul-blue;
-                    border-radius: 0;
-                    height: $modul-header--height--s;
-                    width: $modul-header--height--s;
-                    color: $m-color--white;
+//             &__close-button {
+//                 &.m-button.m-button {
+//                     transition: background 0.3s ease;
+//                     background: $m-color--ul-blue;
+//                     border-radius: 0;
+//                     height: $modul-header--height--s;
+//                     width: $modul-header--height--s;
+//                     color: $m-color--white;
 
-                    @media (min-width: $m-bp--min--xs) {
-                        height: $modul-header--height;
-                        width: $modul-header--height;
-                    }
+//                     @media (min-width: $m-bp--min--xs) {
+//                         height: $modul-header--height;
+//                         width: $modul-header--height;
+//                     }
 
-                    &:hover {
-                        background: $m-color--interactive-light;
-                    }
+//                     &:hover {
+//                         background: $m-color--interactive-light;
+//                     }
 
-                    &:active,
-                    &:focus {
-                        background: $m-color--interactive-dark;
-                    }
+//                     &:active,
+//                     &:focus {
+//                         background: $m-color--interactive-dark;
+//                     }
 
-                    &::after {
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.modul-search-input {
-    border: none;
-    outline: none;
-    padding: $m-padding;
-    width: 100%;
-    font-size: 18px;
-}
+//                     &::after {
+//                         display: none;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

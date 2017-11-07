@@ -46,31 +46,30 @@
             </ul>
         </nav>
 
-        <m-button @click="toggleSearch" class="modul-header__search">
+        <button @click="toggleSearch" class="modul-search__open-button m-u--button-primary">
             <m-icon name="search"></m-icon>
-        </m-button>
+        </button>
 
-        <m-sidebar :open="searchOpen" from="right" :width="searchWidth" @open="searchOpen = true" @close="searchOpen = false" @startClose="startCloseSearch" class-name="modul-search-sidebar"
-            :paddingBody="false" classNamePortalTarget="modul-search-sidebar">
-            <template slot="header">
-                <m-icon name="search"></m-icon>
-                <input type="text" v-model="searchModel" placeholder="Rechercher" value="Rechercher un composant" class="modul-search-input">
-            </template>
+        <m-sidebar :open="searchOpen" @open="searchOpen = true" @close="searchOpen = false" origin="right" :close-button="false" :width="searchWidth" :padding="false">
+            <div class="modul-search__header"slot="header">
+                <m-icon name="search" svg-title="Rechercher"></m-icon>
+                <input type="text" v-model="searchModel" placeholder="Rechercher" value="Rechercher un composant" class="modul-search__header__input">
+                <button @click="toggleSearch" class="modul-search__header__close-button m-u--button-primary">
+                    <m-icon name="search"></m-icon>
+                </button>
+            </div>
+            <transition-group name="modul--is" tag="ul">
+                <li tabindex="0" class="modul-search-card" @click="onComponentClick(item.tag)" @keyup.enter="onComponentClick(item.tag)" v-for="item in searchResult" key="item.tag">
+                    <div class="modul-search-card__figure">
+                        <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
+                    </div>
+                    <div class="modul-search-card__content">
 
-            <template slot="body">
-                <transition-group name="modul--is" tag="ul">
-                    <li tabindex="0" class="modul-search-card" @click="onComponentClick(item.tag)" @keyup.enter="onComponentClick(item.tag)" v-for="item in searchResult" key="item.tag">
-                        <div class="modul-search-card__figure">
-                            <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
-                        </div>
-                        <div class="modul-search-card__content">
-
-                            <p class="m-u--h4 m-u--no-margin-top">{{ item.text }}</p>
-                            <p class="modul-search-card__subtitle">{{ item.category }}</p>
-                        </div>
-                    </li>
-                </transition-group>
-            </template>
+                        <p class="m-u--h4 m-u--no-margin-top">{{ item.text }}</p>
+                        <p class="modul-search-card__subtitle">{{ item.category }}</p>
+                    </div>
+                </li>
+            </transition-group>
         </m-sidebar>
     </div>
     <transition name="modul--is">

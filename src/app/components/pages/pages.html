@@ -4,14 +4,14 @@
     </m-dropdown>
     <h2 slot="header" v-if="!showNav" class="m-text-field__input">{{ getPageName(pages[0]) }}</h2>
     <m-markdown slot="preview" :template="summaryMarkdown"></m-markdown>
-    <m-button slot="leftArrow" v-if="showNav" @click="getPreviousPage()">
+    <button slot="leftArrow" v-if="showNav" @click="getPreviousPage()" class="m-u--button-primary">
         <m-icon name="left-arrow"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la page précédente</span> -->
-    </m-button>
-    <m-button slot="rightArrow" v-if="showNav" @click="getNextPage()">
+    </button>
+    <button slot="rightArrow" v-if="showNav" @click="getNextPage()" class="m-u--button-primary">
         <m-icon name="right-arrow"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la prochaine page</span> -->
-    </m-button>
+    </button>
     <template slot="body">
         <router-view></router-view>
     </template>

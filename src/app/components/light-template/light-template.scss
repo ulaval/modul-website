@@ -58,7 +58,7 @@
             align-items: center;
             height: 100%;
 
-            .m-button.m-button.m-button {
+            button {
                 width: $m-padding--l;
                 min-width: $m-padding--l;
                 height: 52px; // Magic number
@@ -66,14 +66,7 @@
                 font-size: 14px;
                 stroke-width: 2px;
                 border-radius: 0;
-                padding: 0;
                 transform-origin: 50%;
-                background: $m-color--interactive;
-                color: #fff;
-
-                .m-u--visually-hidden {
-                    position: absolute;
-                }
 
                 .m-icon {
                     transition: 0.45s transform ease;
@@ -84,7 +77,7 @@
         &__arrow-left {
             left: 0;
 
-            .m-button {
+            button {
                 &:hover {
                     .m-icon {
                         transform: rotate(-360deg);
@@ -96,7 +89,7 @@
         &__arrow-right {
             right: 0;
 
-            .m-button {
+            button {
                 &:hover {
                     .m-icon {
                         transform: rotate(360deg);

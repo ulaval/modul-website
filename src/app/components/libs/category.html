@@ -3,14 +3,14 @@
         <m-dropdown-item v-for="category in categories" :value="category" :label="getCategoryName(category)">
         </m-dropdown-item>
     </m-dropdown>
-    <m-button slot="leftArrow" @click="getPreviousCategory()">
+    <button slot="leftArrow" @click="getPreviousCategory()" class="m-u--button-primary">
         <m-icon name="left-arrow"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie précédent</span> -->
-    </m-button>
-    <m-button slot="rightArrow" @click="getNextCategory()">
+    </button>
+    <button slot="rightArrow" @click="getNextCategory()" class="m-u--button-primary">
         <m-icon name="right-arrow"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie suivante</span> -->
-    </m-button>
+    </button>
     <template slot="body">
         <router-view></router-view>
     </template>

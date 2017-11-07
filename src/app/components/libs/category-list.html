@@ -4,6 +4,7 @@
     <article @click="onComponentClick(meta.tag)" @keyup.enter="onComponentClick(meta.tag)" :key="meta.tag" v-for="meta in categoryComponents" class="modul-category-list__article" tabindex="0">
 
         <div class="modul-category-list__figure">
+            <m-icon :name="meta.tag" size="140px"></m-icon>
             <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
         </div>
 

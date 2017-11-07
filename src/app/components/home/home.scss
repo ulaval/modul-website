@@ -206,9 +206,11 @@ $modul-home-design--width--l: 270px;
         align-items: center;
         cursor: pointer;
 
-        .m-button.m-button {
+        button {
             margin-top: $m-margin;
             border-radius: 0;
+            font-size: 16px;
+            padding: 10px $m-padding; // Magic number
         }
 
         &:hover {

@@ -4,7 +4,50 @@
     ul {
         margin: 0;
     }
+
+    &__header {
+        display: inline-flex;
+
+        input {
+            flex: 1 1 auto;
+        }
+    }
 }
+
+.modul-search {
+    &__header {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: $modul-header--height--s;
+        border-bottom: 1px solid $m-color--grey;
+
+        @media (min-width : #{$m-bp--min--xs}) {
+            height: $modul-header--height;
+        }
+
+        &__input {
+            flex: 1 1 auto;
+            border: none;
+            outline: none;
+            font-size: $m-font-size;
+            padding: 20px $m-margin; // Magic number
+        }
+    }
+
+    &__open-button,
+    &__header__close-button {
+        width: $modul-header--height--s;
+        height: $modul-header--height--s;
+
+        @media (min-width : #{$m-bp--min--xs}) {
+            width: $modul-header--height;
+            height: $modul-header--height;
+        }
+    }
+}
+
 
 .modul-search-card {
     position: relative;
