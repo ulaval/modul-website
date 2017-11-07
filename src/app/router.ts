@@ -11,7 +11,6 @@ import { ComponentVariants } from './components/libs/component-variants';
 import { PageViewer } from './components/pages/pages';
 import { PageDetails } from './components/pages/page-details';
 import { PageTab } from './components/pages/page-tab';
-import { Ecosystem } from './components/ecosystem/ecosystem';
 import Meta from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, {
     CATEGORY_COMUNICATION, CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_INDICATORS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_SEARCH_SORT
@@ -267,7 +266,7 @@ modulRoutes.push(
     },
     {
         path: '/' + ROUTES[ECOSYSTEM],
-        component: Ecosystem
+        component: PageViewer
     }
 );
 
