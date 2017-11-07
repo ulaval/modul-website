@@ -30,7 +30,6 @@ export class MPreview extends Vue {
         let s: string = '../../../assets/md/' + vm.src + '.js';
         (require as any)(['bundle-loader!' + s], function(waitForChunk) {
             waitForChunk(function(chunk) {
-                console.log(vm.src);
                 vm.template = chunk.default;
             });
         });

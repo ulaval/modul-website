@@ -89,8 +89,6 @@ export default class Modul extends ModulWebsite {
 
     private get isBlackHeader(): boolean {
         let isBlackHeader = false;
-        console.log(this.gettingStarted);
-
         if (this.$route.path == '/' || (this.$route.path as any).startsWith(this.gettingStarted) || (this.$route.path as any).startsWith(this.standards)) {
             isBlackHeader = true;
         }
