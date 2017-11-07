@@ -4,9 +4,9 @@
             <slot name="backlink"></slot>
         </span>
         <div class="modul-light-template__header__title">
-            <span v-if="hasHeader">
+            <template v-if="hasHeader">
                 <slot name="header"></slot>
-            </span>
+            </template>
             <h1 v-else>{{ defaultTitle }}</h1>
         </div>
         <div class="modul-light-template__header__arrow-left" v-if="hasLeftArrow">

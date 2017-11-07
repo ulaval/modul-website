@@ -1,4 +1,3 @@
-
 .modul-u--nav-bar {
     position: relative;
     border-top: $m-border-width--l solid $m-color--ul-yellow;
@@ -21,6 +20,10 @@
         &__wrap {
             background: $m-color--white;
         }
+
+        .m-nav-bar-item.m--is-selected .modul-u--nav-bar__item {
+            color: $modul-color--black-grey-dark;
+        }
     }
 
     &__item {
@@ -28,6 +31,12 @@
         font-weight: $m-font-weight--black;
         font-size: $m-font-size--s;
         text-transform: uppercase;
-        color: $modul-color--black-grey-dark;
+        color: $modul-color--grey-dark;
+        transition: color $m-transition-duration;
+
+        &:hover,
+        &:focus {
+            color: $modul-color--grey-darker;
+        }
     }
 }

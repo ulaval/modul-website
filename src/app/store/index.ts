@@ -1,11 +1,7 @@
 import Vue from 'vue';
 import Vuex, { MutationTree, ActionTree, GetterTree, Dispatch, DispatchOptions } from 'vuex';
-import { ModulState } from './modul-state';
-import * as ModulActions from './actions';
-import * as ModulGetters from './getters';
-import * as ModulMutations from './mutations';
 import { components } from './modules/components/components';
-import { pages } from './modules/pages/pages';
+import { sections } from './modules/pages/sections';
 
 Vue.use(Vuex);
 
@@ -18,8 +14,8 @@ class ModulStore extends Vuex.Store<any> {
 const store: ModulStore = new ModulStore({
     strict: true, // TODO debug mode only
     modules: {
-        components: components,
-        standards: pages
+        sections: sections,
+        components: components
     }
 });
 

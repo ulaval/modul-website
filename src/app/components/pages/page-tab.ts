@@ -17,13 +17,16 @@ export class PageTab extends ModulWebsite {
         this.getTab();
     }
 
+    private get section(): string {
+        return this.$store.getters[PagesGetters.GET_SECTION] + '/';
+    }
     protected getTab(): void {
-        this.$store.dispatch(PagesActions.PAGE_TAB_GET, {
+        this.$store.dispatch(this.section + PagesActions.PAGE_TAB_GET, {
             restAdapter: this.$http
         });
     }
 
     private get tabMarkdown(): string {
-        return this.$store.getters[PagesGetters.GET_MARKDOWN_TAB];
+        return this.$store.getters[this.section + PagesGetters.GET_MARKDOWN_TAB];
     }
 }

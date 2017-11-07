@@ -1,5 +1,11 @@
 {
     "name": {
+        "getting-started": "Premiers pas",
+        "getting-started.computer-setup": "Poste de développeur",
+        "getting-started.source-code": "Github",
+        "getting-started.frontend-architecture": "Architecture frontend",
+        "getting-started.release-tracking": "Suivi des versions",
+
         "unified-experience": "Expérience unifiée",
         "unified-experience.overview-unified-experience": "Vue globale",
 

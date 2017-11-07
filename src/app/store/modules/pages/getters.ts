@@ -1,6 +1,22 @@
 import Vue from 'vue';
 import { Getter } from 'vuex';
+import { SectionsState } from './sections-state';
 import { PagesState } from './pages-state';
+
+export const GET_SECTIONS: string = 'G_GET_SECTIONS';
+export const getSections: Getter<SectionsState, SectionsState> = (state: SectionsState, getters) => {
+    return state.sections;
+};
+
+export const GET_SECTION: string = 'G_GET_SECTION';
+export const getSection: Getter<SectionsState, SectionsState> = (state: SectionsState, getters) => {
+    return state.section;
+};
+
+export const GET_SECTION_ROUTE: string = 'G_GET_SECTION_ROUTE';
+export const getSectionRoute: Getter<SectionsState, SectionsState> = (state: SectionsState, getters) => {
+    return state.sectionRoute;
+};
 
 export const GET_PAGES_TEXT: string = 'G_GET_PAGES_TEXT';
 export const getPagesText: Getter<PagesState, PagesState> = (state: PagesState, getters) => {

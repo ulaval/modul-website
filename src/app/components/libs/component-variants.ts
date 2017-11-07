@@ -3,7 +3,7 @@ import Component from 'vue-class-component';
 import WithRender from './component-variants.html?style=./component-variants.scss';
 import { ModulWebsite } from '../modul-website';
 import Meta, { ComponentMeta, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
-import * as ModulActions from '@/app/store/actions';
+import * as actions from '@/app/store/modules/components/actions';
 
 @WithRender
 @Component
@@ -18,7 +18,7 @@ export class ComponentVariants extends ModulWebsite {
     }
 
     protected getOverview(): void {
-        this.$store.dispatch(ModulActions.COMPONENT_OVERVIEW_GET, {
+        this.$store.dispatch(actions.COMPONENT_OVERVIEW_GET, {
             restAdapter: this.$http
         });
     }

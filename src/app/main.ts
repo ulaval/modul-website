@@ -5,14 +5,15 @@ import router from './router';
 import Modul from './components/modul/modul';
 import * as ComponentActions from './store/modules/components/actions';
 import * as PageActions from './store/modules/pages/actions';
-import { Standards } from '@/app/components/pages/page';
+import { Sections, Standards, GettingStarted } from '@/app/components/pages/page';
+import { STANDARDS, GETTING_STARTED } from './router';
+import { Pages } from '@/app/components/pages/pages';
 import './styles/main.scss';
 
 import I18nPlugin, { currentLang, FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import ComponentsPlugin from '@ulaval/modul-components/dist/components';
 import DirectivesPlugin from '@ulaval/modul-components/dist/directives';
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils';
-// import PreviewPlugin from '@ulaval/modul-components/dist/utils';
 
 import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
 
@@ -52,7 +53,23 @@ async function main() {
     await store.dispatchAsync(ComponentActions.ICONS_GET, 'website');
     await store.dispatchAsync(ComponentActions.COMPONENTS_META_GET, FRENCH);
 
-    store.dispatchAsync(PageActions.PAGES_META_GET, {language: FRENCH, sectionObj: Standards});
+    store.dispatchAsync(PageActions.SECTIONS_META_GET, {language: FRENCH, sectionsObj: Sections});
+
+    Sections.forEach((section) => {
+        let pagesObj: Pages = null;
+        let route: string = null;
+        if (section === 'standards') {
+            pagesObj = Standards;
+            route = STANDARDS;
+        } else if (section === 'gettingStarted') {
+            pagesObj = GettingStarted;
+            route = GETTING_STARTED;
+        }
+
+        if (pagesObj) {
+            store.dispatchAsync(section + '/' + PageActions.PAGES_META_GET, {route: route, pagesObj: pagesObj});
+        }
+    });
 
     const vue = new Vue({
         router,

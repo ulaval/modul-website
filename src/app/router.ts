@@ -1,10 +1,6 @@
 import Vue from 'vue';
 import Router, { RouteConfig } from 'vue-router';
 import { HomePage } from './components/home/home';
-import { GettingStarted } from './components/getting-started/getting-started';
-import { CodingStandards } from './components/standards/coding-standards/coding-standards';
-import { VisualStandards } from './components/standards/visual-standards/visual-standards';
-import { WritingStandards } from './components/standards/writing-standards/writing-standards';
 import { CategoryList } from './components/libs/category-list';
 import { Category } from './components/libs/category';
 import { ComponentViewer } from './components/libs/component';
@@ -15,12 +11,11 @@ import { ComponentVariants } from './components/libs/component-variants';
 import { PageViewer } from './components/pages/pages';
 import { PageDetails } from './components/pages/page-details';
 import { PageTab } from './components/pages/page-tab';
-import { Ecosystem } from './components/ecosystem/ecosystem';
 import Meta from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, {
     CATEGORY_COMUNICATION, CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_INDICATORS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_SEARCH_SORT
 } from './meta/meta-all';
-import { Page, Standards } from '@/app/components/pages/page';
+import { Standards, GettingStarted } from '@/app/components/pages/page';
 
 Vue.use(Router);
 Vue.use(MetaAll, Meta);
@@ -29,9 +24,13 @@ export type RoutePathMap = {
     [path: string]: string;
 };
 
-export const GETTING_STARTED: string = 'GETTING_STARTED';
+export const GETTING_STARTED: string = 'getting-started';
+export const GETTING_STARTED_COMPUTER_SETUP: string = 'computer-setup';
+export const GETTING_STARTED_SOURCE_CODE: string = 'source-code';
+export const GETTING_STARTED_FRONTEND_ARCHITECTURE: string = 'frontend-architecture';
+export const GETTING_STARTED_RELEASE_TRACKING: string = 'release-tracking';
 export const COMPONENTS: string = 'COMPONENTS';
-export const STANDARDS: string = 'STANDARDS';
+export const STANDARDS: string = 'standards';
 export const UNIFIED_EXPERIENCE: string = 'unified-experience';
 export const UNIFIED_EXPERIENCE_OVERVIEW: string = 'overview-unified-experience';
 export const RESPONSIVE_DESIGN: string = 'responsive-design';
@@ -57,6 +56,10 @@ export const COMPONENT_OVERVIEW: string = 'COMPONENT_OVERVIEW';
 export const COMPONENT_VARIANT: string = 'COMPONENT_VARIANT';
 
 export const GETTING_STARTED_FR: string = 'demarrer-modul';
+export const GETTING_STARTED_COMPUTER_SETUP_FR: string = 'poste-developpeur';
+export const GETTING_STARTED_SOURCE_CODE_FR: string = 'github';
+export const GETTING_STARTED_FRONTEND_ARCHITECTURE_FR: string = 'architecture-frontend';
+export const GETTING_STARTED_RELEASE_TRACKING_FR: string = 'suivi-versions';
 export const COMPONENTS_FR: string = 'composants';
 export const STANDARDS_FR: string = 'normes';
 export const UNIFIED_EXPERIENCE_FR: string = 'experience-unifiee';
@@ -94,6 +97,10 @@ export const COMPONENT_VARIANT_FR: string = 'variants';
 
 export const ROUTES: RoutePathMap = {
     [GETTING_STARTED]: GETTING_STARTED_FR,
+    [GETTING_STARTED_COMPUTER_SETUP]: GETTING_STARTED_COMPUTER_SETUP_FR,
+    [GETTING_STARTED_SOURCE_CODE]: GETTING_STARTED_SOURCE_CODE_FR,
+    [GETTING_STARTED_FRONTEND_ARCHITECTURE]: GETTING_STARTED_FRONTEND_ARCHITECTURE_FR,
+    [GETTING_STARTED_RELEASE_TRACKING]: GETTING_STARTED_RELEASE_TRACKING_FR,
     [COMPONENTS]: COMPONENTS_FR,
     [STANDARDS]: STANDARDS_FR,
     [UNIFIED_EXPERIENCE]: UNIFIED_EXPERIENCE_FR,
@@ -129,6 +136,7 @@ export const ROUTES: RoutePathMap = {
 
 const modulRoutes: RouteConfig[] = [];
 const categoryRoutes: RouteConfig[] = [];
+const gettingStartedRoutes: RouteConfig[] = [];
 const componentRoutes: RouteConfig[] = [];
 const standardsRoutes: RouteConfig[] = [];
 
@@ -175,39 +183,63 @@ Meta.getCategories().forEach(category => {
     });
 });
 
-Standards.getPages().forEach(page => {
+GettingStarted.getPages().forEach((page, index) => {
+    gettingStartedRoutes.push({
+        path: ROUTES[page],
+        meta: page,
+        component: PageDetails,
+        props: {sectionObj: GettingStarted}
+    });
+
+    let tabs: string[] = GettingStarted.getPageTabs(page);
+
+    if (tabs.length > 0) {
+        gettingStartedRoutes[index].children = [];
+
+        tabs.forEach(tab => {
+            gettingStartedRoutes[index].children.push({
+                path: ROUTES[tab],
+                meta: page,
+                component: PageTab,
+                props: {sectionObj: GettingStarted, tab: tab}
+            });
+        });
+
+        gettingStartedRoutes[index].children.push({
+            path: '',
+            redirect: ROUTES[tabs[0]]
+        });
+    }
+});
+
+Standards.getPages().forEach((page, index) => {
     standardsRoutes.push({
         path: ROUTES[page],
         meta: page,
         component: PageDetails,
         props: {sectionObj: Standards}
     });
-});
 
-let indexPage: number = 0;
-let pages: string[] = Standards.getPages();
-
-for (let i = 0; i < pages.length; i++) {
-    let tabs: string[] = Standards.getPageTabs(pages[i]);
+    let tabs: string[] = Standards.getPageTabs(page);
 
     if (tabs.length > 0) {
-        standardsRoutes[i].children = [];
+        standardsRoutes[index].children = [];
 
-        for (let j = 0; j < tabs.length; j++) {
-            standardsRoutes[i].children.push({
-                path: ROUTES[tabs[j]],
-                meta: pages[i],
+        tabs.forEach(tab => {
+            standardsRoutes[index].children.push({
+                path: ROUTES[tab],
+                meta: page,
                 component: PageTab,
-                props: {sectionObj: Standards, tab: tabs[j]}
+                props: {sectionObj: Standards, tab: tab}
             });
-        }
+        });
 
-        standardsRoutes[i].children.push({
+        standardsRoutes[index].children.push({
             path: '',
             redirect: ROUTES[tabs[0]]
         });
     }
-}
+});
 
 modulRoutes.push(
     {
@@ -216,7 +248,10 @@ modulRoutes.push(
     },
     {
         path: '/' + ROUTES[GETTING_STARTED],
-        component: GettingStarted
+        meta: GettingStarted.getPages()[0],
+        component: PageViewer,
+        children: gettingStartedRoutes,
+        props: {sectionObj: GettingStarted}
     },
     {
         path: '/' + ROUTES[COMPONENTS],
@@ -231,7 +266,7 @@ modulRoutes.push(
     },
     {
         path: '/' + ROUTES[ECOSYSTEM],
-        component: Ecosystem
+        component: PageViewer
     }
 );
 

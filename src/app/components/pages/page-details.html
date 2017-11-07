@@ -2,7 +2,7 @@
     <div class="modul-page" v-if="page">
 
         <div class="modul-u--nav-bar">
-            <m-nav-bar skin="arrow" :selected-value="currentTab">
+            <m-nav-bar skin="arrow" :value="currentTab">
                 <m-nav-bar-item :value="tab" v-for="tab in tabs" @click="onClick(tab)">
                     <router-link :to="getRoute(tab)" class="modul-u--nav-bar__item">
                         <m-i18n :k="getKey(tab)"></m-i18n>

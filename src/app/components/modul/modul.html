@@ -92,7 +92,7 @@
             <template v-else>
                 <ul v-for="page in pagesStandards" class="modul-menu__list">
                     <li>
-                        <h2 @click="onPageClick(page)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
+                        <h2 @click="onPageClick(page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
                             <span>{{page.text}}</span>
                         </h2>
                     </li>
@@ -111,7 +111,7 @@
     <div slot="footer" class="modul-footer">
         <div class="modul-footer__body">
             <div class="modul-footer__logo">
-                <span>Propulsé par l'université Laval</span>
+                <span>Propulsé par <a class="modul-footer__logo__link" href="https://www.ulaval.ca/" target="_blank"><img src="../../assets/logo-ul.svg" alt="l'Université Laval" title="l'Université Laval"></a> </span>
             </div>
             <div class="modul-footer__nav" v-if="isMqMinS">
                 <a class="modul-footer__link" href="">Conditions d'utilisation</a>

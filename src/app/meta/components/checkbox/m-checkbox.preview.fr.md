@@ -1,1 +1,1 @@
-<m-checkbox></m-checkbox>
+<m-checkbox>m-checkbox</m-checkbox>

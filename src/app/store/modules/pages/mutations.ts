@@ -1,19 +1,43 @@
 import Vue from 'vue';
-import { Mutation, Getter } from 'vuex';
+import { Mutation } from 'vuex';
+import { SectionsState } from './sections-state';
 import { PagesState } from './pages-state';
-import { ROUTES, STANDARDS } from '../../../router';
+import { ROUTES } from '../../../router';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
-import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+
+export const SECTIONS_META_GET: string = 'M_SECTIONS_META_GET';
+export const getMetaSections: Mutation<SectionsState> = (state: SectionsState, payload) => {
+    if (payload.sectionsObj != undefined && payload.language != undefined) {
+        state.sections = payload.sectionsObj;
+        state.messagesLanguageLoaded = payload.language;
+    }
+};
+
+export const SECTIONS_GET: string = 'M_SECTIONS_GET';
+export const getSections: Mutation<SectionsState> = (state: SectionsState, sections: string[]) => {
+    if (sections != undefined) {
+        state.sections = sections;
+    }
+};
+
+export const SECTION_GET: string = 'M_SECTION_GET';
+export const getSection: Mutation<SectionsState> = (state: SectionsState, payload) => {
+    if (payload.section != undefined) {
+        state.section = payload.section;
+    }
+    if (payload.route != undefined) {
+        state.sectionRoute = payload.route;
+    }
+};
 
 export const PAGES_META_GET_SUCCESS: string = 'M_PAGES_META_GET_SUCCESS';
 export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payload) => {
     let i18n: Messages = (Vue as any).$i18n;
-    let pageUrlPart: string = '/' + ROUTES[STANDARDS] + '/';
+    let pageUrlPart: string = '/' + ROUTES[payload.route] + '/';
 
-    state.metaLanguageLoaded = null;
     state.tabRoutes = {};
 
-    payload.sectionObj.getPages().forEach(page => {
+    payload.pagesObj.getPages().forEach(page => {
         state.pagesText[page] = i18n.translate('name:' + page);
 
         state.pageRoutes[page] = {
@@ -21,15 +45,13 @@ export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payl
             name: state.pagesText[page]
         };
 
-        payload.sectionObj.getPageTabs(page).forEach(tab => {
+        payload.pagesObj.getPageTabs(page).forEach(tab => {
             state.tabRoutes[tab] = {
                 url: pageUrlPart + ROUTES[page] + '/' + tab,
                 name: i18n.translate(`name:${page}.${tab}`)
             };
         });
     });
-
-    state.metaLanguageLoaded = payload.language;
 };
 
 export const PAGE_GET: string = 'M_PAGE_GET';

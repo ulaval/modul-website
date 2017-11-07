@@ -40,7 +40,7 @@ const getters: GetterTree<PagesState, PagesState> = {
 };
 
 export const pages = {
-    // namespaced: true,
+    namespaced: true,
     state: pagesState,
     mutations:  mutations,
     actions:  actions,
