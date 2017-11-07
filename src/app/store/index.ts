@@ -1,9 +1,5 @@
 import Vue from 'vue';
 import Vuex, { MutationTree, ActionTree, GetterTree, Dispatch, DispatchOptions } from 'vuex';
-import { ModulState } from './modul-state';
-import * as ModulActions from './actions';
-import * as ModulGetters from './getters';
-import * as ModulMutations from './mutations';
 import { components } from './modules/components/components';
 import { sections } from './modules/pages/sections';
 
