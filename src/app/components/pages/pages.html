@@ -1,6 +1,6 @@
 <modul-dark-template>
     <div slot="header">
-        <m-dropdown v-if="showNav" v-model="selectedPage" @open="onOpen" @close="onClose" width="100%">
+        <m-dropdown class="modul-u--dropdown-dark" v-if="showNav" v-model="selectedPage" @open="onOpen" @close="onClose" width="auto">
             <m-dropdown-item v-for="page in pages" :value="page" :label="getPageName(page)"></m-dropdown-item>
         </m-dropdown>
         <h2 v-if="!showNav" class="m-text-field__input">{{ getPageName(pages[0]) }}</h2>

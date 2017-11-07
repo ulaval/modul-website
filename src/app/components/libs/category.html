@@ -1,6 +1,6 @@
 <modul-light-template>
     <span slot="header">
-        <m-dropdown v-model="selectedCategory" @open="onOpen" @close="onClose">
+        <m-dropdown class="modul-u--dropdown-light" v-model="selectedCategory" @open="onOpen" @close="onClose" width="auto">
             <m-dropdown-item v-for="category in categories" :value="category" :label="getCategoryName(category)">
             </m-dropdown-item>
         </m-dropdown>
