@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="m-spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 260 260" style="enable-background:new 0 0 260 260;" xml:space="preserve">
+<style type="text/css">
+	.modul-u--preview-img--dark {
+        fill:#1f2f39;
+    }
+
+    .modul-u--preview-img {
+        fill:#1f2f39;
+        opacity:0.5;
+    }
+
+    .modul-u--preview-img--light {
+        fill:#1f2f39;
+        opacity:0.3;
+    }
+</style>
+<path class="modul-u--preview-img" d="M217.8,136c-3.1,45.5-41.3,81.5-87.8,81.5c-48.5,0-88-39.3-88-87.5c0-46.2,36.3-84.2,82-87.3V10.2
+	C60.6,13.3,10,65.8,10,130c0,66.2,53.8,120,120,120c64.2,0,116.7-50.6,119.8-114H217.8z"/>
+<path class="modul-u--preview-img--dark" d="M250,130h-32c0-48.2-39.5-87.5-88-87.5V10C196.2,10,250,63.8,250,130z"/>
+</svg>

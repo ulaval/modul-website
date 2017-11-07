@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="m-modal" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 260 260" style="enable-background:new 0 0 260 260;" xml:space="preserve">
+<style type="text/css">
+	.modul-u--preview-img--dark {
+        fill:#1f2f39;
+    }
+
+    .modul-u--preview-img {
+        fill:#1f2f39;
+        opacity:0.5;
+    }
+
+    .modul-u--preview-img--light {
+        fill:#1f2f39;
+        opacity:0.3;
+    }
+</style>
+<g class="modul-u--preview-img--light">
+	<path d="M221,72.2H39c-2.2,0-4,1.8-4,4v107.6c0,2.2,1.8,4,4,4h182c2.2,0,4-1.8,4-4V76.2C225,74,223.2,72.2,221,72.2z
+		 M156.1,171.7c0,2.2-1.8,4-4,4h-44.2c-2.2,0-4-1.8-4-4v-12.4c0-2.2,1.8-4,4-4h44.2c2.2,0,4,1.8,4,4V171.7z"/>
+</g>
+<g class="modul-u--preview-img">
+	<path d="M10,18v224c0,4.4,3.6,8,8,8h224c4.4,0,8-3.6,8-8V18c0-4.4-3.6-8-8-8H18C13.6,10,10,13.6,10,18z M225,183.8
+		c0,2.2-1.8,4-4,4H39c-2.2,0-4-1.8-4-4V76.2c0-2.2,1.8-4,4-4h182c2.2,0,4,1.8,4,4V183.8z"/>
+	<path d="M152.1,155.3h-44.2c-2.2,0-4,1.8-4,4v12.4c0,2.2,1.8,4,4,4h44.2c2.2,0,4-1.8,4-4v-12.4
+			C156.1,157.1,154.3,155.3,152.1,155.3z M143.1,168.8h-26.1v-6.3h26.1V168.8z"/>
+</g>
+<g class="modul-u--preview-img--dark">
+	<rect x="50" y="90" width="133.8" height="6.3"/>
+	<rect x="50" y="103.1" width="143.3" height="6.3"/>
+	<rect x="50" y="116.1" width="103.7" height="6.3"/>
+	<rect x="116.9" y="162.5" width="26.1" height="6.3"/>
+</g>
+</svg>
