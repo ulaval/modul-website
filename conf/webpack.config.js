@@ -95,7 +95,8 @@ module.exports = function (env) {
                     options: {
                         configFile: 'conf/tslint.json',
                         formatter: 'grouped',
-                        formattersDirectory: 'node_modules/custom-tslint-formatters/formatters'
+                        formattersDirectory: 'node_modules/custom-tslint-formatters/formatters',
+                        emitErrors: true
                     }
                 }
             ]
@@ -109,7 +110,7 @@ module.exports = function (env) {
             new CompressionPlugin(),
             new StyleLintPlugin({
                 configFile: '.stylelintrc',
-                emitErrors: false
+                emitErrors: true
             }),
             new webpack.DefinePlugin({
                 'process.env': {
