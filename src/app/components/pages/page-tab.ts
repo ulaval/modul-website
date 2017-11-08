@@ -20,6 +20,7 @@ export class PageTab extends ModulWebsite {
     private get section(): string {
         return this.$store.getters[PagesGetters.GET_SECTION] + '/';
     }
+
     protected getTab(): void {
         this.$store.dispatch(this.section + PagesActions.PAGE_TAB_GET, {
             restAdapter: this.$http

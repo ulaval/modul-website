@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const webpack = require('webpack');
 const path = require("path");
 // var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -8,108 +9,116 @@ function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
 
-module.exports = {
-    entry: {
-        app: ["./src/app/main.ts"]
-    },
+module.exports = function (env) {
+    var config = {
+        entry: {
+            app: ["./src/app/main.ts"]
+        },
 
-    output: {
-        path: resolve("dist"),
-        publicPath: "/",
-        filename: "app.js"
-    },
+        output: {
+            path: resolve("dist"),
+            publicPath: "/",
+            filename: "app.js"
+        },
 
-    resolve: {
-        extensions: ['.js', '.ts', '.html'],
-        alias: {
-            'vue$': 'vue/dist/vue.esm.js',
-            "@": resolve('src')
-        }
-    },
+        resolve: {
+            extensions: ['.js', '.ts', '.html'],
+            alias: {
+                'vue$': 'vue/dist/vue.esm.js',
+                "@": resolve('src')
+            }
+        },
 
-    devtool: 'source-map',
+        devtool: 'source-map',
 
-    module: {
-        rules: [
-            {
-                enforce: 'post',
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            },
-            {
-                enforce: 'post',
-                test: /\.scss$/,
-                use: ['style-loader',
-                    'css-loader',
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: function () {
-                                return [
-                                    require('autoprefixer')
-                                ];
+        module: {
+            rules: [
+                {
+                    enforce: 'post',
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader']
+                },
+                {
+                    enforce: 'post',
+                    test: /\.scss$/,
+                    use: ['style-loader',
+                        'css-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: function () {
+                                    return [
+                                        require('autoprefixer')
+                                    ];
+                                }
                             }
                         }
+                    ]
+                },
+                {
+                    enforce: 'pre',
+                    test: /\.scss$/,
+                    loader: "sass-loader",
+                    options: {
+                        includePaths: ["./node_modules/@ulaval/modul-components/dist/styles", "./src/app/styles"]
                     }
-                ]
-            },
-            {
-                enforce: 'pre',
-                test: /\.scss$/,
-                loader: "sass-loader",
-                options: {
-                    includePaths: ["./node_modules/@ulaval/modul-components/dist/styles", "./src/app/styles"]
+                },
+                {
+                    test: /\.html$/,
+                    loader: 'vue-template-loader',
+                    exclude: resolve('src/index.html'),
+                    options: {
+                        scoped: true
+                    }
+                },
+                {
+                    test: /\.svg$/,
+                    loader: 'svg-inline-loader',
+                    options: {
+                        removeTags: true,
+                        removingTags: ['desc', 'defs', 'style'],
+                        removeSVGTagAttrs: true
+                    }
+                },
+                {
+                    test: /\.ts$/,
+                    loader: 'awesome-typescript-loader',
+                    options: {
+                        configFileName: resolve('tsconfig.json')
+                    }
+                },
+                {
+                    test: /\.ts$/,
+                    enforce: 'pre',
+                    loader: 'tslint-loader',
+                    include: [resolve('src'), resolve('test')],
+                    options: {
+                        configFile: 'conf/tslint.json',
+                        formatter: 'grouped',
+                        formattersDirectory: 'node_modules/custom-tslint-formatters/formatters'
+                    }
                 }
-            },
-            {
-                test: /\.html$/,
-                loader: 'vue-template-loader',
-                exclude: resolve('src/index.html'),
-                options: {
-                    scoped: true
+            ]
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                template: 'src/index.html',
+                template: resolve('src/index.html'),
+                inject: 'body'
+            }),
+            new CompressionPlugin(),
+            new StyleLintPlugin({
+                configFile: '.stylelintrc',
+                emitErrors: false
+            }),
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': env
                 }
-            },
-            {
-                test: /\.svg$/,
-                loader: 'svg-inline-loader',
-                options: {
-                    removeTags: true,
-                    removingTags: ['desc', 'defs', 'style'],
-                    removeSVGTagAttrs: true
-                }
-            },
-            {
-                test: /\.ts$/,
-                loader: 'awesome-typescript-loader',
-                options: {
-                    configFileName: resolve('tsconfig.json')
-                }
-            },
-            {
-                test: /\.ts$/,
-                enforce: 'pre',
-                loader: 'tslint-loader',
-                include: [resolve('src'), resolve('test')],
-                options: {
-                    configFile: 'conf/tslint.json',
-                    formatter: 'grouped',
-                    formattersDirectory: 'node_modules/custom-tslint-formatters/formatters',
-                    emitErrors: true
-                }
-            }
+            })
+            // , new BundleAnalyzerPlugin()
         ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: 'src/index.html',
-            template: resolve('src/index.html'),
-            inject: 'body'
-        }),
-        new CompressionPlugin(),
-        new StyleLintPlugin({
-            configFile: '.stylelintrc',
-            emitErrors: true
-        })
-        // , new BundleAnalyzerPlugin()
-    ]
+    }
+
+    return config;
 }
