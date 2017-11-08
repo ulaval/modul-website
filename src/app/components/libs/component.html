@@ -5,14 +5,14 @@
     <m-dropdown slot="header" class="modul-u--dropdown-light" v-model="selectedComponent" @open="onOpen" @close="onClose" width="auto">
         <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
     </m-dropdown>
-    <m-button @click="getPreviousComponent()" slot="leftArrow">
+    <button slot="leftArrow" @click="getPreviousComponent()" class="m-u--button-primary">
         <m-icon name="left-arrow"></m-icon>
-        <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le composant précédent</span> -->
-    </m-button>
-    <m-button @click="getNextComponent()" slot="rightArrow">
+        <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie précédent</span> -->
+    </button>
+    <button slot="rightArrow" @click="getNextComponent()" class="m-u--button-primary">
         <m-icon name="right-arrow"></m-icon>
-        <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers le prochain composant</span> -->
-    </m-button>
+        <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie suivante</span> -->
+    </button>
     <template slot="body">
         <router-view></router-view>
     </template>
