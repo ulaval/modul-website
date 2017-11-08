@@ -153,7 +153,7 @@ Meta.getCategories().forEach(category => {
         children: componentRoutes
     });
 
-    Meta.getMetaByCategory(category, !!process.env.NODE_ENV).forEach(componentMeta => {
+    Meta.getMetaByCategory(category, process.env.NODE_ENV).forEach(componentMeta => {
         componentRoutes.push({
             path: `/${ROUTES[COMPONENTS]}/${ROUTES[category]}/${componentMeta.tag}`,
             meta: componentMeta.tag,

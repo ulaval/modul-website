@@ -7,7 +7,7 @@
     "scripts": {
         "clean": "rimraf dist",
         "relink": "rimraf node_modules/@ulaval/modul-components && npm i",
-        "dev": "npm run mdToAssets && webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 8083 --open --history-api-fallback",
+        "dev": "npm run mdToAssets && webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 8083 --open --history-api-fallback --env.dev",
         "build": "npm run mdToAssets && npm run assetsToDist && webpack --config conf/webpack.config.js --colors --optimize-minimize",
         "mdToAssets": "rimraf src/assets/md && copyfiles -u 5 \"./src/app/meta/components/**/*.md\" src/assets/md && copyfiles -u 5 \"./src/app/meta/directives/**/*.md\" src/assets/md && copyfiles -u 5 \"./src/app/meta/components/**/*.js\" src/assets/md && copyfiles -u 2 \"./src/app/content/**/*.md\" src/assets/md",
         "prod": "http-server dist -p 8083 -g -o",

@@ -108,7 +108,7 @@ export default class Modul extends ModulWebsite {
     //   }
     //
     private getCategoryComponents(category): ComponentMeta[] {
-        return Meta.getMetaByCategory(category, !!process.env.NODE_ENV);
+        return Meta.getMetaByCategory(category, process.env.NODE_ENV);
     }
 
     private onComponentClick(tag: string): void {
