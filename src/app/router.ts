@@ -143,7 +143,7 @@ const standardsRoutes: RouteConfig[] = [];
 Meta.getCategories().forEach(category => {
     categoryRoutes.push({
         path: ROUTES[category],
-        meta: category,
+        meta: {page: category},
         component: CategoryList
     });
 
@@ -156,22 +156,22 @@ Meta.getCategories().forEach(category => {
     Meta.getMetaByCategory(category, process.env.NODE_ENV).forEach(componentMeta => {
         componentRoutes.push({
             path: `/${ROUTES[COMPONENTS]}/${ROUTES[category]}/${componentMeta.tag}`,
-            meta: componentMeta.tag,
+            meta: {page: componentMeta.tag},
             component: ComponentDetails,
             children: [
                 {
                     path: ROUTES[COMPONENT_PROPERTIES],
-                    meta: componentMeta.tag,
+                    meta: {page: componentMeta.tag},
                     component: ComponentProperties
                 },
                 {
                     path: ROUTES[COMPONENT_VARIANT],
-                    meta: componentMeta.tag,
+                    meta: {page: componentMeta.tag},
                     component: ComponentVariants
                 },
                 {
                     path: ROUTES[COMPONENT_OVERVIEW],
-                    meta: componentMeta.tag,
+                    meta: {page: componentMeta.tag},
                     component: ComponentOverview
                 },
                 {
@@ -186,9 +186,8 @@ Meta.getCategories().forEach(category => {
 GettingStarted.getPages().forEach((page, index) => {
     gettingStartedRoutes.push({
         path: ROUTES[page],
-        meta: page,
-        component: PageDetails,
-        props: {sectionObj: GettingStarted}
+        meta: {page: page, sectionObj: GettingStarted},
+        component: PageDetails
     });
 
     let tabs: string[] = GettingStarted.getPageTabs(page);
@@ -199,9 +198,8 @@ GettingStarted.getPages().forEach((page, index) => {
         tabs.forEach(tab => {
             gettingStartedRoutes[index].children.push({
                 path: ROUTES[tab],
-                meta: page,
-                component: PageTab,
-                props: {sectionObj: GettingStarted, tab: tab}
+                meta: {page: page, sectionObj: GettingStarted, tab: tab},
+                component: PageTab
             });
         });
 
@@ -215,9 +213,8 @@ GettingStarted.getPages().forEach((page, index) => {
 Standards.getPages().forEach((page, index) => {
     standardsRoutes.push({
         path: ROUTES[page],
-        meta: page,
-        component: PageDetails,
-        props: {sectionObj: Standards}
+        meta: {page: page, sectionObj: Standards},
+        component: PageDetails
     });
 
     let tabs: string[] = Standards.getPageTabs(page);
@@ -228,9 +225,8 @@ Standards.getPages().forEach((page, index) => {
         tabs.forEach(tab => {
             standardsRoutes[index].children.push({
                 path: ROUTES[tab],
-                meta: page,
-                component: PageTab,
-                props: {sectionObj: Standards, tab: tab}
+                meta: {page: page, sectionObj: Standards, tab: tab},
+                component: PageTab
             });
         });
 
@@ -248,10 +244,9 @@ modulRoutes.push(
     },
     {
         path: '/' + ROUTES[GETTING_STARTED],
-        meta: GettingStarted.getPages()[0],
+        meta: {page: GettingStarted.getPages()[0], sectionObj: GettingStarted},
         component: PageViewer,
-        children: gettingStartedRoutes,
-        props: {sectionObj: GettingStarted}
+        children: gettingStartedRoutes
     },
     {
         path: '/' + ROUTES[COMPONENTS],
@@ -260,9 +255,9 @@ modulRoutes.push(
     },
     {
         path: '/' + ROUTES[STANDARDS],
+        meta: {sectionObj: Standards},
         component: PageViewer,
-        children: standardsRoutes,
-        props: {sectionObj: Standards}
+        children: standardsRoutes
     },
     {
         path: '/' + ROUTES[ECOSYSTEM],

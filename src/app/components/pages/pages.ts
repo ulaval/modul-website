@@ -22,13 +22,12 @@ export class PageViewer extends ModulWebsite {
     }
 
     private get pages(): string[] {
-        let pagesObj: Pages = this.$route.matched[0].props.valueOf()['default']['sectionObj'];
-        return pagesObj.getPages();
+        return this.$route.meta.sectionObj.getPages();
     }
 
     @Watch('$route')
     private getMeta(): void {
-        let pagesObj: Pages = this.$route.matched[0].props.valueOf()['default']['sectionObj'];
+        let pagesObj: Pages = this.$route.meta.sectionObj;
         let route: string | null;
 
         if (pagesObj.section === 'standards') {
@@ -39,14 +38,14 @@ export class PageViewer extends ModulWebsite {
 
         this.$store.dispatch(PagesActions.SECTION_GET, { section: pagesObj.section, route: route });
 
-        this.$store.dispatch(this.section + PagesActions.PAGE_GET, this.$route.meta);
+        this.$store.dispatch(this.section + PagesActions.PAGE_GET, this.$route.meta.page);
         this.$store.dispatch(this.section + PagesActions.PAGE_SUMMARY_GET, {
             restAdapter: this.$http
         });
-        this.$store.dispatch(this.section + PagesActions.PAGE_TABS_GET, (pagesObj.getPageTabs(this.$route.meta)));
+        this.$store.dispatch(this.section + PagesActions.PAGE_TABS_GET, (pagesObj.getPageTabs(this.$route.meta.page)));
 
-        if (this.$route.matched[2]) {
-            this.$store.dispatch(this.section + PagesActions.TAB_GET, this.$route.matched[2].props.valueOf()['default']['tab']);
+        if (this.$route.meta.tab) {
+            this.$store.dispatch(this.section + PagesActions.TAB_GET, this.$route.meta.tab);
         }
     }
 

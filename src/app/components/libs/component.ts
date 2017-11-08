@@ -35,7 +35,7 @@ export class ComponentViewer extends ModulWebsite {
 
     @Watch('$route')
     private getMeta(): void {
-        this.$store.dispatch(ComponentsActions.COMPONENT_GET, this.$route.meta);
+        this.$store.dispatch(ComponentsActions.COMPONENT_GET, this.$route.meta.page);
     }
 
     private get component(): ComponentMeta | null {

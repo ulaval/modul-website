@@ -41,7 +41,7 @@ export class Category extends ModulWebsite {
 
     @Watch('$route')
     private getMeta(): void {
-        this.$store.commit(ComponentsMutations.CATEGORY_GET, this.$route.meta);
+        this.$store.commit(ComponentsMutations.CATEGORY_GET, this.$route.meta.page);
     }
 
     private get selectedCategory(): string | null {
