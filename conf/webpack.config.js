@@ -93,7 +93,8 @@ module.exports = {
                 options: {
                     configFile: 'conf/tslint.json',
                     formatter: 'grouped',
-                    formattersDirectory: 'node_modules/custom-tslint-formatters/formatters'
+                    formattersDirectory: 'node_modules/custom-tslint-formatters/formatters',
+                    emitErrors: true
                 }
             }
         ]
@@ -107,7 +108,7 @@ module.exports = {
         new CompressionPlugin(),
         new StyleLintPlugin({
             configFile: '.stylelintrc',
-            emitErrors: false
+            emitErrors: true
         })
         // , new BundleAnalyzerPlugin()
     ]
