@@ -70,6 +70,29 @@
 }
 
 .modul-u--dropdown-dark.modul-u--dropdown-dark {
+    .m-input-style {
+        &__body {
+            input {
+                color: #fff;
+            }
+        }
+
+        &.m--has-value {
+            &::before {
+                border-color: $m-color--ul-yellow;
+            }
+        }
+
+        &:hover {
+            &:not(.m--is-disabled):not(.m--is-waiting):not(.m--has-error):not(.m--is-valid):not(.m--is-focus) {
+                &.m--has-value {
+                    &::before {
+                        border-color: $m-color--ul-yellow;
+                    }
+                }
+            }
+        }
+    }
     // .m-text-field {
     //     &__input {
     //         color: $m-color--white;
