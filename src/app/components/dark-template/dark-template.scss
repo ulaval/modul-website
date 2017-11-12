@@ -8,7 +8,7 @@
         height: calc(50vh - #{$modul-header--height--s});
         min-height: 250px;
 
-        @media (min-width: $m-bp--min--xs) {
+        @media (min-width: $m-mq--min--xs) {
             height: calc(50vh - #{$modul-header--height});
         }
     }
@@ -35,7 +35,7 @@
         background-color: $modul-color--black-grey-dark;
         background-image: url(/assets/grid.svg);
 
-        @media (min-width: $m-bp--min--xs) {
+        @media (min-width: $m-mq--min--xs) {
             top: $modul-header--height;
         }
 

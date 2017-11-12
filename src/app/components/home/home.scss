@@ -35,13 +35,13 @@ $modul-home-design--width--l: 270px;
     background-color: $modul-color--black-grey-dark;
     background-image: url(/assets/grid.svg);
 
-    @media (max-width: $m-bp--max--s) {
+    @media (max-width: $m-mq--max--s) {
         top: $modul-header--height--s / 2;
         height: calc(100% - #{ $modul-header--height--s/2 });
         align-items: center;
     }
 
-    @media (min-width: $m-bp--min--s) {
+    @media (min-width: $m-mq--min--s) {
         padding-right: $m-padding--l;
         padding-left: $m-padding--l;
     }
@@ -64,7 +64,7 @@ $modul-home-design--width--l: 270px;
     &__body {
         position: relative;
 
-        @media (min-width: $m-bp--min--s) {
+        @media (min-width: $m-mq--min--s) {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -74,7 +74,7 @@ $modul-home-design--width--l: 270px;
             width: $modul-home-design--width;
             margin: 0;
 
-            @media (min-width: $m-bp--min--xs) {
+            @media (min-width: $m-mq--min--xs) {
                 width: $modul-home-design--width--l;
             }
 
@@ -83,7 +83,7 @@ $modul-home-design--width--l: 270px;
                 display: flex;
                 justify-content: center;
 
-                @media (min-width: $m-bp--min--s) {
+                @media (min-width: $m-mq--min--s) {
                     justify-content: flex-end;
                 }
             }
@@ -101,7 +101,7 @@ $modul-home-design--width--l: 270px;
                 letter-spacing: 6px;
                 margin-bottom: 4px;
 
-                @media (min-width: $m-bp--min--xs) {
+                @media (min-width: $m-mq--min--xs) {
                     font-size: 42px;
                 }
             }
@@ -116,7 +116,7 @@ $modul-home-design--width--l: 270px;
                 display: inline-block;
                 min-width: $modul-home-design--width;
 
-                @media (min-width: $m-bp--min--xs) {
+                @media (min-width: $m-mq--min--xs) {
                     font-size: 60px;
                     min-width: $modul-home-design--width--l;
                 }
@@ -154,22 +154,22 @@ $modul-home-design--width--l: 270px;
             position: relative;
             color: $m-color--white;
 
-            @media (max-width: $m-bp--max--s) {
+            @media (max-width: $m-mq--max--s) {
                 max-width: $modul-home-design--max-width;
                 margin: $m-margin--xl auto 0 auto;
             }
 
-            @media (max-width: $m-bp--max--xs) {
+            @media (max-width: $m-mq--max--xs) {
                 margin-top: $m-padding--l;
                 text-align: center;
             }
 
-            @media (min-width: $m-bp--min--xs) {
+            @media (min-width: $m-mq--min--xs) {
                 padding: $m-margin--l;
                 border: 2px dashed $modul-color--yellow;
             }
 
-            @media (min-width: $m-bp--min--s) {
+            @media (min-width: $m-mq--min--s) {
                 padding: $m-padding--l;
             }
 
@@ -184,7 +184,7 @@ $modul-home-design--width--l: 270px;
                 font-size: $m-font-size;
                 line-height: 1.4;
 
-                @media (min-width: $m-bp--min--xs) {
+                @media (min-width: $m-mq--min--xs) {
                     font-size: 20px;
                 }
             }
@@ -248,7 +248,7 @@ $modul-home-design--width--l: 270px;
 .modul-home-design__body,
 .modul-home-experiment__body__header-container,
 .modul-home-experiment__body__content {
-    @media (min-width: $m-bp--min--s) {
+    @media (min-width: $m-mq--min--s) {
         width: calc(50% - #{$m-padding});
     }
 }
@@ -258,7 +258,7 @@ $modul-home-design--width--l: 270px;
     padding: $m-padding--l $m-padding;
     color: $m-color--white;
 
-    @media (min-width: $m-bp--min--s) {
+    @media (min-width: $m-mq--min--s) {
         padding: $m-padding--xl $m-padding--l;
     }
 
@@ -267,7 +267,7 @@ $modul-home-design--width--l: 270px;
     }
 
     &__article {
-        @media (min-width: $m-bp--min--s) {
+        @media (min-width: $m-mq--min--s) {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -279,7 +279,7 @@ $modul-home-design--width--l: 270px;
             display: flex;
             justify-content: flex-end;
 
-            @media (max-width: $m-bp--max--s) {
+            @media (max-width: $m-mq--max--s) {
                 max-width: $modul-home-design--max-width;
                 margin: 0 auto;
                 justify-content: center;
@@ -380,16 +380,16 @@ $modul-home-design--width--l: 270px;
     }
 
     &__body {
-        @media (max-width: $m-bp--max--s) {
+        @media (max-width: $m-mq--max--s) {
             margin-top: $m-margin--l;
         }
 
-        @media (min-width: $m-bp--min--s) {
+        @media (min-width: $m-mq--min--s) {
             padding-left: $m-padding--l;
         }
 
         p {
-            @media (min-width: $m-bp--min--s) {
+            @media (min-width: $m-mq--min--s) {
                 width: 200px;
             }
         }
@@ -397,7 +397,7 @@ $modul-home-design--width--l: 270px;
 }
 
 .modul-home-content {
-    @media (min-width: $m-bp--min--s) {
+    @media (min-width: $m-mq--min--s) {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -407,7 +407,7 @@ $modul-home-design--width--l: 270px;
         background: $modul-color--grey;
         padding: $m-padding--l $m-padding--s;
 
-        @media (min-width: $m-bp--min--s) {
+        @media (min-width: $m-mq--min--s) {
             padding: $m-padding--xl $m-padding--l;
         }
     }
@@ -419,7 +419,7 @@ $modul-home-design--width--l: 270px;
         cursor: pointer;
         outline: none;
 
-        @media (min-width: $m-bp--min--s) {
+        @media (min-width: $m-mq--min--s) {
             width: calc(50% - #{$m-padding});
             margin-bottom: $m-padding--l;
         }
@@ -436,7 +436,7 @@ $modul-home-design--width--l: 270px;
         background-color: $modul-color--black-grey;
         padding: 0 $m-padding--s $m-padding--l;
 
-        @media (min-width: $m-bp--min--s) {
+        @media (min-width: $m-mq--min--s) {
             padding: 0 $m-padding--l $m-padding--xl;
         }
     }
