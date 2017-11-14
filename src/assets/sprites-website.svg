@@ -261,7 +261,7 @@
             <rect x="25.3" y="177.2" width="109.7" height="9.1"/>
         </g>
     </symbol>
-    <symbol id="m-pannel" viewBox="0 0 260 260">
+    <symbol id="m-panel" viewBox="0 0 260 260">
         <rect class="modul-u--preview-img--light" x="10" y="60" width="240" height="144"/>
         <g class="modul-u--preview-img--dark">
             <rect x="25" y="103" width="194.9" height="6.3"/>
