@@ -11,7 +11,7 @@
         height: calc(50vh - #{$modul-header--height--s});
         min-height: 250px;
 
-        @media (min-width: $m-bp--min--xs) {
+        @media (min-width: $m-mq--min--xs) {
             height: calc(50vh - #{$modul-header--height});
         }
     }
@@ -36,7 +36,7 @@
         align-items: center;
         justify-content: center;
 
-        @media (min-width: $m-bp--min--xs) {
+        @media (min-width: $m-mq--min--xs) {
             top: $modul-header--height;
         }
 

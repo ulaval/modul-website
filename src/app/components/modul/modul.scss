@@ -23,7 +23,7 @@
         height: $modul-header--height--s;
         border-bottom: 1px solid $m-color--grey;
 
-        @media (min-width: #{$m-bp--min--xs}) {
+        @media (min-width: #{$m-mq--min--xs}) {
             height: $modul-header--height;
         }
 
@@ -41,7 +41,7 @@
         width: $modul-header--height--s;
         height: $modul-header--height--s;
 
-        @media (min-width: #{$m-bp--min--xs}) {
+        @media (min-width: #{$m-mq--min--xs}) {
             width: $modul-header--height;
             height: $modul-header--height;
         }
