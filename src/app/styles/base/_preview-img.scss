@@ -1,13 +1,13 @@
 .modul-u--preview-img--dark {
-    fill: $modul-color--black-grey-dark;
+    fill: $modul-color--black-grey-dark !important;
 }
 
 .modul-u--preview-img {
-    fill: $modul-color--black-grey-dark;
-    opacity: 0.5;
+    fill: $modul-color--black-grey-dark !important;
+    opacity: 0.5 !important;
 }
 
 .modul-u--preview-img--light {
-    fill: $modul-color--black-grey-dark;
-    opacity: 0.3;
+    fill: $modul-color--black-grey-dark !important;
+    opacity: 0.3 !important;
 }

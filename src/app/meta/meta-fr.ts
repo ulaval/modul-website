@@ -40,6 +40,7 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(FRENCH, require('./components/status/status.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/step/step.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/switch/switch.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./components/table/table.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/tabs/tabs.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/template/template.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/text-field/text-field.meta.fr.json'));
