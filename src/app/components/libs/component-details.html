@@ -5,8 +5,17 @@
                 <m-icon name="left-arrow" class="modul-component-details__title__arrow"></m-icon>{{component.tag}}
                 <m-icon name="right-arrow" class="modul-component-details__title__arrow"></m-icon>
             </h2>
+            <span class="modul-code-preview-button" @click="openCodePreview()">
+                <m-icon-button name="double-arrow" size="20px" skin="primary" >
+                    <m-i18n k="modul:preview-button"></m-i18n>
+                </m-icon-button>
+            </span>
         </header>
-
+        <transition name="code-preview-opening" v-if="component.preview != false">
+            <div class="modul-component-details__code" v-if="codePreviewOpen">
+                <m-highlight :template="markdownPreview"></m-highlight>
+            </div>
+        </transition>
         <div class="modul-component-details__preview">
             <span v-if="component.preview == false">
                 <m-message state="information" :closeButton="false">
@@ -17,7 +26,6 @@
                 <m-markdown :template="markdownPreview"></m-markdown>
             </span>
         </div>
-
         <div class="modul-u--nav-bar">
             <m-nav-bar skin="arrow">
                 <m-nav-bar-item>

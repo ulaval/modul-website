@@ -12,10 +12,16 @@ import * as ComponentsGetters from '@/app/store/modules/components/getters';
 @Component
 export class ComponentDetails extends ModulWebsite {
 
+    private codePreviewOpen: boolean = false;
+
     protected beforeUpdate(): void {
         this.$store.dispatch(ComponentsActions.COMPONENT_PREVIEW_GET, {
             restAdapter: this.$http
         });
+    }
+
+    private openCodePreview() {
+        this.codePreviewOpen = !this.codePreviewOpen;
     }
 
     private get markdownPreview() {

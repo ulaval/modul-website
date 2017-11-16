@@ -23,6 +23,7 @@
         "value": "Valeur",
         "description": "Description",
         "preview-not-available": "Apercu non disponible pour le moment",
+        "preview-button": "Afficher le code du composant",
         "do": "À faire",
         "dont": "À éviter",
         "responsive-design": "Design{0}adaptatif",
