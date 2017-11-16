@@ -1,14 +1,14 @@
 <div class="modul-page-details">
     <div class="modul-page" v-if="page">
 
-        <div class="modul-u--nav-bar">
-            <m-nav-bar skin="arrow" :value="currentTab">
-                <m-nav-bar-item :value="tab" v-for="tab in tabs" @click="onClick(tab)">
-                    <router-link :to="getRoute(tab)" class="modul-u--nav-bar__item">
+        <div class="modul-u--navbar">
+            <m-navbar skin="arrow" :value="currentTab">
+                <m-navbar-item :value="tab" v-for="tab in tabs" @click="onClick(tab)">
+                    <router-link :to="getRoute(tab)" class="modul-u--navbar__item">
                         <m-i18n :k="getKey(tab)"></m-i18n>
                     </router-link>
-                </m-nav-bar-item>
-            </m-nav-bar>
+                </m-navbar-item>
+            </m-navbar>
         </div>
 
         <div class="modul-page-details__body">

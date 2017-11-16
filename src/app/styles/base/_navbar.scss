@@ -1,4 +1,4 @@
-.modul-u--nav-bar {
+.modul-u--navbar {
     position: relative;
     border-top: $m-border-width--l solid $m-color--ul-yellow;
 
@@ -13,7 +13,7 @@
         background: $m-color--grey;
     }
 
-    .m-nav-bar {
+    .m-navbar {
         position: relative;
         z-index: 1;
 
@@ -21,7 +21,7 @@
             background: $m-color--white;
         }
 
-        .m-nav-bar-item.m--is-selected .modul-u--nav-bar__item {
+        .m-navbar-item.m--is-selected .modul-u--navbar__item {
             color: $modul-color--black-grey-dark;
         }
     }

@@ -26,24 +26,25 @@
                 <m-markdown :template="markdownPreview"></m-markdown>
             </span>
         </div>
-        <div class="modul-u--nav-bar">
-            <m-nav-bar skin="arrow">
-                <m-nav-bar-item>
-                    <router-link :to="overview" class="modul-u--nav-bar__item">
+
+        <div class="modul-u--navbar">
+            <m-navbar skin="arrow">
+                <m-navbar-item>
+                    <router-link :to="overview" class="modul-u--navbar__item">
                         <m-i18n k="modul:overview"></m-i18n>
                     </router-link>
-                </m-nav-bar-item>
-                <m-nav-bar-item>
-                    <router-link :to="properties" class="modul-u--nav-bar__item">
+                </m-navbar-item>
+                <m-navbar-item>
+                    <router-link :to="properties" class="modul-u--navbar__item">
                         <m-i18n k="modul:attributes"></m-i18n>
                     </router-link>
-                </m-nav-bar-item>
-                <m-nav-bar-item>
-                    <router-link :to="variant" class="modul-u--nav-bar__item">
+                </m-navbar-item>
+                <m-navbar-item>
+                    <router-link :to="variant" class="modul-u--navbar__item">
                         <m-i18n k="modul:variants"></m-i18n>
                     </router-link>
-                </m-nav-bar-item>
-            </m-nav-bar>
+                </m-navbar-item>
+            </m-navbar>
         </div>
         <router-view></router-view>
     </div>
