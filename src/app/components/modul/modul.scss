@@ -22,6 +22,7 @@
         width: 100%;
         height: $modul-header--height--s;
         border-bottom: 1px solid $m-color--grey;
+        padding-left: $m-padding;
 
         @media (min-width: #{$m-mq--min--xs}) {
             height: $modul-header--height;
