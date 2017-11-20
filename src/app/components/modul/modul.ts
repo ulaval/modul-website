@@ -152,23 +152,43 @@ export default class Modul extends ModulWebsite {
     // });
 
     private searchData(): any[] {
-        return Object.keys(Meta.getMeta()).map(key => {
-            let nameObj: {};
-            if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {
-                nameObj = {
-                    tag: Meta.getMeta()[key].tag,
-                    category: this.$i18n.translate(Meta.getMeta()[key].category),
-                    text: this.$i18n.translate(Meta.getMeta()[key].name)
-                };
-            } else {
-                nameObj = {
-                    tag: Meta.getMeta()[key].tag,
-                    category: 'Null',
-                    text: 'Null'
-                };
-            }
-            return nameObj;
-        }, this);
+        if (process.env.NODE_ENV.dev) {
+            return Object.keys(Meta.getMeta()).map(key => {
+                let nameObj: {};
+                if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {
+                    nameObj = {
+                        tag: Meta.getMeta()[key].tag,
+                        category: this.$i18n.translate(Meta.getMeta()[key].category),
+                        text: this.$i18n.translate(Meta.getMeta()[key].name)
+                    };
+                } else {
+                    nameObj = {
+                        tag: Meta.getMeta()[key].tag,
+                        category: 'Null',
+                        text: 'Null'
+                    };
+                }
+                return nameObj;
+            }, this);
+        } else {
+            return Object.keys(Meta.getMetaForProd()).map(key => {
+                let nameObj: {};
+                if (Meta.getMetaForProd()[key].name && Meta.getMetaForProd()[key].category) {
+                    nameObj = {
+                        tag: Meta.getMetaForProd()[key].tag,
+                        category: this.$i18n.translate(Meta.getMetaForProd()[key].category),
+                        text: this.$i18n.translate(Meta.getMetaForProd()[key].name)
+                    };
+                } else {
+                    nameObj = {
+                        tag: Meta.getMetaForProd()[key].tag,
+                        category: 'Null',
+                        text: 'Null'
+                    };
+                }
+                return nameObj;
+            }, this);
+        }
     }
 
     private get searchResult(): any[] {
