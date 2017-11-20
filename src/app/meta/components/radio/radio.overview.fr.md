@@ -12,6 +12,5 @@ E* ssayer d’afficher les listes verticalement, avec un choix par ligne. Si vou
 * Utilisez des animation et des rétroactions visuelles pour ajouter plus de clarté aux actions posées par les utilisateurs
 
 ### Mauvaises pratiques
-* L'ordre alphabétique n'est pas recommandé car il dépend du langage et n'est donc pas localisable
 * Les boutons radio horizontaux sont parfois difficiles à repérer et à localiser, l'agencement horizontal des boutons radio peut également rendre difficile l’association de l’étiquette avec le bouton radio
 * Éviter les boutons radio imbriqués avec d'autres boutons radio ou cases à cocher, vous devez garder toutes les options au même niveau pour éviter toute confusion

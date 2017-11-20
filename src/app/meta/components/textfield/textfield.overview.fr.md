@@ -2,18 +2,23 @@
 Un champ de saisie permet à l'utilisateur de saisir de l'information servant généralement à compléter un formulaire.
 
 ### Bonnes pratiques
-* Fournir des étiquettes claires, toujours visibles pour chaque champ de saisie
-* Utiliser des étiquettes succinctes, courtes et descriptives (un mot ou deux). Si des informations supplémentaires sont nécessaires, utiliser une infobulle.
-* Un champ devrait être suffisamment grand pour que la plupart des valeurs possibles soient visibles, ne pas surdimensionner un champ
-* Fournir un indicateur visuel clair que le focus a été déplacé vers le champ de saisie lorsque l'utilisateur clique / tape dessus
-* Le champ du numéro de téléphone peut être formaté automatiquement. Cela élimine toute ambiguïté de formatage que le client aurait pu avoir.
-* Lorsque possible, fournir des indices de saisie dans l’espace réservé du champ. Par exemple, fournir un masque de saisie pour le champ du numéro de téléphone. Déplacer ces indices de saisie au-dessus du champ lorsque l’utilisateur clique dans le champ pour conserver l’indice.
-* Fournir des zones facilement sélectionnables au toucher
-* Lorsque possible, fournir des fonctionnalité d'auto complétion
-* Pour les appareils mobiles, associer le clavier avec les saisies de texte requises. Par exemple les claviers suivants :
-* * Number : pour les numéros de téléphone, les numéros de carte de crédit, les NIP, etc.
-* * Text : pour les noms propres, les noms d’utilisateurs, etc.
-* * Mixed format : pour les courriels, les adresses, etc.
+
+    <ul class="m-u--bullet-list">
+        <li>Fournir des étiquettes claires, toujours visibles pour chaque champ de saisie.</li>
+        <li>Utiliser des étiquettes succinctes, courtes et descriptives (un mot ou deux). Si des informations supplémentaires sont nécessaires, utiliser une infobulle.</li>
+        <li>Un champ devrait être suffisamment grand pour que la plupart des valeurs possibles soient visibles, ne pas surdimensionner un champ.</li>
+        <li>Fournir un indicateur visuel clair que le focus a été déplacé vers le champ de saisie lorsque l'utilisateur clique / tape dessus.</li>
+        <li>Lorsque possible, fournir des indices de saisie dans l’espace réservé du champ. Par exemple, fournir un masque de saisie pour le champ du numéro de téléphone.</li>
+        <li>Fournir des zones facilement sélectionnables au toucher.</li>
+        <li>Pour les appareils mobiles, associer le clavier avec les saisies de texte requises. Par exemple les claviers suivants :</li>
+        <li>
+            <ul>
+                <li>Number : pour les numéros de téléphone, les numéros de carte de crédit, les NIP, etc.</li>
+                 <li>Text : pour les noms propres, les noms d’utilisateurs, etc.</li>
+                <li>Mixed format : pour les courriels, les adresses, etc.</li>
+            </ul>
+        </li>
+    </ul>
 
 ---
 ## Caractéristiques
@@ -44,6 +49,3 @@ Lorsque le focus est dans un champ de saisie, le contour du champ est bleu afin 
 
 ### Validations
 Lorsque possible, les validations sont effectuées à la sortie du champ. Voir la section Validations de l'option de menu Formulaires.
-
-### Saisie semi-automatique
-À préciser.

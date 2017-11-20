@@ -22,9 +22,4 @@ Puisque plusieurs cas d'utilisation sont possibles, voici quelques principes de 
 Le contenu d'une fenêtre de dialogue doit toujours être complètement visible dans la fenêtre d'affichage (viewport). Il ne doit donc pas être possible de défiler.
 
 ### Fermeture
-Une fenêtre de dialogue ne contient jamais de bouton de fermeture (X en haut à gauche), puisque idéalement l'utilisateur doit intervenir. Il est néanmoins permis d'utiliser un lien Fermer centré sous les boutons, permettant de fermer la fenêtre lorsque les actions proposées sont facultatives. Toutefois, lorsqu'un bouton Annuler est présent, il est fortement déconseillé d'utiliser le lien de fermeture, puisque ces options sont mutuellement exclusives.
-
----
-## Accessibilité
-* Fournir un accès au contenu et aux champs en rendant le contenu de la fenêtre de dialogue accessible au clavier.
-* Permettant à la touche Échap de fermer la fenêtre de dialogue.
+Une fenêtre de dialogue ne contient jamais de bouton de fermeture, puisque idéalement l'utilisateur doit intervenir. Il est néanmoins permis d'utiliser un lien Fermer centré sous les boutons, permettant de fermer la fenêtre lorsque les actions proposées sont facultatives. Toutefois, lorsqu'un bouton Annuler est présent, il est fortement déconseillé d'utiliser le lien de fermeture, puisque ces options sont mutuellement exclusives.

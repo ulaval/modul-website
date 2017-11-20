@@ -33,3 +33,20 @@ Généralement, lorsqu'une icône est utilisée avec un libellé, elle doit êtr
 ---
 ## Marges
 Des marges sont prévues dans le composant, il n'est donc pas nécessaire de prévoir de l'espace supplémentaire entre chaque bouton.
+
+---
+
+##Aide-mémoire fonctionnel
+Propriétés à spécifier dans le tableau des attributs :
+
+Colonne étiquette :
+
+Libellé du bouton et précision si applicable
+
+Colonne composant :
+
+Bouton Primaire ou Secondaire
+
+Colonne particularités :
+
+Si applicable, spécifier que le bouton est sélectionné par défaut
