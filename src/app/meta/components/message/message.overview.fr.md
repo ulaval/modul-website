@@ -20,8 +20,10 @@ Ce type de message est utilisé pour afficher des messages d'erreurs.
 
 ### Format du message
 Deux formats de messages sont disponibles :
-* *Regular* : Ce format est à privilégier lorsque le message concerne une page ou une section de page
-* *Light* : Ce format est à privilégier lorsque le message concerne un élément spécifique de l'interface
+    <ul class="m-u--bullet-list">
+        <li>*Regular* : Ce format est à privilégier lorsque le message concerne une page ou une section de page</li>
+        <li>*Light* : Ce format est à privilégier lorsque le message concerne un élément spécifique de l'interface</li>
+    </ul>
 
 Pour le format allégé, il est possible d'ajouter un lien en fin de message, permettant de faire afficher le l'information supplémentaire dans une infobulle.
 

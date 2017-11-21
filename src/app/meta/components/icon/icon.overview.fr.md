@@ -4,12 +4,17 @@ Les icônes cliquables sont représentées par une image seulement. Elles permet
 ---
 ## Caractéristiques
 En fonction de l'état de l'icône, le rendu est filaire ou plein :
-* État normal: rendu filaire
-* État pressé: rendu filaire et rond plein de couleur gris pâle en arrière-plan
-* État de survol: rendu filaire, fil plus foncé
+    <ul class="m-u--bullet-list">
+        <li>État normal: rendu filaire</li>
+        <li>État pressé: rendu filaire et rond plein de couleur gris pâle en arrière-plan</li>
+        <li>État de survol: rendu filaire, fil plus foncé</li>
+    </ul>
+
 ### Pastille
 La pastille est utilisée pour afficher un nombre lié à l'élément sur lequel est se superpose. Par exemple, pour indiquer le nombre de notifications non vues, le nombre de courriels non lus, le nombre d'articles dans le panier, etc. :
-* Elle est de couleur orange (#f39612).
-* Elle se superpose à une icône, au bas à droite.
-* Lorsque le nombre d'éléments est zéro, la pastille n'est pas affichée.
-*Lorsque le nombre d'éléments est supérieur à 100, la valeur 99+ est affichée.
+<ul class="m-u--bullet-list">
+        <li>Elle est de couleur orange (#f39612)</li>
+        <li>Elle se superpose à une icône, au bas à droite</li>
+        <li>Lorsque le nombre d'éléments est zéro, la pastille n'est pas affichée</li>
+        <li>Lorsque le nombre d'éléments est supérieur à 100, la valeur 99+ est affichée</li>
+    </ul>

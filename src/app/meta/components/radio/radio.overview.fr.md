@@ -3,14 +3,20 @@ Les radio boutons sont utilisés lorsque l’utilisateur a le choix entre deux o
 
 Les boutons radio, tout comme les cases à cocher, offrent l’avantage d’empêcher les utilisateurs d'entrer des données erronées.
 
-### Bonnes pratiques
-* Les options devraient être énumérées dans un ordre logique : l’option la plus susceptibles d'être choisie à la moins susceptible, l’option la plus simple à la plus complexe ou l’option la moins risquée à la plus risquée. L'ordre alphabétique n'est pas recommandé car il dépend du langage
-* Les boutons radio devraient avoir une option présélectionnée. Sélectionner l'option la plus probable ou la plus pratique. Si les utilisateurs pourraient ne pas vouloir faire une sélection, vous devriez fournir un bouton radio pour ce choix, tel que celui intitulé «Aucun»
-E* ssayer d’afficher les listes verticalement, avec un choix par ligne. Si vous avez besoin d'une disposition horizontale avec plusieurs options par ligne, assurez-vous d'espacer les boutons et les étiquettes afin qu'il soit absolument clair quel bouton est associé à quelle étiquette
-* Pour agrandir la zone cible, permettre aux utilisateurs de sélectionner une option en cliquant ou en tapant non seulement le bouton, mais aussi sur l'étiquette associée
-* Utiliser des boutons radio plutôt que des listes déroulantes si vous offrez moins de 7 options
-* Utilisez des animation et des rétroactions visuelles pour ajouter plus de clarté aux actions posées par les utilisateurs
+<modul-do>
+    <ul class="m-u--bullet-list">
+        <li>Les options devraient être énumérées dans un ordre logique : l’option la plus susceptibles d'être choisie à la moins susceptible, l’option la plus simple à la plus complexe ou l’option la moins risquée à la plus risquée. L'ordre alphabétique n'est pas recommandé car il dépend du langage.</li>
+        <li>Les boutons radio devraient avoir une option présélectionnée. Sélectionner l'option la plus probable ou la plus pratique. Si les utilisateurs pourraient ne pas vouloir faire une sélection, vous devriez fournir un bouton radio pour ce choix, tel que celui intitulé «Aucun».</li>
+        <li>Essayer d’afficher les listes verticalement, avec un choix par ligne. Si vous avez besoin d'une disposition horizontale avec plusieurs options par ligne, assurez-vous d'espacer les boutons et les étiquettes afin qu'il soit absolument clair quel bouton est associé à quelle étiquette.</li>
+        <li>Pour agrandir la zone cible, permettre aux utilisateurs de sélectionner une option en cliquant ou en tapant non seulement le bouton, mais aussi sur l'étiquette associée.</li>
+        <li>Utiliser des boutons radio plutôt que des listes déroulantes si vous offrez moins de 7 options.</li>
+        <li>Utilisez des animation et des rétroactions visuelles pour ajouter plus de clarté aux actions posées par les utilisateurs.</li>
+    </ul>
+</modul-do>
 
-### Mauvaises pratiques
-* Les boutons radio horizontaux sont parfois difficiles à repérer et à localiser, l'agencement horizontal des boutons radio peut également rendre difficile l’association de l’étiquette avec le bouton radio
-* Éviter les boutons radio imbriqués avec d'autres boutons radio ou cases à cocher, vous devez garder toutes les options au même niveau pour éviter toute confusion
+<modul-dont>
+    <ul class="m-u--bullet-list">
+        <li>Les boutons radio horizontaux sont parfois difficiles à repérer et à localiser, l'agencement horizontal des boutons radio peut également rendre difficile l’association de l’étiquette avec le bouton radio.</li>
+        <li>Éviter les boutons radio imbriqués avec d'autres boutons radio ou cases à cocher, vous devez garder toutes les options au même niveau pour éviter toute confusion.</li>
+    </ul>
+</modul-dont>

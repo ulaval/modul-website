@@ -1,5 +1,5 @@
 <m-dialog>
-    <m-button slot="trigger">m-dialog</m-button>
+    <m-button slot="trigger">Fenêtre secondaire</m-button>
     <span slot="header">Dolore consectetur in sunt consequat veniam enim nulla minim aliqua qui pariatur nostrud.</span>
     <h2>Nisi cillum excepteur consequat voluptate excepteur incididunt ullamco dolor.</h2>
     <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim

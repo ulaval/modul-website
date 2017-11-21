@@ -16,7 +16,7 @@ La semaine débute le dimanche.
 La date sélectionnée est toujours affichée dans une pastille bleue.
 
 ### Date du jour
-La date du jour est toujours affichée sur fond bleu, sauf lorsqu'elle est sélectionnée. Elle est alors affichée sur fond gris.
+La date du jour est toujours affichée sur fond bleu, sauf lorsqu'elle n'est pas sélectionnée. Elle est alors affichée sur fond gris.
 
 ### Navigation
 Il est possible de naviguer dans le sélecteur de date à l'aide de flèches. Elles permettent de passer au mois suivant ou précédent et à l'année suivante ou précédente.
