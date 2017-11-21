@@ -7,12 +7,15 @@ import { ROUTES, COMPONENT_PROPERTIES, COMPONENT_OVERVIEW, COMPONENT_VARIANT } f
 import Meta, { ComponentMeta, ComponentAttribute, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
 import * as ComponentsActions from '@/app/store/modules/components/actions';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
+import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion';
 
 @WithRender
-@Component
+@Component({
+    mixins: [TransitionAccordion]
+})
 export class ComponentDetails extends ModulWebsite {
 
-    private codePreviewOpen: boolean = false;
+    private intenalCodePreviewOpen: boolean = false;
 
     protected beforeUpdate(): void {
         this.$store.dispatch(ComponentsActions.COMPONENT_PREVIEW_GET, {
@@ -20,8 +23,13 @@ export class ComponentDetails extends ModulWebsite {
         });
     }
 
-    private openCodePreview() {
-        this.codePreviewOpen = !this.codePreviewOpen;
+    private get codePreviewOpen(): boolean {
+        return this.intenalCodePreviewOpen;
+    }
+
+    private toggleOpenCodePreview(event: MouseEvent): void {
+        this.intenalCodePreviewOpen = !this.intenalCodePreviewOpen;
+        (event.currentTarget as HTMLElement).blur();
     }
 
     private get markdownPreview() {

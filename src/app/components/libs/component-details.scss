@@ -50,34 +50,33 @@
         background: $modul-color--black-grey;
         max-height: 400px;
         overflow: auto;
+
+        @include m-scrollbar();
     }
 }
 
-// anim
-.code-preview-opening-enter-active,
-.code-preview-opening-leave-active {
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    overflow: hidden;
-}
+// // anim
+// .code-preview-opening-enter-active,
+// .code-preview-opening-leave-active {
+//     transition: max-height 0.5s ease, padding 0.5s ease;
+//     overflow: hidden;
+// }
 
-.code-preview-opening-enter,
-.code-preview-opening-leave-to {
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-}
+// .code-preview-opening-enter,
+// .code-preview-opening-leave-to {
+//     max-height: 0;
+//     padding-top: 0;
+//     padding-bottom: 0;
+// }
 
-.code-preview-opening-enter-to,
-.code-preview-opening-leave {
-    max-height: 325px;
-}
+// .code-preview-opening-enter-to,
+// .code-preview-opening-leave {
+//     max-height: 325px;
+// }
 
 // button
 .modul-code-preview-button {
-    background-color: $m-color--ul-blue;
-    border-radius: 0;
-    color: #fff;
-    width: $m-touch-size;
+    width: 52px; //Magic number
     display: flex;
     align-items: center;
     justify-content: center;
