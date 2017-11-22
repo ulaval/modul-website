@@ -1,32 +1,278 @@
-## Règles de ponctuation
-La ponctuation répond à un besoin de logique. Elle permet d’avoir des rapports syntaxiques entre les éléments d’une phrase (séparation, regroupement) et de diviser logiquement un texte (transition, explication, opposition). Ainsi, la ponctuation facilite la lecture et la compréhension d’un contenu.
+<h2>Règles de ponctuation</h2>
+<p>La ponctuation répond à un besoin de logique. Elle permet d’avoir des rapports syntaxiques entre les éléments d’une phrase (séparation, regroupement) et de diviser logiquement un texte (transition, explication, opposition). Ainsi, la ponctuation facilite la lecture et la compréhension d’un contenu.</p>
 
-### Tableau des espacements avant et après les signes de ponctuation
-NOM | Avant | Symbole | Après | Remarque et exemple
---- | --- | --- | --- | ---
-Apostrophe | ⌀ | ' | ⌀ | Aucune place n'est réservée avant de vous inscrire aux cours sélectionnés
-Astérisque (avant le mot) | ⌀ | * | inséc. | * Indique un élément obligatoire
-Barre oblique | ⌀ | / | ⌀ | L'exigence de langue anglaise peut être satisfaite par la réussite du TOEIC avec un résultat égal ou supérieur à 750/990.
+<h3>Tableau des espacements avant et après les signes de ponctuation</h3>
 
-### Énumérations verticales
-Lors de l'utilisation d'une énumération verticale, il est important :
-* D'utiliser les deux-points {:}
-* Si les éléments sont des phrases complètes, chacun commence par une lettre majuscule et se termine par un point :
-    * Pour qu’un site soit considéré « Complet », tous les éléments suivants doivent faire partie du site de cours.
-    * La sous-section « Coordonnées et disponibilités » ne doit pas être vide.
-    * Une sous-section générique obligatoire ne doit pas être vide.
-    * La somme des évaluations sommatives doit égaler 100%.
-    * Les dates d’évaluations sommatives doivent être présentes.
-    * Aucune pondération d’évaluation ne doit être à zéro à moins de faire partie d’un regroupement de type « Moyenne » ou « Conserver les x meilleures de ».
-    * Un barème doit avoir été sélectionné.
-    * Les sous-sections spécialisées de « Matériel didactique » et de « Médiagraphie et annexes » ne doivent pas être vides si elles sont obligatoires.
-* Si l’ensemble des éléments forme une phrase, chaque élément commence par une minuscule et se termine par un point-virgule, sauf le dernier qui prend un point :
-    * Vous devez vous adresser au Bureau du registraire dans les cas suivants :
-        * l'attestation d'inscription officielle standard ne répond pas à toutes vos exigences;
-        * vous avez en votre possession un formulaire en provenance d'un organisme externe devant être rempli par le personnel du Bureau du registraire;
-        * vous désirez obtenir une attestation d'inscription rédigée en anglais.
-* Si les éléments sont très courts, ils peuvent se passer de ponctuation.
-    * Au PEPS
-    * À la Bibliothèque
-    * Lors de certains événements, tel un colloque ou un congrès
-    * À certains comptoirs de services sur le campus
+<table class="m-u--table">
+    <tr>
+        <th>NOM</th>
+        <th>Avant</th>
+        <th>Symbole</th>
+        <th>Après</th>
+        <th width="45%">Remarques et exemple</th>
+    </tr>
+    <tr>
+        <td>Apostrophe</td>
+        <td>⌀</td>
+        <td>'</td>
+        <td>⌀</td>
+        <td>Aucune place n'est réservée</td>
+    </tr>
+    <tr>
+        <td>Astérisque(avant le mot)</td>
+        <td>esp.</td>
+        <td>*</td>
+        <td>inséc.</td>
+        <td>* Indique un élément obligatoire</td>
+    </tr>
+    <tr>
+        <td>Astérisque(aprèsle mot)</td>
+        <td>⌀</td>
+        <td>*</td>
+        <td>esp.</td>
+        <td>Période d'affichage*</td>
+    </tr>
+    <tr>
+        <td>Barre oblique</td>
+        <td>⌀</td>
+        <td>/</td>
+        <td>⌀</td>
+        <td>L'exigence de langue anglaise peut être satisfaite par la réussite du TOEIC avec un résultat égal ou supérieur à 750/990.</td>
+    </tr>
+    <tr>
+        <td>Crochet ouvrant</td>
+        <td>esp.</td>
+        <td>[</td>
+        <td>⌀</td>
+        <td>Il n’y a pas d’espacement entre le crochet fermant et la ponctuation qui suit, sauf si c’est un tiret ou un deux-points.<br/>Ce cours porte sur  […]. Il couvre plus spécifiquement […]. On se concentre sur […].</td>
+    </tr>
+    <tr>
+        <td>Crochet fermant</td>
+        <td>⌀</td>
+        <td>]</td>
+        <td>esp.</td>
+        <td>Voir exemple du crochet ouvrant.</td>
+    </tr>
+    <tr>
+        <td>Deux-points</td>
+        <td>inséc.</td>
+        <td>:</td>
+        <td>esp.</td>
+        <td>Veuillez faire un choix parmi les sections suivantes&nbsp;:</td>
+    </tr>
+    <tr>
+        <td>Deux-points(heures numériques)</td>
+        <td>⌀</td>
+        <td>;</td>
+        <td>⌀</td>
+        <td>07:01</td>
+    </tr>
+    <tr>
+        <td>Dollar</td>
+        <td>inséc.</td>
+        <td>$</td>
+        <td>esp.</td>
+        <td>Si $ est suivi de la monnaie (CAD), une espace insécable est alors nécessaire.<br/>La commande d'attestation peut viser une ou plusieurs sessions d'études au coût fixe de 8,00&nbsp;$&nbsp;CAD.</td>
+    </tr>
+    <tr>
+        <td>Guillemet ouvrant</td>
+        <td>esp.</td>
+        <td>«</td>
+        <td>inséc.</td>
+        <td>Le statut «&nbsp;En cours&nbsp;» est affiché dans le tableau de bord de monPortail.</td>
+    </tr>
+    <tr>
+        <td>Guillemet fermant</td>
+        <td>inséc.</td>
+        <td>»</td>
+        <td>esp.</td>
+        <td>Voir l'exemple du guillement ouvrant.</td>
+    </tr>
+    <tr>
+        <td>Guillemet ouvrant anglais</td>
+        <td>esp.</td>
+        <td>“</td>
+        <td>⌀</td>
+        <td>Le texte précise que « tout le personnel “staff” est visé par…</td>
+    </tr>
+    <tr>
+        <td>Guillemet fermant anglais</td>
+        <td>⌀</td>
+        <td>”</td>
+        <td>esp.</td>
+        <td>Voir l'exempledu guillement ouvrant anglais.</td>
+    </tr>
+    <tr>
+        <td>Parenthèse ouvrante</td>
+        <td>esp.</td>
+        <td>(</td>
+        <td>⌀</td>
+        <td>Archivé automatiquement (message expiré ou action complétée)</td>
+    </tr>
+    <tr>
+        <td>Parenthèse fermante</td>
+        <td>⌀</td>
+        <td>)</td>
+        <td>esp.</td>
+        <td>Voir l'exemple de la parenthèse ouvrante.</td>
+    </tr>
+    <tr>
+        <td>Parenthèse ouvrante (alternative)</td>
+        <td>⌀</td>
+        <td>(</td>
+        <td>⌀</td>
+        <td>Préalable(s) exigé(s)</td>
+    </tr>
+    <tr>
+        <td>Parenthèse fermante (alternative)</td>
+        <td>⌀</td>
+        <td>)</td>
+        <td>esp.</td>
+        <td>Voir l'exemple de la parenthèse ouvrante (alternative)</td>
+    </tr>
+    <tr>
+        <td>Point</td>
+        <td>⌀</td>
+        <td>.</td>
+        <td>esp.</td>
+        <td>Indic. réussite</td>
+    </tr>
+    <tr>
+        <td>Point d’exclamation</td>
+        <td>⌀</td>
+        <td>!</td>
+        <td>esp.</td>
+        <td>Félicitations! Vous avez réussi avec succès!</td>
+    </tr>
+    <tr>
+        <td>Point d’interrogation</td>
+        <td>⌀</td>
+        <td>?</td>
+        <td>esp.</td>
+        <td>Désirez-vous continuer?</td>
+    </tr>
+    <tr>
+        <td>Points de suspension</td>
+        <td>⌀</td>
+        <td>...</td>
+        <td>esp.</td>
+        <td>Physiothérapie, acupuncture, kinésiologie, nutrition, massothérapie… Consultez la section Services du site du Peps pour en savoir plus.</td>
+    </tr>
+    <tr>
+        <td>Point-virgule</td>
+        <td>⌀</td>
+        <td>;</td>
+        <td>esp.</td>
+        <td>La planète se réchauffe; les glaciers reculent d'année en année. </td>
+    </tr>
+    <tr>
+        <td>Pourcent</td>
+        <td>inséc.</td>
+        <td>%</td>
+        <td>esp.</td>
+        <td>Note&nbsp;: 100&nbsp;%</td>
+    </tr>
+    <tr>
+        <td>Signe arithmétique</td>
+        <td>esp.</td>
+        <td>+<br/>-<br/>x<br/>÷<br/>=</td>
+        <td>esp.</td>
+        <td>12 × 12 = 144</td>
+    </tr>
+    <tr>
+        <td>Signe plus ou moins (devant un nombre)</td>
+        <td>esp.</td>
+        <td>+<br/>-</td>
+        <td>⌀</td>
+        <td>Il fait -3 °C.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<h3>Énumérations verticales</h3>
+<p>Lors de l'utilisation d'une énumération verticale, il est important :</p>
+    <ul class="m-u--bullet-list">
+        <li>D'utiliser les deux-points {:}</li>
+        <li>Si les éléments sont des phrases complètes, chacun commence par une lettre majuscule et se termine par un point :</li>
+     </ul><br/>
+    <m-panel>
+        <ul class="m-u--bullet-list">
+            <li>Pour qu’un site soit considéré « Complet », tous les éléments suivants doivent faire partie du site de cours :</li>
+            <li>
+                <ul>
+                    <li>La sous-section « Coordonnées et disponibilités » ne doit pas être vide.</li>
+                    <li>Une sous-section générique obligatoire ne doit pas être vide.</li>
+                    <li>La somme des évaluations sommatives doit égaler 100%.</li>
+                    <li>Les dates d’évaluations sommatives doivent être présentes.</li>
+                    <li>Aucune pondération d’évaluation ne doit être à zéro à moins de faire partie d’un regroupement de type « Moyenne » ou « Conserver les x meilleures de ».</li>
+                    <li>Un barème doit avoir été sélectionné.</li>
+                    <li>Les sous-sections spécialisées de « Matériel didactique » et de « Médiagraphie et annexes » ne doivent pas être vides si elles sont obligatoires.</li>
+                </ul>
+            </li>
+        </ul><br/>
+    </m-panel>
+    <ul class="m-u--bullet-list">
+        <li>Si l’ensemble des éléments forme une phrase, chaque élément commence par une minuscule et se termine par un point-virgule, sauf le dernier qui prend un point :</li>
+    </ul><br/>
+    <m-panel>
+        <ul class="m-u--bullet-list">
+            <li>Vous devez vous adresser au Bureau du registraire dans les cas suivants :</li>
+            <li>
+                <ul>
+                    <li>l'attestation d'inscription officielle standard ne répond pas à toutes vos exigences;</li>
+                    <li>vous avez en votre possession un formulaire en provenance d'un organisme externe devant être rempli par le personnel du Bureau du registraire;</li>
+                    <li>vous désirez obtenir une attestation d'inscription rédigée en anglais.</li>
+                </ul>
+            </li>
+        </ul><br/>
+    </m-panel>
+    <ul class="m-u--bullet-list">
+        <li>Si les éléments sont très courts, ils peuvent se passer de ponctuation :</li>
+    </ul><br/>
+    <m-panel>
+        <ul class="m-u--bullet-list">
+            <li>Où et quand l'utiliser?</li>
+            <li>
+                <ul>
+                    <li>Au PEPS</li>
+                    <li>À la Bibliothèque</li>
+                    <li>Lors de certains événements, tel un colloque ou un congrès</li>
+                    <li>À certains comptoirs de services sur le campus</li>
+                </ul>
+            </li>
+        </ul>
+    </m-panel>

@@ -16,7 +16,7 @@ Les actions suivants sont couramment utilisées dans un menu d'options. Il est i
         <li>Ajouter</li>
         <li>Modifier</li>
         <li>Supprimer</li>
-        <li>< Archiver/li>
+        <li>Archiver</li>
     </ul>
 
 À noter que les actions d'ajout, modification et suppression doivent toujours être présentées dans cet ordre.

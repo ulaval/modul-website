@@ -9,7 +9,9 @@ Pour tous les autres cas où il faut afficher du contenu tout en gardant l'utili
         <li>Assurez-vous que la boîte de dialogue est visuellement distincte de la page d'arrière-plan en la rendant plus petite et en utilisant un masque translucide pour obscurcir l'arrière-plan, ce qui indique que le contenu sous-jacent n'est pas actif et permet à l'utilisateur de savoir qu'ils n'ont pas réellement navigué vers une nouvelle page.</li>
     </ul>
 </modul-do>
+
 ---
+
 ## Caractéristiques
 ### Contenu
 Une fenêtre de dialogue doit au minimum contenir un énoncé principal et au moins un bouton. Il est également possible de faire afficher un message supplémentaire (information ou avertissement), une zone de conseils et un lien permettant de fermer la fenêtre à l'aide du composant. Le message supplémentaire et la zone de conseils doivent se trouver sous l'énoncé principal.

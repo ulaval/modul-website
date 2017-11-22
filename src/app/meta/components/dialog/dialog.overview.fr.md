@@ -1,14 +1,15 @@
 <h2>Utilisation</h2>
+
 <modul-do>Une fenêtre secondaire est utilisée pour afficher du contenu complémentaire tout en gardant l'utilisateur en contexte de la page en cours.</modul-do>
 
 <modul-dont>Une fenêtre secondaire ne doit pas être utilisée pour initier un dialogue avec l'utilisateur. Dans ce cas, il faut plutôt utiliser le composant Fenêtre de dialogue. De plus, il n'est pas permis d'utiliser une fenêtre secondaire à l'intérieur d'une autre fenêtre secondaire.</modul-dont>
 <hr/>
 
 <h2>Caractéristiques</h2>
-<h3>Petits écrans<h/3>
+<h3>Petits écrans</h3>
 La fenêtre secondaire s'affiche à l'aide d'une animation arrivant du bas et venant s'afficher complètement par-dessus la fenêtre principale.
 
-<h3>rands écrans</h3>
+<h3>Grands écrans</h3>
 La fenêtre secondaire est affichée par dessus la fenêtre principale, avec un effet de semi-transparence.
 
 <h3>Titre</h3>

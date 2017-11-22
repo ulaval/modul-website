@@ -1,43 +1,25 @@
-##Versiom 1.0
+<h2>Versiom 1.0 27 novembre 2017</h2>
 
 La version <a href='https://github.com/ulaval/modul-components/releases/tag/v1.0.0'>1.0.0</a> est disponible depuis le 23 novembre 2017.
 
-###Correction de bogues
- S. O.
-
- ###Composants livrés
- <ul>
-    <li>m-accordion</li>
-    <li>m-accordion-group</li>
-    <li>m-button</li>
-    <li>m-checkbox</li>
-    <li>m-datepicker</li>
-    <li>m-dialog</li>
-    <li>m-dropdown</li>
-    <li>m-dropdown-gruop</li>
-    <li>m-dropdown-item</li>
-    <li>m-dynamic-template</li>
-    <li>m-i18n</li>
-    <li>m-icon</li>
-    <li>m-icon-button</li>
-    <li>m-link</li>
-    <li>m-list-item</li>
-    <li>m-message</li>
-    <li>m-modal</li>
-    <li>m-menu</li>
-    <li>m-menu-item</li>
-    <li>m-panel</li>
-    <li>m-popper</li>
-    <li>m-popup</li>
-    <li>m-radio</li>
-    <li>m-radio-group</li>
-    <li>m-radio-style</li>
-    <li>m-sidebar</li>
-    <li>m-spinner</li>
-    <li>m-status</li>
-    <li>m-step</li>
-    <li>m-template</li>
-    <li>m-textfield</li>
-    <li>m-timepicker</li>
-    <li>m-validation-message</li>
+La version 1.0 livre une première version des composants suivants&nbsp;:
+  <ul class="m-u--bullet-list">
+    <li>m-accordion : accordéon</li>
+    <li>m-button : bouton</li>
+    <li>m-checkbox : case à cocher</li>
+    <li>m-datepicker : sélecteur de date</li>
+    <li>m-dialog : fenêtre secondaire</li>
+    <li>m-dropdown : liste déroulante</li>
+    <li>m-icon-button : icône cliquable</li>
+    <li>m-link : lien</li>
+    <li>m-list-item : élément de liste de contenu</li>
+    <li>m-message : messages</li>
+    <li>m-modal : fenêtre de dialogue</li>
+    <li>m-menu : menu</li>
+    <li>m-panel : Boîte</li>
+    <li>m-radio : bouton radio</li>
+    <li>m-spinner : action en cours</li>
+    <li>m-step : train</li>
  </ul>
+
+ Tous les autres composants de cette version sont en version beta.

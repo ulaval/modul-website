@@ -1,67 +1,72 @@
-Un ton rédactionnel adéquat et un langage clair et simple communiqueront efficacement le message à l’utilisateur. Connaître l’utilisateur permettra d’adopter un style rédactionnel approprié. Avant tout chose, il est important d’assurer l’uniformité des messages et de maintenir un ton cohérent. Cette section présente quelques éléments à prendre en considération pour rédiger des messages efficaces.
+<p>Un ton rédactionnel adéquat et un langage clair et simple communiqueront efficacement le message à l’utilisateur. Connaître l’utilisateur permettra d’adopter un style rédactionnel approprié. Avant tout chose, il est important d’assurer l’uniformité des messages et de maintenir un ton cohérent. Cette section présente quelques éléments à prendre en considération pour rédiger des messages efficaces.</p>
 
-### Utiliser la voix active dans les messages
-La voix active est recommandée pour la rédaction des messages destinés aux utilisateurs. Les phrases à la voix active sont souvent plus courtes et plus faciles à comprendre.
-Dans une phrase à la voix active, le sujet fait l'action alors que dans une phrase à la voix passive, il la subit.
+<modul-do>
+    <ul class="m-u--bullet-list">
+        <li>Utiliser la voix active dans les messages</li>
+        <li>Utiliser la 1re et la 2e personne du pluriel</li>
+        <li>Utiliser les énumérations verticales</li>
+        <li>Privilégier l'indicatif</li>
+        <li>Privilégier les phrases courtes avec une idée</li>
+    </ul>
+</modul-do>
 
-    **Voix active**
-    Vous avez satisfait à toutes les exigences du programme.
+<modul-dont>
+    <ul class="m-u--bullet-list">
+        <li>Éviter le jargon</li>
+        <li>Éviter la négation</li>
+        <li>Éviter les acronymes ou les abréviations</li>
+        <li>Attention aux fautes d'orthographe</li>
+    </ul>
+</modul-dont>
 
-    **Voix passive**
-    Toutes les exigences de votre programme ont été satisfaites.
+<h2>Utiliser la voix active dans les messages</h2>
+<p>La voix active est recommandée pour la rédaction des messages destinés aux utilisateurs. Les phrases à la voix active sont souvent plus courtes et plus faciles à comprendre.</p>
 
-### Privilégier les phrases courtes
-Une phrase courte avec une seule idée est souvent plus claire et facile à comprendre qu'une longue phrase. Elle demande donc naturellement moins d'effort de compréhension de la part du lecteur.
+<p>Dans une phrase à la voix active, le sujet fait l'action alors que dans une phrase à la voix passive, il la subit.</p>
 
-### Privilégier les phrases courtes ne contenant qu’une seule idée
-Une phrase courte avec une seule idée est souvent plus claire et facile à comprendre qu'une longue phrase. Elle demande donc naturellement moins d'effort de compréhension de la part du lecteur.
+<m-panel>**Voix active**<br/>
+Vous avez satisfait à toutes les exigences du programme.</m-panel>
 
-### Éviter le jargon
-Utiliser un vocabulaire simple et compréhensible pour tous.
+<m-panel>**Voix passive**<br/>
+Toutes les exigences de votre programme ont été satisfaites.</m-panel>
 
-    **Exemple simple**
-    L’application ne répond plus!
+<h2>Utiliser la 1re et la 2e personne du pluriel</h2>
+<p>L'utilisation de la 1re et de la 2e personne du pluriel permet d'utiliser un ton respectueux mais conversationnel.</p>
 
-    **Jargon**
-    L’application a lagué!
+<h2>Utiliser les énumérations verticales</h2>
+<p>Les énumérations verticales sont plus faciles et rapides à lire que les énumérations horizontales. De plus, elles permettent de mieux détacher les éléments d'une liste. Lors de l'utilisation d'une énumération verticale, il est important de respecter les règles de ponctuation qui lui sont associées.</p>
 
-### Éviter les acronymes ou les abréviations
-À moins de les avoir explicités dès le début du texte, éviter d’utiliser les acronymes ou les abréviations.
+<h2>Privilégier l'indicatif</h2>
+<p>L'utilisation de l'indicatif est à privilégier par rapport à l'impératif, afin d'éviter d'être trop directif à l'endroit de l'utilisateur.</p>
 
-### Utiliser la 1re et la 2e personne du pluriel
-L'utilisation de la 1re et de la 2e personne du pluriel permet d'utiliser un ton respectueux mais conversationnel.
+<h2>Privilégier les phrases courtes ne contenant qu’une seule idée</h2>
+<p>Une phrase courte avec une seule idée est souvent plus claire et facile à comprendre qu'une longue phrase. Elle demande donc naturellement moins d'effort de compréhension de la part du lecteur.</p>
 
-### Privilégier l'indicatif
-L'utilisation de l'indicatif est à privilégier par rapport à l'impératif, afin d'éviter d'être trop directif à l'endroit de l'utilisateur.
+<h2>Éviter le jargon</h2>
+<p>Utiliser un vocabulaire simple et compréhensible pour tous.</p>
 
-### Utiliser les énumérations verticales
-Les énumérations verticales sont plus faciles et rapides à lire que les énumérations horizontales. De plus, elles permettent de mieux détacher les éléments d'une liste. Lors de l'utilisation d'une énumération verticale, il est important de respecter les règles de ponctuation qui lui sont associées.
+<m-panel>**Exemple simple**<br/>
+L’application ne répond plus!</m-panel>
 
-    **Énumération verticale**
-    En résumé :
-    * Utiliser la voix active dans les messages
-    * Privilégier les phrases courtes avec une idée
-    * Éviter le jargon
-    * Utiliser la 1re et la 2e personne du pluriel
-    * Privilégier l'indicatif
-    * Utiliser les énumérations verticales
-    * Éviter la négation
-    **Énumération horizontale**
-    En résumé,  utiliser la voix active dans les messages, privilégier les phrases courtes avec une idée, éviter le jargon, utiliser la 1re et la 2e personne du pluriel, privilégier l'indicatif, utiliser les énumérations verticales et  éviter la négation
+<m-panel>**Jargon**<br/>
+L’application a lagué!</m-panel>
 
-### Éviter la négation
-De manière générale, la forme négative (ne ... pas, ne ... plus, etc.) est à éviter puisque la forme positive est généralement plus facile à lire et à comprendre. Éviter aussi la double négation qui pourrait rendre un lecteur confus.
+<h2>Éviter la négation</h2>
+<p>De manière générale, la forme négative (ne ... pas, ne ... plus, etc.) est à éviter puisque la forme positive est généralement plus facile à lire et à comprendre. Éviter aussi la double négation qui pourrait rendre un lecteur confus.</p>
 
-Toutefois, la forme négative est à privilégier lorsqu'elle permet d'atténuer des opinions qui, à l'affirmative, pourraient sembler trop catégoriques ou manquant de délicatesse.
+<p>Toutefois, la forme négative est à privilégier lorsqu'elle permet d'atténuer des opinions qui, à l'affirmative, pourraient sembler trop catégoriques ou manquant de délicatesse.</p>
 
-    **Forme négative**
+<m-panel>**Forme négative**<br/>
+Je n'aime pas...</m-panel>
 
-    Je n'aime pas ...
-    **Forme positive**
-    Je déteste …
+<m-panel>**Forme positive**<br/>
+Je déteste...</m-panel>
 
-### Attention aux fautes d’orthographe
-Les fautes d’orthographe détourne l’attention du lecteur du message et rend la crédibilité d’un texte moins bonne qu’elle ne le serait sans faute. Prenez le temps de relire et de le faire lire par une autre personne.
+<h2>Éviter les acronymes ou les abréviations</h2>
+<p>À moins de les avoir explicités dès le début du texte, éviter d’utiliser les acronymes ou les abréviations.</p>
 
-### Liens intéressants
-[Guide du rédacteur](http://www.btb.termiumplus.gc.ca/tpv2guides/guides/redac/index-fra.html?lang=fra&lettr=chap_catlog&page=../srchparbychap)
+<h2>Attention aux fautes d’orthographe</h2>
+<p>Les fautes d’orthographe détourne l’attention du lecteur du message et rend la crédibilité d’un texte moins bonne qu’elle ne le serait sans faute. Prenez le temps de relire et de le faire lire par une autre personne.</p>
+
+<h2>Liens intéressants</h2>
+<p><a href="http://www.btb.termiumplus.gc.ca/tpv2guides/guides/redac/index-fra.html?lang=fra&lettr=chap_catlog&page=../srchparbychap" target="_blank">Guide du rédacteur</a></p>
