@@ -66,7 +66,7 @@ Je déteste...</m-panel>
 <p>À moins de les avoir explicités dès le début du texte, éviter d’utiliser les acronymes ou les abréviations.</p>
 
 <h2>Attention aux fautes d’orthographe</h2>
-<p>Les fautes d’orthographe détourne l’attention du lecteur du message et rend la crédibilité d’un texte moins bonne qu’elle ne le serait sans faute. Prenez le temps de relire et de le faire lire par une autre personne.</p>
+<p>Les fautes d’orthographe détournent l’attention du lecteur du message et rend la crédibilité d’un texte moins bonne qu’elle ne le serait sans fautes. Prenez le temps de relire et de le faire lire par une autre personne.</p>
 
 <h2>Liens intéressants</h2>
 <p><a href="http://www.btb.termiumplus.gc.ca/tpv2guides/guides/redac/index-fra.html?lang=fra&lettr=chap_catlog&page=../srchparbychap" target="_blank">Guide du rédacteur</a></p>
