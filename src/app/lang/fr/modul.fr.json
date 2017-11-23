@@ -1,7 +1,7 @@
 {
     "modul": {
         "ecosystem": "Ecosystème",
-        "ecosystem-desc": "l’information spécifique pour s’intégrer facilement à l’écosystème monPortail, tel que qu’un cadre applicatif, des moyens de communication",
+        "ecosystem-desc": "L’information spécifique pour s’intégrer facilement à l’écosystème monPortail, tel que qu’un cadre applicatif, des moyens de communication",
         "overview": "Portrait",
         "components": "Composants",
         "components-desc": "Chaque composant MODUL est accompagné d’une documentation facilitant leur utilisation.",
