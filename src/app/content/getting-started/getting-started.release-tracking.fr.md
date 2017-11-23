@@ -1,6 +1,6 @@
-<h2>Versiom 1.0 27 novembre 2017</h2>
+<h2>Version 1.0 - 27 novembre 2017</h2>
 
-La version <a href='https://github.com/ulaval/modul-components/releases/tag/v1.0.0'>1.0.0</a> est disponible depuis le 23 novembre 2017.
+La version <m-link mode="link" target="_blank" href='https://github.com/ulaval/modul-components/releases/tag/v1.0.0'>1.0.0</m-link> est disponible depuis le 27 novembre 2017.
 
 La version 1.0 livre une première version des composants suivants&nbsp;:
   <ul class="m-u--bullet-list">

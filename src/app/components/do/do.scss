@@ -3,6 +3,7 @@
 .modul-do-dont {
     padding: 0 0 0 $m-padding;
     border-left: $m-border-width--l solid;
+    margin-top: $m-margin;
 
     &.modul--is-mode-do {
         border-color: $m-color--success;
