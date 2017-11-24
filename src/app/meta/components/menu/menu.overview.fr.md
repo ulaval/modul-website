@@ -18,14 +18,7 @@ Les actions suivants sont couramment utilisées dans un menu d'options. Il est i
 
 À noter que les actions d'ajout, modification et suppression doivent toujours être présentées dans cet ordre.
 
-<<<<<<< refs/remotes/origin/dev
-### Options
-Une boîte à cocher est disponible devant chaque option. Lorsqu'une option est dépendante d'une autre, elle est désactivée tant que l'option principale n'est pas sélectionnée.
-
 ### Ouverture
-=======
-<h3>Ouverture</h3>
->>>>>>> Content update
 Le menu d'options apparaît toujours sous forme de fenêtre contextuelle, sauf pour le point de rupture Extra-petit. Dans ce cas, il prends la forme d'un panneau coulissant qui s'affiche dans le bas de la fenêtre d'affichage (viewport) et la hauteur est automatiquement ajustée en fonction du contenu du menu.
 
 ### Séparateur

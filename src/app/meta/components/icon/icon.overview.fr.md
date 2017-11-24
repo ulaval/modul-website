@@ -1,20 +1,6 @@
 <h2>Utilisation</h2>
 Pour être efficaces, les icônes doivent être significatives, reconnaissables, distinguables, intuitives et comprises rapidement par tout utilisateur. Le principe est d’utiliser un objet connu qui suggère sa propre utilisation. Par exemple, la loupe suggère une action de recherche, la poubelle suggère une action de suppression . Les icônes de modUL  illustrent majoritairement une action que l’utilisateur peut poser. Elles doivent donc jouer un rôle fonctionnel dans tout composant. Il est recommandé de garder une uniformité et une cohérence dans l’utilisation des icônes.
 
-<<<<<<< refs/remotes/origin/dev
-## Caractéristiques
-En fonction de l'état de l'icône, le rendu est filaire ou plein :
-* **État normal :** rendu filaire
-* **État pressé :** rendu filaire et rond plein de couleur gris pâle en arrière-plan
-* **État de survol :** rendu filaire, fil plus foncé
-
-### Pastille
-La pastille est utilisée pour afficher un nombre lié à l'élément sur lequel est se superpose. Par exemple, pour indiquer le nombre de notifications non vues, le nombre de courriels non lus, le nombre d'articles dans le panier, etc. :
-* Elle est de couleur orange (#f39612)
-* Elle se superpose à une icône, au bas à droite
-* Lorsque le nombre d'éléments est zéro, la pastille n'est pas affichée
-* Lorsque le nombre d'éléments est supérieur à 100, la valeur 99+ est affichée
-=======
 <h2>Caractéristiques</h2>
 <h3>Les icônes par défaut</h3>
 <p>Les icônes par défaut sont :
@@ -61,4 +47,3 @@ La pastille est utilisée pour afficher un nombre lié à l'élément sur lequel
         <li>possibilité d’animer les icônes</li>
     </ul>
 </p>
->>>>>>> Content update
