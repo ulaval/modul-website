@@ -10,6 +10,8 @@ function resolve(dir) {
 }
 
 module.exports = function (env) {
+    var isProd = !!(env && env.prod);
+
     var config = {
         entry: {
             app: ["./src/app/main.ts"]
@@ -17,7 +19,7 @@ module.exports = function (env) {
 
         output: {
             path: resolve("dist"),
-            publicPath: "/",
+            publicPath: isProd ? 'https://contenu.monportail.at.ulaval.ca/mpo/@ulaval/modul-website/dev-SNAPSHOT/' : '/',
             filename: "app.js"
         },
 
@@ -74,10 +76,18 @@ module.exports = function (env) {
                 {
                     test: /\.svg$/,
                     loader: 'svg-inline-loader',
+                    exclude: /(logo-ul|grid)\.svg$/,
                     options: {
                         removeTags: true,
                         removingTags: ['desc', 'defs', 'style'],
                         removeSVGTagAttrs: true
+                    }
+                },
+                {
+                    test: /(logo-ul\.svg|grid\.svg|\.png)$/,
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000
                     }
                 },
                 {
