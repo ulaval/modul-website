@@ -11,8 +11,9 @@
         "moduleResolution": "node",
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
-        "strictNullChecks": true,
+        "strictNullChecks": false,
         "types": [
+            "es6-promise",
             "node",
             "jasmine"
         ],

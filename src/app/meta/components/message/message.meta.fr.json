@@ -1,0 +1,7 @@
+{
+    "m-message-meta": {
+        "name": "Message",
+        "state-desc": "Default value is 'success'.",
+        "mode-desc": "Default value is 'regular'."
+    }
+}

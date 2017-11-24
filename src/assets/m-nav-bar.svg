@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="m-navbar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 260 260" style="enable-background:new 0 0 260 260;" xml:space="preserve">
+<style type="text/css">
+	.modul-u--preview-img--dark {
+        fill:#1f2f39;
+    }
+
+    .modul-u--preview-img {
+        fill:#1f2f39;
+        opacity:0.5;
+    }
+
+    .modul-u--preview-img--light {
+        fill:#1f2f39;
+        opacity:0.3;
+    }
+</style>
+<g class="modul-u--preview-img">
+	<rect x="102" y="119.2" width="56.1" height="9.1"/>
+	<rect x="193.9" y="119.2" width="56.1" height="9.1"/>
+	<rect x="10" y="138.9" width="240" height="2"/>
+	<rect x="10" y="55.7" width="56.1" height="9.1"/>
+	<rect x="193.9" y="55.7" width="56.1" height="9.1"/>
+	<rect x="10" y="75.4" width="240" height="2"/>
+	<rect x="10" y="182.7" width="56.1" height="9.1"/>
+	<rect x="193.9" y="182.7" width="56.1" height="9.1"/>
+	<rect x="10" y="202.4" width="240" height="2"/>
+</g>
+<g class="modul-u--preview-img--dark">
+	<rect x="10" y="119.2" width="56.1" height="9.1"/>
+	<rect x="10" y="138.9" width="56" height="2"/>
+	<rect x="102" y="55.7" width="56.1" height="9.1"/>
+	<rect x="102" y="75.4" width="56" height="2"/>
+	<rect x="102" y="182.7" width="56.1" height="9.1"/>
+	<rect x="102" y="202.4" width="56" height="2"/>
+</g>
+</svg>

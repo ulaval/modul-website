@@ -1,0 +1,26 @@
+
+$modul-color--black-grey-dark: #1f2f39;
+$modul-color--black-grey: #2f3e47;
+$modul-color--black-grey-light: #3d4b54;
+
+$modul-color--grey-darker: #6f777d;
+$modul-color--grey-dark: #a1a9ac;
+$modul-color--grey: #d8dbdd;
+$modul-color--grey-light: #f7f8f8;
+
+$modul-color--yellow: #ffbe3a;
+$modul-color--body: $modul-color--grey;
+
+// layout
+$modul-header--height: 60px;
+$modul-header--height--s: 54px;
+$modul-footer--height: 120px;
+//
+$modul-border-radius: 4px;
+
+// animation constant shared with js in modul.ts
+$modul-CSS_ANIMATION_HEADER_DURATION: 0.45s;
+$modul-CSS_ANIMATION_MENU_DURATION: 0.65s;
+
+// Max and min width
+$modul-max-width: 960px;

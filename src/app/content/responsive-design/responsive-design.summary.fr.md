@@ -1,0 +1,1 @@
+L'harmonisation des composants MODUL permet de les adapter rapidememnt à toutes les tailles d'appareils et d'offrir une expérience unifiée à l'ensemble des internautes.

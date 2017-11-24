@@ -1,0 +1,1 @@
+Consulter le composant [*Accordéon*] (https://ulaval.github.io/modul/composants/contenu/m-accordion/portrait) (m-accodion) pour obtenir l'information sur l'utilisation et les caractéristiques de l'accordéon.

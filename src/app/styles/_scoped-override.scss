@@ -1,0 +1,12 @@
+.modul-dark-template__body__header-wrap {
+    p,
+    ul,
+    li {
+        color: #fff;
+        font-size: 20px;
+
+        &:first-child {
+            margin: 0;
+        }
+    }
+}

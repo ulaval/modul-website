@@ -1,3 +1,123 @@
-h1 {
-    color: black;
+@import '../../styles/shared-styles';
+
+.modul-search-sidebar {
+    ul {
+        margin: 0;
+    }
+
+    &__header {
+        display: inline-flex;
+
+        input {
+            flex: 1 1 auto;
+        }
+    }
+}
+
+.modul-search {
+    &__header {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: $modul-header--height--s;
+        border-bottom: 1px solid $m-color--grey;
+        padding-left: $m-padding;
+
+        @media (min-width: #{$m-mq--min--xs}) {
+            height: $modul-header--height;
+        }
+
+        &__input {
+            flex: 1 1 auto;
+            border: none;
+            outline: none;
+            font-size: $m-font-size;
+            padding: 20px $m-margin; // Magic number
+        }
+    }
+
+    &__open-button,
+    &__header__close-button {
+        width: $modul-header--height--s;
+        height: $modul-header--height--s;
+        font-size: 18px; // magic number
+
+        @media (min-width: #{$m-mq--min--xs}) {
+            width: $modul-header--height;
+            height: $modul-header--height;
+        }
+    }
+}
+
+.modul-search-card {
+    position: relative;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: $m-color--text;
+    display: flex;
+    min-height: 100px;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+
+    &:hover {
+        .modul-search-card {
+            &__figure {
+                background-color: $m-color--interactive-light;
+            }
+        }
+    }
+
+    &:active,
+    &:focus {
+        .modul-search-card {
+            &__figure {
+                background-color: $m-color--interactive-dark;
+            }
+        }
+    }
+
+    &__content {
+        padding: $m-padding;
+        border-bottom: 1px solid $m-color--grey-light;
+        width: calc(100% - 150px);
+    }
+
+    &__figure {
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 1 150px;
+        background-color: $m-color--interactive;
+        background-size: 50%;
+        background-image: url(../../../assets/accordion.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-blend-mode: multiply;
+        border-bottom: 1px solid #006698;
+        padding: $m-padding;
+    }
+
+    &__subtitle {
+        display: block;
+        margin-top: 4px;
+        font-size: $m-font-size--s;
+        color: $m-color--grey-darker;
+        font-style: italic;
+    }
+
+    &.modul--is {
+        &-enter-active,
+        &-leave-active {
+            transition: transform 0.45s ease, opacity 0.3s linear;
+        }
+
+        &-enter,
+        &-leave-to {
+            opacity: 0;
+            transform: translate3d(-$m-margin, 0, 0);
+        }
+    }
 }

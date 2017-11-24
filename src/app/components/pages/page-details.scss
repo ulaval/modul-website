@@ -1,0 +1,17 @@
+@import '../../styles/shared-styles';
+
+.modul-page-details {
+    background-color: $m-color--white;
+
+    .m-navbar {
+        margin: 0 auto;
+        max-width: $modul-max-width;
+        padding: 0 20px; // Magic number
+    }
+
+    &__body {
+        margin: 0 auto;
+        max-width: $modul-max-width;
+        padding: $m-padding $m-padding--l $m-padding--l;
+    }
+}

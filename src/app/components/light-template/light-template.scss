@@ -1,0 +1,122 @@
+@import '../../styles/shared-styles';
+
+.modul-light-template {
+    width: 100%;
+    margin: 0 auto;
+    max-width: $modul-max-width;
+    padding: 0 $m-padding--l $m-padding--xl $m-padding--l;
+
+    &::before,
+    &__header {
+        height: calc(50vh - #{$modul-header--height--s});
+        min-height: 250px;
+
+        @media (min-width: $m-mq--min--xs) {
+            height: calc(50vh - #{$modul-header--height});
+        }
+    }
+
+    &::before {
+        content: '';
+        display: block;
+    }
+
+    &__header {
+        position: fixed;
+        top: $modul-header--height--s;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-width: $m-min-width;
+        z-index: 0;
+        width: 100%;
+        max-width: $m-max-width;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: $m-mq--min--xs) {
+            top: $modul-header--height;
+        }
+
+        &__title {
+            position: relative;
+
+            h1 {
+                color: $modul-color--black-grey-dark;
+
+                @include modul-page-title();
+            }
+        }
+
+        &__arrow-left,
+        &__arrow-right {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            button {
+                width: $m-padding--l;
+                min-width: $m-padding--l;
+                height: 52px; // Magic number
+                min-height: 52px; // Magic number
+                font-size: 14px;
+                stroke-width: 2px;
+                transform-origin: 50%;
+
+                .m-icon {
+                    transition: 0.45s transform ease;
+                }
+            }
+        }
+
+        &__arrow-left {
+            left: 0;
+
+            button {
+                &:hover {
+                    .m-icon {
+                        transform: rotate(-360deg);
+                    }
+                }
+            }
+        }
+
+        &__arrow-right {
+            right: 0;
+
+            button {
+                &:hover {
+                    .m-icon {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+
+        &__back-link {
+            position: fixed !important;
+            top: $modul-header--height;
+            left: 0;
+            z-index: 2;
+            margin-top: $m-padding;
+            margin-left: $m-padding--l;
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 3;
+
+        &__container {
+            background-color: $m-color--grey;
+            position: relative;
+            z-index: 3;
+        }
+    }
+}
+

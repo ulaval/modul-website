@@ -1,19 +1,22 @@
-<div v-if="$store.state.composantState">
-    <h1>{{$store.state.composantState.tag}}</h1>
-    <h3>{{$store.state.composantState.name}}</h3>
-    <h3>Portrait</h3>
-    <div v-for="item in $store.state.composantState.overview">
-        <div v-if="isRubric(item)">
-            <h1>{{item.title}}</h1>
-            <m-dynamic-template :template="item.content"></m-dynamic-template>
-        </div>
-        <div v-else-if="isDo(item)">
-            <h2>:)</h2>
-            <m-dynamic-template :template="item.content"></m-dynamic-template>
-        </div>
-        <div v-else="isDont(item)">
-            <h2>:(</h2>
-            <m-dynamic-template :template="item.content"></m-dynamic-template>
-        </div>
-    </div>
-</div>
+<modul-light-template>
+    <m-link slot="backlink" mode="button" iconName="left-arrow" @click="back(component.category)">
+        {{translatedCategory}}
+    </m-link>
+    <h1 slot="header">
+        <m-dropdown v-if="isMqMinXS" class="modul-u--dropdown-light" v-model="selectedComponent" @open="onOpen" @close="onClose" width="auto">
+            <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
+        </m-dropdown>
+        <template v-if="!isMqMinXS">{{ getComponentName(selectedComponent) }}</template>
+    </h1>
+    <button slot="leftArrow" @click="getPreviousComponent()" class="m-u--button-primary">
+        <m-icon name="left-arrow"></m-icon>
+        <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie précédent</span> -->
+    </button>
+    <button slot="rightArrow" @click="getNextComponent()" class="m-u--button-primary">
+        <m-icon name="right-arrow"></m-icon>
+        <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie suivante</span> -->
+    </button>
+    <template slot="body">
+        <router-view></router-view>
+    </template>
+</modul-light-template>

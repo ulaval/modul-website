@@ -1,0 +1,53 @@
+<div class="modul-component-details">
+    <div class="modul-component" v-if="component">
+        <header class="modul-component-details__header">
+            <h2 class="modul-component-details__title">
+                <m-icon name="left-arrow" class="modul-component-details__title__arrow"></m-icon>{{component.tag}}
+                <m-icon name="right-arrow" class="modul-component-details__title__arrow"></m-icon>
+            </h2>
+            <button class="modul-code-preview-button m-u--button-primary" @click="toggleOpenCodePreview" v-if="component.preview">
+                <m-icon name="double-arrow"></m-icon>
+                <m-i18n k="modul:preview-button-open" class="m-u--visually-hidden" v-if="codePreviewOpen"></m-i18n>
+                <m-i18n k="modul:preview-button-close" class="m-u--visually-hidden" v-if="!codePreviewOpen"></m-i18n>
+            </button>
+        </header>
+        <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
+            <div v-if="codePreviewOpen && component.preview">
+                <div class="modul-component-details__code">
+                    <m-highlight :template="markdownPreview"></m-highlight>
+                </div>
+            </div>
+        </transition>
+        <div class="modul-component-details__preview">
+            <span v-if="!component.preview">
+                <m-message state="information" :closeButton="false">
+                    <m-i18n k="modul:preview-not-available"></m-i18n>
+                </m-message>
+            </span>
+            <span v-else>
+                <m-markdown :template="markdownPreview"></m-markdown>
+            </span>
+        </div>
+
+        <div class="modul-u--navbar">
+            <m-navbar skin="arrow">
+                <m-navbar-item>
+                    <router-link :to="overview" class="modul-u--navbar__item">
+                        <m-i18n k="modul:overview"></m-i18n>
+                    </router-link>
+                </m-navbar-item>
+                <m-navbar-item>
+                    <router-link :to="properties" class="modul-u--navbar__item">
+                        <m-i18n k="modul:attributes"></m-i18n>
+                    </router-link>
+                </m-navbar-item>
+                <m-navbar-item>
+                    <router-link :to="variant" class="modul-u--navbar__item">
+                        <m-i18n k="modul:variants"></m-i18n>
+                    </router-link>
+                </m-navbar-item>
+            </m-navbar>
+        </div>
+        <router-view></router-view>
+    </div>
+</div>

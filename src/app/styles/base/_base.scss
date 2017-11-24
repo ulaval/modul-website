@@ -1,0 +1,21 @@
+
+html,
+body,
+.modul-body {
+    background: $modul-color--body;
+}
+
+.modul-container,
+.modul {
+    height: 100%;
+}
+
+.test {
+    background-color: gray !important;
+    color: yellow !important;
+}
+
+.test2 {
+    background-color: pink !important;
+    color: #000 !important;
+}

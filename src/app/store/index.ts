@@ -1,28 +1,22 @@
 import Vue from 'vue';
-import Vuex, { MutationTree } from 'vuex';
-import { ModulState } from './modul-state';
-import { ModulActions } from './actions';
-import { ModulMutations } from './mutations';
+import Vuex, { MutationTree, ActionTree, GetterTree, Dispatch, DispatchOptions } from 'vuex';
+import { components } from './modules/components/components';
+import { sections } from './modules/pages/sections';
 
 Vue.use(Vuex);
 
-const modulState: ModulState = new ModulState();
-const mutations: MutationTree<ModulState> = {
-    [ModulMutations.COMPONENTS_META_GET]: ModulMutations.getComponentsMeta,
-    [ModulMutations.COMPONENTS_META_GET_SUCCES]: ModulMutations.getComponentsMetaSucces,
-    [ModulMutations.COMPOSANT_GET]: ModulMutations.getComposantSucces
-};
+class ModulStore extends Vuex.Store<any> {
+    public async dispatchAsync(type: string, payload?: any, options?: DispatchOptions): Promise<any[]> {
+        return await this.dispatch(type, payload, options);
+    }
+}
 
-const actions: Vuex.ActionTree<ModulState, ModulState> = {
-    [ModulActions.COMPONENTS_META_GET]: ModulActions.getComponentsMetaAction,
-    [ModulActions.COMPOSANT_GET]: ModulActions.getComposantAction
-};
-
-const store: Vuex.Store<ModulState> = new Vuex.Store<ModulState>({
-    // strict: true, // TODO debug mode only
-    state: modulState,
-    mutations: mutations,
-    actions: actions
+const store: ModulStore = new ModulStore({
+    strict: true, // TODO debug mode only
+    modules: {
+        sections: sections,
+        components: components
+    }
 });
 
 export default store;

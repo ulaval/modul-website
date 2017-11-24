@@ -1,0 +1,4 @@
+<m-step>
+    <span slot="header">Ea voluptate consectetur qui ea proident sint enim.</span>
+    Culpa esse non veniam occaecat cupidatat dolor. Nisi ea culpa non dolore occaecat commodo amet proident pariatur magna tempor incididunt. Occaecat duis esse ut velit commodo sint veniam aute. Sunt ex nulla velit labore ea est anim irure non proident proident quis quis. Sint qui incididunt occaecat ullamco. Quis tempor irure minim excepteur do proident. Velit nulla ut laboris proident elit. Consectetur anim nostrud do duis officia esse ipsum qui enim nisi id. Deserunt velit incididunt excepteur excepteur Lorem cillum dolor.
+</m-step>

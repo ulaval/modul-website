@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="m-dialog" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 260 260" style="enable-background:new 0 0 260 260;" xml:space="preserve">
+<style type="text/css">
+	.modul-u--preview-img--dark {
+        fill:#1f2f39;
+    }
+
+    .modul-u--preview-img {
+        fill:#1f2f39;
+        opacity:0.5;
+    }
+
+    .modul-u--preview-img--light {
+        fill:#1f2f39;
+        opacity:0.3;
+    }
+</style>
+<path class="modul-u--preview-img" d="M10,18v224c0,4.4,3.6,8,8,8h224c4.4,0,8-3.6,8-8V18c0-4.4-3.6-8-8-8H18C13.6,10,10,13.6,10,18z M225,199H35V59
+		h190V199z"/>
+<g class="modul-u--preview-img--light">
+	<rect x="35" y="91.9" class="st1" width="190" height="107.2"/>
+	<rect x="50.3" y="70.5" class="st1" width="110.4" height="9.1"/>
+	<polygon class="st1" points="212.2,70.4 209.2,73.3 206.3,70.4 204.5,72.1 207.5,75.1 204.5,78 206.3,79.8 209.2,76.8 212.2,79.8 
+			213.9,78 211,75.1 213.9,72.1 		"/>
+</g>
+<g class="modul-u--preview-img--dark">
+	<rect x="50" y="107" class="Style_x0020_graphique_x0020_3" width="133.8" height="6.3"/>
+	<rect x="50" y="120.1" class="Style_x0020_graphique_x0020_3" width="143.3" height="6.3"/>
+	<rect x="50" y="133.1" class="Style_x0020_graphique_x0020_3" width="103.7" height="6.3"/>
+	<path class="Style_x0020_graphique_x0020_3" d="M35,58.9v33h190v-33H35z M160.7,79.6H50.3v-9.1h110.4V79.6z M213.9,78l-1.8,1.8
+			l-2.9-2.9l-2.9,2.9l-1.8-1.8l2.9-2.9l-2.9-2.9l1.8-1.8l2.9,2.9l2.9-2.9l1.8,1.8l-2.9,2.9L213.9,78z"/>
+</g>
+</svg>

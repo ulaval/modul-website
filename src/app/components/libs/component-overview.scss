@@ -1,0 +1,12 @@
+@import '../../styles/shared-styles';
+
+.modul-component-overview {
+    padding: $m-padding $m-margin--l $m-padding--l $m-margin--l;
+
+    > :first-child {
+        &,
+        > :first-child {
+            margin-top: 0;
+        }
+    }
+}

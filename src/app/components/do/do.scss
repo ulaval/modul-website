@@ -1,0 +1,44 @@
+@import '../../styles/shared-styles';
+
+.modul-do-dont {
+    padding: 0 0 0 $m-padding;
+    border-left: $m-border-width--l solid;
+    margin-top: $m-margin;
+
+    &.modul--is-mode-do {
+        border-color: $m-color--success;
+
+        .modul-do-dont {
+            &__header {
+                color: $m-color--success;
+            }
+        }
+    }
+
+    &.modul--is-mode-dont {
+        border-color: $m-color--error;
+
+        .modul-do-dont {
+            &__header {
+                color: $m-color--error;
+            }
+        }
+    }
+
+    &__header {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: $m-font-size--xs;
+    }
+
+    &__body {
+        margin-top: $m-margin--s;
+
+        > :first-child {
+            &,
+            > :first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}

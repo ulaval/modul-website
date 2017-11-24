@@ -1,0 +1,90 @@
+<div class="modul-home">
+    <section class="modul-home-experiment">
+        <article class="modul-home-experiment__body">
+            <header class="modul-home-experiment__body__header-container" :style="{ top: experimentTitlePosition + 'px'}">
+                <h2 tabindex="0" class="modul-home-experiment__body__header" @click="onRoute(unifiedExperience)">
+                    <m-i18n class="modul-home-experiment__body__header-title" k="modul:unified-experience-title-a"></m-i18n>
+                    <m-i18n class="modul-home-experiment__body__header-subtitle" k="modul:unified-experience-title-b"></m-i18n>
+                    <span class="modul-home-experiment__body__header-pixel">
+                        <span>270px</span>
+                    </span>
+                </h2>
+            </header>
+            <div class="modul-home-experiment__body__content" :style="{ top: experimentContentPosition + 'px'}">
+                <p>
+                    <m-i18n k="modul:unified-experience-desc"></m-i18n>
+                </p>
+            </div>
+
+        </article>
+
+        <div class="modul-home-experiment__footer" v-m-scroll-to="[ '#design', 'slow']" :style="{ bottom: designButtonPosition + 'px' }">
+            <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
+            <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
+            <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
+            <button class="modul-home-experiment__footer__button m-u--button-primary">
+                <m-i18n k="modul:responsive-design" :params="[' ']"></m-i18n>
+            </button>
+        </div>
+    </section>
+
+    <section id="design" class="modul-home-design" ref="design">
+        <article class="modul-home-design__article">
+            <section class="modul-home-design__template-container" aria-hidden="true">
+                <article class="modul-home-design__template" :style="{ width: designTemplateWidth + 'px' }">
+                    <header class="modul-home-design__template__header">
+                        <m-icon class="modul-home-design__template__header-logo" name="heraldry"></m-icon>
+                        <nav class="modul-home-design__template__header-nav">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <div class="modul-home-design__template__body">
+                        <div class="modul-home-design__template__body-content"></div>
+                        <aside class="modul-home-design__template__body-aside"></aside>
+                    </div>
+                    <footer class="modul-home-design__template__footer"></footer>
+                </article>
+            </section>
+            <section class="modul-home-design__body" ref="designBody">
+                <h2 class="modul-u--h2 modul-u--highlighted-title-link" @click="onRoute(responsiveDesign)">
+                    <m-i18n k="modul:responsive-design" :params="['<br>']" :html-encode="false"></m-i18n>
+                </h2>
+                <p>
+                    <m-i18n k="modul:responsive-design-desc"></m-i18n>
+                </p>
+            </section>
+        </article>
+    </section>
+    <section class="modul-home-content-container">
+        <div class="modul-home-content">
+            <m-panel tabindex="0" @click="onRoute(visualStandards)">
+                <h2 slot="header" class="modul-u--h2"><m-i18n k="modul:visual-standards"></m-i18n></h2>
+                <p><m-i18n k="modul:visual-standards-desc"></m-i18n></p>
+            </m-panel>
+            <m-panel tabindex="0" @click="onRoute(components)">
+                <h2 slot="header" class="modul-u--h2"><m-i18n k="modul:components"></m-i18n></h2>
+                <p><m-i18n k="modul:components-desc"></m-i18n></p>
+            </m-panel>
+            <m-panel tabindex="0" @click="onRoute(writingStandards)">
+                <h2 slot="header" class="modul-u--h2"><m-i18n k="modul:writing-standards"></m-i18n></h2>
+                <p><m-i18n k="modul:writing-standards-desc"></m-i18n></p>
+            </m-panel>
+            <m-panel tabindex="0" @click="onRoute(gettingStarted)">
+                <h2 slot="header" class="modul-u--h2"><m-i18n k="modul:getting-started"></m-i18n></h2>
+                <p><m-i18n k="modul:getting-started-desc"></m-i18n></p>
+            </m-panel>
+            <m-panel tabindex="0" @click="onRoute(codingStandards)">
+                <h2 slot="header" class="modul-u--h2"><m-i18n k="modul:coding-standards"></m-i18n></h2>
+                <p><m-i18n k="modul:coding-standards-desc"></m-i18n></p>
+            </m-panel>
+            <!-- <m-panel tabindex="0" @click="onRoute(ecosystem)">
+                <h2 slot="header" class="modul-u--h2"><m-i18n k="modul:ecosystem"></m-i18n></h2>
+                <p><m-i18n k="modul:ecosystem-desc"></m-i18n></p>
+            </m-panel> -->
+        </div>
+    </section>
+</div>

@@ -1,0 +1,27 @@
+<!--<transition name="slide-fade" mode="out-in" appear>-->
+<div class="modul-category-list">
+
+    <article @click="onComponentClick(meta.tag)" @keyup.enter="onComponentClick(meta.tag)" :key="meta.tag" v-for="meta in categoryComponents" class="modul-category-list__article" tabindex="0">
+
+        <div class="modul-category-list__figure">
+            <m-icon :name="meta.tag" size="140px"></m-icon>
+            <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
+        </div>
+
+        <div class="modul-category-list__content">
+
+            <header>
+                <h2 class="modul-category-list__title modul-u--h2">
+                    <m-i18n :k="meta.name"></m-i18n>
+                </h2>
+                <span class="modul-category-list__tagname"><m-i18n :k="meta.name"></m-i18n></span>
+            </header>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, deleniti dolores facilis aut, maxime sequi
+                ullam suscipit deserunt quam obcaecati totam nisi magni ipsum ut dolorem fuga nostrum pariatur provident.
+            </p>
+
+        </div>
+
+    </article>
+</div>
