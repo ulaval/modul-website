@@ -98,22 +98,6 @@
 //  links
 // ======================================================================
 
-@mixin modul-highlighted-title() {
-    margin: 0;
-    color: $m-color--white;
-    position: relative;
-    text-decoration: none;
-
-    &::before {
-        content: "";
-        display: block;
-        margin-bottom: $m-padding;
-        width: 32px;
-        height: 4px;
-        background-color: $modul-color--yellow;
-    }
-}
-
 .modul-u--highlighted-title {
     @include modul-highlighted-title();
 }
