@@ -25,13 +25,13 @@
         <li>elle accompagne un lien cliquable, par exemple une icône PDF accompagnant le nom d’un fichier de type PDF</li>
         <li>elle est superposée par une pastille de couleur illustrant un état parmi les suivants :
             <ul>
-                <li>publié (cercle vert) Illustration à venir</li>
-                <li>non publié (cercle rouge) Illustration à venir</li>
-                <li>complété/Succès (cercle vert avec crochet)Illustration à venir</li>
-                <li>partiellement publié (cercle orange avec point d’exclamation)Illustration à venir</li>
-                <li>avertissement (triangle jaune avec point d’exclamation)Illustration à venir</li>
-                <li>erreur (cercle rouge avec x)Illustration à venir</li>
-                <li>nouveauté/nouvel item (pastille orange avec un chiffre)Illustration à venir</li>
+                <li>publié</li>
+                <li>non publié</li>
+                <li>complété/Succès </li>
+                <li>partiellement publié </li>
+                <li>avertissement </li>
+                <li>erreur</li>
+                <li>nouveauté/nouvel item</li>
             </ul>
         </li>
     </ul>
@@ -51,7 +51,7 @@
 <h3>Sélection des icônes</h3>
 <p>La librairie d'icônes vectorielles Streamline est la banque d'icônes officielle à utiliser. Cette librairie contient plus de 5000 icônes optimisées aux dimensions recommandées par les standards d'iOS et d'Android.</p>
 
-<p>Insérer une icône de la librairie à une application ***(insérer le lien vers le composant Icône)***</p>
+<p>Insérer une <a href="https://ulaval.github.io/modul/composants/indicateurs/m-icon/portrait">icône de la librairie</a> à une application</p>
 
 <h3>Icônes personnalisées</h3>
 <p>Bien que l'utilisation d'icônes de la librairie existante soit à privilégier, de nouvelles icônes peuvent être créées pour répondre à des besoins spécifiques. Ces nouvelles icônes devront être créées en respectant une grille de 30 par 30 pixels, puis enregistrées en format SVG.</p>

@@ -44,8 +44,9 @@
             position: relative;
 
             h1 {
-                font-size: 42px;
-                font-weight: 700;
+                color: $modul-color--black-grey-dark;
+
+                @include modul-page-title();
             }
         }
 

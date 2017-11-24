@@ -1,8 +1,11 @@
 <modul-light-template>
-    <m-dropdown slot="header" class="modul-u--dropdown-light" v-model="selectedCategory" @open="onOpen" @close="onClose" width="auto">
-        <m-dropdown-item v-for="category in categories" :value="category" :label="getCategoryName(category)">
-        </m-dropdown-item>
-    </m-dropdown>
+    <h1 slot="header">
+        <m-dropdown v-if="isMqMinXS" class="modul-u--dropdown-light" v-model="selectedCategory" @open="onOpen" @close="onClose" width="auto">
+            <m-dropdown-item v-for="category in categories" :value="category" :label="getCategoryName(category)">
+            </m-dropdown-item>
+        </m-dropdown>
+        <template v-if="!isMqMinXS">{{ getCategoryName(selectedCategory) }}</template>
+    </h1>
     <button slot="leftArrow" @click="getPreviousCategory()" class="m-u--button-primary">
         <m-icon name="left-arrow"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie précédent</span> -->

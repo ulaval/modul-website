@@ -93,8 +93,6 @@ Si la date de début et la date de fin sont précisées et sont le même jour :
 
 À noter, lors de l'affichage d'une plage horaire, il est suggéré d'afficher les jours et les mois au complet, mais il est possible d'utiliser la version abrégée si l'espace est un enjeu. De plus, l'affichage de l'année est facultatif, mais il est fortement suggéré d'en faire mention à au moins un endroit, afin d'éviter toute ambiguïté.
 
-<hr/>
-
 <h2>Temps écoulé</h2>
 <h3>Utilisation</h3>
 Dans certaines situations, il est utile d'afficher le temps écoulé depuis la parution d'une publication ou la réception d'un courriel, d'une notification, etc. Lorsque c'est le cas, le temps écoulé doit être présenté de cette façon :
@@ -116,8 +114,6 @@ Plus de 24 heures : Affichage en jours et affichage de la date au survol de l'é
 Plus de 30 jours : La date est affichée selon le format court.
 
 <m-panel>23 nov. 2016</m-panel>
-
-<hr/>
 
 <h2>Période de retard</h2>
 <h3>Utilisation</h3>

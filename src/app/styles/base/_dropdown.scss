@@ -1,15 +1,10 @@
 .modul-u--dropdown-light.modul-u--dropdown-light,
 .modul-u--dropdown-dark.modul-u--dropdown-dark {
-    .m-dropdown__input,
-    .m-input-style__body {
-        font-size: 30px; // magic number
-        font-weight: $m-font-weight--black;
+    .m-dropdown__input.m-dropdown__input,
+    .m-input-style__body.m-input-style__body {
         padding-right: $m-padding--s;
-        text-transform: uppercase;
 
-        @media (min-width: $m-mq--min--s) {
-            font-size: 34px; // magic number
-        }
+        @include modul-page-title();
     }
 
     .m-input-style {

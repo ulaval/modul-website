@@ -6,12 +6,15 @@ import { ModulWebsite } from '../modul-website';
 import * as ComponentsMutations from '@/app/store/modules/components/mutations';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import { RouteMap, KeyMap } from '@/app/store/modules/components/components-state';
+import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 // import StoreMixinMap, { StoreMixin } from '@/app/store/store-mixin';
 
 const ZINDEX: number = 200;
 
 @WithRender
-@Component
+@Component({
+    mixins: [MediaQueries]
+})
 // ({
 //     mixins: [StoreMixinMap as any]
 // })

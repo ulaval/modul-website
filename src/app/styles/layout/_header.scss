@@ -135,20 +135,21 @@
     }
 
     a {
-        position: relative;
+        display: inline-flex;
+        align-items: center;
     }
 
     &__beta {
-        position: absolute;
-        top: 50%;
-        right: 0;
+        display: inline-flex;
+        align-items: center;
+        height: 12px; // Magic number
+        margin-left: $m-margin--s;
         text-transform: uppercase;
-        transform: translate3d(120%, -50%, 0);
         font-size: 8px; // Mafic number
         font-weight: $m-font-weight--black;
         color: $modul-color--black-grey-dark;
         background: $m-color--ul-yellow;
-        padding: 1px 3px;
+        padding: 0 3px;
     }
 }
 
