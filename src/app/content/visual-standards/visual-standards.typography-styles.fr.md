@@ -16,8 +16,8 @@
 
 <h3>Texte normal</h3>
 
-<p>Sur tous les appareils, le texte courant doit être défini ainsi :/<p>
-<ul>
+<p>Sur tous les appareils, le texte courant doit être défini ainsi :</p>
+<ul class="m-u--bullet-list">
     <li>Un corps de 16px (corps = taille du caractère)</li>
     <li>Aucun interlettrage ( à moins qu'il ne soit nécessaire d'utiliser la graisse de caractère «Semi-bold, 600»)</li>
     <li>Un interlignage de 21 px (16px * 1.3  = ~ 21px)</li>
@@ -27,7 +27,7 @@
 <h3>Utilisation des graisses</h3>
 
 <p>La graisse correspond tout simplement à l'épaisseur du trait. Son utilisation permet d’attirer l’attention, de hiérarchiser l’information comme les titres et les sous-titres, les titres des colonnes d’un tableau ou de mettre en valeur certains mots, titres ou paragraphes. L’utilisation de la graisse devrait se faire raisonnablement, sans en abuser.</p>
-<ul>
+<ul class="m-u--bullet-list">
     <li>Texte très gras = .m-u--font-weight--black</li>
     <li>Texte gras = .m-u--font-weight--bold</li>
     <li>Graisse normal d’un texte.m-u--font-weight--normal</li>
@@ -35,7 +35,7 @@
 
 <h3>Utilisation de l'italique</h3>
 <p>Lorsqu’un mot étranger, une citation, une note ou une légende sont présents dans une texte, il est permis d’utiliser l’italique. Il devrait cependant être utilisé avec modération, car ce sont des caractères qui se lisent plus lentement.</p>
-<ul>
+<ul class="m-u--bullet-list">
     <li>Texte en italique.m-u--font-style--italic</li>
     <li>Texte sans italique.m-u--font-style--normal</li>
 </ul>
@@ -45,7 +45,7 @@
 
 <h3>Précision</h3>
 <p>Il est parfois nécessaire d’ajouter une précision sur la nature d'un champ ou encore afficher un exemple d'utilisation. Cette précision est toujours rattachée à un champ doit être défini ainsi :</p>
-<ul>
+<ul class="m-u--bullet-list">
     <li>Texte en italique</li>
     <li>Corps de 13px</li>
     <li>Couleur $gris du nuancier</li>
@@ -54,7 +54,7 @@
 
 <h3>Surlignement</h3>
 <p>Il est parfois nécessaire de surligner un texte pour attirer l’attention ou encore mettre en évidence un élément. Ce style doit être défini ainsi :</p>
-<ul>
+<ul class="m-u--bullet-list">
     <li>Texte  en gras</li>
     <li>Corps de 14px</li>
     <li>Surlignement en jaune</li>

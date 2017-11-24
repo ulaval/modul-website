@@ -11,4 +11,4 @@
 
 <p>Ce choix de nomenclature des styles utilitaires facilite la lecture et la distinction des classes CSS.</p>
 
-<p>Il est important de suivre cette nomenclature pour créer tout autre style utilitaire. Il est recommandé d’avoir l’avis d’un designer pour l’utilisation des styles utilitaires./<p>
+<p>Il est important de suivre cette nomenclature pour créer tout autre style utilitaire. Il est recommandé d’avoir l’avis d’un designer pour l’utilisation des styles utilitaires.</p>
