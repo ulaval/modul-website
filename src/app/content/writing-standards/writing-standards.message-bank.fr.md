@@ -7,9 +7,6 @@ Vous trouverez ici l'ensemble des messages réutilisables actuellement utilisés
     <li>La date de fin doit être supérieure à la date de début</li>
 </ul>
 
-
-<hr/>
-
 <h2>Date de début</h2>
 
 <ul class="m-u--bullet-list">

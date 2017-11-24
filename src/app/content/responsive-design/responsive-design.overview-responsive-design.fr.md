@@ -33,5 +33,5 @@ Un site adaptatif est donc conçu à l'aide d'une grille et de points de rupture
             <td>>= 1600</td>
             <td>**isMqXL**</td>
         </tr>
-    <tbody>
+    </tbody>
 </table>
