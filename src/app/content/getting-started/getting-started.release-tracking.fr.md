@@ -20,4 +20,5 @@ La version 1.0 livre une première version des composants suivants&nbsp;:
     <li>m-panel : <a href="https://ulaval.github.io/modul/composants/disposition/m-panel/portrait">boîte</a></li>
     <li>m-spinner : <a href="https://ulaval.github.io/modul/composants/indicateurs/m-spinner/portrait">action en cours</a></li>
     <li>m-step : <a href="https://ulaval.github.io/modul/composants/disposition/m-step/portrait">train</a></li>
+    <li>m-textfield : <a href="https://ulaval.github.io/modul/composants/formulaires/m-textfield/portrait">champ de saisie</a></li>
  </ul>
