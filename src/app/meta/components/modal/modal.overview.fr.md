@@ -10,19 +10,15 @@ Pour tous les autres cas où il faut afficher du contenu tout en gardant l'utili
     </ul>
 </modul-do>
 
----
-
 ## Caractéristiques
 ### Contenu
 Une fenêtre de dialogue doit au minimum contenir un énoncé principal et au moins un bouton. Il est également possible de faire afficher un message supplémentaire (information ou avertissement), une zone de conseils et un lien permettant de fermer la fenêtre à l'aide du composant. Le message supplémentaire et la zone de conseils doivent se trouver sous l'énoncé principal.
 
 Puisque plusieurs cas d'utilisation sont possibles, voici quelques principes de présentation de contenu à respecter :
-<ul class="m-u--bullet-list">
-        <li>Lorsque la situation ayant déclenché l'affichage de la fenêtre de dialogue a une conséquence directe sur le cheminement de l'étudiant, sa réussite, son dossier financier, etc., il est important d'utiliser le composant message d'avertissement pour afficher l'énoncé principal.</li>
-        <li>Afin de permettre à l'utilisateur de se concentrer sur une tâche à la fois, il est important d'essayer de véhiculer un seul message par fenêtre. Par exemple, en évitant d'utiliser une zone de message (information ou avertissement) et une zone de conseils en même temps.</li>
-        <li>Idéalement, il faut utiliser un nom de bouton représentant l'action qui sera effectuée, plutôt que des libellés génériques tels que OK, Oui, Non, etc.</li>
-        <li>Lorsqu'un seul bouton est disponible et qu'il n'y a pas de lien de fermeture, il est permis d'utiliser le libellé OK s'il n'y a pas d'alternative préférable.</li>
-    </ul>
+* Lorsque la situation ayant déclenché l'affichage de la fenêtre de dialogue a une conséquence directe sur le cheminement de l'étudiant, sa réussite, son dossier financier, etc., il est important d'utiliser le composant message d'avertissement pour afficher l'énoncé principal.
+* Afin de permettre à l'utilisateur de se concentrer sur une tâche à la fois, il est important d'essayer de véhiculer un seul message par fenêtre. Par exemple, en évitant d'utiliser une zone de message (information ou avertissement) et une zone de conseils en même temps.
+* Idéalement, il faut utiliser un nom de bouton représentant l'action qui sera effectuée, plutôt que des libellés génériques tels que OK, Oui, Non, etc.
+* Lorsqu'un seul bouton est disponible et qu'il n'y a pas de lien de fermeture, il est permis d'utiliser le libellé OK s'il n'y a pas d'alternative préférable.
 
 ### Défilement
 Le contenu d'une fenêtre de dialogue doit toujours être complètement visible dans la fenêtre d'affichage (viewport). Il ne doit donc pas être possible de défiler.

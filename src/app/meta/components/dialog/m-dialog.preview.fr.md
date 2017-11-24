@@ -1,7 +1,6 @@
 <m-dialog>
-    <m-button slot="trigger">Fenêtre secondaire</m-button>
-    <span slot="header">Dolore consectetur in sunt consequat veniam enim nulla minim aliqua qui pariatur nostrud.</span>
-    <h2>Nisi cillum excepteur consequat voluptate excepteur incididunt ullamco dolor.</h2>
+    <m-button slot="trigger">Fenêtre de dialogue</m-button>
+    <h2 slot="header">Dolore consectetur in sunt consequat veniam enim</h2>
     <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim
         elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor
         tempor in in nostrud reprehenderit minim culpa incididunt.</p>

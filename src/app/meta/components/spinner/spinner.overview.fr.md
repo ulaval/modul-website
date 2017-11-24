@@ -1,11 +1,8 @@
 ## Utilisation
 Le composant action en cours s'affiche lorsqu'une action est en train de s'exécuter et que le temps restant est inconnu, par exemple&nbsp;:
-    <ul class="m-u--bullet-list">
-        <li>lors du chargement de nouveaux résultats de recherche</li>
-        <li>lors de l'exécution d'un traitement</li>
-    </ul>
+* lors du chargement de nouveaux résultats de recherche
+* lors de l'exécution d'un traitement
 
----
 ## Caractéristiques
 ### Contexte d'utilisation
 L'emplacement de l'icône varie en fonction de son contexte d'utilisation.

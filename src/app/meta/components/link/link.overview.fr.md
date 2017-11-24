@@ -5,7 +5,6 @@ L'utilisation d'un lien est recommandée lorsque l'utilisateur doit naviguer ver
 
 Toutes les actions permettant de modifier le contenu du site doivent plutôt être affichées sous forme de boutons.
 
----
 ## Caractéristiques
 ### Icônes
 Lorsque pertinent, une icône peut accompagner un lien. Dans ce cas, l'icône est toujours placée à la gauche du lien. Dans le cas où le lien est seul sur une ligne et qu'aucune icône particulier n'est nécessaire, on affiche l'icône par défaut (">").

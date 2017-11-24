@@ -1,20 +1,15 @@
 ## Utilisation
 Les icônes cliquables sont représentées par une image seulement. Elles permettent généralement d'ouvrir des outils ou des fenêtres contextuelles. Elles peuvent également être utilisées pour réorganiser du contenu, par exemple une liste ou une grille, ou accompagner un lien dans le but d'identifier un format de fichier, par exemple un fichier PDF. Les icônes cliquables ne s'affichent jamais à l'état visité, contrairement aux liens.
 
----
 ## Caractéristiques
 En fonction de l'état de l'icône, le rendu est filaire ou plein :
-    <ul class="m-u--bullet-list">
-        <li>État normal: rendu filaire</li>
-        <li>État pressé: rendu filaire et rond plein de couleur gris pâle en arrière-plan</li>
-        <li>État de survol: rendu filaire, fil plus foncé</li>
-    </ul>
+* **État normal :** rendu filaire
+* **État pressé :** rendu filaire et rond plein de couleur gris pâle en arrière-plan
+* **État de survol :** rendu filaire, fil plus foncé
 
 ### Pastille
 La pastille est utilisée pour afficher un nombre lié à l'élément sur lequel est se superpose. Par exemple, pour indiquer le nombre de notifications non vues, le nombre de courriels non lus, le nombre d'articles dans le panier, etc. :
-<ul class="m-u--bullet-list">
-        <li>Elle est de couleur orange (#f39612)</li>
-        <li>Elle se superpose à une icône, au bas à droite</li>
-        <li>Lorsque le nombre d'éléments est zéro, la pastille n'est pas affichée</li>
-        <li>Lorsque le nombre d'éléments est supérieur à 100, la valeur 99+ est affichée</li>
-    </ul>
+* Elle est de couleur orange (#f39612)
+* Elle se superpose à une icône, au bas à droite
+* Lorsque le nombre d'éléments est zéro, la pastille n'est pas affichée
+* Lorsque le nombre d'éléments est supérieur à 100, la valeur 99+ est affichée

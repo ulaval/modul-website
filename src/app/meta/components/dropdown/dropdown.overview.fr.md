@@ -2,10 +2,8 @@
 Une liste déroulante permet de sélectionner un seul élément dans une liste. Cet élément est le seul demeurant visible lorsque la liste est fermée.
 
 Règle générale, l'utilisation d'une liste déroulante est recommandée lorsque le nombre d'éléments dans une liste se situe entre 5 et 15 :
-    <ul class="m-u--bullet-list">
-        <li>Si plus de 15 éléments sont affichés dans la liste, l'utilisation de l'option de filtrage est recommandée.</li>
-        <li>S'il y a moins de 5 éléments, l'utilisation d'un autre composant est peut-être plus appropriée. Toutefois, lorsque le nombre d'éléments présenté varie d'un utilisateur à l'autre, la liste déroulante peut être utilisée. Exemple : Dans l'inscription, on affiche la liste des cours auxquels l'utilisateur est inscrit, en contexte du programme sélectionné dans une liste déroulante.</li>
-    </ul>
+* Si plus de 15 éléments sont affichés dans la liste, l'utilisation de l'option de filtrage est recommandée.
+* S'il y a moins de 5 éléments, l'utilisation d'un autre composant est peut-être plus appropriée. Toutefois, lorsque le nombre d'éléments présenté varie d'un utilisateur à l'autre, la liste déroulante peut être utilisée. Exemple : Dans l'inscription, on affiche la liste des cours auxquels l'utilisateur est inscrit, en contexte du programme sélectionné dans une liste déroulante.
 
 Les listes déroulants peuvent aussi être utilisées lorsqu’il est nécessaire de conserver l'espace de l'écran, ou d’empêcher les les utilisateurs d'entrer des données erronées.
 

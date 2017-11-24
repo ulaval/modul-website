@@ -1,7 +1,6 @@
 ## Utilisation
 Le sélecteur de date est utilisé pour permettre à l'utilisateur de sélectionner une date.
 
----
 ## Caractéristiques
 ### Date
 Le format de date retenu pour la saisie et la modification est le suivant : AAAA-MM-JJ

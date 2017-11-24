@@ -1,7 +1,6 @@
 ## Utilisation
 Les messages sont utilisés pour donner de l'information pertinente aux utilisateurs. Les messages peuvent être affichés dans les pages ou dans les fenêtres secondaires.
 
----
 ## Caractéristiques
 ### Type de message
 Différents types de messages sont disponibles en fonction du type d'information à transmettre. Le type de message affiché se distingue par sa couleur et son icône.
@@ -20,10 +19,8 @@ Ce type de message est utilisé pour afficher des messages d'erreurs.
 
 ### Format du message
 Deux formats de messages sont disponibles :
-    <ul class="m-u--bullet-list">
-        <li>*Regular* : Ce format est à privilégier lorsque le message concerne une page ou une section de page</li>
-        <li>*Light* : Ce format est à privilégier lorsque le message concerne un élément spécifique de l'interface</li>
-    </ul>
+* **Regular :** Ce format est à privilégier lorsque le message concerne une page ou une section de page<
+* **Light :** Ce format est à privilégier lorsque le message concerne un élément spécifique de l'interface
 
 Pour le format allégé, il est possible d'ajouter un lien en fin de message, permettant de faire afficher le l'information supplémentaire dans une infobulle.
 
