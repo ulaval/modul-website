@@ -16,8 +16,7 @@ let pageGettingStarted: Page;
 // getting-started
 pageGettingStarted = new Page('getting-started');
 pageGettingStarted.tabs.push('computer-setup');
-pageGettingStarted.tabs.push('source-code');
-pageGettingStarted.tabs.push('frontend-architecture');
+// pageGettingStarted.tabs.push('frontend-architecture');
 pageGettingStarted.tabs.push('release-tracking');
 
 GettingStarted.pages.push(pageGettingStarted);

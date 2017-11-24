@@ -4,7 +4,6 @@ import WithRender from './home.html?style=./home.scss';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import ElementQueries from 'css-element-queries/src/ElementQueries';
 import * as Routes from '../../router';
-import { ROUTES, STANDARDS, UNIFIED_EXPERIENCE, RESPONSIVE_DESIGN } from '@/app/router';
 
 @WithRender
 @Component({
@@ -26,6 +25,8 @@ export class HomePage extends ModulVue {
     private ecosystem: string = Routes.ROUTES[Routes.ECOSYSTEM];
     private codingStandards: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.CODING_STANDARDS];
     private gettingStarted: string = Routes.ROUTES[Routes.GETTING_STARTED] + '/' + Routes.ROUTES[Routes.GETTING_STARTED];
+    private unifiedExperience: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.UNIFIED_EXPERIENCE];
+    private responsiveDesign: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.RESPONSIVE_DESIGN];
 
     protected mounted(): void {
         this.setParallaxEffect();
@@ -62,13 +63,5 @@ export class HomePage extends ModulVue {
 
     private onRoute(route: string): void {
         this.$router.push(route);
-    }
-
-    private unifiedExperience(event): void {
-        this.$router.push('/' + ROUTES[STANDARDS] + '/' + ROUTES[UNIFIED_EXPERIENCE]);
-    }
-
-    private get responsiveDesign(): string {
-        return '/' + ROUTES[STANDARDS] + '/' + ROUTES[RESPONSIVE_DESIGN];
     }
 }
