@@ -77,13 +77,14 @@
             <template v-if="section == 'components'">
                 <ul v-for="category in categoriesComponent" class="modul-menu__list">
                     <li>
-                        <h2 @click="onComponentCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
+                        <h2 @click="onComponentCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
                             <span>{{category.text}}</span>
                         </h2>
                     </li>
                     <li v-for="component in getCategoryComponents(category.id)">
                         <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
                             <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
+                            <m-i18n :k="component.tag" class="modul-menu__label modul-menu__tag"></m-i18n>
                         </a>
                     </li>
                 </ul>
@@ -91,7 +92,7 @@
             <template v-else>
                 <ul v-for="page in pagesStandards" class="modul-menu__list">
                     <li>
-                        <h2 @click="onPageClick(page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
+                        <h2 @click="onPageClick(page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
                             <span>{{page.text}}</span>
                         </h2>
                     </li>
@@ -112,9 +113,9 @@
             <div class="modul-footer__logo">
                 <span><m-i18n k="modul:powered-by"></m-i18n><a class="modul-footer__logo__link" href="https://www.ulaval.ca/" target="_blank"><img :src="logo" alt="l'Université Laval" title="l'Université Laval"></a> </span>
             </div>
-            <div class="modul-footer__nav" v-if="isMqMinS">
+            <!-- <div class="modul-footer__nav" v-if="isMqMinS">
                 <a class="modul-footer__link" href=""><m-i18n k="modul:terms-of-use"></m-i18n></a>
-            </div>
+            </div> -->
         </div>
         <div class="modul-footer__version">
             <span class="modul-logo"><a href="">MOD<b>UL</b></a></span>

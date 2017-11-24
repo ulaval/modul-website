@@ -4,22 +4,20 @@ La version <m-link mode="link" target="_blank" href='https://github.com/ulaval/m
 
 La version 1.0 livre une première version des composants suivants&nbsp;:
   <ul class="m-u--bullet-list">
-    <li>m-accordion : accordéon</li>
-    <li>m-button : bouton</li>
-    <li>m-checkbox : case à cocher</li>
-    <li>m-datepicker : sélecteur de date</li>
-    <li>m-dialog : fenêtre secondaire</li>
-    <li>m-dropdown : liste déroulante</li>
-    <li>m-icon-button : icône cliquable</li>
-    <li>m-link : lien</li>
-    <li>m-list-item : élément de liste de contenu</li>
-    <li>m-message : messages</li>
-    <li>m-modal : fenêtre de dialogue</li>
-    <li>m-menu : menu</li>
-    <li>m-panel : Boîte</li>
-    <li>m-radio : bouton radio</li>
-    <li>m-spinner : action en cours</li>
-    <li>m-step : train</li>
+    <li>m-accordion : <a href="https://ulaval.github.io/modul/composants/contenu/m-accordion/portrait">accordéon</a></li>
+    <li>m-button : <a href="https://ulaval.github.io/modul/composants/formulaires/m-button/portrait">bouton</a></li>
+    <li>m-checkbox : <a href="https://ulaval.github.io/modul/composants/formulaires/m-checkbox/portrait">case à cocher</a></li>
+    <li>m-datepicker : <a href="https://ulaval.github.io/modul/composants/formulaires/m-datepicker/portrait">sélecteur de date</a></li>
+    <li>m-dialog : <a href="https://ulaval.github.io/modul/composants/communication/m-dialog/portrait">fenêtre de dialogue</a></li>
+    <li>m-dropdown : <a href="https://ulaval.github.io/modul/composants/formulaires/m-dropdown/portrait">liste déroulante</a></li>
+    <li>m-dropdown-item : <a href="https://ulaval.github.io/modul/composants/formulaires/m-dropdown-item/portrait">élément de liste déroulante</a></li>
+    <li>m-icon : <a href="https://ulaval.github.io/modul/composants/indicateurs/m-icon/portrait">icône</a></li>
+    <li>m-link : <a href="https://ulaval.github.io/modul/composants/navigation/m-link/portrait">lien</a></li>
+    <li>m-list-item : <a href="https://ulaval.github.io/modul/m-list-item/portrait">élément de liste de contenu</a></li>
+    <li>m-menu : <a href="https://ulaval.github.io/modul/composants/contenu/m-menu/portrait">menu d"options</a></li>
+    <li>m-message : <a href="https://ulaval.github.io/modul/composants/communication/m-message/portrait">messages</a></li>
+    <li>m-modal : <a href="https://ulaval.github.io/modul/composants/communication/m-modal/portrait">fenêtre modale</a></li>
+    <li>m-panel : <a href="https://ulaval.github.io/modul/composants/disposition/m-panel/portrait">boîte</a></li>
+    <li>m-spinner : <a href="https://ulaval.github.io/modul/composants/indicateurs/m-spinner/portrait">action en cours</a></li>
+    <li>m-step : <a href="https://ulaval.github.io/modul/composants/disposition/m-step/portrait">train</a></li>
  </ul>
-
- Tous les autres composants de cette version sont en version beta.

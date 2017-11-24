@@ -46,24 +46,7 @@ $modul-menu--list-max-width: 300px;
     }
 
     &__title {
-        cursor: pointer;
         margin-bottom: $m-margin;
-        outline: none;
-
-        &:active {
-            outline: none;
-        }
-
-        &:hover,
-        &:focus {
-            &::before {
-                width: 64px;
-            }
-        }
-
-        &::before {
-            transition: width 0.3s ease;
-        }
     }
 
     &__link {
@@ -102,6 +85,10 @@ $modul-menu--list-max-width: 300px;
             .modul-menu__label {
                 color: $m-color--white;
             }
+
+            .modul-menu__label.modul-menu__tag {
+                color: $modul-color--grey-dark;
+            }
         }
 
         span {
@@ -110,6 +97,12 @@ $modul-menu--list-max-width: 300px;
             position: relative;
             z-index: 2;
         }
+    }
+
+    &__tag {
+        font-style: italic;
+        font-size: 14px;
+        color: $modul-color--grey-darker;
     }
 
     &__translation {

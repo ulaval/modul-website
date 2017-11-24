@@ -98,7 +98,7 @@
 //  links
 // ======================================================================
 
-.modul-u--highlighted-title {
+@mixin modul-highlighted-title() {
     margin: 0;
     color: $m-color--white;
     position: relative;
@@ -111,5 +111,31 @@
         width: 32px;
         height: 4px;
         background-color: $modul-color--yellow;
+    }
+}
+
+.modul-u--highlighted-title {
+    @include modul-highlighted-title();
+}
+
+.modul-u--highlighted-title-link {
+    cursor: pointer;
+    outline: none;
+
+    @include modul-highlighted-title();
+
+    &:active {
+        outline: none;
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            width: 64px; // Magic number
+        }
+    }
+
+    &::before {
+        transition: width 0.3s ease;
     }
 }

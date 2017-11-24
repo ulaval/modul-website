@@ -1,16 +1,15 @@
 {
     "name": {
         "getting-started": "Premiers pas",
-        "getting-started.computer-setup": "Poste de développeur",
-        "getting-started.source-code": "Github",
+        "getting-started.computer-setup": "Démarrer une application",
         "getting-started.frontend-architecture": "Architecture frontend",
         "getting-started.release-tracking": "Suivi des versions",
 
         "unified-experience": "Expérience unifiée",
-        "unified-experience.overview-unified-experience": "Vue globale",
+        "unified-experience.overview-unified-experience": "Expérience unifiée",
 
         "responsive-design": "Design adaptatif",
-        "responsive-design.overview-responsive-design": "Vue globale",
+        "responsive-design.overview-responsive-design": "Design adaptatif",
 
         "writing-standards": "Normes éditoriales",
         "writing-standards.editorial-tone": "Ton rédactionnel",

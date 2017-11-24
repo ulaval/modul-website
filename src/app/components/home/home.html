@@ -2,7 +2,7 @@
     <section class="modul-home-experiment">
         <article class="modul-home-experiment__body">
             <header class="modul-home-experiment__body__header-container" :style="{ top: experimentTitlePosition + 'px'}">
-                <h2 tabindex="0" class="modul-home-experiment__body__header" @click="unifiedExperience">
+                <h2 tabindex="0" class="modul-home-experiment__body__header" @click="onRoute(unifiedExperience)">
                     <m-i18n class="modul-home-experiment__body__header-title" k="modul:unified-experience-title-a"></m-i18n>
                     <m-i18n class="modul-home-experiment__body__header-subtitle" k="modul:unified-experience-title-b"></m-i18n>
                     <span class="modul-home-experiment__body__header-pixel">
@@ -50,15 +50,11 @@
                 </article>
             </section>
             <section class="modul-home-design__body" ref="designBody">
-                <h2 class="modul-u--h2 modul-u--highlighted-title">
+                <h2 class="modul-u--h2 modul-u--highlighted-title-link" @click="onRoute(responsiveDesign)">
                     <m-i18n k="modul:responsive-design" :params="['<br>']" :html-encode="false"></m-i18n>
                 </h2>
                 <p>
                     <m-i18n k="modul:responsive-design-desc"></m-i18n>
-                    <br>
-                    <m-link mode="router-link" :url="responsiveDesign">
-                        <m-i18n k="modul:responsive-design-link"></m-i18n>
-                    </m-link>
                 </p>
             </section>
         </article>
