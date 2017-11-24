@@ -216,8 +216,7 @@ Pour plus de renseignements, consulter le site de l’<a href="http://bdl.oqlf.g
      </ul><br/>
     <m-panel>
         <ul class="m-u--bullet-list">
-            <li>Pour qu’un site soit considéré « Complet », tous les éléments suivants doivent faire partie du site de cours :</li>
-            <li>
+            <li>Pour qu’un site soit considéré « Complet », tous les éléments suivants doivent faire partie du site de cours :
                 <ul>
                     <li>La sous-section « Coordonnées et disponibilités » ne doit pas être vide.</li>
                     <li>Une sous-section générique obligatoire ne doit pas être vide.</li>
@@ -235,8 +234,7 @@ Pour plus de renseignements, consulter le site de l’<a href="http://bdl.oqlf.g
     </ul><br/>
     <m-panel>
         <ul class="m-u--bullet-list">
-            <li>Vous devez vous adresser au Bureau du registraire dans les cas suivants :</li>
-            <li>
+            <li>Vous devez vous adresser au Bureau du registraire dans les cas suivants :
                 <ul>
                     <li>l'attestation d'inscription officielle standard ne répond pas à toutes vos exigences;</li>
                     <li>vous avez en votre possession un formulaire en provenance d'un organisme externe devant être rempli par le personnel du Bureau du registraire;</li>
@@ -250,8 +248,7 @@ Pour plus de renseignements, consulter le site de l’<a href="http://bdl.oqlf.g
     </ul><br/>
     <m-panel>
         <ul class="m-u--bullet-list">
-            <li>Où et quand l'utiliser?</li>
-            <li>
+            <li>Où et quand l'utiliser?
                 <ul>
                     <li>Au PEPS</li>
                     <li>À la Bibliothèque</li>
