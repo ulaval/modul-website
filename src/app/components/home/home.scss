@@ -73,9 +73,21 @@ $modul-home-design--width--l: 270px;
         &__header {
             width: $modul-home-design--width;
             margin: 0;
+            transition: transform $m-transition-duration;
+            cursor: pointer;
+            outline: none;
 
             @media (min-width: $m-mq--min--xs) {
                 width: $modul-home-design--width--l;
+            }
+
+            &:focus,
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            &:active {
+                transform: none;
             }
 
             &-container {
