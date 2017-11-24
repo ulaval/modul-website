@@ -85,6 +85,10 @@ $modul-menu--list-max-width: 300px;
             .modul-menu__label {
                 color: $m-color--white;
             }
+
+            .modul-menu__label.modul-menu__tag {
+                color: $modul-color--grey-dark;
+            }
         }
 
         span {
@@ -93,6 +97,12 @@ $modul-menu--list-max-width: 300px;
             position: relative;
             z-index: 2;
         }
+    }
+
+    &__tag {
+        font-style: italic;
+        font-size: 14px;
+        color: $modul-color--grey-darker;
     }
 
     &__translation {

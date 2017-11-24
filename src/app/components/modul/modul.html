@@ -84,6 +84,7 @@
                     <li v-for="component in getCategoryComponents(category.id)">
                         <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
                             <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
+                            <m-i18n :k="component.tag" class="modul-menu__label modul-menu__tag"></m-i18n>
                         </a>
                     </li>
                 </ul>
