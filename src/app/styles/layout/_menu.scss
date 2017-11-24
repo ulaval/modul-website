@@ -46,24 +46,7 @@ $modul-menu--list-max-width: 300px;
     }
 
     &__title {
-        cursor: pointer;
         margin-bottom: $m-margin;
-        outline: none;
-
-        &:active {
-            outline: none;
-        }
-
-        &:hover,
-        &:focus {
-            &::before {
-                width: 64px;
-            }
-        }
-
-        &::before {
-            transition: width 0.3s ease;
-        }
     }
 
     &__link {

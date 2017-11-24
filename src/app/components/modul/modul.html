@@ -77,7 +77,7 @@
             <template v-if="section == 'components'">
                 <ul v-for="category in categoriesComponent" class="modul-menu__list">
                     <li>
-                        <h2 @click="onComponentCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
+                        <h2 @click="onComponentCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
                             <span>{{category.text}}</span>
                         </h2>
                     </li>
@@ -91,7 +91,7 @@
             <template v-else>
                 <ul v-for="page in pagesStandards" class="modul-menu__list">
                     <li>
-                        <h2 @click="onPageClick(page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title">
+                        <h2 @click="onPageClick(page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
                             <span>{{page.text}}</span>
                         </h2>
                     </li>
