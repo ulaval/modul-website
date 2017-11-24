@@ -29,6 +29,7 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(FRENCH, require('./components/navbar/navbar.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/navbar-item/navbar-item.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/menu/menu.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./components/menu-item/menu-item.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/panel/panel.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/sidebar/sidebar.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/popper/popper.meta.fr.json'));

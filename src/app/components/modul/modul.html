@@ -84,7 +84,7 @@
                     <li v-for="component in getCategoryComponents(category.id)">
                         <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
                             <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
-                            <m-i18n :k="component.tag" class="modul-menu__label modul-menu__tag"></m-i18n>
+                            <span class="modul-menu__label modul-menu__tag">{{ component.tag }}</span>
                         </a>
                     </li>
                 </ul>
@@ -100,7 +100,7 @@
             </template>
         </nav>
         <nav class="modul-menu" v-if="headerAnimationCompleted && !isMqMinS" tabindex="0" ref="menu">
-            menu mobile
+            <!-- menu mobile -->
         </nav>
     </transition>
 

@@ -3,7 +3,7 @@
 
 <h3>Tableau des espacements avant et après les signes de ponctuation</h3>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>NOM</th>
@@ -22,18 +22,18 @@
             <td>Aucune place n'est réservée</td>
         </tr>
         <tr>
-            <td>Astérisque(avant le mot)</td>
+            <td>Astérisque (avant le mot)</td>
             <td>esp.</td>
-            <td>*</td>
+            <td>\*</td>
             <td>inséc.</td>
-            <td>* Indique un élément obligatoire</td>
+            <td>\* Indique un élément obligatoire</td>
         </tr>
         <tr>
-            <td>Astérisque(aprèsle mot)</td>
+            <td>Astérisque (après le mot)</td>
             <td>⌀</td>
-            <td>*</td>
+            <td>\*</td>
             <td>esp.</td>
-            <td>Période d'affichage*</td>
+            <td>Période d'affichage\*</td>
         </tr>
         <tr>
             <td>Barre oblique</td>
@@ -64,7 +64,7 @@
             <td>Veuillez faire un choix parmi les sections suivantes&nbsp;:</td>
         </tr>
         <tr>
-            <td>Deux-points(heures numériques)</td>
+            <td>Deux-points (heures numériques)</td>
             <td>⌀</td>
             <td>;</td>
             <td>⌀</td>

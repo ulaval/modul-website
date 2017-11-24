@@ -3,7 +3,7 @@
 <h2>Couleurs officielles de l’Université Laval</h2>
 <p>Trois couleurs forment l’identité visuelle de l’Université Laval :  le bleu, le jaune et le rouge.  Les normes graphiques UL régissent l’utilisation de ces couleurs  et elles  doivent être respectées.</p>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>Variale</th>
@@ -29,7 +29,7 @@
 <h2>Couleurs de l’interactivité</h2>
 <p>Utilisation : états, par exemple l'état actif, le survol, le traitement, des différents éléments cliquables (bouton d’action, lien)</p>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>Variale</th>
@@ -66,7 +66,7 @@
 <h2>Couleurs d’accent</h2>
 <p>Utilisation : accentuer un élément ou une nouveauté</p>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>Variale</th>
@@ -96,7 +96,7 @@
 <h2>Couleurs active</h2>
 <p>Utilisation :  états (p. ex. action en cours,  sélectionné)</p>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>Variale</th>
@@ -126,7 +126,7 @@
 <h2>Couleurs de succès</h2>
 <p>Utilisation : message de succès, indicateur de réussite, état publié</p>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>Variale</th>
@@ -156,7 +156,7 @@
 <h2>Couleurs avertissement</h2>
 <p>Utilisation : avertissement</p>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>Variale</th>
@@ -186,7 +186,7 @@
 <h2>Couleurs d’erreur</h2>
 <p>Utilisation : message d’erreur, indicateur d’échec, état (non publié, conflit)</p>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>Variale</th>
@@ -216,7 +216,7 @@
 <h2>Couleurs d’arrière-plan</h2>
 <p>Utilisation : arrière-plan</p>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>Variale</th>
@@ -254,7 +254,7 @@
 <h2>Couleurs d’arrière-plan</h2>
 <p>Utilisation : arrière-plan</p>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>Variale</th>
@@ -288,7 +288,7 @@
 <h2>Autres couleurs</h2>
 <p>Utilisation : titre,  libellé, texte, etc.</p>
 
-<table class="m-u--table">
+<table>
     <thead>
         <tr>
             <th>Variale</th>
