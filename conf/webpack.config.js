@@ -19,7 +19,7 @@ module.exports = function (env) {
 
         output: {
             path: resolve("dist"),
-            publicPath: isProd ? 'https://contenu.monportail.at.ulaval.ca/mpo/@ulaval/modul-website/dev-SNAPSHOT/' : '/',
+            publicPath: isProd ? 'https://contenu.monportail.ulaval.ca/mpo/@ulaval/modul-website/master/' : '/',
             filename: "app.js"
         },
 
