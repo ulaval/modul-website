@@ -187,41 +187,26 @@
         <td>Il fait -3 °C.</td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>Tiret</td>
+        <td>inséc.</td>
+        <td>-</td>
+        <td>inséc.</td>
+        <td>Inscription aux cours - Été 2017</td>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+     <tr>
+        <td>Virgule (dans les nombres)</td>
+        <td>⌀</td>
+        <td>,</td>
+        <td>⌀</td>
+        <td>12 535,75&nbsp;$</td>
 </table>
+
+Pour plus de renseignements, consulter le site de l’<a href="http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?t1=1&id=2039">Office québécois de la langue française</a>.
+<ul class="m-u--bullet-list">
+        <li>Espace insécable : inséc.</li>
+        <li>espace : esp.</li>
+        <li>Aucun espace : ⌀</li>
+     </ul>
 
 <h3>Énumérations verticales</h3>
 <p>Lors de l'utilisation d'une énumération verticale, il est important :</p>
