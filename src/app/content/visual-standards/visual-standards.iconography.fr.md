@@ -20,7 +20,7 @@
 <h3>Dimensions des icônes</h3>
 <p>Sur appareils mobiles, comme sur les postes de bureau, la zone cliquable de l’icône est de 44 pixels. L’icône peut être de taille variable à l’intérieur de cette zone, mais doit demeurer reconnaissable.</p>
 
-<h3>ouleurs</h3>
+<h3>Couleurs</h3>
 <p>Une icône peut être en couleur uniquement si :
     <ul class="m-u--bullet-list">
         <li>elle accompagne un lien cliquable, par exemple une icône PDF accompagnant le nom d’un fichier de type PDF</li>

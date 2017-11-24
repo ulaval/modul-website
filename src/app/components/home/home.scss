@@ -33,7 +33,7 @@ $modul-home-design--width--l: 270px;
     overflow-y: auto;
     padding: $m-padding--l $m-padding $m-padding--xl $m-padding;
     background-color: $modul-color--black-grey-dark;
-    background-image: url(/assets/grid.svg);
+    background-image: url(../../../assets/grid.svg);
 
     @media (max-width: $m-mq--max--s) {
         top: $modul-header--height--s / 2;
