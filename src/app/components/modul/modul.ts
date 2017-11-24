@@ -48,6 +48,7 @@ export default class Modul extends ModulWebsite {
     private searchWidth: string = '400px';
 
     private components: Component[] = [];
+    private logo: any = require('../../../assets/logo-ul.svg');
 
     protected beforeMount(): void {
         Meta.getCategories().forEach(category => {

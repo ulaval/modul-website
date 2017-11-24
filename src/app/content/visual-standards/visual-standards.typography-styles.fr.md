@@ -2,8 +2,7 @@
 <p>La typographie influence la lisibilité et l’efficacité d’un message et facilite le processus de compréhension et d’assimilation de l’information. Un texte bien formaté permet de mettre l’accent sur le contenu et non sur l’effort nécessaire pour le lire.</p>
 <ul class="m-u--bullet-list">
     <li>Disponible sur  Google fonts et libre de droits, la famille de caractères à utiliser dans tout composant est «&nbsp;Source Sans Pro&nbsp;».</li>
-    <li>Deux polices de caractères peuvent être utilisées&nbsp;:</li>
-    <li>
+    <li>Deux polices de caractères peuvent être utilisées&nbsp;:
         <ul>
             <li>Source Sans Pro, light, 300 pour le texte courant</li>
             <li>Source Sans Pro, normal, 400 pour les titres, les  sous-titres ou la mise en évidence</li>

@@ -3,7 +3,5 @@
 
 <p>Lorsque cette étape sera complétée, il faudra cloner la librairie de composants <a href="https://github.com/ulaval/modul-components" target="_blank">*modul-components*</a> et suivre les instructions d'installation de la section <a href="https://github.com/ulaval/modul-components/blob/master/README.md" target="_blank">*Readme*</a> pour ajouter la librairie à votre application.</p>
 
-<hr/>
-
 <h2>Collaboration</h2>
 <p>L'équipe modUL encouage les développeurs qui utilisent la librairie de composants modUL à rapporter les anomalies rencontrées ou à faire leurs demandes d'amélioration dans la section <a href="https://github.com/ulaval/modul-components/issues" target="_blank">*Issues*</a>  de modul-components. Il en va de même pour le gabarit d'application <a href="https://github.com/ulaval/modul-typescript-template/issues" target="_blank">*modul-typescript-template*</a>.</p>
