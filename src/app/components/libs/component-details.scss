@@ -75,15 +75,14 @@
 // }
 
 // button
-.modul-code-preview-button {
+.modul-code-preview-button.modul-code-preview-button {
     width: 52px; //Magic number
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
-    cursor: pointer;
-    font-size: 20px;
+
+    &::before {
+        background: $modul-color--black-grey-light !important;
+    }
 }

@@ -12,7 +12,7 @@ export class MDarkTemplate extends Vue {
     private defaultTitle: string = 'Add a title';
     private headerMessage: string = 'You must put a title in the header slot';
     private previewMessage: string = 'You must put text in the preview slot';
-    private bodyMessage: string = 'You must put content in the body slot';
+    private defaultSlotMessage: string = 'You must put content in the default slot';
 
     protected mounted(): void {
         if (!this.hasHeader) {
@@ -23,8 +23,8 @@ export class MDarkTemplate extends Vue {
             console.error(this.previewMessage);
         }
 
-        if (!this.hasBody) {
-            console.error(this.bodyMessage);
+        if (!this.hasDefalutSlot) {
+            console.error(this.defaultSlotMessage);
         }
     }
 
@@ -48,8 +48,8 @@ export class MDarkTemplate extends Vue {
         return !!this.$slots.preview;
     }
 
-    private get hasBody(): boolean {
-        return !!this.$slots.body;
+    private get hasDefalutSlot(): boolean {
+        return !!this.$slots.default;
     }
 }
 export const DARK_TEMPLATE_NAME: string = 'modul-dark-template';

@@ -1,8 +1,13 @@
-
 html,
 body,
-.modul-body {
+.modul-body,
+.m-flex-template__header.m-flex-template__header {
     background: $modul-color--body;
+}
+
+.m-flex-template__page__body {
+    display: flex;
+    flex-direction: column;
 }
 
 .modul-container,

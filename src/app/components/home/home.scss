@@ -9,7 +9,11 @@ $modul-home-design--width--l: 270px;
     &::before {
         content: '';
         display: block;
-        height: 120vh;
+        height: 100vh;
+
+        @media (min-width: $m-mq--min--s) {
+            height: 120vh;
+        }
     }
 }
 

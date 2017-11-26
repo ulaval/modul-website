@@ -14,60 +14,64 @@
     position: relative;
     z-index: 3;
     background-color: $modul-color--grey;
-}
 
-.modul-footer__logo {
-    span {
+    &__logo {
+        span {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        &__link {
+            width: 100px;
+            margin-left: $m-padding;
+            transition: transform $m-transition-duration ease;
+
+            svg {
+                width: 100%;
+            }
+
+            &:hover,
+            &:focus {
+                transform: scale(1.05);
+                outline: none;
+            }
+
+            &:active {
+                transform: none;
+            }
+        }
+    }
+
+    &__body {
+        background-color: $m-color--white;
+        border-top: $m-border-width--s solid $m-color--grey;
         display: flex;
+        width: 100%;
+        justify-content: space-between;
         align-items: center;
-        white-space: nowrap;
+        padding: $m-padding $m-padding--l;
+
+        @media (max-width: $m-mq--max--s) {
+            justify-content: center;
+        }
     }
 
     &__link {
-        width: 100px;
-        margin-left: $m-padding;
-        transition: transform $m-transition-duration ease;
-
-        svg {
-            width: 100%;
-        }
-
-        &:hover,
-        &:focus {
-            transform: scale(1.05);
-            outline: none;
-        }
-
-        &:active {
-            transform: none;
+        &,
+        &:visited {
+            color: $modul-color--black-grey;
+            text-decoration: none;
         }
     }
-}
 
-.modul-footer__body {
-    background-color: $m-color--white;
-    border-top: $m-border-width--s solid $m-color--grey;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: $m-padding $m-padding--l;
-}
+    &__version {
+        padding: $m-padding--s $m-padding;
+        text-align: center;
 
-.modul-footer__link {
-    &,
-    &:visited {
-        color: $modul-color--black-grey;
-        text-decoration: none;
-    }
-}
-
-.modul-footer__version {
-    padding: $m-padding--s $m-padding;
-    text-align: center;
-
-    &,
-    .modul-logo {
-        font-size: $m-font-size--s;
+        &,
+        .modul-logo {
+            font-size: $m-font-size--s;
+        }
     }
 }

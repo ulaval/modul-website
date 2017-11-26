@@ -1,4 +1,4 @@
-<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHome, 'modul--is-black-template' : isBlackHeader}" :dynamic-header="false">
+<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHome, 'modul--is-black-template' : isBlackHeader, 'modul--is-light-template' : !isBlackHeader}" :dynamic-header="false">
     <div slot="header" ref="header" class="modul-header">
         <h1 v-if="isHome" class="modul-logo">
             <router-link to="/">MOD<b>UL</b> <span class="modul-logo__beta">Beta</span></router-link>
