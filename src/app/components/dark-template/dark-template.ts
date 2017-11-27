@@ -8,19 +8,12 @@ import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 @WithRender
 @Component
 export class MDarkTemplate extends Vue {
-
-    private defaultTitle: string = 'Add a title';
     private headerMessage: string = 'You must put a title in the header slot';
-    private previewMessage: string = 'You must put text in the preview slot';
     private defaultSlotMessage: string = 'You must put content in the default slot';
 
     protected mounted(): void {
-        if (!this.hasHeader) {
+        if (!this.hasHeaderSlot) {
             console.error(this.headerMessage);
-        }
-
-        if (!this.hasPreview) {
-            console.error(this.previewMessage);
         }
 
         if (!this.hasDefalutSlot) {
@@ -28,24 +21,24 @@ export class MDarkTemplate extends Vue {
         }
     }
 
-    private get hasBacklink(): boolean {
+    private get hasBacklinkSlot(): boolean {
         return !!this.$slots.backlink;
     }
 
-    private get hasHeader(): boolean {
+    private get hasHeaderSlot(): boolean {
         return !!this.$slots.header;
     }
 
-    private get hasLeftArrow(): boolean {
+    private get hasLeftArrowSlot(): boolean {
         return !!this.$slots.leftArrow;
     }
 
-    private get hasRightArrow(): boolean {
+    private get hasRightArrowSlot(): boolean {
         return !!this.$slots.rightArrow;
     }
 
-    private get hasPreview(): boolean {
-        return !!this.$slots.preview;
+    private get hasIntroductionSlot(): boolean {
+        return !!this.$slots.introduction;
     }
 
     private get hasDefalutSlot(): boolean {

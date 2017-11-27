@@ -10,6 +10,10 @@ body,
     flex-direction: column;
 }
 
+.modul-body {
+    flex: 1 1 auto;
+}
+
 .modul-container,
 .modul {
     height: 100%;

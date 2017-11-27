@@ -1,29 +1,25 @@
-<div class="modul-dark-template">
+<section class="modul-dark-template">
     <header class="modul-dark-template__header">
-        <span class="modul-dark-template__header__back-link" v-if="hasBacklink">
+        <span class="modul-dark-template__header__back-link" v-if="hasBacklinkSlot">
             <slot name="backlink"></slot>
         </span>
-        <div class="modul-dark-template__header__title­">
-            <template v-if="hasHeader">
-                <slot name="header"></slot>
-            </template>
-            <h1 v-else>{{ defaultTitle }}</h1>
+        <div class="modul-dark-template__header__title­" v-if="hasHeaderSlot">
+            <slot name="header"></slot>
         </div>
     </header>
-    <!-- <nav class="modul-dark-template__arrow"> -->
-        <div class="modul-dark-template__arrow-left" v-if="hasLeftArrow">
+
+    <section class="modul-dark-template__body">
+        <div class="modul-dark-template__body__arrow-left" v-if="hasLeftArrowSlot">
             <slot name="leftArrow"></slot>
         </div>
-        <div class="modul-dark-template__arrow-right" v-if="hasRightArrow">
+        <div class="modul-dark-template__body__arrow-right" v-if="hasRightArrowSlot">
             <slot name="rightArrow"></slot>
         </div>
-    <!-- </nav> -->
-    <section class="modul-dark-template__intro">
-        <div class="modul-dark-template__intro-wrap">
-            <slot name="introduction"></slot>
+        <div class="modul-dark-template__body__intro" v-if="hasIntroductionSlot">
+            <div class="modul-dark-template__body__intro-wrap">
+                <slot name="introduction"></slot>
+            </div>
         </div>
-    </section>
-    <section class="modul-dark-template__body">
         <slot></slot>
     </section>
-</div>
+</section>

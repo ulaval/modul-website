@@ -1,9 +1,9 @@
 <modul-dark-template>
     <h1 slot="header" v-if="showNav">
-        <m-dropdown v-if="isMqMinXS" class="modul-u--dropdown-dark" v-model="selectedPage" @open="onOpen" @close="onClose" width="auto">
+        <m-dropdown v-if="isMqMinS" class="modul-u--dropdown-dark" v-model="selectedPage" @open="onOpen" @close="onClose" width="auto">
             <m-dropdown-item v-for="page in pages" :value="page" :label="getPageName(page)"></m-dropdown-item>
         </m-dropdown>
-        <template v-if="!isMqMinXS">{{ getPageName(selectedPage) }}</template>
+        <template v-if="!isMqMinS">{{ getPageName(selectedPage) }}</template>
     </h1>
     <h1 class="modul-dark-template__header__title" slot="header" v-if="!showNav"> {{ getPageName(pages[0]) }}</h1>
     <m-markdown slot="introduction" :template="summaryMarkdown"></m-markdown>
