@@ -16,6 +16,7 @@ import MetaAll, {
     CATEGORY_COMUNICATION, CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_INDICATORS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_SEARCH_SORT
 } from './meta/meta-all';
 import { Standards, GettingStarted } from '@/app/components/pages/page';
+import { log } from 'util';
 
 Vue.use(Router);
 Vue.use(MetaAll, Meta);
@@ -267,7 +268,7 @@ modulRoutes.push(
 
 export default new Router({
     mode: 'history',
-    routes: modulRoutes/*,
+    routes: modulRoutes,
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
             return savedPosition;
@@ -276,5 +277,5 @@ export default new Router({
             return { selector: to.hash };
         }
         return { x: 0, y: 0 };
-    }*/
+    }
 });
