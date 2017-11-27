@@ -7,25 +7,25 @@ Souligner le focus par un changement de style.
 
 ### Étiquetage des éléments de formulaire
 Uniformiser l’étiquetage par la "méthode consécutive" :
-* &lt; label for="nom" &gt; Nom complet &lt; /label &gt;</li>
+* &lt; label for="nom" &gt; Nom complet &lt; /label &gt;
 * &lt; input type="text" name="nom" id="nom" / &gt;
 
 ### Alternatives textuelles pour les boutons iconographiques et les hyperliens en images
-* S’il s’agit d’une balise &lt; img &gt; dans une balise &lt; a &gt; ou &lt; button &gt;, simplement fournir une alternative textuelle comme valeur de l’attribut alt. L’alternative textuelle doit décrire la cible de l’hyperlien ou l’action commandée par le bouton.
+* S’il s’agit d’une balise **&lt; img &gt;** dans une balise **&lt; a &gt;** ou **&lt; button &gt;**, simplement fournir une alternative textuelle comme valeur de l’attribut alt. L’alternative textuelle doit décrire la cible de l’hyperlien ou l’action commandée par le bouton.
 * S’il s’agit d’un svg en ligne, simplement fournir une alternative textuelle dans une balise title au début du svg.
-*  S’il s’agit d’un caractère remplacé par une police d’icônes, il faudra d’abord caché ce caractère avec l’attribut ariahiden="true" puis, fournir une alternative textuelle dans un autre conteneur html (&lt; span &gt;  par exemple). Ce texte peut être visuellement caché par une classe utilitaire appropriée (Exemple : la classe *visuallyhidden* qu’on peut retrouver dans cette référence : <m-link url="https://davidwalsh.name/html5-boilerplate" target="_blank">https://davidwalsh.name/html5-boilerplate</m-link>).
+*  S’il s’agit d’un caractère remplacé par une police d’icônes, il faudra d’abord caché ce caractère avec l’attribut ariahiden="true" puis, fournir une alternative textuelle dans un autre conteneur html (**&lt; span &gt;** par exemple). Ce texte peut être visuellement caché par une classe utilitaire appropriée (Exemple : la classe *visuallyhidden* qu’on peut retrouver dans cette référence : <m-link url="https://davidwalsh.name/html5-boilerplate" target="_blank">https://davidwalsh.name/html5-boilerplate</m-link>).
 
 ### Liens significatifs
-Il est recommandé d'éviter les liens du type "Lire la suite" et "Cliquer ici"
+Il est recommandé d'éviter les liens du type *«Lire la suite»* et *«Cliquer ici»*.
 
-### Table des matières des contenus</h3>
+### Table des matières des contenus
 S’assurer que les titres et sous-titres constituent une tables des matières représentative des contenus.
 
 ### Abréviations
-Lorsque possible, elles devraient être contenus dans une balise **abbr>**, accompagnée de l'attribut title.
+Lorsque possible, elles devraient être contenus dans une balise **&lt; abbr &gt;**, accompagnée de l'attribut title.
 
 ### Balises HTML 5
-Lorsque possible, utiliser les balises HTML 5 telles &lt; aside &gt;, &lt; menu &gt;, &lt; meuitem &gt;, &lt; section &gt;, etc., car elles ajoutent des éléments sémantiques à la page, ce qui signifie une meilleure accessibilité.  Ce tableau montre le support actuel des différents navigateurs.
+Lorsque possible, utiliser les balises HTML 5 telles **&lt; aside &gt;**, **&lt; menu &gt;**, **&lt; meuitem &gt;**, **&lt; section &gt;**, etc., car elles ajoutent des éléments sémantiques à la page, ce qui signifie une meilleure accessibilité.  Ce tableau montre le support actuel des différents navigateurs.
 
 ### Raccourcis accessibles aux lecteurs vocaux vers les éléments importants en haut de page
 * Contenu de la page
