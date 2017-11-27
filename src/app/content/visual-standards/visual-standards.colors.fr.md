@@ -1,7 +1,7 @@
-<p>Outre leur fonction esthétique, les couleurs établissent un «système visuel»  (design system), c’est-à-dire un code  donnant des indications à l’utilisateur sur les fonctions, les  comportements et l'utilisation des éléments d’interface. Ainsi, les couleurs peuvent servir à illustrer des états (p. ex. actif, publié), des comportements (p. ex. éléments cliquables) ou pour mettre l’accent sur des éléments de contenu (p. ex. message d’erreur, message d’avertissement). Un choix de couleurs judicieux et cohérent d’une page à une autre facilite l’apprentissage du système visuel par l’utilisateur, puisque les couleurs sont invariablement associées à un même type de comportement ou à un même type d’état.</p>
+Outre leur fonction esthétique, les couleurs établissent un «système visuel»  (design system), c’est-à-dire un code  donnant des indications à l’utilisateur sur les fonctions, les  comportements et l'utilisation des éléments d’interface. Ainsi, les couleurs peuvent servir à illustrer des états (p. ex. actif, publié), des comportements (p. ex. éléments cliquables) ou pour mettre l’accent sur des éléments de contenu (p. ex. message d’erreur, message d’avertissement). Un choix de couleurs judicieux et cohérent d’une page à une autre facilite l’apprentissage du système visuel par l’utilisateur, puisque les couleurs sont invariablement associées à un même type de comportement ou à un même type d’état.
 
-<h2>Couleurs officielles de l’Université Laval</h2>
-<p>Trois couleurs forment l’identité visuelle de l’Université Laval :  le bleu, le jaune et le rouge.  Les normes graphiques UL régissent l’utilisation de ces couleurs  et elles  doivent être respectées.</p>
+## Couleurs officielles de l’Université Laval
+Trois couleurs forment l’identité visuelle de l’Université Laval :  le bleu, le jaune et le rouge.  Les normes graphiques UL régissent l’utilisation de ces couleurs  et elles  doivent être respectées.
 
 <table>
     <thead>
@@ -26,8 +26,8 @@
     </tbody>
 </table>
 
-<h2>Couleurs de l’interactivité</h2>
-<p>Utilisation : états, par exemple l'état actif, le survol, le traitement, des différents éléments cliquables (bouton d’action, lien)</p>
+## Couleurs de l’interactivité
+Utilisation : états, par exemple l'état actif, le survol, le traitement, des différents éléments cliquables (bouton d’action, lien)
 
 <table>
     <thead>
@@ -63,8 +63,9 @@
         </tr>
     </tbody>
 </table>
-<h2>Couleurs d’accent</h2>
-<p>Utilisation : accentuer un élément ou une nouveauté</p>
+
+## Couleurs d’accent
+Utilisation : accentuer un élément ou une nouveauté
 
 <table>
     <thead>
@@ -93,8 +94,8 @@
     </tbody>
 </table>
 
-<h2>Couleurs active</h2>
-<p>Utilisation :  états (p. ex. action en cours,  sélectionné)</p>
+## Couleurs active
+Utilisation :  états (p. ex. action en cours,  sélectionné)
 
 <table>
     <thead>
@@ -123,8 +124,8 @@
     </tbody>
 </table>
 
-<h2>Couleurs de succès</h2>
-<p>Utilisation : message de succès, indicateur de réussite, état publié</p>
+## Couleurs de succès
+Utilisation : message de succès, indicateur de réussite, état publié
 
 <table>
     <thead>
@@ -153,8 +154,8 @@
     </tbody>
 </table>
 
-<h2>Couleurs avertissement</h2>
-<p>Utilisation : avertissement</p>
+## Couleurs avertissement
+Utilisation : avertissement
 
 <table>
     <thead>
@@ -183,8 +184,8 @@
     </tbody>
 </table>
 
-<h2>Couleurs d’erreur</h2>
-<p>Utilisation : message d’erreur, indicateur d’échec, état (non publié, conflit)</p>
+## Couleurs d’erreur
+Utilisation : message d’erreur, indicateur d’échec, état (non publié, conflit)
 
 <table>
     <thead>
@@ -213,8 +214,8 @@
     </tbody>
 </table>
 
-<h2>Couleurs d’arrière-plan</h2>
-<p>Utilisation : arrière-plan</p>
+## Couleurs d’arrière-plan
+Utilisation : arrière-plan
 
 <table>
     <thead>
@@ -251,8 +252,8 @@
     </tbody>
 </table>
 
-<h2>Couleurs d’arrière-plan</h2>
-<p>Utilisation : arrière-plan</p>
+## Couleurs d’arrière-plan
+Utilisation : arrière-plan
 
 <table>
     <thead>
@@ -285,8 +286,8 @@
     </tbody>
 </table>
 
-<h2>Autres couleurs</h2>
-<p>Utilisation : titre,  libellé, texte, etc.</p>
+## Autres couleurs
+Utilisation : titre,  libellé, texte, etc.
 
 <table>
     <thead>
