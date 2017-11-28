@@ -11,6 +11,7 @@ import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import * as PagesGetters from '@/app/store/modules/pages/getters';
 import { Page, Standards, GettingStarted } from '@/app/components/pages/page';
+import { read } from 'fs';
 
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: Number = 100;
@@ -49,6 +50,7 @@ export default class Modul extends ModulWebsite {
 
     private components: Component[] = [];
     private logo: any = require('../../../assets/logo-ul.svg');
+    private menuFirstStep: boolean = true;
 
     protected beforeMount(): void {
         Meta.getCategories().forEach(category => {
@@ -146,6 +148,24 @@ export default class Modul extends ModulWebsite {
                 });
             }, CSS_ANIMATION_HEADER_DURATION);
         }
+    }
+
+    private toggleMobileMenu(): void {
+        this.menuFirstStep = true;
+        if (!this.menuOpen) {
+            this.showMenu('');
+        } else {
+            this.closeMenu();
+        }
+    }
+
+    private showSecondStep(section: string): void {
+        this.section = section;
+        this.menuFirstStep = false;
+    }
+
+    private showFirstStep(): void {
+        this.menuFirstStep = true;
     }
 
     // Vue.filter('highlight', function(words, query){

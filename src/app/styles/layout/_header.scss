@@ -8,7 +8,7 @@
         .modul-header {
             background: $modul-color--black-grey-dark;
 
-            &__link {
+            &__nav__link {
                 &,
                 &:visited {
                     color: $modul-color--grey-dark;
@@ -65,52 +65,56 @@
     @media (min-width: $m-mq--min--s) {
         padding-left: $m-padding--l;
     }
-}
 
-.modul-header__nav {
-    display: flex;
-    height: 100%;
-    align-content: space-between;
-    align-items: center;
-    margin-right: $m-padding--l;
-
-    ul {
+    &__nav {
         display: flex;
-        list-style: none;
+        height: 100%;
+        align-content: space-between;
+        align-items: center;
+        margin-right: $m-padding;
 
-        li {
-            &:not(:last-child) {
-                margin-right: $m-margin--l;
+        @media (min-width: #{$m-mq--min--s}) {
+            margin-right: $m-padding--l;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+
+            li {
+                &:not(:last-child) {
+                    margin-right: $m-margin--l;
+                }
             }
         }
-    }
-}
 
-.modul-header__link {
-    font-weight: $m-font-weight--black;
-    font-size: $m-font-size--s;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
-    outline: none;
+        &__link {
+            font-weight: $m-font-weight--black;
+            font-size: $m-font-size--s;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+            outline: none;
 
-    &,
-    &:visited {
-        color: $modul-color--grey-darker;
-    }
+            &,
+            &:visited {
+                color: $modul-color--grey-darker;
+            }
 
-    &:hover,
-    &:focus,
-    &.router-link-active {
-        color: $m-color--black;
-    }
+            &:hover,
+            &:focus,
+            &.router-link-active {
+                color: $m-color--black;
+            }
 
-    &.router-link-active::after {
-        background-color: $m-color--active;
-    }
+            &.router-link-active::after {
+                background-color: $m-color--active;
+            }
 
-    &:hover::after {
-        background-color: $m-color--black;
+            &:hover::after {
+                background-color: $m-color--black;
+            }
+        }
     }
 }
 

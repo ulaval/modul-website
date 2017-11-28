@@ -18,7 +18,10 @@
 
         </article>
 
-        <div class="modul-home-experiment__footer" v-m-scroll-to="[ '#design', 'slow']" :style="{ bottom: designButtonPosition + 'px' }">
+        <div class="modul-home-experiment__footer"
+             :style="{ bottom: designButtonPosition + 'px' }"
+             v-m-scroll-to="[ '#design', 'slow']"
+             v-if="isMqMinS">
             <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
             <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
             <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
