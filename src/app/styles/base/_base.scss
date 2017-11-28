@@ -1,8 +1,23 @@
 html,
 body,
-.modul-body,
-.m-flex-template__header.m-flex-template__header {
+.modul-body {
     background: $modul-color--body;
+}
+
+.m-flex-template.m-flex-template {
+    &.modul--is-black-template {
+        &,
+        .m-flex-template__header.m-flex-template__header {
+            background: $modul-color--body-dark;
+        }
+    }
+
+    &.modul--is-light-template {
+        &,
+        .m-flex-template__header.m-flex-template__header {
+            background: $modul-color--body;
+        }
+    }
 }
 
 .m-flex-template__page__body {

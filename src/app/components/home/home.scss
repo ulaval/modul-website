@@ -7,11 +7,9 @@ $modul-home-design--width--l: 270px;
     width: 100%;
 
     &::before {
-        content: '';
-        display: block;
-        height: 100vh;
-
         @media (min-width: $m-mq--min--s) {
+            content: '';
+            display: block;
             height: 120vh;
         }
     }
@@ -26,26 +24,24 @@ $modul-home-design--width--l: 270px;
 }
 
 .modul-home-experiment {
-    position: fixed;
-    top: 0;
-    bottom: 0;
+    position: relative;
     z-index: 1;
     display: flex;
     align-content: center;
     width: 100%;
-    min-height: 480px;
     overflow-y: auto;
     padding: $m-padding--l $m-padding $m-padding--xl $m-padding;
     background-color: $modul-color--black-grey-dark;
     background-image: url(../../../assets/grid.svg);
 
     @media (max-width: $m-mq--max--s) {
-        top: $modul-header--height--s / 2;
-        height: calc(100% - #{ $modul-header--height--s/2 });
         align-items: center;
     }
 
     @media (min-width: $m-mq--min--s) {
+        position: fixed;
+        top: 0;
+        bottom: 0;
         padding-right: $m-padding--l;
         padding-left: $m-padding--l;
     }
