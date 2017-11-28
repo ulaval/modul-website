@@ -26,7 +26,8 @@ export class MPreview extends Vue {
     }
 
     protected mounted(): void {
-        (require as any)(['bundle-loader!../../../assets/md/' + this.src + '.js'], (waitForChunk) => {
+        let s: string = this.src;
+        (require as any)(['bundle-loader!../../../assets/md/' + s + '.js'], (waitForChunk) => {
             waitForChunk((chunk) => {
                 this.template = chunk.default;
             });
