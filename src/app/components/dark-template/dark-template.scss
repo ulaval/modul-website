@@ -68,11 +68,19 @@
 
         &__back-link {
             position: fixed !important;
-            top: $modul-header--height;
+            top: $modul-header--height--s;
             left: 0;
             z-index: 2;
             margin-top: $m-padding;
-            margin-left: $m-padding--l;
+            margin-left: $m-padding;
+
+            @media (min-width: $m-mq--min--xs) {
+                top: $modul-header--height;
+            }
+
+            @media (min-width: $m-mq--min--s) {
+                margin-left: $m-padding--l;
+            }
         }
     }
 

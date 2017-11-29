@@ -69,4 +69,4 @@ Je déteste...</m-panel>
 Les fautes d’orthographe détournent l’attention du lecteur du message et rend la crédibilité d’un texte moins bonne qu’elle ne le serait sans fautes. Prenez le temps de relire et de le faire lire par une autre personne.
 
 ## Liens intéressants
-<m-link :icon="true" url="http://www.btb.termiumplus.gc.ca/tpv2guides/guides/redac/index-fra.html?lang=fra&lettr=chap_catlog&page=../srchparbychap" target="_blank">Guide du rédacteur</m-link>
+<m-link mode="link" :icon="true" url="http://www.btb.termiumplus.gc.ca/tpv2guides/guides/redac/index-fra.html?lang=fra&lettr=chap_catlog&page=../srchparbychap" target="_blank">Guide du rédacteur</m-link>

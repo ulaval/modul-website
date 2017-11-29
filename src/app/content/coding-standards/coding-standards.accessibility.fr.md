@@ -13,7 +13,7 @@ Uniformiser l’étiquetage par la "méthode consécutive" :
 ### Alternatives textuelles pour les boutons iconographiques et les hyperliens en images
 * S’il s’agit d’une balise **&lt; img &gt;** dans une balise **&lt; a &gt;** ou **&lt; button &gt;**, simplement fournir une alternative textuelle comme valeur de l’attribut alt. L’alternative textuelle doit décrire la cible de l’hyperlien ou l’action commandée par le bouton.
 * S’il s’agit d’un svg en ligne, simplement fournir une alternative textuelle dans une balise title au début du svg.
-*  S’il s’agit d’un caractère remplacé par une police d’icônes, il faudra d’abord caché ce caractère avec l’attribut ariahiden="true" puis, fournir une alternative textuelle dans un autre conteneur html (**&lt; span &gt;** par exemple). Ce texte peut être visuellement caché par une classe utilitaire appropriée (Exemple : la classe *visuallyhidden* qu’on peut retrouver dans cette référence : <m-link url="https://davidwalsh.name/html5-boilerplate" target="_blank">https://davidwalsh.name/html5-boilerplate</m-link>).
+*  S’il s’agit d’un caractère remplacé par une police d’icônes, il faudra d’abord caché ce caractère avec l’attribut ariahiden="true" puis, fournir une alternative textuelle dans un autre conteneur html (**&lt; span &gt;** par exemple). Ce texte peut être visuellement caché par une classe utilitaire appropriée (Exemple : la classe *visuallyhidden* qu’on peut retrouver dans cette référence : <m-link mode="link" url="https://davidwalsh.name/html5-boilerplate" target="_blank">https://davidwalsh.name/html5-boilerplate</m-link>).
 
 ### Liens significatifs
 Il est recommandé d'éviter les liens du type *«Lire la suite»* et *«Cliquer ici»*.
@@ -41,6 +41,6 @@ L'attibut tabindex, ajouté aux balises HTML, permet d'indiquer l'ordre de passa
 * Indiquer aux analyste les éléments d’accessibilité qu’ils doivent fournir pour chacun des gabarits/pages de l’application
 
 ### Lecteurs vocaux
-<m-link url="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh" target="_blank" :icon="true">Wave</m-link>
+<m-link mode="link" url="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh" target="_blank" :icon="true">Wave</m-link>
 
-<m-link url="https://www.nvda-fr.org/download/" target="_blank" :icon="true">NVDA</m-link>
+<m-link mode="link" url="https://www.nvda-fr.org/download/" target="_blank" :icon="true">NVDA</m-link>

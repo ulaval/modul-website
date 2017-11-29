@@ -1,1 +1,1 @@
-<m-spinner title="Traitement en cours"></m-spinner>
+<m-spinner title="Chargement en cours"></m-spinner>
