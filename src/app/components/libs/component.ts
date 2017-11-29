@@ -8,6 +8,9 @@ import { KeyMap, RouteMap, ComponentsState } from '@/app/store/modules/component
 import { ModulWebsite } from '../modul-website';
 import { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
+import { fail } from 'assert';
+import { log } from 'util';
+import { components } from '@ulaval/modul-components/dist/components/component-names';
 
 const ZINDEX: number = 200;
 
@@ -18,6 +21,7 @@ const ZINDEX: number = 200;
 export class ComponentViewer extends ModulWebsite {
 
     private listOpened: boolean = false;
+    private routerVisible: boolean = true;
 
     protected mounted(): void {
         this.getMeta();
@@ -52,6 +56,12 @@ export class ComponentViewer extends ModulWebsite {
     private set selectedComponent(tag: string | undefined) {
         if (tag) {
             this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][tag].url);
+            this.$nextTick(() => {
+                this.routerVisible = false;
+                setTimeout(() => {
+                    this.routerVisible = true;
+                }, 0);
+            });
         }
     }
 

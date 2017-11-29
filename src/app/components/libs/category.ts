@@ -21,6 +21,7 @@ const ZINDEX: number = 200;
 export class Category extends ModulWebsite {
 
     private listOpened: boolean = false;
+    private routerVisible: boolean = true;
 
     protected mounted(): void {
         this.getMeta();
@@ -54,6 +55,12 @@ export class Category extends ModulWebsite {
     private set selectedCategory(category: string | null) {
         if (category) {
             this.$router.push(this.categoryRoutes[category].url);
+            this.$nextTick(() => {
+                this.routerVisible = false;
+                setTimeout(() => {
+                    this.routerVisible = true;
+                }, 0);
+            });
         }
     }
 

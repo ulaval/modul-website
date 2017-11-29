@@ -15,9 +15,7 @@
             <slot name="rightArrow"></slot>
         </div>
         <div class="modul-light-template__body__container" v-if="hasDefaultSlot"></div>
-            <transition name="slide-fade" mode="out-in" appear>
-                <slot></slot>
-            </transition>
+            <slot></slot>
         </div>
     </section>
 </section>

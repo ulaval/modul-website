@@ -14,5 +14,7 @@
         <m-icon name="right-arrow"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie suivante</span> -->
     </button>
-    <router-view></router-view>
+    <transition name="modul-u--light-template-transition" appear>
+        <router-view v-if="routerVisible"></router-view>
+    </transition>
 </modul-light-template>
