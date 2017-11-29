@@ -47,9 +47,11 @@
 
         &__title {
             position: relative;
+            padding: 0 $m-padding;
 
             h1 {
                 color: $modul-color--black-grey-dark;
+                text-align: center;
 
                 @include modul-page-title();
             }

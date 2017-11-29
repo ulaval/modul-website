@@ -61,6 +61,7 @@
 
             h1 {
                 color: $m-color--white;
+                text-align: center;
 
                 @include modul-page-title();
             }
