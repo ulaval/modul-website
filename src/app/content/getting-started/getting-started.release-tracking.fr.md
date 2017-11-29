@@ -1,7 +1,10 @@
-## Version 1.0 - 27 novembre 2017
-
+## Version 1.0.0-beta.2 - 28 novembre 2017
+La version 1.0.0-beta.2 comportent les changements suivants :
+* Ajout d'une propriété étiquette au composant m-radio-goup.
+* Correction au composant <a href="https://ulaval.github.io/modul/composants/formulaires/m-dropdown/portrait">m-dropdown</a> qui appelait le "change event" deux fais dans certains cas.
+* Correction au composant m-input-style pour rendre la liste déroulante réactive lorsqu'elle passe de l'état "disabled" à l'état "enabled".
+## Version 1.0.0-beta.1 - 27 novembre 2017
 La version <m-link mode="link" target="_blank" href='https://github.com/ulaval/modul-components/releases'>1.0.0-beta.1</m-link> est disponible depuis le 27 novembre 2017.
-
 La version 1.0 livre une première version des composants suivants&nbsp;:
 * **m-accordion :** <a href="https://ulaval.github.io/modul/composants/contenu/m-accordion/portrait">accordéon</a>
 * **m-button :** <a href="https://ulaval.github.io/modul/composants/formulaires/m-button/portrait">bouton</a>
