@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Prop, Watch } from 'vue-property-decorator';
 import WithRender from './preview.html';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import DynamicTemplate from '@ulaval/modul-components/dist/components/dynamic-template/dynamic-template';
@@ -12,10 +12,13 @@ import { log } from 'util';
 export class MPreview extends Vue {
     @Prop()
     public src: string;
+    @Prop({ default: false })
+    public withHighlight: boolean;
 
     private template: any = {};
+    private stringTemplate: string = '';
     private js: any = {};
-    private jim: string = 'carrey';
+    private jim: string = 'preview';
 
     private a = {
         template: `<div id="A"></div>`
@@ -26,10 +29,17 @@ export class MPreview extends Vue {
     }
 
     protected mounted(): void {
+        this.fetchPreview();
+    }
+
+    private fetchPreview() {
         let s: string = this.src;
         (require as any)(['bundle-loader!../../../assets/md/' + s + '.js'], (waitForChunk) => {
             waitForChunk((chunk) => {
                 this.template = chunk.default;
+                // this.stringTemplate = this.template.template;
+                this.stringTemplate = JSON.stringify(this.template, ['template', 'data', 'methods'], 4);
+                // console.log('obj : ', this.template);
             });
         });
     }
@@ -37,6 +47,10 @@ export class MPreview extends Vue {
     private get preview(): string {
         this.template = Vue.component(this.jim, this.template);
         return this.jim;
+    }
+
+    private get getStringTemplate(): string {
+        return this.stringTemplate;
     }
 
 }

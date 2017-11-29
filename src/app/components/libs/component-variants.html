@@ -1,8 +1,6 @@
 <div class="modul-component-variants">
-    <m-message state="information" :closeButton="false">
+    <m-message state="information" :closeButton="false" v-if="!variantwMarkdown">
         Documentation à venir
     </m-message>
+    <m-markdown v-else :template="variantwMarkdown"></m-markdown>
 </div>
-<!-- <div class="modul-component-variants">
-    <m-markdown :template="overviewMarkdown"></m-markdown>
-</div> -->

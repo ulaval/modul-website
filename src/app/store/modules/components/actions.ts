@@ -63,6 +63,15 @@ export const getComponentPreviewAction: Action<ComponentsState, ComponentsState>
     }
 };
 
+export const COMPONENT_VARIANT_GET: string = 'A_COMPONENT_VARIANT_GET';
+export const getComponentVariantAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, markdown: MarkdownPayload) => {
+    if (context.state.componentMarkdownVariant == null && context.state.component.variant) {
+        markdown.restAdapter.execute({ method: 'get', rawUrl: `${__webpack_public_path__}assets/md/${context.state.component.tag}.variant.fr.md` }).then((md) => {
+            context.commit(Mutations.COMPONENT_VARIANT_GET_SUCCESS, (md as any).data);
+        });
+    }
+};
+
 export const MESSAGES_GET: string = 'A_MESSAGES_GET';
 export const getMessagesAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, language: string) => {
     return new Promise((resolve, reject) => {

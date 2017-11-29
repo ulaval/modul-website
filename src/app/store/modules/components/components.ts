@@ -12,11 +12,13 @@ const mutations: MutationTree<ComponentsState> = {
     [Mutations.COMPONENTS_META_GET_SUCCESS]: Mutations.getComponentsMetaSucces,
     // Category
     [Mutations.CATEGORY_GET]: Mutations.getCategory,
-    // Component markdown overview
     [Mutations.COMPONENT_GET]: Mutations.getComponent,
+    // Component markdown overview
     [Mutations.COMPONENT_OVERVIEW_GET_SUCCESS]: Mutations.getComponentOverviewSuccess,
     // component markdown preview
     [Mutations.COMPONENT_PREVIEW_GET_SUCCESS]: Mutations.getComponentPreviewSuccess,
+    // component markdown variant
+    [Mutations.COMPONENT_VARIANT_GET_SUCCESS]: Mutations.getComponentVariantSuccess,
     // Messages
     [Mutations.MESSAGES_GET]: Mutations.getMessages,
     [Mutations.MESSAGES_GET_SUCCESS]: Mutations.getMessagesSucces,
@@ -32,6 +34,7 @@ const actions: ActionTree<ComponentsState, ComponentsState> = {
     [Actions.COMPONENT_GET]: Actions.getComponentAction,
     [Actions.COMPONENT_OVERVIEW_GET]: Actions.getComponentOverviewAction,
     [Actions.COMPONENT_PREVIEW_GET]: Actions.getComponentPreviewAction,
+    [Actions.COMPONENT_VARIANT_GET]: Actions.getComponentVariantAction,
     // Messages
     [Actions.MESSAGES_GET]: Actions.getMessagesAction,
     // Icons
@@ -49,7 +52,8 @@ const getters: GetterTree<ComponentsState, ComponentsState> = {
     [Getters.GET_COMPONENT_ROUTES]: Getters.getComponentRoutes,
     [Getters.GET_COMPONENT_META]: Getters.getComponentMeta,
     [Getters.GET_MARKDOWN_PREVIEW]: Getters.getMarkdownPreview,
-    [Getters.GET_MARKDOWN_OVERVIEW]: Getters.getMarkdownOverview
+    [Getters.GET_MARKDOWN_OVERVIEW]: Getters.getMarkdownOverview,
+    [Getters.GET_MARKDOWN_VARIANT]: Getters.getMarkdownVariant
 };
 
 export const components = {

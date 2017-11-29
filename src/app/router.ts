@@ -94,7 +94,7 @@ export const CATEGORY_SEARCH_SORT_FR: string = 'recherche-tri';
 
 export const COMPONENT_PROPERTIES_FR: string = 'proprietes';
 export const COMPONENT_OVERVIEW_FR: string = 'portrait';
-export const COMPONENT_VARIANT_FR: string = 'variants';
+export const COMPONENT_VARIANT_FR: string = 'variantes';
 
 export const ROUTES: RoutePathMap = {
     [GETTING_STARTED]: GETTING_STARTED_FR,

@@ -10,18 +10,23 @@ import { log } from 'util';
 @Component
 export class MHighlight extends Vue {
 
-    @Prop({ default: 'html' })
+    @Prop()
     public lang: string;
     @Prop()
     public template: string;
-    public languageSubset = ['js', 'html', 'xml', 'css'];
+    public languageSubset = ['js', 'html', 'xml', 'css', 'json'];
     public language: string = '';
 
     private get highlightedTemplate(): string {
         let result: any = '';
         if (this.template) {
-            result = hljs.highlightAuto(this.template, this.languageSubset);
+            if (this.lang) {
+                result = hljs.highlight(this.lang, this.template);
+            } else if (!this.lang) {
+                result = hljs.highlightAuto(this.template, this.languageSubset);
+            }
             this.language = result.language;
+            // console.log('MHighlight lang : ', this.language);
         }
         return result.value;
     }

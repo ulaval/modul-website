@@ -61,6 +61,7 @@ export const getComponent: Mutation<ComponentsState> = (state: ComponentsState, 
     state.component = meta;
     state.componentMarkdownOverview = null;
     state.componentMarkdownPreview = null;
+    state.componentMarkdownVariant = null;
 };
 
 export const COMPONENT_OVERVIEW_GET_SUCCESS: string = 'M_COMPONENT_OVERVIEW_GET_SUCCESS';
@@ -71,6 +72,11 @@ export const getComponentOverviewSuccess: Mutation<ComponentsState> = (state: Co
 export const COMPONENT_PREVIEW_GET_SUCCESS: string = 'M_COMPONENT_PREVIEW_GET_SUCCESS';
 export const getComponentPreviewSuccess: Mutation<ComponentsState> = (state: ComponentsState, markdown: string) => {
     state.componentMarkdownPreview = markdown;
+};
+
+export const COMPONENT_VARIANT_GET_SUCCESS: string = 'M_COMPONENT_VARIANT_GET_SUCCESS';
+export const getComponentVariantSuccess: Mutation<ComponentsState> = (state: ComponentsState, markdown: string) => {
+    state.componentMarkdownVariant = markdown;
 };
 
 // Messages
@@ -90,7 +96,3 @@ export const getIcons: Mutation<ComponentsState> = (state: ComponentsState) => {
 export const getIconsSucces: Mutation<ComponentsState> = (state: ComponentsState, icons: string) => {
     state.iconsLoaded = icons;
 };
-
-    // public static getPreview: Getter<ModulState, ModulState> = (state: ModulState, getters) => {
-    //     return state.componentMarkdownPreview;
-    // }

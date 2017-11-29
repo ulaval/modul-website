@@ -50,7 +50,7 @@ export default {
     },
     methods: {
         onChange: function (e) {
-            console.log('onChange preview: ', e);
+            console.log('onChange group: ', e);
         }
     }
 };

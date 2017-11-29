@@ -1,2 +1,10 @@
-<!-- <m-dynamic-template :template="preview"></m-dynamic-template> -->
-<component :is="preview"></component>
+<div>
+    <component :is="preview"></component>
+    <br>
+    <br>
+    <div v-if="withHighlight" class="">
+        <div class="modul-component-details__code">
+            <m-highlight lang="json" :template="getStringTemplate"></m-highlight>
+        </div>
+    </div>
+</div>

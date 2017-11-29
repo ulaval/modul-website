@@ -26,5 +26,6 @@ export class ComponentsState {
     public component: ComponentMeta | null = null;
     public componentMarkdownPreview: string | null = null;
     public componentMarkdownOverview: string | null = null;
+    public componentMarkdownVariant: string | null = null;
     public category: string | null = null;
 }

@@ -58,6 +58,12 @@ export const getMarkdownPreview: Getter<ComponentsState, ComponentsState> = (sta
     return state.componentMarkdownPreview;
 };
 
+// getter for variant markdown
+export const GET_MARKDOWN_VARIANT: string = 'G_GET_MARKDOWN_VARIANT';
+export const getMarkdownVariant: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, getters) => {
+    return state.componentMarkdownVariant;
+};
+
 export const GET_MARKDOWN_OVERVIEW: string = 'G_GET_MARKDOWN_OVERVIEW';
 export const getMarkdownOverview: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, getters) => {
     return state.componentMarkdownOverview;
