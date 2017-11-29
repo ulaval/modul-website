@@ -44,6 +44,15 @@
     font-size: 16px;
 }
 
+.modul-markdown {
+    > :first-child {
+        &,
+        > :first-child {
+            margin-top: 0;
+        }
+    }
+}
+
 .modul-page-tab,
 .modul-component-overview {
     ul {
