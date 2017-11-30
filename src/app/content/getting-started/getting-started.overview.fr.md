@@ -1,1 +1,0 @@
-MODUL permet de démarrer la création d’une application rapidement. La section Premiers pas fournit l’ensemble des étapes à réaliser pour démarrer un nouveau projet MODUL.

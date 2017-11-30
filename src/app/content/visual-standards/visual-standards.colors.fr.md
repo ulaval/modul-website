@@ -6,7 +6,7 @@ Trois couleurs forment l’identité visuelle de l’Université Laval :  le ble
 <table>
     <thead>
         <tr>
-            <th>Variale</th>
+            <th>Variable</th>
             <th>Code</th>
         </tr>
     </thead>
@@ -32,7 +32,7 @@ Utilisation : états, par exemple l'état actif, le survol, le traitement, des d
 <table>
     <thead>
         <tr>
-            <th>Variale</th>
+            <th>Variable</th>
             <th>Code</th>
         </tr>
     </thead>
@@ -70,7 +70,7 @@ Utilisation : accentuer un élément ou une nouveauté
 <table>
     <thead>
         <tr>
-            <th>Variale</th>
+            <th>Variable</th>
             <th>Code</th>
         </tr>
     </thead>
@@ -100,7 +100,7 @@ Utilisation :  états (p. ex. action en cours,  sélectionné)
 <table>
     <thead>
         <tr>
-            <th>Variale</th>
+            <th>Variable</th>
             <th>Code</th>
         </tr>
     </thead>
@@ -130,7 +130,7 @@ Utilisation : message de succès, indicateur de réussite, état publié
 <table>
     <thead>
         <tr>
-            <th>Variale</th>
+            <th>Variable</th>
             <th>Code</th>
         </tr>
     </thead>
@@ -160,7 +160,7 @@ Utilisation : avertissement
 <table>
     <thead>
         <tr>
-            <th>Variale</th>
+            <th>Variable</th>
             <th>Code</th>
         </tr>
     </thead>
@@ -190,7 +190,7 @@ Utilisation : message d’erreur, indicateur d’échec, état (non publié, con
 <table>
     <thead>
         <tr>
-            <th>Variale</th>
+            <th>Variable</th>
             <th>Code</th>
         </tr>
     </thead>
@@ -220,7 +220,7 @@ Utilisation : arrière-plan
 <table>
     <thead>
         <tr>
-            <th>Variale</th>
+            <th>Variable</th>
             <th>Code</th>
         </tr>
     </thead>
@@ -258,7 +258,7 @@ Utilisation : arrière-plan
 <table>
     <thead>
         <tr>
-            <th>Variale</th>
+            <th>Variable</th>
             <th>Code</th>
         </tr>
     </thead>
@@ -292,7 +292,7 @@ Utilisation : titre,  libellé, texte, etc.
 <table>
     <thead>
         <tr>
-            <th>Variale</th>
+            <th>Variable</th>
             <th>Code</th>
         </tr>
     </thead>

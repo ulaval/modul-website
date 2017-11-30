@@ -7,7 +7,7 @@ Les icônes par défaut sont :
 <ul>
     <li>filaires</li>
     <li>cliquables</li>
-    <li>d’une seule couleur (voir la section Couleurs pour les exceptions à cette règle) :
+    <li>d’une seule couleur (voir la section Couleurs des icônes pour les exceptions à cette règle) :
         <ul>
             <li>état normal : #666</li>
             <li>état hover ou actif : #000</li>
@@ -19,7 +19,7 @@ Les icônes par défaut sont :
 ### Dimensions des icônes
 Sur appareils mobiles, comme sur les postes de bureau, la zone cliquable de l’icône est de 44 pixels. L’icône peut être de taille variable à l’intérieur de cette zone, mais doit demeurer reconnaissable.
 
-### Couleurs
+### Couleurs de icônes
 Une icône peut être en couleur uniquement si :
 <ul>
     <li>elle accompagne un lien cliquable, par exemple une icône PDF accompagnant le nom d’un fichier de type PDF</li>

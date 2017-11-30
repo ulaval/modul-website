@@ -11,7 +11,7 @@ La typographie influence la lisibilité et l’efficacité d’un message et fac
 </ul>
 
 ## Styles
-L’utilisation des styles CSS permet d’obtenir une mise en forme rapide et automatique du contenu. Ceux-ci sont déjà prédéfinis de manière à respecter le design de monPortail. Ainsi lorsque des modifications sont apportées au styles CSS, elles se répercutent automatiquement dans l’application.
+L’utilisation des styles CSS permet d’obtenir une mise en forme rapide et automatique du contenu. Ceux-ci sont déjà définis de manière à respecter le design de monPortail. Ainsi lorsque des modifications sont apportées au styles CSS, elles se répercutent automatiquement dans l’application.
 
 ### Texte normal
 Sur tous les appareils, le texte courant doit être défini ainsi :
@@ -28,7 +28,7 @@ La graisse correspond tout simplement à l'épaisseur du trait. Son utilisation 
 * Graisse normal d’un texte.m-u--font-weight--normal
 
 ### Utilisation de l'italique
-Lorsqu’un mot étranger, une citation, une note ou une légende sont présents dans une texte, il est permis d’utiliser l’italique. Il devrait cependant être utilisé avec modération, car ce sont des caractères qui se lisent plus lentement.</p>
+Lorsqu’une citation, une note, une légende ou un mot étranger sont présents dans une texte, il est permis d’utiliser l’italique. Il devrait cependant être utilisé avec modération, car ce sont des caractères qui se lisent plus lentement.</p>
 * Texte en italique.m-u--font-style--italic
 * Texte sans italique.m-u--font-style--normal
 
@@ -36,7 +36,7 @@ Lorsqu’un mot étranger, une citation, une note ou une légende sont présents
 Dans toute application, l’utilisation du soulignement se fait uniquement au survol des liens cliquables. Souligné des titres ou des éléments importants dans un contenu pour les mettre en évidence n’est donc pas recommandé.
 
 ### Précision
-Il est parfois nécessaire d’ajouter une précision sur la nature d'un champ ou encore afficher un exemple d'utilisation. Cette précision est toujours rattachée à un champ doit être défini ainsi :
+Il est parfois nécessaire d’ajouter une précision sur la nature d'un champ ou encore d'afficher un exemple d'utilisation. Cette précision est toujours rattachée à un champ doit être définie ainsi :
 * Texte en italique
 * Corps de 13px
 * Couleur $gris du nuancier
