@@ -1,3 +1,5 @@
+@import '../../styles/shared-styles';
+
 /*!
 * Agate by Taufik Nurrohman <https://github.com/tovic>
 * ----------------------------------------------------
@@ -18,13 +20,21 @@
 
 .hljs {
     display: block;
-    // overflow-x: auto;
-    padding: 0;
+    padding: $m-padding--l $m-padding;
     margin: 0;
     background: $modul-color--black-grey;
     color: white;
     white-space: pre-wrap;
     font-family: Menlo, Monaco, Consolas, Courier, monospace;
+
+    @media (min-width: $m-mq--min--s) {
+        padding: $m-padding--l $m-margin--l;
+    }
+
+    max-height: 400px;
+    overflow: auto;
+
+    @include m-scrollbar();
 }
 
 .hljs-name,

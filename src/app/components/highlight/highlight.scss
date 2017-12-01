@@ -2,19 +2,9 @@
 
 .m-highlight {
     margin: 0;
-    padding: $m-padding--l $m-padding;
-
-    @media (min-width: $m-mq--min--s) {
-        padding: $m-padding--l $m-margin--l;
-    }
-
     background: $modul-color--black-grey;
     max-height: 400px;
     overflow: auto;
 
     @include m-scrollbar();
-
-    &__body {
-        // display: inline-flex;
-    }
 }
