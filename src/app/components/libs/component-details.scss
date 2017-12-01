@@ -20,8 +20,7 @@
         }
     }
 
-    &__preview,
-    &__code {
+    &__preview {
         padding: $m-padding--l $m-padding;
 
         @media (min-width: $m-mq--min--s) {
@@ -55,14 +54,6 @@
                 margin-left: $m-margin--xs;
             }
         }
-    }
-
-    &__code {
-        background: $modul-color--black-grey;
-        max-height: 400px;
-        overflow: auto;
-
-        @include m-scrollbar();
     }
 }
 
