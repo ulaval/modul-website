@@ -1,59 +1,24 @@
-<div class="modul-dark-template">
-    <section class="modul-dark-template__header">
-        <span class="modul-dark-template__header__back-link" v-if="hasBacklink">
+<section class="modul-dark-template">
+    <header class="modul-dark-template__header">
+        <span class="modul-dark-template__header__back-link" v-if="hasBacklinkSlot">
             <slot name="backlink"></slot>
         </span>
-        <div class="modul-dark-template__header__title­">
-            <template v-if="hasHeader">
-                <slot name="header"></slot>
-            </template>
-            <h1 v-else>{{ defaultTitle }}</h1>
+        <div class="modul-dark-template__header__title­" v-if="hasHeaderSlot">
+            <slot name="header"></slot>
         </div>
-    </section>
+    </header>
     <section class="modul-dark-template__body">
-        <header class="modul-dark-template__body__header">
-            <div class="modul-dark-template__body__header-wrap">
-                <div v-if="hasPreview">
-                    <slot name="preview"></slot>
-                </div>
-                <div v-else>
-                    <p>{{ previewMessage }}</p>
-                </div>
-            </div>
-        </header>
-        <div class="modul-dark-template__body__arrow-left" v-if="hasLeftArrow">
+        <div class="modul-dark-template__body__arrow-left" v-if="hasLeftArrowSlot">
             <slot name="leftArrow"></slot>
         </div>
-        <div class="modul-dark-template__body__arrow-right" v-if="hasRightArrow">
+        <div class="modul-dark-template__body__arrow-right" v-if="hasRightArrowSlot">
             <slot name="rightArrow"></slot>
         </div>
-        <div class="modul-dark-template__body__content">
-            <div class="modul-dark-template__body__content-wrap" v-if="hasBody">
-                <slot name="body"></slot>
-            </div>
-            <div class="modul-dark-template__body__content-wrap" v-else>
-                <h2>{{ bodyMessage }}</h2>
-                <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
-                    Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse culpa
-                    minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur. Ipsum nisi
-                    sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat sint sit non et
-                    non labore adipisicing id.</p>
-                <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
-                    Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse culpa
-                    minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur. Ipsum nisi
-                    sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat sint sit non et
-                    non labore adipisicing id.</p>
-                <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
-                    Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse culpa
-                    minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur. Ipsum nisi
-                    sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat sint sit non et
-                    non labore adipisicing id.</p>
-                <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
-                    Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse culpa
-                    minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur. Ipsum nisi
-                    sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat sint sit non et
-                    non labore adipisicing id.</p>
+        <div class="modul-dark-template__body__intro" v-if="hasIntroductionSlot">
+            <div class="modul-dark-template__body__intro-wrap">
+                <slot name="introduction"></slot>
             </div>
         </div>
+        <slot></slot>
     </section>
-</div>
+</section>

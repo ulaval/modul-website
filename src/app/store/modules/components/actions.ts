@@ -12,6 +12,8 @@ interface MarkdownPayload {
     markdown: string;
 }
 
+declare const __webpack_public_path__: string;
+
 export const COMPONENTS_META_GET: string = 'A_COMPONENTS_META_GET';
 export const getComponentsMetaAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, language: string) => {
     return new Promise((resolve, reject) => {
@@ -46,7 +48,7 @@ export const getComponentAction: Action<ComponentsState, ComponentsState> = asyn
 export const COMPONENT_OVERVIEW_GET: string = 'A_COMPONENT_OVERVIEW_GET';
 export const getComponentOverviewAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, markdown: MarkdownPayload) => {
     if (context.state.componentMarkdownOverview == null && context.state.component.overview) {
-        markdown.restAdapter.execute({ method: 'get', rawUrl: `/assets/md/${context.state.component.overview}.fr.md` }).then((md) => {
+        markdown.restAdapter.execute({ method: 'get', rawUrl: `${__webpack_public_path__}assets/md/${context.state.component.overview}.fr.md` }).then((md) => {
             context.commit(Mutations.COMPONENT_OVERVIEW_GET_SUCCESS, (md as any).data);
         });
     }
@@ -55,7 +57,7 @@ export const getComponentOverviewAction: Action<ComponentsState, ComponentsState
 export const COMPONENT_PREVIEW_GET: string = 'A_COMPONENT_PREVIEW_GET';
 export const getComponentPreviewAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, markdown: MarkdownPayload) => {
     if (context.state.componentMarkdownPreview == null && typeof context.state.component.preview === 'string') {
-        markdown.restAdapter.execute({ method: 'get', rawUrl: `/assets/md/${context.state.component.tag}.preview.fr.md` }).then((md) => {
+        markdown.restAdapter.execute({ method: 'get', rawUrl: `${__webpack_public_path__}assets/md/${context.state.component.tag}.preview.fr.md` }).then((md) => {
             context.commit(Mutations.COMPONENT_PREVIEW_GET_SUCCESS, (md as any).data);
         });
     }

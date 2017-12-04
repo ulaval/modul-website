@@ -3,6 +3,7 @@ import Component from 'vue-class-component';
 import WithRender from './home.html?style=./home.scss';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import ElementQueries from 'css-element-queries/src/ElementQueries';
+import * as Routes from '../../router';
 
 @WithRender
 @Component({
@@ -17,6 +18,15 @@ export class HomePage extends ModulVue {
     private scrollDesignStart: boolean = false;
     private widthStep: number = 1;
     private designButtonPosition: number = 1;
+
+    private visualStandards: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.VISUAL_STANDARDS];
+    private writingStandards: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.WRITING_STANDARDS];
+    private components: string = Routes.ROUTES[Routes.COMPONENTS];
+    private ecosystem: string = Routes.ROUTES[Routes.ECOSYSTEM];
+    private codingStandards: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.CODING_STANDARDS];
+    private gettingStarted: string = Routes.ROUTES[Routes.GETTING_STARTED] + '/' + Routes.ROUTES[Routes.GETTING_STARTED];
+    private unifiedExperience: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.UNIFIED_EXPERIENCE];
+    private responsiveDesign: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.RESPONSIVE_DESIGN];
 
     protected mounted(): void {
         this.setParallaxEffect();
@@ -49,5 +59,9 @@ export class HomePage extends ModulVue {
                 this.designTemplateWidth = designTemplateMaxWidth;
             }
         }
+    }
+
+    private onRoute(route: string): void {
+        this.$router.push(route);
     }
 }

@@ -1,5 +1,7 @@
-Poste de développeur
+## Démarrer une nouvelle application
+Le cadre de développement applicatif modUL est hébergé sur <m-link href="https://github.com/" target="_blank">Github</m-link> qui est service de gestion de développement logiciel. Pour démarrer une nouvelle application, il faut d'abord cloner le gabarit d'application <m-link href="https://github.com/ulaval/modul-typescript-template" target="_blank">modul-typescript-template</m-link> et suivre les instructions d'installation de la section <m-link href="https://github.com/ulaval/modul-typescript-template/blob/master/README.md" target="_blank">Readme</m-link>.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id vestibulum sapien. Suspendisse nec maximus mauris, sit amet porta nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus lectus metus, pretium at dui quis, pulvinar facilisis augue.
+Lorsque cette étape sera complétée, il faudra cloner la librairie de composants <m-link href="https://github.com/ulaval/modul-components" target="_blank">modul-components</m-link> et suivre les instructions d'installation de la section <m-link href="https://github.com/ulaval/modul-components/blob/master/README.md" target="_blank">Readme</m-link> pour ajouter la librairie à votre application.
 
----
+## Collaboration
+L'équipe modUL encouage les développeurs qui utilisent la librairie de composants modUL à rapporter les anomalies rencontrées ou à faire leurs demandes d'amélioration dans la section <m-link href="https://github.com/ulaval/modul-components/issues" target="_blank">Issues</m-link>  de modul-components. Il en va de même pour le gabarit d'application <m-link href="https://github.com/ulaval/modul-typescript-template/issues" target="_blank">modul-typescript-template</m-link>.

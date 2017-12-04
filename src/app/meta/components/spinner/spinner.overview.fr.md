@@ -1,9 +1,8 @@
 ## Utilisation
-L'icône d'action en cours s'affiche lorsqu'une action est en train de s'exécuter et que le temps restant est inconnu. Par exemple :
-* lors du chargement de nouveaux résultats de recherche;
-* lors de l'exécution d'un traitement.
+Le composant action en cours s'affiche lorsqu'une action est en train de s'exécuter et que le temps restant est inconnu, par exemple&nbsp;:
+* lors du chargement de nouveaux résultats de recherche
+* lors de l'exécution d'un traitement
 
----
 ## Caractéristiques
 ### Contexte d'utilisation
 L'emplacement de l'icône varie en fonction de son contexte d'utilisation.
@@ -16,9 +15,6 @@ Lorsqu'un traitement est en cours d'exécution et que toute la page est bloquée
 
 ### Message
 Il est possible d'accompagner l'icône d'action en cours d'un titre et d'une description. Il est fortement suggéré de faire afficher le titre et la description lorsque l'icône est utilisée dans un contexte de traitement. Par défaut, le titre sera affiché en gras et la description sera affichée sous le titre.
-
-### Notice explicative
-En plus du titre et de la description, il est possible de faire afficher une notice explicative. Elle sera affichée en italique, sous la description. Il est possible de la faire afficher après un délai prédéterminé.
 
 ### Taille
 Pour les petits écrans, l'icône s'affiche à 50% de la taille d'origine.

@@ -1,27 +1,26 @@
 ## Utilisation
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id vestibulum sapien. Suspendisse nec maximus mauris, sit amet porta nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus lectus metus, pretium at dui quis, pulvinar facilisis augue.
+Les messages sont utilisés pour donner de l'information pertinente aux utilisateurs. Les messages peuvent être affichés dans les pages ou dans les fenêtres secondaires.
 
----
 ## Caractéristiques
 ### Type de message
 Différents types de messages sont disponibles en fonction du type d'information à transmettre. Le type de message affiché se distingue par sa couleur et son icône.
 
-### Succès
+#### Succès
 Ce type de message permet d'indiquer à l'utilisateur qu'il a complété une demande, franchi une étape ou encore terminé un processus avec succès.
 
-### Information
+#### Information
 Ce type de message est utilisé lorsque l'on désire afficher de l'aide, une astuce ou tout simplement de l'information pertinente sur laquelle on désire mettre l'emphase.
 
-### Avertissement
+#### Avertissement
 Ce type de message permet d'attirer l'attention de l'utilisateur et de l'aviser d'une situation inhabituelle.
 
-### Erreur
+#### Erreur
 Ce type de message est utilisé pour afficher des messages d'erreurs.
 
 ### Format du message
 Deux formats de messages sont disponibles :
-* Régulier : Ce format est à privilégier lorsque le message concerne une page ou une section de page
-* Allégé : Ce format est à privilégier lorsque le message concerne un élément spécifique de l'interface
+* **Regular :** Ce format est à privilégier lorsque le message concerne une page ou une section de page<
+* **Light :** Ce format est à privilégier lorsque le message concerne un élément spécifique de l'interface
 
 Pour le format allégé, il est possible d'ajouter un lien en fin de message, permettant de faire afficher le l'information supplémentaire dans une infobulle.
 

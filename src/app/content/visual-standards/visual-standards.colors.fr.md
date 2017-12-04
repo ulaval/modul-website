@@ -1,146 +1,313 @@
 Outre leur fonction esthétique, les couleurs établissent un «système visuel»  (design system), c’est-à-dire un code  donnant des indications à l’utilisateur sur les fonctions, les  comportements et l'utilisation des éléments d’interface. Ainsi, les couleurs peuvent servir à illustrer des états (p. ex. actif, publié), des comportements (p. ex. éléments cliquables) ou pour mettre l’accent sur des éléments de contenu (p. ex. message d’erreur, message d’avertissement). Un choix de couleurs judicieux et cohérent d’une page à une autre facilite l’apprentissage du système visuel par l’utilisateur, puisque les couleurs sont invariablement associées à un même type de comportement ou à un même type d’état.
 
-### Couleurs officielles de l’Université Laval
+## Couleurs officielles de l’Université Laval
 Trois couleurs forment l’identité visuelle de l’Université Laval :  le bleu, le jaune et le rouge.  Les normes graphiques UL régissent l’utilisation de ces couleurs  et elles  doivent être respectées.
 
-Variable
-Code
-$m-color--ul-blue
-#09f
-$m-color--ul-yellow
-#ffc103
-$m-color--ul-red
-#e30513
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$m-color--ul-blue</td>
+            <td style="background:#09f">#09f</td>
+        </tr>
+        <tr>
+            <td>$m-color--ul-yellow</td>
+            <td style="background:#ffc103">#ffc103</td>
+        </tr>
+        <tr>
+            <td>$m-color--ul-red</td>
+            <td style="background:#e30513">#e30513</td>
+        </tr>
+    </tbody>
+</table>
 
-### Couleurs de l’interactivité (bleu)
-Utilisation : états ( p. ex. actif, survol, traitement) des différents éléments cliquables (bouton d’action, lien)
+## Couleurs de l’interactivité
+Utilisation : états, par exemple l'état actif, le survol, le traitement, des différents éléments cliquables (bouton d’action, lien)
 
-Variable
-Code
-$m-color--interactive-darker
-#0074a0
-$m-color--interactive-dark
-#0087bd
-$m-color--interactive
-#09f
-$m-color--interactive-light
-#36adff
-$m-color--interactive-lighter
-#6ed2ff
-$m-color--interactive-lightest
-#dffaff
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$m-color--interactive-darker</td>
+            <td style="background:#0074a0">#0074a0</td>
+        </tr>
+        <tr>
+            <td>$m-color--interactive-dark</td>
+            <td style="background:#0087bd">#0087bd</td>
+        </tr>
+        <tr>
+            <td>$m-color--interactive</td>
+            <td style="background:#09f">#09f</td>
+        </tr>
+        <tr>
+            <td>$m-color--interactive-light</td>
+            <td style="background:#36adff">#36adff</td>
+        </tr>
+        <tr>
+            <td>$m-color--interactive-lighter</td>
+            <td style="background:#6ed2ff">#6ed2ff</td>
+        </tr>
+        <tr>
+            <td>$m-color--interactive-lightest</td>
+            <td style="background:#dffaff">#dffaff</td>
+        </tr>
+    </tbody>
+</table>
 
-### Couleurs d’accent (orange)
-Utilisation : accentuer un élément ou une nouveauté,
+## Couleurs d’accent
+Utilisation : accentuer un élément ou une nouveauté
 
-Variable
-Code
-$m-color--accent-dark
-#d07300
-$m-color--accent
-#f39612
-$m-color--accent-light
-#ffaa26
-$m-color--accent-lightest
-#ffeecf
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$m-color--accent-dark</td>
+            <td style="background:#d07300">#d07300</td>
+        </tr>
+        <tr>
+            <td>$m-color--accent</td>
+            <td style="background:#f39612">#f39612</td>
+        </tr>
+        <tr>
+            <td>$m-color--accent-light</td>
+            <td style="background:#ffaa26">#ffaa26</td>
+        </tr>
+        <tr>
+            <td>$m-color--accent-lightest</td>
+            <td style="background:#ffeecf">#ffeecf</td>
+        </tr>
+    </tbody>
+</table>
 
-### Couleurs active (jaune)
+## Couleurs active
 Utilisation :  états (p. ex. action en cours,  sélectionné)
 
-Variable
-Code
-$m-color--active-dark
-#e0a207
-$m-color--active
-#ffc103
-$m-color--active-light
-#ffd517
-$m-color--active-lightest
-#fffdcf
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$m-color--active-dark</td>
+            <td style="background:#e0a207">#e0a207</td>
+        </tr>
+        <tr>
+            <td>$m-color--active</td>
+            <td style="background:#ffc103">#ffc103</td>
+        </tr>
+        <tr>
+            <td>$m-color--active-light</td>
+            <td style="background:#ffd517">#ffd517</td>
+        </tr>
+        <tr>
+            <td>$m-color--active-lightest</td>
+            <td style="background:#fffdcf">#fffdcf</td>
+        </tr>
+    </tbody>
+</table>
 
-### Couleurs de succès (vert)
+## Couleurs de succès
 Utilisation : message de succès, indicateur de réussite, état publié
 
-Variable
-Code
-$m-color--success-dark
-#14a555
-$m-color--success
-#13bf69
-$m-color--success-light
-#17c96b
-$m-color--success-lightest
-#dcf9e9
-### Couleurs avertissement (jaune)
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$m-color--success-dark</td>
+            <td style="background:#14a555">#14a555</td>
+        </tr>
+        <tr>
+            <td>$m-color--success</td>
+            <td style="background:#13bf69">#13bf69</td>
+        </tr>
+        <tr>
+            <td>$m-color--success-light</td>
+            <td style="background:#17c96b">#17c96b</td>
+        </tr>
+        <tr>
+            <td>$m-color--success-lightest</td>
+            <td style="background:#dcf9e9">#dcf9e9</td>
+        </tr>
+    </tbody>
+</table>
+
+## Couleurs avertissement
 Utilisation : avertissement
 
-Variable
-Code
-$m-color--warning-dark
-#e0a207
-$m-color--warning
-#ffc103
-$m-color--warning-light
-#ffd517
-$m-color--warning-lightest
-#fffdcf
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$m-color--warning-dark</td>
+            <td style="background:#e0a207">#e0a207</td>
+        </tr>
+        <tr>
+            <td>$m-color--warning</td>
+            <td style="background:#ffc103">#ffc103</td>
+        </tr>
+        <tr>
+            <td>$m-color--warning-light</td>
+            <td style="background:#ffd517">#ffd517</td>
+        </tr>
+        <tr>
+            <td>$m-color--warning-lightest</td>
+            <td style="background:#fffdcf">#fffdcf</td>
+        </tr>
+    </tbody>
+</table>
 
-### Couleurs d’erreur (rouge)
+## Couleurs d’erreur
 Utilisation : message d’erreur, indicateur d’échec, état (non publié, conflit)
 
-Variable
-Code
-$m-color--error-dark
-#ca0000
-$m-color--error
-#e30513
-$m-color--error-light
-#e33642
-$m-color--error-lightest
-#ffdcdc
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$m-color--error-dark</td>
+            <td style="background:#ca0000">#ca0000</td>
+        </tr>
+        <tr>
+            <td>$m-color--error</td>
+            <td style="background:#e30513">#e30513</td>
+        </tr>
+        <tr>
+            <td>$m-color--error-light</td>
+            <td style="background:#e33642">#e33642</td>
+        </tr>
+        <tr>
+            <td>$m-color--error-lightest</td>
+            <td style="background:#ffdcdc">#ffdcdc</td>
+        </tr>
+    </tbody>
+</table>
 
-### Couleurs d’arrière-plan (gris)
+## Couleurs d’arrière-plan
 Utilisation : arrière-plan
 
-Variable
-Code
-$m-color--grey-darker
-#999
-$m-color--grey-dark
-#b0b0b0
-$m-color--grey
-#dadada
-$m-color--grey-light
-#e8e8e8
-$m-color--grey-lighter
-#f1f1f1
-$m-color--grey-lightest
-#f7f7f7
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$m-color--grey-darker</td>
+            <td style="background:#999">#999</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey-dark</td>
+            <td style="background:#b0b0b0">#b0b0b0</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey</td>
+            <td style="background:#dadada">#dadada</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey-light</td>
+            <td style="background:#e8e8e8">#e8e8e8</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey-lighter</td>
+            <td style="background:#f1f1f1">#f1f1f1</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey-lightest</td>
+            <td style="background:#f7f7f7">#f7f7f7</td>
+        </tr>
+    </tbody>
+</table>
 
-### Couleurs d’arrière-plan (gris foncé)
+## Couleurs d’arrière-plan
 Utilisation : arrière-plan
 
-Variable
-Code
-$m-color--black-grey-darker
-#232323
-$m-color--black-grey-dark
-#2e2e2e
-$m-color--black-grey
-#3d3d3d
-$m-color--black-grey-light
-#4f4f4f
-$m-color--black-grey-lighter
-#666
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$m-color--black-grey-darker</td>
+            <td style="background:#232323; color:#fff">#232323</td>
+        </tr>
+        <tr>
+            <td>$m-color--black-grey-dark</td>
+            <td style="background:#2e2e2e; color:#fff">#2e2e2e</td>
+        </tr>
+        <tr>
+            <td>$m-color--black-grey</td>
+            <td style="background:#3d3d3d; color:#fff">#3d3d3d</td>
+        </tr>
+        <tr>
+            <td>$m-color--black-grey-light</td>
+            <td style="background:#4f4f4f; color:#fff">#4f4f4f</td>
+        </tr>
+        <tr>
+            <td>$m-color--black-grey-lighter</td>
+            <td style="background:#666; color:#fff">#666</td>
+        </tr>
+    </tbody>
+</table>
 
-### Autres couleurs
+## Autres couleurs
 Utilisation : titre,  libellé, texte, etc.
 
-Variable
-Code
-$m-color--text
-#000
-$m-color--black
-#000
-$m-color--white
-#fff
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$m-color--text</td>
+            <td style="background:#000; color:#fff">#000</td>
+        </tr>
+        <tr>
+            <td>$m-color--black</td>
+            <td style="background:#000; color:#fff">#000</td>
+        </tr>
+        <tr>
+            <td>$m-color--white</td>
+            <td style="background:#fff">#fff</td>
+        </tr>
+    </tbody>
+</table>

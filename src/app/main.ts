@@ -23,6 +23,7 @@ import { MARKDOWN_NAME, MMarkdown } from './components/markdown/markdown';
 import { PREVIEW_NAME, MPreview } from './components/preview/preview';
 import { DARK_TEMPLATE_NAME, MDarkTemplate } from './components/dark-template/dark-template';
 import { LIGHT_TEMPLATE_NAME, MLightTemplate } from './components/light-template/light-template';
+import { HIGHLIGHT_NAME, MHighlight } from './components/highlight/highlight';
 
 const utilsPluginOptions: UtilsPluginOptions = {
     securityPluginOptions: {
@@ -47,6 +48,7 @@ async function main() {
     Vue.component(PREVIEW_NAME, MPreview);
     Vue.component(DARK_TEMPLATE_NAME, MDarkTemplate);
     Vue.component(LIGHT_TEMPLATE_NAME, MLightTemplate);
+    Vue.component(HIGHLIGHT_NAME, MHighlight);
 
     currentLang(FRENCH);
     await store.dispatchAsync(ComponentActions.MESSAGES_GET, FRENCH);

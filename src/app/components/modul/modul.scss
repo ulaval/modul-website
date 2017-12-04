@@ -22,8 +22,9 @@
         width: 100%;
         height: $modul-header--height--s;
         border-bottom: 1px solid $m-color--grey;
+        padding-left: $m-padding;
 
-        @media (min-width: #{$m-bp--min--xs}) {
+        @media (min-width: #{$m-mq--min--xs}) {
             height: $modul-header--height;
         }
 
@@ -32,7 +33,7 @@
             border: none;
             outline: none;
             font-size: $m-font-size;
-            padding: 20px $m-margin; // Magic number
+            padding: 16px $m-margin; // Magic number
         }
     }
 
@@ -40,8 +41,9 @@
     &__header__close-button {
         width: $modul-header--height--s;
         height: $modul-header--height--s;
+        font-size: 18px; // magic number
 
-        @media (min-width: #{$m-bp--min--xs}) {
+        @media (min-width: #{$m-mq--min--xs}) {
             width: $modul-header--height;
             height: $modul-header--height;
         }
@@ -90,7 +92,7 @@
         flex: 0 1 150px;
         background-color: $m-color--interactive;
         background-size: 50%;
-        background-image: url(/assets/accordion.png);
+        background-image: url(../../../assets/accordion.png);
         background-repeat: no-repeat;
         background-position: center;
         background-blend-mode: multiply;

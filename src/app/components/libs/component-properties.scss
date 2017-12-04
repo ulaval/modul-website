@@ -1,7 +1,11 @@
 @import '../../styles/shared-styles';
 
 .modul-component-properties {
-    padding: $m-padding--l $m-margin--l;
+    padding: $m-padding $m-padding $m-padding--l $m-padding;
+
+    @media (min-width: $m-mq--min--s) {
+        padding: $m-padding $m-margin--l $m-padding--l $m-margin--l;
+    }
 
     > :first-child {
         &,

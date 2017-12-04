@@ -11,6 +11,7 @@ import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import * as PagesGetters from '@/app/store/modules/pages/getters';
 import { Page, Standards, GettingStarted } from '@/app/components/pages/page';
+import { read } from 'fs';
 
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: Number = 100;
@@ -48,6 +49,8 @@ export default class Modul extends ModulWebsite {
     private searchWidth: string = '400px';
 
     private components: Component[] = [];
+    private logo: any = require('../../../assets/logo-ul.svg');
+    private menuFirstStep: boolean = true;
 
     protected beforeMount(): void {
         Meta.getCategories().forEach(category => {
@@ -147,28 +150,66 @@ export default class Modul extends ModulWebsite {
         }
     }
 
+    private toggleMobileMenu(): void {
+        this.menuFirstStep = true;
+        if (!this.menuOpen) {
+            this.showMenu('');
+        } else {
+            this.closeMenu();
+        }
+    }
+
+    private showSecondStep(section: string): void {
+        this.section = section;
+        this.menuFirstStep = false;
+    }
+
+    private showFirstStep(): void {
+        this.menuFirstStep = true;
+    }
+
     // Vue.filter('highlight', function(words, query){
     //     return words.replace(query, '<span class=\'test2\'>' + query + '</span>')
     // });
 
     private searchData(): any[] {
-        return Object.keys(Meta.getMeta()).map(key => {
-            let nameObj: {};
-            if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {
-                nameObj = {
-                    tag: Meta.getMeta()[key].tag,
-                    category: this.$i18n.translate(Meta.getMeta()[key].category),
-                    text: this.$i18n.translate(Meta.getMeta()[key].name)
-                };
-            } else {
-                nameObj = {
-                    tag: Meta.getMeta()[key].tag,
-                    category: 'Null',
-                    text: 'Null'
-                };
-            }
-            return nameObj;
-        }, this);
+        if (process.env.NODE_ENV.dev) {
+            return Object.keys(Meta.getMeta()).map(key => {
+                let nameObj: {};
+                if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {
+                    nameObj = {
+                        tag: Meta.getMeta()[key].tag,
+                        category: this.$i18n.translate(Meta.getMeta()[key].category),
+                        text: this.$i18n.translate(Meta.getMeta()[key].name)
+                    };
+                } else {
+                    nameObj = {
+                        tag: Meta.getMeta()[key].tag,
+                        category: 'Null',
+                        text: 'Null'
+                    };
+                }
+                return nameObj;
+            }, this);
+        } else {
+            return Object.keys(Meta.getMetaForProd()).map(key => {
+                let nameObj: {};
+                if (Meta.getMetaForProd()[key].name && Meta.getMetaForProd()[key].category) {
+                    nameObj = {
+                        tag: Meta.getMetaForProd()[key].tag,
+                        category: this.$i18n.translate(Meta.getMetaForProd()[key].category),
+                        text: this.$i18n.translate(Meta.getMetaForProd()[key].name)
+                    };
+                } else {
+                    nameObj = {
+                        tag: Meta.getMetaForProd()[key].tag,
+                        category: 'Null',
+                        text: 'Null'
+                    };
+                }
+                return nameObj;
+            }, this);
+        }
     }
 
     private get searchResult(): any[] {

@@ -1,4 +1,6 @@
 # modul-website
-The official website of Modul
+The official website of Modul (beta release)
 
-> PROJECT UNDER DEVELOPMENT... COME BACK SOON!
+Look at the [documentation][1]
+
+[1]: https://ulaval.github.io/modul

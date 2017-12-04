@@ -1,17 +1,17 @@
 <div class="modul-component-properties">
-    <m-table>
-        <table>
-            <thead>
-                <th>
-                    <m-i18n k="modul:attribute"></m-i18n>
-                </th>
-                <th>
-                    <m-i18n k="modul:value"></m-i18n>
-                </th>
-                <th>
-                    <m-i18n k="modul:description"></m-i18n>
-                </th>
-            </thead>
+    <table class="m-u--table">
+        <thead>
+            <th>
+                <m-i18n k="modul:attribute"></m-i18n>
+            </th>
+            <th style="text-align: center">
+                <m-i18n k="modul:value"></m-i18n>
+            </th>
+            <th style="text-align: center">
+                <m-i18n k="modul:description"></m-i18n>
+            </th>
+        </thead>
+        <tbody>
             <tr v-for="attribute in getAttributes(component)">
                 <td><strong>{{attribute}}</strong>:{{getAttribute(attribute).type}}</td>
                 <td style="text-align: center">
@@ -23,6 +23,7 @@
                     <span><m-i18n :k="getAttribute(attribute).description"></m-i18n></span>
                 </td>
             </tr>
-        </table>
-    </m-table>
+        </tbody>
+
+    </table>
 </div>

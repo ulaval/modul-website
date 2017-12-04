@@ -1,1 +1,1 @@
-<m-button>m-button</m-button>
+<m-button>Bouton</m-button>
