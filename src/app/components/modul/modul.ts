@@ -173,7 +173,7 @@ export default class Modul extends ModulWebsite {
     // });
 
     private searchData(): any[] {
-        if (process.env.NODE_ENV.dev) {
+        if ((process.env.NODE_ENV as any).dev) {
             return Object.keys(Meta.getMeta()).map(key => {
                 let nameObj: {};
                 if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {
