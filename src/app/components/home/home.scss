@@ -84,7 +84,7 @@ $modul-home-design--width--l: 270px;
             &:hover,
             &:focus {
                 .modul-home-experiment__body__header-subtitle::before {
-                    margin-left: 260px;
+                    margin-left: 280px;
                 }
             }
 
@@ -116,7 +116,7 @@ $modul-home-design--width--l: 270px;
                 margin-bottom: 4px;
 
                 @media (min-width: $m-mq--min--xs) {
-                    font-size: 42px;
+                    font-size: 37px;
                 }
             }
 

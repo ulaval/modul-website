@@ -122,7 +122,7 @@
                         </header>
                         <div class="modul-mobile-menu__body">
                             <m-accordion class="modul-mobile-menu__elem" skin="plein" v-for="category in categoriesComponent" v-if="section == 'components'">
-                                <h2 slot="title">
+                                <h2 slot="header">
                                     <span @click="onComponentCategoryClick($event, category)">{{category.text}}</span>
                                 </h2>
                                 <ul>
