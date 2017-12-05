@@ -39,11 +39,11 @@ Utilisation : états, par exemple l'état actif, le survol, le traitement, des d
     <tbody>
         <tr>
             <td>$m-color--interactive-darker</td>
-            <td style="background:#0074a0">#0074a0</td>
+            <td style="background:#0075c3">#0075c3</td>
         </tr>
         <tr>
             <td>$m-color--interactive-dark</td>
-            <td style="background:#0087bd">#0087bd</td>
+            <td style="background:#0587e1">#0587e1</td>
         </tr>
         <tr>
             <td>$m-color--interactive</td>
