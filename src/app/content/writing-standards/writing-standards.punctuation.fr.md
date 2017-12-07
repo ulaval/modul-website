@@ -1,12 +1,11 @@
-<h2>Règles de ponctuation</h2>
-<p>La ponctuation répond à un besoin de logique. Elle permet d’avoir des rapports syntaxiques entre les éléments d’une phrase (séparation, regroupement) et de diviser logiquement un texte (transition, explication, opposition). Ainsi, la ponctuation facilite la lecture et la compréhension d’un contenu.</p>
+## Règles de ponctuation
+La ponctuation répond à un besoin de logique. Elle permet d’avoir des rapports syntaxiques entre les éléments d’une phrase (séparation, regroupement) et de diviser logiquement un texte (transition, explication, opposition). Ainsi, la ponctuation facilite la lecture et la compréhension d’un contenu.
 
-<h3>Tableau des espacements avant et après les signes de ponctuation</h3>
-
+### Tableau des espacements avant et après les signes de ponctuation
 <table>
     <thead>
         <tr>
-            <th>NOM</th>
+            <th>Nom</th>
             <th>Avant</th>
             <th>Symbole</th>
             <th>Après</th>
@@ -206,15 +205,14 @@
     </tbody>
 </table>
 
-Pour plus de renseignements, consulter le site de l’<a href="http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?t1=1&id=2039">Office québécois de la langue française</a>.
-<ul class="m-u--bullet-list">
-        <li>Espace insécable : inséc.</li>
-        <li>espace : esp.</li>
-        <li>Aucun espace : ⌀</li>
-     </ul>
+Pour plus de renseignements, consulter le site de l’<m-link :multi-line="true" href="http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?t1=1&id=2039" target="_blank">Office québécois de la langue française</m-link>.
 
-<h3>Énumérations verticales</h3>
-<p>Lors de l'utilisation d'une énumération verticale, il est important :</p>
+* **Espace insécable :** inséc.
+* **Espace :** esp.
+* **Aucun espace :** ⌀
+
+### Énumérations verticales
+Lors de l'utilisation d'une énumération verticale, il est important :
     <ul class="m-u--bullet-list">
         <li>D'utiliser les deux-points {:}</li>
         <li>Si les éléments sont des phrases complètes, chacun commence par une lettre majuscule et se termine par un point :</li>

@@ -11,6 +11,7 @@ import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import * as PagesGetters from '@/app/store/modules/pages/getters';
 import { Page, Standards, GettingStarted } from '@/app/components/pages/page';
+import { read } from 'fs';
 
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: Number = 100;
@@ -49,6 +50,7 @@ export default class Modul extends ModulWebsite {
 
     private components: Component[] = [];
     private logo: any = require('../../../assets/logo-ul.svg');
+    private menuFirstStep: boolean = true;
 
     protected beforeMount(): void {
         Meta.getCategories().forEach(category => {
@@ -148,12 +150,30 @@ export default class Modul extends ModulWebsite {
         }
     }
 
+    private toggleMobileMenu(): void {
+        this.menuFirstStep = true;
+        if (!this.menuOpen) {
+            this.showMenu('');
+        } else {
+            this.closeMenu();
+        }
+    }
+
+    private showSecondStep(section: string): void {
+        this.section = section;
+        this.menuFirstStep = false;
+    }
+
+    private showFirstStep(): void {
+        this.menuFirstStep = true;
+    }
+
     // Vue.filter('highlight', function(words, query){
     //     return words.replace(query, '<span class=\'test2\'>' + query + '</span>')
     // });
 
     private searchData(): any[] {
-        if (process.env.NODE_ENV.dev) {
+        if ((process.env.NODE_ENV as any).dev) {
             return Object.keys(Meta.getMeta()).map(key => {
                 let nameObj: {};
                 if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {

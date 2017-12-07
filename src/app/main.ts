@@ -1,12 +1,11 @@
 import '@ulaval/modul-components/dist/utils/polyfills';
 import Vue from 'vue';
 import store from './store';
-import router from './router';
+import router, { STANDARDS, GETTING_STARTED } from './router';
 import Modul from './components/modul/modul';
 import * as ComponentActions from './store/modules/components/actions';
 import * as PageActions from './store/modules/pages/actions';
 import { Sections, Standards, GettingStarted } from '@/app/components/pages/page';
-import { STANDARDS, GETTING_STARTED } from './router';
 import { Pages } from '@/app/components/pages/pages';
 import './styles/main.scss';
 
@@ -55,7 +54,7 @@ async function main() {
     await store.dispatchAsync(ComponentActions.ICONS_GET, 'website');
     await store.dispatchAsync(ComponentActions.COMPONENTS_META_GET, FRENCH);
 
-    store.dispatchAsync(PageActions.SECTIONS_META_GET, {language: FRENCH, sectionsObj: Sections});
+    store.dispatchAsync(PageActions.SECTIONS_META_GET, { language: FRENCH, sectionsObj: Sections });
 
     Sections.forEach((section) => {
         let pagesObj: Pages = null;
@@ -69,7 +68,7 @@ async function main() {
         }
 
         if (pagesObj) {
-            store.dispatchAsync(section + '/' + PageActions.PAGES_META_GET, {route: route, pagesObj: pagesObj});
+            store.dispatchAsync(section + '/' + PageActions.PAGES_META_GET, { route: route, pagesObj: pagesObj });
         }
     });
 

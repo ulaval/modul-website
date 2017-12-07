@@ -1,45 +1,42 @@
-<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHome, 'modul--is-black-template' : isBlackHeader}" :dynamic-header="false">
+<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHome, 'modul--is-black-template' : isBlackHeader, 'modul--is-light-template' : !isBlackHeader}"
+    :dynamic-header="false">
     <div slot="header" ref="header" class="modul-header">
         <h1 v-if="isHome" class="modul-logo">
-            <router-link to="/">MOD<b>UL</b> <span class="modul-logo__beta">Beta</span></router-link>
+            <router-link to="/">MOD
+                <b>UL</b>
+                <span class="modul-logo__beta">Beta</span>
+            </router-link>
         </h1>
         <span v-if="!isHome" class="modul-logo">
-            <router-link to="/">MOD<b>UL</b> <span class="modul-logo__beta">Beta</span></router-link>
+            <router-link to="/">MOD
+                <b>UL</b>
+                <span class="modul-logo__beta">Beta</span>
+            </router-link>
         </span>
-        <nav class="modul-header__nav" v-if="isMqMinS">
-            <ul>
+
+        <nav class="modul-header__nav">
+            <a href="#" @click.prevent="toggleMobileMenu" v-if="!isMqMinS" class="modul-header__nav__link">
+                <m-i18n k="modul:menu-label" v-if="!headerAnimationCompleted"></m-i18n>
+                <m-i18n k="modul:close-label" v-if="headerAnimationCompleted"></m-i18n>
+            </a>
+            <ul v-if="isMqMinS">
                 <li>
-                    <router-link :to="gettingStarted" class="modul-header__link">
+                    <router-link :to="gettingStarted" class="modul-header__nav__link">
                         <m-i18n k="modul:getting-started"></m-i18n>
                     </router-link>
                 </li>
-                <!-- <li>
-                    <router-link :to="visualStandards" class="modul-header__link">
-                        <m-i18n k="modul:visual-standards"></m-i18n>
-                    </router-link>
-                </li>
                 <li>
-                    <router-link :to="writingStandards" class="modul-header__link">
-                        <m-i18n k="modul:writing-standards"></m-i18n>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link :to="codingStandards" class="modul-header__link">
-                        <m-i18n k="modul:coding-standards"></m-i18n>
-                    </router-link>
-                </li> -->
-                <li>
-                    <a href="#" @click.prevent="showMenu('components')" class="modul-header__link">
+                    <a href="#" @click.prevent="showMenu('components')" class="modul-header__nav__link">
                         <m-i18n k="modul:components"></m-i18n>
                     </a>
                 </li>
                 <li>
-                    <a href="#" @click.prevent="showMenu('standards')" class="modul-header__link">
+                    <a href="#" @click.prevent="showMenu('standards')" class="modul-header__nav__link">
                         <m-i18n k="modul:standards"></m-i18n>
                     </a>
                 </li>
                 <!-- <li>
-                    <router-link :to="ecosystem" class="modul-header__link">
+                    <router-link :to="ecosystem" class="modul-header__nav__link">
                         <m-i18n k="modul:ecosystem"></m-i18n>
                     </router-link>
                 </li> -->
@@ -50,8 +47,9 @@
             <m-icon name="search"></m-icon>
         </button>
 
-        <m-sidebar :open="searchOpen" @open="searchOpen = true" @close="searchOpen = false" origin="right" :close-button="false" :width="searchWidth" :padding="false">
-            <div class="modul-search__header"slot="header">
+        <m-sidebar :open="searchOpen" @open="searchOpen = true" @close="searchOpen = false" origin="right" :close-button="false"
+            :width="searchWidth" :padding="false">
+            <div class="modul-search__header" slot="header">
                 <m-icon name="search" svg-title="Rechercher"></m-icon>
                 <input type="text" v-model="searchModel" placeholder="Rechercher" value="Rechercher un composant" class="modul-search__header__input">
                 <button @click="toggleSearch" class="modul-search__header__close-button m-u--button-primary">
@@ -59,7 +57,8 @@
                 </button>
             </div>
             <transition-group name="modul--is" tag="ul">
-                <li tabindex="0" class="modul-search-card" @click="onComponentClick(item.tag)" @keyup.enter="onComponentClick(item.tag)" v-for="item in searchResult" key="item.tag">
+                <li tabindex="0" class="modul-search-card" @click="onComponentClick(item.tag)" @keyup.enter="onComponentClick(item.tag)"
+                    v-for="item in searchResult" key="item.tag">
                     <div class="modul-search-card__figure">
                         <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
                     </div>
@@ -73,35 +72,82 @@
         </m-sidebar>
     </div>
     <transition name="modul--is">
-        <nav class="modul-menu" v-if="headerAnimationCompleted && isMqMinS" tabindex="0" ref="menu">
-            <template v-if="section == 'components'">
-                <ul v-for="category in categoriesComponent" class="modul-menu__list">
-                    <li>
-                        <h2 @click="onComponentCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
-                            <span>{{category.text}}</span>
-                        </h2>
-                    </li>
-                    <li v-for="component in getCategoryComponents(category.id)">
-                        <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
-                            <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
-                            <span class="modul-menu__label modul-menu__tag">{{ component.tag }}</span>
-                        </a>
-                    </li>
-                </ul>
+        <section class="modul-menu" v-if="headerAnimationCompleted" tabindex="0" ref="menu">
+            <template v-if="isMqMinS">
+                <nav class="modul-menu__list" v-for="category in categoriesComponent" v-if="section == 'components'">
+                    <h2 @click="onComponentCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
+                        <span>{{category.text}}</span>
+                    </h2>
+                    <ul>
+                        <li v-for="component in getCategoryComponents(category.id)">
+                            <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
+                                <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
+                                <span class="modul-menu__label modul-menu__tag">{{ component.tag }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="modul-menu__list" v-for="page in pagesStandards" v-if="section != 'components'">
+                    <h2 @click="onPageClick(page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
+                        <span>{{page.text}}</span>
+                    </h2>
+                </nav>
             </template>
-            <template v-else>
-                <ul v-for="page in pagesStandards" class="modul-menu__list">
-                    <li>
-                        <h2 @click="onPageClick(page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
-                            <span>{{page.text}}</span>
-                        </h2>
-                    </li>
-                 </ul>
+            <template v-if="!isMqMinS">
+                <transition name="modul--is">
+                    <nav class="modul-mobile-menu modul--is-first-step" v-if="menuFirstStep">
+                        <ul>
+                            <li class="modul-mobile-menu__elem">
+                                <router-link :to="gettingStarted" class="modul-mobile-menu__elem__link">
+                                    <m-i18n k="modul:getting-started"></m-i18n>
+                                </router-link>
+                            </li>
+                            <li class="modul-mobile-menu__elem">
+                                <a href="#" @click.prevent="showSecondStep('components')" class="modul-mobile-menu__elem__link">
+                                    <m-i18n k="modul:components"></m-i18n>
+                                    <m-icon name="right-arrow"></m-icon>
+                                </a>
+                            </li>
+                            <li class="modul-mobile-menu__elem">
+                                <a href="#" @click.prevent="showSecondStep('standards')" class="modul-mobile-menu__elem__link">
+                                    <m-i18n k="modul:standards"></m-i18n>
+                                    <m-icon name="right-arrow"></m-icon>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="modul-mobile-menu modul--is-second-step" v-if="!menuFirstStep">
+                        <header class="modul-mobile-menu__header">
+                            <m-link mode="button" icon-name="left-arrow" @click="showFirstStep">Menu</m-link>
+                        </header>
+                        <div class="modul-mobile-menu__body">
+                            <m-accordion class="modul-mobile-menu__elem" skin="plein" v-for="category in categoriesComponent" v-if="section == 'components'">
+                                <h2 slot="header">
+                                    <span @click="onComponentCategoryClick($event, category)">{{category.text}}</span>
+                                </h2>
+                                <ul>
+                                    <li v-for="component in getCategoryComponents(category.id)">
+                                        <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
+                                            <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
+                                            <span class="modul-menu__tag">{{ component.tag }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </m-accordion>
+                            <nav v-if="section != 'components'">
+                                <ul>
+                                    <li v-for="page in pagesStandards" class="modul-mobile-menu__elem">
+                                        <a href="#" @click="onPageClick(page, 'standards')" class="modul-mobile-menu__elem__link">
+                                            <span>{{page.text}}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </transition>
             </template>
-        </nav>
-        <nav class="modul-menu" v-if="headerAnimationCompleted && !isMqMinS" tabindex="0" ref="menu">
-            <!-- menu mobile -->
-        </nav>
+        </section>
     </transition>
 
     <div class="modul-body">
@@ -109,18 +155,24 @@
     </div>
 
     <div slot="footer" class="modul-footer">
-        <div class="modul-footer__body">
+        <section class="modul-footer__body">
             <div class="modul-footer__logo">
-                <span><m-i18n k="modul:powered-by"></m-i18n><a class="modul-footer__logo__link" href="https://www.ulaval.ca/" target="_blank"><img :src="logo" alt="l'Université Laval" title="l'Université Laval"></a> </span>
+                <span>
+                    <m-i18n k="modul:powered-by"></m-i18n>
+                    <a class="modul-footer__logo__link" href="https://www.ulaval.ca/" target="_blank">
+                        <img :src="logo" alt="l'Université Laval" title="l'Université Laval">
+                    </a>
+                </span>
             </div>
             <!-- <div class="modul-footer__nav" v-if="isMqMinS">
                 <a class="modul-footer__link" href=""><m-i18n k="modul:terms-of-use"></m-i18n></a>
             </div> -->
-        </div>
-        <div class="modul-footer__version">
-            <span class="modul-logo"><a href="">MOD<b>UL</b></a></span>
-            <span><m-i18n k="modul:version"></m-i18n> 1.0.0-beta.1</span>
-        </div>
+        </section>
+        <section class="modul-footer__version">
+            <span class="modul-logo">
+                <a href="">MOD<b>UL</b></a>
+            </span>
+            <span><m-i18n k="modul:version"></m-i18n> 1.0.0-beta</span>
+        </section>
     </div>
-
 </m-flex-template>

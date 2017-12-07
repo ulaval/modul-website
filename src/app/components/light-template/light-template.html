@@ -1,61 +1,21 @@
 <section class="modul-light-template">
     <header class="modul-light-template__header" :style="{'zIndex' : zIndex}">
-        <span class="modul-light-template__header__back-link" v-if="hasBacklink">
+        <span class="modul-light-template__header__back-link" v-if="hasBacklinkSlot">
             <slot name="backlink"></slot>
         </span>
-        <div class="modul-light-template__header__title">
-            <template v-if="hasHeader">
-                <slot name="header"></slot>
-            </template>
-            <h1 v-else>{{ defaultTitle }}</h1>
-        </div>
-        <div class="modul-light-template__header__arrow-left" v-if="hasLeftArrow">
-            <slot name="leftArrow"></slot>
-        </div>
-        <div class="modul-light-template__header__arrow-right" v-if="hasRightArrow">
-            <slot name="rightArrow"></slot>
+        <div class="modul-light-template__header__title" v-if="hasHeaderSlot">
+            <slot name="header"></slot>
         </div>
     </header>
-    <div class="modul-light-template__body">
-        <transition name="slide-fade" mode="out-in" appear>
-            <div class="modul-light-template__body__container" v-if="hasBody">
-                <slot name="body"></slot>
-            </div>
-            <div class="modul-light-template__body__container" v-else>
-                <m-panel>
-                    <h2>{{ bodyMessage }}</h2>
-                    <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
-                        Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse
-                        culpa minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur.
-                        Ipsum nisi sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat
-                        sint sit non et non labore adipisicing id.</p>
-                    <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
-                        Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse
-                        culpa minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur.
-                        Ipsum nisi sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat
-                        sint sit non et non labore adipisicing id.</p>
-                    <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
-                        Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse
-                        culpa minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur.
-                        Ipsum nisi sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat
-                        sint sit non et non labore adipisicing id.</p>
-                    <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
-                        Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse
-                        culpa minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur.
-                        Ipsum nisi sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat
-                        sint sit non et non labore adipisicing id.</p>
-                    <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
-                        Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse
-                        culpa minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur.
-                        Ipsum nisi sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat
-                        sint sit non et non labore adipisicing id.</p>
-                    <p>Laborum et velit consectetur mollit fugiat culpa commodo aliquip exercitation mollit esse aliqua consectetur.
-                        Sint veniam exercitation magna id cillum sunt aliqua et ullamco quis. Ullamco fugiat cillum esse
-                        culpa minim consequat enim. Et et est ut anim anim irure tempor laboris cillum qui do do pariatur.
-                        Ipsum nisi sit occaecat do excepteur deserunt est nulla. Amet mollit est excepteur labore fugiat
-                        sint sit non et non labore adipisicing id.</p>
-                </m-panel>
-            </div>
-        </transition>
-    </div>
+    <section class="modul-light-template__body">
+        <div class="modul-light-template__body__arrow-left" v-if="hasLeftArrowSlot">
+            <slot name="leftArrow"></slot>
+        </div>
+        <div class="modul-light-template__body__arrow-right" v-if="hasRightArrowSlot">
+            <slot name="rightArrow"></slot>
+        </div>
+        <div class="modul-light-template__body__container" v-if="hasDefaultSlot"></div>
+            <slot></slot>
+        </div>
+    </section>
 </section>

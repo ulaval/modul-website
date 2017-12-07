@@ -7,9 +7,10 @@ Règle générale, l'utilisation d'une liste déroulante est recommandée lorsqu
 
 Les listes déroulants peuvent aussi être utilisées lorsqu’il est nécessaire de conserver l'espace de l'écran, ou d’empêcher les les utilisateurs d'entrer des données erronées.
 
+Ce composant doit être utilisé avec le composant <a href="../m-dropdown-item/portrait">m-dropdown-item</a>.
+
 <modul-do>
     <ul class="m-u--bullet-list">
-        <li><b>Doit être utilisé avec le composant <a href="../m-dropdown-item/portrait">m-dropdown-item</a></b></li>
         <li>La première option d’une liste déroulante devrait être une étiquette significative.</li>
         <li>Ne pas utiliser de liste déroulante lorsque le nombre d’options est inférieur à 7, utiliser plutôt des boutons radio.</li>
         <li>Éviter de sélectionner une option comme valeur par défaut, particulièrement si c'est un champ obligatoire.</li>

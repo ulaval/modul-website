@@ -1,10 +1,13 @@
 @import '../../styles/shared-styles';
 
 .modul-dark-template {
+    position: relative;
     width: 100%;
 
     &::before,
-    &__header {
+    &__header,
+    &__arrow-left,
+    &__arrow-right {
         height: calc(50vh - #{$modul-header--height--s});
         min-height: 250px;
 
@@ -14,16 +17,14 @@
     }
 
     &::before {
-        content: '';
-        display: block;
+        @media (min-width: $m-mq--min--s) {
+            content: '';
+            display: block;
+        }
     }
 
     &__header {
-        position: fixed;
-        top: $modul-header--height--s;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        position: relative;
         min-width: 320px;
         z-index: 1;
         width: 100%;
@@ -35,8 +36,12 @@
         background-color: $modul-color--black-grey-dark;
         background-image: url(../../../assets/grid.svg);
 
-        @media (min-width: $m-mq--min--xs) {
+        @media (min-width: $m-mq--min--s) {
+            position: fixed;
             top: $modul-header--height;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
 
         &::before {
@@ -52,9 +57,11 @@
 
         &__title­ {
             position: relative;
+            padding: 0 $m-padding;
 
             h1 {
                 color: $m-color--white;
+                text-align: center;
 
                 @include modul-page-title();
             }
@@ -62,11 +69,19 @@
 
         &__back-link {
             position: fixed !important;
-            top: $modul-header--height;
+            top: $modul-header--height--s;
             left: 0;
             z-index: 2;
             margin-top: $m-padding;
-            margin-left: $m-padding--l;
+            margin-left: $m-padding;
+
+            @media (min-width: $m-mq--min--xs) {
+                top: $modul-header--height;
+            }
+
+            @media (min-width: $m-mq--min--s) {
+                margin-left: $m-padding--l;
+            }
         }
     }
 
@@ -76,42 +91,30 @@
         background-color: #fff;
         margin: 0 auto;
 
-        &__header {
-            background-color: $modul-color--black-grey;
-
-            &-wrap {
-                margin: 0 auto;
-                max-width: $modul-max-width;
-                padding: $m-padding--xl $m-padding--l;
-
-                p,
-                ul,
-                li {
-                    color: #fff;
-                    font-size: 20px;
-
-                    &:first-child {
-                        margin: 0;
-                    }
-                }
-            }
-        }
-
         &__arrow-left,
         &__arrow-right {
-            position: fixed;
+            position: absolute;
             top: 0;
-            bottom: 0;
+            z-index: 2;
             display: flex;
-            align-items: center;
-            height: 100%;
-            z-index: 3;
+            align-items: flex-end;
+
+            @media (max-width: $m-mq--max--s) {
+                top: -26px;
+            }
+
+            @media (min-width: $m-mq--min--s) {
+                position: fixed;
+                bottom: 0;
+                align-items: center;
+                height: 100%;
+            }
 
             button {
                 width: $m-padding--l;
                 min-width: $m-padding--l;
-                height: 52px; // Magic number
-                min-height: 52px; // Magic number
+                height: 54px; // Magic number
+                min-height: 54px; // Magic number
                 font-size: 14px;
                 stroke-width: 2px;
                 transform-origin: 50%;
@@ -146,10 +149,21 @@
             }
         }
 
-        &__content {
+        &__intro {
+            position: relative;
+            z-index: 1;
+            background: $modul-color--black-grey;
+            width: 100%;
+
             &-wrap {
-                .tabs {
-                    width: 100%;
+                margin: 0 auto;
+                max-width: $modul-max-width;
+                padding: $m-margin--xl $m-padding;
+                color: $m-color--white;
+                font-size: 18px;
+
+                @media (min-width: $m-mq--min--s) {
+                    padding: $m-margin--xl $m-padding--l;
                 }
             }
         }

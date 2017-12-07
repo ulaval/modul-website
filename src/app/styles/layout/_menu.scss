@@ -5,7 +5,7 @@ $modul-menu--list-max-width: 300px;
 
 .modul-menu {
     position: fixed;
-    top: $modul-header--height;
+    top: $modul-header--height--s;
     right: 0;
     bottom: 0;
     left: 0;
@@ -14,24 +14,32 @@ $modul-menu--list-max-width: 300px;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     background: $modul-color--black-grey;
     color: $modul-color--grey-light;
-    padding: $m-padding--l*2 $m-padding--l $m-padding--l*2 $m-padding--l;
     outline: none;
+    box-shadow: $m-box-shadow--l;
 
-    &.modul--is- {
-        &enter-active {
+    @media (min-width: #{$m-mq--min--xs}) {
+        top: $modul-header--height;
+    }
+
+    @media (min-width: #{$m-mq--min--s}) {
+        flex-wrap: wrap;
+        padding: $m-padding--l*2 $m-padding--l $m-padding--l*2 $m-padding--l;
+    }
+
+    &.modul--is {
+        &-enter-active {
             transition: transform #{$modul-CSS_ANIMATION_MENU_DURATION} ease;
         }
 
-        &leave-active {
+        &-leave-active {
             transition: transform #{$modul-CSS_ANIMATION_MENU_DURATION} ease;
         }
 
-        &leave-active,
-        &enter {
-            transform: translate3d(0, -100%, 0);
+        &-leave-active,
+        &-enter {
+            transform: translate3d(0, -102%, 0);
         }
     }
 
@@ -51,18 +59,23 @@ $modul-menu--list-max-width: 300px;
 
     &__link {
         $modul-menu-transition-duration: 0.7s;
+
         $modul-menu-offset-left: $m-padding--s + 2;
 
-        transition: background-color #{$modul-menu-transition-duration} ease, border-color #{$modul-menu-transition-duration} ease, margin-left #{$modul-menu-transition-duration} ease;
+        transition: background-color #{$modul-menu-transition-duration} ease, border-color #{$modul-menu-transition-duration} ease, left #{$modul-menu-transition-duration} ease;
         position: relative;
         display: block;
         border-left: 2px solid transparent;
-        padding: $m-padding--s $modul-menu-offset-left $m-padding--s;
-        margin-left: -$modul-menu-offset-left;
+        padding: $m-padding--s $m-padding;
         background-color: transparent;
         color: $modul-color--grey-dark;
         text-decoration: none;
         outline: none;
+
+        @media (min-width: #{$m-mq--min--s}) {
+            left: -$modul-menu-offset-left;
+            padding: $m-padding--s $modul-menu-offset-left $m-padding--s;
+        }
 
         &::after {
             content: "";
@@ -78,15 +91,15 @@ $modul-menu--list-max-width: 300px;
 
         &:hover,
         &:focus {
+            left: 0;
             border-left-color: $m-color--white;
             background-color: $modul-color--black-grey-dark;
-            margin-left: 0;
 
             .modul-menu__label {
                 color: $m-color--white;
             }
 
-            .modul-menu__label.modul-menu__tag {
+            .modul-menu__tag {
                 color: $modul-color--grey-dark;
             }
         }
@@ -101,13 +114,79 @@ $modul-menu--list-max-width: 300px;
 
     &__tag {
         font-style: italic;
-        font-size: 14px;
+        font-size: $m-font-size--s;
         color: $modul-color--grey-darker;
     }
+}
 
-    &__translation {
-        font-style: italic;
-        font-weight: 300;
-        font-size: 14px;
+.modul-mobile-menu__body .m-accordion__header,
+.modul-mobile-menu__elem a {
+    padding: $m-padding;
+}
+
+.modul-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &.modul--is {
+        &-enter-active,
+        &-leave-active {
+            transition: transform $m-transition-duration--l ease;
+            position: absolute;
+            width: 100%;
+        }
+
+        &-enter,
+        &-leave-active {
+            &.modul--is-first-step {
+                transform: translate3d(-100%, 0%, 0);
+            }
+
+            &.modul--is-second-step {
+                transform: translate3d(100%, 0%, 0);
+            }
+        }
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    &__header {
+        padding: $m-padding;
+    }
+
+    &__body {
+        // widxth: 100%;
+        flex: 1 1 auto;
+        overflow: auto;
+        background: $modul-color--black-grey-dark;
+    }
+
+    &__body .m-accordion__header h2,
+    &__elem__link {
+        font-size: 18px;
+        font-weight: $m-font-weight--black;
+        color: $m-color--white;
+        text-transform: uppercase;
+        text-decoration: none;
+        line-height: 1.3;
+    }
+
+    &__elem {
+        &:not(:last-child) {
+            border-bottom: 1px solid $modul-color--black-grey-light;
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
     }
 }

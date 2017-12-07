@@ -3,10 +3,10 @@
         {{translatedCategory}}
     </m-link>
     <h1 slot="header">
-        <m-dropdown v-if="isMqMinXS" class="modul-u--dropdown-light" v-model="selectedComponent" @open="onOpen" @close="onClose" width="auto">
+        <m-dropdown v-if="isMqMinS" class="modul-u--dropdown-light" v-model="selectedComponent" @open="onOpen" @close="onClose" width="auto">
             <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
         </m-dropdown>
-        <template v-if="!isMqMinXS">{{ getComponentName(selectedComponent) }}</template>
+        <template v-if="!isMqMinS">{{ getComponentName(selectedComponent) }}</template>
     </h1>
     <button slot="leftArrow" @click="getPreviousComponent()" class="m-u--button-primary">
         <m-icon name="left-arrow"></m-icon>
@@ -16,7 +16,7 @@
         <m-icon name="right-arrow"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie suivante</span> -->
     </button>
-    <template slot="body">
-        <router-view></router-view>
-    </template>
+    <transition name="modul-u--light-template-transition" appear>
+        <router-view v-if="routerVisible"></router-view>
+    </transition>
 </modul-light-template>

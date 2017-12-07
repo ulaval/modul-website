@@ -5,11 +5,10 @@
                 <m-icon name="left-arrow" class="modul-component-details__title__arrow"></m-icon>{{component.tag}}
                 <m-icon name="right-arrow" class="modul-component-details__title__arrow"></m-icon>
             </h2>
-            <button class="modul-code-preview-button m-u--button-primary" @click="toggleOpenCodePreview" v-if="component.preview">
-                <m-icon name="double-arrow"></m-icon>
+            <m-icon-button class="modul-code-preview-button" icon-name="double-arrow" skin="dark" button-size="52px" icon-size="20px" @click="toggleOpenCodePreview" v-if="component.preview">
                 <m-i18n k="modul:preview-button-open" class="m-u--visually-hidden" v-if="codePreviewOpen"></m-i18n>
                 <m-i18n k="modul:preview-button-close" class="m-u--visually-hidden" v-if="!codePreviewOpen"></m-i18n>
-            </button>
+            </m-icon-button >
         </header>
         <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
             <div v-if="codePreviewOpen && component.preview">

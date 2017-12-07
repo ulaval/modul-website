@@ -2,7 +2,7 @@
     <section class="modul-home-experiment">
         <article class="modul-home-experiment__body">
             <header class="modul-home-experiment__body__header-container" :style="{ top: experimentTitlePosition + 'px'}">
-                <h2 tabindex="0" class="modul-home-experiment__body__header" @click="onRoute(unifiedExperience)">
+                <h2 tabindex="0" class="modul-home-experiment__body__header" @keydown.enter="onRoute(unifiedExperience)" @click="onRoute(unifiedExperience)">
                     <m-i18n class="modul-home-experiment__body__header-title" k="modul:unified-experience-title-a"></m-i18n>
                     <m-i18n class="modul-home-experiment__body__header-subtitle" k="modul:unified-experience-title-b"></m-i18n>
                     <span class="modul-home-experiment__body__header-pixel">
@@ -18,7 +18,10 @@
 
         </article>
 
-        <div class="modul-home-experiment__footer" v-m-scroll-to="[ '#design', 'slow']" :style="{ bottom: designButtonPosition + 'px' }">
+        <div class="modul-home-experiment__footer"
+             :style="{ bottom: designButtonPosition + 'px' }"
+             v-m-scroll-to="[ '#design', 'slow']"
+             v-if="isMqMinS">
             <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
             <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
             <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
@@ -50,7 +53,7 @@
                 </article>
             </section>
             <section class="modul-home-design__body" ref="designBody">
-                <h2 class="modul-u--h2 modul-u--highlighted-title-link" @click="onRoute(responsiveDesign)">
+                <h2 class="modul-u--h2 modul-u--highlighted-title-link" tabindex="0" @keydown.enter="onRoute(responsiveDesign)" @click="onRoute(responsiveDesign)">
                     <m-i18n k="modul:responsive-design" :params="['<br>']" :html-encode="false"></m-i18n>
                 </h2>
                 <p>

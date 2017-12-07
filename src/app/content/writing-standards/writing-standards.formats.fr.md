@@ -34,7 +34,7 @@ Lorsque la date affichée correspond au premier du mois, on utilise toujours l'e
 Le format utilisé pour afficher l'heure est le suivant : **HH h MM**. Une espace insécable doit précéder et suivre le « h ».
 
 <m-panel>
-    <ul class="m-u--bullet-list">
+    <ul>
         <li>7 h</li>
         <li>17 h 05</li>
     </ul>
@@ -43,7 +43,7 @@ Le format utilisé pour afficher l'heure est le suivant : **HH h MM**. Une espac
 Lorsque l'heure est combinée au format de date long, on utilise la préposition « à » pour séparer la date et l'heure. La préposition « à » doit également être suivie d'une espace insécable afin d'éviter que l'heure se retrouve sur une ligne différente. Lorsque le format court est utilisé, la préposition « à » n'est pas affichée.
 
 <m-panel>
-    <ul class="m-u--bullet-list">
+    <ul>
         <li>13 août 2015 à 14 h 30</li>
         <li>15 janv. 2015 8 h 30</li>
     </ul>
@@ -55,14 +55,12 @@ Dans certains cas, il est pertinent de faire afficher une date sous forme de pla
 <m-panel>Du 12 janvier 2015 au 25 avril 2015</m-panel>
 
 L'affichage d'une plage horaire peut contenir un seul ou une combinaison des éléments suivants :
-<ul class="m-u--bullet-list">
-        <li>la date</li>
-        <li>les jours</li>
-        <li>l'heure</li>
-    </ul>
+* la date
+* les jours
+* l'heure
 
 <m-panel>
-    <ul class="m-u--bullet-list">
+    <ul>
         <li>Du 5 janvier au 24 avril</li>
         <li>Du lundi 5 janvier au vendredi 24 avril</li>
         <li>Du 5 janvier au 24 avril, les mardis, de 13 h à 15 h</li>
@@ -93,8 +91,8 @@ Si la date de début et la date de fin sont précisées et sont le même jour :
 
 À noter, lors de l'affichage d'une plage horaire, il est suggéré d'afficher les jours et les mois au complet, mais il est possible d'utiliser la version abrégée si l'espace est un enjeu. De plus, l'affichage de l'année est facultatif, mais il est fortement suggéré d'en faire mention à au moins un endroit, afin d'éviter toute ambiguïté.
 
-<h2>Temps écoulé</h2>
-<h3>Utilisation</h3>
+## Temps écoulé
+### Utilisation
 Dans certaines situations, il est utile d'afficher le temps écoulé depuis la parution d'une publication ou la réception d'un courriel, d'une notification, etc. Lorsque c'est le cas, le temps écoulé doit être présenté de cette façon :
 
 Moins de 1 minute : À l'instant
@@ -115,8 +113,8 @@ Plus de 30 jours : La date est affichée selon le format court.
 
 <m-panel>23 nov. 2016</m-panel>
 
-<h2>Période de retard</h2>
-<h3>Utilisation</h3>
+## Période de retard
+### Utilisation
 Lorsque le temps de retard écoulé doit être affiché après une date limite, une date de remise de travaux, etc. Lorsque c'est le cas, le temps écoulé doit être présenté de cette façon :
 
 Moins de 60 minutes : Affichage en minutes

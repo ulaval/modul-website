@@ -1,12 +1,12 @@
 <modul-dark-template>
     <h1 slot="header" v-if="showNav">
-        <m-dropdown v-if="isMqMinXS" class="modul-u--dropdown-dark" v-model="selectedPage" @open="onOpen" @close="onClose" width="auto">
+        <m-dropdown v-if="isMqMinS" class="modul-u--dropdown-dark" v-model="selectedPage" @open="onOpen" @close="onClose" width="auto">
             <m-dropdown-item v-for="page in pages" :value="page" :label="getPageName(page)"></m-dropdown-item>
         </m-dropdown>
-        <template v-if="!isMqMinXS">{{ getPageName(selectedPage) }}</template>
+        <template v-if="!isMqMinS">{{ getPageName(selectedPage) }}</template>
     </h1>
     <h1 class="modul-dark-template__header__title" slot="header" v-if="!showNav"> {{ getPageName(pages[0]) }}</h1>
-    <m-markdown slot="preview" :template="summaryMarkdown"></m-markdown>
+    <m-markdown slot="introduction" :template="summaryMarkdown"></m-markdown>
     <button slot="leftArrow" v-if="showNav" @click="getPreviousPage()" class="m-u--button-primary">
         <m-icon name="left-arrow"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la page précédente</span> -->
@@ -15,7 +15,5 @@
         <m-icon name="right-arrow"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la prochaine page</span> -->
     </button>
-    <template slot="body">
-        <router-view></router-view>
-    </template>
+    <router-view></router-view>
 </modul-dark-template>

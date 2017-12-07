@@ -1,16 +1,16 @@
-.slide-fade-enter-active {
-    transition: all 0.5s ease;
-}
+.modul-u--light-template-transition {
+    &-enter-active,
+    &-leave-active {
+        @media (min-width: #{$m-mq--min--s}) {
+            transition: transform $m-transition-duration--l ease, opacity $m-transition-duration--l ease;
+        }
+    }
 
-.slide-fade-leave-active {
-    transition: all 0.5s ease;
-}
-
-.slide-fade-enter,
-.slide-fade-leave-to {
-    opacity: 0;
-}
-
-.slide-fade-enter {
-    transform: translateY(30px);
+    &-enter,
+    &-leave-to {
+        @media (min-width: #{$m-mq--min--s}) {
+            transform: translate3d(0, 44px, 0);
+            opacity: 0.6;
+        }
+    }
 }

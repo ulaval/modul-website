@@ -16,6 +16,7 @@ import MetaAll, {
     CATEGORY_COMUNICATION, CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_INDICATORS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_SEARCH_SORT
 } from './meta/meta-all';
 import { Standards, GettingStarted } from '@/app/components/pages/page';
+import { log } from 'util';
 
 Vue.use(Router);
 Vue.use(MetaAll, Meta);
@@ -143,7 +144,7 @@ const standardsRoutes: RouteConfig[] = [];
 Meta.getCategories().forEach(category => {
     categoryRoutes.push({
         path: ROUTES[category],
-        meta: {page: category},
+        meta: { page: category },
         component: CategoryList
     });
 
@@ -156,22 +157,22 @@ Meta.getCategories().forEach(category => {
     Meta.getMetaByCategory(category, process.env.NODE_ENV).forEach(componentMeta => {
         componentRoutes.push({
             path: `/${ROUTES[COMPONENTS]}/${ROUTES[category]}/${componentMeta.tag}`,
-            meta: {page: componentMeta.tag},
+            meta: { page: componentMeta.tag },
             component: ComponentDetails,
             children: [
                 {
                     path: ROUTES[COMPONENT_PROPERTIES],
-                    meta: {page: componentMeta.tag},
+                    meta: { page: componentMeta.tag },
                     component: ComponentProperties
                 },
                 {
                     path: ROUTES[COMPONENT_VARIANT],
-                    meta: {page: componentMeta.tag},
+                    meta: { page: componentMeta.tag },
                     component: ComponentVariants
                 },
                 {
                     path: ROUTES[COMPONENT_OVERVIEW],
-                    meta: {page: componentMeta.tag},
+                    meta: { page: componentMeta.tag },
                     component: ComponentOverview
                 },
                 {
@@ -186,7 +187,7 @@ Meta.getCategories().forEach(category => {
 GettingStarted.getPages().forEach((page, index) => {
     gettingStartedRoutes.push({
         path: ROUTES[page],
-        meta: {page: page, sectionObj: GettingStarted},
+        meta: { page: page, sectionObj: GettingStarted },
         component: PageDetails
     });
 
@@ -198,7 +199,7 @@ GettingStarted.getPages().forEach((page, index) => {
         tabs.forEach(tab => {
             gettingStartedRoutes[index].children.push({
                 path: ROUTES[tab],
-                meta: {page: page, sectionObj: GettingStarted, tab: tab},
+                meta: { page: page, sectionObj: GettingStarted, tab: tab },
                 component: PageTab
             });
         });
@@ -213,7 +214,7 @@ GettingStarted.getPages().forEach((page, index) => {
 Standards.getPages().forEach((page, index) => {
     standardsRoutes.push({
         path: ROUTES[page],
-        meta: {page: page, sectionObj: Standards},
+        meta: { page: page, sectionObj: Standards },
         component: PageDetails
     });
 
@@ -225,7 +226,7 @@ Standards.getPages().forEach((page, index) => {
         tabs.forEach(tab => {
             standardsRoutes[index].children.push({
                 path: ROUTES[tab],
-                meta: {page: page, sectionObj: Standards, tab: tab},
+                meta: { page: page, sectionObj: Standards, tab: tab },
                 component: PageTab
             });
         });
@@ -244,7 +245,7 @@ modulRoutes.push(
     },
     {
         path: '/' + ROUTES[GETTING_STARTED],
-        meta: {page: GettingStarted.getPages()[0], sectionObj: GettingStarted},
+        meta: { page: GettingStarted.getPages()[0], sectionObj: GettingStarted },
         component: PageViewer,
         children: gettingStartedRoutes
     },
@@ -255,7 +256,7 @@ modulRoutes.push(
     },
     {
         path: '/' + ROUTES[STANDARDS],
-        meta: {sectionObj: Standards},
+        meta: { sectionObj: Standards },
         component: PageViewer,
         children: standardsRoutes
     },
@@ -267,7 +268,7 @@ modulRoutes.push(
 
 export default new Router({
     mode: 'history',
-    routes: modulRoutes/*,
+    routes: modulRoutes,
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
             return savedPosition;
@@ -276,5 +277,5 @@ export default new Router({
             return { selector: to.hash };
         }
         return { x: 0, y: 0 };
-    }*/
+    }
 });
