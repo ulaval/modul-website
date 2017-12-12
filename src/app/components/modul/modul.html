@@ -1,13 +1,14 @@
-<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHome, 'modul--is-black-template' : isBlackHeader, 'modul--is-light-template' : !isBlackHeader}"
+<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHomePage, 'modul--is-black-template' : isBlackHeader, 'modul--is-light-template' : !isBlackHeader}"
     :dynamic-header="false">
     <div slot="header" ref="header" class="modul-header">
-        <h1 v-if="isHome" class="modul-logo">
+        <h1 v-if="isHomePage" class="modul-logo" @click="closeMenu">
             <router-link to="/">MOD
                 <b>UL</b>
                 <span class="modul-logo__beta">Beta</span>
             </router-link>
         </h1>
-        <span v-if="!isHome" class="modul-logo">
+        {{isComponentPage}}
+        <span v-if="!isHomePage" class="modul-logo" @click="closeMenu">
             <router-link to="/">MOD
                 <b>UL</b>
                 <span class="modul-logo__beta">Beta</span>
@@ -21,17 +22,17 @@
             </a>
             <ul v-if="isMqMinS">
                 <li>
-                    <router-link :to="gettingStarted" class="modul-header__nav__link">
+                    <a href="#" @click.prevent="navigateToSection('gettingStarted')" class="modul-header__nav__link" :class="{ 'm--is-active' : isGettingStartedPage }">
                         <m-i18n k="modul:getting-started"></m-i18n>
-                    </router-link>
+                    </a>
                 </li>
                 <li>
-                    <a href="#" @click.prevent="showMenu('components')" class="modul-header__nav__link">
+                    <a href="#" @click.prevent="navigateToSection('components')" class="modul-header__nav__link" :class="{ 'm--is-active' : isComponentsPage }">
                         <m-i18n k="modul:components"></m-i18n>
                     </a>
                 </li>
                 <li>
-                    <a href="#" @click.prevent="showMenu('standards')" class="modul-header__nav__link">
+                    <a href="#" @click.prevent="navigateToSection('standards')" class="modul-header__nav__link" :class="{ 'm--is-active' : isStandardPage }">
                         <m-i18n k="modul:standards"></m-i18n>
                     </a>
                 </li>
@@ -72,7 +73,7 @@
         </m-sidebar>
     </div>
     <transition name="modul--is">
-        <section class="modul-menu" v-if="headerAnimationCompleted" tabindex="0" ref="menu">
+        <section class="modul-menu" v-if="animMenuOpen" tabindex="0" ref="menu">
             <template v-if="isMqMinS">
                 <nav class="modul-menu__list" v-for="category in categoriesComponent" v-if="section == 'components'">
                     <h2 @click="onComponentCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
@@ -88,7 +89,7 @@
                     </ul>
                 </nav>
                 <nav class="modul-menu__list" v-for="page in pagesStandards" v-if="section != 'components'">
-                    <h2 @click="onPageClick(page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
+                    <h2 @click="onPageClick($event, page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
                         <span>{{page.text}}</span>
                     </h2>
                 </nav>
@@ -121,13 +122,13 @@
                             <m-link mode="button" icon-name="left-arrow" @click="showFirstStep">Menu</m-link>
                         </header>
                         <div class="modul-mobile-menu__body">
-                            <m-accordion class="modul-mobile-menu__elem" skin="plein" v-for="category in categoriesComponent" v-if="section == 'components'">
+                            <m-accordion class="modul-mobile-menu__elem" skin="plain" v-for="category in categoriesComponent" v-if="section == 'components'">
                                 <h2 slot="header">
                                     <span @click="onComponentCategoryClick($event, category)">{{category.text}}</span>
                                 </h2>
                                 <ul>
                                     <li v-for="component in getCategoryComponents(category.id)">
-                                        <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
+                                        <a href="#" @click.prevent="onComponentClick(component.tag)" class="modul-menu__link">
                                             <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
                                             <span class="modul-menu__tag">{{ component.tag }}</span>
                                         </a>

@@ -41,7 +41,7 @@ export default class Modul extends ModulWebsite {
 
     private menuOpen: boolean = false;
     private searchOpen: boolean = false;
-    private headerAnimationCompleted: boolean = false;
+    private animMenuOpen: boolean = false;
     private section: string = '';
     private categoriesComponent: Category[] = [];
     private pagesStandards: Category[] = [];
@@ -82,12 +82,23 @@ export default class Modul extends ModulWebsite {
         this.searchWidth = value ? '400px' : '100%';
     }
 
-    private get isHome(): boolean {
-        let isHome = false;
-        if (this.$route.path == '/') {
-            isHome = true;
-        }
-        return isHome;
+    private get isHomePage(): boolean {
+        return this.$route.path == '/';
+    }
+
+    private get isComponentsPage(): boolean {
+        let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/composants[\/]?)([a-z\-?\/]+)?');
+        return (regExp.test(this.$route.path) || this.section == 'components') && this.section != 'standards' && this.section != 'gettingStarted';
+    }
+
+    private get isStandardPage(): boolean {
+        let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/normes[\/]?)([a-z\-?\/]+)?');
+        return (regExp.test(this.$route.path) || this.section == 'standards') && this.section != 'components' && this.section != 'gettingStarted';
+    }
+
+    private get isGettingStartedPage(): boolean {
+        let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/demarrer[\-]modul[\/]?)([a-z\-?\/]+)?');
+        return (regExp.test(this.$route.path) || this.section == 'gettingStarted') && this.section != 'standards' && this.section != 'components';
     }
 
     private get isBlackHeader(): boolean {
@@ -117,29 +128,54 @@ export default class Modul extends ModulWebsite {
     private onComponentClick(tag: string): void {
         this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][tag].url);
         this.searchOpen = false;
+        this.closeMenu();
     }
 
     private onComponentCategoryClick(event: MouseEvent, category: Category): void {
         this.$router.push(this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES][category.id].url);
         this.closeMenu();
-        event.currentTarget['blur']();
+        (event.currentTarget as HTMLElement).blur();
     }
 
-    private onPageClick(page: Page, section: string): void {
+    private onPageClick(event: MouseEvent, page: Page, section: string): void {
         this.$router.push(this.$store.getters[section + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
         this.searchOpen = false;
+        this.closeMenu();
+        (event.currentTarget as HTMLElement).blur();
     }
 
-    private showMenu(section: string): void {
-        if (this.menuOpen && this.section == section) {
+    private navigateToSection(section: string): void {
+        if (section == 'gettingStarted') {
+            this.section = section;
+            this.$router.push(this.gettingStarted);
             this.closeMenu();
-        } else if (this.menuOpen && this.section != section) {
-            this.section = section;
-        } else if (!this.menuOpen) {
-            this.section = section;
+        } else {
+            if (this.menuOpen && this.section == section) {
+                this.closeMenu();
+            } else if (this.menuOpen && this.section != section) {
+                this.section = section;
+            } else if (!this.menuOpen) {
+                this.section = section;
+                this.menuOpen = true;
+                let anim = setTimeout(() => {
+                    this.animMenuOpen = true;
+                    // this.$modul.addWindow(MENU_ID);
+                    this.$emit('openMenu');
+                    this.$nextTick(() => {
+                        let menu: HTMLElement = this.$refs.menu as HTMLElement;
+                        menu.focus();
+                    });
+                }, CSS_ANIMATION_HEADER_DURATION);
+            }
+        }
+    }
+
+    private toggleMobileMenu(): void {
+        this.menuFirstStep = true;
+        if (!this.menuOpen) {
             this.menuOpen = true;
             let anim = setTimeout(() => {
-                this.headerAnimationCompleted = true;
+                this.animMenuOpen = true;
                 // this.$modul.addWindow(MENU_ID);
                 this.$emit('openMenu');
                 this.$nextTick(() => {
@@ -147,13 +183,6 @@ export default class Modul extends ModulWebsite {
                     menu.focus();
                 });
             }, CSS_ANIMATION_HEADER_DURATION);
-        }
-    }
-
-    private toggleMobileMenu(): void {
-        this.menuFirstStep = true;
-        if (!this.menuOpen) {
-            this.showMenu('');
         } else {
             this.closeMenu();
         }
@@ -249,7 +278,7 @@ export default class Modul extends ModulWebsite {
     @Watch('$route')
     private closeMenu(): void {
         if (this.menuOpen) {
-            this.headerAnimationCompleted = false;
+            this.animMenuOpen = false;
             let anim = setTimeout(() => {
                 this.menuOpen = false;
                 // this.$modul.deleteWindow(MENU_ID);
