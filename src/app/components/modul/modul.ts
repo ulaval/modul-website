@@ -88,17 +88,20 @@ export default class Modul extends ModulWebsite {
 
     private get isComponentsPage(): boolean {
         let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/composants[\/]?)([a-z\-?\/]+)?');
-        return (regExp.test(this.$route.path) || this.section == 'components') && this.section != 'standards' && this.section != 'gettingStarted';
+        let isComponentsPage: boolean = regExp.test(this.$route.path);
+        return isComponentsPage;
     }
 
-    private get isStandardPage(): boolean {
+    private get isStandardsPage(): boolean {
         let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/normes[\/]?)([a-z\-?\/]+)?');
-        return (regExp.test(this.$route.path) || this.section == 'standards') && this.section != 'components' && this.section != 'gettingStarted';
+        let isStandardPage: boolean = regExp.test(this.$route.path);
+        return isStandardPage;
     }
 
     private get isGettingStartedPage(): boolean {
         let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/demarrer[\-]modul[\/]?)([a-z\-?\/]+)?');
-        return (regExp.test(this.$route.path) || this.section == 'gettingStarted') && this.section != 'standards' && this.section != 'components';
+        let isGettingStartedPage: boolean = regExp.test(this.$route.path);
+        return isGettingStartedPage;
     }
 
     private get isBlackHeader(): boolean {
