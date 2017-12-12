@@ -7,7 +7,7 @@ Règle générale, l'utilisation d'une liste déroulante est recommandée lorsqu
 
 Les listes déroulants peuvent aussi être utilisées lorsqu’il est nécessaire de conserver l'espace de l'écran, ou d’empêcher les les utilisateurs d'entrer des données erronées.
 
-Ce composant doit être utilisé avec le composant <a href="../m-dropdown-item/portrait">m-dropdown-item</a>.
+Ce composant doit être utilisé avec le composant <m-link url="../m-dropdown-item/portrait">m-dropdown-item</m-link>.
 
 <modul-do>
     <ul class="m-u--bullet-list">

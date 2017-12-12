@@ -1,7 +1,7 @@
 ## Utilisation
 Un accordéon permet de grouper du contenu sous différentes rubriques d'un même sujet et permet d'afficher ou masquer le contenu selon les besoins de l'utilisateur.
 
-Ce composant doit être utilisé avec le composant <a href="../m-accordion/portrait">m-accordion</a>.
+Ce composant doit être utilisé avec le composant <m-link url="../m-accordion/portrait">m-accordion</m-link>.
 
 <modul-do>
 L'utilisation d'un accordéon est recommandée lorsque le contenu de la page se sépare bien en rubriques et qu'il est pertinent de faire afficher seulement les éléments clés, afin de permettre aux utilisateurs de focuser sur l'information qui leur importe. Sur les petits écrans, l'accordéon peut-être utilisé pour remplacer les onglets. Cette solution doit être privilégiée lorsqu'il y a trop d'onglets (8 onglets ou plus).</modul-do>
