@@ -16,12 +16,8 @@
 
                 &:hover,
                 &:focus,
-                &.router-link-active {
+                &.m--is-active {
                     color: $m-color--white;
-                }
-
-                &.router-link-active::after {
-                    background-color: $m-color--active;
                 }
 
                 &:hover::after {
@@ -40,9 +36,15 @@
         }
     }
 
-    &:not(.modul--is-menu-open):not(.modul--is-black-template) {
+    &.modul--is-light-template:not(.modul--is-menu-open) {
         .modul-header {
             box-shadow: $m-box-shadow--s;
+
+            &__nav__link {
+                &.m--is-active {
+                    color: $modul-color--black-grey-dark;
+                }
+            }
         }
     }
 }
@@ -147,13 +149,14 @@
         display: inline-flex;
         align-items: center;
         height: 12px; // Magic number
+        margin-top: -2px; // Magic number
         margin-left: $m-margin--s;
         text-transform: uppercase;
         font-size: 8px; // Mafic number
         font-weight: $m-font-weight--black;
         color: $modul-color--black-grey-dark;
         background: $m-color--ul-yellow;
-        padding: 0 3px;
+        padding: 2px 3px 0 3px;
     }
 }
 

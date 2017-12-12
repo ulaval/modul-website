@@ -81,12 +81,14 @@
         background: $modul-color--grey;
 
         &::before {
-            position: absolute;
-            top: - $m-touch-size * 1.5;
-            width: 100%;
-            height: $m-touch-size * 1.5;
-            background: linear-gradient(transparent, #{$modul-color--grey});
-            content: '';
+            @media (min-width: #{$m-mq--min--s}) {
+                position: absolute;
+                top: - $m-touch-size * 1.5;
+                width: 100%;
+                height: $m-touch-size * 1.5;
+                background: linear-gradient(transparent, #{$modul-color--grey});
+                content: '';
+            }
         }
 
         &__arrow-left,
