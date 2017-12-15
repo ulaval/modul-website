@@ -56,7 +56,7 @@ export const COMPONENT_PROPERTIES: string = 'COMPONENT_PROPERTIES';
 export const COMPONENT_OVERVIEW: string = 'COMPONENT_OVERVIEW';
 export const COMPONENT_VARIANT: string = 'COMPONENT_VARIANT';
 
-export const GETTING_STARTED_FR: string = 'demarrer-modul';
+export const GETTING_STARTED_FR: string = 'premier-pas';
 export const GETTING_STARTED_COMPUTER_SETUP_FR: string = 'poste-developpeur';
 export const GETTING_STARTED_SOURCE_CODE_FR: string = 'github';
 export const GETTING_STARTED_FRONTEND_ARCHITECTURE_FR: string = 'architecture-frontend';
