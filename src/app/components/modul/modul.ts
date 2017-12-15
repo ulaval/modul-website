@@ -33,6 +33,13 @@ type CategoryIndexMap = {
     [id: string]: number;
 };
 
+export enum ModulMenuSection {
+    Home = 'home',
+    GettingStarted = 'gettingStarted',
+    Components = 'components',
+    Standards = 'standards'
+}
+
 @WithRender
 @Component({
     mixins: [MediaQueries]
@@ -42,7 +49,7 @@ export default class Modul extends ModulWebsite {
     private menuOpen: boolean = false;
     private searchOpen: boolean = false;
     private animMenuOpen: boolean = false;
-    private section: string = '';
+    private menuSection: string = '';
     private categoriesComponent: Category[] = [];
     private pagesStandards: Category[] = [];
     private searchModel: string = '';
@@ -88,20 +95,26 @@ export default class Modul extends ModulWebsite {
 
     private get isComponentsPage(): boolean {
         let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/composants[\/]?)([a-z\-?\/]+)?');
-        let isComponentsPage: boolean = regExp.test(this.$route.path);
-        return isComponentsPage;
+        if (this.menuOpen) {
+            return this.menuSection == ModulMenuSection.Components;
+        }
+        return regExp.test(this.$route.path);
     }
 
     private get isStandardsPage(): boolean {
         let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/normes[\/]?)([a-z\-?\/]+)?');
-        let isStandardPage: boolean = regExp.test(this.$route.path);
-        return isStandardPage;
+        if (this.menuOpen) {
+            return this.menuSection == ModulMenuSection.Standards;
+        }
+        return regExp.test(this.$route.path);
     }
 
     private get isGettingStartedPage(): boolean {
-        let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/demarrer[\-]modul[\/]?)([a-z\-?\/]+)?');
-        let isGettingStartedPage: boolean = regExp.test(this.$route.path);
-        return isGettingStartedPage;
+        let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/premier[\-]pas[\/]?)([a-z\-?\/]+)?');
+        if (this.menuOpen) {
+            return this.menuSection == ModulMenuSection.GettingStarted;
+        }
+        return regExp.test(this.$route.path);
     }
 
     private get isBlackHeader(): boolean {
@@ -120,10 +133,6 @@ export default class Modul extends ModulWebsite {
         return '/' + ROUTES[STANDARDS];
     }
 
-    //   private get ecosystem(): string {
-    //       return '/' + ROUTES[ECOSYSTEM];
-    //   }
-    //
     private getCategoryComponents(category): ComponentMeta[] {
         return Meta.getMetaByCategory(category, process.env.NODE_ENV);
     }
@@ -134,65 +143,62 @@ export default class Modul extends ModulWebsite {
         this.closeMenu();
     }
 
-    private onComponentCategoryClick(event: MouseEvent, category: Category): void {
+    private onComponentCategoryClick(category: Category): void {
         this.$router.push(this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES][category.id].url);
         this.closeMenu();
-        (event.currentTarget as HTMLElement).blur();
     }
 
-    private onPageClick(event: MouseEvent, page: Page, section: string): void {
-        this.$router.push(this.$store.getters[section + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
+    private onPageClick(event: MouseEvent, page: Page, menuSection: string): void {
+        this.$router.push(this.$store.getters[menuSection + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
         this.searchOpen = false;
         this.closeMenu();
         (event.currentTarget as HTMLElement).blur();
     }
 
-    private navigateToSection(section: string): void {
-        if (section == 'gettingStarted') {
-            this.section = section;
-            this.$router.push(this.gettingStarted);
-            this.closeMenu();
-        } else {
-            if (this.menuOpen && this.section == section) {
+    private navigateTo(event: MouseEvent, menuSection: string) {
+        this.menuSection = menuSection;
+        switch (this.menuSection) {
+            case ModulMenuSection.Home:
+                this.$router.push('/');
                 this.closeMenu();
-            } else if (this.menuOpen && this.section != section) {
-                this.section = section;
-            } else if (!this.menuOpen) {
-                this.section = section;
-                this.menuOpen = true;
-                let anim = setTimeout(() => {
-                    this.animMenuOpen = true;
-                    // this.$modul.addWindow(MENU_ID);
-                    this.$emit('openMenu');
-                    this.$nextTick(() => {
-                        let menu: HTMLElement = this.$refs.menu as HTMLElement;
-                        menu.focus();
-                    });
-                }, CSS_ANIMATION_HEADER_DURATION);
-            }
+                break;
+            case ModulMenuSection.GettingStarted:
+                this.$router.push(this.gettingStarted);
+                this.closeMenu();
+                break;
+            default:
+                if (this.menuOpen && this.menuSection == menuSection) {
+                    this.closeMenu();
+                } else {
+                    this.openMenu();
+                }
         }
+        (event.currentTarget as HTMLElement).blur();
+    }
+
+    private openMenu(): void {
+        this.menuOpen = true;
+        let anim = setTimeout(() => {
+            this.animMenuOpen = true;
+            this.$emit('openMenu');
+            this.$nextTick(() => {
+                let menu: HTMLElement = this.$refs.menu as HTMLElement;
+                menu.focus();
+            });
+        }, CSS_ANIMATION_HEADER_DURATION);
     }
 
     private toggleMobileMenu(): void {
         this.menuFirstStep = true;
         if (!this.menuOpen) {
-            this.menuOpen = true;
-            let anim = setTimeout(() => {
-                this.animMenuOpen = true;
-                // this.$modul.addWindow(MENU_ID);
-                this.$emit('openMenu');
-                this.$nextTick(() => {
-                    let menu: HTMLElement = this.$refs.menu as HTMLElement;
-                    menu.focus();
-                });
-            }, CSS_ANIMATION_HEADER_DURATION);
+            this.openMenu();
         } else {
             this.closeMenu();
         }
     }
 
-    private showSecondStep(section: string): void {
-        this.section = section;
+    private showSecondStep(menuSection: string): void {
+        this.menuSection = menuSection;
         this.menuFirstStep = false;
     }
 
