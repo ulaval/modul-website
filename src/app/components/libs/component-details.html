@@ -29,18 +29,18 @@
         </div>
 
         <div class="modul-u--navbar">
-            <m-navbar skin="arrow">
-                <m-navbar-item>
+            <m-navbar skin="arrow" v-model="currentTab">
+                <m-navbar-item value="overview">
                     <router-link :to="overview" class="modul-u--navbar__item">
                         <m-i18n k="modul:overview"></m-i18n>
                     </router-link>
                 </m-navbar-item>
-                <m-navbar-item>
+                <m-navbar-item value="properties">
                     <router-link :to="properties" class="modul-u--navbar__item">
                         <m-i18n k="modul:attributes"></m-i18n>
                     </router-link>
                 </m-navbar-item>
-                <m-navbar-item>
+                <m-navbar-item value="variants">
                     <router-link :to="variant" class="modul-u--navbar__item">
                         <m-i18n k="modul:variants"></m-i18n>
                     </router-link>
