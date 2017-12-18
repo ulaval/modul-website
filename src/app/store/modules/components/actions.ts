@@ -32,6 +32,8 @@ export const getComponentsMetaAction: Action<ComponentsState, ComponentsState> =
 
                 resolve();
             });
+        } else {
+            resolve();
         }
     });
 };
@@ -75,6 +77,8 @@ export const getMessagesAction: Action<ComponentsState, ComponentsState> = async
                 context.commit(Mutations.MESSAGES_GET_SUCCESS, FRENCH);
                 resolve();
             });
+        } else {
+            resolve();
         }
     });
 };
@@ -91,6 +95,8 @@ export const getIconsAction: Action<ComponentsState, ComponentsState> = async (c
                 context.commit(Mutations.ICONS_GET_SUCCESS, icons);
                 resolve();
             });
+        } else {
+            resolve();
         }
     });
 };
