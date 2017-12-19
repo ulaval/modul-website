@@ -28,8 +28,12 @@
         }
     }
 
-    .m-navbar {
-        padding: 0 12px; // Magic number
+    .modul-u--navbar {
+        padding: 0 $m-padding; // Magic number
+
+        @media (min-width: $m-mq--min--s) {
+            padding: 0 $m-margin--l; // Magic number
+        }
     }
 
     &__title {

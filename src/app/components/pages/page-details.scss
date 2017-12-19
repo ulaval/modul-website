@@ -3,13 +3,16 @@
 .modul-page-details {
     background-color: $m-color--white;
 
-    .m-navbar {
-        margin: 0 auto;
-        max-width: $modul-max-width;
-        padding: 0 4px; // Magic number
+    .modul-u--navbar {
+        .m-navbar {
+            margin: 0 auto;
+            width: 100%;
+            max-width: $modul-max-width;
+            padding: 0 $m-padding; // Magic number
 
-        @media (min-width: $m-mq--min--s) {
-            padding: 0 20px; // Magic number
+            @media (min-width: $m-mq--min--s) {
+                padding: 0 $m-padding--l; // Magic number
+            }
         }
     }
 
