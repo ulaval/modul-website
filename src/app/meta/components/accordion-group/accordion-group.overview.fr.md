@@ -10,7 +10,7 @@ L'utilisation d'un accordéon est recommandée lorsque le contenu de la page se 
 ## Caractéristiques
 ### Comportement de l'accordéon
 Un accordéon offre plusieurs possibilités quant à l'ouverture des rubriques. Il est possible:
-*de toutes les ouvrir ou de toutes les fermer à l'aide des liens correspondants
+* de toutes les ouvrir ou de toutes les fermer à l'aide des liens correspondants
 * d'en ouvrir une seule à la fois
 * de les ouvrir ou de les fermer une par une à l'aide des boutons correspondants
 
