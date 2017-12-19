@@ -1,4 +1,3 @@
-## Utilisation
 Les radio boutons sont utilisés lorsque l’utilisateur a le choix entre deux options ou plus et que ces options s'excluent mutuellement. Par contre, l'utilisation d'une case à cocher est correcte lorsque vous avez une seule question simple et que l'utilisateur répondra soit «oui», soit «non». Par exemple à la question  “Pouvons-nous vous envoyer des mises à jour par courriel?”, une simple case à cocher avec l’étiquette “Oui, veuillez utiliser le courriel pour m'envoyer des informations sur d'autres offres” sera plus efficace que deux boutons radio.
 
 Les boutons radio, tout comme les cases à cocher, offrent l’avantage d’empêcher les utilisateurs d'entrer des données erronées.

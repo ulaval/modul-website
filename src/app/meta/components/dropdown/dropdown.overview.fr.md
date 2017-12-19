@@ -1,4 +1,3 @@
-## Utilisation
 Une liste déroulante permet de sélectionner un seul élément dans une liste. Cet élément est le seul demeurant visible lorsque la liste est fermée.
 
 Règle générale, l'utilisation d'une liste déroulante est recommandée lorsque le nombre d'éléments dans une liste se situe entre 5 et 15 :

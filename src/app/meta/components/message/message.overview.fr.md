@@ -1,4 +1,3 @@
-## Utilisation
 Les messages sont utilisés pour donner de l'information pertinente aux utilisateurs. Les messages peuvent être affichés dans les pages ou dans les fenêtres secondaires.
 
 ## Caractéristiques

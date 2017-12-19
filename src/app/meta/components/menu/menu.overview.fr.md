@@ -1,4 +1,3 @@
-## Utilisation
 Le menu d'options permet d'afficher la liste des actions ou options disponibles pour un élément. Des liens sont utilisés pour les actions et des boîtes à cocher sont utilisées pour les options. L'utilisation du menu d'options est recommandée dès qu'il y a plus d'une action ou option disponible pour un élément.
 
 Le composant <m-link url="../m-menu-item/portrait">m-menu-item</m-link> doit être utilisé pour chaque élément du menu d'options.

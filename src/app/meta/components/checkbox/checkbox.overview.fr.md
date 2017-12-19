@@ -1,4 +1,3 @@
-## Utilisation
 Les cases à cocher sont utilisées lorsqu’un utilisateur peut sélectionner un seul, aucun ou plusieurs choix d’une liste d'options.
 
 <modul-do>

@@ -1,4 +1,3 @@
-## Utilisation
 Le composant action en cours s'affiche lorsqu'une action est en train de s'exécuter et que le temps restant est inconnu, par exemple&nbsp;:
 * lors du chargement de nouveaux résultats de recherche
 * lors de l'exécution d'un traitement

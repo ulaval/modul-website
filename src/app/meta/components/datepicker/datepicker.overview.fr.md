@@ -1,4 +1,3 @@
-## Utilisation
 Le sélecteur de date est utilisé pour permettre à l'utilisateur de sélectionner une date.
 
 ## Caractéristiques

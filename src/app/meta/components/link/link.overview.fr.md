@@ -1,4 +1,3 @@
-## Utilisation
 Les liens sont composés de texte et parfois d'une icone et permettent de naviguer vers un contenu spécifique.
 
 L'utilisation d'un lien est recommandée lorsque l'utilisateur doit naviguer vers une autre page, accéder à une section de la page courante ou encore pour faire afficher de l'information supplémentaire.

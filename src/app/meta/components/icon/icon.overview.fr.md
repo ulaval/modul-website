@@ -1,4 +1,3 @@
-## Utilisation
 Pour être efficaces, les icônes doivent être significatives, reconnaissables, distinguables, intuitives et comprises rapidement par tout utilisateur. Le principe est d’utiliser un objet connu qui suggère sa propre utilisation. Par exemple, la loupe suggère une action de recherche, la poubelle suggère une action de suppression . Les icônes de modUL  illustrent majoritairement une action que l’utilisateur peut poser. Elles doivent donc jouer un rôle fonctionnel dans tout composant. Il est recommandé de garder une uniformité et une cohérence dans l’utilisation des icônes.
 
 ## Caractéristiques

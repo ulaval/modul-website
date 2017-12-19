@@ -1,4 +1,3 @@
-## Utilisation
 L'interrupteur permet d'activer ou d'inactiver une option ou encore de faire un choix parmi deux états mutuellement exclusifs.
 
 ### Libellé

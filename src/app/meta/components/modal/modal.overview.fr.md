@@ -1,4 +1,3 @@
-## Utilisation
 Une fenêtre de dialogue amorce toujours un dialogue avec l'utilisateur suite à une action posée dans l'interface. Par exemple, elle est utilisée pour poser une question, demander la confirmation d'une opération, avertir d'une erreur ou encore pour proposer de nouvelles actions à l'utilisateur. De plus, elle est modale, c'est-à-dire que l'utilisateur ne peut continuer à travailler tant qu'il n'a pas accusé réception du message à l'aide des boutons ou du lien de fermeture s'il est disponible.
 
 Pour tous les autres cas où il faut afficher du contenu tout en gardant l'utilisateur en contexte de la page, il faut utiliser le composant fenêtre secondaire.

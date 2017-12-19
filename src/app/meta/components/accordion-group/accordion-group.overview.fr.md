@@ -1,4 +1,3 @@
-## Utilisation
 Un accordéon permet de grouper du contenu sous différentes rubriques d'un même sujet et permet d'afficher ou masquer le contenu selon les besoins de l'utilisateur.
 
 Ce composant doit être utilisé avec le composant <m-link url="../m-accordion/portrait">m-accordion</m-link>.

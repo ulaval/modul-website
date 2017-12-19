@@ -1,4 +1,3 @@
-## Utilisation
 Un bouton permet de poser une action dans le site et peut contenir un libellé, une icône ou les deux. L'utilisation d'un bouton est recommandée lorsque l'utilisateur doit poser une action dans le site. Une action permet généralement de débuter, de poursuivre ou d'annuler un processus. Si l'utilisateur désire consulter du contenu dans le site, on utilise un lien plutôt qu'un bouton.
 
 ## Caractéristiques

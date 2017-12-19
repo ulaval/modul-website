@@ -1,4 +1,3 @@
-## Utilisation
 Un champ de saisie permet à l'utilisateur de saisir de l'information servant généralement à compléter un formulaire.
 
 ### Bonnes pratiques

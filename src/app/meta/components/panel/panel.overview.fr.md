@@ -1,4 +1,3 @@
-## Utilisation
 ### Boite principale
 Une boite principale est utilisée pour grouper et mettre en évidence du contenu de même nature. Deux styles de boites principales peuvent être utilisés, en fonction de l'importance à accorder au contenu.
 
