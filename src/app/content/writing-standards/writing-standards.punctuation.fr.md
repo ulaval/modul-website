@@ -205,7 +205,7 @@ La ponctuation répond à un besoin de logique. Elle permet d’avoir des rappor
     </tbody>
 </table>
 
-Pour plus de renseignements, consulter le site de l’<m-link :multi-line="true" href="http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?t1=1&id=2039" target="_blank">Office québécois de la langue française</m-link>.
+Pour plus de renseignements, consulter le site de l’<m-link href="http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?t1=1&id=2039" target="_blank">Office québécois de la langue française</m-link>.
 
 * **Espace insécable :** inséc.
 * **Espace :** esp.
