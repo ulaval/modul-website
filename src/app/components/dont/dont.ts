@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import WithRender from './dont.html?style=../do/do.scss';
+import WithRender from './dont.html?style=./dont.scss';
 
 @WithRender
 @Component
