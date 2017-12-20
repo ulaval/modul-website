@@ -50,10 +50,6 @@ export class ComponentDetails extends ModulWebsite {
         return ROUTES[COMPONENT_OVERVIEW];
     }
 
-    private get variant(): string {
-        return ROUTES[COMPONENT_VARIANT];
-    }
-
     private get htmlTag(): string {
         if (this.component) {
             return `<${this.component.tag}></${this.component.tag}>`;

@@ -7,7 +7,6 @@ import { ComponentViewer } from './components/libs/component';
 import { ComponentDetails } from './components/libs/component-details';
 import { ComponentOverview } from './components/libs/component-overview';
 import { ComponentProperties } from './components/libs/component-properties';
-import { ComponentVariants } from './components/libs/component-variants';
 import { PageViewer } from './components/pages/pages';
 import { PageDetails } from './components/pages/page-details';
 import { PageTab } from './components/pages/page-tab';
@@ -94,7 +93,6 @@ export const CATEGORY_SEARCH_SORT_FR: string = 'recherche-tri';
 
 export const COMPONENT_PROPERTIES_FR: string = 'proprietes';
 export const COMPONENT_OVERVIEW_FR: string = 'portrait';
-export const COMPONENT_VARIANT_FR: string = 'variants';
 
 export const ROUTES: RoutePathMap = {
     [GETTING_STARTED]: GETTING_STARTED_FR,
@@ -126,7 +124,6 @@ export const ROUTES: RoutePathMap = {
     [ECOSYSTEM]: ECOSYSTEM_FR,
     [COMPONENT_PROPERTIES]: COMPONENT_PROPERTIES_FR,
     [COMPONENT_OVERVIEW]: COMPONENT_OVERVIEW_FR,
-    [COMPONENT_VARIANT]: COMPONENT_VARIANT_FR,
     [CATEGORY_COMUNICATION]: CATEGORY_COMMUNICATION_FR,
     [CATEGORY_CONTENT]: CATEGORY_CONTENT_FR,
     [CATEGORY_FORMS]: CATEGORY_FORMS_FR,
@@ -164,11 +161,6 @@ Meta.getCategories().forEach(category => {
                     path: ROUTES[COMPONENT_PROPERTIES],
                     meta: { page: componentMeta.tag },
                     component: ComponentProperties
-                },
-                {
-                    path: ROUTES[COMPONENT_VARIANT],
-                    meta: { page: componentMeta.tag },
-                    component: ComponentVariants
                 },
                 {
                     path: ROUTES[COMPONENT_OVERVIEW],
