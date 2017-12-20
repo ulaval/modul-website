@@ -2,7 +2,7 @@
     <div class="modul-page" v-if="page">
 
         <div class="modul-u--navbar">
-            <m-navbar skin="arrow" v-model="currentTab">
+            <m-navbar skin="arrow" :arrow-mobile="false" v-model="currentTab">
                 <m-navbar-item :value="tab" v-for="tab in tabs" @click="onClick(tab)">
                     <router-link :to="getRoute(tab)" class="modul-u--navbar__item">
                         <m-i18n :k="getKey(tab)"></m-i18n>
