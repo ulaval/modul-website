@@ -156,8 +156,8 @@ export default class Modul extends ModulWebsite {
     }
 
     private navigateTo(event: MouseEvent, menuSection: string) {
-        this.menuSection = menuSection;
-        switch (this.menuSection) {
+
+        switch (menuSection) {
             case ModulMenuSection.Home:
                 this.$router.push('/');
                 this.closeMenu();
@@ -173,6 +173,7 @@ export default class Modul extends ModulWebsite {
                     this.openMenu();
                 }
         }
+        this.menuSection = menuSection;
         (event.currentTarget as HTMLElement).blur();
     }
 
