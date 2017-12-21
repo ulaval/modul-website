@@ -15,4 +15,4 @@ Il est important d'associer les actions à la bonne icône et au bon libélé. L
 <small class="m-u--display--block m-u--margin-top--s">À noter que les actions d'ajout, modification et suppression doivent toujours être présentées dans cet ordre.</small>
 
 ### Ouverture
-Le menu d'options apparaît toujours sous forme de <m-link url="../../disposition/m-popper">fenêtre contextuelle</m-link>, sauf pour les petits écrans. Dans ce cas, il prends la forme d'une <m-link url="../../communication/m-sidebar">fenêtre coulissant</m-link> qui s'affiche dans le bas de la fenêtre d'affichage (viewport) et la hauteur est automatiquement ajustée en fonction du contenu du menu.
+Le menu d'options apparaît toujours sous forme de <m-link url="../../disposition/m-popup">fenêtre contextuelle</m-link>, sauf pour les petits écrans. Dans ce cas, il prends la forme d'une <m-link url="../../communication/m-sidebar">fenêtre coulissant</m-link> qui s'affiche dans le bas de la fenêtre d'affichage (viewport) et la hauteur est automatiquement ajustée en fonction du contenu du menu.

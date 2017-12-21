@@ -19,8 +19,8 @@ Lorsque l’entête dynamique est activé, le défilement vers le bas de la page
 Le menu du composant peut être fixe dans la page, c’est-à-dire que lorsque l’utilisateur défilera vers le bas ou vers le haut dans la page, le menu conservera sa position initiale.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
-### Menu réduit
-En réduisant la taille du menu, il peut rester ouvert tout étant restant accessible et en occupent moins d’espace.
+### Largeur du menu
+La largeur du menu peut varier selon les points de rupture. Il est possible de réduire la taille du menu tout en le gardant ouvert. Le menu reste donc accessible et occupe moins d’espace.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Positionnement du menu

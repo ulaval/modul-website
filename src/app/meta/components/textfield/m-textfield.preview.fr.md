@@ -1,1 +1,1 @@
-<m-textfield label="Label"></m-textfield>
+<m-textfield label="Nom"></m-textfield>
