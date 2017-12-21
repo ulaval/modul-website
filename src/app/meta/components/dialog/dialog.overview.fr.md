@@ -1,4 +1,5 @@
-<modul-do>Une fenêtre de dialogue est utilisée pour afficher du contenu complémentaire tout en gardant l'utilisateur en contexte de la page en cours.</modul-do>
+Une fenêtre de dialogue est utilisée pour afficher du contenu complémentaire tout en gardant l'utilisateur en contexte de la page en cours.
+
 <modul-dont>Une fenêtre de dialogue ne doit pas être utilisée pour initier un dialogue avec l'utilisateur. Dans ce cas, il faut plutôt utiliser le composant <m-link url="../m-modal">m-modal</m-link>. De plus, il n'est pas permis d'utiliser une fenêtre de dialogue à l'intérieur d'une autre fenêtre de dialogue.</modul-dont>
 
 ## Caractéristiques
