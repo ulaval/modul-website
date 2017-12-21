@@ -22,4 +22,4 @@ Lorsque février est sélectionné, le nombre de jours s'ajuste à l'année (si 
 Il est possible de cacher une ou plusieurs des listes déroulantes selon le besoin.
 
 ### Date sélectionnée
-La date sélectionnée est affichée par la composition des entêtes des listes déroulantes. La composante peut retourner un objet Date ou bien MomentJs. La composante émet aussi un événement indiquant si une valeur est sélectionnée dans toute les listes.
+La date sélectionnée est affichée par la composition des entêtes des listes déroulantes. Le composant peut retourner un objet Date ou bien MomentJs. Il émet aussi un événement indiquant si une valeur est sélectionnée dans toute les listes.

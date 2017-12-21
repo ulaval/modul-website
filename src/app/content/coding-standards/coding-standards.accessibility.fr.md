@@ -13,7 +13,7 @@ Uniformiser l’étiquetage par la "méthode consécutive" :
 ### Alternatives textuelles pour les boutons iconographiques et les hyperliens en images
 * S’il s’agit d’une balise **&lt; img &gt;** dans une balise **&lt; a &gt;** ou **&lt; button &gt;**, simplement fournir une alternative textuelle comme valeur de l’attribut alt. L’alternative textuelle doit décrire la cible de l’hyperlien ou l’action commandée par le bouton.
 * S’il s’agit d’un svg en ligne, simplement fournir une alternative textuelle dans une balise title au début du svg.
-*  S’il s’agit d’un caractère remplacé par une police d’icônes, il faudra d’abord caché ce caractère avec l’attribut ariahiden="true" puis, fournir une alternative textuelle dans un autre conteneur html (**&lt; span &gt;** par exemple). Ce texte peut être visuellement caché par une classe utilitaire appropriée (Exemple : la classe *visuallyhidden* qu’on peut retrouver dans cette référence : <m-link mode="link" url="https://davidwalsh.name/html5-boilerplate" target="_blank">https://davidwalsh.name/html5-boilerplate</m-link>).
+*  S’il s’agit d’un caractère remplacé par une police d’icônes, il faudra d’abord caché ce caractère avec l’attribut ariahiden="true" puis, fournir une alternative textuelle dans un autre conteneur HTML (**&lt; span &gt;** par exemple). Ce texte peut être visuellement caché par une classe utilitaire appropriée (Exemple : la classe *visuallyhidden* qu’on peut retrouver dans cette référence : <m-link mode="link" url="https://davidwalsh.name/html5-boilerplate" target="_blank">https://davidwalsh.name/html5-boilerplate</m-link>).
 
 ### Liens significatifs
 Il est recommandé d'éviter les liens du type *«Lire la suite»* et *«Cliquer ici»*.

@@ -10,7 +10,7 @@ Le composant <m-link url="../m-menu-item/portrait">m-menu-item</m-link> doit êt
 ### Actions
 L'utilisation d'une icône devant le libellé de l'action est préconisée. Si aucune icône n'est pertinente à l'action il est possible d'afficher le libellé sans icône. Lorsqu'une action est indisponible, elle est affichée, mais désactivée.
 
-Il est important d'associer les actions à la bonne icône et au bon libélé. Les actions les plus couramment utilisées dans un menu d'options sont les suivants&nbsp;: **Ajouter**, **Modifier**, **Supprimer** et **Archiver**.
+Il est important d'associer les actions à la bonne icône et au bon libélé. Les actions les plus couramment utilisées dans un menu d'options sont les suivantes&nbsp;: **Ajouter**, **Modifier**, **Supprimer** et **Archiver**.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 <small class="m-u--display--block m-u--margin-top--s">À noter que les actions d'ajout, modification et suppression doivent toujours être présentées dans cet ordre.</small>
 
