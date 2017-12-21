@@ -1,8 +1,17 @@
 Une fenêtre de dialogue est utilisée pour afficher du contenu complémentaire tout en gardant l'utilisateur en contexte de la page en cours.
 
-<modul-dont>Une fenêtre de dialogue ne doit pas être utilisée pour initier un dialogue avec l'utilisateur. Dans ce cas, il faut plutôt utiliser le composant <m-link url="../m-modal">m-modal</m-link>. De plus, il n'est pas permis d'utiliser une fenêtre de dialogue à l'intérieur d'une autre fenêtre de dialogue.</modul-dont>
+<modul-dont>
+<ul>
+    <li>Une fenêtre de dialogue ne doit pas être utilisée pour initier un dialogue avec l'utilisateur. Dans ce cas, il faut plutôt utiliser le composant <m-link url="../m-modal">m-modal</m-link>.</li>
+    <li>Il n'est pas permis d'utiliser une fenêtre de dialogue à l'intérieur d'une autre fenêtre de dialogue.</li>
+</ul>
+</modul-dont>
 
 ## Caractéristiques
+### Dimensions de la fenêtre
+La dimention de la fenêtre doit varier en fonction du contenu qui lui est affiché à l'intérieur. Quatre dimensions sont disponibles: **plein écran**, **large**, **reguler** et **petit**.
+<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
 ### Petits écrans
 La fenêtre de dialogue s'affiche à l'aide d'une animation arrivant du bas et venant s'afficher complètement par-dessus la fenêtre principale.
 
@@ -13,7 +22,7 @@ La fenêtre de dialogue est affichée par dessus la fenêtre principale, avec un
 Le titre de la fenêtre de dialogue dépend de son contenu. S'il y a une action à poser dans la fenêtre, il est suggéré d'utiliser un verbe à l'infinitif pour indiquer quelle est l'action à faire. Dans le cas où il n'y a pas d'action à faire et qu'on affiche un complément d'information, il est suggéré d'utiliser le nom du sujet sur lequel porte le complément.
 
 ### Contenu
-Une fenêtre de dialogue peut contenir du texte, des images, des boutons, etc. N'importe quel type de contenu est permis, du moment que la distinction avec la fenêtre de dialogue est respectée.
+Une fenêtre de dialogue peut contenir du texte, des images, des boutons, etc. N'importe quel type de contenu est permis, du moment que son comportement est respecté.
 
 ### Défilement
 Lorsqu'il n'est pas possible de voir l'ensemble du contenu dans l'espace visible (viewport), il doit être possible de faire défiler le contenu. L'entête de la fenêtre est figée afin de permettre un accès rapide au bouton de fermeture.

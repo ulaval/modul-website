@@ -1,5 +1,4 @@
-## Utlisation
-Un train, aussi appelé indicateur de progression, affiche la progression en la divisant en plusieurs étapes logiques, parfois numérotées. Il guide l'utilisateur à travers un certain nombre d'étapes afin de compléter une tâche spécifiée. Un bon suivi des progrès devrait informer les utilisateurs des aspects suivants :
+L'indicateur de progression affiche la progression en la divisant en plusieurs étapes logiques, parfois numérotées. Il guide l'utilisateur à travers un certain nombre d'étapes afin de compléter une tâche spécifiée. Un bon suivi des progrès devrait informer les utilisateurs des aspects suivants :
 * Quelles étapes (ou tâches) ont-ils complétées, de préférence avec une réponse visuelle appropriée
 * L'emplacement actuel de l'utilisateur dans le processus
 * Combien d’étapes reste-t-il et quelles sont-elles

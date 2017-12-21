@@ -1,8 +1,8 @@
-Les messages sont utilisés pour donner de l'information pertinente aux utilisateurs. Les messages peuvent être affichés dans les pages ou dans les fenêtres secondaires.
+Les messages sont utilisés pour donner de l'information pertinente aux utilisateurs.
 
 ## Caractéristiques
+
 ### Format du message
-Deux formats de messages sont disponibles :
 
 #### Régulier
 Ce format est à privilégier lorsque le message concerne une page ou une section de page. La largeur du message varie en fonction de la largeur maximale du contenant dans lequel le message est affiché.
