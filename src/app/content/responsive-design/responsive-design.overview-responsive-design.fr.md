@@ -4,7 +4,7 @@ Pour ce faire, le contenu et/ou la disposition de la page sont modifiés en fonc
 
 Un site adaptatif est donc conçu à l'aide d'une grille et de points de rupture (breakpoints) définis en fonction de différentes largeurs d'écrans. Lorsque la taille de l'écran correspond à une largeur X, la disposition de la page ou le comportement d'un composant est modifié en conséquence.
 
-## Liste des *Media Queries*
+## Liste des points de rupture
 <div class="m-u--header m-u--margin-top">
     <h3>Largeur minimale</h3>
 </div>
