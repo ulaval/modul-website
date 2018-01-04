@@ -1,1 +1,1 @@
-<m-message state="information">Documentation à venir</m-message>
+<m-message state="information">Documentation à venir sous peu</m-message>
