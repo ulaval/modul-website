@@ -19,10 +19,14 @@
     &__body {
         margin: 0 auto;
         max-width: $modul-max-width;
-        padding: $m-margin $m-padding $m-padding $m-padding;
+        padding: $m-margin $m-padding $m-padding--l $m-padding;
 
         @media (min-width: $m-mq--min--s) {
-            padding: $m-padding $m-padding--l $m-padding--l;
+            padding: $m-padding $m-padding--l $m-padding--xl $m-padding--l;
+        }
+
+        &.modul--no-mavbar {
+            padding-top: $m-padding--l;
         }
     }
 }

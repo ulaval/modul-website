@@ -119,7 +119,7 @@
                     </nav>
                     <div class="modul-mobile-menu modul--is-second-step" v-if="!menuFirstStep">
                         <header class="modul-mobile-menu__header">
-                            <m-link mode="button" icon-name="left-arrow" @click="showFirstStep">Menu</m-link>
+                            <m-link mode="button" :underline="false" icon-name="left-arrow" @click="showFirstStep">Menu</m-link>
                         </header>
                         <div class="modul-mobile-menu__body">
                             <m-accordion class="modul-mobile-menu__elem" skin="plain" v-for="category in categoriesComponent" v-if="menuSection == 'components'">

@@ -127,7 +127,7 @@ $modul-home-design--width--l: 270px;
                 background: $modul-color--yellow;
                 font-weight: $m-font-weight--black;
                 font-size: 48px;
-                padding: $m-spacing 0;
+                padding: 13px 14px 14px 14px; // Magic number
                 text-align: center;
                 display: inline-block;
                 min-width: $modul-home-design--width;
