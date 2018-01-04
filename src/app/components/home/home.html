@@ -20,7 +20,7 @@
 
         <div class="modul-home-experiment__footer"
              :style="{ bottom: designButtonPosition + 'px' }"
-             v-m-scroll-to="[ '#design', 'slow']"
+             v-m-scroll-to:design="'slow'"
              v-if="isMqMinS">
             <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
             <m-icon class="modul-home-experiment__footer__arrow" name="down-arrow"></m-icon>
@@ -31,7 +31,7 @@
         </div>
     </section>
 
-    <section id="design" class="modul-home-design" ref="design">
+    <section class="modul-home-design" ref="design">
         <article class="modul-home-design__article">
             <section class="modul-home-design__template-container" aria-hidden="true">
                 <article class="modul-home-design__template" :style="{ width: designTemplateWidth + 'px' }">
