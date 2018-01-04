@@ -92,7 +92,6 @@
 
         &__link {
             font-weight: $m-font-weight--black;
-            font-size: $m-font-size--s;
             text-transform: uppercase;
             text-decoration: none;
             transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
@@ -149,14 +148,13 @@
         display: inline-flex;
         align-items: center;
         height: 12px; // Magic number
-        margin-top: -2px; // Magic number
         margin-left: $m-margin--s;
         text-transform: uppercase;
         font-size: 8px; // Mafic number
         font-weight: $m-font-weight--black;
         color: $modul-color--black-grey-dark;
         background: $m-color--ul-yellow;
-        padding: 2px 3px 0 3px;
+        padding: 2px 3px;
     }
 }
 

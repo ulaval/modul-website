@@ -1,8 +1,6 @@
 <section class="modul-dark-template">
     <header class="modul-dark-template__header">
-        <span class="modul-dark-template__header__back-link" v-if="hasBacklinkSlot">
-            <slot name="backlink"></slot>
-        </span>
+        <span class="modul-dark-template__header__back-link" v-if="hasBacklinkSlot"><slot name="backlink"></slot></span>
         <div class="modul-dark-template__header__title­" v-if="hasHeaderSlot">
             <slot name="header"></slot>
         </div>

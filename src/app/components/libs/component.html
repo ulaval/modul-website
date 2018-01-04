@@ -1,7 +1,5 @@
 <modul-light-template>
-    <m-link slot="backlink" mode="button" iconName="left-arrow" @click="back(component.category)">
-        {{translatedCategory}}
-    </m-link>
+    <m-link slot="backlink" mode="button" iconName="left-arrow" @click="back(component.category)">{{translatedCategory}}</m-link>
     <h1 slot="header">
         <m-dropdown v-if="isMqMinS" class="modul-u--dropdown-light" v-model="selectedComponent" @open="onOpen" @close="onClose" width="auto">
             <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>

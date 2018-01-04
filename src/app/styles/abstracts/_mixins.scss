@@ -3,12 +3,12 @@
 // -----------------------------------------------------------------------------
 
 @mixin modul-page-title() {
-    font-size: 30px; // magic number
+    font-size: 34px; // magic number
     font-weight: $m-font-weight--black;
     text-transform: uppercase;
 
     @media (min-width: $m-mq--min--s) {
-        font-size: 34px; // magic number
+        font-size: 36px; // magic number
     }
 }
 
