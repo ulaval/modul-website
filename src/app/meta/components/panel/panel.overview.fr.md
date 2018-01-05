@@ -21,7 +21,7 @@ Il est possible d'utiliser la boite avec un entête avec un titre, mais ce n'est
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Marges internes (padding)
-La largeur des marges internes du composant boîte est ajustée selon les points de rupture. Par exemple, pour les petits écrans, les marges seront automatiquement réduites. Il est également possible de retirer les marges internes de la boîte, lorsque celles-ci ne répondent pas au besoin.
+La largeur des marges internes est ajustée selon les points de rupture. Par exemple, pour les petits écrans, les marges seront automatiquement réduites. Il est également possible de retirer les marges internes de la boîte, lorsque celles-ci ne répondent pas au besoin.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Mise en évidence
