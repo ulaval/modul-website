@@ -138,7 +138,7 @@
                             <nav v-if="menuSection != 'components'">
                                 <ul>
                                     <li v-for="page in pagesStandards" class="modul-mobile-menu__elem">
-                                        <a href="#" @click="onPageClick(page, 'standards')" class="modul-mobile-menu__elem__link">
+                                        <a href="#" @click="onPageClick($event, page, 'standards')" class="modul-mobile-menu__elem__link">
                                             <span>{{page.text}}</span>
                                         </a>
                                     </li>
