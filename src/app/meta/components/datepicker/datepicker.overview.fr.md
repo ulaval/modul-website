@@ -1,6 +1,6 @@
 Le sélecteur de date est utilisé pour permettre à l'utilisateur de sélectionner une date.
 
-Voir aussi la variante <m-link url="../m-date-fields/portrait">m-date-fields</m-link>
+Voir aussi la variante <modul-go name="m-date-fields">m-date-fields</modul-go>
 
 ## Caractéristiques
 ### Date

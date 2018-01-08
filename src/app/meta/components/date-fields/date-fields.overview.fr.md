@@ -1,7 +1,7 @@
 ## Utilisation
 Le sélecteur de date est utilisé pour permettre à l'utilisateur de sélectionner une date.
 
-Voir aussi la variante <m-link url="../m-datepicker/portrait">m-datepicker</m-link>
+Voir aussi la variante <modul-go name="m-datepicker">m-datepicker</modul-go>
 
 ## Caractéristiques
 Composé de 3 listes déroulantes pour sélectionner l'année, le mois et le jour.
