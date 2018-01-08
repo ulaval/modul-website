@@ -440,20 +440,25 @@ $modul-home-design--width--l: 270px;
         }
     }
 
-    .m-panel {
+    &__panel {
         transition: transform $m-transition-duration ease, box-shadow $m-transition-duration ease;
         width: 100%;
         margin-bottom: $m-padding;
         cursor: pointer;
         outline: none;
+        border-top: 4px solid $m-color--ul-yellow;
+        padding: $m-padding;
+        background-color: $m-color--white;
+        box-shadow: $m-box-shadow;
+
+        header > :first-child {
+            margin-top: 0;
+        }
 
         @media (min-width: $m-mq--min--s) {
             width: calc(50% - #{$m-padding});
             margin-bottom: $m-padding--l;
-        }
-
-        &.m--is-highlighted::before {
-            background-color: $m-color--ul-yellow;
+            padding: $m-padding--l;
         }
 
         &:hover,
