@@ -59,14 +59,14 @@
             </div>
             <transition-group name="modul--is" tag="ul">
                 <li tabindex="0" class="modul-search-card" @click="onComponentClick(item.tag)" @keyup.enter="onComponentClick(item.tag)"
-                    v-for="item in searchResult" key="item.tag">
+                    v-for="item in searchResult" key="item.tag" v-if="item.category">
                     <div class="modul-search-card__figure">
                         <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
                     </div>
                     <div class="modul-search-card__content">
-
-                        <p class="m-u--h4 m-u--no-margin-top">{{ item.text }}</p>
-                        <p class="modul-search-card__subtitle">{{ item.category }}</p>
+                        <p class="modul-search-card__content__category">{{ item.category }}</p>
+                        <h2 class="modul-search-card__content__title modul-u--h3">{{ item.text }}</h2>
+                        <p class="modul-search-card__content__tagname">{{ item.tag }}</p>
                     </div>
                 </li>
             </transition-group>

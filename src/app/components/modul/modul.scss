@@ -82,6 +82,18 @@
         padding: $m-padding;
         border-bottom: 1px solid $m-color--grey-light;
         width: calc(100% - 150px);
+
+        &__category,
+        &__title,
+        &__tagname {
+            margin-top: 0;
+        }
+
+        &__tagname {
+            font-size: $m-font-size--s;
+            color: $m-color--grey-darker;
+            font-style: italic;
+        }
     }
 
     &__figure {
@@ -98,14 +110,6 @@
         background-blend-mode: multiply;
         border-bottom: 1px solid #006698;
         padding: $m-padding;
-    }
-
-    &__subtitle {
-        display: block;
-        margin-top: 4px;
-        font-size: $m-font-size--s;
-        color: $m-color--grey-darker;
-        font-style: italic;
     }
 
     &.modul--is {

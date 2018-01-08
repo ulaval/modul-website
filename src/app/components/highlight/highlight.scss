@@ -3,8 +3,10 @@
 .modul-highlight {
     margin: 0;
     background: $modul-color--black-grey;
-    max-height: 400px;
-    overflow: auto;
 
     @include m-scrollbar();
+
+    .hljs {
+        max-height: none;
+    }
 }

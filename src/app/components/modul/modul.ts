@@ -224,8 +224,8 @@ export default class Modul extends ModulWebsite {
                 } else {
                     nameObj = {
                         tag: Meta.getMeta()[key].tag,
-                        category: 'Null',
-                        text: 'Null'
+                        category: undefined,
+                        text: undefined
                     };
                 }
                 return nameObj;
@@ -242,8 +242,8 @@ export default class Modul extends ModulWebsite {
                 } else {
                     nameObj = {
                         tag: Meta.getMetaForProd()[key].tag,
-                        category: 'Null',
-                        text: 'Null'
+                        category: undefined,
+                        text: undefined
                     };
                 }
                 return nameObj;
@@ -256,7 +256,7 @@ export default class Modul extends ModulWebsite {
         let filtereComponents: any[] = [];
         if (this.searchModel != '') {
             filtereComponents = this.components.filter((element) => {
-                let textToSearch = element.category + ' ' + element.text;
+                let textToSearch = element.category + ' ' + element.text + ' ' + element.tag;
                 return normalizeString(textToSearch).match(normalizeString(this.searchModel));
             });
         }
