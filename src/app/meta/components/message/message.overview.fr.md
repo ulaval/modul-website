@@ -20,7 +20,7 @@ Ce type de message permet d'indiquer à l'utilisateur qu'il a complété une dem
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 #### Information
-Ce type de message est utilisé lorsque l'on désire afficher de l'aide, une astuce ou tout simplement de l'information pertinente sur laquelle on désire mettre l'emphase.
+Ce type de message est utilisé lorsque l'on désire afficher de l'aide, une astuce ou tout simplement de l'information pertinente sur laquelle on désire mettre l'accent.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 #### Avertissement

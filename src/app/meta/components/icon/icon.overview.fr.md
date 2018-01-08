@@ -17,13 +17,13 @@ Sur appareils mobiles, comme sur les postes de bureau, la zone cliquable de l’
 Une icône peut être en couleur uniquement si :
 * elle accompagne un lien cliquable, par exemple une icône PDF accompagnant le nom d’un fichier de type PDF
 * elle est superposée par une pastille de couleur illustrant un état parmi les suivants :
-    * publié (cercle vert) Illustration à venir
-    * non publié (cercle rouge) Illustration à venir
-    * complété/Succès (cercle vert avec crochet)Illustration à venir
-    * partiellement publié (cercle orange avec point d’exclamation)Illustration à venir
-    * avertissement (triangle jaune avec point d’exclamation)Illustration à venir
+    * publié (cercle vert) illustration à venir
+    * non publié (cercle rouge) illustration à venir
+    * complété/succès (cercle vert avec crochet) illustration à venir
+    * partiellement publié (cercle orange avec point d’exclamation) illustration à venir
+    * avertissement (triangle jaune avec point d’exclamation) illustration à venir
     * erreur (cercle rouge avec x)Illustration à venir
-    * nouveauté/nouvel item (pastille orange avec un chiffre)Illustration à venir
+    * nouveauté/nouvel item (pastille orange avec un chiffre) illustration à venir
 
 ### Format SVG
 Il est recommandé d’utiliser le format SVG (Scalable Vector Graphics) plutôt qu’une police d'icône pour les raisons suivantes :

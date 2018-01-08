@@ -1,25 +1,25 @@
 ## Utilisation
-Le sélecteur de date est utilisé pour permettre à l'utilisateur de sélectionner une date.
+Le sélecteur de date est utilisé pour permettre à l'utilisateur de sélectionner une date complète ou une combinaison jour, mois ou année.
 
 Voir aussi la variante <modul-go name="m-datepicker">m-datepicker</modul-go>
 
 ## Caractéristiques
-Composé de 3 listes déroulantes pour sélectionner l'année, le mois et le jour.
+Ce composant offre 3 listes déroulantes pour sélectionner l'année, le mois et le jour.
 
-Il est possible à l'utilisateur de filtrer les listes pour réduire le nombre de choix.
+Il est possible à l'utilisateur de paramétriser les listes pour en réduire le nombre d'éléments.
 
 ### Année
 Par défaut, les années commencent en 1900 et se terminent 5 ans après l'année courante.
 
 ### Jour
-Le nombre de jours disponibles dépend du mois et de l'année sélectionné. Par défaut, elle permet la sélection jusqu'au jour 31.
+Le nombre de jours disponibles dépend du mois et de l'année sélectionnée. Par défaut, la listte affiche 31 jours.
 
-Lorsqu'un mois est sélectionné, le nombre de jours s'ajuste (29, 30 ou 31 jours).
+Lorsqu'un mois est sélectionné, le nombre de jours s'ajuste en fonction de celui-ci.
 
 Lorsque février est sélectionné, le nombre de jours s'ajuste à l'année (si  sélectionnée) selon qu'elle soit bisextile ou non.
 
 ### Paramétrisation
-Il est possible de cacher une ou plusieurs des listes déroulantes selon le besoin.
+Il est possible de cacher une ou plusieurs listes déroulantes selon le besoin. Voir l'onglet **Propriété** pour la liste complète des propriétés.
 
 ### Date sélectionnée
-La date sélectionnée est affichée par la composition des entêtes des listes déroulantes. Le composant peut retourner un objet Date ou bien MomentJs. Il émet aussi un événement indiquant si une valeur est sélectionnée dans toute les listes.
+La date sélectionnée est composée des éléments sélectionnés de chacune des listes déroulantes. Le composant peut retourner un objet Date ou MomentJs. Il émet aussi un événement indiquant si une valeur est sélectionnée dans chacune des listes.

@@ -1,1 +1,1 @@
-Ce composant s'utilise habituellemente avec le composant <m-link url="../m-accordion-group/portrait">m-accordion-group</m-link>. Cette page fournit toute l'information sur l'utilisation et les caractéristiques de l'accordéon.
+Ce composant s'utilise habituellemente avec le composant m-accordion-group. Cette page fournit toute l'information sur l'utilisation et les caractéristiques de l'accordéon.
