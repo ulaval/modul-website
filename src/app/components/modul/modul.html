@@ -60,8 +60,8 @@
             <transition-group name="modul--is" tag="ul">
                 <li tabindex="0" class="modul-search-card" @click="onComponentClick(item.tag)" @keyup.enter="onComponentClick(item.tag)"
                     v-for="item in searchResult" key="item.tag" v-if="item.category">
-                    <div class="modul-search-card__figure">
-                        <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
+                    <div class="modul-search-card__img" aria-hidden="true">
+                        <m-icon size="90px" :name="item.tag"></m-icon>
                     </div>
                     <div class="modul-search-card__content">
                         <p class="modul-search-card__content__category">{{ item.category }}</p>
