@@ -13,7 +13,7 @@
         <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
             <div v-if="codePreviewOpen && component.preview">
                 <div class="modul-component-details__code">
-                    <m-highlight :template="markdownPreview"></m-highlight>
+                    <modul-highlight :template="markdownPreview"></modul-highlight>
                 </div>
             </div>
         </transition>

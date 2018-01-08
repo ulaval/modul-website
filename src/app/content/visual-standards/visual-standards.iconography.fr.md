@@ -49,7 +49,7 @@ Il est recommandé d’utiliser le format SVG (Scalable Vector Graphics) plutôt
 ### Sélection des icônes
 La librairie d'icônes vectorielles Streamline est la banque d'icônes officielle à utiliser. Cette librairie contient plus de 5000 icônes optimisées aux dimensions recommandées par les standards d'iOS et d'Android.
 
-Insérer une <m-link url="../../composants/indicateurs/m-icon/portrait">icône de la librairie</m-link> à une application
+Insérer une <modul-go name="m-icon">icône de la librairie</modul-go> à une application
 
 ### Icônes personnalisées
 Bien que l'utilisation d'icônes de la librairie existante soit à privilégier, de nouvelles icônes peuvent être créées pour répondre à des besoins spécifiques. Ces nouvelles icônes devront être créées en respectant une grille de 30 par 30 pixels, puis enregistrées en format SVG.

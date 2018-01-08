@@ -2,7 +2,7 @@ Les radio boutons sont utilisés lorsque l’utilisateur a le choix entre deux o
 
 Les boutons radio, tout comme les cases à cocher, offrent l’avantage d’empêcher les utilisateurs d'entrer des données erronées.
 
-Ce composant doit être utilisé avec le composant <m-link url="../m-radio/portrait">m-radio</m-link>.
+Ce composant doit être utilisé avec le composant <modul-go name="m-radio">m-radio</modul-go>.
 
 <modul-do>
     <ul class="m-u--bullet-list">

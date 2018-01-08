@@ -2,7 +2,7 @@ Une fenêtre de dialogue est utilisée pour afficher du contenu complémentaire 
 
 <modul-dont>
 <ul>
-    <li>Une fenêtre de dialogue ne doit pas être utilisée pour initier un dialogue avec l'utilisateur. Dans ce cas, il faut plutôt utiliser le composant <m-link url="../m-modal">fenêtre modale</m-link> (m-modal).</li>
+    <li>Une fenêtre de dialogue ne doit pas être utilisée pour initier un dialogue avec l'utilisateur. Dans ce cas, il faut plutôt utiliser le composant <modul-go name="m-modal">fenêtre modale</modul-go> (m-modal).</li>
     <li>Il n'est pas permis d'utiliser une fenêtre de dialogue à l'intérieur d'une autre fenêtre de dialogue.</li>
 </ul>
 </modul-dont>

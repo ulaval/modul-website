@@ -36,7 +36,7 @@ export class MHighlight extends Vue {
 
 }
 
-export const HIGHLIGHT_NAME: string = 'm-highlight';
+export const HIGHLIGHT_NAME: string = 'modul-highlight';
 
 const HighlightPlugin: PluginObject<any> = {
     install(v, options) {

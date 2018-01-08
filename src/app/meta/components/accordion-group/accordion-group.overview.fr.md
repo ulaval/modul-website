@@ -1,6 +1,6 @@
 Un accordéon permet de grouper du contenu sous différentes rubriques d'un même sujet et permet d'afficher ou masquer le contenu selon les besoins de l'utilisateur.
 
-Ce composant doit être utilisé avec le composant m-accordion.
+Ce composant doit être utilisé avec le composant <modul-go name="m-accordion">accordéon</modul-go> (m-accordion).
 
 <modul-do>
     <ul>
@@ -11,7 +11,7 @@ Ce composant doit être utilisé avec le composant m-accordion.
     </ul>
 </modul-do>
 
-<modul-dont>Pour les grands écrans, lorsque le contenu de la page est très long, il peut être intéressant de revoir la navigation et de favoriser l'utilisation du composant Onglets.</modul-dont>
+<modul-dont>Pour les grands écrans, lorsque le contenu de la page est très long, il peut être intéressant de revoir la navigation et de favoriser l'utilisation du composant <modul-go name="m-tabs">onglets</modul-go>.</modul-dont>
 
 ## Caractéristiques
 ### Ouverture non simultanée
@@ -23,3 +23,5 @@ L'option *Tout ouvrir* est disponible dès qu'il y a plus d'une rubrique dans l'
 
 ### Visuel allégé
 <m-message skin="light" state="information">Exemple à venir</m-message>
+
+<small class="m-u--display--block m-u--margin-top--l">**Source :** <m-link mode="link" url="http://www.nngroup.com/articles/accordions-complex-content/" target="_blank">Nielsen Norman Group</m-link></small>

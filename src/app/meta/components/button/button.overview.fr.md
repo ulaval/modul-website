@@ -1,4 +1,4 @@
-Un bouton permet de poser une action dans le site et peut contenir un libellé, une icône ou les deux. L'utilisation d'un bouton est recommandée lorsque l'utilisateur doit poser une action dans le site. Une action permet généralement de débuter, de poursuivre ou d'annuler un processus. Si l'utilisateur désire consulter du contenu dans le site, on utilise un <m-link url="../../navigation/m-link/portrait">lien</m-link> plutôt qu'un bouton.
+Un bouton permet de poser une action dans le site et peut contenir un libellé, une icône ou les deux. L'utilisation d'un bouton est recommandée lorsque l'utilisateur doit poser une action dans le site. Une action permet généralement de débuter, de poursuivre ou d'annuler un processus. Si l'utilisateur désire consulter du contenu dans le site, on utilise un <modul-go name="m-link">lien</modul-go> plutôt qu'un bouton.
 
 ## Caractéristiques
 ### Libellé
