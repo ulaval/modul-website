@@ -2,14 +2,14 @@ La boîte est utilisée pour grouper et mettre en évidence du contenu de même 
 
 <modul-do>
     <ul>
-        <li>Assurer de la cohérence du traitement visuel des boîtes lorsque plusieurs boîtes cohabitent dans la même interface.<li>
+        <li>S'Assurer de la cohérence du traitement visuel des boîtes lorsque plusieurs boîtes cohabitent dans la même interface.<li>
         <li>Lorsque la couleur d'arrière-plan du conteneur parent de la boîte est blanche, l'ombre portée devrait être retirée.</li>
     </ul>
 </modul-do>
 
 <modul-dont>
     <ul>
-        <li>Éviter d'utiliser la boîte comme le gabarit d'une page, car elle doit servir à grouper et mettre en évidence du contenu et non accueillir le contenu entier d'une page.</li>
+        <li>Éviter d'utiliser la boîte comme le gabarit d'une page, car elle doit servir à grouper et mettre en évidence du contenu et non à accueillir le contenu entier d'une page.</li>
         <li>Éviter d'abuser du style <em>mise en évidence</em>.</li>
     </ul>
 </modul-dont>
