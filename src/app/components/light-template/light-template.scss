@@ -6,7 +6,7 @@
     max-width: $modul-max-width;
 
     @media (min-width: $m-mq--min--s) {
-        padding: 0 $m-padding--l $m-padding--l $m-padding--l;
+        padding: 0 $m-padding--l $m-padding--xl $m-padding--l;
     }
 
     &::before,
