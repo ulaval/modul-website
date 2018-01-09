@@ -21,7 +21,7 @@ L'option *Tout ouvrir* est disponible dès qu'il y a plus d'une rubrique dans l'
 ### Ouverture simultanée
 <m-message skin="light" state="information">Exemple à venir</m-message>
 
-### Visuel allégé
+### Traitement visuel allégé
 <m-message skin="light" state="information">Exemple à venir</m-message>
 
 <small class="m-u--display--block m-u--margin-top--l">**Source :** <m-link mode="link" url="http://www.nngroup.com/articles/accordions-complex-content/" target="_blank">Nielsen Norman Group</m-link></small>
