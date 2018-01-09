@@ -10,6 +10,6 @@ Le bouton icône possède plusieurs traitements visuels:
 
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
-### Dimension
-Il est possible de changer la dimension du bouton ou de l'icône.
+### Taille
+Il est possible de changer la taille du bouton ou de l'icône.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>

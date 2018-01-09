@@ -19,9 +19,19 @@ L'option *Tout ouvrir* est disponible dès qu'il y a plus d'une rubrique dans l'
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Ouverture simultanée
-<m-message skin="light" state="information">Exemple à venir</m-message>
+Si un accordéon est ouvert et que l'utilisateur ouvre un second accordéon du même groupe, l'accordéon déjà ouvert ce ferme. Les rubriques d'un groupe d'accordéon ne peuvent donc pas être ouvertes simultanément.
+<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
-### Traitement visuel allégé
-<m-message skin="light" state="information">Exemple à venir</m-message>
+### Traitement visuel
+Le traitement visuel de l'accordéon peut être&nbsp;:
+* **Regulier&nbsp;:** utiliser pour regrouper plusieurs accordéon.
+* **AlLéger&nbsp;:** utiliser lorsqu'il y a qu'un seul accordéon.
+* **Nul&nbsp;:** aucun traitement visuel est appliqué sur l'accordéon.
+
+<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+### Icône d'ouverture
+Il est possible de changer le traitement visuel de l'icône d'ouverture, soit en ajoutant des bordures, modifiant sa taille et changeant son positionnement.
+<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 <small class="m-u--display--block m-u--margin-top--l">**Source :** <m-link mode="link" url="http://www.nngroup.com/articles/accordions-complex-content/" target="_blank">Nielsen Norman Group</m-link></small>

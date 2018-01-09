@@ -11,7 +11,7 @@ Ce composant doit être utilisé avec le composant <modul-go name="m-dropdown-it
 <modul-do>
     <ul class="m-u--bullet-list">
         <li>La première option d’une liste déroulante devrait être une étiquette significative.</li>
-        <li>Ne pas utiliser de liste déroulante lorsque le nombre d’options est inférieur à 7, utiliser plutôt des boutons radio.</li>
+        <li>Ne pas utiliser de liste déroulante lorsque le nombre d’options est inférieur à 7, utiliser plutôt des <modul-go name="m-radio-group">boutons radio</modul-go>.</li>
         <li>Éviter de sélectionner une option comme valeur par défaut, particulièrement si c'est un champ obligatoire.</li>
         <li>En mobile, lorsque possible, remplacer les listes déroulantes par des groupes de boutons, des trains, des commutateurs à bascule ou des curseurs.</li>
     </ul>
