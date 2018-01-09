@@ -19,8 +19,8 @@ Un bouton secondaire peut être utilisé pour toute autre action pouvant être e
 
 ### États
 Trois états sont possibles pour les boutons :
-* **Normal&nbsp;:** état initial sans qu'il y ait d'interraction de l'utilisateur
-* **En attente de traitement&nbsp;:** le bouton a été enfoncé et il est en attente de la fin d'un traitement (soumission d'un formulaire par exemple)
+* **Normal&nbsp;:** état initial sans qu'il y ait d'interraction de l'utilisateur.
+* **En attente de traitement&nbsp;:** le bouton a été enfoncé et il est en attente de la fin d'un traitement (soumission d'un formulaire par exemple).
 * **Désactivé&nbsp;:** les actions sur le bouton sont désactivés, il ne peut pas être utilisé.
 
 #### Bouton en attente d'un traitement
