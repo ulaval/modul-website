@@ -1,1 +1,1 @@
-<m-button>Bouton</m-button>
+<m-button>Bouton primaire</m-button>
