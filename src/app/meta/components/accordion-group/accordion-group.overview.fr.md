@@ -19,7 +19,7 @@ L'option *Tout ouvrir* est disponible dès qu'il y a plus d'une rubrique dans l'
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Ouverture simultanée
-Si un accordéon est ouvert et que l'utilisateur ouvre un second accordéon du même groupe, l'accordéon déjà ouvert ce ferme. Les rubriques d'un groupe d'accordéon ne peuvent donc pas être ouvertes simultanément.
+Si un accordéon est ouvert et que l'utilisateur ouvre un second accordéon du même groupe, l'accordéon déjà ouvert ce fermera. Les rubriques d'un groupe d'accordéon ne peuvent donc pas être ouvertes simultanément.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Traitement visuel

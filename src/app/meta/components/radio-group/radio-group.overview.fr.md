@@ -23,7 +23,7 @@ Ce composant doit être utilisé avec le composant <modul-go name="m-radio">radi
 ## Caractéristiques
 
 ### Étiquette
-L'utilisation d'une étiquette n'est pas obligatoire. Elle sert à d'écrire les options offertes par les boutons radios à l'utilisateur.
+L'utilisation d'une étiquette n'est pas obligatoire. Elle sert à d'écrire aux utilisateurs les options offertes par les boutons radios.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Positionnement
