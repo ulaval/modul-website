@@ -1,1 +1,1 @@
-<m-link>modUL</m-link>
+<m-link :icon="true">Accueil</m-link>
