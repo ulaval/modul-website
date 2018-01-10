@@ -21,5 +21,5 @@ Il est possible de retirer une ou plusieurs listes déroulantes selon le besoin.
 La date sélectionnée est composée des éléments sélectionnés de chacune des listes déroulantes. Le composant peut retourner un objet **Date** ou **MomentJs**. Il émet aussi un événement indiquant si une valeur est sélectionnée dans chacune des listes.
 
 ### États et messages de validation
-Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres.
+Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres. Lorsque possible, les validations sont effectuées à la sortie des champs.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>

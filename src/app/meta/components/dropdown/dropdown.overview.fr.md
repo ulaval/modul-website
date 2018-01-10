@@ -17,7 +17,7 @@ Ce composant doit être utilisé avec le composant <modul-go name="m-dropdown-it
 </modul-dont>
 
 ## Caractéristiques
-### Filtrage
+### Filtre
 Il est possible de filtrer la liste en ordre alphabétique.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
@@ -25,12 +25,13 @@ Il est possible de filtrer la liste en ordre alphabétique.
 Par défaut, la largeur de la liste déroulante est optimisée pour un affichage sur mobile. Il est cependant possible de personnalisé cette largeur. Si applicable, trois points permettent d'indiquer que la valeur sélectionnée n'est pas complètement visible.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
-### Élément sélectionné
-Une valeur peut être sélectionnée par défaut lorsque plus de 90% des utilisateurs vont sélectionner la même valeur ou encore si une seule valeur est disponible.
+### Valeur sélectionnée
+Une valeur peut être sélectionnée par défaut lorsque plus de 90% des utilisateurs vont sélectionner la même valeur ou encore si une seule valeur est disponible. Lorsqu'aucune valeur n'est disponible dans la liste, un libellé doit afficher «&nbsp;Aucun résultats&nbsp;» ou «&nbsp;Aucune données&nbsp;».
 
-### Valeur sélectionnée nulle
-Lorsqu'aucune valeur n'est disponible dans la liste, un libellé doit afficher «&nbsp;Aucun résultats&nbsp;» ou «&nbsp;Aucune données&nbsp;».
+### Élément de la liste désactivé
+Un élément de la liste déroulante peut être désactivé, c'est-à-dire qu'il ne peut pas être sélectionné.
+<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### États et messages de validation
-Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres.
+Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres. Lorsque possible, les validations sont effectuées à la sortie de la liste déroulante.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>

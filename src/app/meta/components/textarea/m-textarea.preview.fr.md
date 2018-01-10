@@ -1,0 +1,1 @@
+<m-textarea label="Zone de texte"></m-textarea>

@@ -24,5 +24,5 @@ La date sélectionnée est toujours affichée dans une pastille bleue.
 La date du jour est toujours affichée sur fond gris, sauf lorsqu'elle n'est pas sélectionnée. Elle est alors affichée sur fond bleu.
 
 ### États et messages de validation
-Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres.
+Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres. Lorsque possible, les validations sont effectuées à la sortie du champ.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>

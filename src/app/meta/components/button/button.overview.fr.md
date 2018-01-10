@@ -9,11 +9,11 @@ Un bouton permet de poser une action dans le site et peut contenir un libellé, 
 
 ## Caractéristiques
 
-### Bouton primaire
-Un bouton primaire est utilisé pour mettre l'emphase sur la tâche principale ou l'action qui devrait être effectuée par l'utilisateur. Règle générale, on retrouve un seul bouton primaire par interface.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+### Traitement visuel
+#### Primaire
+Un bouton primaire est utilisé pour mettre l'emphase sur la tâche principale ou l'action qui devrait être effectuée par l'utilisateur. Généralement, on retrouve un seul bouton primaire par interface.
 
-### Bouton secondaire
+#### Secondaire
 Un bouton secondaire peut être utilisé pour toute autre action pouvant être effectuée, mais sur laquelle aucune emphase n'est mise. De plus, il peut y avoir plusieurs boutons secondaire dans l'interface.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
@@ -23,11 +23,10 @@ Trois états sont possibles pour les boutons :
 * **En attente de traitement&nbsp;:** le bouton a été enfoncé et il est en attente de la fin d'un traitement (soumission d'un formulaire par exemple).
 * **Désactivé&nbsp;:** les actions sur le bouton sont désactivés, il ne peut pas être utilisé.
 
-#### Bouton en attente d'un traitement
+#### En attente d'un traitement
 Dans certains cas, lors de la soumission d'un formulaire par exemple, il est important que le bouton soit "désactivé" temporairement jusqu'à ce que le traitement soit exécuté. Durant cette période, le bouton adopte un visuel "délavé" afin d'indiquer à l'utilisateur que la requête est en traitement et que le bouton ne peut être cliqué à nouveau. Ce comportement est possible autant pour un bouton primaire que secondaire.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
-#### Bouton désactivé
+#### Désactivé
 Généralement, le bouton n'est pas désactivé. En effet, le bouton demeure actif et un message d’erreur est affiché suite au clique. Comme dans le cas des validations d'un formulaire.
 Le bouton est désactivé seulement lorsque l’utilisateur ne peut corriger immédiatement la situation (le bouton sera disponible à une date « x », l’utilisateur doit aller dans d’autres sections du site pour fournir de l’information supplémentaire, etc). Lorsque le bouton est désactivé, une précision permettant d’indiquer pourquoi le bouton est inactif est ajoutée.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>

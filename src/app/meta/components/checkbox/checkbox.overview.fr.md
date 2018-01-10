@@ -16,9 +16,9 @@ Les cases à cocher sont utilisées lorsqu’un utilisateur peut sélectionner u
 </modul-dont>
 
 ### Positionnement
-Les cases à cocher peuvent être positionné à l'horizontal ou à la vertical. Les cases peuvent également être pôsitionnées à gauche ou à droite de leur libéllé.
+Les cases à cocher peuvent être positionné à l'horizontal ou à la vertical. Les cases peuvent également être positionnées à gauche ou à droite de leur libéllé.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
-### Messages de validation
-Ce composent offre la possibilité de gérer les messages d'erreur, de validation et d'aide.
+### États et messages de validation
+Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres. Lorsque possible, les validations sont effectuées à la sortie de la case à cocher.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>

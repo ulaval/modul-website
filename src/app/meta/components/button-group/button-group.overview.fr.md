@@ -15,7 +15,7 @@ Ce composant doit être utilisé avec le composant <modul-go name="m-radio">radi
 ### Libellé
 Le libellé d'un bouton doit idéalement contenir de 1 à 3 mots et doit s'afficher sur un maximum de 3 lignes.
 
-Si un libellé est trop long pour s'afficher sur une largeur minimale de 320 pixel, il est possible de définir des libellés en fonction des points de ruptures existants. Cela va permettre d'afficher des libellés plus courts ou abrégés lorsque la largeur de l'écran est plus petite.
+Si un libellé est trop long pour s'afficher sur une largeur minimale de 320 pixels, il est possible de définir des libellés en fonction des points de ruptures existants. Cela va permettre d'afficher des libellés plus courts ou abrégés lorsque la largeur de l'écran est plus petite.
 
 ### Nombre de boutons
 L'utilisation de ce composant nécessite un minimum de 2 boutons et un maximum de 5 boutons est recommandé. Il est de la responsabilité de l'analyste de vérifier que tous les boutons peuvent s'afficher sur une largeur minimale de 320 pixels.

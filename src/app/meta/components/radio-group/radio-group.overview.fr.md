@@ -26,7 +26,7 @@ L'utilisation d'une étiquette n'est pas obligatoire. Elle sert à d'écrire aux
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Positionnement
-Les boutons radios peuvent être positionné à l'horizontal ou à la vertical. Les cases peuvent également être pôsitionnées à gauche ou à droite de leur libéllé.
+Les boutons radios peuvent être positionné à l'horizontal ou à la vertical. Les cases peuvent également être positionnées à gauche ou à droite de leur libéllé.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### États et messages de validation
