@@ -29,6 +29,6 @@ L'utilisation d'une étiquette n'est pas obligatoire. Elle sert à d'écrire aux
 Les boutons radios peuvent être positionné à l'horizontal ou à la vertical. Les cases peuvent également être pôsitionnées à gauche ou à droite de leur libéllé.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
-### Messages de validation
-Ce composent offre la possibilité de gérer les messages d'erreur, de validation et d'aide.
+### États et messages de validation
+Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
