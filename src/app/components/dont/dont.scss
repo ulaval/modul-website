@@ -5,7 +5,7 @@
     border-color: $m-color--error;
 
     &__header {
-        color: $m-color--error;
+        color: $m-color--error !important;
     }
 
     ul li::before {

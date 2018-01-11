@@ -18,8 +18,8 @@
 
     &__header {
         margin: 0;
-        text-transform: uppercase;
-        font-size: $m-font-size--xs;
+        text-transform: uppercase !important;
+        font-size: $m-font-size--xs !important;
     }
 
     &__body {

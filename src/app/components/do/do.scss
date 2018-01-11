@@ -5,7 +5,7 @@
     border-color: $m-color--success;
 
     &__header {
-        color: $m-color--success;
+        color: $m-color--success !important;
     }
 
     ul li::before {
