@@ -3,7 +3,7 @@ Une *fenêtre de dialogue* est utilisée pour afficher du contenu complémentair
 <modul-dont>
     <ul>
         <li>Une <em>fenêtre de dialogue</em> ne doit pas être utilisée pour initier un dialogue avec l'utilisateur. Dans ce cas, il faut plutôt utiliser le composant <modul-go name="m-modal"><em>fenêtre modale</em></modul-go> (m-modal).</li>
-        <li>Il n'est pas permis d'utiliser une <em>fenêtre de dialogue<em> à l'intérieur d'une autre <em>fenêtre de dialogue</em>.</li>
+        <li>Il n'est pas permis d'utiliser une <em>fenêtre de dialogue</em> à l'intérieur d'une autre <em>fenêtre de dialogue</em>.</li>
     </ul>
 </modul-dont>
 
