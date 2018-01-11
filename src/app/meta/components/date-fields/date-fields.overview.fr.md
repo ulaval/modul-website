@@ -1,6 +1,6 @@
-Les champs de date sont utilisés pour permettre à l'utilisateur de sélectionner une date complète à l'aide de trois <modul-go name="m-dropdown">listes déroulantes</modul-go> gérant l'année, le mois et le jour.
+Les champs de date sont utilisés pour permettre à l'utilisateur de sélectionner une date complète à l'aide de trois <modul-go name="m-dropdown"></modul-go> gérant l'année, le mois et le jour.
 
-Voir aussi la variante <modul-go name="m-datepicker">m-datepicker</modul-go>.
+Voir aussi la variante <modul-go name="m-datepicker"></modul-go>.
 
 ## Caractéristiques
 

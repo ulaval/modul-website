@@ -5,8 +5,8 @@ Le bouton icône est représenté par une image seulement. Il permet généralem
 Le bouton icône possède plusieurs traitements visuels:
 * **Lumineaux&nbsp;:** traitement par defaut utilisé lorsque l'arrière-plan est pale.
 * **Sombre&nbsp;:** utilisé lorsque l'arrière-plan est foncé.
-* **Primaire&nbsp;:** traitement visuel semblable au <modul-go name="m-button">bouton primaire</modul-go>.
-* **Secondaire&nbsp;:** traitement visuel semblable au <modul-go name="m-button">bouton secondaire</modul-go>.
+* **Primaire&nbsp;:** traitement visuel semblable au <modul-go name="m-button"></modul-go>.
+* **Secondaire&nbsp;:** traitement visuel semblable au <modul-go name="m-button"></modul-go>.
 
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 

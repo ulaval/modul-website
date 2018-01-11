@@ -1,13 +1,13 @@
 Un groupe de boutons permet de segmenter du contenu de même nature, selon différents critères. Il est également possible de l'utiliser comme style pour des boutons radios.
 
-Ce composant doit être utilisé avec le composant <modul-go name="m-radio">radio</modul-go> (m-radio).
+Ce composant doit être utilisé avec le composant <modul-go name="m-radio"></modul-go>.
 
 <modul-do>
     <p>L'utilisation du groupe de boutons est utile pour présenter différentes vues d'un ensemble de données. Chaque bouton agit comme un filtre et permet de modifier la vue affichée. Par exemple, ce composant peut être utilisé pour segmenter une liste des cours d'un programme selon ce qui reste à faire et ce qui est déjà fait.</p>
 </modul-do>
 
 <modul-dont>
-    <p>Un groupe de boutons ne doit pas être utilisé pour diviser le contenu d'un thème en plusieurs sujets. Pour ce faire, il faut plutôt utiliser le composant <modul-go name="m-tabs">onglets</modul-go>.</p>
+    <p>Un groupe de boutons ne doit pas être utilisé pour diviser le contenu d'un thème en plusieurs sujets. Pour ce faire, il faut plutôt utiliser le composant <modul-go name="m-tabs"></modul-go>.</p>
 </modul-dont>
 
 ## Caractéristiques

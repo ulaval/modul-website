@@ -3,7 +3,7 @@ Un bouton permet de poser une action dans le site et peut contenir un libellé, 
 <modul-do>
     <ul>
         <li>L'utilisation d'un bouton est recommandée lorsque l'utilisateur doit poser une action dans le site. Une action permet généralement de débuter, de poursuivre ou d'annuler un processus. Si l'utilisateur désire consulter du contenu dans le site, on utilise un <modul-go name="m-link">lien</modul-go> plutôt qu'un bouton.</li>
-        <li>Si une icône est utilisé sans libellé l'utilisation du composant <modul-go name="m-icon-button">*bouton icône*</modul-go> est recommandé</li>
+        <li>Si une icône est utilisé sans libellé l'utilisation du composant <modul-go name="m-icon-button"></modul-go> est recommandé</li>
     </ul>
 </modul-do>
 
