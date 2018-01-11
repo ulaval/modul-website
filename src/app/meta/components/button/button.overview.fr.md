@@ -42,7 +42,7 @@ Le bouton peut être accompagné d'une icône positionnée soit à droite ou gau
 Règle générale, le bouton primaire est présélectionné. Si l'utilisateur appuie sur la touche « Entrée » sur son clavier, l'action du bouton présélectionné sera exécutée. S'il n'y a aucun bouton primaire dans l'interface, aucun bouton n'est présélectionné.
 Dans certains cas, si l'action principale est jugée dangereuse, aucun bouton n'est présélectionné. En effet dans ces situations, il est préférable que l'utilisateur sélectionne lui-même l'action, plutôt que de l'activer en appuyant accidentellement sur la touche « Entrée ».
 
-### Disposition
+### Positionnement
 * Les boutons sont alignés à gauche lorsqu'ils suivent un formulaire, dans les autres cas ils sont centrés.
 * Ils sont alignés côte à côte lorsque l'espace est suffisant. S'il n'est pas possible de tous les aligner côte à côte sur une seule ligne, ils sont affichés les uns en dessous des autres.
 * Dans le cas où plusieurs boutons sont affichés, ils doivent tous être de même largeur, soit la largeur du bouton le plus large.
