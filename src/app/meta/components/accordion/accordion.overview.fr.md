@@ -1,1 +1,1 @@
-Ce composant s'utilise habituellemente avec le composant <modul-go name="m-accordion-group">*groupe d'accordéons*</modul-go> (m-accordion-group). Cette page fournit toute l'information sur l'utilisation et les caractéristiques de l'*accordéon*.
+Ce composant s'utilise habituellemente avec le composant <modul-go name="m-accordion-group">*groupe d'accordéons*</modul-go> (m-accordion-group). Cette page fournit toute l'information sur l'utilisation et les caractéristiques de l'accordéon.

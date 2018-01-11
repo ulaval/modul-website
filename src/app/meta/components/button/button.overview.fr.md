@@ -3,7 +3,7 @@ Un bouton permet de poser une action dans le site et peut contenir un libellé, 
 <modul-do>
     <ul>
         <li>L'utilisation d'un bouton est recommandée lorsque l'utilisateur doit poser une action dans le site. Une action permet généralement de débuter, de poursuivre ou d'annuler un processus. Si l'utilisateur désire consulter du contenu dans le site, on utilise un <modul-go name="m-link">lien</modul-go> plutôt qu'un bouton.</li>
-        <li>Si une icône est utilisé sans libellé l'utilisation du composant <modul-go name="m-icon-button">bouton icône</modul-go> est recommandé</li>
+        <li>Si une icône est utilisé sans libellé l'utilisation du composant <modul-go name="m-icon-button">*bouton icône*</modul-go> est recommandé</li>
     </ul>
 </modul-do>
 
@@ -14,7 +14,7 @@ Un bouton permet de poser une action dans le site et peut contenir un libellé, 
 Un bouton primaire est utilisé pour mettre l'emphase sur la tâche principale ou l'action qui devrait être effectuée par l'utilisateur. Généralement, on retrouve un seul bouton primaire par interface.
 
 #### Secondaire
-Un bouton secondaire peut être utilisé pour toute autre action pouvant être effectuée, mais sur laquelle aucune emphase n'est mise. De plus, il peut y avoir plusieurs boutons secondaire dans l'interface.
+Un bouton secondaire peut être utilisé pour toute autre action pouvant être effectuée, mais sur laquelle aucun accent n'est mis. De plus, il peut y avoir plusieurs boutons secondaires dans l'interface.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### États
@@ -24,7 +24,7 @@ Trois états sont possibles pour les boutons :
 * **Désactivé&nbsp;:** les actions sur le bouton sont désactivés, il ne peut pas être utilisé.
 
 #### En attente d'un traitement
-Dans certains cas, lors de la soumission d'un formulaire par exemple, il est important que le bouton soit "désactivé" temporairement jusqu'à ce que le traitement soit exécuté. Durant cette période, le bouton adopte un visuel "délavé" afin d'indiquer à l'utilisateur que la requête est en traitement et que le bouton ne peut être cliqué à nouveau. Ce comportement est possible autant pour un bouton primaire que secondaire.
+Dans certains cas, lors de la soumission d'un formulaire, par exemple, il est important que le bouton soit « désactivé » temporairement jusqu'à ce que le traitement soit exécuté. Durant cette période, le bouton adopte un visuel délavé afin d'indiquer à l'utilisateur que la requête est en traitement et que le bouton ne peut être cliqué à nouveau. Ce comportement est possible autant pour un bouton primaire que secondaire.
 
 #### Désactivé
 Généralement, le bouton n'est pas désactivé. En effet, le bouton demeure actif et un message d’erreur est affiché suite au clique. Comme dans le cas des validations d'un formulaire.
@@ -39,8 +39,8 @@ Le bouton peut être accompagné d'une icône positionnée soit à droite ou gau
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Présélection
-Règle générale, le bouton primaire est présélectionné. Si l'utilisateur appuie sur la touche "Entrée" sur son clavier, l'action du bouton présélectionné sera exécutée. S'il n'y a aucun bouton primaire dans l'interface, aucun bouton n'est présélectionné.
-Dans certains cas, si l'action principale est jugée dangereuse, aucun bouton n'est présélectionné. En effet dans ces situations, il est préférable que l'utilisateur sélectionne lui-même l'action, plutôt que de l'activer en appuyant accidentellement sur la touche "Entrée".
+Règle générale, le bouton primaire est présélectionné. Si l'utilisateur appuie sur la touche « Entrée » sur son clavier, l'action du bouton présélectionné sera exécutée. S'il n'y a aucun bouton primaire dans l'interface, aucun bouton n'est présélectionné.
+Dans certains cas, si l'action principale est jugée dangereuse, aucun bouton n'est présélectionné. En effet dans ces situations, il est préférable que l'utilisateur sélectionne lui-même l'action, plutôt que de l'activer en appuyant accidentellement sur la touche « Entrée ».
 
 ### Disposition
 * Les boutons sont alignés à gauche lorsqu'ils suivent un formulaire, dans les autres cas ils sont centrés.
