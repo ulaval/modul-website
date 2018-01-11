@@ -1,4 +1,4 @@
-## Version 1.0.0-beta.2 - 28&nbsp;novembre&nbsp2017
+## Version 1.0.0-beta.2 - 28&nbsp;novembre&nbsp;2017
 La version 1.0.0-beta.2 comportent les changements suivants&nbsp;:
 * Ajout d'une propriété étiquette au composant m-radio-goup.
 * Correction au composant <modul-go name="m-dropdown"></modul-go> qui appelait le «&nbsp;change event&nbsp;» deux fois dans certains cas.
