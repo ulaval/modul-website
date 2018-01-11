@@ -1,3 +1,4 @@
-<m-link class="modul-go" :url="URL">
-    <slot></slot>
-</m-link>
+<span class="modul-go">
+    <m-link :url="URL"><slot>{{ label }}</slot></m-link><span v-if="!defaultSlot() && meta"> {{ tag }}</span>
+</span>
+
