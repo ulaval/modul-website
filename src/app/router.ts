@@ -178,7 +178,7 @@ Meta.getCategories().forEach(category => {
 
 GettingStarted.getPages().forEach((page, index) => {
     gettingStartedRoutes.push({
-        path: ROUTES[page],
+        path: `/${ROUTES[GETTING_STARTED]}/${ROUTES[page]}`,
         meta: { page: page, sectionObj: GettingStarted },
         component: PageDetails
     });
@@ -190,7 +190,7 @@ GettingStarted.getPages().forEach((page, index) => {
 
         tabs.forEach(tab => {
             gettingStartedRoutes[index].children.push({
-                path: ROUTES[tab],
+                path: `/${ROUTES[GETTING_STARTED]}/${ROUTES[page]}/${ROUTES[tab]}`,
                 meta: { page: page, sectionObj: GettingStarted, tab: tab },
                 component: PageTab
             });
@@ -205,7 +205,7 @@ GettingStarted.getPages().forEach((page, index) => {
 
 Standards.getPages().forEach((page, index) => {
     standardsRoutes.push({
-        path: ROUTES[page],
+        path: `/${ROUTES[STANDARDS]}/${ROUTES[page]}`,
         meta: { page: page, sectionObj: Standards },
         component: PageDetails
     });
@@ -217,7 +217,7 @@ Standards.getPages().forEach((page, index) => {
 
         tabs.forEach(tab => {
             standardsRoutes[index].children.push({
-                path: ROUTES[tab],
+                path: `/${ROUTES[STANDARDS]}/${ROUTES[page]}/${ROUTES[tab]}`,
                 meta: { page: page, sectionObj: Standards, tab: tab },
                 component: PageTab
             });
