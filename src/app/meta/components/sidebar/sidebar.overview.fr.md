@@ -1,4 +1,4 @@
-Une fenêtre coulissante permet d'afficher de l'information par-dessus une portion du contenu principal. Il est possible de paramètrer l'ouverture de la fenêtre selon des points d'origine.
+Une *fenêtre coulissante* permet d'afficher de l'information par-dessus une portion du contenu principal. Il est possible de paramètrer l'ouverture de la fenêtre selon des points d'origine.
 ### Options d'ouverture
 
 **Ouverture du haut vers le bas**

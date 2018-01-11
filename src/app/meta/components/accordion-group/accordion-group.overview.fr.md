@@ -1,6 +1,6 @@
-Un accordéon permet de grouper du contenu sous différentes rubriques d'un même sujet et permet d'afficher ou masquer le contenu selon les besoins de l'utilisateur.
+Un *accordéon* permet de grouper du contenu sous différentes rubriques d'un même sujet et permet d'afficher ou masquer le contenu selon les besoins de l'utilisateur.
 
-Ce composant doit être utilisé avec le composant <modul-go name="m-accordion">accordéon</modul-go> (m-accordion).
+Ce composant doit être utilisé avec le composant <modul-go name="m-accordion">*accordéon*</modul-go> (m-accordion).
 
 <modul-do>
     <ul>
@@ -15,7 +15,7 @@ Ce composant doit être utilisé avec le composant <modul-go name="m-accordion">
 
 ## Caractéristiques
 ### Ouverture non simultanée
-L'option *Tout ouvrir* est disponible dès qu'il y a plus d'une rubrique dans l'accordéon et que les rubriques peuvent être ouvertes simultanément. Elle est visible tant et aussi longtemps que toutes les rubriques ne sont pas toutes ouvertes. Dès qu'elles sont toute ouvertes, cette option est remplacée par *Tout fermer*.
+L'option **Tout ouvrir** est disponible dès qu'il y a plus d'une rubrique dans l'accordéon et que les rubriques peuvent être ouvertes simultanément. Elle est visible tant et aussi longtemps que toutes les rubriques ne sont pas toutes ouvertes. Dès qu'elles sont toute ouvertes, cette option est remplacée par **Tout fermer**.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Ouverture simultanée
