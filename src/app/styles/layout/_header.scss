@@ -16,12 +16,8 @@
 
                 &:hover,
                 &:focus,
-                &.router-link-active {
+                &.m--is-active {
                     color: $m-color--white;
-                }
-
-                &.router-link-active::after {
-                    background-color: $m-color--active;
                 }
 
                 &:hover::after {
@@ -40,9 +36,15 @@
         }
     }
 
-    &:not(.modul--is-menu-open):not(.modul--is-black-template) {
+    &.modul--is-light-template:not(.modul--is-menu-open) {
         .modul-header {
             box-shadow: $m-box-shadow--s;
+
+            &__nav__link {
+                &.m--is-active {
+                    color: $modul-color--black-grey-dark;
+                }
+            }
         }
     }
 }
@@ -90,7 +92,6 @@
 
         &__link {
             font-weight: $m-font-weight--black;
-            font-size: $m-font-size--s;
             text-transform: uppercase;
             text-decoration: none;
             transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
@@ -98,7 +99,7 @@
 
             &,
             &:visited {
-                color: $modul-color--grey-darker;
+                color: $modul-color--grey-dark;
             }
 
             &:hover,
@@ -153,7 +154,7 @@
         font-weight: $m-font-weight--black;
         color: $modul-color--black-grey-dark;
         background: $m-color--ul-yellow;
-        padding: 0 3px;
+        padding: 2px 3px;
     }
 }
 

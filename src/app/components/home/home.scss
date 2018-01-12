@@ -116,7 +116,7 @@ $modul-home-design--width--l: 270px;
                 margin-bottom: 4px;
 
                 @media (min-width: $m-mq--min--xs) {
-                    font-size: 37px;
+                    font-size: 43px;
                 }
             }
 
@@ -127,7 +127,7 @@ $modul-home-design--width--l: 270px;
                 background: $modul-color--yellow;
                 font-weight: $m-font-weight--black;
                 font-size: 48px;
-                padding: 10px 0;
+                padding: 13px 14px 14px 14px; // Magic number
                 text-align: center;
                 display: inline-block;
                 min-width: $modul-home-design--width;
@@ -440,16 +440,25 @@ $modul-home-design--width--l: 270px;
         }
     }
 
-    .m-panel {
+    &__panel {
         transition: transform $m-transition-duration ease, box-shadow $m-transition-duration ease;
         width: 100%;
         margin-bottom: $m-padding;
         cursor: pointer;
         outline: none;
+        border-top: 4px solid $m-color--ul-yellow;
+        padding: $m-padding;
+        background-color: $m-color--white;
+        box-shadow: $m-box-shadow;
+
+        header > :first-child {
+            margin-top: 0;
+        }
 
         @media (min-width: $m-mq--min--s) {
             width: calc(50% - #{$m-padding});
             margin-bottom: $m-padding--l;
+            padding: $m-padding--l;
         }
 
         &:hover,

@@ -1,4 +1,4 @@
-Outre leur fonction esthétique, les couleurs établissent un «système visuel»  (design system), c’est-à-dire un code  donnant des indications à l’utilisateur sur les fonctions, les  comportements et l'utilisation des éléments d’interface. Ainsi, les couleurs peuvent servir à illustrer des états (p. ex. actif, publié), des comportements (p. ex. éléments cliquables) ou pour mettre l’accent sur des éléments de contenu (p. ex. message d’erreur, message d’avertissement). Un choix de couleurs judicieux et cohérent d’une page à une autre facilite l’apprentissage du système visuel par l’utilisateur, puisque les couleurs sont invariablement associées à un même type de comportement ou à un même type d’état.
+Outre leur fonction esthétique, les couleurs établissent un «&nbsp;système visuel&nbsp;»  (design system), c’est-à-dire un code  donnant des indications à l’utilisateur sur les fonctions, les  comportements et l'utilisation des éléments d’interface. Ainsi, les couleurs peuvent servir à illustrer des états (p. ex. actif, publié), des comportements (p. ex. éléments cliquables) ou pour mettre l’accent sur des éléments de contenu (p. ex. message d’erreur, message d’avertissement). Un choix de couleurs judicieux et cohérent d’une page à une autre facilite l’apprentissage du système visuel par l’utilisateur, puisque les couleurs sont invariablement associées à un même type de comportement ou à un même type d’état.
 
 ## Couleurs officielles de l’Université Laval
 Trois couleurs forment l’identité visuelle de l’Université Laval :  le bleu, le jaune et le rouge.  Les normes graphiques UL régissent l’utilisation de ces couleurs  et elles  doivent être respectées.
@@ -77,7 +77,7 @@ Utilisation : accentuer un élément ou une nouveauté
     <tbody>
         <tr>
             <td>$m-color--accent-dark</td>
-            <td style="background:#d07300">#d07300</td>
+            <td style="background:#ed8514">#ed8514</td>
         </tr>
         <tr>
             <td>$m-color--accent</td>
@@ -107,7 +107,7 @@ Utilisation :  états (p. ex. action en cours,  sélectionné)
     <tbody>
         <tr>
             <td>$m-color--active-dark</td>
-            <td style="background:#e0a207">#e0a207</td>
+            <td style="background:#edaf00">#edaf00</td>
         </tr>
         <tr>
             <td>$m-color--active</td>
@@ -137,19 +137,19 @@ Utilisation : message de succès, indicateur de réussite, état publié
     <tbody>
         <tr>
             <td>$m-color--success-dark</td>
-            <td style="background:#14a555">#14a555</td>
+            <td style="background:#55b26c">#55b26c</td>
         </tr>
         <tr>
             <td>$m-color--success</td>
-            <td style="background:#13bf69">#13bf69</td>
+            <td style="background:#1dcd8d">#1dcd8d</td>
         </tr>
         <tr>
             <td>$m-color--success-light</td>
-            <td style="background:#17c96b">#17c96b</td>
+            <td style="background:#50e2a7">#50e2a7</td>
         </tr>
         <tr>
             <td>$m-color--success-lightest</td>
-            <td style="background:#dcf9e9">#dcf9e9</td>
+            <td style="background:#abe5c3">#abe5c3</td>
         </tr>
     </tbody>
 </table>
@@ -167,7 +167,7 @@ Utilisation : avertissement
     <tbody>
         <tr>
             <td>$m-color--warning-dark</td>
-            <td style="background:#e0a207">#e0a207</td>
+            <td style="background:#edaf00">#edaf00</td>
         </tr>
         <tr>
             <td>$m-color--warning</td>
@@ -197,7 +197,7 @@ Utilisation : message d’erreur, indicateur d’échec, état (non publié, con
     <tbody>
         <tr>
             <td>$m-color--error-dark</td>
-            <td style="background:#ca0000">#ca0000</td>
+            <td style="background:#cc0000">#cc0000</td>
         </tr>
         <tr>
             <td>$m-color--error</td>
@@ -205,49 +205,11 @@ Utilisation : message d’erreur, indicateur d’échec, état (non publié, con
         </tr>
         <tr>
             <td>$m-color--error-light</td>
-            <td style="background:#e33642">#e33642</td>
+            <td style="background:#f7081f">#f7081f</td>
         </tr>
         <tr>
             <td>$m-color--error-lightest</td>
             <td style="background:#ffdcdc">#ffdcdc</td>
-        </tr>
-    </tbody>
-</table>
-
-## Couleurs d’arrière-plan
-Utilisation : arrière-plan
-
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$m-color--grey-darker</td>
-            <td style="background:#999">#999</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey-dark</td>
-            <td style="background:#b0b0b0">#b0b0b0</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey</td>
-            <td style="background:#dadada">#dadada</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey-light</td>
-            <td style="background:#e8e8e8">#e8e8e8</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey-lighter</td>
-            <td style="background:#f1f1f1">#f1f1f1</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey-lightest</td>
-            <td style="background:#f7f7f7">#f7f7f7</td>
         </tr>
     </tbody>
 </table>
@@ -282,6 +244,30 @@ Utilisation : arrière-plan
         <tr>
             <td>$m-color--black-grey-lighter</td>
             <td style="background:#666; color:#fff">#666</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey-darker</td>
+            <td style="background:#999">#999</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey-dark</td>
+            <td style="background:#b0b0b0">#b0b0b0</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey</td>
+            <td style="background:#dadada">#dadada</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey-light</td>
+            <td style="background:#e8e8e8">#e8e8e8</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey-lighter</td>
+            <td style="background:#f1f1f1">#f1f1f1</td>
+        </tr>
+        <tr>
+            <td>$m-color--grey-lightest</td>
+            <td style="background:#f7f7f7">#f7f7f7</td>
         </tr>
     </tbody>
 </table>

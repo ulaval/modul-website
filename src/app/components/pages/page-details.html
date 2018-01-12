@@ -1,8 +1,8 @@
 <div class="modul-page-details">
     <div class="modul-page" v-if="page">
 
-        <div class="modul-u--navbar">
-            <m-navbar skin="arrow" :value="currentTab">
+        <div class="modul-u--navbar" v-if="tabs.length > 1">
+            <m-navbar skin="arrow" :arrow-mobile="false" v-model="currentTab" >
                 <m-navbar-item :value="tab" v-for="tab in tabs" @click="onClick(tab)">
                     <router-link :to="getRoute(tab)" class="modul-u--navbar__item">
                         <m-i18n :k="getKey(tab)"></m-i18n>
@@ -11,7 +11,7 @@
             </m-navbar>
         </div>
 
-        <div class="modul-page-details__body">
+        <div class="modul-page-details__body" :class="{ 'modul--no-mavbar': tabs.length < 2 }">
             <router-view></router-view>
         </div>
     </div>

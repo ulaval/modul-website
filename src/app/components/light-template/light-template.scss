@@ -6,7 +6,7 @@
     max-width: $modul-max-width;
 
     @media (min-width: $m-mq--min--s) {
-        padding: 0 $m-padding--l $m-padding--l $m-padding--l;
+        padding: 0 $m-padding--l $m-padding--xl $m-padding--l;
     }
 
     &::before,
@@ -81,12 +81,14 @@
         background: $modul-color--grey;
 
         &::before {
-            position: absolute;
-            top: - $m-touch-size * 1.5;
-            width: 100%;
-            height: $m-touch-size * 1.5;
-            background: linear-gradient(transparent, #{$modul-color--grey});
-            content: '';
+            @media (min-width: #{$m-mq--min--s}) {
+                position: absolute;
+                top: - $m-touch-size * 1.5;
+                width: 100%;
+                height: $m-touch-size * 1.5;
+                background: linear-gradient(transparent, #{$modul-color--grey});
+                content: '';
+            }
         }
 
         &__arrow-left,

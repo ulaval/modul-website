@@ -1,1 +1,1 @@
-<m-spinner title="Chargement en cours"></m-spinner>
+<m-spinner :title="true" :description="true"></m-spinner>

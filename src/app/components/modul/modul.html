@@ -1,17 +1,18 @@
-<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHome, 'modul--is-black-template' : isBlackHeader, 'modul--is-light-template' : !isBlackHeader}"
+<m-flex-template class="modul" :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHomePage, 'modul--is-black-template' : isBlackHeader, 'modul--is-light-template' : !isBlackHeader}"
     :dynamic-header="false">
     <div slot="header" ref="header" class="modul-header">
-        <h1 v-if="isHome" class="modul-logo">
-            <router-link to="/">MOD
+        <h1 v-if="isHomePage" class="modul-logo">
+            <a href="#" @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
                 <span class="modul-logo__beta">Beta</span>
-            </router-link>
+            </a>
         </h1>
-        <span v-if="!isHome" class="modul-logo">
-            <router-link to="/">MOD
+        {{isComponentPage}}
+        <span v-if="!isHomePage" class="modul-logo">
+            <a href="#" @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
                 <span class="modul-logo__beta">Beta</span>
-            </router-link>
+            </a>
         </span>
 
         <nav class="modul-header__nav">
@@ -21,17 +22,17 @@
             </a>
             <ul v-if="isMqMinS">
                 <li>
-                    <router-link :to="gettingStarted" class="modul-header__nav__link">
+                    <a href="#" @click.prevent="navigateTo($event, 'gettingStarted')" class="modul-header__nav__link" :class="{ 'm--is-active' : isGettingStartedPage }">
                         <m-i18n k="modul:getting-started"></m-i18n>
-                    </router-link>
+                    </a>
                 </li>
                 <li>
-                    <a href="#" @click.prevent="showMenu('components')" class="modul-header__nav__link">
+                    <a href="#" @click.prevent="navigateTo($event, 'components')" class="modul-header__nav__link" :class="{ 'm--is-active' : isComponentsPage }">
                         <m-i18n k="modul:components"></m-i18n>
                     </a>
                 </li>
                 <li>
-                    <a href="#" @click.prevent="showMenu('standards')" class="modul-header__nav__link">
+                    <a href="#" @click.prevent="navigateTo($event, 'standards')" class="modul-header__nav__link" :class="{ 'm--is-active' : isStandardsPage }">
                         <m-i18n k="modul:standards"></m-i18n>
                     </a>
                 </li>
@@ -53,29 +54,29 @@
                 <m-icon name="search" svg-title="Rechercher"></m-icon>
                 <input type="text" v-model="searchModel" placeholder="Rechercher" value="Rechercher un composant" class="modul-search__header__input">
                 <button @click="toggleSearch" class="modul-search__header__close-button m-u--button-primary">
-                    <m-icon name="search"></m-icon>
+                    <m-icon name="default"></m-icon>
                 </button>
             </div>
             <transition-group name="modul--is" tag="ul">
                 <li tabindex="0" class="modul-search-card" @click="onComponentClick(item.tag)" @keyup.enter="onComponentClick(item.tag)"
-                    v-for="item in searchResult" key="item.tag">
-                    <div class="modul-search-card__figure">
-                        <!-- <img src=/assets/accordion.png alt="" aria-hidden="true"> -->
+                    v-for="item in searchResult" key="item.tag" v-if="item.category">
+                    <div class="modul-search-card__img" aria-hidden="true">
+                        <m-icon size="90px" :name="item.tag"></m-icon>
                     </div>
                     <div class="modul-search-card__content">
-
-                        <p class="m-u--h4 m-u--no-margin-top">{{ item.text }}</p>
-                        <p class="modul-search-card__subtitle">{{ item.category }}</p>
+                        <p class="modul-search-card__content__category">{{ item.category }}</p>
+                        <h2 class="modul-search-card__content__title modul-u--h3">{{ item.text }}</h2>
+                        <p class="modul-search-card__content__tagname">{{ item.tag }}</p>
                     </div>
                 </li>
             </transition-group>
         </m-sidebar>
     </div>
     <transition name="modul--is">
-        <section class="modul-menu" v-if="headerAnimationCompleted" tabindex="0" ref="menu">
-            <template v-if="isMqMinS">
-                <nav class="modul-menu__list" v-for="category in categoriesComponent" v-if="section == 'components'">
-                    <h2 @click="onComponentCategoryClick($event, category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
+        <section class="modul-menu" v-if="animMenuOpen" tabindex="0" ref="menu">
+            <div class="modul-menu__wrap" v-if="isMqMinS">
+                <nav class="modul-menu__list" v-for="category in categoriesComponent" v-if="menuSection == 'components'">
+                    <h2 @click="onComponentCategoryClick(category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
                         <span>{{category.text}}</span>
                     </h2>
                     <ul>
@@ -87,12 +88,12 @@
                         </li>
                     </ul>
                 </nav>
-                <nav class="modul-menu__list" v-for="page in pagesStandards" v-if="section != 'components'">
-                    <h2 @click="onPageClick(page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
+                <nav class="modul-menu__list" v-for="page in pagesStandards" v-if="menuSection != 'components'">
+                    <h2 @click="onPageClick($event, page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
                         <span>{{page.text}}</span>
                     </h2>
                 </nav>
-            </template>
+            </div>
             <template v-if="!isMqMinS">
                 <transition name="modul--is">
                     <nav class="modul-mobile-menu modul--is-first-step" v-if="menuFirstStep">
@@ -118,26 +119,26 @@
                     </nav>
                     <div class="modul-mobile-menu modul--is-second-step" v-if="!menuFirstStep">
                         <header class="modul-mobile-menu__header">
-                            <m-link mode="button" icon-name="left-arrow" @click="showFirstStep">Menu</m-link>
+                            <m-link mode="button" :underline="false" icon-name="left-arrow" @click="showFirstStep">Menu</m-link>
                         </header>
                         <div class="modul-mobile-menu__body">
-                            <m-accordion class="modul-mobile-menu__elem" skin="plein" v-for="category in categoriesComponent" v-if="section == 'components'">
+                            <m-accordion class="modul-mobile-menu__elem" skin="plain" v-for="category in categoriesComponent" v-if="menuSection == 'components'">
                                 <h2 slot="header">
-                                    <span @click="onComponentCategoryClick($event, category)">{{category.text}}</span>
+                                    <span @click="onComponentCategoryClick(category)">{{category.text}}</span>
                                 </h2>
                                 <ul>
                                     <li v-for="component in getCategoryComponents(category.id)">
-                                        <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
+                                        <a href="#" @click.prevent="onComponentClick(component.tag)" class="modul-menu__link">
                                             <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
                                             <span class="modul-menu__tag">{{ component.tag }}</span>
                                         </a>
                                     </li>
                                 </ul>
                             </m-accordion>
-                            <nav v-if="section != 'components'">
+                            <nav v-if="menuSection != 'components'">
                                 <ul>
                                     <li v-for="page in pagesStandards" class="modul-mobile-menu__elem">
-                                        <a href="#" @click="onPageClick(page, 'standards')" class="modul-mobile-menu__elem__link">
+                                        <a href="#" @click="onPageClick($event, page, 'standards')" class="modul-mobile-menu__elem__link">
                                             <span>{{page.text}}</span>
                                         </a>
                                     </li>

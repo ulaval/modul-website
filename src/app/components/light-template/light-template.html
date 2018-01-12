@@ -1,8 +1,6 @@
 <section class="modul-light-template">
     <header class="modul-light-template__header" :style="{'zIndex' : zIndex}">
-        <span class="modul-light-template__header__back-link" v-if="hasBacklinkSlot">
-            <slot name="backlink"></slot>
-        </span>
+        <span class="modul-light-template__header__back-link" v-if="hasBacklinkSlot"><slot name="backlink"></slot></span>
         <div class="modul-light-template__header__title" v-if="hasHeaderSlot">
             <slot name="header"></slot>
         </div>

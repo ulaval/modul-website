@@ -12,8 +12,6 @@ $modul-menu--list-max-width: 300px;
     z-index: 99;
     overflow-y: auto;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
     background: $modul-color--black-grey;
     color: $modul-color--grey-light;
     outline: none;
@@ -24,8 +22,12 @@ $modul-menu--list-max-width: 300px;
     }
 
     @media (min-width: #{$m-mq--min--s}) {
-        flex-wrap: wrap;
-        padding: $m-padding--l*2 $m-padding--l $m-padding--l*2 $m-padding--l;
+        padding: $m-padding--xl $m-padding;
+    }
+
+    @media (min-width: #{$m-mq--min--l}) {
+        padding-left: $m-padding--xl*2;
+        padding-right: $m-padding--xl*2;
     }
 
     &.modul--is {
@@ -43,18 +45,24 @@ $modul-menu--list-max-width: 300px;
         }
     }
 
+    &__wrap {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
     &__list {
         list-style: none;
-        min-width: $modul-menu--list-max-width;
-        margin: 0 $m-padding $m-padding--l 0;
+        float: left;
+        width: calc(33.33% - #{$m-padding--l});
+        padding: 0 $m-padding $m-padding--xl $m-padding;
 
         &:last-child {
             margin-right: 0;
         }
-    }
 
-    &__title {
-        margin-bottom: $m-margin;
+        ul {
+            margin: $m-margin 0 0 0;
+        }
     }
 
     &__link {

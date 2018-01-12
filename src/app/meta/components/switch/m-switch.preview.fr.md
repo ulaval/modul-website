@@ -1,1 +1,1 @@
-<m-switch></m-switch>
+<m-switch>Activer le calendrier</m-switch>

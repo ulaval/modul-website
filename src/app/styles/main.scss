@@ -39,7 +39,6 @@
     'base/base',
     'base/typography',
     'base/animations',
-    'base/navbar',
     'base/dropdown',
     'base/preview-img';
 
@@ -53,15 +52,11 @@
     'layout/menu';
 
 // ======================================================================
-//  Pages
+//  Utils
 // ======================================================================
-@import 'pages/shared-components-styles';
+@import
+    'utils/navbar';
 
 // ======================================================================
 //  global components
 // ======================================================================
-@import
-    'components/category-list',
-    'components/light-template',
-    'components/dark-template',
-    'components/componant-details';

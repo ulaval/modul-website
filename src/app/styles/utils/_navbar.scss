@@ -4,7 +4,7 @@
 
     &::after {
         position: absolute;
-        bottom: 0;
+        bottom: $m-margin--s; // Magic number
         left: 0;
         right: 0;
         z-index: 0;
@@ -17,9 +17,9 @@
         position: relative;
         z-index: 1;
 
-        &__wrap {
-            background: $m-color--white;
-        }
+        // &__wrap {
+        //     background: $m-color--white;
+        // }
 
         .m-navbar-item.m--is-selected .modul-u--navbar__item {
             color: $modul-color--black-grey-dark;
@@ -27,9 +27,8 @@
     }
 
     &__item {
-        padding: 20px 12px; //Magic Number
+        padding: 20px 0; //Magic Number
         font-weight: $m-font-weight--black;
-        font-size: $m-font-size--s;
         text-transform: uppercase;
         color: $modul-color--grey-dark;
         transition: color $m-transition-duration;

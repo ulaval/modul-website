@@ -3,23 +3,30 @@
 .modul-page-details {
     background-color: $m-color--white;
 
-    .m-navbar {
-        margin: 0 auto;
-        max-width: $modul-max-width;
-        padding: 0 4px; // Magic number
+    .modul-u--navbar {
+        .m-navbar {
+            margin: 0 auto;
+            width: 100%;
+            max-width: $modul-max-width;
+            padding: 0 $m-padding; // Magic number
 
-        @media (min-width: $m-mq--min--s) {
-            padding: 0 20px; // Magic number
+            @media (min-width: $m-mq--min--s) {
+                padding: 0 $m-padding--l; // Magic number
+            }
         }
     }
 
     &__body {
         margin: 0 auto;
         max-width: $modul-max-width;
-        padding: $m-margin $m-padding $m-padding $m-padding;
+        padding: $m-margin $m-padding $m-padding--l $m-padding;
 
         @media (min-width: $m-mq--min--s) {
-            padding: $m-padding $m-padding--l $m-padding--l;
+            padding: $m-padding $m-padding--l $m-padding--xl $m-padding--l;
+        }
+
+        &.modul--no-mavbar {
+            padding-top: $m-padding--l;
         }
     }
 }

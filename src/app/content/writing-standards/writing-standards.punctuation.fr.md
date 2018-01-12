@@ -2,7 +2,7 @@
 La ponctuation répond à un besoin de logique. Elle permet d’avoir des rapports syntaxiques entre les éléments d’une phrase (séparation, regroupement) et de diviser logiquement un texte (transition, explication, opposition). Ainsi, la ponctuation facilite la lecture et la compréhension d’un contenu.
 
 ### Tableau des espacements avant et après les signes de ponctuation
-<table>
+<table class="m-u--margin-top">
     <thead>
         <tr>
             <th>Nom</th>
@@ -205,59 +205,49 @@ La ponctuation répond à un besoin de logique. Elle permet d’avoir des rappor
     </tbody>
 </table>
 
-Pour plus de renseignements, consulter le site de l’<m-link :multi-line="true" href="http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?t1=1&id=2039" target="_blank">Office québécois de la langue française</m-link>.
+Pour plus de renseignements, consulter le site de l’<m-link mode="link" url="http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?t1=1&id=2039" target="_blank">Office québécois de la langue française</m-link>.
 
-* **Espace insécable :** inséc.
-* **Espace :** esp.
-* **Aucun espace :** ⌀
+* **Espace insécable&nbsp;:** inséc.
+* **Espace&nbsp;:** esp.
+* **Aucun espace&nbsp;:** ⌀
 
 ### Énumérations verticales
-Lors de l'utilisation d'une énumération verticale, il est important :
-    <ul class="m-u--bullet-list">
-        <li>D'utiliser les deux-points {:}</li>
-        <li>Si les éléments sont des phrases complètes, chacun commence par une lettre majuscule et se termine par un point :</li>
-     </ul><br/>
-    <m-panel>
-        <ul class="m-u--bullet-list">
-            <li>Pour qu’un site soit considéré « Complet », tous les éléments suivants doivent faire partie du site de cours :
-                <ul>
-                    <li>La sous-section « Coordonnées et disponibilités » ne doit pas être vide.</li>
-                    <li>Une sous-section générique obligatoire ne doit pas être vide.</li>
-                    <li>La somme des évaluations sommatives doit égaler 100%.</li>
-                    <li>Les dates d’évaluations sommatives doivent être présentes.</li>
-                    <li>Aucune pondération d’évaluation ne doit être à zéro à moins de faire partie d’un regroupement de type « Moyenne » ou « Conserver les x meilleures de ».</li>
-                    <li>Un barème doit avoir été sélectionné.</li>
-                    <li>Les sous-sections spécialisées de « Matériel didactique » et de « Médiagraphie et annexes » ne doivent pas être vides si elles sont obligatoires.</li>
-                </ul>
-            </li>
-        </ul><br/>
-    </m-panel>
-    <ul class="m-u--bullet-list">
-        <li>Si l’ensemble des éléments forme une phrase, chaque élément commence par une minuscule et se termine par un point-virgule, sauf le dernier qui prend un point :</li>
-    </ul><br/>
-    <m-panel>
-        <ul class="m-u--bullet-list">
-            <li>Vous devez vous adresser au Bureau du registraire dans les cas suivants :
-                <ul>
-                    <li>l'attestation d'inscription officielle standard ne répond pas à toutes vos exigences;</li>
-                    <li>vous avez en votre possession un formulaire en provenance d'un organisme externe devant être rempli par le personnel du Bureau du registraire;</li>
-                    <li>vous désirez obtenir une attestation d'inscription rédigée en anglais.</li>
-                </ul>
-            </li>
-        </ul><br/>
-    </m-panel>
-    <ul class="m-u--bullet-list">
-        <li>Si les éléments sont très courts, ils peuvent se passer de ponctuation :</li>
-    </ul><br/>
-    <m-panel>
-        <ul class="m-u--bullet-list">
-            <li>Où et quand l'utiliser?
-                <ul>
-                    <li>Au PEPS</li>
-                    <li>À la Bibliothèque</li>
-                    <li>Lors de certains événements, tel un colloque ou un congrès</li>
-                    <li>À certains comptoirs de services sur le campus</li>
-                </ul>
-            </li>
-        </ul>
-    </m-panel>
+Lors de l'utilisation d'une énumération verticale, il est important&nbsp;:
+* D'utiliser les deux-points **(:)**
+* Si les éléments sont des phrases complètes, chacun commence par une lettre majuscule et se termine par un point&nbsp;:
+
+<m-panel class="m-u--margin-top m-u--margin-left--l m-u--margin-bottom--l">
+    <p>Pour qu’un site soit considéré « Complet », tous les éléments suivants doivent faire partie du site de cours&nbsp;: </p>
+    <ul>
+        <li>La sous-section «&nbsp;Coordonnées et disponibilités&nbsp;» ne doit pas être vide.</li>
+        <li>Une sous-section générique obligatoire ne doit pas être vide.</li>
+        <li>La somme des évaluations sommatives doit égaler 100%.</li>
+        <li>Les dates d’évaluations sommatives doivent être présentes.</li>
+        <li>Aucune pondération d’évaluation ne doit être à zéro à moins de faire partie d’un regroupement de type «&nbsp;Moyenne&nbsp;» ou «&nbsp;Conserver les x meilleures de&nbsp;».</li>
+        <li>Un barème doit avoir été sélectionné.</li>
+        <li>Les sous-sections spécialisées de «&nbsp;Matériel didactique&nbsp;» et de « Médiagraphie et annexes » ne doivent pas être vides si elles sont obligatoires.</li>
+    </ul>
+</m-panel>
+
+* Si l’ensemble des éléments forme une phrase, chaque élément commence par une minuscule et se termine par un point-virgule, sauf le dernier qui prend un point&nbsp;:
+
+<m-panel class="m-u--margin-top m-u--margin-left--l m-u--margin-bottom--l">
+    <p>Vous devez vous adresser au Bureau du registraire dans les cas suivants&nbsp;:</p>
+    <ul>
+        <li>l'attestation d'inscription officielle standard ne répond pas à toutes vos exigences;</li>
+        <li>vous avez en votre possession un formulaire en provenance d'un organisme externe devant être rempli par le personnel du Bureau du registraire;</li>
+        <li>vous désirez obtenir une attestation d'inscription rédigée en anglais.</li>
+    </ul>
+</m-panel>
+
+* Si les éléments sont très courts, ils peuvent se passer de ponctuation&nbsp;:
+
+<m-panel class="m-u--margin-top m-u--margin-left--l">
+    <p>Où et quand l'utiliser?</p>
+    <ul>
+        <li>Au PEPS</li>
+        <li>À la Bibliothèque</li>
+        <li>Lors de certains événements, tel un colloque ou un congrès</li>
+        <li>À certains comptoirs de services sur le campus</li>
+    </ul>
+</m-panel>

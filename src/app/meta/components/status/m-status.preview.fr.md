@@ -1,5 +1,5 @@
 <ul>
-    <m-status status="completed">m-status 1</m-status>
-    <m-status status="pending">m-status 2</m-status>
-    <m-status status="error">m-status 3</m-status>
+    <m-status status="completed">État complété</m-status>
+    <m-status status="pending">État en attente</m-status>
+    <m-status status="error">État en erreur</m-status>
 </ul>

@@ -1,44 +1,14 @@
 @import '../../styles/shared-styles';
+@import '../../styles/components/do-dont';
 
-.modul-do-dont {
-    padding: 0 0 0 $m-padding;
-    border-left: $m-border-width--l solid;
-    margin-top: $m-margin;
-
-    &.modul--is-mode-do {
-        border-color: $m-color--success;
-
-        .modul-do-dont {
-            &__header {
-                color: $m-color--success;
-            }
-        }
-    }
-
-    &.modul--is-mode-dont {
-        border-color: $m-color--error;
-
-        .modul-do-dont {
-            &__header {
-                color: $m-color--error;
-            }
-        }
-    }
+.modul-do {
+    border-color: $m-color--success;
 
     &__header {
-        margin: 0;
-        text-transform: uppercase;
-        font-size: $m-font-size--xs;
+        color: $m-color--success !important;
     }
 
-    &__body {
-        margin-top: $m-margin--s;
-
-        > :first-child {
-            &,
-            > :first-child {
-                margin-top: 0;
-            }
-        }
+    ul li::before {
+        @include m-triangle(right, $m-color--success, 10px);
     }
 }

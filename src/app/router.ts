@@ -7,13 +7,12 @@ import { ComponentViewer } from './components/libs/component';
 import { ComponentDetails } from './components/libs/component-details';
 import { ComponentOverview } from './components/libs/component-overview';
 import { ComponentProperties } from './components/libs/component-properties';
-import { ComponentVariants } from './components/libs/component-variants';
 import { PageViewer } from './components/pages/pages';
 import { PageDetails } from './components/pages/page-details';
 import { PageTab } from './components/pages/page-tab';
 import Meta from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, {
-    CATEGORY_COMUNICATION, CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_INDICATORS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_SEARCH_SORT
+    CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_WINDOWS
 } from './meta/meta-all';
 import { Standards, GettingStarted } from '@/app/components/pages/page';
 import { log } from 'util';
@@ -56,7 +55,7 @@ export const COMPONENT_PROPERTIES: string = 'COMPONENT_PROPERTIES';
 export const COMPONENT_OVERVIEW: string = 'COMPONENT_OVERVIEW';
 export const COMPONENT_VARIANT: string = 'COMPONENT_VARIANT';
 
-export const GETTING_STARTED_FR: string = 'demarrer-modul';
+export const GETTING_STARTED_FR: string = 'premier-pas';
 export const GETTING_STARTED_COMPUTER_SETUP_FR: string = 'poste-developpeur';
 export const GETTING_STARTED_SOURCE_CODE_FR: string = 'github';
 export const GETTING_STARTED_FRONTEND_ARCHITECTURE_FR: string = 'architecture-frontend';
@@ -64,9 +63,9 @@ export const GETTING_STARTED_RELEASE_TRACKING_FR: string = 'suivi-versions';
 export const COMPONENTS_FR: string = 'composants';
 export const STANDARDS_FR: string = 'normes';
 export const UNIFIED_EXPERIENCE_FR: string = 'experience-unifiee';
-export const UNIFIED_EXPERIENCE_OVERVIEW_FR: string = 'vue-globale-experience-unifiee';
+export const UNIFIED_EXPERIENCE_OVERVIEW_FR: string = '';
 export const RESPONSIVE_DESIGN_FR: string = 'design-adaptatif';
-export const RESPONSIVE_DESIGN_OVERVIEW_FR: string = 'vue-globale-design-adaptatif';
+export const RESPONSIVE_DESIGN_OVERVIEW_FR: string = '';
 export const WRITING_STANDARDS_FR: string = 'normes-editoriales';
 export const WRITING_STANDARDS_EDITORIAL_TONE_FR: string = 'ton-redactionnel';
 export const WRITING_STANDARDS_FORMAT_FR: string = 'formats';
@@ -84,17 +83,14 @@ export const CODING_STANDARDS_CSS_SASS_FR: string = 'css-sass';
 export const CODING_STANDARDS_TYPESCRIPT_FR: string = 'typescript';
 export const ECOSYSTEM_FR: string = 'ecosysteme';
 
-export const CATEGORY_COMMUNICATION_FR: string = 'communication';
 export const CATEGORY_CONTENT_FR: string = 'contenu';
 export const CATEGORY_FORMS_FR: string = 'formulaires';
-export const CATEGORY_INDICATORS_FR: string = 'indicateurs';
 export const CATEGORY_LAYOUT_FR: string = 'disposition';
 export const CATEGORY_NAVIGATION_FR: string = 'navigation';
-export const CATEGORY_SEARCH_SORT_FR: string = 'recherche-tri';
+export const CATEGORY_WINDOWS_FR: string = 'fenetres';
 
 export const COMPONENT_PROPERTIES_FR: string = 'proprietes';
 export const COMPONENT_OVERVIEW_FR: string = 'portrait';
-export const COMPONENT_VARIANT_FR: string = 'variants';
 
 export const ROUTES: RoutePathMap = {
     [GETTING_STARTED]: GETTING_STARTED_FR,
@@ -126,13 +122,11 @@ export const ROUTES: RoutePathMap = {
     [ECOSYSTEM]: ECOSYSTEM_FR,
     [COMPONENT_PROPERTIES]: COMPONENT_PROPERTIES_FR,
     [COMPONENT_OVERVIEW]: COMPONENT_OVERVIEW_FR,
-    [COMPONENT_VARIANT]: COMPONENT_VARIANT_FR,
-    [CATEGORY_COMUNICATION]: CATEGORY_COMMUNICATION_FR,
     [CATEGORY_CONTENT]: CATEGORY_CONTENT_FR,
     [CATEGORY_FORMS]: CATEGORY_FORMS_FR,
-    [CATEGORY_INDICATORS]: CATEGORY_INDICATORS_FR,
     [CATEGORY_LAYOUT]: CATEGORY_LAYOUT_FR,
-    [CATEGORY_NAVIGATION]: CATEGORY_NAVIGATION_FR
+    [CATEGORY_NAVIGATION]: CATEGORY_NAVIGATION_FR,
+    [CATEGORY_WINDOWS]: CATEGORY_WINDOWS_FR
 };
 
 const modulRoutes: RouteConfig[] = [];
@@ -166,11 +160,6 @@ Meta.getCategories().forEach(category => {
                     component: ComponentProperties
                 },
                 {
-                    path: ROUTES[COMPONENT_VARIANT],
-                    meta: { page: componentMeta.tag },
-                    component: ComponentVariants
-                },
-                {
                     path: ROUTES[COMPONENT_OVERVIEW],
                     meta: { page: componentMeta.tag },
                     component: ComponentOverview
@@ -186,7 +175,7 @@ Meta.getCategories().forEach(category => {
 
 GettingStarted.getPages().forEach((page, index) => {
     gettingStartedRoutes.push({
-        path: ROUTES[page],
+        path: `/${ROUTES[GETTING_STARTED]}/${ROUTES[page]}`,
         meta: { page: page, sectionObj: GettingStarted },
         component: PageDetails
     });
@@ -198,7 +187,7 @@ GettingStarted.getPages().forEach((page, index) => {
 
         tabs.forEach(tab => {
             gettingStartedRoutes[index].children.push({
-                path: ROUTES[tab],
+                path: `/${ROUTES[GETTING_STARTED]}/${ROUTES[page]}/${ROUTES[tab]}`,
                 meta: { page: page, sectionObj: GettingStarted, tab: tab },
                 component: PageTab
             });
@@ -213,7 +202,7 @@ GettingStarted.getPages().forEach((page, index) => {
 
 Standards.getPages().forEach((page, index) => {
     standardsRoutes.push({
-        path: ROUTES[page],
+        path: `/${ROUTES[STANDARDS]}/${ROUTES[page]}`,
         meta: { page: page, sectionObj: Standards },
         component: PageDetails
     });
@@ -225,7 +214,7 @@ Standards.getPages().forEach((page, index) => {
 
         tabs.forEach(tab => {
             standardsRoutes[index].children.push({
-                path: ROUTES[tab],
+                path: `/${ROUTES[STANDARDS]}/${ROUTES[page]}/${ROUTES[tab]}`,
                 meta: { page: page, sectionObj: Standards, tab: tab },
                 component: PageTab
             });

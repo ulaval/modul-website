@@ -1,12 +1,14 @@
-L’utilisation des styles CSS (classe CSS utilitaire) permet de personnaliser les balises HTML, d’ajouter des styles manquants à un élément ou d’écraser un autre style. Lorsqu’un style a une portée délimitée (style scope), il se peut que les classes CSS ne fonctionnent pas selon le contexte.
+Les *styles utilitaire* (classe <abbr title="Cascading Style Sheets">CSS</abbr> utilitaire) permettent de personnaliser les balises <abbr title="HyperText Markup Language">HTML</abbr>, d’ajouter des styles manquants à un élément ou d’écraser un autre style. Lorsque les styles d'un élément dans le <abbr title="HyperText Markup Language">HTML</abbr> changent en fonction <modul-go name="responsive-design">des points de rupture</modul-go>, l'utilisation des styles utilitaire est à proscrire.
 
 ## Nomenclature
-Les classes CSS utilitaires sont toujours préfixer par «m-u» suivi de « -- ». La lettre « m » identifie l’élément à la librairie « modUL » et le « u » indique qu’il s’agit d’une classe utilitaire. Ces classes sont également parfois suffixées par&nbsp;:
-* «&nbsp;--xl&nbsp;» pour indiquer très large
-* «&nbsp;--l&nbsp;»  pour indiquer large
-* «&nbsp;--s&nbsp;»  pour indiquer petit
-* «&nbsp;--xs&nbsp;»  pour indiquer très petit
+La nomenclature des *styles utilitaires* de modUL facilite la lecture et la distinction des classes <abbr title="Cascading Style Sheets">CSS</abbr>. Il est important de suivre cette nomenclature pour créer tout autres *styles utilitaires*.
 
-Ce choix de nomenclature des styles utilitaires facilite la lecture et la distinction des classes CSS.
+### Préfixe
+Les classes <abbr title="Cascading Style Sheets">CSS</abbr> utilitaires sont toujours préfixer par **«&nbsp;m-u--&nbsp;»**. La lettre **«&nbsp;m&nbsp;»** identifie l’élément à la librairie modUL et le **«&nbsp;u&nbsp;»** indique qu’il s’agit d’une classe utilitaire.
 
-Il est important de suivre cette nomenclature pour créer tout autre style utilitaire. Il est recommandé d’avoir l’avis d’un designer pour l’utilisation des styles utilitaires.
+### Suffixe
+Voici la liste des principaux suffixe utilisé pour les *styles utilitaires*:
+* **«&nbsp;--xl&nbsp;»**&nbsp;: indique un style très large
+* **«&nbsp;--l&nbsp;»**&nbsp;: indique un style large
+* **«&nbsp;--s&nbsp;»**&nbsp;: indique un style petit
+* **«&nbsp;--xs&nbsp;»**&nbsp;: indique un style très petit

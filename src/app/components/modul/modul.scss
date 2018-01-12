@@ -63,7 +63,7 @@
 
     &:hover {
         .modul-search-card {
-            &__figure {
+            &__img {
                 background-color: $m-color--interactive-light;
             }
         }
@@ -72,40 +72,39 @@
     &:active,
     &:focus {
         .modul-search-card {
-            &__figure {
+            &__img {
                 background-color: $m-color--interactive-dark;
             }
         }
     }
 
     &__content {
-        padding: $m-padding;
+        padding: $m-padding--l $m-padding;
         border-bottom: 1px solid $m-color--grey-light;
-        width: calc(100% - 150px);
+        flex: 1;
+
+        &__category,
+        &__title,
+        &__tagname {
+            margin-top: 0;
+        }
+
+        &__tagname {
+            font-size: $m-font-size--s;
+            color: $m-color--grey-darker;
+            font-style: italic;
+        }
     }
 
-    &__figure {
-        transition: background-color 0.3s ease;
+    &__img {
+        transition: background 0.3s ease;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex: 0 1 150px;
-        background-color: $m-color--interactive;
-        background-size: 50%;
-        background-image: url(../../../assets/accordion.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-blend-mode: multiply;
+        flex: 0 1 100px;
+        background: $m-color--interactive;
         border-bottom: 1px solid #006698;
         padding: $m-padding;
-    }
-
-    &__subtitle {
-        display: block;
-        margin-top: 4px;
-        font-size: $m-font-size--s;
-        color: $m-color--grey-darker;
-        font-style: italic;
     }
 
     &.modul--is {

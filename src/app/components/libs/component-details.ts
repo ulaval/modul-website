@@ -17,6 +17,8 @@ export class ComponentDetails extends ModulWebsite {
 
     private intenalCodePreviewOpen: boolean = false;
 
+    private currentTab: string = 'overview';
+
     protected beforeUpdate(): void {
         this.$store.dispatch(ComponentsActions.COMPONENT_PREVIEW_GET, {
             restAdapter: this.$http
@@ -46,10 +48,6 @@ export class ComponentDetails extends ModulWebsite {
 
     private get overview(): string {
         return ROUTES[COMPONENT_OVERVIEW];
-    }
-
-    private get variant(): string {
-        return ROUTES[COMPONENT_VARIANT];
     }
 
     private get htmlTag(): string {

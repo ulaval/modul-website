@@ -33,6 +33,13 @@ type CategoryIndexMap = {
     [id: string]: number;
 };
 
+export enum ModulMenuSection {
+    Home = 'home',
+    GettingStarted = 'gettingStarted',
+    Components = 'components',
+    Standards = 'standards'
+}
+
 @WithRender
 @Component({
     mixins: [MediaQueries]
@@ -41,8 +48,8 @@ export default class Modul extends ModulWebsite {
 
     private menuOpen: boolean = false;
     private searchOpen: boolean = false;
-    private headerAnimationCompleted: boolean = false;
-    private section: string = '';
+    private animMenuOpen: boolean = false;
+    private menuSection: string = '';
     private categoriesComponent: Category[] = [];
     private pagesStandards: Category[] = [];
     private searchModel: string = '';
@@ -60,9 +67,9 @@ export default class Modul extends ModulWebsite {
             });
         });
 
-        this.categoriesComponent.sort((a, b) => {
-            return a.text < b.text ? -1 : (a.text > b.text ? 1 : 0);
-        });
+        // this.categoriesComponent.sort((a, b) => {
+        //     return this.$i18n.translate(a.text) < this.$i18n.translate(b.text) ? -1 : (this.$i18n.translate(a.text) > this.$i18n.translate(b.text) ? 1 : 0);
+        // });
 
         // Aller chercher les pages des normes pour le menu
         Standards.getPages().forEach(page => {
@@ -82,12 +89,32 @@ export default class Modul extends ModulWebsite {
         this.searchWidth = value ? '400px' : '100%';
     }
 
-    private get isHome(): boolean {
-        let isHome = false;
-        if (this.$route.path == '/') {
-            isHome = true;
+    private get isHomePage(): boolean {
+        return this.$route.path == '/';
+    }
+
+    private get isComponentsPage(): boolean {
+        let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/composants[\/]?)([a-z\-?\/]+)?');
+        if (this.menuOpen) {
+            return this.menuSection == ModulMenuSection.Components;
         }
-        return isHome;
+        return regExp.test(this.$route.path);
+    }
+
+    private get isStandardsPage(): boolean {
+        let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/normes[\/]?)([a-z\-?\/]+)?');
+        if (this.menuOpen) {
+            return this.menuSection == ModulMenuSection.Standards;
+        }
+        return regExp.test(this.$route.path);
+    }
+
+    private get isGettingStartedPage(): boolean {
+        let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/premier[\-]pas[\/]?)([a-z\-?\/]+)?');
+        if (this.menuOpen) {
+            return this.menuSection == ModulMenuSection.GettingStarted;
+        }
+        return regExp.test(this.$route.path);
     }
 
     private get isBlackHeader(): boolean {
@@ -106,71 +133,82 @@ export default class Modul extends ModulWebsite {
         return '/' + ROUTES[STANDARDS];
     }
 
-    //   private get ecosystem(): string {
-    //       return '/' + ROUTES[ECOSYSTEM];
-    //   }
-    //
-    private getCategoryComponents(category): ComponentMeta[] {
-        return Meta.getMetaByCategory(category, process.env.NODE_ENV);
+    private getCategoryComponents(category): any {
+        return Meta.getMetaByCategory(category, process.env.NODE_ENV).sort((a, b) => {
+            return this.$i18n.translate(a.name) < this.$i18n.translate(b.name) ? -1 : (this.$i18n.translate(a.name) > this.$i18n.translate(b.name) ? 1 : 0);
+        });
+
     }
 
     private onComponentClick(tag: string): void {
         this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][tag].url);
         this.searchOpen = false;
+        this.closeMenu();
     }
 
-    private onComponentCategoryClick(event: MouseEvent, category: Category): void {
+    private onComponentCategoryClick(category: Category): void {
         this.$router.push(this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES][category.id].url);
         this.closeMenu();
-        event.currentTarget['blur']();
     }
 
-    private onPageClick(page: Page, section: string): void {
-        this.$router.push(this.$store.getters[section + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
+    private onPageClick(event: MouseEvent, page: Page, menuSection: string): void {
+        this.$router.push(this.$store.getters[menuSection + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
         this.searchOpen = false;
+        this.closeMenu();
+        (event.currentTarget as HTMLElement).blur();
     }
 
-    private showMenu(section: string): void {
-        if (this.menuOpen && this.section == section) {
-            this.closeMenu();
-        } else if (this.menuOpen && this.section != section) {
-            this.section = section;
-        } else if (!this.menuOpen) {
-            this.section = section;
-            this.menuOpen = true;
-            let anim = setTimeout(() => {
-                this.headerAnimationCompleted = true;
-                // this.$modul.addWindow(MENU_ID);
-                this.$emit('openMenu');
-                this.$nextTick(() => {
-                    let menu: HTMLElement = this.$refs.menu as HTMLElement;
-                    menu.focus();
-                });
-            }, CSS_ANIMATION_HEADER_DURATION);
+    private navigateTo(event: MouseEvent, menuSection: string) {
+
+        switch (menuSection) {
+            case ModulMenuSection.Home:
+                this.$router.push('/');
+                this.closeMenu();
+                break;
+            case ModulMenuSection.GettingStarted:
+                this.$router.push(this.gettingStarted);
+                this.closeMenu();
+                break;
+            default:
+                if (this.menuOpen && this.menuSection == menuSection) {
+                    this.closeMenu();
+                } else {
+                    this.openMenu();
+                }
         }
+        this.menuSection = menuSection;
+        (event.currentTarget as HTMLElement).blur();
+    }
+
+    private openMenu(): void {
+        this.menuOpen = true;
+        let anim = setTimeout(() => {
+            this.animMenuOpen = true;
+            this.$emit('openMenu');
+            this.$nextTick(() => {
+                let menu: HTMLElement = this.$refs.menu as HTMLElement;
+                menu.focus();
+            });
+        }, CSS_ANIMATION_HEADER_DURATION);
     }
 
     private toggleMobileMenu(): void {
         this.menuFirstStep = true;
         if (!this.menuOpen) {
-            this.showMenu('');
+            this.openMenu();
         } else {
             this.closeMenu();
         }
     }
 
-    private showSecondStep(section: string): void {
-        this.section = section;
+    private showSecondStep(menuSection: string): void {
+        this.menuSection = menuSection;
         this.menuFirstStep = false;
     }
 
     private showFirstStep(): void {
         this.menuFirstStep = true;
     }
-
-    // Vue.filter('highlight', function(words, query){
-    //     return words.replace(query, '<span class=\'test2\'>' + query + '</span>')
-    // });
 
     private searchData(): any[] {
         if ((process.env.NODE_ENV as any).dev) {
@@ -185,8 +223,8 @@ export default class Modul extends ModulWebsite {
                 } else {
                     nameObj = {
                         tag: Meta.getMeta()[key].tag,
-                        category: 'Null',
-                        text: 'Null'
+                        category: undefined,
+                        text: undefined
                     };
                 }
                 return nameObj;
@@ -203,8 +241,8 @@ export default class Modul extends ModulWebsite {
                 } else {
                     nameObj = {
                         tag: Meta.getMetaForProd()[key].tag,
-                        category: 'Null',
-                        text: 'Null'
+                        category: undefined,
+                        text: undefined
                     };
                 }
                 return nameObj;
@@ -213,15 +251,13 @@ export default class Modul extends ModulWebsite {
     }
 
     private get searchResult(): any[] {
-
         let filtereComponents: any[] = [];
         if (this.searchModel != '') {
             filtereComponents = this.components.filter((element) => {
-                let textToSearch = element.category + ' ' + element.text;
+                let textToSearch = element.category + ' ' + element.text + ' ' + element.tag;
                 return normalizeString(textToSearch).match(normalizeString(this.searchModel));
             });
         }
-
         return filtereComponents;
     }
 
@@ -236,20 +272,10 @@ export default class Modul extends ModulWebsite {
         }
     }
 
-    private startCloseSearch() {
-        if (this.menuOpen) {
-            // let duration: number = Number(this.$modul.backdropTransitionDuration.slice(0, this.$modul.backdropTransitionDuration.length - 1)) * 1000;
-            // this.$modul.setBackdropOpacity('0');
-            // setTimeout(() => {
-            //     this.$modul.removeBackdrop();
-            // }, duration);
-        }
-    }
-
     @Watch('$route')
     private closeMenu(): void {
         if (this.menuOpen) {
-            this.headerAnimationCompleted = false;
+            this.animMenuOpen = false;
             let anim = setTimeout(() => {
                 this.menuOpen = false;
                 // this.$modul.deleteWindow(MENU_ID);
@@ -257,32 +283,4 @@ export default class Modul extends ModulWebsite {
             }, CSS_ANIMATION_MENU_DURATION);
         }
     }
-
-    // private beforeEnter(el: HTMLElement, done): void {
-    //     el.style.opacity = '0';
-    //     el.style.height = '0';
-    // }
-
-    // private leave(el: any, done): void {
-    //     var delay = el.dataset.index * 150
-    //     setTimeout(function () {
-    //         Velocity(
-    //             el,
-    //             { opacity: 0, height: 0 },
-    //             { complete: done }
-    //         )
-    //     }, delay)
-    // }
-
-    // private enter(el: any, done): void {
-    //     var delay: any = el.dataset.index * 150
-    //     setTimeout(function () {
-    //         Velocity(
-    //             el,
-    //             { opacity: 1, height: '1.6em' },
-    //             { complete: done }
-    //         )
-    //     }, delay)
-    // }
-
 }

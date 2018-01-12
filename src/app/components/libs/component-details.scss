@@ -28,8 +28,12 @@
         }
     }
 
-    .m-navbar {
-        padding: 0 12px; // Magic number
+    .modul-u--navbar {
+        padding: 0 $m-padding; // Magic number
+
+        @media (min-width: $m-mq--min--s) {
+            padding: 0 $m-margin--l; // Magic number
+        }
     }
 
     &__title {
@@ -81,8 +85,9 @@
     width: 52px; //Magic number
     position: absolute;
     right: 0;
-    top: 0;
+    top: 50%;
     bottom: 0;
+    transform: translateY(-50%);
 
     &::before {
         background: $modul-color--black-grey-light !important;
