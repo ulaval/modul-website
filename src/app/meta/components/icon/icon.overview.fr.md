@@ -2,7 +2,7 @@ Les icônes réduisent la densité informationnelle d’une page et améliorent 
 
 <modul-do>
     <ul>
-        <li>Les icônes doivent donc jouer un rôle fonctionnel dans tout composant.</li>
+        <li>Les icônes doivent jouer un rôle fonctionnel dans tout composant.</li>
         <li>Il est recommandé de garder une uniformité et une cohérence dans l’utilisation des icônes.</li>
     </ul>
 </modul-do>
@@ -13,7 +13,7 @@ Les icônes réduisent la densité informationnelle d’une page et améliorent 
 La librairie d'icônes vectorielles *Streamline* est la banque d'icônes officielle à utiliser. Cette librairie contient plus de 5000 icônes optimisées aux dimensions recommandées par les standards d'iOS et d'Android.
 
 ### Format SVG
-Il est recommandé d’utiliser le format SVG (Scalable Vector Graphics) plutôt qu’une police d'icône pour les raisons suivantes&nbsp;:
+Il est recommandé d’utiliser le format SVG (Scalable Vector Graphics) plutôt qu’une police d'icônes pour les raisons suivantes&nbsp;:
 * format facilement redimensionnable
 * grande variété  de couleurs
 * contrôle de chaque tracé (path) qui compose l’icône
