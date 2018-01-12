@@ -1,0 +1,1 @@
+<m-message class="m-u--margin-top" skin="light" state="information">Aucun aperçu</m-message>

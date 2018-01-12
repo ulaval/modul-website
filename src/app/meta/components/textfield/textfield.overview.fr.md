@@ -2,8 +2,8 @@ Un champ de saisie permet à l'utilisateur de saisir de l'information servant g�
 
 <modul-do>
     <ul>
-        <li>Fournir des étiquettes claires, toujours visibles pour chaque champ de saisie.</li>
-        <li>Utiliser des étiquettes succinctes, courtes et descriptives (un mot ou deux). Si des informations supplémentaires sont nécessaires, utiliser une <modul-go name="m-tooltip"></modul-go>.</li>
+        <li>Fournir des étiquettes claires et toujours visibles pour chaque champ de saisie.</li>
+        <li>Utiliser des étiquettes courtes et descriptives (un mot ou deux). Si des informations supplémentaires sont nécessaires, utiliser une <modul-go name="m-tooltip"></modul-go>.</li>
         <li>Un champ devrait être suffisamment grand pour que la plupart des valeurs possibles soient visibles, ne pas surdimensionner un champ.</li>
         <li>Lorsque possible, fournir des indices de saisie dans l’espace réservé du champ. Par exemple, fournir un masque de saisie pour le champ du numéro de téléphone.</li>
     </ul>
@@ -12,7 +12,7 @@ Un champ de saisie permet à l'utilisateur de saisir de l'information servant g�
 ## Caractéristiques
 
 ### Type de champ
-Le type de champ est très important, surtout lors de l'utilisation avec un appareil mobile, puisqu'il permet d'indiquer au navigateur le type de données attendues dans le champ afin d'ouvrir le bon type de clavier. Cinq types sont supportés par le composant&nbsp;: **Texte**, **Mots de passe**, **Courriel**, **url** et **téléphone**.
+Le type de champ est très important, surtout lors de l'utilisation avec un appareil mobile, puisqu'il permet d'indiquer au navigateur le type de données attendues dans le champ et ainsi afficher le bon type de clavier. Cinq types sont supportés par le composant&nbsp;: **texte**, **mots de passe**, **courriel**, **url** et **téléphone**.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Longueur du champ
