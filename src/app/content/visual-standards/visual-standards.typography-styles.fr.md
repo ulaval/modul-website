@@ -22,7 +22,7 @@ Trois polices de caractères peuvent être utilisées&nbsp;:
 ## Styles
 L’utilisation des styles <abbr title="Cascading Style Sheets">CSS</abbr> permet d’obtenir une mise en forme rapide et automatique du contenu. Ceux-ci sont déjà définis de manière à respecter le design de monPortail. Ainsi lorsque des modifications sont apportées au styles <abbr title="Cascading Style Sheets">CSS</abbr>, elles se répercutent automatiquement dans l’application.
 
-### Niveau de titre
+### Niveaux de titre
 <m-panel class="m-u--margin-top">
     <h1 class="m-u--h1">Titre 1 <span class="m-u--font-size--s m-u--font-weight--normal">[h1.m-u--h1]</span></h1>
     <h2 class="m-u--h2">Titre 2 <span class="m-u--font-size--s m-u--font-weight--normal">[h2.m-u--h2]</span></h2>
