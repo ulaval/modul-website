@@ -67,9 +67,9 @@ export default class Modul extends ModulWebsite {
             });
         });
 
-        this.categoriesComponent.sort((a, b) => {
-            return a.text < b.text ? -1 : (a.text > b.text ? 1 : 0);
-        });
+        // this.categoriesComponent.sort((a, b) => {
+        //     return this.$i18n.translate(a.text) < this.$i18n.translate(b.text) ? -1 : (this.$i18n.translate(a.text) > this.$i18n.translate(b.text) ? 1 : 0);
+        // });
 
         // Aller chercher les pages des normes pour le menu
         Standards.getPages().forEach(page => {
@@ -133,8 +133,11 @@ export default class Modul extends ModulWebsite {
         return '/' + ROUTES[STANDARDS];
     }
 
-    private getCategoryComponents(category): ComponentMeta[] {
-        return Meta.getMetaByCategory(category, process.env.NODE_ENV);
+    private getCategoryComponents(category): any {
+        return Meta.getMetaByCategory(category, process.env.NODE_ENV).sort((a, b) => {
+            return this.$i18n.translate(a.name) < this.$i18n.translate(b.name) ? -1 : (this.$i18n.translate(a.name) > this.$i18n.translate(b.name) ? 1 : 0);
+        });
+
     }
 
     private onComponentClick(tag: string): void {
@@ -207,10 +210,6 @@ export default class Modul extends ModulWebsite {
         this.menuFirstStep = true;
     }
 
-    // Vue.filter('highlight', function(words, query){
-    //     return words.replace(query, '<span class=\'test2\'>' + query + '</span>')
-    // });
-
     private searchData(): any[] {
         if ((process.env.NODE_ENV as any).dev) {
             return Object.keys(Meta.getMeta()).map(key => {
@@ -252,7 +251,6 @@ export default class Modul extends ModulWebsite {
     }
 
     private get searchResult(): any[] {
-
         let filtereComponents: any[] = [];
         if (this.searchModel != '') {
             filtereComponents = this.components.filter((element) => {
@@ -260,7 +258,6 @@ export default class Modul extends ModulWebsite {
                 return normalizeString(textToSearch).match(normalizeString(this.searchModel));
             });
         }
-
         return filtereComponents;
     }
 
@@ -275,16 +272,6 @@ export default class Modul extends ModulWebsite {
         }
     }
 
-    private startCloseSearch() {
-        if (this.menuOpen) {
-            // let duration: number = Number(this.$modul.backdropTransitionDuration.slice(0, this.$modul.backdropTransitionDuration.length - 1)) * 1000;
-            // this.$modul.setBackdropOpacity('0');
-            // setTimeout(() => {
-            //     this.$modul.removeBackdrop();
-            // }, duration);
-        }
-    }
-
     @Watch('$route')
     private closeMenu(): void {
         if (this.menuOpen) {
@@ -296,32 +283,4 @@ export default class Modul extends ModulWebsite {
             }, CSS_ANIMATION_MENU_DURATION);
         }
     }
-
-    // private beforeEnter(el: HTMLElement, done): void {
-    //     el.style.opacity = '0';
-    //     el.style.height = '0';
-    // }
-
-    // private leave(el: any, done): void {
-    //     var delay = el.dataset.index * 150
-    //     setTimeout(function () {
-    //         Velocity(
-    //             el,
-    //             { opacity: 0, height: 0 },
-    //             { complete: done }
-    //         )
-    //     }, delay)
-    // }
-
-    // private enter(el: any, done): void {
-    //     var delay: any = el.dataset.index * 150
-    //     setTimeout(function () {
-    //         Velocity(
-    //             el,
-    //             { opacity: 1, height: '1.6em' },
-    //             { complete: done }
-    //         )
-    //     }, delay)
-    // }
-
 }
