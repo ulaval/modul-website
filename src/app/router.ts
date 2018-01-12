@@ -12,7 +12,7 @@ import { PageDetails } from './components/pages/page-details';
 import { PageTab } from './components/pages/page-tab';
 import Meta from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, {
-    CATEGORY_COMUNICATION, CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_INDICATORS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_SEARCH_SORT
+    CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_WINDOWS
 } from './meta/meta-all';
 import { Standards, GettingStarted } from '@/app/components/pages/page';
 import { log } from 'util';
@@ -83,13 +83,11 @@ export const CODING_STANDARDS_CSS_SASS_FR: string = 'css-sass';
 export const CODING_STANDARDS_TYPESCRIPT_FR: string = 'typescript';
 export const ECOSYSTEM_FR: string = 'ecosysteme';
 
-export const CATEGORY_COMMUNICATION_FR: string = 'communication';
 export const CATEGORY_CONTENT_FR: string = 'contenu';
 export const CATEGORY_FORMS_FR: string = 'formulaires';
-export const CATEGORY_INDICATORS_FR: string = 'indicateurs';
 export const CATEGORY_LAYOUT_FR: string = 'disposition';
 export const CATEGORY_NAVIGATION_FR: string = 'navigation';
-export const CATEGORY_SEARCH_SORT_FR: string = 'recherche-tri';
+export const CATEGORY_WINDOWS_FR: string = 'fenetres';
 
 export const COMPONENT_PROPERTIES_FR: string = 'proprietes';
 export const COMPONENT_OVERVIEW_FR: string = 'portrait';
@@ -124,12 +122,11 @@ export const ROUTES: RoutePathMap = {
     [ECOSYSTEM]: ECOSYSTEM_FR,
     [COMPONENT_PROPERTIES]: COMPONENT_PROPERTIES_FR,
     [COMPONENT_OVERVIEW]: COMPONENT_OVERVIEW_FR,
-    [CATEGORY_COMUNICATION]: CATEGORY_COMMUNICATION_FR,
     [CATEGORY_CONTENT]: CATEGORY_CONTENT_FR,
     [CATEGORY_FORMS]: CATEGORY_FORMS_FR,
-    [CATEGORY_INDICATORS]: CATEGORY_INDICATORS_FR,
     [CATEGORY_LAYOUT]: CATEGORY_LAYOUT_FR,
-    [CATEGORY_NAVIGATION]: CATEGORY_NAVIGATION_FR
+    [CATEGORY_NAVIGATION]: CATEGORY_NAVIGATION_FR,
+    [CATEGORY_WINDOWS]: CATEGORY_WINDOWS_FR
 };
 
 const modulRoutes: RouteConfig[] = [];

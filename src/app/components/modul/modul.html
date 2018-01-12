@@ -74,7 +74,7 @@
     </div>
     <transition name="modul--is">
         <section class="modul-menu" v-if="animMenuOpen" tabindex="0" ref="menu">
-            <template v-if="isMqMinS">
+            <div class="modul-menu__wrap" v-if="isMqMinS">
                 <nav class="modul-menu__list" v-for="category in categoriesComponent" v-if="menuSection == 'components'">
                     <h2 @click="onComponentCategoryClick(category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
                         <span>{{category.text}}</span>
@@ -93,7 +93,7 @@
                         <span>{{page.text}}</span>
                     </h2>
                 </nav>
-            </template>
+            </div>
             <template v-if="!isMqMinS">
                 <transition name="modul--is">
                     <nav class="modul-mobile-menu modul--is-first-step" v-if="menuFirstStep">

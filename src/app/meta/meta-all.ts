@@ -10,13 +10,11 @@ import { RIPPLE_EFFECT_NAME, SCROLL_TO_NAME } from '@ulaval/modul-components/dis
 import { Meta } from '@ulaval/modul-components/dist/meta/meta';
 
 // should be i18n key format
-export const CATEGORY_COMUNICATION: string = 'meta:communication';
 export const CATEGORY_CONTENT: string = 'meta:content';
 export const CATEGORY_FORMS: string = 'meta:forms';
-export const CATEGORY_INDICATORS: string = 'meta:indicators';
 export const CATEGORY_NAVIGATION: string = 'meta:navigation';
-export const CATEGORY_SEARCH_SORT: string = 'meta:search-sort';
 export const CATEGORY_LAYOUT: string = 'meta:layout';
+export const CATEGORY_WINDOWS: string = 'meta:windows';
 
 export class MetaAll implements PluginObject<any> {
     public install(v, options) {
@@ -32,7 +30,7 @@ export class MetaAll implements PluginObject<any> {
         meta.mergeComponentMeta(CHECKBOX_NAME, require('@ulaval/modul-components/dist/components/checkbox/checkbox.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(DATEFIELDS_NAME, require('@ulaval/modul-components/dist/components/datefields/datefields.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(DATEPICKER_NAME, require('@ulaval/modul-components/dist/components/datepicker/datepicker.meta.json'), CATEGORY_FORMS);
-        meta.mergeComponentMeta(DIALOG_NAME, require('@ulaval/modul-components/dist/components/dialog/dialog.meta.json'), CATEGORY_COMUNICATION);
+        meta.mergeComponentMeta(DIALOG_NAME, require('@ulaval/modul-components/dist/components/dialog/dialog.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(DROPDOWN_NAME, require('@ulaval/modul-components/dist/components/dropdown/dropdown.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(DROPDOWN_ITEM_NAME, require('@ulaval/modul-components/dist/components/dropdown-item/dropdown-item.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(DROPDOWN_GROUP_NAME, require('@ulaval/modul-components/dist/components/dropdown-group/dropdown-group.meta.json'), CATEGORY_FORMS);
@@ -40,34 +38,34 @@ export class MetaAll implements PluginObject<any> {
         meta.mergeComponentMeta(FLEX_TEMPLATE_NAME, require('@ulaval/modul-components/dist/components/flex-template/flex-template.meta.json'), CATEGORY_LAYOUT);
         meta.mergeComponentMeta(I18N_NAME, require('@ulaval/modul-components/dist/components/i18n/i18n.meta.json'));
         meta.mergeComponentMeta(ICON_BUTTON_NAME, require('@ulaval/modul-components/dist/components/icon-button/icon-button.meta.json'), CATEGORY_FORMS);
-        meta.mergeComponentMeta(ICON_NAME, require('@ulaval/modul-components/dist/components/icon/icon.meta.json'), CATEGORY_INDICATORS);
+        meta.mergeComponentMeta(ICON_NAME, require('@ulaval/modul-components/dist/components/icon/icon.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(LIMIT_TEXT_NAME, require('@ulaval/modul-components/dist/components/limit-text/limit-text.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(LINK_NAME, require('@ulaval/modul-components/dist/components/link/link.meta.json'), CATEGORY_NAVIGATION);
-        meta.mergeComponentMeta(MESSAGE_NAME, require('@ulaval/modul-components/dist/components/message/message.meta.json'), CATEGORY_COMUNICATION);
-        meta.mergeComponentMeta(MODAL_NAME, require('@ulaval/modul-components/dist/components/modal/modal.meta.json'), CATEGORY_COMUNICATION);
-        meta.mergeComponentMeta(NAVBAR_NAME, require('@ulaval/modul-components/dist/components/navbar/navbar.meta.json'), CATEGORY_NAVIGATION);
-        meta.mergeComponentMeta(NAVBAR_ITEM_NAME, require('@ulaval/modul-components/dist/components/navbar-item/navbar-item.meta.json'), CATEGORY_NAVIGATION);
+        meta.mergeComponentMeta(MESSAGE_NAME, require('@ulaval/modul-components/dist/components/message/message.meta.json'), CATEGORY_CONTENT);
+        meta.mergeComponentMeta(MODAL_NAME, require('@ulaval/modul-components/dist/components/modal/modal.meta.json'), CATEGORY_WINDOWS);
+        meta.mergeComponentMeta(NAVBAR_NAME, require('@ulaval/modul-components/dist/components/navbar/navbar.meta.json'), CATEGORY_CONTENT);
+        meta.mergeComponentMeta(NAVBAR_ITEM_NAME, require('@ulaval/modul-components/dist/components/navbar-item/navbar-item.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(MENU_NAME, require('@ulaval/modul-components/dist/components/menu/menu.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(MENU_ITEM_NAME, require('@ulaval/modul-components/dist/components/menu-item/menu-item.meta.json'), CATEGORY_CONTENT);
-        meta.mergeComponentMeta(PANEL_NAME, require('@ulaval/modul-components/dist/components/panel/panel.meta.json'), CATEGORY_LAYOUT);
-        meta.mergeComponentMeta(POPPER_NAME, require('@ulaval/modul-components/dist/components/popper/popper.meta.json'), CATEGORY_LAYOUT);
-        meta.mergeComponentMeta(POPUP_NAME, require('@ulaval/modul-components/dist/components/popup/popup.meta.json'), CATEGORY_LAYOUT);
+        meta.mergeComponentMeta(PANEL_NAME, require('@ulaval/modul-components/dist/components/panel/panel.meta.json'), CATEGORY_CONTENT);
+        meta.mergeComponentMeta(POPPER_NAME, require('@ulaval/modul-components/dist/components/popper/popper.meta.json'), CATEGORY_WINDOWS);
+        meta.mergeComponentMeta(POPUP_NAME, require('@ulaval/modul-components/dist/components/popup/popup.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(RADIO_NAME, require('@ulaval/modul-components/dist/components/radio/radio.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(RADIO_GROUP_NAME, require('@ulaval/modul-components/dist/components/radio-group/radio-group.meta.json'), CATEGORY_FORMS);
-        meta.mergeComponentMeta(SCROLL_TOP_NAME, require('@ulaval/modul-components/dist/components/scroll-top/scroll-top.meta.json'), CATEGORY_FORMS);
-        meta.mergeComponentMeta(SIDEBAR_NAME, require('@ulaval/modul-components/dist/components/sidebar/sidebar.meta.json'), CATEGORY_COMUNICATION);
-        meta.mergeComponentMeta(SPINNER_NAME, require('@ulaval/modul-components/dist/components/spinner/spinner.meta.json'), CATEGORY_INDICATORS);
-        meta.mergeComponentMeta(STATUS_NAME, require('@ulaval/modul-components/dist/components/status/status.meta.json'), CATEGORY_LAYOUT);
-        meta.mergeComponentMeta(STEP_NAME, require('@ulaval/modul-components/dist/components/step/step.meta.json'), CATEGORY_LAYOUT);
-        meta.mergeComponentMeta(STEPPERS_NAME, require('@ulaval/modul-components/dist/components/steppers/steppers.meta.json'), CATEGORY_LAYOUT);
-        meta.mergeComponentMeta(STEPPERS_ITEM_NAME, require('@ulaval/modul-components/dist/components/steppers-item/steppers-item.meta.json'), CATEGORY_LAYOUT);
+        meta.mergeComponentMeta(SCROLL_TOP_NAME, require('@ulaval/modul-components/dist/components/scroll-top/scroll-top.meta.json'), CATEGORY_NAVIGATION);
+        meta.mergeComponentMeta(SIDEBAR_NAME, require('@ulaval/modul-components/dist/components/sidebar/sidebar.meta.json'), CATEGORY_WINDOWS);
+        meta.mergeComponentMeta(SPINNER_NAME, require('@ulaval/modul-components/dist/components/spinner/spinner.meta.json'), CATEGORY_CONTENT);
+        meta.mergeComponentMeta(STATUS_NAME, require('@ulaval/modul-components/dist/components/status/status.meta.json'), CATEGORY_CONTENT);
+        meta.mergeComponentMeta(STEP_NAME, require('@ulaval/modul-components/dist/components/step/step.meta.json'), CATEGORY_CONTENT);
+        meta.mergeComponentMeta(STEPPERS_NAME, require('@ulaval/modul-components/dist/components/steppers/steppers.meta.json'), CATEGORY_CONTENT);
+        meta.mergeComponentMeta(STEPPERS_ITEM_NAME, require('@ulaval/modul-components/dist/components/steppers-item/steppers-item.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(SWITCH_NAME, require('@ulaval/modul-components/dist/components/switch/switch.meta.json'), CATEGORY_FORMS);
-        meta.mergeComponentMeta(TABS_NAME, require('@ulaval/modul-components/dist/components/tabs/tabs.meta.json'), CATEGORY_LAYOUT);
+        meta.mergeComponentMeta(TABS_NAME, require('@ulaval/modul-components/dist/components/tabs/tabs.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(TEMPLATE_NAME, require('@ulaval/modul-components/dist/components/template/template.meta.json'), CATEGORY_LAYOUT);
         meta.mergeComponentMeta(TEXTAREA_NAME, require('@ulaval/modul-components/dist/components/textarea/textarea.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(TEXTFIELD_NAME, require('@ulaval/modul-components/dist/components/textfield/textfield.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(TIMEPICKER_NAME, require('@ulaval/modul-components/dist/components/timepicker/timepicker.meta.json'), CATEGORY_FORMS);
-        meta.mergeComponentMeta(TOOLTIP_NAME, require('@ulaval/modul-components/dist/components/tooltip/tooltip.meta.json'), CATEGORY_FORMS);
+        meta.mergeComponentMeta(TOOLTIP_NAME, require('@ulaval/modul-components/dist/components/tooltip/tooltip.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(UPLOAD_NAME, require('@ulaval/modul-components/dist/components/upload/upload.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(SCROLL_TO_NAME, require('@ulaval/modul-components/dist/directives/scroll-to/scroll-to.meta.json'), CATEGORY_NAVIGATION);
     }
