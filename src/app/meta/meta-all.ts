@@ -52,7 +52,7 @@ export class MetaAll implements PluginObject<any> {
         meta.mergeComponentMeta(POPUP_NAME, require('@ulaval/modul-components/dist/components/popup/popup.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(RADIO_NAME, require('@ulaval/modul-components/dist/components/radio/radio.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(RADIO_GROUP_NAME, require('@ulaval/modul-components/dist/components/radio-group/radio-group.meta.json'), CATEGORY_FORMS);
-        meta.mergeComponentMeta(SCROLL_TOP_NAME, require('@ulaval/modul-components/dist/components/scroll-top/scroll-top.meta.json'), CATEGORY_FORMS);
+        meta.mergeComponentMeta(SCROLL_TOP_NAME, require('@ulaval/modul-components/dist/components/scroll-top/scroll-top.meta.json'), CATEGORY_NAVIGATION);
         meta.mergeComponentMeta(SIDEBAR_NAME, require('@ulaval/modul-components/dist/components/sidebar/sidebar.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(SPINNER_NAME, require('@ulaval/modul-components/dist/components/spinner/spinner.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(STATUS_NAME, require('@ulaval/modul-components/dist/components/status/status.meta.json'), CATEGORY_CONTENT);
