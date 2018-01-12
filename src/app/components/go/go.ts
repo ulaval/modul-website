@@ -1,13 +1,13 @@
-import Vue, { PluginObject } from 'vue';
+import { PluginObject } from 'vue';
+import { ModulWebsite } from '../modul-website';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import WithRender from './go.html?style=./go.scss';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
-import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 
 @WithRender
 @Component
-export class MGo extends Vue {
+export class MGo extends ModulWebsite {
 
     @Prop()
     public name: string;
@@ -44,26 +44,11 @@ export class MGo extends Vue {
     }
 
     private get label(): string {
-        let labelText: string;
-        let i18n: Messages = (Vue as any).$i18n;
-
-        if (this.meta) {
-            labelText = i18n.translate(this.meta.tag + '-meta:name');
-        } else {
-            labelText = i18n.translate('name:' + this.name);
-        }
-
-        return labelText.toLowerCase();
+        return this.meta ? this.$i18n.translate(this.meta.tag + '-meta:name').toLowerCase() : this.$i18n.translate('name:' + this.name).toLowerCase();
     }
 
     private get tag(): string {
-        let tagText: string;
-
-        if (this.meta) {
-            tagText = `(${this.meta.tag})`;
-        }
-
-        return tagText;
+        return this.meta ? this.meta.tag : undefined;
     }
 
     private defaultSlot(): boolean {
