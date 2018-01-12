@@ -28,7 +28,7 @@ export class MetaAll implements PluginObject<any> {
         meta.mergeComponentMeta(BUTTON_GROUP_NAME, require('@ulaval/modul-components/dist/components/button-group/button-group.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(LIST_ITEM_NAME, require('@ulaval/modul-components/dist/components/list-item/list-item.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(CHECKBOX_NAME, require('@ulaval/modul-components/dist/components/checkbox/checkbox.meta.json'), CATEGORY_FORMS);
-        meta.mergeComponentMeta(DATEFIELDS_NAME, require('@ulaval/modul-components/dist/components/date-fields/date-fields.meta.json'), CATEGORY_FORMS);
+        meta.mergeComponentMeta(DATEFIELDS_NAME, require('@ulaval/modul-components/dist/components/datefields/datefields.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(DATEPICKER_NAME, require('@ulaval/modul-components/dist/components/datepicker/datepicker.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(DIALOG_NAME, require('@ulaval/modul-components/dist/components/dialog/dialog.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(DROPDOWN_NAME, require('@ulaval/modul-components/dist/components/dropdown/dropdown.meta.json'), CATEGORY_FORMS);
