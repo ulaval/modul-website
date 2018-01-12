@@ -2,8 +2,8 @@ Le bouton icône est représenté par une image seulement. Il permet généralem
 
 ## Caractéristiques
 ### Traitements visuels
-Le bouton icône possède plusieurs traitements visuels:
-* **Lumineaux&nbsp;:** traitement par defaut utilisé lorsque l'arrière-plan est pale.
+Le composant *bouton icône* pemet plusieurs traitements visuels:
+* **Lumineux&nbsp;:** traitement par defaut utilisé lorsque l'arrière-plan est pale.
 * **Sombre&nbsp;:** utilisé lorsque l'arrière-plan est foncé.
 * **Primaire&nbsp;:** traitement visuel semblable au <modul-go name="m-button"></modul-go>.
 * **Secondaire&nbsp;:** traitement visuel semblable au <modul-go name="m-button"></modul-go>.
@@ -11,5 +11,5 @@ Le bouton icône possède plusieurs traitements visuels:
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Taille
-Il est possible de changer la taille du bouton ou de l'icône.
+Bien qu'il soit préférable de ne pas modifier la taille du bouton icône, il est tout de même possible de modifier la taille de la zone cliquable ou la taille de l'icône.
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
