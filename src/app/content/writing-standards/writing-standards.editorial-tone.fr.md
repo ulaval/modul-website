@@ -24,11 +24,15 @@ La voix active est recommandée pour la rédaction des messages destinés aux ut
 
 Dans une phrase à la voix active, le sujet fait l'action alors que dans une phrase à la voix passive, il la subit.
 
-<m-panel>**Voix active**<br/>
-Vous avez satisfait à toutes les exigences du programme.</m-panel>
+<m-panel class="m-u--margin-top" :boder="false" skin="dark">
+    <strong>Voix active</strong><br>
+    <p>Vous avez satisfait à toutes les exigences du programme.</p>
+</m-panel>
 
-<m-panel>**Voix passive**<br/>
-Toutes les exigences de votre programme ont été satisfaites.</m-panel>
+<m-panel class="m-u--margin-top" :boder="false" skin="dark">
+    <strong>Voix passive</strong><br>
+    <p>Toutes les exigences de votre programme ont été satisfaites.</p>
+</m-panel>
 
 ## Utiliser la 1re et la 2e personne du pluriel
 L'utilisation de la 1re et de la 2e personne du pluriel permet d'utiliser un ton respectueux mais conversationnel.
@@ -45,22 +49,30 @@ Une phrase courte avec une seule idée est souvent plus claire et facile à comp
 ## Éviter le jargon
 Utiliser un vocabulaire simple et compréhensible pour tous.
 
-<m-panel>**Exemple simple**<br/>
-L’application ne répond plus!</m-panel>
+<m-panel class="m-u--margin-top" :boder="false" skin="dark">
+    <strong>Exemple simple</strong><br>
+    <p>L’application ne répond plus!</p>
+</m-panel>
 
-<m-panel>**Jargon**<br/>
-L’application a lagué!</m-panel>
+<m-panel class="m-u--margin-top" :boder="false" skin="dark">
+    <strong>Jargon</strong><br>
+    <p>L’application a lagué!</p>
+</m-panel>
 
 ## Éviter la négation
 De manière générale, la forme négative (ne ... pas, ne ... plus, etc.) est à éviter puisque la forme positive est généralement plus facile à lire et à comprendre. Éviter aussi la double négation qui pourrait rendre un lecteur confus.
 
 Toutefois, la forme négative est à privilégier lorsqu'elle permet d'atténuer des opinions qui, à l'affirmative, pourraient sembler trop catégoriques ou manquant de délicatesse.
 
-<m-panel>**Forme négative**<br/>
-Je n'aime pas...</m-panel>
+<m-panel class="m-u--margin-top" :boder="false" skin="dark">
+    <strong>Forme négative</strong><br>
+    <p>Je n'aime pas...</p>
+</m-panel>
 
-<m-panel>**Forme positive**<br/>
-Je déteste...</m-panel>
+<m-panel class="m-u--margin-top" :boder="false" skin="dark">
+    <strong>Forme positive</strong><br>
+    <p>Je déteste...</p>
+</m-panel>
 
 ## Éviter les acronymes ou les abréviations
 À moins de les avoir explicités dès le début du texte, éviter d’utiliser les acronymes ou les abréviations.
