@@ -12,7 +12,7 @@ export class CategoryList extends ModulWebsite {
     private get categoryComponents(): ComponentMeta[] {
         let result: ComponentMeta[] = [];
         if (this.category) {
-            result = Meta.getMetaByCategory(this.category, process.env.NODE_ENV);
+            result = Meta.getMetaByCategory(this.category);
         }
         return result;
     }
