@@ -30,7 +30,7 @@ export const getComponentsMetaSucces: Mutation<ComponentsState> = (state: Compon
             name: state.categoriesText[category]
         };
 
-        Meta.getMetaByCategory(category, process.env.NODE_ENV).forEach(meta => {
+        Meta.getMetaByCategory(category).forEach(meta => {
             state.componentRoutes[meta.tag] = {
                 url: componentUrlPart + ROUTES[category] + '/' + meta.tag,
                 name: meta.name ? meta.name : ''
@@ -49,7 +49,7 @@ export const getCategory: Mutation<ComponentsState> = (state: ComponentsState, c
         state.componentsText = {};
 
         let i18n: Messages = (Vue as any).$i18n;
-        Meta.getMetaByCategory(category, process.env.NODE_ENV).forEach(meta => {
+        Meta.getMetaByCategory(category).forEach(meta => {
             state.componentsText[meta.tag] = meta.name ? i18n.translate(meta.name) : meta.tag;
         });
     }

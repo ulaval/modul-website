@@ -134,7 +134,7 @@ export default class Modul extends ModulWebsite {
     }
 
     private getCategoryComponents(category): any {
-        return Meta.getMetaByCategory(category, process.env.NODE_ENV).sort((a, b) => {
+        return Meta.getMetaByCategory(category).sort((a, b) => {
             return this.$i18n.translate(a.name) < this.$i18n.translate(b.name) ? -1 : (this.$i18n.translate(a.name) > this.$i18n.translate(b.name) ? 1 : 0);
         });
 
