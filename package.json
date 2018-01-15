@@ -26,7 +26,7 @@
         "@types/es6-promise": "^0.0.33",
         "@types/jasmine": "^2.8.2",
         "@types/node": "^8.0.55",
-        "@ulaval/modul-components": "file://..\\modul-components\\ulaval-modul-components-1.0.0-beta.9.tgz",
+        "@ulaval/modul-components": "file://..\\modul-components\\ulaval-modul-components-1.0.0-beta.10.tgz",
         "awesome-typescript-loader": "^3.4.1",
         "axios": "^0.17.1",
         "bundle-loader": "^0.5.5",
