@@ -21,17 +21,12 @@ export class MGo extends ModulWebsite {
                 for (let route of section.children) {
                     if (route.meta && route.meta.page == this.name) {
                         let path: string = route.path;
-                        let prodPath: string = '';
 
                         if (this.tab) {
                             path += '/' + this.tab;
                         }
 
-                        if (!(process.env.NODE_ENV as any).dev) {
-                            prodPath = '/modul';
-                        }
-
-                        return prodPath + path;
+                        return path;
                     }
                 }
             }
