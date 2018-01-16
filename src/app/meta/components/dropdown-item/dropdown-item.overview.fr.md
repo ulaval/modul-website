@@ -1,1 +1,1 @@
-Ce composant sert à ajouter chaque élément d'une liste déroulante et doit donc être utilisé avec le composant <modul-go name="m-dropdown"></modul-go>.
+Ce composant sert à ajouter chaque élément d'une liste déroulante et doit donc être utilisé avec le composant *<modul-go name="m-dropdown"></modul-go>*.
