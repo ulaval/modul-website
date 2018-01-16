@@ -1,11 +1,7 @@
 Les liens sont composés de texte et parfois d'une icone et permettent de naviguer vers un contenu spécifique.
 
 <modul-do>
-<<<<<<< refs/remotes/origin/dev
-    <p>L'utilisation d'un lien est recommandée lorsque l'utilisateur doit naviguer vers une autre page, accéder à une section de la page courante ou encore pour faire afficher de l'information supplémentaire. Toutes les actions permettant de modifier le contenu du site doivent plutôt être affichées sous forme de <modul-go name="m-button"></modul-go>.</p>
-=======
     <p>L'utilisation d'un lien est recommandée lorsque l'utilisateur doit naviguer vers une autre page, accéder à une section de la page courante ou encore pour faire afficher de l'information supplémentaire. Toutes les actions permettant de modifier le contenu du site doivent plutôt être affichées sous forme de <em><modul-go name="m-button"></modul-go></em>.</p>
->>>>>>> Content update
 </modul-do>
 
 ## Caractéristiques
