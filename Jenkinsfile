@@ -33,9 +33,6 @@ pipeline {
                 sh 'rm -rf dist'
                 sh 'rm -rf node_modules'
 
-                echo 'Install dependency'
-                sh 'npm install -g rimraf'
-
                 echo 'Initializing npm...'
                 sh 'npm install'
 
