@@ -22,7 +22,7 @@ pipeline {
         stage('Build') {
             when {
                 expression {
-                    branch 'master' || branch 'develop'
+                    env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
                 }
             }
 
