@@ -20,23 +20,21 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent {
-                docker {
-                    image 'node:8.2-alpine'
-                    reuseNode true
+            when {
+                expression {
+                    branch 'master' || branch 'develop'
                 }
             }
+
+            agent {
+                docker {
+                    image 'node:9.4.0-alpine'
+                }
+            }
+
             steps {
-                echo 'Building...'
-
-                echo 'Clean up...'
-                sh 'rm -rf dist'
-                sh 'rm -rf node_modules'
-
-                echo 'Initializing npm...'
+                sh 'rm -rf dist node_modules'
                 sh 'npm install'
-
-                echo 'Building...'
                 sh 'npm run build'
             }
         }
