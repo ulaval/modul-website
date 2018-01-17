@@ -31,21 +31,33 @@ export class MColor extends Vue {
     }
 
     private get cmyk() {
-        let cyan = 1 - this.red;
-        let magenta = 1 - this.green;
-        let yellow = 1 - this.blue;
-        let black = 1;
+        // let cyan = 1 - this.red;
+        // let magenta = 1 - this.green;
+        // let yellow = 1 - this.blue;
+        // let black = 1;
 
-        if (this.red || this.green || this.blue) {
-            black = Math.min(cyan, Math.min(magenta, yellow));
-            cyan = (cyan - black) / (1 - black);
-            magenta = (magenta - black) / (1 - black);
-            yellow = (yellow - black) / (1 - black);
-        } else {
-            black = 1;
-        }
+        // if (this.red || this.green || this.blue) {
+        //     black = Math.min(cyan, Math.min(magenta, yellow));
+        //     cyan = (cyan - black) / (1 - black);
+        //     magenta = (magenta - black) / (1 - black);
+        //     yellow = (yellow - black) / (1 - black);
+        // } else {
+        //     black = 1;
+        // }
 
-        return Math.round(cyan * 255) + ', ' + Math.round(magenta * 255) + ', ' + Math.round(yellow * 255) + ', ' + Math.round(black + 254);
+        // return Math.round(cyan * 255) + ', ' + Math.round(magenta * 255) + ', ' + Math.round(yellow * 255) + ', ' + Math.round(black + 254);
+        // var result = new CMYK(0, 0, 0, 0);
+
+        let r = this.red / 255;
+        let g = this.green / 255;
+        let b = this.blue / 255;
+
+        let k = Math.min(1 - r, 1 - g, 1 - b);
+        let c = (1 - r - k) / (1 - k);
+        let m = (1 - g - k) / (1 - k);
+        let y = (1 - b - k) / (1 - k);
+
+        return Math.round(c * 100) + ', ' + Math.round(m * 100) + ', ' + Math.round(y * 100) + ', ' + Math.round(k * 100);
     }
 }
 
