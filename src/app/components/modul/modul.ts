@@ -155,6 +155,7 @@ export default class Modul extends ModulWebsite {
         this.$router.push(this.$store.getters[menuSection + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
         this.searchOpen = false;
         this.closeMenu();
+        event.preventDefault();
         (event.currentTarget as HTMLElement).blur();
     }
 
