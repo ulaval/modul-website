@@ -30,7 +30,7 @@ export class MColor extends Vue {
         this.blue = parseInt(result[3], 16);
 
         let yiq = ((this.red * 299) + (this.green * 587) + (this.blue * 114)) / 1000;
-        this.textColor = (yiq >= 120) ? '#000' : '#fff';
+        this.textColor = (yiq >= 128) ? '#000' : '#fff';
 
         return result ? this.red + ', ' + this.green + ', ' + this.blue : undefined;
     }
