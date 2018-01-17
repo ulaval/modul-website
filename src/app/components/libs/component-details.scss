@@ -17,6 +17,7 @@
 
         @media (min-width: $m-mq--min--s) {
             padding-left: $m-margin--l; // Magic number
+            padding-right: $m-padding--xl; // Magic number
         }
     }
 
@@ -61,26 +62,6 @@
     }
 }
 
-// // anim
-// .code-preview-opening-enter-active,
-// .code-preview-opening-leave-active {
-//     transition: max-height 0.5s ease, padding 0.5s ease;
-//     overflow: hidden;
-// }
-
-// .code-preview-opening-enter,
-// .code-preview-opening-leave-to {
-//     max-height: 0;
-//     padding-top: 0;
-//     padding-bottom: 0;
-// }
-
-// .code-preview-opening-enter-to,
-// .code-preview-opening-leave {
-//     max-height: 325px;
-// }
-
-// button
 .modul-code-preview-button.modul-code-preview-button {
     width: 52px; //Magic number
     position: absolute;
@@ -88,6 +69,10 @@
     top: 50%;
     bottom: 0;
     transform: translateY(-50%);
+
+    @media (min-width: $m-mq--min--s) {
+        right: $m-padding;
+    }
 
     &::before {
         background: $modul-color--black-grey-light !important;
