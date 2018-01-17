@@ -1,1 +1,1 @@
-modUL offre des normes éditoriales qui permettent une meilleure compréhension de l’information présentée et des actions à poser.
+**modUL** offre des normes éditoriales qui permettent une meilleure compréhension de l’information présentée et des actions à poser.

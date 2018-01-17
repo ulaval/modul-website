@@ -1,1 +1,1 @@
-Les composants MODUL permettent une expérience qui n’est pas forcément identique d’une application à l’autre, mais qui est plutôt harmonisée dans ses comportements et ses visuels, offrant ainsi une expérience cohérente à l'utilisateur.
+Les composants **modUL** permettent une expérience qui n’est pas forcément identique d’une application à l’autre, mais qui est plutôt harmonisée dans ses comportements et ses visuels, offrant ainsi une expérience cohérente à l'utilisateur.
