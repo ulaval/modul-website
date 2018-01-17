@@ -86,7 +86,7 @@
                 top: - $m-touch-size * 1.5;
                 width: 100%;
                 height: $m-touch-size * 1.5;
-                background: linear-gradient(transparent, #{$modul-color--grey});
+                background: linear-gradient(#{rgba($modul-color--grey, 0)}, #{$modul-color--grey});
                 content: '';
             }
         }

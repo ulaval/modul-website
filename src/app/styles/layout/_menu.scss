@@ -93,7 +93,7 @@ $modul-menu--list-max-width: 300px;
             right: 0;
             top: 0;
             bottom: 0;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba($modul-color--black-grey, 100%) 100%);
+            background: linear-gradient(to right, rgba($modul-color--black-grey, 0) 0%, rgba($modul-color--black-grey, 100%) 100%);
             z-index: 1;
         }
 
