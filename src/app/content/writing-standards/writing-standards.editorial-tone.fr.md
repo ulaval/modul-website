@@ -65,7 +65,7 @@ Toutefois, la forme négative est à privilégier lorsqu'elle permet d'atténuer
 </m-panel>
 
 <m-panel class="m-u--margin-top">
-    <p><strong>Forme positive</strong> <bt>Je déteste...</p>
+    <p><strong>Forme positive</strong> <br>Je déteste...</p>
 </m-panel>
 
 ## Éviter les acronymes ou les abréviations
