@@ -3,7 +3,7 @@ Le sélecteur de temps est utilisé pour permettre à l'utilisateur de sélectio
 ## Caractéristiques
 
 ### Format du temps
-Le format retenu pour l'heure, lors de la saisie et de la modification est basé sur une période de 24 h. Il est affiché de la façon suivante&nbsp;: **HH:MM**.
+Le format retenu pour l'heure est basé sur une période de 24 h. Il est affiché de la façon suivante&nbsp;: **HH:MM**.
 <m-panel class="m-u--margin-top">
     <p>10:20</p>
 </m-panel>

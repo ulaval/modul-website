@@ -16,6 +16,7 @@ import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/u
 
 import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
 
+import { COLOR_NAME, MColor } from './components/color/color';
 import { GO_NAME, MGo } from './components/go/go';
 import { DO_NAME, MDo } from './components/do/do';
 import { DONT_NAME, MDont } from './components/dont/dont';
@@ -42,6 +43,7 @@ async function main() {
 
     Vue.use(svc);
 
+    Vue.component(COLOR_NAME, MColor);
     Vue.component(GO_NAME, MGo);
     Vue.component(DO_NAME, MDo);
     Vue.component(DONT_NAME, MDont);

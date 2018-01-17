@@ -3,297 +3,78 @@ Outre leur fonction esthétique, les couleurs établissent un «&nbsp;système v
 ## Couleurs officielles de l’Université Laval
 Trois couleurs forment l’identité visuelle de l’Université Laval :  le bleu, le jaune et le rouge.  Les normes graphiques UL régissent l’utilisation de ces couleurs  et elles  doivent être respectées.
 
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$m-color--ul-blue</td>
-            <td style="background:#09f">#09f</td>
-        </tr>
-        <tr>
-            <td>$m-color--ul-yellow</td>
-            <td style="background:#ffc103">#ffc103</td>
-        </tr>
-        <tr>
-            <td>$m-color--ul-red</td>
-            <td style="background:#e30513">#e30513</td>
-        </tr>
-    </tbody>
-</table>
+<modul-color name="$m-color--ul-blue" hex="#09f" ></modul-color>
+<modul-color name="$m-color--ul-yellow" hex="#ffc103" ></modul-color>
+<modul-color name="$m-color--ul-red" hex="#e30513" ></modul-color>
 
 ## Couleurs de l’interactivité
 Utilisation : états, par exemple l'état actif, le survol, le traitement, des différents éléments cliquables (bouton d’action, lien)
 
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$m-color--interactive-darker</td>
-            <td style="background:#0075c3">#0075c3</td>
-        </tr>
-        <tr>
-            <td>$m-color--interactive-dark</td>
-            <td style="background:#0587e1">#0587e1</td>
-        </tr>
-        <tr>
-            <td>$m-color--interactive</td>
-            <td style="background:#09f">#09f</td>
-        </tr>
-        <tr>
-            <td>$m-color--interactive-light</td>
-            <td style="background:#36adff">#36adff</td>
-        </tr>
-        <tr>
-            <td>$m-color--interactive-lighter</td>
-            <td style="background:#6ed2ff">#6ed2ff</td>
-        </tr>
-        <tr>
-            <td>$m-color--interactive-lightest</td>
-            <td style="background:#dffaff">#dffaff</td>
-        </tr>
-    </tbody>
-</table>
+<modul-color name="$m-color--interactive-darker" hex="#0075c3" ></modul-color>
+<modul-color name="$m-color--interactive-dark" hex="#0587e1" ></modul-color>
+<modul-color name="$m-color--interactive" hex="#09f" ></modul-color>
+<modul-color name="$m-color--interactive-light" hex="#36adff" ></modul-color>
+<modul-color name="$m-color--interactive-lighter" hex="#6ed2ff" ></modul-color>
+<modul-color name="$m-color--interactive-lightest" hex="#dffaff" ></modul-color>
 
 ## Couleurs d’accent
 Utilisation : accentuer un élément ou une nouveauté
 
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$m-color--accent-dark</td>
-            <td style="background:#ed8514">#ed8514</td>
-        </tr>
-        <tr>
-            <td>$m-color--accent</td>
-            <td style="background:#f39612">#f39612</td>
-        </tr>
-        <tr>
-            <td>$m-color--accent-light</td>
-            <td style="background:#ffaa26">#ffaa26</td>
-        </tr>
-        <tr>
-            <td>$m-color--accent-lightest</td>
-            <td style="background:#ffeecf">#ffeecf</td>
-        </tr>
-    </tbody>
-</table>
+<modul-color name="$m-color--iaccent-dark" hex="#ed8514" ></modul-color>
+<modul-color name="$m-color--accent" hex="#f39612" ></modul-color>
+<modul-color name="$m-color--accent-light" hex="#ffaa26" ></modul-color>
+<modul-color name="$m-color--accent-lightest" hex="#ffeecf" ></modul-color>
 
 ## Couleurs active
 Utilisation :  états (p. ex. action en cours,  sélectionné)
 
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$m-color--active-dark</td>
-            <td style="background:#edaf00">#edaf00</td>
-        </tr>
-        <tr>
-            <td>$m-color--active</td>
-            <td style="background:#ffc103">#ffc103</td>
-        </tr>
-        <tr>
-            <td>$m-color--active-light</td>
-            <td style="background:#ffd517">#ffd517</td>
-        </tr>
-        <tr>
-            <td>$m-color--active-lightest</td>
-            <td style="background:#fffdcf">#fffdcf</td>
-        </tr>
-    </tbody>
-</table>
+<modul-color name="$m-color--active-dark" hex="#edaf00" ></modul-color>
+<modul-color name="$m-color--active" hex="#ffc103" ></modul-color>
+<modul-color name="$m-color--active-light" hex="#ffd517" ></modul-color>
+<modul-color name="$m-color--active-lightest" hex="#fffdcf" ></modul-color>
 
 ## Couleurs de succès
 Utilisation : message de succès, indicateur de réussite, état publié
 
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$m-color--success-dark</td>
-            <td style="background:#55b26c">#55b26c</td>
-        </tr>
-        <tr>
-            <td>$m-color--success</td>
-            <td style="background:#1dcd8d">#1dcd8d</td>
-        </tr>
-        <tr>
-            <td>$m-color--success-light</td>
-            <td style="background:#50e2a7">#50e2a7</td>
-        </tr>
-        <tr>
-            <td>$m-color--success-lightest</td>
-            <td style="background:#abe5c3">#abe5c3</td>
-        </tr>
-    </tbody>
-</table>
+<modul-color name="$m-color--success-dark" hex="#55b26c" ></modul-color>
+<modul-color name="$m-color--success" hex="#1dcd8d" ></modul-color>
+<modul-color name="$m-color--success-light" hex="#50e2a7" ></modul-color>
+<modul-color name="$m-color--success-lightest" hex="#abe5c3" ></modul-color>
 
 ## Couleurs avertissement
 Utilisation : avertissement
 
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$m-color--warning-dark</td>
-            <td style="background:#edaf00">#edaf00</td>
-        </tr>
-        <tr>
-            <td>$m-color--warning</td>
-            <td style="background:#ffc103">#ffc103</td>
-        </tr>
-        <tr>
-            <td>$m-color--warning-light</td>
-            <td style="background:#ffd517">#ffd517</td>
-        </tr>
-        <tr>
-            <td>$m-color--warning-lightest</td>
-            <td style="background:#fffdcf">#fffdcf</td>
-        </tr>
-    </tbody>
-</table>
+<modul-color name="$m-color--warning-dark" hex="#edaf00" ></modul-color>
+<modul-color name="$m-color--warning" hex="#ffc103" ></modul-color>
+<modul-color name="$m-color--warning-light" hex="#ffd517" ></modul-color>
+<modul-color name="$m-color--warning-lightest" hex="#fffdcf" ></modul-color>
 
 ## Couleurs d’erreur
 Utilisation : message d’erreur, indicateur d’échec, état (non publié, conflit)
 
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$m-color--error-dark</td>
-            <td style="background:#cc0000">#cc0000</td>
-        </tr>
-        <tr>
-            <td>$m-color--error</td>
-            <td style="background:#e30513">#e30513</td>
-        </tr>
-        <tr>
-            <td>$m-color--error-light</td>
-            <td style="background:#f7081f">#f7081f</td>
-        </tr>
-        <tr>
-            <td>$m-color--error-lightest</td>
-            <td style="background:#ffdcdc">#ffdcdc</td>
-        </tr>
-    </tbody>
-</table>
+<modul-color name="$m-color--error-dark" hex="#cc0000" ></modul-color>
+<modul-color name="$m-color--error" hex="#e30513" ></modul-color>
+<modul-color name="$m-color--error-light" hex="#f7081f" ></modul-color>
+<modul-color name="$m-color--error-lightest" hex="#ffdcdc" ></modul-color>
 
 ## Couleurs d’arrière-plan
 Utilisation : arrière-plan
 
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$m-color--black-grey-darker</td>
-            <td style="background:#232323; color:#fff">#232323</td>
-        </tr>
-        <tr>
-            <td>$m-color--black-grey-dark</td>
-            <td style="background:#2e2e2e; color:#fff">#2e2e2e</td>
-        </tr>
-        <tr>
-            <td>$m-color--black-grey</td>
-            <td style="background:#3d3d3d; color:#fff">#3d3d3d</td>
-        </tr>
-        <tr>
-            <td>$m-color--black-grey-light</td>
-            <td style="background:#4f4f4f; color:#fff">#4f4f4f</td>
-        </tr>
-        <tr>
-            <td>$m-color--black-grey-lighter</td>
-            <td style="background:#666; color:#fff">#666</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey-darker</td>
-            <td style="background:#999">#999</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey-dark</td>
-            <td style="background:#b0b0b0">#b0b0b0</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey</td>
-            <td style="background:#dadada">#dadada</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey-light</td>
-            <td style="background:#e8e8e8">#e8e8e8</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey-lighter</td>
-            <td style="background:#f1f1f1">#f1f1f1</td>
-        </tr>
-        <tr>
-            <td>$m-color--grey-lightest</td>
-            <td style="background:#f7f7f7">#f7f7f7</td>
-        </tr>
-    </tbody>
-</table>
+<modul-color name="$m-color--black-grey-darker" hex="#232323" ></modul-color>
+<modul-color name="$m-color--black-grey-dark" hex="#2e2e2e" ></modul-color>
+<modul-color name="$m-color--black-grey" hex="#3d3d3d" ></modul-color>
+<modul-color name="$m-color--black-grey-light" hex="#4f4f4f" ></modul-color>
+<modul-color name="$m-color--black-grey-lighter" hex="#666" ></modul-color>
+<modul-color name="$m-color--grey-darker" hex="#999" ></modul-color>
+<modul-color name="$m-color--grey-dark" hex="#b0b0b0" ></modul-color>
+<modul-color name="$m-color--grey" hex="#dadada" ></modul-color>
+<modul-color name="$m-color--grey-light" hex="#e8e8e8" ></modul-color>
+<modul-color name="$m-color--grey-lighter" hex="#f1f1f1" ></modul-color>
+<modul-color name="$m-color--grey-lightest" hex="#f7f7f7" ></modul-color>
 
 ## Autres couleurs
 Utilisation : titre,  libellé, texte, etc.
 
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$m-color--text</td>
-            <td style="background:#000; color:#fff">#000</td>
-        </tr>
-        <tr>
-            <td>$m-color--black</td>
-            <td style="background:#000; color:#fff">#000</td>
-        </tr>
-        <tr>
-            <td>$m-color--white</td>
-            <td style="background:#fff">#fff</td>
-        </tr>
-    </tbody>
-</table>
+<modul-color name="$m-color--text" hex="#000" ></modul-color>
+<modul-color name="$m-color--black" hex="#000" ></modul-color>
+<modul-color name="$m-color--white" hex="#fff" ></modul-color>
