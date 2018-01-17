@@ -17,9 +17,10 @@ import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/u
 import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
 
 import { COLOR_NAME, MColor } from './components/color/color';
-import { GO_NAME, MGo } from './components/go/go';
+import { DEMO_NAME, MDemo } from './components/demo/demo';
 import { DO_NAME, MDo } from './components/do/do';
 import { DONT_NAME, MDont } from './components/dont/dont';
+import { GO_NAME, MGo } from './components/go/go';
 import { MARKDOWN_NAME, MMarkdown } from './components/markdown/markdown';
 import { PREVIEW_NAME, MPreview } from './components/preview/preview';
 import { DARK_TEMPLATE_NAME, MDarkTemplate } from './components/dark-template/dark-template';
@@ -49,9 +50,10 @@ async function main() {
     Vue.use(svc);
 
     Vue.component(COLOR_NAME, MColor);
-    Vue.component(GO_NAME, MGo);
+    Vue.component(DEMO_NAME, MDemo);
     Vue.component(DO_NAME, MDo);
     Vue.component(DONT_NAME, MDont);
+    Vue.component(GO_NAME, MGo);
     Vue.component(MARKDOWN_NAME, MMarkdown);
     Vue.component(PREVIEW_NAME, MPreview);
     Vue.component(DARK_TEMPLATE_NAME, MDarkTemplate);
