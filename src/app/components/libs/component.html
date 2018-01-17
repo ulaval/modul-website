@@ -1,5 +1,5 @@
 <modul-light-template>
-    <m-link slot="backlink" mode="button" iconName="left-arrow" @click="back(component.category)">{{translatedCategory}}</m-link>
+    <m-link slot="backlink" mode="button" iconName="left-chevron" @click="back(component.category)">{{translatedCategory}}</m-link>
     <h1 slot="header">
         <m-dropdown v-if="isMqMinS" class="modul-u--dropdown-light" v-model="selectedComponent" @open="onOpen" @close="onClose" width="auto">
             <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
@@ -7,11 +7,11 @@
         <template v-if="!isMqMinS">{{ getComponentName(selectedComponent) }}</template>
     </h1>
     <button slot="leftArrow" @click="getPreviousComponent()" class="m-u--button-primary">
-        <m-icon name="left-arrow"></m-icon>
+        <m-icon name="left-chevron"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie précédent</span> -->
     </button>
     <button slot="rightArrow" @click="getNextComponent()" class="m-u--button-primary">
-        <m-icon name="right-arrow"></m-icon>
+        <m-icon name="chevron"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie suivante</span> -->
     </button>
     <transition name="modul-u--light-template-transition" appear>

@@ -2,10 +2,10 @@
     <div class="modul-component" v-if="component">
         <header class="modul-component-details__header">
             <h2 class="modul-component-details__title">
-                <m-icon name="left-arrow" class="modul-component-details__title__arrow"></m-icon>{{component.tag}}
-                <m-icon name="right-arrow" class="modul-component-details__title__arrow"></m-icon>
+                <m-icon name="left-chevron" class="modul-component-details__title__arrow"></m-icon>{{component.tag}}
+                <m-icon name="chevron" class="modul-component-details__title__arrow"></m-icon>
             </h2>
-            <m-icon-button class="modul-code-preview-button" icon-name="double-arrow" skin="dark" button-size="52px" icon-size="20px" @click="toggleOpenCodePreview" v-if="component.preview">
+            <m-icon-button class="modul-code-preview-button" icon-name="code-chevrons" skin="dark" button-size="52px" icon-size="26px" @click="toggleOpenCodePreview" v-if="component.preview">
                 <m-i18n k="modul:preview-button-open" class="m-u--visually-hidden" v-if="codePreviewOpen"></m-i18n>
                 <m-i18n k="modul:preview-button-close" class="m-u--visually-hidden" v-if="!codePreviewOpen"></m-i18n>
             </m-icon-button >

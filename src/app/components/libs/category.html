@@ -7,11 +7,11 @@
         <template v-if="!isMqMinS">{{ getCategoryName(selectedCategory) }}</template>
     </h1>
     <button slot="leftArrow" @click="getPreviousCategory()" class="m-u--button-primary">
-        <m-icon name="left-arrow"></m-icon>
+        <m-icon name="left-chevron"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie précédent</span> -->
     </button>
     <button slot="rightArrow" @click="getNextCategory()" class="m-u--button-primary">
-        <m-icon name="right-arrow"></m-icon>
+        <m-icon name="chevron"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie suivante</span> -->
     </button>
     <transition name="modul-u--light-template-transition" appear>

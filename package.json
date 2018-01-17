@@ -1,7 +1,7 @@
 {
     "name": "@ulaval/modul-website",
-    "version": "1.0.0-beta.3",
-    "description": "MODUL web application.",
+    "version": "1.0.0-beta.4",
+    "description": "modUL web application.",
     "author": "Martin Simard <martin.simard@dti.ulaval.ca>",
     "private": true,
     "scripts": {
