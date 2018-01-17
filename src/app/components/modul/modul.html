@@ -90,7 +90,7 @@
                 </nav>
                 <nav class="modul-menu__list" v-for="page in pagesStandards" v-if="menuSection != 'components'">
                     <h2 @click="onPageClick($event, page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
-                        <span>{{page.text}}</span>
+                        <span>{{ page.text }}</span>
                     </h2>
                 </nav>
             </div>
@@ -139,7 +139,7 @@
                                 <ul>
                                     <li v-for="page in pagesStandards" class="modul-mobile-menu__elem">
                                         <a href="#" @click="onPageClick($event, page, 'standards')" class="modul-mobile-menu__elem__link">
-                                            <span>{{page.text}}</span>
+                                            <span>{{ page.text }}</span>
                                         </a>
                                     </li>
                                 </ul>
