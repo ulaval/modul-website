@@ -1,14 +1,13 @@
 let fs = require('fs');
 
-const slotRegExp = new RegExp('\\<slot\\s+[^>]*(name=("|\')script("|\')){1}\\s*[^>]*>([\\s\\S]*?)</slot>', 'g');
+const slotRegExp = new RegExp('\\<template\\s+[^>]*(slot=("|\')script("|\')){1}\\s*[^>]*>([\\s\\S]*?)</template>', 'g');
 const EXTENSION = '.md';
 const COMP_PATH = './src/app/meta/components/';
-const MD_SCRIPTS = 'mdscripts';
+const MD_SCRIPTS = 'md-scripts.ts';
 
 let toComplete = {};
 
-let uuid = Math.random().toString(36).substr(2, 5);
-let stream = fs.createWriteStream(`${COMP_PATH}${MD_SCRIPTS}-${uuid}.ts`);
+let stream = fs.createWriteStream(COMP_PATH + MD_SCRIPTS);
 stream.on('error', console.error);
 
 readFolders('./src/app/meta/components', (folder) => {
@@ -33,11 +32,6 @@ readFolders('./src/app/meta/components', (folder) => {
             while (slot);
 
             done();
-            // Object.keys(meta.attributes).forEach(attribute => {
-            //     errors.push(`${attribute} is not a component property`);
-            // })
-    // console.log('fin', errors);
-            // done(errors);
         }, err => {
             logError(err.message);
         });

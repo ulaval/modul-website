@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "./src/assets/md",
+        "target": "es5",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "strictNullChecks": false,
+        "types": [
+            "es6-promise",
+            "node",
+            "jasmine"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    },
+    "files": ["./src/app/meta/components/md-scripts.ts"]
+}
