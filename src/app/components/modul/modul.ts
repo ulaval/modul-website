@@ -4,7 +4,7 @@ import Component from 'vue-class-component';
 import WithRender from './modul.html?style=./modul.scss';
 import * as ModulActions from '@/app/store/modules/components/actions';
 import { Watch } from 'vue-property-decorator';
-import { ROUTES, COMPONENTS, ECOSYSTEM, GETTING_STARTED, STANDARDS } from '@/app/router';
+// import { ROUTES, COMPONENTS, ECOSYSTEM, GETTING_STARTED, STANDARDS } from '@/app/router';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
@@ -12,6 +12,8 @@ import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import * as PagesGetters from '@/app/store/modules/pages/getters';
 import { Page, Standards, GettingStarted } from '@/app/components/pages/page';
 import { read } from 'fs';
+
+console.warn('TODO: url service');
 
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: Number = 100;
@@ -75,7 +77,7 @@ export default class Modul extends ModulWebsite {
         Standards.getPages().forEach(page => {
             this.pagesStandards.push({
                 id: page,
-                text: this.$i18n.translate('name:' + page)
+                text: this.$i18n.translate(`pages:${page}`)
             });
         });
     }
@@ -125,12 +127,14 @@ export default class Modul extends ModulWebsite {
         return isBlackHeader;
     }
 
+    // TODO: should use a url service
     private get gettingStarted(): string {
-        return '/' + ROUTES[GETTING_STARTED] + '/' + ROUTES[GETTING_STARTED];
+        return '/' + this.$i18n.translate('pages:getting-started-route') + '/' + this.$i18n.translate('pages:getting-started-route');
     }
 
+    // TODO: should use a url service
     private get standards(): string {
-        return '/' + ROUTES[STANDARDS];
+        return '/' + this.$i18n.translate('pages:standards-route');
     }
 
     private getCategoryComponents(category): any {
@@ -210,44 +214,62 @@ export default class Modul extends ModulWebsite {
         this.menuFirstStep = true;
     }
 
+    // TODO: another way to index?
     private searchData(): any[] {
-        if ((process.env.NODE_ENV as any).dev) {
-            return Object.keys(Meta.getMeta()).map(key => {
-                let nameObj: {};
-                if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {
-                    nameObj = {
-                        tag: Meta.getMeta()[key].tag,
-                        category: this.$i18n.translate(Meta.getMeta()[key].category),
-                        text: this.$i18n.translate(Meta.getMeta()[key].name)
-                    };
-                } else {
-                    nameObj = {
-                        tag: Meta.getMeta()[key].tag,
-                        category: undefined,
-                        text: undefined
-                    };
-                }
-                return nameObj;
-            }, this);
-        } else {
-            return Object.keys(Meta.getMetaForProd()).map(key => {
-                let nameObj: {};
-                if (Meta.getMetaForProd()[key].name && Meta.getMetaForProd()[key].category) {
-                    nameObj = {
-                        tag: Meta.getMetaForProd()[key].tag,
-                        category: this.$i18n.translate(Meta.getMetaForProd()[key].category),
-                        text: this.$i18n.translate(Meta.getMetaForProd()[key].name)
-                    };
-                } else {
-                    nameObj = {
-                        tag: Meta.getMetaForProd()[key].tag,
-                        category: undefined,
-                        text: undefined
-                    };
-                }
-                return nameObj;
-            }, this);
-        }
+        return Meta.getMeta().map(metaData => {
+            let nameObj: {};
+            if (metaData.name && metaData.category) {
+                nameObj = {
+                    tag: metaData.tag,
+                    category: this.$i18n.translate(metaData.category),
+                    text: this.$i18n.translate(metaData.name)
+                };
+            } else {
+                nameObj = {
+                    tag: metaData.tag,
+                    category: undefined,
+                    text: undefined
+                };
+            }
+            return nameObj;
+        });
+        // if ((process.env.NODE_ENV as any).dev) {
+        //     return Object.keys(Meta.getMeta()).map(key => {
+        //         let nameObj: {};
+        //         if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {
+        //             nameObj = {
+        //                 tag: Meta.getMeta()[key].tag,
+        //                 category: this.$i18n.translate(Meta.getMeta()[key].category),
+        //                 text: this.$i18n.translate(Meta.getMeta()[key].name)
+        //             };
+        //         } else {
+        //             nameObj = {
+        //                 tag: Meta.getMeta()[key].tag,
+        //                 category: undefined,
+        //                 text: undefined
+        //             };
+        //         }
+        //         return nameObj;
+        //     }, this);
+        // } else {
+        //     return Object.keys(Meta.getMetaForProd()).map(key => {
+        //         let nameObj: {};
+        //         if (Meta.getMetaForProd()[key].name && Meta.getMetaForProd()[key].category) {
+        //             nameObj = {
+        //                 tag: Meta.getMetaForProd()[key].tag,
+        //                 category: this.$i18n.translate(Meta.getMetaForProd()[key].category),
+        //                 text: this.$i18n.translate(Meta.getMetaForProd()[key].name)
+        //             };
+        //         } else {
+        //             nameObj = {
+        //                 tag: Meta.getMetaForProd()[key].tag,
+        //                 category: undefined,
+        //                 text: undefined
+        //             };
+        //         }
+        //         return nameObj;
+        //     }, this);
+        // }
     }
 
     private get searchResult(): any[] {

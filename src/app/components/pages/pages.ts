@@ -8,7 +8,9 @@ import { KeyMap, RouteMap } from '@/app/store/modules/components/components-stat
 import { ModulWebsite } from '../modul-website';
 import { Page, Standards } from './page';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
-import { STANDARDS, GETTING_STARTED } from './../../router';
+// import { STANDARDS, GETTING_STARTED } from './../../router';
+
+console.warn('TODO: url service');
 
 const ZINDEX: number = 200;
 
@@ -28,15 +30,16 @@ export class PageViewer extends ModulWebsite {
         return this.$route.meta.sectionObj.getPages();
     }
 
+    // TODO: url service
     @Watch('$route')
     private getMeta(): void {
         let pagesObj: Pages = this.$route.meta.sectionObj;
         let route: string | null;
 
         if (pagesObj.section === 'standards') {
-            route = STANDARDS;
-        } else if (pagesObj.section === 'gettingStarted') {
-            route = GETTING_STARTED;
+            route = this.$i18n.translate('pages:standards-route');
+        } else if (pagesObj.section === 'getting-started') {
+            route = this.$i18n.translate('pages:getting-started-route');
         }
 
         this.$store.dispatch(PagesActions.SECTION_GET, { section: pagesObj.section, route: route });
@@ -141,7 +144,6 @@ export class Pages {
         for (let page of this.pages) {
             if (page.id == idPage) {
                 tabs = page.tabs;
-
             }
         }
 

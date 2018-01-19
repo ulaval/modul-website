@@ -39,7 +39,7 @@ export class MGo extends ModulWebsite {
     }
 
     private get label(): string {
-        return this.meta ? this.$i18n.translate(this.meta.tag + '-meta:name').toLowerCase() : this.$i18n.translate('name:' + this.name).toLowerCase();
+        return this.meta ? this.$i18n.translate(this.meta.tag + '-meta:name').toLowerCase() : this.$i18n.translate('pages:' + this.name).toLowerCase();
     }
 
     private get tag(): string {

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Mutation, Getter } from 'vuex';
 import { ComponentsState } from './components-state';
-import { ROUTES, COMPONENTS } from '../../../router';
+// import { ROUTES, COMPONENTS } from '../../../router';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
@@ -17,22 +17,24 @@ export const getComponentsMeta: Mutation<ComponentsState> = (state: ComponentsSt
     state.componentRoutes = {};
 };
 
+console.warn('TODO: ulr service');
+
 export const COMPONENTS_META_GET_SUCCESS: string = 'M_COMPONENTS_META_GET_SUCCES';
 export const getComponentsMetaSucces: Mutation<ComponentsState> = (state: ComponentsState, language: string) => {
     let i18n: Messages = (Vue as any).$i18n;
-    let componentUrlPart: string = '/' + ROUTES[COMPONENTS] + '/';
+    let componentUrlPart: string = '/' + i18n.translate('router:components') + '/';
 
     Meta.getCategories().forEach(category => {
         state.categoriesText[category] = i18n.translate(category);
 
         state.categoryRoutes[category] = {
-            url: componentUrlPart + ROUTES[category],
+            url: componentUrlPart + i18n.translate(category),
             name: state.categoriesText[category]
         };
 
         Meta.getMetaByCategory(category).forEach(meta => {
             state.componentRoutes[meta.tag] = {
-                url: componentUrlPart + ROUTES[category] + '/' + meta.tag,
+                url: componentUrlPart + i18n.translate(category) + '/' + meta.tag,
                 name: meta.name ? meta.name : ''
             };
         });

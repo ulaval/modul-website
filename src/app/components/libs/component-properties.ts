@@ -16,7 +16,10 @@ export class ComponentProperties extends ModulWebsite {
     }
 
     private getAttributes(meta: ComponentMeta): string[] {
-        return Meta.getComponentAttributes(meta);
+        // TODO: append mixin info
+        let result: string[] = [];
+        Meta.getComponentAttributes(meta, true, (attribute, meta) => result.push(attribute));
+        return result;
     }
 
     private getAttribute(tag: string): ComponentAttribute | undefined {

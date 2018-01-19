@@ -5,6 +5,8 @@ import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/m
 import ElementQueries from 'css-element-queries/src/ElementQueries';
 import * as Routes from '../../router';
 
+console.warn('TODO: url service');
+
 @WithRender
 @Component({
     mixins: [MediaQueries]
@@ -19,19 +21,12 @@ export class HomePage extends ModulVue {
     private widthStep: number = 1;
     private designButtonPosition: number = 1;
 
-    private visualStandards: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.VISUAL_STANDARDS];
-    private writingStandards: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.WRITING_STANDARDS];
-    private components: string = Routes.ROUTES[Routes.COMPONENTS];
-    private ecosystem: string = Routes.ROUTES[Routes.ECOSYSTEM];
-    private codingStandards: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.CODING_STANDARDS];
-    private gettingStarted: string = Routes.ROUTES[Routes.GETTING_STARTED] + '/' + Routes.ROUTES[Routes.GETTING_STARTED];
-    private unifiedExperience: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.UNIFIED_EXPERIENCE];
-    private responsiveDesign: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.RESPONSIVE_DESIGN];
-
     protected mounted(): void {
         this.setParallaxEffect();
         this.$modul.event.$on('scroll', this.onScroll);
         ElementQueries.init();
+
+        console.log('$router', this.$router);
     }
 
     protected beforeDestroy(): void {
@@ -63,5 +58,38 @@ export class HomePage extends ModulVue {
 
     private onRoute(route: string): void {
         this.$router.push(route);
+    }
+
+    private get visualStandards(): string {
+        return this.$i18n.translate('pages:standards-route') + '/' + this.$i18n.translate('pages:visual-standards-route');
+    }
+
+    private get writingStandards(): string {
+        return this.$i18n.translate('pages:standards-route') + '/' + this.$i18n.translate('pages:writing-standards-route');
+    }
+
+    private get components(): string {
+        return this.$i18n.translate('router:components');
+    }
+
+    // TODO: should call a url service instead of hardcoding paths
+    private get ecosystem(): string {
+        return this.$i18n.translate('router.ecosystem');
+    }
+
+    private get codingStandards(): string {
+        return this.$i18n.translate('pages:standards-route') + '/' + this.$i18n.translate('pages:coding-standards-route');
+    }
+
+    private get gettingStarted(): string {
+        return this.$i18n.translate('pages:getting-started-route') + '/' + this.$i18n.translate('pages:getting-started-route');
+    }
+
+    private get unifiedExperience(): string {
+        return this.$i18n.translate('pages:standards-route') + '/' + this.$i18n.translate('pages:unified-experience-route');
+    }
+
+    private get responsiveDesign(): string {
+        return this.$i18n.translate('pages:standards-route') + '/' + this.$i18n.translate('pages:responsive-design-route');
     }
 }

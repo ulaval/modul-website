@@ -1,0 +1,8 @@
+{
+    "router": {
+        "components": "composants",
+        "properties": "proprietes",
+        "overview": "portrait",
+        "ecosystem": "ecosysteme"
+    }
+}

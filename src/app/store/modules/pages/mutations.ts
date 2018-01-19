@@ -2,8 +2,10 @@ import Vue from 'vue';
 import { Mutation } from 'vuex';
 import { SectionsState } from './sections-state';
 import { PagesState } from './pages-state';
-import { ROUTES } from '../../../router';
+// import { ROUTES } from '../../../router';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+
+console.warn('TODO: ulr service');
 
 export const SECTIONS_META_GET: string = 'M_SECTIONS_META_GET';
 export const getMetaSections: Mutation<SectionsState> = (state: SectionsState, payload) => {
@@ -33,22 +35,22 @@ export const getSection: Mutation<SectionsState> = (state: SectionsState, payloa
 export const PAGES_META_GET_SUCCESS: string = 'M_PAGES_META_GET_SUCCESS';
 export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payload) => {
     let i18n: Messages = (Vue as any).$i18n;
-    let pageUrlPart: string = '/' + ROUTES[payload.route] + '/';
+    let pageUrlPart: string = '/' + i18n.translate(payload.route) + '/';
 
     state.tabRoutes = {};
 
     payload.pagesObj.getPages().forEach(page => {
-        state.pagesText[page] = i18n.translate('name:' + page);
+        state.pagesText[page] = i18n.translate(page);
 
         state.pageRoutes[page] = {
-            url: pageUrlPart + ROUTES[page],
+            url: pageUrlPart + i18n.translate(page),
             name: state.pagesText[page]
         };
 
         payload.pagesObj.getPageTabs(page).forEach(tab => {
             state.tabRoutes[tab] = {
-                url: pageUrlPart + ROUTES[page] + '/' + tab,
-                name: i18n.translate(`name:${page}.${tab}`)
+                url: pageUrlPart + i18n.translate(page) + '/' + i18n.translate(tab),
+                name: i18n.translate(`pages:${page}.${tab}`)
             };
         });
     });

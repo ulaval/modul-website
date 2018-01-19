@@ -7,14 +7,16 @@ import {
     UPLOAD_DRAGDROP_NAME, UPLOAD_FILESLIST_NAME
 } from '@ulaval/modul-components/dist/components/component-names';
 import { RIPPLE_EFFECT_NAME, SCROLL_TO_NAME } from '@ulaval/modul-components/dist/directives/directive-names';
+import { InputState } from '@ulaval/modul-components/dist/mixins/input-state/input-state';
 import { Meta } from '@ulaval/modul-components/dist/meta/meta';
 
 // should be i18n key format
-export const CATEGORY_CONTENT: string = 'meta:content';
-export const CATEGORY_FORMS: string = 'meta:forms';
-export const CATEGORY_NAVIGATION: string = 'meta:navigation';
-export const CATEGORY_LAYOUT: string = 'meta:layout';
-export const CATEGORY_WINDOWS: string = 'meta:windows';
+export const CATEGORY_CONTENT: string = 'categories:content';
+export const CATEGORY_FORMS: string = 'categories:forms';
+export const CATEGORY_NAVIGATION: string = 'categories:navigation';
+export const CATEGORY_LAYOUT: string = 'categories:layout';
+export const CATEGORY_WINDOWS: string = 'categories:windows';
+export const CATEGORY_MIXINS: string = 'categories:mixins';
 
 export class MetaAll implements PluginObject<any> {
     public install(v, options) {
@@ -68,6 +70,8 @@ export class MetaAll implements PluginObject<any> {
         meta.mergeComponentMeta(TOOLTIP_NAME, require('@ulaval/modul-components/dist/components/tooltip/tooltip.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(UPLOAD_NAME, require('@ulaval/modul-components/dist/components/upload/upload.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(SCROLL_TO_NAME, require('@ulaval/modul-components/dist/directives/scroll-to/scroll-to.meta.json'), CATEGORY_NAVIGATION);
+
+        // meta.mergeComponentMeta((InputState as any).name, require('@ulaval/modul-components/dist/mixins/input-state/input-state.meta.json'), CATEGORY_MIXINS);
     }
 }
 

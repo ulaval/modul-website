@@ -1,5 +1,7 @@
 import { Pages } from './pages';
 
+console.warn('TODO: review');
+
 export class Page {
     public tabs: string[];
 
@@ -8,7 +10,7 @@ export class Page {
     }
 }
 
-export const GettingStarted: Pages = new Pages('gettingStarted');
+export const GettingStarted: Pages = new Pages('getting-started');
 export const Standards: Pages = new Pages('standards');
 
 let pageGettingStarted: Page;
@@ -24,13 +26,13 @@ GettingStarted.pages.push(pageGettingStarted);
 let pageStandard: Page;
 // unified-experience
 pageStandard = new Page('unified-experience');
-pageStandard.tabs.push('overview-unified-experience');
+pageStandard.tabs.push('overview');
 
 Standards.pages.push(pageStandard);
 
 // responsive-design
 pageStandard = new Page('responsive-design');
-pageStandard.tabs.push('overview-responsive-design');
+pageStandard.tabs.push('overview');
 
 Standards.pages.push(pageStandard);
 

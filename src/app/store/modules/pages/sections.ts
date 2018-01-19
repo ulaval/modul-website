@@ -25,6 +25,7 @@ const getters: GetterTree<SectionsState, SectionsState> = {
     [Getters.GET_SECTION_ROUTE]: Getters.getSectionRoute
 };
 
+console.warn('TODO: review module names');
 export const sections = {
     state: sectionsState,
     mutations:  mutations,
@@ -32,7 +33,7 @@ export const sections = {
     getters:  getters,
     strict: true,
     modules: {
-        gettingStarted: pages,
-        standards: pages
+        'getting-started': pages,
+        'standards': pages
     }
 };
