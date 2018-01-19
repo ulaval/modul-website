@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="m-text-field" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="m-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 260 260" style="enable-background:new 0 0 260 260;" xml:space="preserve">
 <style type="text/css">
 	.modul-u--preview-img--dark {
@@ -17,15 +17,13 @@
         opacity:0.3;
     }
 </style>
+<rect class="modul-u--preview-img--light" x="10" y="80.7" width="240" height="124"/>
 <g class="modul-u--preview-img--dark">
-    <rect x="135" y="111.9" width="1" height="23.1"/>
-	<rect x="10" y="138.1" width="240" height="3"/>
-</g>
-<g class="modul-u--preview-img" >
-	<rect x="10" y="118.9" width="116" height="9.1"/>
-	<rect x="10" y="74.6" width="240" height="3"/>
-	<rect x="10" y="55.4" width="116" height="9.1"/>
-	<rect x="10" y="201.6" width="240" height="3"/>
-	<rect x="10" y="182.4" width="116" height="9.1"/>
+	<circle cx="26.9" cy="57.4" r="2.1"/>
+	<circle cx="26.9" cy="63.5" r="2.1"/>
+	<circle cx="26.9" cy="69.6" r="2.1"/>
+	<rect x="25.3" y="98.2" width="127.7" height="9.1"/>
+	<rect x="25.3" y="137.7" width="160.7" height="9.1"/>
+	<rect x="25.3" y="177.2" width="109.7" height="9.1"/>
 </g>
 </svg>

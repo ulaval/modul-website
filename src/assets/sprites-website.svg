@@ -437,7 +437,7 @@
         <rect class="modul-u--preview-img--light" x="10" y="90" width="141" height="106"/>
         <rect class="modul-u--preview-img--dark" x="10" y="42" width="240" height="40"/>
     </symbol>
-    <symbol id="m-text-field" viewBox="0 0 260 260">
+    <symbol id="m-textfield" viewBox="0 0 260 260">
         <g class="modul-u--preview-img--dark">
             <rect x="135" y="111.9" width="1" height="23.1"/>
             <rect x="10" y="138.1" width="240" height="3"/>
