@@ -1,13 +1,13 @@
 import { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
-export interface RouteInfo {
-    url: string;
-    name: string;
-}
+// export interface RouteInfo {
+//     url: string;
+//     name: string;
+// }
 
-export type RouteMap = {
-    [key: string]: RouteInfo;
-};
+// export type RouteMap = {
+//     [key: string]: RouteInfo;
+// };
 
 export type KeyMap = {
     [key: string]: string
@@ -18,8 +18,8 @@ export class ComponentsState {
     public messagesLanguageLoaded: string | null = null;
     public iconsLoaded: string | null = null;
 
-    public categoryRoutes: RouteMap = {};
-    public componentRoutes: RouteMap = {};
+    // public categoryRoutes: RouteMap = {};
+    // public componentRoutes: RouteMap = {};
     public categoriesText: KeyMap = {};
     public componentsText: KeyMap = {};
 

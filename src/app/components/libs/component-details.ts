@@ -9,13 +9,6 @@ import * as ComponentsActions from '@/app/store/modules/components/actions';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion';
 
-console.warn('TODO: declare $routerIndex');
-declare module 'vue/types/vue' {
-    interface Vue {
-        $routerIndex: RoutePathMap;
-    }
-}
-
 @WithRender
 @Component({
     mixins: [TransitionAccordion]

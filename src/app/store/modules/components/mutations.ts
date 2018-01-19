@@ -14,30 +14,28 @@ export const ICONS_GET_SUCCESS: string = 'ICONS_GET_SUCCESS';
 export const COMPONENTS_META_GET: string = 'M_COMPONENTS_META_GET';
 export const getComponentsMeta: Mutation<ComponentsState> = (state: ComponentsState) => {
     state.metaLanguageLoaded = null;
-    state.componentRoutes = {};
+    // state.componentRoutes = {};
 };
-
-console.warn('TODO: ulr service');
 
 export const COMPONENTS_META_GET_SUCCESS: string = 'M_COMPONENTS_META_GET_SUCCES';
 export const getComponentsMetaSucces: Mutation<ComponentsState> = (state: ComponentsState, language: string) => {
     let i18n: Messages = (Vue as any).$i18n;
-    let componentUrlPart: string = '/' + i18n.translate('router:components') + '/';
+    // let componentUrlPart: string = '/' + i18n.translate('router:components') + '/';
 
     Meta.getCategories().forEach(category => {
         state.categoriesText[category] = i18n.translate(category);
 
-        state.categoryRoutes[category] = {
-            url: componentUrlPart + i18n.translate(category),
-            name: state.categoriesText[category]
-        };
+        // state.categoryRoutes[category] = {
+        //     url: componentUrlPart + i18n.translate(category),
+        //     name: state.categoriesText[category]
+        // };
 
-        Meta.getMetaByCategory(category).forEach(meta => {
-            state.componentRoutes[meta.tag] = {
-                url: componentUrlPart + i18n.translate(category) + '/' + meta.tag,
-                name: meta.name ? meta.name : ''
-            };
-        });
+        // Meta.getMetaByCategory(category).forEach(meta => {
+        //     state.componentRoutes[meta.tag] = {
+        //         url: componentUrlPart + i18n.translate(category) + '/' + meta.tag,
+        //         name: meta.name ? meta.name : ''
+        //     };
+        // });
     });
 
     state.metaLanguageLoaded = language;

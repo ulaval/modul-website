@@ -4,6 +4,7 @@ import Component from 'vue-class-component';
 import WithRender from './modul.html?style=./modul.scss';
 import * as ModulActions from '@/app/store/modules/components/actions';
 import { Watch } from 'vue-property-decorator';
+import { RoutePathMap } from '@/app/router';
 // import { ROUTES, COMPONENTS, ECOSYSTEM, GETTING_STARTED, STANDARDS } from '@/app/router';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
@@ -13,7 +14,7 @@ import * as PagesGetters from '@/app/store/modules/pages/getters';
 import { Page, Standards, GettingStarted } from '@/app/components/pages/page';
 import { read } from 'fs';
 
-console.warn('TODO: url service');
+console.warn('TODO: eliminate regex to identify current page');
 
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: Number = 100;
@@ -120,43 +121,43 @@ export default class Modul extends ModulWebsite {
     }
 
     private get isBlackHeader(): boolean {
-        let isBlackHeader = false;
-        if (this.$route.path == '/' || (this.$route.path as any).startsWith(this.gettingStarted) || (this.$route.path as any).startsWith(this.standards)) {
-            isBlackHeader = true;
-        }
-        return isBlackHeader;
+        console.log(this.$route);
+        return this.$route.meta.page === undefined || this.$route.meta.sectionObj === GettingStarted || this.$route.meta.sectionObj === Standards;
+        // if (this.$route.path == '/' || (this.$route.path as any).startsWith(this.gettingStarted) || (this.$route.path as any).startsWith(this.standards)) {
+        //     isBlackHeader = true;
+        // }
+        // return isBlackHeader;
     }
 
-    // TODO: should use a url service
     private get gettingStarted(): string {
-        return '/' + this.$i18n.translate('pages:getting-started-route') + '/' + this.$i18n.translate('pages:getting-started-route');
+        return this.$routerIndex[GettingStarted.pages[0].id];
     }
 
-    // TODO: should use a url service
-    private get standards(): string {
-        return '/' + this.$i18n.translate('pages:standards-route');
-    }
+    // // TODO: should use a url service
+    // private get standards(): string {
+    //     return this.$routerIndex[Standards.section];
+    // }
 
     private getCategoryComponents(category): any {
         return Meta.getMetaByCategory(category).sort((a, b) => {
             return this.$i18n.translate(a.name) < this.$i18n.translate(b.name) ? -1 : (this.$i18n.translate(a.name) > this.$i18n.translate(b.name) ? 1 : 0);
         });
-
     }
 
     private onComponentClick(tag: string): void {
-        this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][tag].url);
+        this.$router.push(this.$routerIndex[tag]);
         this.searchOpen = false;
         this.closeMenu();
     }
 
     private onComponentCategoryClick(category: Category): void {
-        this.$router.push(this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES][category.id].url);
+        this.$router.push(this.$routerIndex[category.id]);
         this.closeMenu();
     }
 
     private onPageClick(event: MouseEvent, page: Page, menuSection: string): void {
-        this.$router.push(this.$store.getters[menuSection + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
+        // this.$router.push(this.$store.getters[menuSection + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
+        this.$router.push(this.$routerIndex[page.id]);
         this.searchOpen = false;
         this.closeMenu();
         (event.currentTarget as HTMLElement).blur();

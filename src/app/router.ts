@@ -21,11 +21,12 @@ import { VueRouter } from 'vue-router/types/router';
 
 console.warn('TODO: detect lang (or add route FR/EN basepath');
 
-// declare module 'vue/types/vue' {
-//     interface Vue {
-//         $i18n: Messages;
-//     }
-// }
+console.warn('TODO: declare $routerIndex');
+declare module 'vue/types/vue' {
+    interface Vue {
+        $routerIndex: RoutePathMap;
+    }
+}
 
 Vue.use(Router);
 Vue.use(MetaAll, Meta);
@@ -144,6 +145,12 @@ export interface ModulRouter {
     router: VueRouter;
 }
 
+// must match router.<lang>.json
+export const ROUTER_COMPONENTS: string = 'router:components';
+export const ROUTER_PROPERTIES: string = 'router:properties';
+export const ROUTER_OVERVIEW: string = 'router:overview';
+export const ROUTER_ECOSYSTEM: string = 'router:ecosystem';
+
 type RouterFactoryFn = () => ModulRouter;
 type PushRouteFn = (key: string, routesConfig: RouteConfig[], config: RouteConfig) => RouteConfig;
 
@@ -157,9 +164,9 @@ const routerFactory: RouterFactoryFn = () => {
     const standardsRoutes: RouteConfig[] = [];
 
     let i18n: Messages = Vue.prototype.$i18n;
-    let componentsRoute: string = i18n.translate('router:components');
-    let propertiesRoute: string = i18n.translate('router:properties');
-    let overviewRoute: string = i18n.translate('router:overview');
+    let componentsRoute: string = i18n.translate(ROUTER_COMPONENTS);
+    let propertiesRoute: string = i18n.translate(ROUTER_PROPERTIES);
+    let overviewRoute: string = i18n.translate(ROUTER_OVERVIEW);
 
     let routeIndex: RoutePathMap = {};
 
@@ -191,12 +198,12 @@ const routerFactory: RouterFactoryFn = () => {
                 component: ComponentDetails
             });
             config.children = [];
-            pushRoute('router:properties', config.children, {
+            pushRoute(ROUTER_PROPERTIES, config.children, {
                 path: propertiesRoute,
                 meta: { page: componentMeta.tag },
                 component: ComponentProperties
             });
-            pushRoute('router:overview', config.children, {
+            pushRoute(ROUTER_OVERVIEW, config.children, {
                 path: overviewRoute,
                 meta: { page: componentMeta.tag },
                 component: ComponentOverview
@@ -292,7 +299,7 @@ const routerFactory: RouterFactoryFn = () => {
         component: PageViewer,
         children: gettingStartedRoutes
     });
-    pushRoute('router:components', modulRoutes, {
+    pushRoute(ROUTER_COMPONENTS, modulRoutes, {
         path: '/' + componentsRoute,
         component: Category,
         children: categoryRoutes
@@ -303,8 +310,8 @@ const routerFactory: RouterFactoryFn = () => {
         component: PageViewer,
         children: standardsRoutes
     });
-    pushRoute('router:ecosystem', modulRoutes, {
-        path: '/' + i18n.translate('router:ecosystem'),
+    pushRoute(ROUTER_ECOSYSTEM, modulRoutes, {
+        path: '/' + i18n.translate(ROUTER_ECOSYSTEM),
         component: PageViewer
     });
 

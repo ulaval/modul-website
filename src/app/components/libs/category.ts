@@ -5,7 +5,7 @@ import { Watch } from 'vue-property-decorator';
 import { ModulWebsite } from '../modul-website';
 import * as ComponentsMutations from '@/app/store/modules/components/mutations';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
-import { RouteMap, KeyMap } from '@/app/store/modules/components/components-state';
+import { KeyMap } from '@/app/store/modules/components/components-state';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 // import StoreMixinMap, { StoreMixin } from '@/app/store/store-mixin';
 
@@ -54,7 +54,7 @@ export class Category extends ModulWebsite {
 
     private set selectedCategory(category: string | null) {
         if (category) {
-            this.$router.push(this.categoryRoutes[category].url);
+            this.$router.push(this.$routerIndex[category]);
             this.$nextTick(() => {
                 this.routerVisible = false;
                 setTimeout(() => {
@@ -64,9 +64,9 @@ export class Category extends ModulWebsite {
         }
     }
 
-    private get categoryRoutes(): RouteMap {
-        return this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES];
-    }
+    // private get categoryRoutes(): RouteMap {
+    //     return this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES];
+    // }
 
     private get hasSelectedCategory(): boolean {
         return this.selectedCategory != undefined ? Object.keys(this.selectedCategory).length > 0 : false;

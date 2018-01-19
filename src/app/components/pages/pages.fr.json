@@ -1,7 +1,7 @@
 {
     "pages": {
+        "getting-started-section-route": "premiers-pas",
         "getting-started-route": "premiers-pas",
-        "getting-started.getting-started-route": "premiers-pas",
         "getting-started": "Premiers pas",
         "getting-started.computer-setup-route": "poste-developpeur",
         "getting-started.computer-setup": "Démarrer une application",

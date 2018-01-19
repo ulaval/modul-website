@@ -3,7 +3,8 @@ import Component from 'vue-class-component';
 import WithRender from './home.html?style=./home.scss';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import ElementQueries from 'css-element-queries/src/ElementQueries';
-import * as Routes from '../../router';
+import { ROUTER_COMPONENTS, ROUTER_ECOSYSTEM } from '../../router';
+import { VISUAL_STANDARDS, WRITING_STANDARDS, CODING_STANDARDS, GETTING_STARTED, UNIFIED_EXPERIENCE, RESPONSIVE_DESIGN } from '@/app/components/pages/page';
 
 console.warn('TODO: url service');
 
@@ -25,8 +26,6 @@ export class HomePage extends ModulVue {
         this.setParallaxEffect();
         this.$modul.event.$on('scroll', this.onScroll);
         ElementQueries.init();
-
-        console.log('$router', this.$router);
     }
 
     protected beforeDestroy(): void {
@@ -61,35 +60,35 @@ export class HomePage extends ModulVue {
     }
 
     private get visualStandards(): string {
-        return this.$i18n.translate('pages:standards-route') + '/' + this.$i18n.translate('pages:visual-standards-route');
+        return this.$routerIndex[VISUAL_STANDARDS];
     }
 
     private get writingStandards(): string {
-        return this.$i18n.translate('pages:standards-route') + '/' + this.$i18n.translate('pages:writing-standards-route');
+        return this.$routerIndex[WRITING_STANDARDS];
     }
 
     private get components(): string {
-        return this.$i18n.translate('router:components');
+        return this.$routerIndex[ROUTER_COMPONENTS];
     }
 
     // TODO: should call a url service instead of hardcoding paths
     private get ecosystem(): string {
-        return this.$i18n.translate('router.ecosystem');
+        return this.$routerIndex[ROUTER_ECOSYSTEM];
     }
 
     private get codingStandards(): string {
-        return this.$i18n.translate('pages:standards-route') + '/' + this.$i18n.translate('pages:coding-standards-route');
+        return this.$routerIndex[CODING_STANDARDS];
     }
 
     private get gettingStarted(): string {
-        return this.$i18n.translate('pages:getting-started-route') + '/' + this.$i18n.translate('pages:getting-started-route');
+        return this.$routerIndex[GETTING_STARTED];
     }
 
     private get unifiedExperience(): string {
-        return this.$i18n.translate('pages:standards-route') + '/' + this.$i18n.translate('pages:unified-experience-route');
+        return this.$routerIndex[UNIFIED_EXPERIENCE];
     }
 
     private get responsiveDesign(): string {
-        return this.$i18n.translate('pages:standards-route') + '/' + this.$i18n.translate('pages:responsive-design-route');
+        return this.$routerIndex[RESPONSIVE_DESIGN];
     }
 }
