@@ -1,0 +1,40 @@
+<div class="modul-icon-gallery">
+    <section class="modul-icon-gallery__header">
+        <m-textfield class="modul-icon-gallery__header__search-field"
+                     :class="{ 'modul-is--focus': focus}"
+                     icon-name="search"
+                     :label="searchIconsText"
+                     @focus="onFocus"
+                     @blur="onBlur"
+                     v-model="searchModel"></m-textfield>
+        <m-dropdown class="modul-icon-gallery__header__icon-size" v-model="size" label="Taille" width="80px">
+            <m-dropdown-item value="16px"></m-dropdown-item>
+            <m-dropdown-item value="20px"></m-dropdown-item>
+            <m-dropdown-item value="32px"></m-dropdown-item>
+            <m-dropdown-item value="64px"></m-dropdown-item>
+        </m-dropdown>
+    </section>
+    <section class="modul-icon-gallery__body">
+        <ul class="modul-icon-gallery__list">
+            <li class="modul-icon-gallery__list__element" v-for="(icon, index) in searchResult">
+                <m-dialog :title="getName(index, 'fr')">
+                    <div slot="trigger">
+                        <m-popper open-trigger="hover" :shadow="false" v-if="isMqMinS">
+                            <span class="modul-icon-gallery__icon" slot="trigger" :style="{ width: size + 22, height: size + 22 }">
+                                <m-icon :name="getName(index)" :size="size"></m-icon>
+                            </span>
+                            <p class="modul-icon-gallery__label">{{ getName(index) }}</p>
+                        </m-popper>
+
+                        <div class="modul-icon-gallery__icon" slot="trigger" v-if="!isMqMinS">
+                            <m-icon :name="getName(index)" :size="size"></m-icon>
+                            <p class="modul-icon-gallery__label">{{ getName(index) }}</p>
+                        </div>
+                    </div>
+                    <m-icon :name="getName(index)" size="100%"></m-icon>
+                    <p slot="footer">&lt;m-icon <strong>name="{{ getName(index) }}"</strong>&gt;&lt;/m-icon&gt;</p>
+                </m-dialog>
+            </li>
+        </ul>
+    </section>
+</div>

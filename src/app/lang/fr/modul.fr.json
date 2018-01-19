@@ -31,6 +31,8 @@
         "hex": "HEX",
         "rgb": "RVB",
         "cmyk": "CMJN",
+        "search": "Rechercher",
+        "search-icons": "Rechercher des icônes",
         "responsive-design": "Design {0}adaptatif",
         "responsive-design-desc": "Des fonctionnalités et des affichages de contenu adaptés à tout appareil.",
         "responsive-design-link": "En savoir plus",
