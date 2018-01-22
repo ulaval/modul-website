@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="m-accordion" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 260 260" style="enable-background:new 0 0 260 260;" xml:space="preserve">
+<style type="text/css">
+	.modul-u--preview-img--dark {
+        fill:#1f2f39;
+    }
+
+    .modul-u--preview-img {
+        fill:#1f2f39;
+        opacity:0.5;
+    }
+
+    .modul-u--preview-img--light {
+        fill:#1f2f39;
+        opacity:0.3;
+    }
+</style>
+<g class="modul-u--preview-img">
+    <rect x="10" y="27.5" width="37" height="63"/>
+    <rect x="10" y="98.5" width="37" height="63"/>
+    <rect x="10" y="169.5" width="37" height="63"/>
+</g>
+<g class="modul-u--preview-img--dark">
+	<path  d="M29,50.6c-4.6,0-8.4,3.8-8.4,8.4s3.8,8.4,8.4,8.4s8.4-3.8,8.4-8.4S33.6,50.6,29,50.6z M29,66.6
+		c-4.2,0-7.6-3.4-7.6-7.6s3.4-7.6,7.6-7.6s7.6,3.4,7.6,7.6S33.2,66.6,29,66.6z"/>
+	<path d="M29,121.6c-4.6,0-8.4,3.8-8.4,8.4s3.8,8.4,8.4,8.4s8.4-3.8,8.4-8.4S33.6,121.6,29,121.6z M29,137.6
+		c-4.2,0-7.6-3.4-7.6-7.6c0-4.2,3.4-7.6,7.6-7.6s7.6,3.4,7.6,7.6C36.6,134.2,33.2,137.6,29,137.6z"/>
+	<path d="M29,192.6c-4.6,0-8.4,3.8-8.4,8.4s3.8,8.4,8.4,8.4s8.4-3.8,8.4-8.4S33.6,192.6,29,192.6z M29,208.6
+		c-4.2,0-7.6-3.4-7.6-7.6s3.4-7.6,7.6-7.6s7.6,3.4,7.6,7.6S33.2,208.6,29,208.6z"/>
+	<path d="M47.4,27.5h-0.8H10v63h36.6h0.8H250v-63H47.4z M10.8,89.8V28.2h35.9v61.5H10.8z M249.2,89.8H47.4V28.2h201.9
+		V89.8z"/>
+	<path d="M46.6,98.5H10v63h36.6h0.8H250v-63H47.4H46.6z M10.8,160.8V99.2h35.9v61.5H10.8z M249.2,99.2v61.5H47.4V99.2
+		H249.2z"/>
+	<path d="M46.6,169.5H10v63h36.6h0.8H250v-63H47.4H46.6z M10.8,231.8v-61.5h35.9v61.5H10.8z M249.2,170.2v61.5H47.4
+		v-61.5H249.2z"/>
+    <rect x="64" y="42.8" width="133.8" height="6.3"/>
+    <rect x="64" y="55.8" width="143.3" height="6.3"/>
+    <rect x="64" y="68.9" width="103.7" height="6.3"/>
+    <rect x="64" y="113.8" width="133.8" height="6.3"/>
+    <rect x="64" y="126.8" width="143.3" height="6.3"/>
+    <rect x="64" y="139.9" width="103.7" height="6.3"/>
+	<rect x="64" y="184.8" width="133.8" height="6.3"/>
+	<rect x="64" y="197.8" width="143.3" height="6.3"/>
+	<rect x="64" y="210.9" width="103.7" height="6.3"/>
+</g>
+</svg>

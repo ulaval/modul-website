@@ -1,1 +1,1 @@
-Les composants modUL obéissent à des normes de développement qui sont alignées sur les meilleures pratiques.
+Les composants **modUL** obéissent à des normes de développement qui sont alignées sur les meilleures pratiques.

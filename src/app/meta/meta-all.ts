@@ -47,8 +47,8 @@ export class MetaAll implements PluginObject<any> {
         meta.mergeComponentMeta(MODAL_NAME, require('@ulaval/modul-components/dist/components/modal/modal.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(NAVBAR_NAME, require('@ulaval/modul-components/dist/components/navbar/navbar.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(NAVBAR_ITEM_NAME, require('@ulaval/modul-components/dist/components/navbar-item/navbar-item.meta.json'), CATEGORY_CONTENT);
-        meta.mergeComponentMeta(MENU_NAME, require('@ulaval/modul-components/dist/components/menu/menu.meta.json'), CATEGORY_CONTENT);
-        meta.mergeComponentMeta(MENU_ITEM_NAME, require('@ulaval/modul-components/dist/components/menu-item/menu-item.meta.json'), CATEGORY_CONTENT);
+        meta.mergeComponentMeta(MENU_NAME, require('@ulaval/modul-components/dist/components/menu/menu.meta.json'), CATEGORY_WINDOWS);
+        meta.mergeComponentMeta(MENU_ITEM_NAME, require('@ulaval/modul-components/dist/components/menu-item/menu-item.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(PANEL_NAME, require('@ulaval/modul-components/dist/components/panel/panel.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(POPPER_NAME, require('@ulaval/modul-components/dist/components/popper/popper.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(POPUP_NAME, require('@ulaval/modul-components/dist/components/popup/popup.meta.json'), CATEGORY_WINDOWS);

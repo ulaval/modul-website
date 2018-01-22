@@ -3,13 +3,11 @@ $modul-color--bp: 590px;
 
 .modul-color {
     width: 100%;
-    margin-top: $m-margin;
+    margin-top: $m-padding;
     border-color: $m-color--success;
 
     @media (min-width: $modul-color--bp) {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
     }
 
     + .modul-color {
@@ -35,33 +33,33 @@ $modul-color--bp: 590px;
             min-width: 220px;
             padding: $m-padding--l 4px;
         }
-
-        &,
-        p {
-            text-align: center;
-        }
     }
 
     &__body {
         flex: 1 1 auto;
         justify-content: space-between;
-        background: $m-color--grey-lightest;
+        background: $m-color--grey-lighter;
         padding: $m-padding--s $m-padding;
 
         @media (min-width: $modul-color--bp) {
             padding: $m-padding--l;
+            background: $m-color--grey-lightest;
         }
 
         strong {
             display: block;
         }
-
-        p {
-            width: 33.33%;
-        }
     }
 
-    p {
+    &__name {
         margin: 0;
+        text-align: center;
+    }
+
+    &__hex,
+    &__rgb,
+    &__cmyk {
+        margin: 0;
+        width: 33.33%;
     }
 }

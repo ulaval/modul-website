@@ -1,0 +1,95 @@
+@import '../../styles/shared-styles';
+@import '../../styles/components/do-dont';
+
+.modul-icon-gallery {
+    &__header {
+        display: flex;
+        align-items: flex-end;
+
+        &__search-field {
+            transition: flex 0.3s ease;
+            margin-right: $m-margin;
+
+            @media (max-width: $m-mq--max--s) {
+                flex: 1 1 auto;
+            }
+
+            @media (min-width: $m-mq--min--s) {
+                min-width: 250px;
+            }
+
+            &.modul-is--focus {
+                flex: 1 1 auto;
+            }
+        }
+    }
+
+    &__body {
+        margin-top: $m-padding--l;
+    }
+
+    &__list {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        &__element {
+            position: relative;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+
+            &::before {
+                display: none;
+            }
+
+            &:hover,
+            &:focus {
+                .modul-icon-gallery__icon {
+                    // opacity: 0.5;
+
+                    @media (min-width: $m-mq--min--s) {
+                        background: $modul-color--grey;
+                        border-radius: 50%;
+                        // color:
+                        // border-color: $modul-color--black-grey;
+                    }
+                }
+            }
+        }
+    }
+
+    &__icon {
+        transition: background $m-transition-duration ease, border-radius $m-transition-duration ease, opacity $m-transition-duration ease;
+        padding: $m-padding--s;
+        text-align: center;
+        min-width: 58px;
+        min-height: 58px;
+        cursor: pointer;
+
+        @media (min-width: $m-mq--min--s) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .m-icon {
+            color: $modul-color--black-grey;
+        }
+    }
+
+    &__label {
+        text-align: center;
+    }
+
+    .m-list-item {
+        display: block;
+    }
+}

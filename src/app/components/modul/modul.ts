@@ -160,11 +160,11 @@ export default class Modul extends ModulWebsite {
         this.$router.push(this.$routerIndex[page.id]);
         this.searchOpen = false;
         this.closeMenu();
+        event.preventDefault();
         (event.currentTarget as HTMLElement).blur();
     }
 
     private navigateTo(event: MouseEvent, menuSection: string) {
-
         switch (menuSection) {
             case ModulMenuSection.Home:
                 this.$router.push('/');

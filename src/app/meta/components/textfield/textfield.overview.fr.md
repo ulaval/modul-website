@@ -3,7 +3,7 @@ Un champ de saisie permet à l'utilisateur de saisir de l'information servant g�
 <modul-do>
     <ul>
         <li>Fournir des étiquettes claires et toujours visibles pour chaque champ de saisie.</li>
-        <li>Utiliser des étiquettes courtes et descriptives (un mot ou deux). Si des informations supplémentaires sont nécessaires, utiliser une <em><modul-go name="m-tooltip"></modul-go><e/m>.</li>
+        <li>Utiliser des étiquettes courtes et descriptives (un mot ou deux). Si des informations supplémentaires sont nécessaires, utiliser une <em><modul-go name="m-tooltip"></modul-go></em>.</li>
         <li>Un champ devrait être suffisamment grand pour que la plupart des valeurs possibles soient visibles, ne pas surdimensionner un champ.</li>
         <li>Lorsque possible, fournir des indices de saisie dans l’espace réservé du champ. Par exemple, fournir un masque de saisie pour le champ du numéro de téléphone.</li>
     </ul>

@@ -26,6 +26,7 @@ import { DARK_TEMPLATE_NAME, MDarkTemplate } from './components/dark-template/da
 import { LIGHT_TEMPLATE_NAME, MLightTemplate } from './components/light-template/light-template';
 import { HIGHLIGHT_NAME, MHighlight } from './components/highlight/highlight';
 import { VueRouter } from 'vue-router/types/router';
+import { ICON_GALLERY_NAME, MIconGallery } from './components/icon-gallery/icon-gallery';
 
 const utilsPluginOptions: UtilsPluginOptions = {
     securityPluginOptions: {
@@ -56,6 +57,7 @@ async function main() {
     Vue.component(DARK_TEMPLATE_NAME, MDarkTemplate);
     Vue.component(LIGHT_TEMPLATE_NAME, MLightTemplate);
     Vue.component(HIGHLIGHT_NAME, MHighlight);
+    Vue.component(ICON_GALLERY_NAME, MIconGallery);
 
     currentLang(FRENCH);
     await store.dispatchAsync(ComponentActions.MESSAGES_GET, FRENCH);

@@ -90,7 +90,7 @@
                 </nav>
                 <nav class="modul-menu__list" v-for="page in pagesStandards" v-if="menuSection != 'components'">
                     <h2 @click="onPageClick($event, page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
-                        <span>{{page.text}}</span>
+                        <span>{{ page.text }}</span>
                     </h2>
                 </nav>
             </div>
@@ -106,20 +106,20 @@
                             <li class="modul-mobile-menu__elem">
                                 <a href="#" @click.prevent="showSecondStep('components')" class="modul-mobile-menu__elem__link">
                                     <m-i18n k="modul:components"></m-i18n>
-                                    <m-icon name="right-arrow"></m-icon>
+                                    <m-icon name="chevron"></m-icon>
                                 </a>
                             </li>
                             <li class="modul-mobile-menu__elem">
                                 <a href="#" @click.prevent="showSecondStep('standards')" class="modul-mobile-menu__elem__link">
                                     <m-i18n k="modul:standards"></m-i18n>
-                                    <m-icon name="right-arrow"></m-icon>
+                                    <m-icon name="chevron"></m-icon>
                                 </a>
                             </li>
                         </ul>
                     </nav>
                     <div class="modul-mobile-menu modul--is-second-step" v-if="!menuFirstStep">
                         <header class="modul-mobile-menu__header">
-                            <m-link mode="button" :underline="false" icon-name="left-arrow" @click="showFirstStep">Menu</m-link>
+                            <m-link mode="button" :underline="false" icon-name="left-chevron" @click="showFirstStep">Menu</m-link>
                         </header>
                         <div class="modul-mobile-menu__body">
                             <m-accordion class="modul-mobile-menu__elem" skin="plain" v-for="category in categoriesComponent" v-if="menuSection == 'components'">
@@ -139,7 +139,7 @@
                                 <ul>
                                     <li v-for="page in pagesStandards" class="modul-mobile-menu__elem">
                                         <a href="#" @click="onPageClick($event, page, 'standards')" class="modul-mobile-menu__elem__link">
-                                            <span>{{page.text}}</span>
+                                            <span>{{ page.text }}</span>
                                         </a>
                                     </li>
                                 </ul>
