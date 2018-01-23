@@ -14,10 +14,10 @@
         "standards": "Normes",
 
         "unified-experience-route": "experience-unifiee",
-        "unified-experience.overview-route": "experience-unifiee",
+        "unified-experience.overview-route": "portrait",
         "unified-experience": "Expérience unifiée",
         "responsive-design-route": "design-adaptatif",
-        "responsive-design.overview-route": "design-adaptatif",
+        "responsive-design.overview-route": "portrait",
         "responsive-design": "Design adaptatif",
 
         "writing-standards-route": "normes-editoriales",

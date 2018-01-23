@@ -6,8 +6,6 @@ import ElementQueries from 'css-element-queries/src/ElementQueries';
 import { ROUTER_COMPONENTS, ROUTER_ECOSYSTEM } from '../../router';
 import { VISUAL_STANDARDS, WRITING_STANDARDS, CODING_STANDARDS, GETTING_STARTED, UNIFIED_EXPERIENCE, RESPONSIVE_DESIGN } from '@/app/components/pages/page';
 
-console.warn('TODO: url service');
-
 @WithRender
 @Component({
     mixins: [MediaQueries]
@@ -60,35 +58,34 @@ export class HomePage extends ModulVue {
     }
 
     private get visualStandards(): string {
-        return this.$routerIndex[VISUAL_STANDARDS];
+        return this.$routerIndex.for(VISUAL_STANDARDS);
     }
 
     private get writingStandards(): string {
-        return this.$routerIndex[WRITING_STANDARDS];
+        return this.$routerIndex.for(WRITING_STANDARDS);
     }
 
     private get components(): string {
-        return this.$routerIndex[ROUTER_COMPONENTS];
+        return this.$routerIndex.for(ROUTER_COMPONENTS);
     }
 
-    // TODO: should call a url service instead of hardcoding paths
     private get ecosystem(): string {
-        return this.$routerIndex[ROUTER_ECOSYSTEM];
+        return this.$routerIndex.for(ROUTER_ECOSYSTEM);
     }
 
     private get codingStandards(): string {
-        return this.$routerIndex[CODING_STANDARDS];
+        return this.$routerIndex.for(CODING_STANDARDS);
     }
 
     private get gettingStarted(): string {
-        return this.$routerIndex[GETTING_STARTED];
+        return this.$routerIndex.for(GETTING_STARTED);
     }
 
     private get unifiedExperience(): string {
-        return this.$routerIndex[UNIFIED_EXPERIENCE];
+        return this.$routerIndex.for(UNIFIED_EXPERIENCE);
     }
 
     private get responsiveDesign(): string {
-        return this.$routerIndex[RESPONSIVE_DESIGN];
+        return this.$routerIndex.for(RESPONSIVE_DESIGN);
     }
 }

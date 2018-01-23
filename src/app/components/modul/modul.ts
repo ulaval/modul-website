@@ -130,7 +130,7 @@ export default class Modul extends ModulWebsite {
     }
 
     private get gettingStarted(): string {
-        return this.$routerIndex[GettingStarted.pages[0].id];
+        return this.$routerIndex.for(GettingStarted.pages[0].id);
     }
 
     // // TODO: should use a url service
@@ -145,19 +145,19 @@ export default class Modul extends ModulWebsite {
     }
 
     private onComponentClick(tag: string): void {
-        this.$router.push(this.$routerIndex[tag]);
+        this.$router.push(this.$routerIndex.for(tag));
         this.searchOpen = false;
         this.closeMenu();
     }
 
     private onComponentCategoryClick(category: Category): void {
-        this.$router.push(this.$routerIndex[category.id]);
+        this.$router.push(this.$routerIndex.for(category.id));
         this.closeMenu();
     }
 
     private onPageClick(event: MouseEvent, page: Page, menuSection: string): void {
         // this.$router.push(this.$store.getters[menuSection + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
-        this.$router.push(this.$routerIndex[page.id]);
+        this.$router.push(this.$routerIndex.for(page.id));
         this.searchOpen = false;
         this.closeMenu();
         event.preventDefault();

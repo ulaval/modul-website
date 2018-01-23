@@ -66,22 +66,22 @@ async function main() {
 
     store.dispatchAsync(PageActions.SECTIONS_META_GET, { language: FRENCH, sectionsObj: Sections });
 
-    // console.warn('TODO: to remove, mode or add a generic way to define routes');
-    // Sections.forEach((section) => {
-    //     let pagesObj: Pages = null;
-    //     let route: string = null;
-    //     if (section === 'standards') {
-    //         pagesObj = Standards;
-    //         route = 'pages:standards-route';
-    //     } else if (section === 'getting-started-section') {
-    //         pagesObj = GettingStarted;
-    //         route = 'pages:getting-started-route';
-    //     }
+    console.warn('TODO: to remove, mode or add a generic way to define routes');
+    Sections.forEach((section) => {
+        let pagesObj: Pages = null;
+        // let route: string = null;
+        if (section === 'standards') {
+            pagesObj = Standards;
+            // route = 'pages:standards-route';
+        } else if (section === 'getting-started-section') {
+            pagesObj = GettingStarted;
+            // route = 'pages:getting-started-route';
+        }
 
-    //     if (pagesObj) {
-    //         // store.dispatchAsync(section + '/' + PageActions.PAGES_META_GET, { route: route, pagesObj: pagesObj });
-    //     }
-    // });
+        if (pagesObj) {
+            store.dispatchAsync(section + '/' + PageActions.PAGES_META_GET, { /* route: route,*/ pagesObj: pagesObj });
+        }
+    });
 
     let modulRouter: ModulRouter = routerFactory();
     let router: VueRouter = modulRouter.router;

@@ -32,7 +32,7 @@ export class PageDetails extends ModulWebsite {
     // TODO: url service
     private getRoute(tabId: string): string {
         // return `/${this.sectionRoute}/${this.page}/${this.$i18n.translate(this.getKey(tabId) + '-route')}`;
-        return this.$routerIndex[tabId];
+        return this.$routerIndex.for(tabId);
     }
 
     private getKey(tabId: string): string {

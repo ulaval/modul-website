@@ -32,12 +32,12 @@ export const getSection: Mutation<SectionsState> = (state: SectionsState, payloa
 export const PAGES_META_GET_SUCCESS: string = 'M_PAGES_META_GET_SUCCESS';
 export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payload) => {
     let i18n: Messages = (Vue as any).$i18n;
-    let pageUrlPart: string = '/' + i18n.translate(payload.route) + '/';
+    // let pageUrlPart: string = '/' + i18n.translate(payload.route) + '/';
 
     // state.tabRoutes = {};
 
     payload.pagesObj.getPages().forEach(page => {
-        state.pagesText[page] = i18n.translate(page);
+        state.pagesText[page] = i18n.translate('pages:' + page);
 
         // state.pageRoutes[page] = {
         //     url: pageUrlPart + i18n.translate(page),

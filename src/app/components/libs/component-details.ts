@@ -3,7 +3,7 @@ import Component from 'vue-class-component';
 // import store from './store';
 import WithRender from './component-details.html?style=./component-details.scss';
 import { ModulWebsite } from '../modul-website';
-import { RoutePathMap } from '@/app/router';
+import { RoutePathMap, ROUTER_PROPERTIES, ROUTER_OVERVIEW } from '@/app/router';
 import Meta, { ComponentMeta, ComponentAttribute, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
 import * as ComponentsActions from '@/app/store/modules/components/actions';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
@@ -43,11 +43,11 @@ export class ComponentDetails extends ModulWebsite {
     }
 
     private get properties(): string {
-        return this.$routerIndex['router:properties'];
+        return this.$routerIndex.for(ROUTER_PROPERTIES);
     }
 
     private get overview(): string {
-        return this.$routerIndex['router:overview'];
+        return this.$routerIndex.for(ROUTER_OVERVIEW);
     }
 
     private get htmlTag(): string {
