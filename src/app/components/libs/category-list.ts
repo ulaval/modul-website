@@ -26,6 +26,6 @@ export class CategoryList extends ModulWebsite {
     // }
 
     private onComponentClick(tag: string): void {
-        this.$router.push(this.$routerIndex[tag]);
+        this.$router.push(this.$routerIndex.for(tag));
     }
 }

@@ -15,23 +15,27 @@ export class MGo extends ModulWebsite {
     @Prop()
     public tab: string;
 
-    private get URL(): string | undefined {
-        for (let section of (this.$router as any).options.routes) {
-            if (section.children) {
-                for (let route of section.children) {
-                    if (route.meta && route.meta.page == this.name) {
-                        let path: string = route.path;
-
-                        if (this.tab) {
-                            path += '/' + this.tab;
-                        }
-
-                        return path;
-                    }
-                }
-            }
+    private get url(): string {
+        if (this.tab) {
+            return this.$routerIndex.for(this.tab, _ => this.name);
         }
-        return undefined;
+        return this.$routerIndex.for(this.name);
+        // for (let section of (this.$router as any).options.routes) {
+        //     if (section.children) {
+        //         for (let route of section.children) {
+        //             if (route.meta && route.meta.page == this.name) {
+        //                 let path: string = route.path;
+
+        //                 if (this.tab) {
+        //                     path += '/' + this.tab;
+        //                 }
+
+        //                 return path;
+        //             }
+        //         }
+        //     }
+        // }
+        // return undefined;
     }
 
     private get meta(): ComponentMeta {

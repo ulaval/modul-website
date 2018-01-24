@@ -85,7 +85,6 @@ async function main() {
 
     let modulRouter: ModulRouter = routerFactory();
     let router: VueRouter = modulRouter.router;
-    console.log(modulRouter);
     const vue = new Vue({
         router,
         store,

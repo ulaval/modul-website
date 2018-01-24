@@ -43,11 +43,11 @@ export class ComponentDetails extends ModulWebsite {
     }
 
     private get properties(): string {
-        return this.$routerIndex.for(ROUTER_PROPERTIES);
+        return this.$routerIndex.for(ROUTER_PROPERTIES, _ => this.component.tag);
     }
 
     private get overview(): string {
-        return this.$routerIndex.for(ROUTER_OVERVIEW);
+        return this.$routerIndex.for(ROUTER_OVERVIEW, _ => this.component.tag);
     }
 
     private get htmlTag(): string {

@@ -54,7 +54,7 @@ export class Category extends ModulWebsite {
 
     private set selectedCategory(category: string | null) {
         if (category) {
-            this.$router.push(this.$routerIndex[category]);
+            this.$router.push(this.$routerIndex.for(category));
             this.$nextTick(() => {
                 this.routerVisible = false;
                 setTimeout(() => {

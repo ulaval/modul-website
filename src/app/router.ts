@@ -19,9 +19,8 @@ import { Standards, GettingStarted } from '@/app/components/pages/page';
 import { log } from 'util';
 import { VueRouter } from 'vue-router/types/router';
 
-console.warn('TODO: detect lang (or add route FR/EN basepath');
+console.warn('TODO: detect lang (or add route FR/EN basepath)');
 
-console.warn('TODO: declare $routerIndex, polyfills');
 declare module 'vue/types/vue' {
     interface Vue {
         $routerIndex: RouteIndex;
@@ -33,18 +32,21 @@ Vue.use(MetaAll, Meta);
 
 export interface RoutePath {
     path: string;
-    parentKey: string;
+    hasParent: boolean;
+    staticParent: string | undefined;
 }
 
 export type RoutePathMap = {
     [key: string]: RoutePath;
 };
 
+export type ParentCallbackFn = (key: string) => string | undefined;
+
 export class RouteIndex {
     constructor(private index: RoutePathMap) {
     }
 
-    public for(key: string): string {
+    public for(key: string, parentCallback?: ParentCallbackFn): string {
         let result: string = '';
         let k: string = key;
 
@@ -53,7 +55,14 @@ export class RouteIndex {
             if (path) {
                 result = path.path + '/' + result;
             }
-            k = path.parentKey;
+            k = undefined;
+            if (path.hasParent) {
+                if (!parentCallback && !path.staticParent) {
+                    throw new Error(`Parent callback must be provided for key ${key}`);
+                } else {
+                    k = parentCallback ? parentCallback(k) : path.staticParent;
+                }
+            }
         }
         return result;
     }
@@ -71,7 +80,7 @@ export const ROUTER_OVERVIEW: string = 'router:overview';
 export const ROUTER_ECOSYSTEM: string = 'router:ecosystem';
 
 type RouterFactoryFn = () => ModulRouter;
-type PushRouteFn = (key: string, routesConfig: RouteConfig[], config: RouteConfig, parentKey?: string) => RouteConfig;
+type PushRouteFn = (key: string, routesConfig: RouteConfig[], config: RouteConfig, staticParent?: string) => RouteConfig;
 
 const routerFactory: RouterFactoryFn = () => {
 
@@ -88,15 +97,17 @@ const routerFactory: RouterFactoryFn = () => {
 
     let routeIndex: RoutePathMap = {};
 
-    let pushRoute: PushRouteFn = (key, routesConfig, config, parentKey?) => {
-        if (parentKey === undefined && (config.path.length === 0 || config.path[0] !== '/')) {
-            console.error(`route key ${key} should provide a parent key for child path ${config.path}`);
-        }
+    let pushRoute: PushRouteFn = (key, routesConfig, config, staticParent) => {
         routesConfig.push(config);
-        routeIndex[key] = {
+        let routePath: RoutePath = {
             path: config.path,
-            parentKey: parentKey
+            hasParent: config.path.length === 0 || config.path[0] !== '/',
+            staticParent: staticParent
         };
+        if (routePath.staticParent && !routePath.hasParent) {
+            throw new Error('Static parent should not be provided if route path is not a child path');
+        }
+        routeIndex[key] = routePath;
         return config;
     };
 
@@ -128,12 +139,12 @@ const routerFactory: RouterFactoryFn = () => {
                 path: propertiesRoute,
                 meta: { page: componentMeta.tag },
                 component: ComponentProperties
-            }, componentMeta.tag);
+            });
             pushRoute(ROUTER_OVERVIEW, config.children, {
                 path: overviewRoute,
                 meta: { page: componentMeta.tag },
                 component: ComponentOverview
-            }, componentMeta.tag);
+            });
             config.children.push({
                 path: '',
                 redirect: overviewRoute
@@ -164,7 +175,7 @@ const routerFactory: RouterFactoryFn = () => {
                     path: tabRoute,
                     meta: { page: page, sectionObj: GettingStarted, tab: tab },
                     component: PageTab
-                }, page);
+                });
 
                 if (tabIndex == 0) {
                     defaultTabRoute = tabRoute;
@@ -201,7 +212,7 @@ const routerFactory: RouterFactoryFn = () => {
                     path: tabRoute,
                     meta: { page: page, sectionObj: Standards, tab: tab },
                     component: PageTab
-                }, page);
+                });
 
                 if (tabIndex === 0) {
                     defaultTabRoute = tabRoute;

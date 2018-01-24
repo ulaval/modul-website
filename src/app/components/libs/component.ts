@@ -28,7 +28,7 @@ export class ComponentViewer extends ModulWebsite {
     }
 
     private back(category): void {
-        this.$router.push(this.$routerIndex[category]);
+        this.$router.push(this.$routerIndex.for(category));
     }
 
     private get components(): string[] {
@@ -55,7 +55,7 @@ export class ComponentViewer extends ModulWebsite {
 
     private set selectedComponent(tag: string | undefined) {
         if (tag) {
-            this.$router.push(this.$routerIndex[tag]);
+            this.$router.push(this.$routerIndex.for(tag));
             this.$nextTick(() => {
                 this.routerVisible = false;
                 setTimeout(() => {

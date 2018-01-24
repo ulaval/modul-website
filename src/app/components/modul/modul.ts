@@ -121,7 +121,6 @@ export default class Modul extends ModulWebsite {
     }
 
     private get isBlackHeader(): boolean {
-        console.log(this.$route);
         return this.$route.meta.page === undefined || this.$route.meta.sectionObj === GettingStarted || this.$route.meta.sectionObj === Standards;
         // if (this.$route.path == '/' || (this.$route.path as any).startsWith(this.gettingStarted) || (this.$route.path as any).startsWith(this.standards)) {
         //     isBlackHeader = true;

@@ -8,9 +8,6 @@ import { KeyMap } from '@/app/store/modules/components/components-state';
 import { ModulWebsite } from '../modul-website';
 import { Page, Standards } from './page';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
-// import { STANDARDS, GETTING_STARTED } from './../../router';
-
-console.warn('TODO: url service');
 
 const ZINDEX: number = 200;
 
@@ -30,7 +27,6 @@ export class PageViewer extends ModulWebsite {
         return this.$route.meta.sectionObj.getPages();
     }
 
-    // TODO: url service
     @Watch('$route')
     private getMeta(): void {
         let pagesObj: Pages = this.$route.meta.sectionObj;
@@ -70,7 +66,7 @@ export class PageViewer extends ModulWebsite {
     private set selectedPage(id: string | undefined) {
         if (id) {
             // this.$router.push(this.$store.getters[this.section + PagesGetters.GET_PAGE_ROUTES][id].url);
-            this.$router.push(this.$routerIndex[id]);
+            this.$router.push(this.$routerIndex.for(id));
         }
     }
 
