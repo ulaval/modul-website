@@ -45,7 +45,10 @@ export const getPageAction: Action<PagesState, PagesState> = async (context: Act
 export const PAGE_SUMMARY_GET: string = 'A_PAGE_SUMMARY_GET';
 export const getPageSummaryAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, markdown: MarkdownPayload) => {
     if (context.state.pageSummaryMarkdown == null && context.state.page) {
-        markdown.restAdapter.execute({ method: 'get', rawUrl: `${__webpack_public_path__}assets/md/content/${context.state.page}/${context.state.page}.summary.fr.md` }).then((md) => {
+        let url: string = process.env && (process.env.NODE_ENV as any).dev ?
+            `${__webpack_public_path__}app/content/${context.state.page}/${context.state.page}.summary.fr.md` :
+            `${__webpack_public_path__}assets/md/content/${context.state.page}/${context.state.page}.summary.fr.md`;
+        markdown.restAdapter.execute({ method: 'get', rawUrl: url }).then((md) => {
             context.commit(Mutations.PAGE_SUMMARY_GET_SUCCESS, (md as any).data);
         });
     }
@@ -68,7 +71,10 @@ export const getTabAction: Action<PagesState, PagesState> = async (context: Acti
 export const PAGE_TAB_GET: string = 'A_PAGE_TAB_GET';
 export const getPageTabAction: Action<PagesState, PagesState> = async (context: ActionContext<PagesState, PagesState>, markdown: MarkdownPayload) => {
     if (context.state.tabMarkdown == null && context.state.tab) {
-        markdown.restAdapter.execute({ method: 'get', rawUrl: `${__webpack_public_path__}assets/md/content/${context.state.page}/${context.state.page}.${context.state.tab}.fr.md` }).then((md) => {
+        let url: string = process.env && (process.env.NODE_ENV as any).dev ?
+            `${__webpack_public_path__}app/content/${context.state.page}/${context.state.page}.${context.state.tab}.fr.md` :
+            `${__webpack_public_path__}assets/md/content/${context.state.page}/${context.state.page}.${context.state.tab}.fr.md`;
+        markdown.restAdapter.execute({ method: 'get', rawUrl: url }).then((md) => {
             context.commit(Mutations.PAGE_TAB_GET_SUCCESS, (md as any).data);
         });
     }
