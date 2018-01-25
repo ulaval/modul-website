@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './component-overview.html?style=./component-overview.scss';
 import { ModulWebsite } from '../modul-website';
-import Meta, { ComponentMeta, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
+import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import * as ComponentsActions from '@/app/store/modules/components/actions';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 

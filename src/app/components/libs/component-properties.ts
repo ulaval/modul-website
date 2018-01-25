@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './component-properties.html?style=./component-properties.scss';
 import { ModulWebsite } from '../modul-website';
-import Meta, { ComponentMeta, ComponentAttribute, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
+import Meta, { ComponentMeta, ComponentAttribute } from '@ulaval/modul-components/dist/meta/meta';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 
 const BOOLEAN_TYPE: string = 'boolean';
