@@ -5,21 +5,37 @@
     &__header {
         display: flex;
         align-items: flex-end;
+        height: 53px; // Magic number
 
         &__search-field {
             transition: flex 0.3s ease;
             margin-right: $m-margin;
 
-            @media (max-width: $m-mq--max--s) {
+            @media (max-width: $m-mq--max--xs) {
                 flex: 1 1 auto;
             }
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq--min--xs) {
                 min-width: 250px;
             }
+        }
 
-            &.modul-is--focus {
-                flex: 1 1 auto;
+        &__size-field,
+        &__view-mode-button.m-icon-button {
+            transition: opacity $m-transition-duration--l ease, width $m-transition-duration--l ease, color $m-transition-duration ease;
+        }
+
+        &.modul--is-search-field-focus {
+            .modul-icon-gallery__header {
+                &__search-field {
+                    flex: 1 1 auto;
+                }
+
+                &__size-field,
+                &__view-mode-button {
+                    overflow: hidden;
+                    opacity: 0;
+                }
             }
         }
     }
@@ -28,35 +44,59 @@
         margin-top: $m-padding--l;
     }
 
+    &__block,
     &__list {
         padding: 0;
+    }
+
+    &__block {
         display: flex;
         flex-wrap: wrap;
 
-        &__element {
-            position: relative;
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            outline: none;
-
-            &::before {
-                display: none;
+        .modul-icon-gallery {
+            &__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
 
-            &:hover,
-            &:focus {
-                .modul-icon-gallery__icon {
-                    // opacity: 0.5;
+            &__label {
+                text-align: center;
+            }
+        }
+    }
 
-                    @media (min-width: $m-mq--min--s) {
-                        background: $modul-color--grey;
-                        border-radius: 50%;
-                        // color:
-                        // border-color: $modul-color--black-grey;
-                    }
+    &__list {
+        width: 100%;
+
+        .modul-icon-gallery {
+            &__label {
+                margin: 0 0 0 $m-margin--l;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        list-style: none;
+        outline: none;
+
+        &__content {
+            display: flex;
+            align-content: center;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        &:hover,
+        &:focus {
+            .modul-icon-gallery__icon {
+                @media (min-width: $m-mq--min--s) {
+                    background: $modul-color--grey;
+                    border-radius: 50%;
                 }
             }
         }
@@ -76,20 +116,62 @@
             justify-content: center;
         }
 
-        p {
-            margin: 0;
-        }
-
         .m-icon {
             color: $modul-color--black-grey;
         }
     }
 
     &__label {
-        text-align: center;
+        margin: 0;
     }
 
-    .m-list-item {
-        display: block;
+    &__preview {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @media (max-width: $m-mq--max--s) {
+            position: absolute;
+            top: $m-padding;
+            right: $m-padding;
+            bottom: $m-padding;
+            left: $m-padding;
+        }
+
+        &__header {
+            padding: $m-padding;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex: 1 1 auto;
+            background: $m-color--grey-lighter;
+            min-height: 100px;
+
+            @media (min-width: $m-mq--min--s) {
+                min-height: 230px;
+            }
+        }
+
+        &__body {
+            margin: 0;
+            padding: $m-padding;
+            background: $m-color--grey-light;
+            width: 100%;
+        }
+
+        &__footer {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            > :first-child {
+                margin-right: $m-margin;
+            }
+
+            > :last-child {
+                margin-left: $m-margin;
+            }
+        }
     }
 }
