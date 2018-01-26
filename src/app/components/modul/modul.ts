@@ -12,7 +12,7 @@ import * as PagesGetters from '@/app/store/modules/pages/getters';
 import { Page, Standards, GettingStarted } from '@/app/components/pages/page';
 import { read } from 'fs';
 
-console.warn('TODO: eliminate regex to identify current page');
+console.debug('TODO: eliminate regex to identify current page');
 
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: Number = 100;

@@ -1,7 +1,7 @@
 import { Pages } from './pages';
 import { COLOR_NAME } from '@/app/components/color/color';
 
-console.warn('TODO: review');
+console.debug('TODO: review');
 
 export class Page {
     public tabs: string[];

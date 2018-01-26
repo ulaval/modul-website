@@ -24,7 +24,7 @@ const getters: GetterTree<SectionsState, SectionsState> = {
     [Getters.GET_SECTION]: Getters.getSection
 };
 
-console.warn('TODO: review module names');
+console.debug('TODO: review module names');
 export const sections = {
     state: sectionsState,
     mutations:  mutations,

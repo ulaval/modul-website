@@ -12,14 +12,12 @@ import { PageDetails } from './components/pages/page-details';
 import { PageTab } from './components/pages/page-tab';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Meta from '@ulaval/modul-components/dist/meta/meta';
-import MetaAll, {
-    CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_WINDOWS
-} from './meta/meta-all';
+import MetaAll, { CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_WINDOWS } from './meta/meta-all';
 import { Standards, GettingStarted } from '@/app/components/pages/page';
 import { log } from 'util';
 import { VueRouter } from 'vue-router/types/router';
 
-console.warn('TODO: detect lang (or add route FR/EN basepath)');
+console.debug('TODO: detect lang (or add route FR/EN basepath)');
 
 declare module 'vue/types/vue' {
     interface Vue {

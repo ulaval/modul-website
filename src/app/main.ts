@@ -66,7 +66,7 @@ async function main() {
 
     store.dispatchAsync(PageActions.SECTIONS_META_GET, { language: FRENCH, sectionsObj: Sections });
 
-    console.warn('TODO: to remove, mode or add a generic way to define routes');
+    console.debug('TODO: to remove, mode or add a generic way to define routes');
     Sections.forEach((section) => {
         let pagesObj: Pages = null;
 
