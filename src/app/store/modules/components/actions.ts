@@ -6,6 +6,7 @@ import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import Messages, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { RestAdapter } from '@ulaval/modul-components/dist/utils/http/rest';
 import { HttpService } from '@ulaval/modul-components/dist/utils/http/http';
+import { ComponentMetaEx } from '@/app/meta/meta-all';
 
 interface MarkdownPayload {
     restAdapter: RestAdapter;
@@ -41,7 +42,7 @@ export const getComponentsMetaAction: Action<ComponentsState, ComponentsState> =
 export const COMPONENT_GET: string = 'A_COMPONENT_GET';
 export const getComponentAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, tag: string) => {
     if (context.state.component == null || context.state.component.tag != tag) {
-        let meta: ComponentMeta = Meta.getMetaByTag(tag);
+        let meta: ComponentMetaEx = Meta.getMetaByTag(tag) as ComponentMetaEx;
         context.commit(Mutations.CATEGORY_GET, meta.category);
         context.commit(Mutations.COMPONENT_GET, tag);
     }

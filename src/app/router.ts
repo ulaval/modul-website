@@ -111,7 +111,7 @@ const routerFactory: RouterFactoryFn = () => {
         return config;
     };
 
-    Meta.getCategories().forEach(category => {
+    MetaAll.getCategories().forEach(category => {
         let categoryRoute: string = i18n.translate(category + '-route');
 
         pushRoute(category, categoryRoutes, {
@@ -128,7 +128,7 @@ const routerFactory: RouterFactoryFn = () => {
             children: componentRoutes
         });
 
-        Meta.getMetaByCategory(category).forEach(componentMeta => {
+        MetaAll.getMetaByCategory(category).forEach(componentMeta => {
             let config: RouteConfig = pushRoute(componentMeta.tag, componentRoutes, {
                 path: `/${componentsRoute}/${categoryRoute}/${componentMeta.tag}`,
                 meta: { page: componentMeta.tag },

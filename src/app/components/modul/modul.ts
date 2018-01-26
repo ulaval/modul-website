@@ -6,7 +6,8 @@ import * as ModulActions from '@/app/store/modules/components/actions';
 import { Watch } from 'vue-property-decorator';
 import { RoutePathMap } from '@/app/router';
 // import { ROUTES, COMPONENTS, ECOSYSTEM, GETTING_STARTED, STANDARDS } from '@/app/router';
-import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+// import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import MetaAll from '../../meta/meta-all';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
@@ -63,7 +64,7 @@ export default class Modul extends ModulWebsite {
     private menuFirstStep: boolean = true;
 
     protected beforeMount(): void {
-        Meta.getCategories().forEach(category => {
+        MetaAll.getCategories().forEach(category => {
             this.categoriesComponent.push({
                 id: category,
                 text: this.$i18n.translate(category)
@@ -138,7 +139,7 @@ export default class Modul extends ModulWebsite {
     // }
 
     private getCategoryComponents(category): any {
-        return Meta.getMetaByCategory(category).sort((a, b) => {
+        return MetaAll.getMetaByCategory(category).sort((a, b) => {
             return this.$i18n.translate(a.name) < this.$i18n.translate(b.name) ? -1 : (this.$i18n.translate(a.name) > this.$i18n.translate(b.name) ? 1 : 0);
         });
     }
@@ -216,7 +217,7 @@ export default class Modul extends ModulWebsite {
 
     // TODO: another way to index?
     private searchData(): any[] {
-        return Meta.getMeta().map(metaData => {
+        return MetaAll.getAllMeta().map(metaData => {
             let nameObj: {};
             if (metaData.name && metaData.category) {
                 nameObj = {

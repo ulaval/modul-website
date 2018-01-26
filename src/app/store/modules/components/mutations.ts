@@ -4,6 +4,7 @@ import { ComponentsState } from './components-state';
 // import { ROUTES, COMPONENTS } from '../../../router';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import MetaAll, { ComponentMetaEx } from '../../../meta/meta-all';
 
 export const MESSAGES_GET: string = 'MESSAGES_GET';
 export const MESSAGES_GET_SUCCESS: string = 'MESSAGES_GET_SUCCESS';
@@ -22,7 +23,7 @@ export const getComponentsMetaSucces: Mutation<ComponentsState> = (state: Compon
     let i18n: Messages = (Vue as any).$i18n;
     // let componentUrlPart: string = '/' + i18n.translate('router:components') + '/';
 
-    Meta.getCategories().forEach(category => {
+    MetaAll.getCategories().forEach(category => {
         state.categoriesText[category] = i18n.translate(category);
 
         // state.categoryRoutes[category] = {
@@ -49,7 +50,7 @@ export const getCategory: Mutation<ComponentsState> = (state: ComponentsState, c
         state.componentsText = {};
 
         let i18n: Messages = (Vue as any).$i18n;
-        Meta.getMetaByCategory(category).forEach(meta => {
+        MetaAll.getMetaByCategory(category).forEach(meta => {
             state.componentsText[meta.tag] = meta.name ? i18n.translate(meta.name) : meta.tag;
         });
     }
@@ -57,7 +58,7 @@ export const getCategory: Mutation<ComponentsState> = (state: ComponentsState, c
 
 export const COMPONENT_GET: string = 'M_COMPONENT_GET';
 export const getComponent: Mutation<ComponentsState> = (state: ComponentsState, tag: string) => {
-    let meta: ComponentMeta = Meta.getMetaByTag(tag);
+    let meta: ComponentMetaEx = Meta.getMetaByTag(tag);
     state.component = meta;
     state.componentMarkdownOverview = null;
     state.componentMarkdownPreview = null;

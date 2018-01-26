@@ -1,4 +1,4 @@
-import { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import { ComponentMetaEx } from '../../../meta/meta-all';
 
 // export interface RouteInfo {
 //     url: string;
@@ -23,7 +23,7 @@ export class ComponentsState {
     public categoriesText: KeyMap = {};
     public componentsText: KeyMap = {};
 
-    public component: ComponentMeta | null = null;
+    public component: ComponentMetaEx | null = null;
     public componentMarkdownPreview: string | null = null;
     public componentMarkdownOverview: string | null = null;
     public category: string | null = null;

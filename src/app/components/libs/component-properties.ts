@@ -2,12 +2,13 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './component-properties.html?style=./component-properties.scss';
 import { ModulWebsite } from '../modul-website';
-import Meta, { ComponentMeta, ComponentAttribute } from '@ulaval/modul-components/dist/meta/meta';
+import Meta, { ComponentAttribute } from '@ulaval/modul-components/dist/meta/meta';
+import MetaAll, { ComponentMetaEx } from '../../meta/meta-all';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 
 const BOOLEAN_TYPE: string = 'boolean';
 
-interface AugmentedComponentAttribute extends ComponentAttribute {
+interface ComponentAttributeEx extends ComponentAttribute {
     name: string;
 }
 
@@ -15,17 +16,17 @@ interface AugmentedComponentAttribute extends ComponentAttribute {
 @Component
 export class ComponentProperties extends ModulWebsite {
 
-    private get component(): ComponentMeta | null {
+    private get component(): ComponentMetaEx | null {
         return this.$store.getters[ComponentsGetters.GET_COMPONENT];
     }
 
-    private get attributes(): AugmentedComponentAttribute[] {
+    private get attributes(): ComponentAttributeEx[] {
         let attr: string[] = Meta.getComponentAttributes(this.component);
         return attr.map(a => {
             let attrObj: ComponentAttribute = this.component.attributes[a];
             return {
                 name: a,
-                description: (attrObj.origin ? attrObj.origin.metaKey : this.component.metaKey) + a,
+                description: (attrObj.origin ? (attrObj.origin as ComponentMetaEx).metaKey : this.component.metaKey) + a,
                 ...attrObj
             };
         });
