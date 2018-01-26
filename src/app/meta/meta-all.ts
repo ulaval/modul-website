@@ -8,7 +8,7 @@ import {
 } from '@ulaval/modul-components/dist/components/component-names';
 import { RIPPLE_EFFECT_NAME, SCROLL_TO_NAME } from '@ulaval/modul-components/dist/directives/directive-names';
 import { InputState } from '@ulaval/modul-components/dist/mixins/input-state/input-state';
-import { Meta } from '@ulaval/modul-components/dist/meta/meta';
+import { Meta, Preview, ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
 // should be i18n key format
 export const CATEGORY_CONTENT: string = 'categories:content';
@@ -24,12 +24,17 @@ export class MetaAll implements PluginObject<any> {
             throw new Error('MetaAll.install -> you must provide a Meta object within the options argument');
         }
         const meta: Meta = options as Meta;
+        // mixins should be registered first, starting with the lowest order in the mixin hierarchy
+        // if this doesn't work anymore, we'll have to add a meta.complete() method that will complete the attributes merge
+        this.mergeComponentMeta(meta, (InputState as any).name, require('@ulaval/modul-components/dist/mixins/input-state/input-state.meta.json'), CATEGORY_MIXINS,
+            false, true, 'input-state', 'm-input-state-meta:');
+
         meta.mergeComponentMeta(ACCORDION_NAME, require('@ulaval/modul-components/dist/components/accordion/accordion.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(ACCORDION_GROUP_NAME, require('@ulaval/modul-components/dist/components/accordion-group/accordion-group.meta.json'), CATEGORY_CONTENT);
         meta.mergeComponentMeta(BUTTON_NAME, require('@ulaval/modul-components/dist/components/button/button.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(BUTTON_GROUP_NAME, require('@ulaval/modul-components/dist/components/button-group/button-group.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(LIST_ITEM_NAME, require('@ulaval/modul-components/dist/components/list-item/list-item.meta.json'), CATEGORY_CONTENT);
-        meta.mergeComponentMeta(CHECKBOX_NAME, require('@ulaval/modul-components/dist/components/checkbox/checkbox.meta.json'), CATEGORY_FORMS);
+        this.mergeComponentMeta(meta, CHECKBOX_NAME, require('@ulaval/modul-components/dist/components/checkbox/checkbox.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(DATEFIELDS_NAME, require('@ulaval/modul-components/dist/components/datefields/datefields.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(DATEPICKER_NAME, require('@ulaval/modul-components/dist/components/datepicker/datepicker.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(DIALOG_NAME, require('@ulaval/modul-components/dist/components/dialog/dialog.meta.json'), CATEGORY_WINDOWS);
@@ -70,8 +75,17 @@ export class MetaAll implements PluginObject<any> {
         meta.mergeComponentMeta(TOOLTIP_NAME, require('@ulaval/modul-components/dist/components/tooltip/tooltip.meta.json'), CATEGORY_WINDOWS);
         meta.mergeComponentMeta(UPLOAD_NAME, require('@ulaval/modul-components/dist/components/upload/upload.meta.json'), CATEGORY_FORMS);
         meta.mergeComponentMeta(SCROLL_TO_NAME, require('@ulaval/modul-components/dist/directives/scroll-to/scroll-to.meta.json'), CATEGORY_NAVIGATION);
+    }
 
-        // meta.mergeComponentMeta((InputState as any).name, require('@ulaval/modul-components/dist/mixins/input-state/input-state.meta.json'), CATEGORY_MIXINS);
+    private mergeComponentMeta(meta: Meta, name: string, componentMeta: any, category: string, defaultPreview: boolean = false, production: boolean = false,
+        folder?: string, metaKey?: string): void {
+
+        let component: ComponentMeta = meta.mergeComponentMeta(name, componentMeta, category);
+        component.metaKey = metaKey ? metaKey : component.tag + '-meta:';
+        component.name = component.metaKey + 'name';
+        component.folder = folder ? folder : component.tag.substr(2);
+        component.overview = component.folder + '.overview';
+        component.preview = defaultPreview ? true : component.folder + '.preview';
     }
 }
 

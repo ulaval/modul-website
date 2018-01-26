@@ -7,6 +7,10 @@ import * as ComponentsGetters from '@/app/store/modules/components/getters';
 
 const BOOLEAN_TYPE: string = 'boolean';
 
+interface AugmentedComponentAttribute extends ComponentAttribute {
+    name: string;
+}
+
 @WithRender
 @Component
 export class ComponentProperties extends ModulWebsite {
@@ -15,22 +19,28 @@ export class ComponentProperties extends ModulWebsite {
         return this.$store.getters[ComponentsGetters.GET_COMPONENT];
     }
 
-    private getAttributes(meta: ComponentMeta): string[] {
-        // TODO: append mixin info
-        let result: string[] = [];
-        Meta.getComponentAttributes(meta, true, (attribute, meta) => result.push(attribute));
-        return result;
+    private get attributes(): AugmentedComponentAttribute[] {
+        let attr: string[] = Meta.getComponentAttributes(this.component);
+        return attr.map(a => {
+            let attrObj: ComponentAttribute = this.component.attributes[a];
+            return {
+                name: a,
+                description: (attrObj.origin ? attrObj.origin.metaKey : this.component.metaKey) + a,
+                ...attrObj
+            };
+        });
     }
 
-    private getAttribute(tag: string): ComponentAttribute | undefined {
-        let result: ComponentAttribute | undefined;
+    // private getAttribute(attribute: string): ComponentAttribute | undefined {
+    //     console.log(attribute);
+    //     let result: ComponentAttribute | undefined;
 
-        if (this.component && this.component.attributes) {
-            result = this.component.attributes[tag];
-        }
+    //     if (this.component && this.component.attributes) {
+    //         result = this.component.attributes[attribute];
+    //     }
 
-        return result;
-    }
+    //     return result;
+    // }
 
     private isDefault(attribute: ComponentAttribute, value: any): boolean {
         if (attribute.default) {

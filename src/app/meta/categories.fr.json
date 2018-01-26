@@ -4,6 +4,8 @@
         "content-route": "contenu",
         "forms": "Formulaires",
         "forms-route": "formulaires",
+        "mixins": "Mixins",
+        "mixins-route": "mixins",
         "navigation":  "Navigation",
         "navigation-route":  "navigation",
         "layout": "Mise en page",

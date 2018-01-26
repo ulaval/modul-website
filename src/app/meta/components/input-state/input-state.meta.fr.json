@@ -1,0 +1,6 @@
+{
+    "m-input-state-meta": {
+        "name": "État champ de saisie",
+        "disabled": "Détermine si la composante est désactivée ou non"
+    }
+}
