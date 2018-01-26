@@ -1,10 +1,9 @@
-import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './component-properties.html?style=./component-properties.scss';
 import { ModulWebsite } from '../modul-website';
 import Meta, { ComponentAttribute } from '@ulaval/modul-components/dist/meta/meta';
-import MetaAll, { ComponentMetaEx } from '../../meta/meta-all';
-import * as ComponentsGetters from '@/app/store/modules/components/getters';
+import { ComponentMetaEx } from '../../meta/meta-all';
+import { GET_COMPONENT } from '@/app/store/modules/components/getters';
 
 const BOOLEAN_TYPE: string = 'boolean';
 
@@ -17,7 +16,7 @@ interface ComponentAttributeEx extends ComponentAttribute {
 export class ComponentProperties extends ModulWebsite {
 
     private get component(): ComponentMetaEx | null {
-        return this.$store.getters[ComponentsGetters.GET_COMPONENT];
+        return this.$store.getters[GET_COMPONENT];
     }
 
     private get attributes(): ComponentAttributeEx[] {
@@ -31,17 +30,6 @@ export class ComponentProperties extends ModulWebsite {
             };
         });
     }
-
-    // private getAttribute(attribute: string): ComponentAttribute | undefined {
-    //     console.log(attribute);
-    //     let result: ComponentAttribute | undefined;
-
-    //     if (this.component && this.component.attributes) {
-    //         result = this.component.attributes[attribute];
-    //     }
-
-    //     return result;
-    // }
 
     private isDefault(attribute: ComponentAttribute, value: any): boolean {
         if (attribute.default) {

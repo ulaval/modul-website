@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './component.html';
 import { Watch } from 'vue-property-decorator';
@@ -96,10 +95,6 @@ export class ComponentViewer extends ModulWebsite {
         }
     }
 
-    // private navigateToComponent(component: string): void {
-    //     this.$router.push(this.$routerIndex[component]);
-    // }
-
     private onOpen(): void {
         this.listOpened = true;
     }
@@ -107,10 +102,6 @@ export class ComponentViewer extends ModulWebsite {
     private onClose(): void {
         this.listOpened = false;
     }
-
-    // private set selectedComponent(selected: Component | undefined) {
-    //     this.internalSelected = selected;
-    // }
 
     private get zIndex(): number {
         return this.listOpened ? ZINDEX : 0;

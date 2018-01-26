@@ -1,12 +1,9 @@
-import Vue from 'vue';
 import { ModulWebsite } from '../modul-website';
 import Component from 'vue-class-component';
 import WithRender from './modul.html?style=./modul.scss';
 import * as ModulActions from '@/app/store/modules/components/actions';
 import { Watch } from 'vue-property-decorator';
 import { RoutePathMap } from '@/app/router';
-// import { ROUTES, COMPONENTS, ECOSYSTEM, GETTING_STARTED, STANDARDS } from '@/app/router';
-// import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll from '../../meta/meta-all';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
@@ -71,10 +68,6 @@ export default class Modul extends ModulWebsite {
             });
         });
 
-        // this.categoriesComponent.sort((a, b) => {
-        //     return this.$i18n.translate(a.text) < this.$i18n.translate(b.text) ? -1 : (this.$i18n.translate(a.text) > this.$i18n.translate(b.text) ? 1 : 0);
-        // });
-
         // Aller chercher les pages des normes pour le menu
         Standards.getPages().forEach(page => {
             this.pagesStandards.push({
@@ -123,20 +116,11 @@ export default class Modul extends ModulWebsite {
 
     private get isBlackHeader(): boolean {
         return this.$route.meta.page === undefined || this.$route.meta.sectionObj === GettingStarted || this.$route.meta.sectionObj === Standards;
-        // if (this.$route.path == '/' || (this.$route.path as any).startsWith(this.gettingStarted) || (this.$route.path as any).startsWith(this.standards)) {
-        //     isBlackHeader = true;
-        // }
-        // return isBlackHeader;
     }
 
     private get gettingStarted(): string {
         return this.$routerIndex.for(GettingStarted.pages[0].id);
     }
-
-    // // TODO: should use a url service
-    // private get standards(): string {
-    //     return this.$routerIndex[Standards.section];
-    // }
 
     private getCategoryComponents(category): any {
         return MetaAll.getMetaByCategory(category).sort((a, b) => {
@@ -156,7 +140,6 @@ export default class Modul extends ModulWebsite {
     }
 
     private onPageClick(event: MouseEvent, page: Page, menuSection: string): void {
-        // this.$router.push(this.$store.getters[menuSection + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
         this.$router.push(this.$routerIndex.for(page.id));
         this.searchOpen = false;
         this.closeMenu();
@@ -234,43 +217,6 @@ export default class Modul extends ModulWebsite {
             }
             return nameObj;
         });
-        // if ((process.env.NODE_ENV as any).dev) {
-        //     return Object.keys(Meta.getMeta()).map(key => {
-        //         let nameObj: {};
-        //         if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {
-        //             nameObj = {
-        //                 tag: Meta.getMeta()[key].tag,
-        //                 category: this.$i18n.translate(Meta.getMeta()[key].category),
-        //                 text: this.$i18n.translate(Meta.getMeta()[key].name)
-        //             };
-        //         } else {
-        //             nameObj = {
-        //                 tag: Meta.getMeta()[key].tag,
-        //                 category: undefined,
-        //                 text: undefined
-        //             };
-        //         }
-        //         return nameObj;
-        //     }, this);
-        // } else {
-        //     return Object.keys(Meta.getMetaForProd()).map(key => {
-        //         let nameObj: {};
-        //         if (Meta.getMetaForProd()[key].name && Meta.getMetaForProd()[key].category) {
-        //             nameObj = {
-        //                 tag: Meta.getMetaForProd()[key].tag,
-        //                 category: this.$i18n.translate(Meta.getMetaForProd()[key].category),
-        //                 text: this.$i18n.translate(Meta.getMetaForProd()[key].name)
-        //             };
-        //         } else {
-        //             nameObj = {
-        //                 tag: Meta.getMetaForProd()[key].tag,
-        //                 category: undefined,
-        //                 text: undefined
-        //             };
-        //         }
-        //         return nameObj;
-        //     }, this);
-        // }
     }
 
     private get searchResult(): any[] {

@@ -69,13 +69,11 @@ async function main() {
     console.warn('TODO: to remove, mode or add a generic way to define routes');
     Sections.forEach((section) => {
         let pagesObj: Pages = null;
-        // let route: string = null;
+
         if (section === 'standards') {
             pagesObj = Standards;
-            // route = 'pages:standards-route';
         } else if (section === 'getting-started-section') {
             pagesObj = GettingStarted;
-            // route = 'pages:getting-started-route';
         }
 
         if (pagesObj) {

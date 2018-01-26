@@ -23,11 +23,6 @@ export const getCategory: Getter<ComponentsState, ComponentsState> = (state: Com
     return state.category;
 };
 
-// export const GET_CATEGORY_ROUTES: string = 'G_GET_CATEGORY_ROUTES';
-// export const getCategoryRoutes: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, getters) => {
-//     return state.categoryRoutes;
-// };
-
 export const GET_COMPONENTS_SORTED_BY_CATEGORY: string = 'G_GET_COMPONENTS_SORTED_BY_CATEGORY';
 export const getComponentsSortedByCategory: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, category: string) => {
     return Object.keys(state.componentsText).filter(key => state.componentsText.hasOwnProperty(key)).sort((a, b) => {
@@ -46,11 +41,6 @@ export const GET_COMPONENT: string = 'G_GET_COMPONENT';
 export const getComponent: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, getters) => {
     return state.component;
 };
-
-// export const GET_COMPONENT_ROUTES: string = 'G_GET_COMPONENT_ROUTES';
-// export const getComponentRoutes: Getter<ComponentsState, ComponentsState> = (state: ComponentsState, getters) => {
-//     return state.componentRoutes;
-// };
 
 // getter for preview markdown
 export const GET_MARKDOWN_PREVIEW: string = 'G_GET_MARKDOWN_PREVIEW';

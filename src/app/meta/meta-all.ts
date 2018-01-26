@@ -109,14 +109,6 @@ export class MetaAll implements PluginObject<any> {
 
     public getAllMeta(): ComponentMetaEx[] {
         return this.baseMeta.getMeta().filter(m => process.env && (process.env.NODE_ENV as any).dev || (m as ComponentMetaEx).production === true);
-        // let result: ComponentMetaEx[] = [];
-        // Object.keys(this.componentMeta).filter(key => this.componentMeta.hasOwnProperty(key)).forEach(key => {
-        //     let meta: ComponentMeta = this.componentMeta[key];
-        //     if () {
-        //         result.push(meta);
-        //     }
-        // });
-        // return result;
     }
 
     private mergeComponentMeta(name: string, componentMeta: any, category?: string, defaultPreview?: boolean, production?: boolean, folder?: string,

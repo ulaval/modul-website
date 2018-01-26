@@ -1,10 +1,8 @@
-import Vue from 'vue';
 import Component from 'vue-class-component';
-// import store from './store';
 import WithRender from './component-details.html?style=./component-details.scss';
 import { ModulWebsite } from '../modul-website';
-import { RoutePathMap, ROUTER_PROPERTIES, ROUTER_OVERVIEW } from '@/app/router';
-import Meta, { ComponentMeta, ComponentAttribute } from '@ulaval/modul-components/dist/meta/meta';
+import { ROUTER_PROPERTIES, ROUTER_OVERVIEW } from '@/app/router';
+import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import * as ComponentsActions from '@/app/store/modules/components/actions';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion';

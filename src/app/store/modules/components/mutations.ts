@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import { Mutation, Getter } from 'vuex';
 import { ComponentsState } from './components-state';
-// import { ROUTES, COMPONENTS } from '../../../router';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, { ComponentMetaEx } from '../../../meta/meta-all';
@@ -15,28 +14,14 @@ export const ICONS_GET_SUCCESS: string = 'ICONS_GET_SUCCESS';
 export const COMPONENTS_META_GET: string = 'M_COMPONENTS_META_GET';
 export const getComponentsMeta: Mutation<ComponentsState> = (state: ComponentsState) => {
     state.metaLanguageLoaded = null;
-    // state.componentRoutes = {};
 };
 
 export const COMPONENTS_META_GET_SUCCESS: string = 'M_COMPONENTS_META_GET_SUCCES';
 export const getComponentsMetaSucces: Mutation<ComponentsState> = (state: ComponentsState, language: string) => {
     let i18n: Messages = (Vue as any).$i18n;
-    // let componentUrlPart: string = '/' + i18n.translate('router:components') + '/';
 
     MetaAll.getCategories().forEach(category => {
         state.categoriesText[category] = i18n.translate(category);
-
-        // state.categoryRoutes[category] = {
-        //     url: componentUrlPart + i18n.translate(category),
-        //     name: state.categoriesText[category]
-        // };
-
-        // Meta.getMetaByCategory(category).forEach(meta => {
-        //     state.componentRoutes[meta.tag] = {
-        //         url: componentUrlPart + i18n.translate(category) + '/' + meta.tag,
-        //         name: meta.name ? meta.name : ''
-        //     };
-        // });
     });
 
     state.metaLanguageLoaded = language;
@@ -91,7 +76,3 @@ export const getIcons: Mutation<ComponentsState> = (state: ComponentsState) => {
 export const getIconsSucces: Mutation<ComponentsState> = (state: ComponentsState, icons: string) => {
     state.iconsLoaded = icons;
 };
-
-    // public static getPreview: Getter<ModulState, ModulState> = (state: ModulState, getters) => {
-    //     return state.componentMarkdownPreview;
-    // }

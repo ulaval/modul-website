@@ -13,11 +13,6 @@ export const getSection: Getter<SectionsState, SectionsState> = (state: Sections
     return state.section;
 };
 
-// export const GET_SECTION_ROUTE: string = 'G_GET_SECTION_ROUTE';
-// export const getSectionRoute: Getter<SectionsState, SectionsState> = (state: SectionsState, getters) => {
-//     return state.sectionRoute;
-// };
-
 export const GET_PAGES_TEXT: string = 'G_GET_PAGES_TEXT';
 export const getPagesText: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
     return state.pagesText;
@@ -27,11 +22,6 @@ export const GET_PAGE: string = 'G_GET_PAGE';
 export const getPage: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
     return state.page;
 };
-
-// export const GET_PAGE_ROUTES: string = 'G_GET_PAGES_ROUTES';
-// export const getPageRoutes: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
-//     return state.pageRoutes;
-// };
 
 export const GET_TABS: string = 'G_GET_TABS';
 export const getTabs: Getter<PagesState, PagesState> = (state: PagesState, getters) => {
