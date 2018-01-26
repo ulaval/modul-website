@@ -21,7 +21,7 @@ Un site adaptatif est donc conçu à l'aide d'une grille et de points de rupture
             <td><b>isMqMinXS</b></td>
         </tr>
         <tr>
-            <td>>= 768px</td>
+            <td>>= 769px</td>
             <td><b>isMqMinS</b></td>
         </tr>
         <tr>
@@ -54,7 +54,7 @@ Un site adaptatif est donc conçu à l'aide d'une grille et de points de rupture
             <td><b>isMqXS</b></td>
         </tr>
         <tr>
-            <td>< 768px</td>
+            <td>< 769px</td>
             <td><b>isMqMaxS</b></td>
         </tr>
         <tr>
@@ -83,11 +83,11 @@ Un site adaptatif est donc conçu à l'aide d'une grille et de points de rupture
     </thead>
     <tbody>
         <tr>
-            <td>480px =­> ... < 768px</td>
+            <td>480px =­> ... < 769px</td>
             <td><b>isMqS</b></td>
         </tr>
         <tr>
-            <td>768px => ... < 1024px</td>
+            <td>769px => ... < 1024px</td>
             <td><b>isMqM</b></td>
         </tr>
         <tr>
