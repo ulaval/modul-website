@@ -3,7 +3,8 @@ import { ModulWebsite } from '../modul-website';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import WithRender from './go.html?style=./go.scss';
-import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import Meta from '@ulaval/modul-components/dist/meta/meta';
+import { ComponentMetaEx } from '../../meta/meta-all';
 
 @WithRender
 @Component
@@ -15,19 +16,22 @@ export class MGo extends ModulWebsite {
     @Prop()
     public tab: string;
 
-    private get url(): string {
+    private get url(): string | undefined {
+        let result: string;
         if (this.tab) {
-            return this.$routerIndex.for(this.tab, _ => this.name);
+            result = this.$routerIndex.for(this.tab, _ => this.name);
+        } else {
+            result = this.$routerIndex.for(this.name);
         }
-        return this.$routerIndex.for(this.name);
+        return result ? result : undefined;
     }
 
-    private get meta(): ComponentMeta {
+    private get meta(): ComponentMetaEx {
         return Meta.getMetaByTag(this.name);
     }
 
     private get label(): string {
-        return this.meta ? this.$i18n.translate(this.meta.tag + '-meta:name').toLowerCase() : this.$i18n.translate('pages:' + this.name).toLowerCase();
+        return this.meta ? this.$i18n.translate(this.meta.name).toLowerCase() : this.$i18n.translate('pages:' + this.name).toLowerCase();
     }
 
     private get tag(): string {

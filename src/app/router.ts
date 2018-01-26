@@ -46,21 +46,22 @@ export class RouteIndex {
     constructor(private index: RoutePathMap) {
     }
 
-    public for(key: string, parentCallback?: ParentCallbackFn): string {
+    public for(key: string, parentKeyCallback?: ParentCallbackFn): string {
         let result: string = '';
         let k: string = key;
 
         while (k) {
             let path: RoutePath = this.index[k];
+            k = undefined;
             if (path) {
                 result = path.path + '/' + result;
-            }
-            k = undefined;
-            if (path.hasParent) {
-                if (!parentCallback && !path.staticParent) {
-                    throw new Error(`Parent callback must be provided for key ${key}`);
-                } else {
-                    k = parentCallback ? parentCallback(k) : path.staticParent;
+
+                if (path.hasParent) {
+                    if (!parentKeyCallback && !path.staticParent) {
+                        throw new Error(`Parent callback must be provided for key ${key}`);
+                    } else {
+                        k = parentKeyCallback ? parentKeyCallback(k) : path.staticParent;
+                    }
                 }
             }
         }

@@ -23,7 +23,7 @@
             <ul v-if="isMqMinS">
                 <li>
                     <a href="#" @click.prevent="navigateTo($event, 'gettingStarted')" class="modul-header__nav__link" :class="{ 'm--is-active' : isGettingStartedPage }">
-                        <m-i18n k="modul:getting-started"></m-i18n>
+                        <m-i18n k="pages:getting-started"></m-i18n>
                     </a>
                 </li>
                 <li>
@@ -100,7 +100,7 @@
                         <ul>
                             <li class="modul-mobile-menu__elem">
                                 <router-link :to="gettingStarted" class="modul-mobile-menu__elem__link">
-                                    <m-i18n k="modul:getting-started"></m-i18n>
+                                    <m-i18n k="pages:getting-started"></m-i18n>
                                 </router-link>
                             </li>
                             <li class="modul-mobile-menu__elem">

@@ -68,7 +68,7 @@ export default class Modul extends ModulWebsite {
             });
         });
 
-        // Aller chercher les pages des normes pour le menu
+        // For menu
         Standards.getPages().forEach(page => {
             this.pagesStandards.push({
                 id: page,

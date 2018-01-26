@@ -39,7 +39,7 @@ async function main() {
     Vue.config.productionTip = false;
 
     let i18nOptions: MessagesPluginOptions = {
-        debug: DebugMode.Throw
+        debug: process.env && (process.env.NODE_ENV as any).dev ? DebugMode.Throw : DebugMode.Prod
     };
     Vue.use(I18nPlugin, i18nOptions);
     Vue.use(ComponentsPlugin);
