@@ -28,6 +28,10 @@ export class MIconGallery extends ModulWebsite {
 
     private iconList = [
         {
+            'name': 'default',
+            'nameFr': 'Défaut'
+        },
+        {
             'name': 'arrow',
             'nameFr': 'Flèche'
         },
@@ -66,6 +70,10 @@ export class MIconGallery extends ModulWebsite {
         {
             'name': 'clock',
             'nameFr': 'Horlogue'
+        },
+        {
+            'name': 'close',
+            'nameFr': 'Fermer'
         },
         {
             'name': 'tag-chevrons',
