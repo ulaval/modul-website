@@ -68,7 +68,7 @@ export class MIconGallery extends ModulWebsite {
             'nameFr': 'Horlogue'
         },
         {
-            'name': 'code-chevrons',
+            'name': 'tag-chevrons',
             'nameFr': 'Chevrons de balisage'
         },
         {
@@ -146,10 +146,6 @@ export class MIconGallery extends ModulWebsite {
         return this.as<MediaQueriesMixin>().isMqMinS && (this.viewMode == MIconGalleryViewMode.Block);
     }
 
-    private getName(index: number, lang: string = 'en'): string {
-        return lang == 'en' ? this.iconList[index].name : this.iconList[index].nameFr;
-    }
-
     private get searchIconsText(): string {
         return this.$i18n.translate('modul:search-icons');
     }
@@ -185,10 +181,10 @@ export class MIconGallery extends ModulWebsite {
         return filtereComponents;
     }
 
-    private openDialog(index) {
+    private openDialog(name, nameFr) {
         this.dialogOpen = true;
-        this.previewName = this.getName(index, 'fr');
-        this.previewTag = this.getName(index);
+        this.previewName = nameFr;
+        this.previewTag = name;
     }
 
 }

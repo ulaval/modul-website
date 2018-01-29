@@ -23,20 +23,20 @@
             <li class="modul-icon-gallery__item"
                 v-for="(icon, index) in searchResult"
                 tabindex="0"
-                @click="openDialog(index)"
-                @keydown.enter="openDialog(index)"
+                @click="openDialog(icon.name, icon.nameFr)"
+                @keydown.enter="openDialog(icon.name, icon.nameFr)"
                 v-if="isViewModeBlock">
                 <m-popper open-trigger="hover" :shadow="false" :focus-management="false">
                     <span class="modul-icon-gallery__icon" slot="trigger" :style="{ width: iconSize + 22, height: iconSize + 22 }">
-                        <m-icon :name="getName(index)" :size="iconSize"></m-icon>
+                        <m-icon :name="icon.name" :size="iconSize"></m-icon>
                     </span>
-                    <p class="modul-icon-gallery__label">{{ getName(index) }}</p>
+                    <p class="modul-icon-gallery__label">{{ icon.name }}</p>
                 </m-popper>
             </li>
             <m-list-item class="modul-icon-gallery__item" v-for="(icon, index) in searchResult" v-if="!isViewModeBlock">
                 <div class="modul-icon-gallery__item__content">
-                    <m-icon :name="getName(index)" :size="iconSize"></m-icon>
-                    <p class="modul-icon-gallery__label" aria-hidden="true"><span>{{ getName(index, 'fr') }}&nbsp;/&nbsp;</span><m-link mode="button" slot="trigger" @click="openDialog(index)"> {{ getName(index) }}</m-link></p>
+                    <m-icon :name="icon.name" :size="iconSize"></m-icon>
+                    <p class="modul-icon-gallery__label" aria-hidden="true"><span>{{ icon.nameFr }}&nbsp;/&nbsp;</span><m-link mode="button" slot="trigger" @click="openDialog(icon.name, icon.nameFr)"> {{ icon.name }}</m-link></p>
                 </div>
             </m-list-item>
         </ul>
