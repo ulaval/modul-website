@@ -3,5 +3,4 @@ export class SectionsState {
 
     public sections: string[] | null = null;
     public section: string | null = null;
-    public sectionRoute: string | null = null;
 }

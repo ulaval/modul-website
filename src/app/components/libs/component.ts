@@ -1,16 +1,12 @@
-import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './component.html';
 import { Watch } from 'vue-property-decorator';
 import * as ComponentsActions from '@/app/store/modules/components/actions';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
-import { KeyMap, RouteMap, ComponentsState } from '@/app/store/modules/components/components-state';
+import { KeyMap, ComponentsState } from '@/app/store/modules/components/components-state';
 import { ModulWebsite } from '../modul-website';
 import { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
-import { fail } from 'assert';
-import { log } from 'util';
-import { components } from '@ulaval/modul-components/dist/components/component-names';
 
 const ZINDEX: number = 200;
 
@@ -28,7 +24,7 @@ export class ComponentViewer extends ModulWebsite {
     }
 
     private back(category): void {
-        this.$router.push(this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES][category].url);
+        this.$router.push(this.$routerIndex.for(category));
     }
 
     private get components(): string[] {
@@ -55,7 +51,7 @@ export class ComponentViewer extends ModulWebsite {
 
     private set selectedComponent(tag: string | undefined) {
         if (tag) {
-            this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][tag].url);
+            this.$router.push(this.$routerIndex.for(tag));
             this.$nextTick(() => {
                 this.routerVisible = false;
                 setTimeout(() => {
@@ -96,10 +92,6 @@ export class ComponentViewer extends ModulWebsite {
         }
     }
 
-    private navigateToComponent(component: string): void {
-        this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][component].url);
-    }
-
     private onOpen(): void {
         this.listOpened = true;
     }
@@ -107,10 +99,6 @@ export class ComponentViewer extends ModulWebsite {
     private onClose(): void {
         this.listOpened = false;
     }
-
-    // private set selectedComponent(selected: Component | undefined) {
-    //     this.internalSelected = selected;
-    // }
 
     private get zIndex(): number {
         return this.listOpened ? ZINDEX : 0;

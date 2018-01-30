@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import { Mutation, Getter } from 'vuex';
 import { ComponentsState } from './components-state';
-import { ROUTES, COMPONENTS } from '../../../router';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import MetaAll, { ComponentMetaEx } from '../../../meta/meta-all';
 
 export const MESSAGES_GET: string = 'MESSAGES_GET';
 export const MESSAGES_GET_SUCCESS: string = 'MESSAGES_GET_SUCCESS';
@@ -14,28 +14,14 @@ export const ICONS_GET_SUCCESS: string = 'ICONS_GET_SUCCESS';
 export const COMPONENTS_META_GET: string = 'M_COMPONENTS_META_GET';
 export const getComponentsMeta: Mutation<ComponentsState> = (state: ComponentsState) => {
     state.metaLanguageLoaded = null;
-    state.componentRoutes = {};
 };
 
 export const COMPONENTS_META_GET_SUCCESS: string = 'M_COMPONENTS_META_GET_SUCCES';
 export const getComponentsMetaSucces: Mutation<ComponentsState> = (state: ComponentsState, language: string) => {
     let i18n: Messages = (Vue as any).$i18n;
-    let componentUrlPart: string = '/' + ROUTES[COMPONENTS] + '/';
 
-    Meta.getCategories().forEach(category => {
+    MetaAll.getCategories().forEach(category => {
         state.categoriesText[category] = i18n.translate(category);
-
-        state.categoryRoutes[category] = {
-            url: componentUrlPart + ROUTES[category],
-            name: state.categoriesText[category]
-        };
-
-        Meta.getMetaByCategory(category).forEach(meta => {
-            state.componentRoutes[meta.tag] = {
-                url: componentUrlPart + ROUTES[category] + '/' + meta.tag,
-                name: meta.name ? meta.name : ''
-            };
-        });
     });
 
     state.metaLanguageLoaded = language;
@@ -49,7 +35,7 @@ export const getCategory: Mutation<ComponentsState> = (state: ComponentsState, c
         state.componentsText = {};
 
         let i18n: Messages = (Vue as any).$i18n;
-        Meta.getMetaByCategory(category).forEach(meta => {
+        MetaAll.getMetaByCategory(category).forEach(meta => {
             state.componentsText[meta.tag] = meta.name ? i18n.translate(meta.name) : meta.tag;
         });
     }
@@ -57,7 +43,7 @@ export const getCategory: Mutation<ComponentsState> = (state: ComponentsState, c
 
 export const COMPONENT_GET: string = 'M_COMPONENT_GET';
 export const getComponent: Mutation<ComponentsState> = (state: ComponentsState, tag: string) => {
-    let meta: ComponentMeta = Meta.getMetaByTag(tag);
+    let meta: ComponentMetaEx = Meta.getMetaByTag(tag);
     state.component = meta;
     state.componentMarkdownOverview = null;
     state.componentMarkdownPreview = null;
@@ -90,7 +76,3 @@ export const getIcons: Mutation<ComponentsState> = (state: ComponentsState) => {
 export const getIconsSucces: Mutation<ComponentsState> = (state: ComponentsState, icons: string) => {
     state.iconsLoaded = icons;
 };
-
-    // public static getPreview: Getter<ModulState, ModulState> = (state: ModulState, getters) => {
-    //     return state.componentMarkdownPreview;
-    // }

@@ -1,7 +1,7 @@
 import '@ulaval/modul-components/dist/utils/polyfills';
 import Vue from 'vue';
 import store from './store';
-import router, { STANDARDS, GETTING_STARTED } from './router';
+import routerFactory, { ModulRouter } from './router';
 import Modul from './components/modul/modul';
 import * as ComponentActions from './store/modules/components/actions';
 import * as PageActions from './store/modules/pages/actions';
@@ -9,7 +9,7 @@ import { Sections, Standards, GettingStarted } from '@/app/components/pages/page
 import { Pages } from '@/app/components/pages/pages';
 import './styles/main.scss';
 
-import I18nPlugin, { currentLang, FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import I18nPlugin, { currentLang, FRENCH, DebugMode, MessagesPluginOptions } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import ComponentsPlugin from '@ulaval/modul-components/dist/components';
 import DirectivesPlugin from '@ulaval/modul-components/dist/directives';
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils';
@@ -25,6 +25,7 @@ import { PREVIEW_NAME, MPreview } from './components/preview/preview';
 import { DARK_TEMPLATE_NAME, MDarkTemplate } from './components/dark-template/dark-template';
 import { LIGHT_TEMPLATE_NAME, MLightTemplate } from './components/light-template/light-template';
 import { HIGHLIGHT_NAME, MHighlight } from './components/highlight/highlight';
+import { VueRouter } from 'vue-router/types/router';
 import { ICON_GALLERY_NAME, MIconGallery } from './components/icon-gallery/icon-gallery';
 
 const utilsPluginOptions: UtilsPluginOptions = {
@@ -37,7 +38,10 @@ const utilsPluginOptions: UtilsPluginOptions = {
 async function main() {
     Vue.config.productionTip = false;
 
-    Vue.use(I18nPlugin);
+    let i18nOptions: MessagesPluginOptions = {
+        debug: process.env && (process.env.NODE_ENV as any).dev ? DebugMode.Throw : DebugMode.Prod
+    };
+    Vue.use(I18nPlugin, i18nOptions);
     Vue.use(ComponentsPlugin);
     Vue.use(DirectivesPlugin);
     Vue.use(UtilsPlugin, utilsPluginOptions);
@@ -62,28 +66,31 @@ async function main() {
 
     store.dispatchAsync(PageActions.SECTIONS_META_GET, { language: FRENCH, sectionsObj: Sections });
 
+    console.debug('TODO: to remove, mode or add a generic way to define routes');
     Sections.forEach((section) => {
         let pagesObj: Pages = null;
-        let route: string = null;
+
         if (section === 'standards') {
             pagesObj = Standards;
-            route = STANDARDS;
-        } else if (section === 'gettingStarted') {
+        } else if (section === 'getting-started-section') {
             pagesObj = GettingStarted;
-            route = GETTING_STARTED;
         }
 
         if (pagesObj) {
-            store.dispatchAsync(section + '/' + PageActions.PAGES_META_GET, { route: route, pagesObj: pagesObj });
+            store.dispatchAsync(section + '/' + PageActions.PAGES_META_GET, { /* route: route,*/ pagesObj: pagesObj });
         }
     });
 
+    let modulRouter: ModulRouter = routerFactory();
+    let router: VueRouter = modulRouter.router;
     const vue = new Vue({
         router,
         store,
         template: '<modul></modul>',
         components: { Modul }
     });
+
+    Vue.prototype.$routerIndex = modulRouter.index;
 
     vue.$mount('#vue');
 }

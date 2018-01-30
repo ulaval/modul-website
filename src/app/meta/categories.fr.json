@@ -1,9 +1,16 @@
 {
-    "meta": {
+    "categories": {
         "content": "Contenu",
+        "content-route": "contenu",
         "forms": "Formulaires",
+        "forms-route": "formulaires",
+        "mixins": "Mixins",
+        "mixins-route": "mixins",
         "navigation":  "Navigation",
+        "navigation-route":  "navigation",
         "layout": "Mise en page",
-        "windows": "Fenêtres"
+        "layout-route": "mise-en-page",
+        "windows": "Fenêtres",
+        "windows-route": "fenetres"
     }
 }

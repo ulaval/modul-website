@@ -3,7 +3,8 @@ import Component from 'vue-class-component';
 import WithRender from './home.html?style=./home.scss';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import ElementQueries from 'css-element-queries/src/ElementQueries';
-import * as Routes from '../../router';
+import { ROUTER_COMPONENTS, ROUTER_ECOSYSTEM } from '../../router';
+import { VISUAL_STANDARDS, WRITING_STANDARDS, CODING_STANDARDS, GETTING_STARTED, UNIFIED_EXPERIENCE, RESPONSIVE_DESIGN } from '@/app/components/pages/page';
 
 @WithRender
 @Component({
@@ -18,15 +19,6 @@ export class HomePage extends ModulVue {
     private scrollDesignStart: boolean = false;
     private widthStep: number = 1;
     private designButtonPosition: number = 1;
-
-    private visualStandards: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.VISUAL_STANDARDS];
-    private writingStandards: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.WRITING_STANDARDS];
-    private components: string = Routes.ROUTES[Routes.COMPONENTS];
-    private ecosystem: string = Routes.ROUTES[Routes.ECOSYSTEM];
-    private codingStandards: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.CODING_STANDARDS];
-    private gettingStarted: string = Routes.ROUTES[Routes.GETTING_STARTED] + '/' + Routes.ROUTES[Routes.GETTING_STARTED];
-    private unifiedExperience: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.UNIFIED_EXPERIENCE];
-    private responsiveDesign: string = Routes.ROUTES[Routes.STANDARDS] + '/' + Routes.ROUTES[Routes.RESPONSIVE_DESIGN];
 
     protected mounted(): void {
         this.setParallaxEffect();
@@ -63,5 +55,37 @@ export class HomePage extends ModulVue {
 
     private onRoute(route: string): void {
         this.$router.push(route);
+    }
+
+    private get visualStandards(): string {
+        return this.$routerIndex.for(VISUAL_STANDARDS);
+    }
+
+    private get writingStandards(): string {
+        return this.$routerIndex.for(WRITING_STANDARDS);
+    }
+
+    private get components(): string {
+        return this.$routerIndex.for(ROUTER_COMPONENTS);
+    }
+
+    private get ecosystem(): string {
+        return this.$routerIndex.for(ROUTER_ECOSYSTEM);
+    }
+
+    private get codingStandards(): string {
+        return this.$routerIndex.for(CODING_STANDARDS);
+    }
+
+    private get gettingStarted(): string {
+        return this.$routerIndex.for(GETTING_STARTED);
+    }
+
+    private get unifiedExperience(): string {
+        return this.$routerIndex.for(UNIFIED_EXPERIENCE);
+    }
+
+    private get responsiveDesign(): string {
+        return this.$routerIndex.for(RESPONSIVE_DESIGN);
     }
 }

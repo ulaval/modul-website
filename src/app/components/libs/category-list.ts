@@ -1,16 +1,14 @@
-import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './category-list.html?style=./category-list.scss';
 import { ModulWebsite } from '../modul-website';
-import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
-import * as ComponentsGetters from '@/app/store/modules/components/getters';
-import { RouteMap } from '@/app/store/modules/components/components-state';
+import Meta, { ComponentMetaEx } from '../../meta/meta-all';
+import { GET_CATEGORY } from '@/app/store/modules/components/getters';
 
 @WithRender
 @Component
 export class CategoryList extends ModulWebsite {
-    private get categoryComponents(): ComponentMeta[] {
-        let result: ComponentMeta[] = [];
+    private get categoryComponents(): ComponentMetaEx[] {
+        let result: ComponentMetaEx[] = [];
         if (this.category) {
             result = Meta.getMetaByCategory(this.category);
         }
@@ -18,14 +16,10 @@ export class CategoryList extends ModulWebsite {
     }
 
     private get category(): string | null {
-        return this.$store.getters[ComponentsGetters.GET_CATEGORY];
-    }
-
-    private get componentRoutes(): RouteMap {
-        return this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES];
+        return this.$store.getters[GET_CATEGORY];
     }
 
     private onComponentClick(tag: string): void {
-        this.$router.push(this.componentRoutes[tag].url);
+        this.$router.push(this.$routerIndex.for(tag));
     }
 }

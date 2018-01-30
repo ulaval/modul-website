@@ -1,10 +1,8 @@
-import Vue from 'vue';
 import Component from 'vue-class-component';
-// import store from './store';
 import WithRender from './component-details.html?style=./component-details.scss';
 import { ModulWebsite } from '../modul-website';
-import { ROUTES, COMPONENT_PROPERTIES, COMPONENT_OVERVIEW, COMPONENT_VARIANT } from '@/app/router';
-import Meta, { ComponentMeta, ComponentAttribute, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
+import { ROUTER_PROPERTIES, ROUTER_OVERVIEW } from '@/app/router';
+import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import * as ComponentsActions from '@/app/store/modules/components/actions';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion';
@@ -43,11 +41,11 @@ export class ComponentDetails extends ModulWebsite {
     }
 
     private get properties(): string {
-        return ROUTES[COMPONENT_PROPERTIES];
+        return this.$routerIndex.for(ROUTER_PROPERTIES, _ => this.component.tag);
     }
 
     private get overview(): string {
-        return ROUTES[COMPONENT_OVERVIEW];
+        return this.$routerIndex.for(ROUTER_OVERVIEW, _ => this.component.tag);
     }
 
     private get htmlTag(): string {
