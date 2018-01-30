@@ -2,7 +2,7 @@ import Component from 'vue-class-component';
 import WithRender from './component-properties.html?style=./component-properties.scss';
 import { ModulWebsite } from '../modul-website';
 import Meta, { ComponentAttribute } from '@ulaval/modul-components/dist/meta/meta';
-import { ComponentMetaEx } from '../../meta/meta-all';
+import MetaAll, { ComponentMetaEx } from '../../meta/meta-all';
 import { GET_COMPONENT } from '@/app/store/modules/components/getters';
 
 const BOOLEAN_TYPE: string = 'boolean';
@@ -43,6 +43,10 @@ export class ComponentProperties extends ModulWebsite {
         if (attribute.type == BOOLEAN_TYPE) {
             return ['true', 'false'];
         } else {
+            let enumValues: string[] = MetaAll.getEnum(attribute.type);
+            if (enumValues) {
+                return enumValues;
+            }
             return attribute.values;
         }
     }

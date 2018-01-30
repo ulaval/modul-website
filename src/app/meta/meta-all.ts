@@ -35,6 +35,10 @@ export interface ComponentMetaEx extends ComponentMeta {
     preview?: Preview;
 }
 
+export type EnumMap = {
+    [key: string]: string[];
+};
+
 export type CategoryComponentMap = {
     [key: string]: ComponentMetaEx[];
 };
@@ -42,6 +46,7 @@ export type CategoryComponentMap = {
 export class MetaAll implements PluginObject<any> {
     private categories: CategoryComponentMap = {};
     private baseMeta: Meta;
+    private enums: EnumMap = {};
 
     public install(v, options) {
         if (!options) {
@@ -125,6 +130,10 @@ export class MetaAll implements PluginObject<any> {
         return this.baseMeta.getMeta().filter(m => process.env && (process.env.NODE_ENV as any).dev || (m as ComponentMetaEx).production === true);
     }
 
+    public getEnum(name: string): string[] {
+        return this.enums[name];
+    }
+
     private mergeMixin(name: string, meta: string, folder: string): void {
         this.mergeComponentMeta(name, meta, CATEGORY_MIXINS, true, false, folder, `m-${folder}-meta:`);
     }
@@ -150,6 +159,10 @@ export class MetaAll implements PluginObject<any> {
             }
             ex.category = category;
             categoryComponents.push(component);
+        }
+
+        if (component.enums) {
+            this.enums = { ...this.enums, ...component.enums };
         }
     }
 }
