@@ -7,14 +7,9 @@ import {
     UPLOAD_DRAGDROP_NAME, UPLOAD_FILESLIST_NAME
 } from '@ulaval/modul-components/dist/components/component-names';
 import { RIPPLE_EFFECT_NAME, SCROLL_TO_NAME } from '@ulaval/modul-components/dist/directives/directive-names';
-import { ElementQueries } from '@ulaval/modul-components/dist/mixins/element-queries/element-queries';
-import { InputManagement } from '@ulaval/modul-components/dist/mixins/input-management/input-management';
-import { InputPopup } from '@ulaval/modul-components/dist/mixins/input-popup/input-popup';
-import { InputState } from '@ulaval/modul-components/dist/mixins/input-state/input-state';
-import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
-import { OpenTrigger } from '@ulaval/modul-components/dist/mixins/open-trigger/open-trigger';
-import { Portal } from '@ulaval/modul-components/dist/mixins/portal/portal';
-import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion';
+import {
+    ELEMENT_QUERIES, INPUT_MANAGEMENT, INPUT_POPUP, INPUT_STATE, MEDIA_QUERIES, OPEN_TRIGGER, PORTAL, TRANSITION_ACCORDION
+} from '@ulaval/modul-components/dist/mixins/mixins-names';
 import { Meta, Preview, ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
 // should be i18n key format
@@ -55,15 +50,15 @@ export class MetaAll implements PluginObject<any> {
         this.baseMeta = options as Meta;
         // mixins should be registered first, starting with the lowest order in the mixin hierarchy
         // if this doesn't work anymore, we'll have to add a meta.complete() method that will complete the attributes merge
-        this.mergeMixin((MediaQueries as any).name, require('@ulaval/modul-components/dist/mixins/media-queries/media-queries.meta.json'), 'media-queries');
-        this.mergeMixin((InputState as any).name, require('@ulaval/modul-components/dist/mixins/input-state/input-state.meta.json'), 'input-state');
+        this.mergeMixin(MEDIA_QUERIES, require('@ulaval/modul-components/dist/mixins/media-queries/media-queries.meta.json'), 'media-queries');
+        this.mergeMixin(INPUT_STATE, require('@ulaval/modul-components/dist/mixins/input-state/input-state.meta.json'), 'input-state');
 
-        this.mergeMixin((ElementQueries as any).name, require('@ulaval/modul-components/dist/mixins/element-queries/element-queries.meta.json'), 'element-queries');
-        this.mergeMixin((InputManagement as any).name, require('@ulaval/modul-components/dist/mixins/input-management/input-management.meta.json'), 'input-management');
-        this.mergeMixin((InputPopup as any).name, require('@ulaval/modul-components/dist/mixins/input-popup/input-popup.meta.json'), 'input-popup');
-        this.mergeMixin((OpenTrigger as any).name, require('@ulaval/modul-components/dist/mixins/open-trigger/open-trigger.meta.json'), 'open-trigger');
-        this.mergeMixin((Portal as any).name, require('@ulaval/modul-components/dist/mixins/portal/portal.meta.json'), 'portal');
-        this.mergeMixin((TransitionAccordion as any).name, require('@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion.meta.json'), 'transition-accordion');
+        this.mergeMixin(ELEMENT_QUERIES, require('@ulaval/modul-components/dist/mixins/element-queries/element-queries.meta.json'), 'element-queries');
+        this.mergeMixin(INPUT_MANAGEMENT, require('@ulaval/modul-components/dist/mixins/input-management/input-management.meta.json'), 'input-management');
+        this.mergeMixin(INPUT_POPUP, require('@ulaval/modul-components/dist/mixins/input-popup/input-popup.meta.json'), 'input-popup');
+        this.mergeMixin(OPEN_TRIGGER, require('@ulaval/modul-components/dist/mixins/open-trigger/open-trigger.meta.json'), 'open-trigger');
+        this.mergeMixin(PORTAL, require('@ulaval/modul-components/dist/mixins/portal/portal.meta.json'), 'portal');
+        this.mergeMixin(TRANSITION_ACCORDION, require('@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion.meta.json'), 'transition-accordion');
 
         this.mergeComponentMeta(ACCORDION_NAME, require('@ulaval/modul-components/dist/components/accordion/accordion.meta.json'), CATEGORY_CONTENT, true);
         this.mergeComponentMeta(ACCORDION_GROUP_NAME, require('@ulaval/modul-components/dist/components/accordion-group/accordion-group.meta.json'), CATEGORY_CONTENT, true);
@@ -110,7 +105,8 @@ export class MetaAll implements PluginObject<any> {
         this.mergeComponentMeta(TIMEPICKER_NAME, require('@ulaval/modul-components/dist/components/timepicker/timepicker.meta.json'), CATEGORY_FORMS);
         this.mergeComponentMeta(TOOLTIP_NAME, require('@ulaval/modul-components/dist/components/tooltip/tooltip.meta.json'), CATEGORY_WINDOWS);
         this.mergeComponentMeta(UPLOAD_NAME, require('@ulaval/modul-components/dist/components/upload/upload.meta.json'), CATEGORY_FORMS);
-        this.mergeComponentMeta(SCROLL_TO_NAME, require('@ulaval/modul-components/dist/directives/scroll-to/scroll-to.meta.json'), CATEGORY_NAVIGATION);
+
+        // this.mergeComponentMeta(SCROLL_TO_NAME, require('@ulaval/modul-components/dist/directives/scroll-to/scroll-to.meta.json'), CATEGORY_NAVIGATION);
     }
 
     public getCategories(): string[] {
