@@ -7,9 +7,6 @@ import { KeyMap, ComponentsState } from '@/app/store/modules/components/componen
 import { ModulWebsite } from '../modul-website';
 import { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
-import { fail } from 'assert';
-import { log } from 'util';
-import { components } from '@ulaval/modul-components/dist/components/component-names';
 
 const ZINDEX: number = 200;
 

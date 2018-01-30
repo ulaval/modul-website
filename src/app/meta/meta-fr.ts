@@ -23,7 +23,6 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(FRENCH, require('./components/i18n/i18n.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/icon/icon.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/icon-button/icon-button.meta.fr.json'));
-            i18n.addMessages(FRENCH, require('./components/input-state/input-state.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/input-style/input-style.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/limit-text/limit-text.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/link/link.meta.fr.json'));
@@ -53,8 +52,18 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(FRENCH, require('./components/timepicker/timepicker.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/tooltip/tooltip.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/upload/upload.meta.fr.json'));
+
             i18n.addMessages(FRENCH, require('./directives/ripple-effect/ripple-effect.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./directives/scroll-to/scroll-to.meta.fr.json'));
+
+            i18n.addMessages(FRENCH, require('./mixins/element-queries/element-queries.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./mixins/input-management/input-management.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./mixins/input-popup/input-popup.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./mixins/input-state/input-state.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./mixins/media-queries/media-queries.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./mixins/open-trigger/open-trigger.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./mixins/portal/portal.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./mixins/transition-accordion/transition-accordion.meta.fr.json'));
         } else {
             throw new Error('FrenchMetaPlugin.install -> You must use the i18n plugin.');
         }
