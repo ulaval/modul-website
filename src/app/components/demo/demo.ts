@@ -8,6 +8,22 @@ import WithRender from './demo.html?style=./demo.scss';
 @Component
 export class MDemo extends ModulWebsite {
 
+    public disponible: boolean = false;
+    public html: HTMLElement = undefined;
+    public htmlText: string = '';
+    public javascript: string = '';
+
+    protected mounted(): void {
+        this.$nextTick(() => {
+            // this.html = (this.$el.getElementsByClassName('html')[0] as HTMLElement);
+            // this.htmlText = this.html.innerText;
+            // this.javascript = (this.$el.getElementsByClassName('hljavascript')[0] as HTMLElement).innerText;
+            this.disponible = true;
+            console.log(this.html);
+        });
+
+    }
+
     // @Prop()
     // public name: string;
 

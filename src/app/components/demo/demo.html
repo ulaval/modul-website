@@ -1,9 +1,11 @@
 <div class="modul-demo">
-    <div class="demo">
-        ``` javascript
-        <slot name="script"></slot>
-        ```
+    <slot></slot>
+    <m-spinner v-if="!disponible"></m-spinner>
+    <div class="demo-block" v-if="disponible">
+        <div class="html"><modul-highlight lang="html" :template="htmlText"></modul-highlight></div>
+        <hr />
+        <div class="javascript"><modul-highlight lang="javascript" :template="javascript"></modul-highlight></div>
+        <hr />
+        <div class="demo"></div>
     </div>
-    <div class="html"></div>
-    <div class="script"><slot></slot></div>
 </div>

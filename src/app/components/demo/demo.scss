@@ -1,1 +1,15 @@
 @import '../../styles/shared-styles';
+
+.demo {
+    // background: #c00;
+}
+
+.modul-demo {
+    pre {
+        margin: 0;
+    }
+
+    .hljavascript {
+        @include m-visually-hidden;
+    }
+}

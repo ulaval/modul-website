@@ -1,13 +1,16 @@
+// && copyfiles -u 5 \"./src/app/meta/components/**/*.md\" src/assets/md
+
 let fs = require('fs');
 
-const slotRegExp = new RegExp('\\<template\\s+[^>]*(slot=("|\')script("|\')){1}\\s*[^>]*>([\\s\\S]*?)</template>', 'g');
+const javascriptRegExp = new RegExp('\\<modul-demo\\s*[^>]*>[\\s\\S]*?```javascript([\\s\\S]*?)\\```', 'g');
 const EXTENSION = '.md';
-const COMP_PATH = './src/app/meta/components/';
+const COMP_PATH_SRC = './src/app/meta/components/';
+const COMP_PATH_DEST = './src/assets/md/';
 const MD_SCRIPTS = 'md-scripts.ts';
 
 let toComplete = {};
 
-let stream = fs.createWriteStream(COMP_PATH + MD_SCRIPTS);
+let stream = fs.createWriteStream(COMP_PATH_SRC + MD_SCRIPTS);
 stream.on('error', console.error);
 
 readFolders('./src/app/meta/components', (folder) => {
@@ -16,20 +19,21 @@ readFolders('./src/app/meta/components', (folder) => {
 
         let errors = [];
 
-        read(`${COMP_PATH}${folder}/${file}`, source => {
-            let slot = undefined;
+        read(`${COMP_PATH_SRC}${folder}/${file}`, source => {
+            let destContent = source;
+
+            // Get Modul Demo component
+            let modulDemo = undefined;
             do {
+                modulDemo = javascriptRegExp.exec(source);
 
-                slot = slotRegExp.exec(source);
-                // console.log(slot)
-                if (slot) {
-
-                    write(slot[4], err => {
-                        logError(err.message);
+                if (modulDemo) {
+                    write(modulDemo[1], err => {
+                        // logError(err.message);
                     });
                 }
             }
-            while (slot);
+            while (modulDemo);
 
             done();
         }, err => {
