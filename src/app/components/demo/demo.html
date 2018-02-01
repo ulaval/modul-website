@@ -1,11 +1,19 @@
 <div class="modul-demo">
-    <slot></slot>
+    <div class="m-u--visually-hidden">
+        <slot></slot>
+    </div>
+
     <m-spinner v-if="!disponible"></m-spinner>
     <div class="demo-block" v-if="disponible">
-        <div class="html"><modul-highlight lang="html" :template="htmlText"></modul-highlight></div>
+        <m-dynamic-template class="demo" :template="html"></m-dynamic-template>
         <hr />
-        <div class="javascript"><modul-highlight lang="javascript" :template="javascript"></modul-highlight></div>
+        <pre class="html">
+            <code v-html="htmlHl"></code>
+        </pre>
         <hr />
-        <div class="demo"></div>
+        <pre class="javascript">
+            <code v-html="javascriptHl"></code>
+        </pre>
+        <hr />
     </div>
 </div>

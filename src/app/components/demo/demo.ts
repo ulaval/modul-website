@@ -1,27 +1,28 @@
-import { PluginObject } from 'vue';
+import Vue, { PluginObject } from 'vue';
 import { ModulWebsite } from '../modul-website';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import WithRender from './demo.html?style=./demo.scss';
+import hljs from 'highlight.js';
 
 @WithRender
 @Component
-export class MDemo extends ModulWebsite {
+export class MDemo extends Vue {
 
     public disponible: boolean = false;
-    public html: HTMLElement = undefined;
-    public htmlText: string = '';
+    public html: string = '';
+    public htmlHl: string = '';
     public javascript: string = '';
+    public javascriptHl: string = '';
 
     protected mounted(): void {
         this.$nextTick(() => {
-            // this.html = (this.$el.getElementsByClassName('html')[0] as HTMLElement);
-            // this.htmlText = this.html.innerText;
-            // this.javascript = (this.$el.getElementsByClassName('hljavascript')[0] as HTMLElement).innerText;
+            this.html = (this.$el.getElementsByClassName('hlhtml')[0] as HTMLElement).innerText;
+            this.htmlHl = hljs.highlight('html', this.html).value;
+            this.javascript = (this.$el.getElementsByClassName('hljavascript')[0] as HTMLElement).innerText;
+            this.javascriptHl = hljs.highlight('javascript', this.javascript).value;
             this.disponible = true;
-            console.log(this.html);
         });
-
     }
 
     // @Prop()
