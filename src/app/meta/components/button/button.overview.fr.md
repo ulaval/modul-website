@@ -7,7 +7,69 @@ Un bouton permet de poser une action dans le site et peut contenir un libellé, 
     </ul>
 </modul-do>
 
+<!-- ## Backtick
+<modul-demo>
+
+```javascript
+
+    console.log("Javascript");
+
+    let a:number = 22;
+
+```
+
+<div class="html">
+    <div class="script-exemple">
+        <span>Texte dans un tag</span>
+    </div>
+    <span class="hello">World <strong>!</strong></span>
+</div>
+</modul-demo>
+
+ -->
+<hr /><hr />
+
+<modul-demo>
+
+```javascript
+
+    console.log("Javascript");
+
+    let b:number = 22;
+
+```
+
+```html
+
+<div class="html">
+    <div class="script-exemple">
+        <span>Texte dans un tag</span>
+    </div>
+
+    <span class="hello">World <strong>!</strong></span>
+</div>
+```
+</modul-demo>
+
+
 ## Caractéristiques
+<modul-demo>
+
+```javascript
+
+    console.log("Javascript");
+
+    let b:number = 22;
+
+```
+
+```html
+
+<div class="html">
+    <m-button>Bouton</m-button>
+</div>
+```
+</modul-demo>
 
 ### Traitement visuel
 #### Primaire
