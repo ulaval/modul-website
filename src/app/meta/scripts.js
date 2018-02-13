@@ -1,5 +1,3 @@
-// && copyfiles -u 5 \"./src/app/meta/components/**/*.md\" src/assets/md
-
 let fs = require('fs');
 
 const javascriptRegExp = new RegExp('\\<modul-demo\\s*[^>]*>[\\s\\S]*?```javascript([\\s\\S]*?)\\```', 'g');

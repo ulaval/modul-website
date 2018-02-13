@@ -4,7 +4,13 @@
     </div>
 
     <m-spinner v-if="!disponible"></m-spinner>
+
     <div class="demo-block" v-if="disponible">
+        <ul>
+            <li><a href="">Preview</a></li>
+            <li><a href="">HTML</a></li>
+            <li><a href="">JS</a></li>
+        </ul>
         <m-dynamic-template class="demo" :template="html"></m-dynamic-template>
         <hr />
         <pre class="html">

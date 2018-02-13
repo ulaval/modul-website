@@ -29,9 +29,11 @@ Un bouton permet de poser une action dans le site et peut contenir un libellé, 
  -->
 <hr /><hr />
 
-<modul-demo>
+<!-- <modul-demo>
 
 ```javascript
+
+
 
     console.log("Javascript");
 
@@ -46,10 +48,10 @@ Un bouton permet de poser une action dans le site et peut contenir un libellé, 
         <span>Texte dans un tag</span>
     </div>
 
-    <span class="hello">World <strong>!</strong></span>
+    <span class="hello">World <strong style="color: #c00;">!</strong></span>
 </div>
 ```
-</modul-demo>
+</modul-demo> -->
 
 
 ## Caractéristiques
@@ -57,16 +59,18 @@ Un bouton permet de poser une action dans le site et peut contenir un libellé, 
 
 ```javascript
 
-    console.log("Javascript");
+import Vue from 'vue';
+Vue.set(window, "bool", true);
 
-    let b:number = 22;
+console.log("Javascript");
 
 ```
 
 ```html
 
 <div class="html">
-    <m-button>Bouton</m-button>
+    <m-button :disabled="bool">Bouton prop inactif</m-button>
+    <m-button :disabled="true">Bouton inactif</m-button>
 </div>
 ```
 </modul-demo>

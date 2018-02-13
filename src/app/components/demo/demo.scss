@@ -4,4 +4,14 @@
     pre {
         margin: 0;
     }
+
+    code {
+        color: #fff;
+    }
+
+    .demo-block {
+        padding: $m-margin;
+        background: $modul-color--black-grey-light;
+        border: 1px solid $modul-color--grey-dark;
+    }
 }
