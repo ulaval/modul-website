@@ -1,4 +1,4 @@
-Le composant *boîte* est utilisée pour grouper et mettre en évidence du contenu de même nature. Il est possible de changer son apparence selon le contexte où il est employée. Par exemple, changer sa couleur, ajouter des bordures, modifier ses marges internes, etc.
+Le composant *boîte* est utilisé pour mettre en évidence un court texte. Il ne devrait pas être utilisé pour mettre en forme une section complète. Il est possible de changer son apparence selon le contexte où il est employée. Par exemple, changer sa couleur, ajouter des bordures, modifier ses marges internes, etc.
 
 <modul-do>
     <ul>
