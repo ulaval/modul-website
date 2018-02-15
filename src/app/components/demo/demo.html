@@ -6,20 +6,24 @@
     <m-spinner v-if="!disponible"></m-spinner>
 
     <div class="demo-block" v-if="disponible">
-        <ul>
-            <li><a href="">Preview</a></li>
-            <li><a href="">HTML</a></li>
-            <li><a href="">JS</a></li>
-        </ul>
-        <m-dynamic-template class="demo" :template="html"></m-dynamic-template>
-        <hr />
-        <pre class="html">
-            <code v-html="htmlHl"></code>
-        </pre>
-        <hr />
-        <pre class="javascript">
-            <code v-html="javascriptHl"></code>
-        </pre>
-        <hr />
+        <a @click.prevent="open = !open" class="demo-block__label">{{ label }}</a>
+        <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
+            <div class="demo-block__code tabs" v-if="open">
+                <ul class="tabs__header">
+                    <li @click="tab('html')" :class="{'active': htmlActive}">HTML</li>
+                    <li @click="tab('typescript')" :class="{'active': typescriptActive}">TS</li>
+                </ul>
+
+                <pre class="tabs__content" :class="{'active': htmlActive}">
+                    <code v-html="htmlHl"></code>
+                </pre>
+
+                <pre class="tabs__content" :class="{'active': typescriptActive}">
+                    <code v-html="typescriptHl"></code>
+                </pre>
+            </div>
+        </transition>
+
+        <m-dynamic-template class="demo-block__preview" :template="html"></m-dynamic-template>
     </div>
 </div>

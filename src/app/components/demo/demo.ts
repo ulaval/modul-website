@@ -4,51 +4,59 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import WithRender from './demo.html?style=./demo.scss';
 import hljs from 'highlight.js';
+import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion';
 
 @WithRender
-@Component
+@Component({
+    mixins: [TransitionAccordion]
+})
 export class MDemo extends Vue {
 
     public disponible: boolean = false;
     public html: string = '';
     public htmlHl: string = '';
-    public javascript: string = '';
-    public javascriptHl: string = '';
+    public typescript: string = '';
+    public typescriptHl: string = '';
+
+    public open: boolean = false;
+    public activeTab: string = '';
 
     protected mounted(): void {
         this.$nextTick(() => {
             this.html = (this.$el.getElementsByClassName('hlhtml')[0] as HTMLElement).innerText;
             this.htmlHl = hljs.highlight('html', this.html).value;
-            this.javascript = (this.$el.getElementsByClassName('hljavascript')[0] as HTMLElement).innerText;
-            this.javascriptHl = hljs.highlight('javascript', this.javascript).value;
+            this.typescript = (this.$el.getElementsByClassName('hljavascript')[0] as HTMLElement).innerText;
+            this.typescriptHl = hljs.highlight('javascript', this.typescript).value;
+            this.activeTab = 'html';
             this.disponible = true;
         });
     }
 
-    // @Prop()
-    // public name: string;
+    private get label(): string {
+        if (this.open) {
+            return 'Fermer';
+        } else {
+            return 'Code';
+        }
+    }
 
-    // @Prop()
-    // public tab: string;
+    private get htmlActive(): boolean {
+        if (this.activeTab === 'html') {
+            return true;
+        }
+        return false;
+    }
 
-    // private get URL(): string | undefined {
-    //     for (let section of (this.$router as any).options.routes) {
-    //         if (section.children) {
-    //             for (let route of section.children) {
-    //                 if (route.meta && route.meta.page == this.name) {
-    //                     let path: string = route.path;
+    private get typescriptActive(): boolean {
+        if (this.activeTab === 'typescript') {
+            return true;
+        }
+        return false;
+    }
 
-    //                     if (this.tab) {
-    //                         path += '/' + this.tab;
-    //                     }
-
-    //                     return path;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     return undefined;
-    // }
+    private tab(id: string): void {
+        this.activeTab = id;
+    }
 
     private defaultSlot(): boolean {
         return !!this.$slots.default;
