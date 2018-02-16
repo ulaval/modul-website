@@ -7,53 +7,6 @@ Un bouton permet de poser une action dans le site et peut contenir un libellé, 
     </ul>
 </modul-do>
 
-<!-- ## Backtick
-<modul-demo>
-
-```javascript
-
-    console.log("Javascript");
-
-    let a:number = 22;
-
-```
-
-<div class="html">
-    <div class="script-exemple">
-        <span>Texte dans un tag</span>
-    </div>
-    <span class="hello">World <strong>!</strong></span>
-</div>
-</modul-demo>
-
- -->
-<hr /><hr />
-
-<!-- <modul-demo>
-
-```javascript
-
-
-
-    console.log("Javascript");
-
-    let b:number = 22;
-
-```
-
-```html
-
-<div class="html">
-    <div class="script-exemple">
-        <span>Texte dans un tag</span>
-    </div>
-
-    <span class="hello">World <strong style="color: #c00;">!</strong></span>
-</div>
-```
-</modul-demo> -->
-
-
 ## Caractéristiques
 <modul-demo>
 
@@ -63,15 +16,19 @@ import Vue from 'vue';
 Vue.set(window, "bool", true);
 
 console.log("Javascript");
-
 ```
 
 ```html
 
-<div class="html">
-    <m-button :disabled="bool">Bouton prop inactif</m-button>
-    <m-button :disabled="true">Bouton inactif</m-button>
-</div>
+<m-button class="border">Bouton prop inactif</m-button>
+<m-button :disabled="true">Bouton inactif</m-button>
+```
+
+```css
+
+.m-button {
+    border: 1px solid #c00;
+}
 ```
 </modul-demo>
 

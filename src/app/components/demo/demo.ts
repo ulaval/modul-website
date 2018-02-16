@@ -5,18 +5,23 @@ import { Prop } from 'vue-property-decorator';
 import WithRender from './demo.html?style=./demo.scss';
 import hljs from 'highlight.js';
 import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion';
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 
 @WithRender
 @Component({
     mixins: [TransitionAccordion]
 })
-export class MDemo extends Vue {
+export class MDemo extends ModulVue {
 
     public disponible: boolean = false;
     public html: string = '';
     public htmlHl: string = '';
+    public typescriptElement: HTMLElement;
     public typescript: string = '';
     public typescriptHl: string = '';
+    public cssElement: HTMLElement;
+    public css: string = '';
+    public cssHl: string = '';
 
     public open: boolean = false;
     public activeTab: string = '';
@@ -25,8 +30,22 @@ export class MDemo extends Vue {
         this.$nextTick(() => {
             this.html = (this.$el.getElementsByClassName('hlhtml')[0] as HTMLElement).innerText;
             this.htmlHl = hljs.highlight('html', this.html).value;
-            this.typescript = (this.$el.getElementsByClassName('hljavascript')[0] as HTMLElement).innerText;
-            this.typescriptHl = hljs.highlight('javascript', this.typescript).value;
+
+            this.typescriptElement = (this.$el.getElementsByClassName('hljavascript')[0] as HTMLElement);
+            if (this.typescriptElement) {
+                this.typescript = this.typescriptElement.innerText;
+                this.typescriptHl = hljs.highlight('javascript', this.typescript).value;
+            }
+
+            this.cssElement = (this.$el.getElementsByClassName('hlcss')[0] as HTMLElement);
+            if (this.cssElement) {
+                this.css = this.cssElement.innerText;
+                this.cssHl = hljs.highlight('css', this.css).value;
+                let style: HTMLStyleElement = document.createElement('style');
+                style.innerHTML = this.cssElement.innerText;
+                this.$el.appendChild(style);
+            }
+
             this.activeTab = 'html';
             this.disponible = true;
         });
@@ -34,9 +53,9 @@ export class MDemo extends Vue {
 
     private get label(): string {
         if (this.open) {
-            return 'Fermer';
+            return this.$i18n.translate('modul:close-label');
         } else {
-            return 'Code';
+            return this.$i18n.translate('modul:code-label');
         }
     }
 
@@ -49,6 +68,13 @@ export class MDemo extends Vue {
 
     private get typescriptActive(): boolean {
         if (this.activeTab === 'typescript') {
+            return true;
+        }
+        return false;
+    }
+
+    private get cssActive(): boolean {
+        if (this.activeTab === 'css') {
             return true;
         }
         return false;

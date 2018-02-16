@@ -11,15 +11,24 @@
             <div class="demo-block__code tabs" v-if="open">
                 <ul class="tabs__header">
                     <li @click="tab('html')" :class="{'active': htmlActive}">HTML</li>
-                    <li @click="tab('typescript')" :class="{'active': typescriptActive}">TS</li>
+                    <li @click="tab('typescript')" :class="{'active': typescriptActive}" v-if="typescriptElement">TS</li>
+                    <li @click="tab('css')" :class="{'active': cssActive}" v-if="cssElement">CSS</li>
                 </ul>
 
                 <pre class="tabs__content" :class="{'active': htmlActive}">
                     <code v-html="htmlHl"></code>
                 </pre>
 
-                <pre class="tabs__content" :class="{'active': typescriptActive}">
+                <pre class="tabs__content"
+                     :class="{'active': typescriptActive}"
+                     v-if="typescriptElement">
                     <code v-html="typescriptHl"></code>
+                </pre>
+
+                <pre class="tabs__content"
+                     :class="{'active': cssActive}"
+                     v-if="cssElement">
+                    <code v-html="cssHl"></code>
                 </pre>
             </div>
         </transition>
