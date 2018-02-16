@@ -9,6 +9,8 @@
         <a @click.prevent="open = !open" class="demo-block__label">{{ label }}</a>
         <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
             <div class="demo-block__code tabs" v-if="open">
+                <div class="arrow"></div>
+
                 <ul class="tabs__header">
                     <li @click="tab('html')" :class="{'active': htmlActive}">HTML</li>
                     <li @click="tab('typescript')" :class="{'active': typescriptActive}" v-if="typescriptElement">TS</li>

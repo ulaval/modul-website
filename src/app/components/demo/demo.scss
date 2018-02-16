@@ -21,10 +21,22 @@
     }
 
     .demo-block__code {
+        position: relative;
         padding: $m-margin $m-margin--l;
         background: $modul-color--black-grey-light;
         border: 1px solid $modul-color--grey-dark;
         border-top: none;
+
+        .arrow {
+            position: absolute;
+            left: 48%;
+            bottom: -8px;
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 8px solid $modul-color--black-grey-light;
+        }
     }
 
     .tabs__header {
