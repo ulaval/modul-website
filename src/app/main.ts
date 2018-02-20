@@ -92,9 +92,17 @@ async function main() {
         components: { Modul }
     });
 
+    // TODO: Permettre au script d'être utilisé dans modul-demo
+    window['app'] = vue;
+
     Vue.prototype.$routerIndex = modulRouter.index;
 
     vue.$mount('#vue');
+
+    // TODO: Permettre au script d'être utilisé dans modul-demo
+    let script: HTMLScriptElement = document.createElement('script');
+    script.setAttribute('src', '/assets/md/md-scripts.js');
+    document.getElementsByTagName('body')[0].appendChild(script);
 }
 
 main();
