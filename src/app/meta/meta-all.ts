@@ -2,7 +2,7 @@ import { PluginObject } from 'vue';
 import {
     ACCORDION_NAME, ACCORDION_GROUP_NAME, BUTTON_NAME, BUTTON_GROUP_NAME, LIST_ITEM_NAME, CHECKBOX_NAME, DATEFIELDS_NAME, DATEPICKER_NAME, DIALOG_NAME, DROPDOWN_NAME, DROPDOWN_GROUP_NAME,
     DROPDOWN_ITEM_NAME, DYNAMIC_TEMPLATE_NAME, FLEX_TEMPLATE_NAME, I18N_NAME, ICON_BUTTON_NAME, LIMIT_TEXT_NAME, ICON_NAME, INPUT_STYLE_NAME, LINK_NAME, MESSAGE_NAME,
-    MODAL_NAME, NAVBAR_NAME, NAVBAR_ITEM_NAME, MENU_NAME, MENU_ITEM_NAME, PANEL_NAME, POPPER_NAME, POPUP_NAME, RADIO_NAME, RADIO_GROUP_NAME, SCROLL_TOP_NAME, SIDEBAR_NAME,
+    MODAL_NAME, NAVBAR_NAME, NAVBAR_ITEM_NAME, MENU_NAME, MENU_ITEM_NAME, PANEL_NAME, POPPER_NAME, POPUP_NAME, PROGRESS_NAME, RADIO_NAME, RADIO_GROUP_NAME, SCROLL_TOP_NAME, SIDEBAR_NAME,
     SPINNER_NAME, STATUS_NAME, STEP_NAME, STEPPERS_NAME, STEPPERS_ITEM_NAME, SWITCH_NAME, TABS_NAME, TEMPLATE_NAME, TEXTAREA_NAME, TEXTFIELD_NAME, TIMEPICKER_NAME, TOOLTIP_NAME, UPLOAD_NAME, UPLOAD_INPUT_NAME,
     UPLOAD_DRAGDROP_NAME, UPLOAD_FILESLIST_NAME
 } from '@ulaval/modul-components/dist/components/component-names';
@@ -89,6 +89,7 @@ export class MetaAll implements PluginObject<any> {
         this.mergeComponentMeta(PANEL_NAME, require('@ulaval/modul-components/dist/components/panel/panel.meta.json'), CATEGORY_CONTENT, true);
         this.mergeComponentMeta(POPPER_NAME, require('@ulaval/modul-components/dist/components/popper/popper.meta.json'), CATEGORY_WINDOWS);
         this.mergeComponentMeta(POPUP_NAME, require('@ulaval/modul-components/dist/components/popup/popup.meta.json'), CATEGORY_WINDOWS);
+        this.mergeComponentMeta(PROGRESS_NAME, require('@ulaval/modul-components/dist/components/progress/progress.meta.json'), CATEGORY_CONTENT);
         this.mergeComponentMeta(RADIO_NAME, require('@ulaval/modul-components/dist/components/radio/radio.meta.json'), CATEGORY_FORMS, true);
         this.mergeComponentMeta(RADIO_GROUP_NAME, require('@ulaval/modul-components/dist/components/radio-group/radio-group.meta.json'), CATEGORY_FORMS, true);
         this.mergeComponentMeta(SCROLL_TOP_NAME, require('@ulaval/modul-components/dist/components/scroll-top/scroll-top.meta.json'), CATEGORY_NAVIGATION);
