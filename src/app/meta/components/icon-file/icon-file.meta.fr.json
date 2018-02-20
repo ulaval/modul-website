@@ -1,0 +1,7 @@
+{
+    "m-icon-file-meta": {
+        "name": "Nom du fichier SVG",
+        "svgTitle": "Titre du SVG pour l'accessibilité",
+        "size": "Grosseur de l'icône en pixel"
+    }
+}
