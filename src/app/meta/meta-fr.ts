@@ -3,8 +3,8 @@ import { FRENCH, Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n'
 
 const FrenchMetaPlugin: PluginObject<any> = {
     install(v, options) {
-        if ((v as any).$i18n) {
-            let i18n: Messages = (v as any).$i18n;
+        let i18n: Messages = (v.prototype as any).$i18n;
+        if (i18n) {
             i18n.addMessages(FRENCH, require('./categories.fr.json'));
             i18n.addMessages(FRENCH, require('./components/accordion/accordion.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/accordion-group/accordion-group.meta.fr.json'));
@@ -60,6 +60,7 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(FRENCH, require('./mixins/input-management/input-management.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./mixins/input-popup/input-popup.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./mixins/input-state/input-state.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./mixins/input-width/input-width.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./mixins/media-queries/media-queries.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./mixins/open-trigger/open-trigger.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./mixins/portal/portal.meta.fr.json'));

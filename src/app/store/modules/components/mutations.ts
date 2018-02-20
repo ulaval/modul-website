@@ -18,7 +18,7 @@ export const getComponentsMeta: Mutation<ComponentsState> = (state: ComponentsSt
 
 export const COMPONENTS_META_GET_SUCCESS: string = 'M_COMPONENTS_META_GET_SUCCES';
 export const getComponentsMetaSucces: Mutation<ComponentsState> = (state: ComponentsState, language: string) => {
-    let i18n: Messages = (Vue as any).$i18n;
+    let i18n: Messages = (Vue.prototype as any).$i18n;
 
     MetaAll.getCategories().forEach(category => {
         state.categoriesText[category] = i18n.translate(category);
@@ -34,7 +34,7 @@ export const getCategory: Mutation<ComponentsState> = (state: ComponentsState, c
 
         state.componentsText = {};
 
-        let i18n: Messages = (Vue as any).$i18n;
+        let i18n: Messages = (Vue.prototype as any).$i18n;
         MetaAll.getMetaByCategory(category).forEach(meta => {
             state.componentsText[meta.tag] = meta.name ? i18n.translate(meta.name) : meta.tag;
         });
