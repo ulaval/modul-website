@@ -28,7 +28,7 @@ export const getSection: Mutation<SectionsState> = (state: SectionsState, payloa
 
 export const PAGES_META_GET_SUCCESS: string = 'M_PAGES_META_GET_SUCCESS';
 export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payload) => {
-    let i18n: Messages = (Vue as any).$i18n;
+    let i18n: Messages = (Vue.prototype as any).$i18n;
 
     payload.pagesObj.getPages().forEach(page => {
         state.pagesText[page] = i18n.translate('pages:' + page);

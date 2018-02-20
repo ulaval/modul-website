@@ -8,8 +8,8 @@ import {
 } from '@ulaval/modul-components/dist/components/component-names';
 import { RIPPLE_EFFECT_NAME, SCROLL_TO_NAME } from '@ulaval/modul-components/dist/directives/directive-names';
 import {
-    ELEMENT_QUERIES, INPUT_MANAGEMENT, INPUT_POPUP, INPUT_STATE, MEDIA_QUERIES, OPEN_TRIGGER, PORTAL, TRANSITION_ACCORDION
-} from '@ulaval/modul-components/dist/mixins/mixins-names';
+    ELEMENT_QUERIES, INPUT_MANAGEMENT, INPUT_POPUP, INPUT_STATE, INPUT_WIDTH, MEDIA_QUERIES, OPEN_TRIGGER, PORTAL, TRANSITION_ACCORDION
+} from './mixins/mixins-names';
 import { Meta, Preview, ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
 // should be i18n key format
@@ -56,6 +56,7 @@ export class MetaAll implements PluginObject<any> {
         this.mergeMixin(ELEMENT_QUERIES, require('@ulaval/modul-components/dist/mixins/element-queries/element-queries.meta.json'), 'element-queries');
         this.mergeMixin(INPUT_MANAGEMENT, require('@ulaval/modul-components/dist/mixins/input-management/input-management.meta.json'), 'input-management');
         this.mergeMixin(INPUT_POPUP, require('@ulaval/modul-components/dist/mixins/input-popup/input-popup.meta.json'), 'input-popup');
+        this.mergeMixin(INPUT_WIDTH, require('@ulaval/modul-components/dist/mixins/input-width/input-width.meta.json'), 'input-width');
         this.mergeMixin(OPEN_TRIGGER, require('@ulaval/modul-components/dist/mixins/open-trigger/open-trigger.meta.json'), 'open-trigger');
         this.mergeMixin(PORTAL, require('@ulaval/modul-components/dist/mixins/portal/portal.meta.json'), 'portal');
         this.mergeMixin(TRANSITION_ACCORDION, require('@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion.meta.json'), 'transition-accordion');
