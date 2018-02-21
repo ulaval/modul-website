@@ -77,7 +77,7 @@ export class MetaAll implements PluginObject<any> {
         this.mergeComponentMeta(I18N_NAME, require('@ulaval/modul-components/dist/components/i18n/i18n.meta.json'));
         this.mergeComponentMeta(ICON_BUTTON_NAME, require('@ulaval/modul-components/dist/components/icon-button/icon-button.meta.json'), CATEGORY_FORMS);
         this.mergeComponentMeta(ICON_NAME, require('@ulaval/modul-components/dist/components/icon/icon.meta.json'), CATEGORY_CONTENT, true);
-        this.mergeComponentMeta(ICON_FILE_NAME, require('@ulaval/modul-components/dist/components/icon/icon.meta.json'), CATEGORY_CONTENT);
+        this.mergeComponentMeta(ICON_FILE_NAME, require('@ulaval/modul-components/dist/components/icon-file/icon-file.meta.json'), CATEGORY_CONTENT);
         this.mergeComponentMeta(LIMIT_TEXT_NAME, require('@ulaval/modul-components/dist/components/limit-text/limit-text.meta.json'), CATEGORY_CONTENT);
         this.mergeComponentMeta(LINK_NAME, require('@ulaval/modul-components/dist/components/link/link.meta.json'), CATEGORY_NAVIGATION, true);
         this.mergeComponentMeta(LIST_ITEM_NAME, require('@ulaval/modul-components/dist/components/list-item/list-item.meta.json'), CATEGORY_CONTENT, true);
