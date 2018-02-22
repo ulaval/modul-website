@@ -11,6 +11,7 @@ import {
     DROPDOWN_ITEM_NAME,
     DROPDOWN_NAME,
     DYNAMIC_TEMPLATE_NAME,
+    FILE_SELECT_NAME,
     FILE_UPLOAD_NAME,
     FLEX_TEMPLATE_NAME,
     I18N_NAME,
@@ -122,6 +123,7 @@ export class MetaAll implements PluginObject<any> {
         this.mergeComponentMeta(DROPDOWN_ITEM_NAME, require('@ulaval/modul-components/dist/components/dropdown-item/dropdown-item.meta.json'), CATEGORY_FORMS, true);
         this.mergeComponentMeta(DROPDOWN_GROUP_NAME, require('@ulaval/modul-components/dist/components/dropdown-group/dropdown-group.meta.json'), CATEGORY_FORMS);
         this.mergeComponentMeta(DYNAMIC_TEMPLATE_NAME, require('@ulaval/modul-components/dist/components/dynamic-template/dynamic-template.meta.json'), CATEGORY_LAYOUT);
+        this.mergeComponentMeta(FILE_SELECT_NAME, require('@ulaval/modul-components/dist/components/file-select/file-select.meta.json'), CATEGORY_FORMS);
         this.mergeComponentMeta(FILE_UPLOAD_NAME, require('@ulaval/modul-components/dist/components/file-upload/file-upload.meta.json'), CATEGORY_FORMS);
         this.mergeComponentMeta(FLEX_TEMPLATE_NAME, require('@ulaval/modul-components/dist/components/flex-template/flex-template.meta.json'), CATEGORY_LAYOUT);
         this.mergeComponentMeta(I18N_NAME, require('@ulaval/modul-components/dist/components/i18n/i18n.meta.json'));

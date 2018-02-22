@@ -19,6 +19,7 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(FRENCH, require('./components/dropdown-item/dropdown-item.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/dropdown-group/dropdown-group.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/dynamic-template/dynamic-template.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./components/file-select/file-select.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/file-upload/file-upload.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/flex-template/flex-template.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/i18n/i18n.meta.fr.json'));
