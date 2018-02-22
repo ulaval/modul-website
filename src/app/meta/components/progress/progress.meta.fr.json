@@ -2,7 +2,7 @@
     "m-progress-meta": {
         "name": "Barre de progression",
         "value": "Valeur de progression en pourcentage",
-        "indeterminate": "Détermine si la valeur est connu ou non",
+        "indeterminate": "Détermine si la valeur est connue ou non",
         "size": "Hauteur de la barre de progression",
         "circle": "Détermine le mode d'affichage",
         "diameter": "Diamètre du cercle",
