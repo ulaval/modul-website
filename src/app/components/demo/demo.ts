@@ -1,91 +1,112 @@
-import Vue, { PluginObject } from 'vue';
-import { ModulWebsite } from '../modul-website';
-import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
-import WithRender from './demo.html?style=./demo.scss';
-import hljs from 'highlight.js';
 import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
+import hljs from 'highlight.js';
+import Vue, { PluginObject } from 'vue';
+import Component from 'vue-class-component';
+
+import WithRender from './demo.html?style=./demo.scss';
+
+const enum Tabs {
+    HTML = 'html',
+    CSS = 'css',
+    JS = 'js'
+}
 
 @WithRender
 @Component({
     mixins: [TransitionAccordion]
 })
 export class MDemo extends ModulVue {
-
-    public disponible: boolean = false;
-    public html: string = '';
     public htmlHl: string = '';
-    public typescriptElement: HTMLElement;
-    public typescript: string = '';
-    public typescriptHl: string = '';
-    public cssElement: HTMLElement;
-    public css: string = '';
+    public jsHl: string = '';
     public cssHl: string = '';
 
-    public open: boolean = false;
-    public activeTab: string = '';
+    public isOpened: boolean = false;
+    public activeTab: Tabs = Tabs.HTML;
 
-    protected mounted(): void {
-        this.$nextTick(() => {
-            this.html = (this.$el.getElementsByClassName('hlhtml')[0] as HTMLElement).innerText;
-            this.htmlHl = hljs.highlight('html', this.html).value;
+    $refs: {
+        demoContent: HTMLElement;
+    };
 
-            this.typescriptElement = (this.$el.getElementsByClassName('hljavascript')[0] as HTMLElement);
-            if (this.typescriptElement) {
-                this.typescript = this.typescriptElement.innerText;
-                this.typescriptHl = hljs.highlight('javascript', this.typescript).value;
-            }
+    protected async mounted(): Promise<void> {
+        const html = this.extractContent('hlhtml');
+        const js = this.extractContent('hljavascript');
+        const css = this.extractContent('hlcss');
 
-            this.cssElement = (this.$el.getElementsByClassName('hlcss')[0] as HTMLElement);
-            if (this.cssElement) {
-                this.css = this.cssElement.innerText;
-                this.cssHl = hljs.highlight('css', this.css).value;
-                let style: HTMLStyleElement = document.createElement('style');
-                style.innerHTML = this.cssElement.innerText;
-                this.$el.appendChild(style);
-            }
+        this.htmlHl = hljs.highlight('html', html).value;
+        this.cssHl = hljs.highlight('css', css).value;
+        this.jsHl = hljs.highlight('javascript', js).value;
 
-            this.activeTab = 'html';
-            this.disponible = true;
-        });
+        this.appendStyle(css);
+        await this.activateDemo(js, html);
+    }
+
+    private appendStyle(cssText: string): void {
+        let style: HTMLStyleElement = document.createElement('style');
+        style.innerHTML = cssText;
+        this.$el.appendChild(style);
+    }
+
+    private async activateDemo(
+        jsText: string,
+        htmlText: string
+    ): Promise<void> {
+        let options = {};
+
+        if (jsText && jsText.trim().length > 0) {
+            // tslint:disable-next-line:no-eval
+            options = eval(`'use strict'; var opt = ${jsText}; opt;`);
+        }
+
+        const vueExports = await import('vue');
+        new vueExports.default({
+            template: htmlText,
+            ...options,
+            el: this.$refs.demoContent
+        }).$mount();
+    }
+
+    private extractContent(className: string): string {
+        let text = '';
+
+        const els = this.$el.getElementsByClassName(className);
+        if (els.length > 0) {
+            text = (els[0] as HTMLElement).innerText;
+        }
+
+        return '\n\r' + text;
     }
 
     private get label(): string {
-        if (this.open) {
+        if (this.isOpened) {
             return this.$i18n.translate('modul:close-label');
         } else {
             return this.$i18n.translate('modul:code-label');
         }
     }
 
-    private get htmlActive(): boolean {
-        if (this.activeTab === 'html') {
-            return true;
-        }
-        return false;
+    private get hasJs(): boolean {
+        return this.jsHl.trim().length > 0;
     }
 
-    private get typescriptActive(): boolean {
-        if (this.activeTab === 'typescript') {
-            return true;
-        }
-        return false;
+    private get hasCss(): boolean {
+        return this.cssHl.trim().length > 0;
+    }
+
+    private get htmlActive(): boolean {
+        return this.activeTab === Tabs.HTML;
+    }
+
+    private get jsActive(): boolean {
+        return this.activeTab === Tabs.JS;
     }
 
     private get cssActive(): boolean {
-        if (this.activeTab === 'css') {
-            return true;
-        }
-        return false;
+        return this.activeTab === Tabs.CSS;
     }
 
-    private tab(id: string): void {
-        this.activeTab = id;
-    }
-
-    private defaultSlot(): boolean {
-        return !!this.$slots.default;
+    private switchTab(tab: Tabs): void {
+        this.activeTab = tab;
     }
 }
 

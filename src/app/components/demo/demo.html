@@ -3,38 +3,32 @@
         <slot></slot>
     </div>
 
-    <m-spinner v-if="!disponible"></m-spinner>
-
-    <div class="demo-block" v-if="disponible">
-        <a @click.prevent="open = !open" class="demo-block__label">{{ label }}</a>
+    <div class="demo-block">
+        <a @click.prevent="isOpened = !isOpened" class="demo-block__label">{{ openCloseLabel }}</a>
         <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
-            <div class="demo-block__code tabs" v-if="open">
+            <div class="demo-block__code tabs" v-if="isOpened">
                 <div class="arrow"></div>
 
                 <ul class="tabs__header">
-                    <li @click="tab('html')" :class="{'active': htmlActive}">HTML</li>
-                    <li @click="tab('typescript')" :class="{'active': typescriptActive}" v-if="typescriptElement">TS</li>
-                    <li @click="tab('css')" :class="{'active': cssActive}" v-if="cssElement">CSS</li>
+                    <li @click="switchTab('html')" :class="{'active': htmlActive}">HTML</li>
+                    <li @click="switchTab('js')" :class="{'active': jsActive}" v-if="hasJs">JS</li>
+                    <li @click="switchTab('css')" :class="{'active': cssActive}" v-if="hasCss">CSS</li>
                 </ul>
 
                 <pre class="tabs__content" :class="{'active': htmlActive}">
                     <code v-html="htmlHl"></code>
                 </pre>
 
-                <pre class="tabs__content"
-                     :class="{'active': typescriptActive}"
-                     v-if="typescriptElement">
-                    <code v-html="typescriptHl"></code>
+                <pre class="tabs__content" :class="{'active': jsActive}" v-if="hasJs">
+                    <code v-html="jsHl"></code>
                 </pre>
 
-                <pre class="tabs__content"
-                     :class="{'active': cssActive}"
-                     v-if="cssElement">
+                <pre class="tabs__content" :class="{'active': cssActive}" v-if="hasCss">
                     <code v-html="cssHl"></code>
                 </pre>
             </div>
         </transition>
 
-        <m-dynamic-template class="demo-block__preview" :template="html"></m-dynamic-template>
+        <div class="demo-block__preview" ref="demoContent"></div>
     </div>
 </div>

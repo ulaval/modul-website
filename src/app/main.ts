@@ -1,33 +1,37 @@
-import '@ulaval/modul-components/dist/utils/polyfills';
-import Vue from 'vue';
-import store from './store';
-import routerFactory, { ModulRouter } from './router';
-import Modul from './components/modul/modul';
-import * as ComponentActions from './store/modules/components/actions';
-import * as PageActions from './store/modules/pages/actions';
-import { Sections, Standards, GettingStarted } from '@/app/components/pages/page';
-import { Pages } from '@/app/components/pages/pages';
 import './styles/main.scss';
+import '@ulaval/modul-components/dist/utils/polyfills';
 
-import I18nPlugin, { currentLang, FRENCH, DebugMode, MessagesPluginOptions } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import { GettingStarted, Sections, Standards } from '@/app/components/pages/page';
+import { Pages } from '@/app/components/pages/pages';
 import ComponentsPlugin from '@ulaval/modul-components/dist/components';
 import DirectivesPlugin from '@ulaval/modul-components/dist/directives';
-import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils';
-
 import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
+import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils';
+import I18nPlugin, {
+    currentLang,
+    DebugMode,
+    FRENCH,
+    MessagesPluginOptions
+} from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import Vue from 'vue';
+import { VueRouter } from 'vue-router/types/router';
 
 import { COLOR_NAME, MColor } from './components/color/color';
+import { DARK_TEMPLATE_NAME, MDarkTemplate } from './components/dark-template/dark-template';
 import { DEMO_NAME, MDemo } from './components/demo/demo';
 import { DO_NAME, MDo } from './components/do/do';
 import { DONT_NAME, MDont } from './components/dont/dont';
 import { GO_NAME, MGo } from './components/go/go';
-import { MARKDOWN_NAME, MMarkdown } from './components/markdown/markdown';
-import { PREVIEW_NAME, MPreview } from './components/preview/preview';
-import { DARK_TEMPLATE_NAME, MDarkTemplate } from './components/dark-template/dark-template';
-import { LIGHT_TEMPLATE_NAME, MLightTemplate } from './components/light-template/light-template';
 import { HIGHLIGHT_NAME, MHighlight } from './components/highlight/highlight';
-import { VueRouter } from 'vue-router/types/router';
 import { ICON_GALLERY_NAME, MIconGallery } from './components/icon-gallery/icon-gallery';
+import { LIGHT_TEMPLATE_NAME, MLightTemplate } from './components/light-template/light-template';
+import { MARKDOWN_NAME, MMarkdown } from './components/markdown/markdown';
+import Modul from './components/modul/modul';
+import { MPreview, PREVIEW_NAME } from './components/preview/preview';
+import routerFactory, { ModulRouter } from './router';
+import store from './store';
+import * as ComponentActions from './store/modules/components/actions';
+import * as PageActions from './store/modules/pages/actions';
 
 const utilsPluginOptions: UtilsPluginOptions = {
     securityPluginOptions: {
@@ -40,7 +44,10 @@ async function main() {
     Vue.config.productionTip = false;
 
     let i18nOptions: MessagesPluginOptions = {
-        debug: process.env && (process.env.NODE_ENV as any).dev ? DebugMode.Throw : DebugMode.Prod
+        debug:
+            process.env && (process.env.NODE_ENV as any).dev
+                ? DebugMode.Throw
+                : DebugMode.Prod
     };
     Vue.use(I18nPlugin, i18nOptions);
     Vue.use(ComponentsPlugin);
@@ -66,10 +73,15 @@ async function main() {
     await store.dispatchAsync(ComponentActions.ICONS_GET, 'website');
     await store.dispatchAsync(ComponentActions.COMPONENTS_META_GET, FRENCH);
 
-    store.dispatchAsync(PageActions.SECTIONS_META_GET, { language: FRENCH, sectionsObj: Sections });
+    store.dispatchAsync(PageActions.SECTIONS_META_GET, {
+        language: FRENCH,
+        sectionsObj: Sections
+    });
 
-    console.debug('TODO: to remove, mode or add a generic way to define routes');
-    Sections.forEach((section) => {
+    console.debug(
+        'TODO: to remove, mode or add a generic way to define routes'
+    );
+    Sections.forEach(section => {
         let pagesObj: Pages = null;
 
         if (section === 'standards') {
@@ -79,7 +91,9 @@ async function main() {
         }
 
         if (pagesObj) {
-            store.dispatchAsync(section + '/' + PageActions.PAGES_META_GET, { /* route: route,*/ pagesObj: pagesObj });
+            store.dispatchAsync(section + '/' + PageActions.PAGES_META_GET, {
+                /* route: route,*/ pagesObj: pagesObj
+            });
         }
     });
 
@@ -92,17 +106,9 @@ async function main() {
         components: { Modul }
     });
 
-    // TODO: Permettre au script d'être utilisé dans modul-demo
-    window['app'] = vue;
-
     Vue.prototype.$routerIndex = modulRouter.index;
 
     vue.$mount('#vue');
-
-    // TODO: Permettre au script d'être utilisé dans modul-demo
-    let script: HTMLScriptElement = document.createElement('script');
-    script.setAttribute('src', '/assets/md/md-scripts.js');
-    document.getElementsByTagName('body')[0].appendChild(script);
 }
 
 main();
