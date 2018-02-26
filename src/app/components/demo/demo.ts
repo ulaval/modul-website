@@ -77,7 +77,7 @@ export class MDemo extends ModulVue {
         return '\n\r' + text;
     }
 
-    private get label(): string {
+    private get openCloseLabel(): string {
         if (this.isOpened) {
             return this.$i18n.translate('modul:close-label');
         } else {
