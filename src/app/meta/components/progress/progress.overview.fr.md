@@ -20,7 +20,7 @@ La *barre de progression* peut représenter une valeur déterminée ou indéterm
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
 
 ### Dimension
-La *barre de progression* en mode barre horizontal à une hauteur de 6 pixels et prend la pleine largeur de son conteneur. Il est possible de modifier la hauteur au besoin. L'indicateur de progression en mode cercle a un diamètre de 50 pixels et la largeur de son trait est de 4 pixels par défaut.
+La *barre de progression* en mode barre horizontale a une hauteur de 6 pixels et prend la pleine largeur de son conteneur. Il est possible de modifier la hauteur au besoin. L'indicateur de progression en mode cercle a un diamètre de 50 pixels et la largeur de son trait est de 4 pixels par défaut.
 Il est également possible de modifier les dimensions du cercle.
 
 <m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
