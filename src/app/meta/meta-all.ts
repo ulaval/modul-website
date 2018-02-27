@@ -29,6 +29,7 @@ import {
     PANEL_NAME,
     POPPER_NAME,
     POPUP_NAME,
+    PROGRESS_NAME
     RADIO_GROUP_NAME,
     RADIO_NAME,
     SCROLL_TOP_NAME,
@@ -141,6 +142,7 @@ export class MetaAll implements PluginObject<any> {
         this.mergeComponentMeta(PANEL_NAME, require('@ulaval/modul-components/dist/components/panel/panel.meta.json'), CATEGORY_CONTENT, true);
         this.mergeComponentMeta(POPPER_NAME, require('@ulaval/modul-components/dist/components/popper/popper.meta.json'), CATEGORY_WINDOWS);
         this.mergeComponentMeta(POPUP_NAME, require('@ulaval/modul-components/dist/components/popup/popup.meta.json'), CATEGORY_WINDOWS);
+        this.mergeComponentMeta(PROGRESS_NAME, require('@ulaval/modul-components/dist/components/progress/progress.meta.json'), CATEGORY_CONTENT);
         this.mergeComponentMeta(RADIO_NAME, require('@ulaval/modul-components/dist/components/radio/radio.meta.json'), CATEGORY_FORMS, true);
         this.mergeComponentMeta(RADIO_GROUP_NAME, require('@ulaval/modul-components/dist/components/radio-group/radio-group.meta.json'), CATEGORY_FORMS, true);
         this.mergeComponentMeta(SCROLL_TOP_NAME, require('@ulaval/modul-components/dist/components/scroll-top/scroll-top.meta.json'), CATEGORY_NAVIGATION);
