@@ -72,6 +72,10 @@
         &.active {
             display: block;
         }
+
+        code {
+            white-space: pre-wrap;
+        }
     }
 
     .demo-block__preview {
