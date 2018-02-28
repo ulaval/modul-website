@@ -9,15 +9,22 @@
         color: #fff;
     }
 
+    .demo-block__label-wrapper {
+        text-align: right;
+    }
+
     .demo-block__label {
-        display: block;
+        // display: block;
         margin-top: $m-margin--s;
         border-bottom: 1px solid $modul-color--grey-dark;
-        text-align: right;
+        // text-align: right;
         font-size: 14px;
         font-weight: 400;
         color: $modul-color--grey-dark;
         text-transform: uppercase;
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 
     .demo-block__code {
@@ -46,12 +53,18 @@
 
         li {
             display: inline-block;
-            padding: $m-margin--xs $m-margin--s;
-            margin: 0 $m-margin--s 0 0;
-            font-size: 14px;
-            font-weight: 400;
-            color: $modul-color--grey-dark;
-            text-transform: uppercase;
+
+            button {
+                padding: $m-margin--xs $m-margin--s;
+                margin: 0 $m-margin--s 0 0;
+                font-size: 14px;
+                font-weight: 400;
+                color: $modul-color--grey-dark;
+                text-transform: uppercase;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
 
             &::before {
                 content: none;
@@ -60,8 +73,10 @@
             &.active,
             &:hover,
             &:focus {
-                background-color: $modul-color--black-grey;
-                transition: background-color $m-transition-duration ease;
+                button {
+                    background-color: $modul-color--black-grey;
+                    transition: background-color $m-transition-duration ease;
+                }
             }
         }
     }
