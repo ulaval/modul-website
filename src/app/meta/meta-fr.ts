@@ -1,5 +1,5 @@
-import { PluginObject } from 'vue';
 import { FRENCH, Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import { PluginObject } from 'vue';
 
 const FrenchMetaPlugin: PluginObject<any> = {
     install(v, options) {
@@ -19,6 +19,8 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(FRENCH, require('./components/dropdown-item/dropdown-item.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/dropdown-group/dropdown-group.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/dynamic-template/dynamic-template.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./components/file-select/file-select.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./components/file-upload/file-upload.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/flex-template/flex-template.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/i18n/i18n.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/icon/icon.meta.fr.json'));
@@ -35,6 +37,7 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(FRENCH, require('./components/sidebar/sidebar.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/popper/popper.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/popup/popup.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./components/progress/progress.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/radio/radio.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/radio-group/radio-group.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./components/modal/modal.meta.fr.json'));

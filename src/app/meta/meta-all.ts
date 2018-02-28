@@ -1,16 +1,67 @@
-import { PluginObject } from 'vue';
 import {
-    ACCORDION_NAME, ACCORDION_GROUP_NAME, BUTTON_NAME, BUTTON_GROUP_NAME, LIST_ITEM_NAME, CHECKBOX_NAME, DATEFIELDS_NAME, DATEPICKER_NAME, DIALOG_NAME, DROPDOWN_NAME, DROPDOWN_GROUP_NAME,
-    DROPDOWN_ITEM_NAME, DYNAMIC_TEMPLATE_NAME, FLEX_TEMPLATE_NAME, I18N_NAME, ICON_BUTTON_NAME, LIMIT_TEXT_NAME, ICON_NAME, INPUT_STYLE_NAME, LINK_NAME, MESSAGE_NAME,
-    MODAL_NAME, NAVBAR_NAME, NAVBAR_ITEM_NAME, MENU_NAME, MENU_ITEM_NAME, PANEL_NAME, POPPER_NAME, POPUP_NAME, RADIO_NAME, RADIO_GROUP_NAME, SCROLL_TOP_NAME, SIDEBAR_NAME,
-    SPINNER_NAME, STATUS_NAME, STEP_NAME, STEPPERS_NAME, STEPPERS_ITEM_NAME, SWITCH_NAME, TABS_NAME, TEMPLATE_NAME, TEXTAREA_NAME, TEXTFIELD_NAME, TIMEPICKER_NAME, TOOLTIP_NAME, UPLOAD_NAME, UPLOAD_INPUT_NAME,
-    UPLOAD_DRAGDROP_NAME, UPLOAD_FILESLIST_NAME
+    ACCORDION_GROUP_NAME,
+    ACCORDION_NAME,
+    BUTTON_GROUP_NAME,
+    BUTTON_NAME,
+    CHECKBOX_NAME,
+    DATEFIELDS_NAME,
+    DATEPICKER_NAME,
+    DIALOG_NAME,
+    DROPDOWN_GROUP_NAME,
+    DROPDOWN_ITEM_NAME,
+    DROPDOWN_NAME,
+    DYNAMIC_TEMPLATE_NAME,
+    FILE_SELECT_NAME,
+    FILE_UPLOAD_NAME,
+    FLEX_TEMPLATE_NAME,
+    I18N_NAME,
+    ICON_BUTTON_NAME,
+    ICON_NAME,
+    LIMIT_TEXT_NAME,
+    LINK_NAME,
+    LIST_ITEM_NAME,
+    MENU_ITEM_NAME,
+    MENU_NAME,
+    MESSAGE_NAME,
+    MODAL_NAME,
+    NAVBAR_ITEM_NAME,
+    NAVBAR_NAME,
+    PANEL_NAME,
+    POPPER_NAME,
+    POPUP_NAME,
+    PROGRESS_NAME,
+    RADIO_GROUP_NAME,
+    RADIO_NAME,
+    SCROLL_TOP_NAME,
+    SIDEBAR_NAME,
+    SPINNER_NAME,
+    STATUS_NAME,
+    STEP_NAME,
+    STEPPERS_ITEM_NAME,
+    STEPPERS_NAME,
+    SWITCH_NAME,
+    TABS_NAME,
+    TEMPLATE_NAME,
+    TEXTAREA_NAME,
+    TEXTFIELD_NAME,
+    TIMEPICKER_NAME,
+    TOOLTIP_NAME,
+    UPLOAD_NAME
 } from '@ulaval/modul-components/dist/components/component-names';
-import { RIPPLE_EFFECT_NAME, SCROLL_TO_NAME } from '@ulaval/modul-components/dist/directives/directive-names';
+import { ComponentMeta, Meta, Preview } from '@ulaval/modul-components/dist/meta/meta';
+import { PluginObject } from 'vue';
+
 import {
-    ELEMENT_QUERIES, INPUT_MANAGEMENT, INPUT_POPUP, INPUT_STATE, INPUT_WIDTH, MEDIA_QUERIES, OPEN_TRIGGER, PORTAL, TRANSITION_ACCORDION
+    ELEMENT_QUERIES,
+    INPUT_MANAGEMENT,
+    INPUT_POPUP,
+    INPUT_STATE,
+    INPUT_WIDTH,
+    MEDIA_QUERIES,
+    OPEN_TRIGGER,
+    PORTAL,
+    TRANSITION_ACCORDION
 } from './mixins/mixins-names';
-import { Meta, Preview, ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 
 // should be i18n key format
 export const CATEGORY_CONTENT: string = 'categories:content';
@@ -73,6 +124,8 @@ export class MetaAll implements PluginObject<any> {
         this.mergeComponentMeta(DROPDOWN_ITEM_NAME, require('@ulaval/modul-components/dist/components/dropdown-item/dropdown-item.meta.json'), CATEGORY_FORMS, true);
         this.mergeComponentMeta(DROPDOWN_GROUP_NAME, require('@ulaval/modul-components/dist/components/dropdown-group/dropdown-group.meta.json'), CATEGORY_FORMS);
         this.mergeComponentMeta(DYNAMIC_TEMPLATE_NAME, require('@ulaval/modul-components/dist/components/dynamic-template/dynamic-template.meta.json'), CATEGORY_LAYOUT);
+        this.mergeComponentMeta(FILE_SELECT_NAME, require('@ulaval/modul-components/dist/components/file-select/file-select.meta.json'), CATEGORY_FORMS);
+        this.mergeComponentMeta(FILE_UPLOAD_NAME, require('@ulaval/modul-components/dist/components/file-upload/file-upload.meta.json'), CATEGORY_FORMS);
         this.mergeComponentMeta(FLEX_TEMPLATE_NAME, require('@ulaval/modul-components/dist/components/flex-template/flex-template.meta.json'), CATEGORY_LAYOUT);
         this.mergeComponentMeta(I18N_NAME, require('@ulaval/modul-components/dist/components/i18n/i18n.meta.json'));
         this.mergeComponentMeta(ICON_BUTTON_NAME, require('@ulaval/modul-components/dist/components/icon-button/icon-button.meta.json'), CATEGORY_FORMS);
@@ -89,6 +142,7 @@ export class MetaAll implements PluginObject<any> {
         this.mergeComponentMeta(PANEL_NAME, require('@ulaval/modul-components/dist/components/panel/panel.meta.json'), CATEGORY_CONTENT, true);
         this.mergeComponentMeta(POPPER_NAME, require('@ulaval/modul-components/dist/components/popper/popper.meta.json'), CATEGORY_WINDOWS);
         this.mergeComponentMeta(POPUP_NAME, require('@ulaval/modul-components/dist/components/popup/popup.meta.json'), CATEGORY_WINDOWS);
+        this.mergeComponentMeta(PROGRESS_NAME, require('@ulaval/modul-components/dist/components/progress/progress.meta.json'), CATEGORY_CONTENT);
         this.mergeComponentMeta(RADIO_NAME, require('@ulaval/modul-components/dist/components/radio/radio.meta.json'), CATEGORY_FORMS, true);
         this.mergeComponentMeta(RADIO_GROUP_NAME, require('@ulaval/modul-components/dist/components/radio-group/radio-group.meta.json'), CATEGORY_FORMS, true);
         this.mergeComponentMeta(SCROLL_TOP_NAME, require('@ulaval/modul-components/dist/components/scroll-top/scroll-top.meta.json'), CATEGORY_NAVIGATION);
