@@ -16,7 +16,13 @@ La *barre de progression* peut être représentée de 2 manières soit par une b
 
 ```html
 <m-progress value="75"></m-progress>
-<m-progress value="75" :circle="true"></m-progress>
+<m-progress class="circle" value="75" :circle="true"></m-progress>
+```
+
+```css
+.circle {
+    margin-top: 12px;
+}
 ```
 
 </modul-demo>
@@ -28,7 +34,13 @@ La *barre de progression* peut représenter une valeur déterminée ou indéterm
 
 ```html
 <m-progress value="50" :indeterminate="true"></m-progress>
-<m-progress value="50" :circle="true" :indeterminate="true"></m-progress>
+<m-progress class="circle" value="50" :circle="true" :indeterminate="true"></m-progress>
+```
+
+```css
+.circle {
+    margin-top: 12px;
+}
 ```
 
 </modul-demo>
@@ -41,7 +53,13 @@ Il est également possible de modifier les dimensions du cercle.
 
 ```html
 <m-progress value="75" size="18"></m-progress>
-<m-progress value="75" :circle="true" diameter="100" stroke="10"></m-progress>
+<m-progress class="circle" value="75" :circle="true" diameter="100" stroke="10"></m-progress>
+```
+
+```css
+.circle {
+    margin-top: 12px;
+}
 ```
 
 </modul-demo>
@@ -56,7 +74,13 @@ Cet état est utilisé lorsque le travail a été effectué avec succès.
 
 ```html
 <m-progress value="75" state="completed"></m-progress>
-<m-progress value="75" :circle="true" state="completed"></m-progress>
+<m-progress class="circle" value="75" :circle="true" state="completed"></m-progress>
+```
+
+```css
+.circle {
+    margin-top: 12px;
+}
 ```
 
 </modul-demo>
@@ -68,7 +92,13 @@ Cet état est utilisé lorsque le travail est en cours de progression.
 
 ```html
 <m-progress value="75" state="in-progress"></m-progress>
-<m-progress value="75" :circle="true" state="in-progress"></m-progress>
+<m-progress class="circle" value="75" :circle="true" state="in-progress"></m-progress>
+```
+
+```css
+.circle {
+    margin-top: 12px;
+}
 ```
 
 </modul-demo>
@@ -80,7 +110,13 @@ Cet état est utilisé lorsque la progression a rencontré une erreur.
 
 ```html
 <m-progress value="75" state="error"></m-progress>
-<m-progress value="75" :circle="true" state="error"></m-progress>
+<m-progress class="circle" value="75" :circle="true" state="error"></m-progress>
+```
+
+```css
+.circle {
+    margin-top: 12px;
+}
 ```
 
 </modul-demo>
