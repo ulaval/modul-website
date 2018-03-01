@@ -214,6 +214,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./mixins/input-label/input-label.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./mixins/input-management/input-management.meta.fr.json')
             );
             i18n.addMessages(

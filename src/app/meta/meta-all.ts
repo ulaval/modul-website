@@ -53,6 +53,7 @@ import { PluginObject } from 'vue';
 import {
     ELEMENT_QUERIES,
     INPUT_MANAGEMENT,
+    INPUT_LABEL,
     INPUT_POPUP,
     INPUT_STATE,
     INPUT_WIDTH,
@@ -132,6 +133,11 @@ export class MetaAll implements PluginObject<any> {
             INPUT_WIDTH,
             require('@ulaval/modul-components/dist/mixins/input-width/input-width.meta.json'),
             'input-width'
+        );
+        this.mergeMixin(
+            INPUT_LABEL,
+            require('@ulaval/modul-components/dist/mixins/input-label/input-label.meta.json'),
+            'input-label'
         );
         this.mergeMixin(
             OPEN_TRIGGER,

@@ -11,11 +11,11 @@
 
     .demo-block__label-wrapper {
         text-align: right;
+        border-bottom: 1px solid $modul-color--grey-dark;
     }
 
     .demo-block__label {
         margin-top: $m-margin--s;
-        border-bottom: 1px solid $modul-color--grey-dark;
         font-size: 14px;
         font-weight: 400;
         color: $modul-color--grey-dark;
