@@ -54,6 +54,7 @@ import { PluginObject } from 'vue';
 import {
     ELEMENT_QUERIES,
     INPUT_MANAGEMENT,
+    INPUT_LABEL,
     INPUT_POPUP,
     INPUT_STATE,
     INPUT_WIDTH,
@@ -105,6 +106,7 @@ export class MetaAll implements PluginObject<any> {
         this.mergeMixin(INPUT_STATE, require('@ulaval/modul-components/dist/mixins/input-state/input-state.meta.json'), 'input-state');
 
         this.mergeMixin(ELEMENT_QUERIES, require('@ulaval/modul-components/dist/mixins/element-queries/element-queries.meta.json'), 'element-queries');
+        this.mergeMixin(INPUT_LABEL, require('@ulaval/modul-components/dist/mixins/input-label/input-label.meta.json'), 'input-label');
         this.mergeMixin(INPUT_MANAGEMENT, require('@ulaval/modul-components/dist/mixins/input-management/input-management.meta.json'), 'input-management');
         this.mergeMixin(INPUT_POPUP, require('@ulaval/modul-components/dist/mixins/input-popup/input-popup.meta.json'), 'input-popup');
         this.mergeMixin(INPUT_WIDTH, require('@ulaval/modul-components/dist/mixins/input-width/input-width.meta.json'), 'input-width');

@@ -60,6 +60,7 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(FRENCH, require('./directives/scroll-to/scroll-to.meta.fr.json'));
 
             i18n.addMessages(FRENCH, require('./mixins/element-queries/element-queries.meta.fr.json'));
+            i18n.addMessages(FRENCH, require('./mixins/input-label/input-label.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./mixins/input-management/input-management.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./mixins/input-popup/input-popup.meta.fr.json'));
             i18n.addMessages(FRENCH, require('./mixins/input-state/input-state.meta.fr.json'));
