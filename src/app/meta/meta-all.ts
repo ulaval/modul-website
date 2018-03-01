@@ -11,6 +11,8 @@ import {
     DROPDOWN_ITEM_NAME,
     DROPDOWN_NAME,
     DYNAMIC_TEMPLATE_NAME,
+    FILE_SELECT_NAME,
+    FILE_UPLOAD_NAME,
     FLEX_TEMPLATE_NAME,
     I18N_NAME,
     ICON_BUTTON_NAME,
@@ -27,6 +29,7 @@ import {
     PANEL_NAME,
     POPPER_NAME,
     POPUP_NAME,
+    PROGRESS_NAME,
     RADIO_GROUP_NAME,
     RADIO_NAME,
     SCROLL_TOP_NAME,
@@ -215,6 +218,16 @@ export class MetaAll implements PluginObject<any> {
             CATEGORY_LAYOUT
         );
         this.mergeComponentMeta(
+            FILE_SELECT_NAME,
+            require('@ulaval/modul-components/dist/components/file-select/file-select.meta.json'),
+            CATEGORY_FORMS
+        );
+        this.mergeComponentMeta(
+            FILE_UPLOAD_NAME,
+            require('@ulaval/modul-components/dist/components/file-upload/file-upload.meta.json'),
+            CATEGORY_FORMS
+        );
+        this.mergeComponentMeta(
             FLEX_TEMPLATE_NAME,
             require('@ulaval/modul-components/dist/components/flex-template/flex-template.meta.json'),
             CATEGORY_LAYOUT
@@ -300,6 +313,11 @@ export class MetaAll implements PluginObject<any> {
             POPUP_NAME,
             require('@ulaval/modul-components/dist/components/popup/popup.meta.json'),
             CATEGORY_WINDOWS
+        );
+        this.mergeComponentMeta(
+            PROGRESS_NAME,
+            require('@ulaval/modul-components/dist/components/progress/progress.meta.json'),
+            CATEGORY_CONTENT
         );
         this.mergeComponentMeta(
             RADIO_NAME,

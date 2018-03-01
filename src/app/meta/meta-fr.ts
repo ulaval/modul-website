@@ -60,6 +60,14 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/file-select/file-select.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/file-upload/file-upload.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/flex-template/flex-template.meta.fr.json')
             );
             i18n.addMessages(
@@ -121,6 +129,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(
                 FRENCH,
                 require('./components/popup/popup.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/progress/progress.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,

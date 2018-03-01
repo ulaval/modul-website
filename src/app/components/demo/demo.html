@@ -1,0 +1,38 @@
+<div class="modul-demo">
+    <div class="m-u--visually-hidden">
+        <slot></slot>
+    </div>
+
+    <div class="demo-block">
+        <div class="demo-block__label-wrapper">
+            <button @click.prevent="isOpened = !isOpened" class="demo-block__label">{{ openCloseLabel }}</button>
+        </div>
+        <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
+            <div class="demo-block__code tabs" v-if="isOpened">
+                <div class="arrow"></div>
+
+                <ul class="tabs__header">
+                    <li :class="{'active': htmlActive}"><button @click="switchTab('html')">HTML</button></li>
+                    <li :class="{'active': jsActive}" v-if="hasJs"><button @click="switchTab('js')">JS</button></li>
+                    <li :class="{'active': cssActive}" v-if="hasCss"><button @click="switchTab('css')">CSS</button></li>
+                </ul>
+
+                <pre class="tabs__content" :class="{'active': htmlActive}">
+                    <code v-html="htmlHl"></code>
+                </pre>
+
+                <pre class="tabs__content" :class="{'active': jsActive}" v-if="hasJs">
+                    <code v-html="jsHl"></code>
+                </pre>
+
+                <pre class="tabs__content" :class="{'active': cssActive}" v-if="hasCss">
+                    <code v-html="cssHl"></code>
+                </pre>
+            </div>
+        </transition>
+
+        <div class="demo-block__preview">
+            <div ref="demoContent"></div>
+        </div>
+    </div>
+</div>
