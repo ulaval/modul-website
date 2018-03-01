@@ -6,7 +6,14 @@ Voir aussi le composant *<modul-go name="m-datepicker"></modul-go>*.
 
 ### Année
 Par défaut, la liste des années commence en 1900 et se termine 5 ans après l'année courante. Il possible de changer la plage d'années à afficher.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-datefields min-year="2000" max-year="2018"></m-datefields>
+```
+
+</modul-demo>
 
 ### Jour
 * Le nombre de jours disponibles dépend du mois et de l'année sélectionnée. Par défaut, la listte affiche 31 jours.
@@ -15,11 +22,42 @@ Par défaut, la liste des années commence en 1900 et se termine 5 ans après l'
 
 ### Retirer des listes déroulantes
 Il est possible de retirer une ou plusieurs listes déroulantes selon le besoin.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-datefields :year="false"></m-datefields>
+<m-datefields :month="false" :date="false"></m-datefields>
+<m-datefields :date="false"></m-datefields>
+```
+
+```css
+.m-datefields {
+    display: block !important;
+}
+```
+
+</modul-demo>
 
 ### Date sélectionnée
 La date sélectionnée est composée des éléments sélectionnés de chacune des listes déroulantes. Le composant peut retourner un objet **Date** ou **MomentJs**. Il émet aussi un événement indiquant si une valeur est sélectionnée dans chacune des listes.
 
 ### États et messages de validation
 Ce composant gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres. Lorsque possible, les validations sont effectuées à la sortie des champs.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-datefields :disabled="true"></m-datefields>
+<m-datefields :waiting="true"></m-datefields>
+<m-datefields :error="true" error-message="Ad dolor ea laborum aliquip eiusmod commodo velit sunt sunt anim minim."></m-datefields>
+<m-datefields :valid="true" valid-message="Ad dolor ea laborum aliquip eiusmod commodo velit sunt sunt anim minim."></m-datefields>
+```
+
+```css
+.m-datefields {
+    display: block !important;
+}
+```
+
+</modul-demo>

@@ -17,9 +17,46 @@ Il est possible de limiter le nombre caractères à afficher dans la zone de tex
 
 ### Hauteur du champ
 Le composant gère automatiquement l'ajout et le retrait de la ligne en fonction de la longeur du texte.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```javascript
+{
+    data: {
+        text: 'Adipisicing ex irure ex aute amet occaecat veniam proident ut. Deserunt elit consequat aute nostrud. Excepteur est exercitation enim consectetur Lorem enim sint laboris anim nisi deserunt ipsum nostrud veniam. Mollit eu quis ea do cupidatat officia nostrud ipsum proident labore non deserunt. Quis tempor ut magna reprehenderit ullamco ad. Quis irure labore est reprehenderit quis.'
+    }
+}
+```
+
+```html
+<m-textarea label="Zone de texte" :value="text"></m-textarea>
+```
+
+</modul-demo>
 
 
 ### États et messages de validation
 Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres. Lorsque possible, les validations sont effectuées à la sortie de la zone texte.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+
+<modul-demo>
+
+```html
+<m-textarea :disabled="true" label="Zone de texte"></m-textarea>
+<m-textarea :waiting="true" label="Zone de texte"></m-textarea>
+<m-textarea :error="true" label="Zone de texte"></m-textarea>
+<m-textarea :valid="true" label="Zone de texte"></m-textarea>
+```
+
+```css
+.m-textarea {
+    display: flex !important;
+    margin-top: 12px;
+}
+
+.m-textarea:first-child {
+    margin-top: 0;
+}
+```
+
+</modul-demo>
