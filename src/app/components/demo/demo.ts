@@ -60,7 +60,7 @@ export class MDemo extends ModulVue {
 
         const vueExports = await import('vue');
         new vueExports.default({
-            template: htmlText,
+            template: `<div>${htmlText}</div>`,
             ...options,
             el: this.$refs.demoContent
         }).$mount();
