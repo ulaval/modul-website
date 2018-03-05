@@ -16,11 +16,51 @@ Ce composant doit être utilisé avec le composant *<modul-go name="m-accordion"
 ## Caractéristiques
 ### Ouverture non simultanée
 L'option **Tout ouvrir** est disponible dès qu'il y a plus d'une rubrique dans l'accordéon et que les rubriques peuvent être ouvertes simultanément. Elle est visible tant et aussi longtemps que toutes les rubriques ne sont pas toutes ouvertes. Dès qu'elles sont toute ouvertes, cette option est remplacée par **Tout fermer**.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-accordion-group>
+    <m-accordion>
+        <span slot="header">Accordéon A</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon B</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon C</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+</m-accordion-group>
+```
+
+</modul-demo>
 
 ### Ouverture simultanée
 Si un accordéon est ouvert et que l'utilisateur ouvre un second accordéon du même groupe, l'accordéon déjà ouvert ce fermera. Les rubriques d'un groupe d'accordéon ne peuvent donc pas être ouvertes simultanément.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-accordion-group :concurrent="true">
+    <m-accordion>
+        <span slot="header">Accordéon A</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon B</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon C</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+</m-accordion-group>
+```
+
+</modul-demo>
 
 ### Traitement visuel
 Le traitement visuel de l'accordéon peut être&nbsp;:
@@ -28,8 +68,93 @@ Le traitement visuel de l'accordéon peut être&nbsp;:
 * **Alléger&nbsp;:** utiliser lorsqu'il y a un seul accordéon.
 * **Nul&nbsp;:** aucun traitement visuel n'est appliqué sur l'accordéon.
 
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+<modul-demo>
+
+```html
+<m-accordion-group skin="regular">
+    <m-accordion>
+        <span slot="header">Accordéon A</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon B</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon C</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+</m-accordion-group>
+<m-accordion-group skin="light">
+    <m-accordion>
+        <span slot="header">Accordéon A</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon B</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon C</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+</m-accordion-group>
+<m-accordion-group skin="plain">
+    <m-accordion>
+        <span slot="header">Accordéon A</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon B</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon C</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+</m-accordion-group>
+```
+
+```css
+.m-accordion-group {
+    margin-top: 12px;
+}
+```
+
+</modul-demo>
 
 ### Icône d'ouverture
 Il est possible de changer le traitement visuel de l'icône d'ouverture, soit en ajoutant des bordures, modifiant sa taille et changeant son positionnement.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-accordion-group skin="regular">
+    <m-accordion icon-position="left">
+        <span slot="header">Accordéon A</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion icon-position="right">
+        <span slot="header">Accordéon B</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion :icon-border="true">
+        <span slot="header">Accordéon C</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion :icon-border="false">
+        <span slot="header">Accordéon D</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion icon-size="small">
+        <span slot="header">Accordéon E</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion  icon-size="large">
+        <span slot="header">Accordéon F</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+</m-accordion-group>
+```
+
+</modul-demo>

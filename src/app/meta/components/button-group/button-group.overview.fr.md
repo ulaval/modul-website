@@ -26,4 +26,16 @@ L'utilisation de ce composant nécessite un minimum de 2 boutons et un maximum d
 
 ### Largeur des boutons
 Il est possible de fixer la largeur des boutons, afin qu'elle soit identique pour chaque bouton. Toutefois, cette pratique est recommandée lorsqu'il y a peu de boutons.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+
+<modul-demo>
+
+```html
+<m-button-group :full-size="true">
+    <m-radio value="button1">Button 1</m-radio>
+    <m-radio value="button2">Button 2</m-radio>
+    <m-radio value="button3">Button 3</m-radio>
+</m-button-group>
+```
+
+</modul-demo>
