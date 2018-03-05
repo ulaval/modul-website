@@ -19,19 +19,120 @@ Ce composant doit être utilisé avec le composant *<modul-go name="m-dropdown-i
 ## Caractéristiques
 ### Filtre
 Il est possible de filtrer la liste en ordre alphabétique.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-dropdown placeholder="Sélectionner un choix" :filterable="true">
+    <m-dropdown-item value="Choix 1"></m-dropdown-item>
+    <m-dropdown-item value="Choix 2"></m-dropdown-item>
+    <m-dropdown-item value="Choix 3"></m-dropdown-item>
+    <m-dropdown-item value="Choix 4"></m-dropdown-item>
+    <m-dropdown-item value="Choix 5"></m-dropdown-item>
+</m-dropdown>
+```
+
+</modul-demo>
 
 ### Largeur
 Par défaut, la largeur de la liste déroulante est optimisée pour un affichage sur mobile. Il est cependant possible de personnalisé cette largeur. Si applicable, trois points permettent d'indiquer que la valeur sélectionnée n'est pas complètement visible.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<p>
+    <m-dropdown placeholder="Sélectionner un choix" max-width="small">
+        <m-dropdown-item value="Choix 1"></m-dropdown-item>
+        <m-dropdown-item value="Choix 2"></m-dropdown-item>
+        <m-dropdown-item value="Choix 3"></m-dropdown-item>
+        <m-dropdown-item value="Choix 4"></m-dropdown-item>
+        <m-dropdown-item value="Choix 5"></m-dropdown-item>
+    </m-dropdown>
+</p>
+<p>
+    <m-dropdown placeholder="Sélectionner un choix" max-width="medium">
+        <m-dropdown-item value="Choix 1"></m-dropdown-item>
+        <m-dropdown-item value="Choix 2"></m-dropdown-item>
+        <m-dropdown-item value="Choix 3"></m-dropdown-item>
+        <m-dropdown-item value="Choix 4"></m-dropdown-item>
+        <m-dropdown-item value="Choix 5"></m-dropdown-item>
+    </m-dropdown>
+</p>
+<p>
+    <m-dropdown placeholder="Sélectionner un choix" max-width="large">
+        <m-dropdown-item value="Choix 1"></m-dropdown-item>
+        <m-dropdown-item value="Choix 2"></m-dropdown-item>
+        <m-dropdown-item value="Choix 3"></m-dropdown-item>
+        <m-dropdown-item value="Choix 4"></m-dropdown-item>
+        <m-dropdown-item value="Choix 5"></m-dropdown-item>
+    </m-dropdown>
+</p>
+```
+
+</modul-demo>
 
 ### Valeur sélectionnée
 Une valeur peut être sélectionnée par défaut lorsque plus de 90% des utilisateurs vont sélectionner la même valeur ou encore si une seule valeur est disponible. Lorsqu'aucune valeur n'est disponible dans la liste, un libellé doit afficher «&nbsp;Aucun résultats&nbsp;» ou «&nbsp;Aucune données&nbsp;».
 
 ### Élément de la liste désactivé
 Un élément de la liste déroulante peut être désactivé, c'est-à-dire qu'il ne peut pas être sélectionné.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-dropdown placeholder="Sélectionner un choix">
+    <m-dropdown-item value="Choix 1"></m-dropdown-item>
+    <m-dropdown-item value="Choix 2" :disabled="true"></m-dropdown-item>
+    <m-dropdown-item value="Choix 3"></m-dropdown-item>
+    <m-dropdown-item value="Choix 4" :disabled="true"></m-dropdown-item>
+    <m-dropdown-item value="Choix 5"></m-dropdown-item>
+</m-dropdown>
+```
+
+</modul-demo>
 
 ### États et messages de validation
 Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres. Lorsque possible, les validations sont effectuées à la sortie de la liste déroulante.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<p>
+    <m-dropdown placeholder="Sélectionner un choix" :waiting="true">
+        <m-dropdown-item value="Choix 1"></m-dropdown-item>
+        <m-dropdown-item value="Choix 2"></m-dropdown-item>
+        <m-dropdown-item value="Choix 3"></m-dropdown-item>
+        <m-dropdown-item value="Choix 4"></m-dropdown-item>
+        <m-dropdown-item value="Choix 5"></m-dropdown-item>
+    </m-dropdown>
+</p>
+<p>
+    <m-dropdown placeholder="Sélectionner un choix" :disabled="true">
+        <m-dropdown-item value="Choix 1"></m-dropdown-item>
+        <m-dropdown-item value="Choix 2"></m-dropdown-item>
+        <m-dropdown-item value="Choix 3"></m-dropdown-item>
+        <m-dropdown-item value="Choix 4"></m-dropdown-item>
+        <m-dropdown-item value="Choix 5"></m-dropdown-item>
+    </m-dropdown>
+</p>
+<p>
+    <m-dropdown placeholder="Sélectionner un choix" :error="true" error-message="Elit incididunt minim laborum aliquip et laboris.">
+        <m-dropdown-item value="Choix 1"></m-dropdown-item>
+        <m-dropdown-item value="Choix 2"></m-dropdown-item>
+        <m-dropdown-item value="Choix 3"></m-dropdown-item>
+        <m-dropdown-item value="Choix 4"></m-dropdown-item>
+        <m-dropdown-item value="Choix 5"></m-dropdown-item>
+    </m-dropdown>
+</p>
+<p>
+    <m-dropdown placeholder="Sélectionner un choix" :valid="true" valid-message="Elit incididunt minim laborum aliquip et laboris.">
+        <m-dropdown-item value="Choix 1"></m-dropdown-item>
+        <m-dropdown-item value="Choix 2"></m-dropdown-item>
+        <m-dropdown-item value="Choix 3"></m-dropdown-item>
+        <m-dropdown-item value="Choix 4"></m-dropdown-item>
+        <m-dropdown-item value="Choix 5"></m-dropdown-item>
+    </m-dropdown>
+</p>
+```
+
+</modul-demo>

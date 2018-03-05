@@ -10,7 +10,7 @@ Il est possible de limiter les fichiers acceptés en spécifiant une ou plusieur
 * **max-size-kb**: Limite les fichiers ne dépassant pas la taille spécifiée en kb. (ex: 1000kb)
 * **max-files**: Limite le nombre de fichiers total pouvant être téléversés (ex: maximum 5 fichiers)
 
-#### Exemple
+<modul-demo>
 
 ```html
 <m-file-upload
@@ -20,6 +20,8 @@ Il est possible de limiter les fichiers acceptés en spécifiant une ou plusieur
     <m-button>Téléverser</m-button>
 </m-file-upload>
 ```
+
+</modul-demo>
 
 ### Service $file
 
@@ -98,21 +100,21 @@ Voici un exemple d'utilisation du composant avec les utilitaires de téléversem
 ```javascript
 Vue.component('component', {
   methods: {
-      onFilesReady(files) {
+    onFilesReady(files) {
         files.forEach(f => {
             this.$file.upload(f.uid, {
                 url: 'http://localhost:8989/upload'
             });
         });
-      }
+    }
 
-      onFileUploadCancel(file) {
-           this.$file.cancelUpload(file.uid);
-      }
+    onFileUploadCancel(file) {
+        this.$file.cancelUpload(file.uid);
+    }
 
-      onFilesUploadCompleted(files) {
-          // Do something with uploaded files !
-      }
+    onFilesUploadCompleted(files) {
+        // Do something with uploaded files !
+    }
   }
 })
 ```
