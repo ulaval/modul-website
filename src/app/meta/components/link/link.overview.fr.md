@@ -7,7 +7,14 @@ Les liens sont composés de texte et parfois d'une icone et permettent de navigu
 ## Caractéristiques
 ### Icônes
 Lorsque pertinent, une icône peut accompagner un lien. Dans ce cas, l'icône est toujours placée à la gauche du lien. Dans le cas où le lien est seul sur une ligne et qu'aucune icône spécifique n'est nécessaire, on affiche l'icône par défaut («&nbsp;>&nbsp;»).
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-link :icon="true">Accueil</m-link>
+```
+
+</modul-demo>
 
 ### Liste de liens
 Lorsqu'une liste de liens est affichée, chaque lien est précédé de l'icône par défaut («&nbsp;>&nbsp;»).
