@@ -4,14 +4,12 @@
         <h1 v-if="isHomePage" class="modul-logo">
             <a href="#" @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
-                <span class="modul-logo__beta">Beta</span>
             </a>
         </h1>
         {{isComponentPage}}
         <span v-if="!isHomePage" class="modul-logo">
             <a href="#" @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
-                <span class="modul-logo__beta">Beta</span>
             </a>
         </span>
 
@@ -81,9 +79,10 @@
                     </h2>
                     <ul>
                         <li v-for="component in getCategoryComponents(category.id)">
-                            <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
+                            <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link" :class="{'modul--is-beta' : !component.production}">
                                 <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
                                 <span class="modul-menu__label modul-menu__tag">{{ component.tag }}</span>
+                                <span v-if="!component.production" class="modul-logo__beta modul-menu__beta-tag">Beta</span>
                             </a>
                         </li>
                     </ul>
@@ -128,9 +127,10 @@
                                 </h2>
                                 <ul>
                                     <li v-for="component in getCategoryComponents(category.id)">
-                                        <a href="#" @click.prevent="onComponentClick(component.tag)" class="modul-menu__link">
+                                        <a href="#" @click.prevent="onComponentClick(component.tag)" class="modul-menu__link" :class="{'modul--is-beta' : !component.production}">
                                             <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
                                             <span class="modul-menu__tag">{{ component.tag }}</span>
+                                            <span v-if="!component.production" class="modul-logo__beta modul-menu__beta-tag">Beta</span>
                                         </a>
                                     </li>
                                 </ul>
