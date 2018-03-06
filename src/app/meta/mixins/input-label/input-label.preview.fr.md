@@ -1,1 +1,1 @@
-<m-input-label></m-input-label>
+<m-message skin="light" state="information">Aucun aperçu</m-message>
