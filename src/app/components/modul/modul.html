@@ -4,14 +4,12 @@
         <h1 v-if="isHomePage" class="modul-logo">
             <a href="#" @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
-                <span class="modul-logo__beta">Beta</span>
             </a>
         </h1>
         {{isComponentPage}}
         <span v-if="!isHomePage" class="modul-logo">
             <a href="#" @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
-                <span class="modul-logo__beta">Beta</span>
             </a>
         </span>
 
