@@ -10,11 +10,31 @@ Une *fenêtre modale* doit contenir au minimum un énoncé principal et un bouto
 
 Puisque plusieurs cas d'utilisation sont possibles, voici quelques principes de présentation de contenu à respecter :
 * Lorsque la situation ayant déclenché l'affichage de la *fenêtre modale* a une conséquence directe sur le cheminement de l'étudiant, sa réussite, son dossier financier, etc., il est important d'utiliser le composant *<modul-go name="m-message"></modul-go>* en mode *avertissement* pour afficher l'énoncé principal.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-modal>
+    <m-button slot="trigger">Ouvrir</m-button>
+    <m-message state="warning">Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi animelit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</m-message>
+</m-modal>
+```
+
+</modul-demo>
 
 * Afin de permettre à l'utilisateur de se concentrer sur une tâche à la fois, il est important d'essayer de véhiculer un seul message par fenêtre. Par exemple, en évitant d'utiliser une zone de message (information ou avertissement) et une zone de conseils en même temps.
 * Idéalement, il faut utiliser un nom de bouton représentant l'action qui sera effectuée, plutôt que des libellés génériques tels que OK, Oui, Non, etc.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-modal okLabel="Continuer" cancelLabel="Revenir">
+    <m-button slot="trigger">Ouvrir</m-button>
+    <m-message state="warning">Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi animelit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</m-message>
+</m-modal>
+```
+
+</modul-demo>
 
 * Lorsqu'un seul bouton est disponible et qu'il n'y a pas de lien de fermeture, il est permis d'utiliser le libellé OK s'il n'y a pas d'alternative préférable.
 
