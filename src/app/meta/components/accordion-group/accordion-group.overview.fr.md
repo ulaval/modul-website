@@ -71,7 +71,21 @@ Le traitement visuel de l'accordéon peut être&nbsp;:
 <modul-demo>
 
 ```html
-<m-accordion-group skin="regular">
+<m-accordion-group skin="primary">
+    <m-accordion>
+        <span slot="header">Accordéon A</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon B</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+    <m-accordion>
+        <span slot="header">Accordéon C</span>
+        Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
+    </m-accordion>
+</m-accordion-group>
+<m-accordion-group skin="secondary">
     <m-accordion>
         <span slot="header">Accordéon A</span>
         Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
@@ -129,7 +143,7 @@ Il est possible de changer le traitement visuel de l'icône d'ouverture, soit en
 <modul-demo>
 
 ```html
-<m-accordion-group skin="regular">
+<m-accordion-group skin="primary">
     <m-accordion icon-position="left">
         <span slot="header">Accordéon A</span>
         Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.
