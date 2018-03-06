@@ -450,12 +450,17 @@ export class MetaAll implements PluginObject<any> {
         return this.enums[name];
     }
 
-    private mergeMixin(name: string, meta: string, folder: string): void {
+    private mergeMixin(
+        name: string,
+        meta: string,
+        folder: string,
+        production?: boolean
+    ): void {
         this.mergeComponentMeta(
             name,
             meta,
             CATEGORY_MIXINS,
-            true,
+            production,
             false,
             folder,
             `m-${folder}-meta:`

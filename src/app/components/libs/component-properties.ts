@@ -19,6 +19,10 @@ export class ComponentProperties extends ModulWebsite {
         return this.$store.getters[GET_COMPONENT];
     }
 
+    private get hasAttributes(): boolean {
+        return Meta.getComponentAttributes(this.component).length != 0;
+    }
+
     private get attributes(): ComponentAttributeEx[] {
         let attr: string[] = Meta.getComponentAttributes(this.component);
         return attr.map(a => {
