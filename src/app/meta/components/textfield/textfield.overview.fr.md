@@ -18,19 +18,19 @@ Le type de champ est très important, surtout lors de l'utilisation avec un appa
 
 ```html
 <p>
-    <m-textfield type="text"></m-textfield>
+    <m-textfield label="Texte" type="text"></m-textfield>
 </p>
 <p>
-    <m-textfield type="password" ></m-textfield>
+    <m-textfield label="Mots de passe" type="password" ></m-textfield>
 </p>
 <p>
-    <m-textfield type="email"></m-textfield>
+    <m-textfield label="Courriel" type="email"></m-textfield>
 </p>
 <p>
-    <m-textfield type="url"></m-textfield>
+    <m-textfield label="Url" type="url"></m-textfield>
 </p>
 <p>
-    <m-textfield type="tel"></m-textfield>
+    <m-textfield label="Téléphone" type="tel"></m-textfield>
 </p>
 ```
 

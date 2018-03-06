@@ -26,15 +26,15 @@ Il est possible de retirer une ou plusieurs listes déroulantes selon le besoin.
 <modul-demo>
 
 ```html
-<m-datefields :year="false"></m-datefields>
-<m-datefields :month="false" :date="false"></m-datefields>
-<m-datefields :date="false"></m-datefields>
-```
-
-```css
-.m-datefields {
-    display: block !important;
-}
+<p>
+    <m-datefields :year="false"></m-datefields>
+</p>
+<p>
+    <m-datefields :month="false" :date="false"></m-datefields>
+</p>
+<p>
+   <m-datefields :date="false"></m-datefields>
+</p>
 ```
 
 </modul-demo>
@@ -48,16 +48,18 @@ Ce composant gère les états (en attente, désactivé, erreur, valide) et les m
 <modul-demo>
 
 ```html
-<m-datefields :disabled="true"></m-datefields>
-<m-datefields :waiting="true"></m-datefields>
-<m-datefields :error="true" error-message="Ad dolor ea laborum aliquip eiusmod commodo velit sunt sunt anim minim."></m-datefields>
-<m-datefields :valid="true" valid-message="Ad dolor ea laborum aliquip eiusmod commodo velit sunt sunt anim minim."></m-datefields>
-```
-
-```css
-.m-datefields {
-    display: block !important;
-}
+<p>
+    <m-datefields :disabled="true"></m-datefields>
+</p>
+<p>
+    <m-datefields :waiting="true"></m-datefields>
+</p>
+<p>
+    <m-datefields :error="true" error-message="Ad dolor ea laborum aliquip eiusmod commodo velit sunt sunt anim minim."></m-datefields>
+</p>
+<p>
+    <m-datefields :valid="true" valid-message="Ad dolor ea laborum aliquip eiusmod commodo velit sunt sunt anim minim."></m-datefields>
+</p>
 ```
 
 </modul-demo>
