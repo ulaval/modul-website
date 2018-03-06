@@ -2,6 +2,8 @@
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 $modul-menu--list-max-width: 300px;
+$modul-menu-offset-left: $m-padding--s + 2;
+$modul-menu-beta-width: 24px;
 
 .modul-menu {
     position: fixed;
@@ -68,8 +70,6 @@ $modul-menu--list-max-width: 300px;
     &__link {
         $modul-menu-transition-duration: 0.7s;
 
-        $modul-menu-offset-left: $m-padding--s + 2;
-
         transition: background-color #{$modul-menu-transition-duration} ease, border-color #{$modul-menu-transition-duration} ease, left #{$modul-menu-transition-duration} ease;
         position: relative;
         display: block;
@@ -80,9 +80,17 @@ $modul-menu--list-max-width: 300px;
         text-decoration: none;
         outline: none;
 
+        &.modul--is-beta {
+            padding: $m-padding--s calc(#{$m-padding} + #{$modul-menu-beta-width} + #{$m-padding--s}) $m-padding--s $m-padding;
+        }
+
         @media (min-width: #{$m-mq--min--s}) {
             left: -$modul-menu-offset-left;
             padding: $m-padding--s $modul-menu-offset-left $m-padding--s;
+
+            &.modul--is-beta {
+                padding: $m-padding--s calc(#{$modul-menu-offset-left} + #{$modul-menu-beta-width} + #{$m-padding--s}) $m-padding--s $modul-menu-offset-left;
+            }
         }
 
         &::after {
@@ -112,7 +120,7 @@ $modul-menu--list-max-width: 300px;
             }
         }
 
-        span {
+        :not(.modul-logo__beta) {
             display: block;
             transition: color #{$modul-menu-transition-duration} ease;
             position: relative;
@@ -125,11 +133,28 @@ $modul-menu--list-max-width: 300px;
         font-size: $m-font-size--s;
         color: $modul-color--grey-darker;
     }
+
+    &__beta-tag {
+        position: absolute;
+        right: $m-padding;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        margin-left: 0;
+
+        @media (min-width: #{$m-mq--min--s}) {
+            right: $modul-menu-offset-left;
+        }
+    }
 }
 
 .modul-mobile-menu__body .m-accordion__header,
 .modul-mobile-menu__elem a {
     padding: $m-padding;
+
+    &.modul--is-beta {
+        padding: $m-padding calc(#{$m-padding} + #{$modul-menu-beta-width} + #{$m-padding}) $m-padding $m-padding;
+    }
 }
 
 .modul-mobile-menu {
