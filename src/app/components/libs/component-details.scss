@@ -8,7 +8,7 @@
 
     &__header {
         background-color: $modul-color--black-grey-dark;
-        padding: $m-padding 52px $m-padding $m-margin; // Magic number
+        padding: $m-padding 64px $m-padding $m-margin; // Magic number
         position: relative;
 
         @media (max-width: $m-mq--max--s) {
@@ -59,22 +59,32 @@
                 margin-left: $m-margin--xs;
             }
         }
-    }
-}
 
-.modul-code-preview-button.modul-code-preview-button {
-    width: 52px; //Magic number
-    position: absolute;
-    right: 0;
-    top: 50%;
-    bottom: 0;
-    transform: translateY(-50%);
+        &__button {
+            font-size: 14px;
+            font-weight: 400;
+            color: $modul-color--grey-dark;
+            text-transform: uppercase;
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            transition: color $m-transition-duration ease;
+            position: absolute;
+            right: $m-margin;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%);
+            padding: 0;
 
-    @media (min-width: $m-mq--min--s) {
-        right: $m-padding;
-    }
+            @media (min-width: $m-mq--min--s) {
+                right: $m-padding;
+            }
 
-    &::before {
-        background: $modul-color--black-grey-light !important;
+            &:hover,
+            &:focus {
+                color: $modul-color--grey-light;
+            }
+        }
     }
 }

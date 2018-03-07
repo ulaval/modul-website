@@ -14,6 +14,7 @@ import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transi
 export class ComponentDetails extends ModulWebsite {
 
     private intenalCodePreviewOpen: boolean = false;
+    private isOpened: boolean = false;
 
     private currentTab: string = 'overview';
 
@@ -28,6 +29,7 @@ export class ComponentDetails extends ModulWebsite {
     }
 
     private toggleOpenCodePreview(event: MouseEvent): void {
+        this.isOpened = !this.isOpened;
         this.intenalCodePreviewOpen = !this.intenalCodePreviewOpen;
         (event.currentTarget as HTMLElement).blur();
     }
@@ -53,6 +55,14 @@ export class ComponentDetails extends ModulWebsite {
             return `<${this.component.tag}></${this.component.tag}>`;
         } else {
             return '';
+        }
+    }
+
+    private get openCloseLabel(): string {
+        if (this.isOpened) {
+            return this.$i18n.translate('modul:close-label');
+        } else {
+            return this.$i18n.translate('modul:code-label');
         }
     }
 }

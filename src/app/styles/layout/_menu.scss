@@ -4,6 +4,7 @@
 $modul-menu--list-max-width: 300px;
 $modul-menu-offset-left: $m-padding--s + 2;
 $modul-menu-beta-width: 24px;
+$modul-menu-transition-duration: 0.7s;
 
 .modul-menu {
     position: fixed;
@@ -68,9 +69,7 @@ $modul-menu-beta-width: 24px;
     }
 
     &__link {
-        $modul-menu-transition-duration: 0.7s;
-
-        transition: background-color #{$modul-menu-transition-duration} ease, border-color #{$modul-menu-transition-duration} ease, left #{$modul-menu-transition-duration} ease;
+        transition: background-color $modul-menu-transition-duration ease, border-color $modul-menu-transition-duration ease, left $modul-menu-transition-duration ease;
         position: relative;
         display: block;
         border-left: 2px solid transparent;
@@ -80,17 +79,9 @@ $modul-menu-beta-width: 24px;
         text-decoration: none;
         outline: none;
 
-        &.modul--is-beta {
-            padding: $m-padding--s calc(#{$m-padding} + #{$modul-menu-beta-width} + #{$m-padding--s}) $m-padding--s $m-padding;
-        }
-
         @media (min-width: #{$m-mq--min--s}) {
             left: -$modul-menu-offset-left;
             padding: $m-padding--s $modul-menu-offset-left $m-padding--s;
-
-            &.modul--is-beta {
-                padding: $m-padding--s calc(#{$modul-menu-offset-left} + #{$modul-menu-beta-width} + #{$m-padding--s}) $m-padding--s $modul-menu-offset-left;
-            }
         }
 
         &::after {
@@ -118,33 +109,40 @@ $modul-menu-beta-width: 24px;
             .modul-menu__tag {
                 color: $modul-color--grey-dark;
             }
-        }
 
-        :not(.modul-logo__beta) {
-            display: block;
-            transition: color #{$modul-menu-transition-duration} ease;
-            position: relative;
-            z-index: 2;
+            .modul-menu__beta-tag {
+                background: $m-color--ul-yellow;
+            }
         }
+    }
+
+    &__wrapper {
+        display: block;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__label {
+        transition: color $modul-menu-transition-duration ease;
+        position: relative;
+        z-index: 2;
     }
 
     &__tag {
         font-style: italic;
         font-size: $m-font-size--s;
         color: $modul-color--grey-darker;
+        transition: color $modul-menu-transition-duration ease;
+        position: relative;
+        z-index: 2;
+        display: block;
     }
 
     &__beta-tag {
-        position: absolute;
-        right: $m-padding;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 2;
-        margin-left: 0;
-
-        @media (min-width: #{$m-mq--min--s}) {
-            right: $modul-menu-offset-left;
-        }
+        background: $modul-color--grey-darker;
+        transition: background $modul-menu-transition-duration ease;
+        vertical-align: middle;
+        margin-bottom: 2px; //Magic number
     }
 }
 

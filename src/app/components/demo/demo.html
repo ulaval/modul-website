@@ -3,35 +3,43 @@
         <slot></slot>
     </div>
 
-    <div class="demo-block">
-        <div class="demo-block__label-wrapper">
-            <button @click.prevent="isOpened = !isOpened" class="demo-block__label">{{ openCloseLabel }}</button>
+    <div class="modul-demo__block">
+        <div class="modul-demo__wrapper">
+            <button @click.prevent="isOpened = !isOpened" class="modul-demo__button">{{ openCloseLabel }}</button>
         </div>
         <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
-            <div class="demo-block__code tabs" v-if="isOpened">
-                <div class="arrow"></div>
+            <div v-if="isOpened">
+                <div class="modul-demo__code" >
+                    <div class="modul-demo__code__arrow"></div>
 
-                <ul class="tabs__header">
-                    <li :class="{'active': htmlActive}"><button @click="switchTab('html')">HTML</button></li>
-                    <li :class="{'active': jsActive}" v-if="hasJs"><button @click="switchTab('js')">JS</button></li>
-                    <li :class="{'active': cssActive}" v-if="hasCss"><button @click="switchTab('css')">CSS</button></li>
-                </ul>
+                    <ul class="modul-demo__code__header">
+                        <li :class="{'active': htmlActive}">
+                            <button class="modul-demo__code__header__button" @click="switchTab('html')">HTML</button>
+                        </li>
+                        <li :class="{'active': jsActive}" v-if="hasJs">
+                            <button class="modul-demo__code__header__button" @click="switchTab('js')">JS</button>
+                        </li>
+                        <li :class="{'active': cssActive}" v-if="hasCss">
+                            <button class="modul-demo__code__header__button" @click="switchTab('css')">CSS</button>
+                        </li>
+                    </ul>
 
-                <pre class="tabs__content" :class="{'active': htmlActive}">
-                    <code v-html="htmlHl"></code>
-                </pre>
+                    <pre class="modul-demo__code__content" :class="{'active': htmlActive}">
+                        <code class="modul-demo__code__content__code" v-html="htmlHl"></code>
+                    </pre>
 
-                <pre class="tabs__content" :class="{'active': jsActive}" v-if="hasJs">
-                    <code v-html="jsHl"></code>
-                </pre>
+                    <pre class="modul-demo__code__content" :class="{'active': jsActive}" v-if="hasJs">
+                        <code class="modul-demo__code__content__code" v-html="jsHl"></code>
+                    </pre>
 
-                <pre class="tabs__content" :class="{'active': cssActive}" v-if="hasCss">
-                    <code v-html="cssHl"></code>
-                </pre>
+                    <pre class="modul-demo__code__content" :class="{'active': cssActive}" v-if="hasCss">
+                        <code class="modul-demo__code__content__code" v-html="cssHl"></code>
+                    </pre>
+                </div>
             </div>
         </transition>
 
-        <div class="demo-block__preview">
+        <div class="modul-demo__preview">
             <div ref="demoContent"></div>
         </div>
     </div>
