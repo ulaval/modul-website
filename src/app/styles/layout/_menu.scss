@@ -139,6 +139,7 @@ $modul-menu-transition-duration: 0.7s;
     }
 
     &__beta-tag {
+        display: inline;
         background: $modul-color--grey-darker;
         transition: background $modul-menu-transition-duration ease;
         vertical-align: middle;

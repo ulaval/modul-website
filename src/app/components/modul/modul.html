@@ -81,8 +81,7 @@
                         <li v-for="component in getCategoryComponents(category.id)">
                             <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
                                 <span class="modul-menu__wrapper">
-                                    <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
-                                    <span v-if="!component.production" class="modul-logo__beta modul-menu__beta-tag">Beta</span>
+                                    <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>&nbsp;<span v-if="!component.production" class="modul-logo__beta modul-menu__beta-tag">Beta</span>
                                 </span>
                                 <span v-if="isMixins(component)" class="modul-menu__tag">{{ component.tag }}</span>
                             </a>
@@ -131,8 +130,7 @@
                                     <li v-for="component in getCategoryComponents(category.id)">
                                         <a href="#" @click.prevent="onComponentClick(component.tag)" class="modul-menu__link">
                                             <span class="modul-menu__wrapper">
-                                                <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
-                                                <span v-if="!component.production" class="modul-logo__beta modul-menu__beta-tag">Beta</span>
+                                                <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>&nbsp;<span v-if="!component.production" class="modul-logo__beta modul-menu__beta-tag">Beta</span>
                                             </span>
                                             <span class="modul-menu__tag">{{ component.tag }}</span>
                                         </a>
