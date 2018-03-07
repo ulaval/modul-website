@@ -1,4 +1,3 @@
-import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import hljs from 'highlight.js';
 import Vue, { PluginObject } from 'vue';
@@ -13,9 +12,7 @@ const enum Tabs {
 }
 
 @WithRender
-@Component({
-    mixins: [TransitionAccordion]
-})
+@Component
 export class MDemo extends ModulVue {
     public htmlHl: string = '';
     public jsHl: string = '';
