@@ -80,6 +80,18 @@ Le bouton peut être accompagné d'une icône positionnée soit à droite ou gau
 ```
 </modul-demo>
 
+### Précision
+
+Le bouton peut être accompagné d'un texte de précision sous le libellé.
+
+<modul-demo>
+
+```html
+<m-button>Bouton<span slot="precision">Précision</span></m-button>
+<m-button skin="secondary">Bouton<span slot="precision">Précision</span></m-button>
+```
+</modul-demo>
+
 ### Largeur
 
 Le bouton peut prendre la pleine largeur de son conteneur parent.

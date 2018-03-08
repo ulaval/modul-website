@@ -64,7 +64,8 @@ Si un accordéon est ouvert et que l'utilisateur ouvre un second accordéon du m
 
 ### Traitement visuel
 Le traitement visuel de l'accordéon peut être&nbsp;:
-* **Regulier&nbsp;:** utiliser pour regrouper plusieurs accordéon.
+* **Primaire&nbsp;:** utiliser pour regrouper plusieurs accordéon.
+* **Secondaire&nbsp;:** utiliser pour regrouper plusieurs accordéon.
 * **Alléger&nbsp;:** utiliser lorsqu'il y a un seul accordéon.
 * **Nul&nbsp;:** aucun traitement visuel n'est appliqué sur l'accordéon.
 
@@ -143,7 +144,7 @@ Il est possible de changer le traitement visuel de l'icône d'ouverture, soit en
 <modul-demo>
 
 ```html
-<m-accordion-group skin="primary">
+<m-accordion-group skin="secondary">
     <m-accordion icon-position="left">
         <span slot="header">Accordéon A</span>
         Consequat nulla ut duis consequat minim anim aliquip ut excepteur. Sunt culpa irure tempor exercitation. Laborum pariatur fugiat voluptate nisi fugiat Lorem tempor nisi veniam labore incididunt nostrud. Commodo exercitation ex nostrud cillum culpa sit esse ullamco nisi esse Lorem. Eiusmod labore do tempor deserunt mollit enim et aliquip anim ea laboris anim commodo. Culpa irure do eu nulla pariatur voluptate labore. Culpa enim elit eu esse non nisi do duis.

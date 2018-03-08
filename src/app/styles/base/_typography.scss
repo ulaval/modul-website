@@ -98,8 +98,8 @@
 
     h4:not(.m-u--h4):not([class]),
     h5:not(.m-u--h5):not([class]),
-    h6:not(.m-u--h6:not([class])) {
-        font-size: 16px;
+    h6:not(.m-u--h6):not([class]) {
+        font-size: 16px !important;
     }
 
     h4:not(.m-u--h4):not([class]) {
