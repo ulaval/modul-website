@@ -5,6 +5,7 @@ import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/m
 import ElementQueries from 'css-element-queries/src/ElementQueries';
 import { ROUTER_COMPONENTS, ROUTER_ECOSYSTEM } from '../../router';
 import { VISUAL_STANDARDS, WRITING_STANDARDS, CODING_STANDARDS, GETTING_STARTED, UNIFIED_EXPERIENCE, RESPONSIVE_DESIGN } from '@/app/components/pages/page';
+import { CATEGORY_CONTENT } from '../../meta/meta-all';
 
 @WithRender
 @Component({
@@ -66,7 +67,7 @@ export class HomePage extends ModulVue {
     }
 
     private get components(): string {
-        return this.$routerIndex.for(ROUTER_COMPONENTS);
+        return this.$routerIndex.for(CATEGORY_CONTENT);
     }
 
     private get ecosystem(): string {
