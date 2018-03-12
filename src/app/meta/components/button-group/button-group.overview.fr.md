@@ -32,9 +32,9 @@ Il est possible de fixer la largeur des boutons, afin qu'elle soit identique pou
 
 ```html
 <m-button-group :full-size="true">
-    <m-radio value="button1">Button 1</m-radio>
-    <m-radio value="button2">Button 2</m-radio>
-    <m-radio value="button3">Button 3</m-radio>
+    <m-radio value="bouton1">Bouton 1</m-radio>
+    <m-radio value="bouton2">Bouton 2</m-radio>
+    <m-radio value="bouton3">Bouton 3</m-radio>
 </m-button-group>
 ```
 

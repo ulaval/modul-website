@@ -64,8 +64,8 @@ Si un accordéon est ouvert et que l'utilisateur ouvre un second accordéon du m
 
 ### Traitement visuel
 Le traitement visuel de l'accordéon peut être&nbsp;:
-* **Primaire&nbsp;:** utiliser pour regrouper plusieurs accordéon.
-* **Secondaire&nbsp;:** utiliser pour regrouper plusieurs accordéon.
+* **Primaire&nbsp;:** utiliser pour regrouper plusieurs accordéons.
+* **Secondaire&nbsp;:** utiliser pour regrouper plusieurs accordéons.
 * **Alléger&nbsp;:** utiliser lorsqu'il y a un seul accordéon.
 * **Nul&nbsp;:** aucun traitement visuel n'est appliqué sur l'accordéon.
 

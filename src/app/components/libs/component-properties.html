@@ -1,5 +1,7 @@
 <div class="modul-component-properties">
-    <m-message v-if="!hasAttributes" skin="light" state="information">Ce composant n'utilise aucune propriété</m-message>
+    <m-message v-if="!hasAttributes" skin="light" state="information">
+        <m-i18n k="modul:no-properties"></m-i18n>
+    </m-message>
     <table v-else class="m-u--table">
         <thead>
             <th>

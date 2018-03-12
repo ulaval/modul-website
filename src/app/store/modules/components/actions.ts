@@ -51,42 +51,26 @@ export const getComponentAction: Action<ComponentsState, ComponentsState> = asyn
 export const COMPONENT_OVERVIEW_GET: string = 'A_COMPONENT_OVERVIEW_GET';
 export const getComponentOverviewAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, markdown: MarkdownPayload) => {
     if (context.state.componentMarkdownOverview == null) {
-        if (context.state.category == CATEGORY_MIXINS) {
-            let url: string = process.env && (process.env.NODE_ENV as any).dev ?
-                `${__webpack_public_path__}app/meta/mixins/${context.state.component.folder}/${context.state.component.overview}.fr.md` :
-                `${__webpack_public_path__}assets/md/${context.state.component.overview}.fr.md`;
-            markdown.restAdapter.execute({ method: 'get', rawUrl: url }).then((md) => {
-                context.commit(Mutations.COMPONENT_OVERVIEW_GET_SUCCESS, (md as any).data);
-            });
-        } else {
-            let url: string = process.env && (process.env.NODE_ENV as any).dev ?
-                `${__webpack_public_path__}app/meta/components/${context.state.component.folder}/${context.state.component.overview}.fr.md` :
-                `${__webpack_public_path__}assets/md/${context.state.component.overview}.fr.md`;
-            markdown.restAdapter.execute({ method: 'get', rawUrl: url }).then((md) => {
-                context.commit(Mutations.COMPONENT_OVERVIEW_GET_SUCCESS, (md as any).data);
-            });
-        }
+        let category: string = context.state.category == CATEGORY_MIXINS ? 'mixins' : 'components';
+        let url: string = process.env && (process.env.NODE_ENV as any).dev ?
+            `${__webpack_public_path__}app/meta/${category}/${context.state.component.folder}/${context.state.component.overview}.fr.md` :
+            `${__webpack_public_path__}assets/md/${context.state.component.overview}.fr.md`;
+        markdown.restAdapter.execute({ method: 'get', rawUrl: url }).then((md) => {
+            context.commit(Mutations.COMPONENT_OVERVIEW_GET_SUCCESS, (md as any).data);
+        });
     }
 };
 
 export const COMPONENT_PREVIEW_GET: string = 'A_COMPONENT_PREVIEW_GET';
 export const getComponentPreviewAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, markdown: MarkdownPayload) => {
     if (context.state.componentMarkdownPreview == null && typeof context.state.component.preview === 'string') {
-        if (context.state.category == CATEGORY_MIXINS) {
-            let url: string = process.env && (process.env.NODE_ENV as any).dev ?
-                `${__webpack_public_path__}app/meta/mixins/${context.state.component.folder}/${context.state.component.preview}.fr.md` :
-                `${__webpack_public_path__}assets/md/${context.state.component.preview}.fr.md`;
-            markdown.restAdapter.execute({ method: 'get', rawUrl: url }).then((md) => {
-                context.commit(Mutations.COMPONENT_PREVIEW_GET_SUCCESS, (md as any).data);
-            });
-        } else {
-            let url: string = process.env && (process.env.NODE_ENV as any).dev ?
-                `${__webpack_public_path__}app/meta/components/${context.state.component.folder}/${context.state.component.preview}.fr.md` :
-                `${__webpack_public_path__}assets/md/${context.state.component.preview}.fr.md`;
-            markdown.restAdapter.execute({ method: 'get', rawUrl: url }).then((md) => {
-                context.commit(Mutations.COMPONENT_PREVIEW_GET_SUCCESS, (md as any).data);
-            });
-        }
+        let category: string = context.state.category == CATEGORY_MIXINS ? 'mixins' : 'components';
+        let url: string = process.env && (process.env.NODE_ENV as any).dev ?
+            `${__webpack_public_path__}app/meta/${category}/${context.state.component.folder}/${context.state.component.preview}.fr.md` :
+            `${__webpack_public_path__}assets/md/${context.state.component.preview}.fr.md`;
+        markdown.restAdapter.execute({ method: 'get', rawUrl: url }).then((md) => {
+            context.commit(Mutations.COMPONENT_PREVIEW_GET_SUCCESS, (md as any).data);
+        });
     }
 };
 

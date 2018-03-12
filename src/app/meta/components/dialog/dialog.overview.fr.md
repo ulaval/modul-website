@@ -9,7 +9,7 @@ Une *fenêtre de dialogue* est utilisée pour afficher du contenu complémentair
 
 ## Caractéristiques
 ### Dimensions de la fenêtre
-La dimention de la fenêtre doit varier en fonction du contenu qui est affiché à l'intérieur de la fenêtre. Quatre dimensions sont disponibles: **plein écran**, **large**, **régulier** et **petit**.
+La dimension de la fenêtre doit varier en fonction du contenu qui est affiché à l'intérieur de la fenêtre. Quatre dimensions sont disponibles: **plein écran**, **large**, **régulier** et **petit**.
 
 <modul-demo>
 
