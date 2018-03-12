@@ -7,7 +7,7 @@
         <div class="demo-block__label-wrapper">
             <button @click.prevent="isOpened = !isOpened" class="demo-block__label">{{ openCloseLabel }}</button>
         </div>
-        <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
+        <m-accordion-transition>
             <div class="demo-block__code tabs" v-if="isOpened">
                 <div class="arrow"></div>
 
@@ -29,7 +29,7 @@
                     <code v-html="cssHl"></code>
                 </pre>
             </div>
-        </transition>
+        </m-accordion-transition>
 
         <div class="demo-block__preview">
             <div ref="demoContent"></div>
