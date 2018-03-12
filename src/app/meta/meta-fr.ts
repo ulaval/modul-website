@@ -198,7 +198,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
                 FRENCH,
                 require('./components/tooltip/tooltip.meta.fr.json')
             );
-
+            i18n.addMessages(
+                FRENCH,
+                require('./components/wrapper-inline-edition/wrapper-inline-edition.meta.fr.json')
+            );
             i18n.addMessages(
                 FRENCH,
                 require('./directives/ripple-effect/ripple-effect.meta.fr.json')

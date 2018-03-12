@@ -45,7 +45,8 @@ import {
     TEXTAREA_NAME,
     TEXTFIELD_NAME,
     TIMEPICKER_NAME,
-    TOOLTIP_NAME
+    TOOLTIP_NAME,
+    WRAPPER_INLINE_EDITION
 } from '@ulaval/modul-components/dist/components/component-names';
 import { ComponentMeta, Meta, Preview } from '@ulaval/modul-components/dist/meta/meta';
 import { PluginObject } from 'vue';
@@ -409,6 +410,11 @@ export class MetaAll implements PluginObject<any> {
             TOOLTIP_NAME,
             require('@ulaval/modul-components/dist/components/tooltip/tooltip.meta.json'),
             CATEGORY_WINDOWS
+        );
+        this.mergeComponentMeta(
+            WRAPPER_INLINE_EDITION,
+            require('@ulaval/modul-components/dist/components/wrapper-inline-edition/wrapper-inline-edition.meta.json'),
+            CATEGORY_FORMS
         );
 
         // this.mergeComponentMeta(SCROLL_TO_NAME, require('@ulaval/modul-components/dist/directives/scroll-to/scroll-to.meta.json'), CATEGORY_NAVIGATION);
