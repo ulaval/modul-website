@@ -8,8 +8,12 @@
 
     &__header {
         background-color: $modul-color--black-grey-dark;
-        padding: $m-padding 64px $m-padding $m-margin; // Magic number
+        padding: $m-padding 84px $m-padding $m-margin; // Magic number
         position: relative;
+
+        &.m--has-no-preview {
+            padding: $m-padding $m-margin $m-padding $m-margin; // Magic number
+        }
 
         @media (max-width: $m-mq--max--s) {
             margin: 0 $m-padding--l;
@@ -17,7 +21,12 @@
 
         @media (min-width: $m-mq--min--s) {
             padding-left: $m-margin--l; // Magic number
-            padding-right: $m-padding--xl; // Magic number
+            padding-right: 100px; // Magic number
+
+            &.m--has-no-preview {
+                padding-left: $m-margin--l; // Magic number
+                padding-right: $m-padding--l; // Magic number
+            }
         }
     }
 

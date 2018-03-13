@@ -1,6 +1,6 @@
 <div class="modul-component-details">
     <div class="modul-component" v-if="component">
-        <header class="modul-component-details__header">
+        <header class="modul-component-details__header" :class="{ 'm--has-no-preview': !component.preview }">
             <h2 class="modul-component-details__title">
                 <m-icon name="left-chevron" class="modul-component-details__title__arrow"></m-icon>{{component.tag}}
                 <m-icon name="chevron" class="modul-component-details__title__arrow"></m-icon>
