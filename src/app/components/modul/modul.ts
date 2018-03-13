@@ -4,7 +4,7 @@ import WithRender from './modul.html?style=./modul.scss';
 import * as ModulActions from '@/app/store/modules/components/actions';
 import { Watch } from 'vue-property-decorator';
 import { RoutePathMap } from '@/app/router';
-import MetaAll, { CATEGORY_MIXINS } from '../../meta/meta-all';
+import MetaAll from '../../meta/meta-all';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
@@ -239,10 +239,6 @@ export default class Modul extends ModulWebsite {
         if (this.searchOpen) {
             this.components = this.searchData();
         }
-    }
-
-    private isMixins(component: Component): boolean {
-        return component.category != CATEGORY_MIXINS;
     }
 
     @Watch('$route')
