@@ -176,6 +176,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/tab-panel/tab-panel.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/tabs/tabs.meta.fr.json')
             );
             i18n.addMessages(
@@ -197,6 +201,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(
                 FRENCH,
                 require('./components/tooltip/tooltip.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/validation-message/validation-message.meta.fr.json')
             );
 
             i18n.addMessages(

@@ -14,7 +14,7 @@
         "attribute": "Propriété",
         "value": "Valeur",
         "description": "Description",
-        "preview-not-available": "Apercu non disponible pour le moment",
+        "preview-not-available": "Aucun aperçu ne peut être affiché",
         "preview-button-open": "Cacher le code du composant",
         "preview-button-close": "Afficher le code du composant",
         "no-properties": "Ce composant n'utilise aucune propriété",
