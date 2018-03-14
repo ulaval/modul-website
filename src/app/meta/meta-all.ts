@@ -46,7 +46,7 @@ import {
     TEXTFIELD_NAME,
     TIMEPICKER_NAME,
     TOOLTIP_NAME,
-    WRAPPER_INLINE_EDITION
+    INPLACE_EDIT
 } from '@ulaval/modul-components/dist/components/component-names';
 import { ComponentMeta, Meta, Preview } from '@ulaval/modul-components/dist/meta/meta';
 import { PluginObject } from 'vue';
@@ -412,8 +412,8 @@ export class MetaAll implements PluginObject<any> {
             CATEGORY_WINDOWS
         );
         this.mergeComponentMeta(
-            WRAPPER_INLINE_EDITION,
-            require('@ulaval/modul-components/dist/components/wrapper-inline-edition/wrapper-inline-edition.meta.json'),
+            INPLACE_EDIT,
+            require('@ulaval/modul-components/dist/components/inplace-edit/inplace-edit.meta.json'),
             CATEGORY_FORMS
         );
 

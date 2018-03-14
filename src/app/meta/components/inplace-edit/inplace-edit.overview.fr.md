@@ -1,4 +1,4 @@
-L'édition rapide permet à l'utilisateur de basculer entre le mode lecture et édition sans avoir à passer par un formulaire complexe.
+L'édition sur place permet à l'utilisateur de basculer entre le mode lecture et édition sans avoir à passer par un formulaire complexe.
 
 <modul-do>
     <ul>
@@ -28,10 +28,10 @@ La propriété "editMode" est ce qui contrôle le basculement entre le mode édi
 
 ```html
 <m-button @click="editMode = !editMode" style="margin-bottom: 20px;">Basculer mode lecture/écriture</m-button>
-<m-wrapper-inline-edition :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false">
+<m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false">
 <div slot="readMode">Mon contenu</div>
 <m-textfield slot="editMode" value="Mon contenu"></m-textfield>
-</m-wrapper-inline-edition>
+</m-inplace-edit>
 ```
 
 </modul-demo>
@@ -43,10 +43,10 @@ Ce composent ne gère pas les états (en attente, désactivé, erreur, valide) n
 <modul-demo>
 
 ```html
-<m-wrapper-inline-edition @cancel="" @confirm="">
+<m-inplace-edit @cancel="" @confirm="">
     <m-textfield slot="editMode" value="Contenu Slot écriture"></m-textfield>
     <h2 slot="readMode">Contenu Slot lecture</h2>
-</m-wrapper-inline-edition>
+</m-inplace-edit>
 ```
 
 </modul-demo>
@@ -55,10 +55,10 @@ Ce composent ne gère pas les états (en attente, désactivé, erreur, valide) n
 <modul-demo>
 
 ```html
-<m-wrapper-inline-edition :editMode="false" @cancel="" @confirm="">
+<m-inplace-edit :editMode="false" @cancel="" @confirm="">
     <m-textfield slot="editMode">Contenu Slot écriture</m-textfield>
     <h2 slot="readMode">Contenu Slot lecture</h2>
-</m-wrapper-inline-edition>
+</m-inplace-edit>
 ```
 
 </modul-demo>
@@ -67,10 +67,10 @@ Ce composent ne gère pas les états (en attente, désactivé, erreur, valide) n
 <modul-demo>
 
 ```html
-<m-wrapper-inline-edition :editMode="true" @cancel="" @confirm="">
+<m-inplace-edit :editMode="true" @cancel="" @confirm="">
     <m-textfield slot="editMode">Contenu Slot écriture</m-textfield>
     <h2 slot="readMode">Contenu Slot lecture</h2>
-</m-wrapper-inline-edition>
+</m-inplace-edit>
 ```
 
 </modul-demo>
@@ -79,10 +79,10 @@ Ce composent ne gère pas les états (en attente, désactivé, erreur, valide) n
 <modul-demo>
 
 ```html
-<m-wrapper-inline-edition :editMode="true" title="Titre fenêtre dialog mobile"  @cancel="" @confirm="">
+<m-inplace-edit :editMode="true" title="Titre fenêtre dialog mobile"  @cancel="" @confirm="">
     <m-textfield slot="editMode">Contenu Slot écriture</m-textfield>
     <h2 slot="readMode">Contenu Slot lecture</h2>
-</m-wrapper-inline-edition>
+</m-inplace-edit>
 ```
 
 </modul-demo>
