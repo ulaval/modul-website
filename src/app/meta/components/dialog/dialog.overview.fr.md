@@ -9,8 +9,36 @@ Une *fenêtre de dialogue* est utilisée pour afficher du contenu complémentair
 
 ## Caractéristiques
 ### Dimensions de la fenêtre
-La dimention de la fenêtre doit varier en fonction du contenu qui est affiché à l'intérieur de la fenêtre. Quatre dimensions sont disponibles: **plein écran**, **large**, **reguler** et **petit**.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+La dimension de la fenêtre doit varier en fonction du contenu qui est affiché à l'intérieur de la fenêtre. Quatre dimensions sont disponibles: **plein écran**, **large**, **régulier** et **petit**.
+
+<modul-demo>
+
+```html
+<p>
+    <m-dialog title="Titre" size="large">
+        <m-button slot="trigger">Large</m-button>
+        <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</p>
+        <span slot="footer">Consectetur dolore commodo voluptate est laborum ex nulla.</span>
+    </m-dialog>
+</p>
+
+<p>
+    <m-dialog title="Titre" size="regular">
+        <m-button slot="trigger">Régulier</m-button>
+        <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</p>
+        <span slot="footer">Consectetur dolore commodo voluptate est laborum ex nulla.</span>
+    </m-dialog>
+</p>
+<p>
+    <m-dialog title="Titre" size="small">
+        <m-button slot="trigger">Petit</m-button>
+        <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</p>
+        <span slot="footer">Consectetur dolore commodo voluptate est laborum ex nulla.</span>
+    </m-dialog>
+</p>
+```
+
+</modul-demo>
 
 ### Petits écrans
 La *fenêtre de dialogue* s'affiche à l'aide d'une animation arrivant du bas et venant s'afficher complètement par-dessus la fenêtre principale.

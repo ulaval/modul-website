@@ -11,7 +11,20 @@ Le composant *<modul-go name="m-menu-item"></modul-go>* doit être utilisé pour
 L'utilisation d'une icône devant le libellé de l'action est préconisée. Si aucune icône n'est pertinente à l'action il est possible d'afficher le libellé sans icône. Lorsqu'une action est indisponible, elle est affichée, mais désactivée.
 
 Il est important d'associer les actions à la bonne icône et au bon libélé. Les actions les plus couramment utilisées dans un menu d'options sont les suivantes&nbsp;: **Ajouter**, **Modifier**, **Supprimer** et **Archiver**.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-menu>
+    <m-menu-item>Ajouter</m-menu-item>
+    <m-menu-item>Modifier</m-menu-item>
+    <m-menu-item>Supprimer</m-menu-item>
+    <m-menu-item>Archiver</m-menu-item>
+</m-menu>
+```
+
+</modul-demo>
+
 <small class="m-u--display--block m-u--margin-top--s">À noter que les actions d'ajout, modification et suppression doivent toujours être présentées dans cet ordre.</small>
 
 ### Ouverture

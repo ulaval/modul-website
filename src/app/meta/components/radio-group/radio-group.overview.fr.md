@@ -23,12 +23,80 @@ Ce composant doit être utilisé avec le composant *<modul-go name="m-radio"></m
 
 ### Étiquette
 L'utilisation d'une étiquette n'est pas obligatoire. Elle sert à d'écrire aux utilisateurs les options offertes par les boutons radios.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-radio-group label="Effectuez un choix">
+    <m-radio value="radio1">Choix 1</m-radio>
+    <m-radio value="radio2">Choix 2</m-radio>
+    <m-radio value="radio3">Choix 3</m-radio>
+</m-radio-group>
+<m-radio-group>
+    <m-radio value="radio1">Choix 1</m-radio>
+    <m-radio value="radio2">Choix 2</m-radio>
+    <m-radio value="radio3">Choix 3</m-radio>
+</m-radio-group>
+```
+
+```css
+.m-radio-group {
+    margin-top: 12px;
+}
+```
+</modul-demo>
 
 ### Positionnement
 Les boutons radios peuvent être positionné à l'horizontal ou à la vertical. Les cases peuvent également être positionnées à gauche ou à droite de leur libéllé.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-radio-group label="Effectuez un choix" position="left">
+    <m-radio value="radio1">Choix 1</m-radio>
+    <m-radio value="radio2">Choix 2</m-radio>
+    <m-radio value="radio3">Choix 3</m-radio>
+</m-radio-group>
+<m-radio-group label="Effectuez un choix" position="right">
+    <m-radio value="radio1">Choix 1</m-radio>
+    <m-radio value="radio2">Choix 2</m-radio>
+    <m-radio value="radio3">Choix 3</m-radio>
+</m-radio-group>
+```
+
+```css
+.m-radio-group {
+    margin-top: 12px;
+}
+```
+</modul-demo>
 
 ### États et messages de validation
-Ce composent gère les états (en attente, désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+Ce composent gère les états (désactivé, erreur, valide) et les messages de validation tout en offrant la possibilité de personaliser chacun de ces paramètres.
+
+<modul-demo>
+
+```html
+<m-radio-group label="Effectuez un choix" :disabled="true">
+    <m-radio value="radio1">Choix 1</m-radio>
+    <m-radio value="radio2">Choix 2</m-radio>
+    <m-radio value="radio3">Choix 3</m-radio>
+</m-radio-group>
+<m-radio-group label="Effectuez un choix" :error="true" error-message="Mollit occaecat incididunt nisi sit.">
+    <m-radio value="radio1">Choix 1</m-radio>
+    <m-radio value="radio2">Choix 2</m-radio>
+    <m-radio value="radio3">Choix 3</m-radio>
+</m-radio-group>
+<m-radio-group label="Effectuez un choix" :valid="true" valid-message="Mollit occaecat incididunt nisi sit.">
+    <m-radio value="radio1">Choix 1</m-radio>
+    <m-radio value="radio2">Choix 2</m-radio>
+    <m-radio value="radio3">Choix 3</m-radio>
+</m-radio-group>
+```
+
+```css
+.m-radio-group {
+    margin-top: 12px;
+}
+```
+</modul-demo>

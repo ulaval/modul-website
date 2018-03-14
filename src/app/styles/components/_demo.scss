@@ -1,0 +1,9 @@
+.modul-demo {
+    .demo-block {
+        &__preview {
+            div > :first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}

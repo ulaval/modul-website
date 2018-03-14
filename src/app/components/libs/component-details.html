@@ -1,14 +1,12 @@
 <div class="modul-component-details">
     <div class="modul-component" v-if="component">
-        <header class="modul-component-details__header">
+        <header class="modul-component-details__header" :class="{ 'm--has-no-preview': !component.preview }">
             <h2 class="modul-component-details__title">
                 <m-icon name="left-chevron" class="modul-component-details__title__arrow"></m-icon>{{component.tag}}
                 <m-icon name="chevron" class="modul-component-details__title__arrow"></m-icon>
+                <span v-if="!component.production" class="modul-logo__beta modul-component-details__title__beta-tag">Beta</span>
             </h2>
-            <m-icon-button class="modul-code-preview-button" icon-name="tag-chevrons" skin="dark" button-size="52px" icon-size="26px" @click="toggleOpenCodePreview" v-if="component.preview">
-                <m-i18n k="modul:preview-button-open" class="m-u--visually-hidden" v-if="codePreviewOpen"></m-i18n>
-                <m-i18n k="modul:preview-button-close" class="m-u--visually-hidden" v-if="!codePreviewOpen"></m-i18n>
-            </m-icon-button >
+            <button @click="toggleOpenCodePreview" v-if="component.preview" class="modul-component-details__title__button">{{ openCloseLabel }}</button>
         </header>
         <m-accordion-transition>
             <div v-if="codePreviewOpen && component.preview">
@@ -19,7 +17,7 @@
         </m-accordion-transition>
         <div class="modul-component-details__preview">
             <span v-if="!component.preview">
-                <m-message state="information" :closeButton="false">
+                <m-message skin="light" state="information">
                     <m-i18n k="modul:preview-not-available"></m-i18n>
                 </m-message>
             </span>

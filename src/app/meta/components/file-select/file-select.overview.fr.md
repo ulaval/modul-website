@@ -10,11 +10,13 @@ Le composant offre les mêmes propriétés et évènements que le m-button.
 
 La propriété **"multiple"** permet d'activer la sélection de plus d'un fichier.
 
-#### Exemple
+<modul-demo>
 
 ```html
 <m-file-select multiple>Sélectionner</m-file-select>
 ```
+
+</modul-demo>
 
 ### Service $file
 
