@@ -7,11 +7,9 @@
         <div class="modul-demo__wrapper">
             <button @click.prevent="isOpened = !isOpened" class="modul-demo__button">{{ openCloseLabel }}</button>
         </div>
-        <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
-            <div v-if="isOpened">
-                <div class="modul-demo__code" >
-                    <div class="modul-demo__code__arrow"></div>
-
+        <m-accordion-transition>
+            <div class="modul-demo__code" v-if="isOpened">
+                <div class="modul-demo__code__arrow"></div>
                     <ul class="modul-demo__code__header">
                         <li :class="{'active': htmlActive}">
                             <button class="modul-demo__code__header__button" @click="switchTab('html')">HTML</button>
@@ -37,7 +35,7 @@
                     </pre>
                 </div>
             </div>
-        </transition>
+        </m-accordion-transition>
 
         <div class="modul-demo__preview">
             <div ref="demoContent"></div>

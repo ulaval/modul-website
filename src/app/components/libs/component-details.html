@@ -8,13 +8,13 @@
             </h2>
             <button @click="toggleOpenCodePreview" v-if="component.preview" class="modul-component-details__title__button">{{ openCloseLabel }}</button>
         </header>
-        <transition @enter="accordionEnter" @after-enter="accordionAfterEnter" @leave="accordionLeave">
+        <m-accordion-transition>
             <div v-if="codePreviewOpen && component.preview">
                 <div class="modul-component-details__code">
                     <modul-highlight :template="markdownPreview"></modul-highlight>
                 </div>
             </div>
-        </transition>
+        </m-accordion-transition>
         <div class="modul-component-details__preview">
             <span v-if="!component.preview">
                 <m-message skin="light" state="information">
