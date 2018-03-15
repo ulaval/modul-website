@@ -596,7 +596,7 @@ export class MetaAll implements PluginObject<any> {
             meta,
             CATEGORY_MIXINS,
             production,
-            false,
+            defaultPreview,
             folder,
             `m-${folder}-meta:`
         );
