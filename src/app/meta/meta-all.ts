@@ -73,6 +73,19 @@ export const CATEGORY_LAYOUT: string = 'categories:layout';
 export const CATEGORY_WINDOWS: string = 'categories:windows';
 export const CATEGORY_MIXINS: string = 'categories:mixins';
 
+export type CategoryOrder = {
+    [key: string]: number
+};
+
+const ORDER: CategoryOrder = {
+    [CATEGORY_CONTENT]: 1,
+    [CATEGORY_LAYOUT]: 2,
+    [CATEGORY_FORMS]: 3,
+    [CATEGORY_NAVIGATION]: 4,
+    [CATEGORY_WINDOWS]: 5,
+    [CATEGORY_MIXINS]: 6
+};
+
 export interface ComponentMetaEx extends ComponentMeta {
     metaKey?: string;
     folder?: string;
@@ -538,7 +551,9 @@ export class MetaAll implements PluginObject<any> {
                 )
             );
         }
-        return categories;
+        return categories.sort((a, b) => {
+            return ORDER[a] > ORDER[b] ? 1 : ORDER[a] === ORDER[b] ? 0 : -1;
+        });
     }
 
     public getMetaByCategory(category: string): ComponentMetaEx[] {
