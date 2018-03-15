@@ -309,7 +309,7 @@ export class MetaAll implements PluginObject<any> {
             ICON_BUTTON_NAME,
             require('@ulaval/modul-components/dist/components/icon-button/icon-button.meta.json'),
             CATEGORY_FORMS,
-            ModulComponentStatus.Alpha,
+            ModulComponentStatus.Beta,
             true
         );
         this.mergeComponentMeta(
