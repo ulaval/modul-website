@@ -20,14 +20,15 @@ La propriété "editMode" est ce qui contrôle le basculement entre le mode édi
 ```javascript
 {
     data: {
-        text: 'Adipisicing ex irure ex aute amet occaecat veniam proident ut. Deserunt elit consequat aute nostrud. Excepteur est exercitation enim consectetur Lorem enim sint laboris anim nisi deserunt ipsum nostrud veniam. Mollit eu quis ea do cupidatat officia nostrud ipsum proident labore non deserunt. Quis tempor ut magna reprehenderit ullamco ad. Quis irure labore est reprehenderit quis.',
         editMode: false,
+        errorPresent: false
     }
 }
 ```
 
 ```html
 <m-button @click="editMode = !editMode" style="margin-bottom: 20px;">Basculer mode lecture/écriture</m-button>
+<m-button @click="errorPresent = !errorPresent" style="margin-bottom: 20px;">Basculer mode erreur/sans erreur</m-button>
 <m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false">
 <div slot="readMode">Mon contenu</div>
 <m-textfield slot="editMode" value="Mon contenu"></m-textfield>

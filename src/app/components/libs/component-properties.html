@@ -1,5 +1,8 @@
 <div class="modul-component-properties">
-    <table class="m-u--table">
+    <m-message v-if="!hasAttributes" skin="light" state="information">
+        <m-i18n k="modul:no-properties"></m-i18n>
+    </m-message>
+    <table v-else class="m-u--table">
         <thead>
             <th>
                 <m-i18n k="modul:attribute"></m-i18n>

@@ -2,20 +2,12 @@
 @import '../../styles/shared-styles';
 
 .modul-demo {
-    pre {
-        margin: 0;
-    }
-
-    code {
-        color: #fff;
-    }
-
-    .demo-block__label-wrapper {
+    &__wrapper {
         text-align: right;
         border-bottom: 1px solid $modul-color--grey-dark;
     }
 
-    .demo-block__label {
+    &__button {
         margin-top: $m-margin--s;
         font-size: 14px;
         font-weight: 400;
@@ -24,16 +16,23 @@
         background: none;
         border: none;
         cursor: pointer;
+        outline: none;
+        transition: color $m-transition-duration ease;
+
+        &:hover,
+        &:focus {
+            color: $modul-color--black-grey-dark;
+        }
     }
 
-    .demo-block__code {
+    &__code {
         position: relative;
-        padding: $m-margin $m-margin--l;
+        padding: $m-margin--l $m-margin--l;
         background: $modul-color--black-grey-light;
         border: 1px solid $modul-color--grey-dark;
         border-top: none;
 
-        .arrow {
+        &__arrow {
             position: absolute;
             left: 48%;
             bottom: -8px;
@@ -43,18 +42,14 @@
             border-right: 12px solid transparent;
             border-top: 8px solid $modul-color--black-grey-light;
         }
-    }
 
-    .tabs__header {
-        padding: 0;
-        margin: 0;
-        list-style: none;
+        &__header {
+            padding: 0;
+            margin: 0;
+            list-style: none;
 
-        li {
-            display: inline-block;
-
-            button {
-                padding: $m-margin--xs $m-margin--s;
+            &__button {
+                padding: $m-padding--s $m-margin;
                 margin: 0 $m-margin--s 0 0;
                 font-size: 14px;
                 font-weight: 400;
@@ -63,36 +58,46 @@
                 background: none;
                 border: none;
                 cursor: pointer;
+                outline: none;
+                transition: background-color $m-transition-duration ease;
             }
 
-            &::before {
-                content: none;
-            }
+            li {
+                display: inline-block;
 
-            &.active,
-            &:hover,
-            &:focus {
-                button {
+                &::before {
+                    content: none;
+                }
+
+                &.active button,
+                button:hover,
+                button:focus {
                     background-color: $modul-color--black-grey;
-                    transition: background-color $m-transition-duration ease;
+                }
+
+                &:not(.active) button:active {
+                    background-color: $modul-color--black-grey-dark;
                 }
             }
         }
+
+        &__content {
+            display: none;
+            margin: 0;
+
+            &.active {
+                display: block;
+                margin: -24px 0; //Magic Number
+            }
+
+            &__code {
+                white-space: pre-wrap;
+                color: #fff;
+            }
+        }
     }
 
-    .tabs__content {
-        display: none;
-
-        &.active {
-            display: block;
-        }
-
-        code {
-            white-space: pre-wrap;
-        }
-    }
-
-    .demo-block__preview {
+    &__preview {
         padding: $m-margin--l;
         background: $modul-color--grey-light;
     }

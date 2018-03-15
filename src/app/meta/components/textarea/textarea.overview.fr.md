@@ -44,8 +44,8 @@ Ce composent gère les états (en attente, désactivé, erreur, valide) et les m
 ```html
 <m-textarea :disabled="true" label="Zone de texte"></m-textarea>
 <m-textarea :waiting="true" label="Zone de texte"></m-textarea>
-<m-textarea :error="true" label="Zone de texte"></m-textarea>
-<m-textarea :valid="true" label="Zone de texte"></m-textarea>
+<m-textarea :error="true" label="Zone de texte" error-message="Nulla excepteur cillum occaecat nisi occaecat duis in."></m-textarea>
+<m-textarea :valid="true" label="Zone de texte" valid-message="Nulla excepteur cillum occaecat nisi occaecat duis in."></m-textarea>
 ```
 
 ```css

@@ -17,8 +17,35 @@ Les cases à cocher sont utilisées lorsqu’un utilisateur peut sélectionner u
 
 ### Positionnement
 Les cases à cocher peuvent être positionnées à l'horizontale ou à la verticale. Les cases peuvent également être positionnées à gauche ou à droite de leur libellé.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<p>
+    <m-checkbox position="left">Choix 1</m-checkbox>
+</p>
+<p>
+    <m-checkbox position="right">Choix 1</m-checkbox>
+</p>
+```
+
+</modul-demo>
 
 ### États et messages de validation
-Ce composant gère les états (en attente, désactivé, erreur, valide) et les messages de validation, tout en offrant la possibilité de personaliser chacun de ces paramètres. Lorsque possible, les validations sont effectuées à la sortie de la case à cocher.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+Ce composant gère les états (désactivé, erreur, valide) et les messages de validation, tout en offrant la possibilité de personaliser chacun de ces paramètres. Lorsque possible, les validations sont effectuées à la sortie de la case à cocher.
+
+<modul-demo>
+
+```html
+<p>
+    <m-checkbox :disabled="true">Choix 1</m-checkbox>
+</p>
+<p>
+    <m-checkbox :error="true" error-message="Nulla non elit dolore magna qui aliquip nulla cillum.">Choix 1</m-checkbox>
+</p>
+<p>
+    <m-checkbox :valid="true" valid-message="Nulla non elit dolore magna qui aliquip nulla cillum.">Choix 1</m-checkbox>
+</p>
+```
+
+</modul-demo>

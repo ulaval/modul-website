@@ -1,1 +1,1 @@
-<m-link :icon="true">Accueil</m-link>
+<m-link url="#">Accueil</m-link>
