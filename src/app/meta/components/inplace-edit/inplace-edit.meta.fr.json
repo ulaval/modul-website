@@ -2,6 +2,8 @@
     "m-inplace-edit-meta": {
         "name": "Édition sur place",
         "editMode": "Défini le mode actuel, lecture ou édition",
+        "erreurPresent": "Défini si une erreur est présente dans un des champs du formulaire, nécessaire pour le toggle de la couleur de fond des champs édités.",
+        "submitted": "Permet la gestion de la désactivation/wait des bouttons de soumission de changements. Doit être géré par le parent qui est responsable de faire les appels aux services appropriés et connait le statut de la demande.",
         "title": "Permet de définir le titre de la fenêtre d'édition en mode mobile (facultatif)"
         }
 }

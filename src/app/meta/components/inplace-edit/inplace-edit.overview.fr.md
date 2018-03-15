@@ -2,12 +2,16 @@ L'édition sur place permet à l'utilisateur de basculer entre le mode lecture e
 
 <modul-do>
     <ul>
-        <li>Il est recommendé d'appliquer le même formattage sur le champs d'édition que celui appliqué sur le champs en mode lecture</li>
+        <li>Il est recommendé d'appliquer le même formattage sur le champs d'édition que celui appliqué sur le champs en mode lecture seulement lors que l'édition est en mode desktop, sinon appliquer le style par défaut des zones d'édition.</li>
+        <li>Laisser les comportement par défaut des champs de saisie et utiliser leur fonctionnalité de gestion des erreurs.</li>
     </ul>
 </modul-do>
 
 <modul-dont>
-    <p>Quoiqu'il soit possible de passer plusieurs champs dans la "slot" associée aux modes lecture et écriture, il ne faut pas dépasser 3 champs à la fois pour respecter le concept derrière l'édition rapide, si plus de champs doivent être édités en même temps, faire un formulaire complet.</p>
+<ul>
+        <li>Quoiqu'il soit possible de passer plusieurs champs dans la "slot" associée aux modes lecture et écriture, il ne faut pas dépasser 3 champs à la fois pour respecter le concept derrière l'édition rapide, si plus de champs doivent être édités en même temps, faire un formulaire complet.</li>
+        <li>Ne pas effectuer d'action liées à la confirmation/enregistrement et annulation de la saisie lors d'événement clavier comme "entrée" et "échappe".</li>
+    </ul>
 </modul-dont>
 
 ## Caractéristiques
