@@ -245,6 +245,20 @@ export default class Modul extends ModulWebsite {
         }
     }
 
+    private openSearch(): void {
+        this.searchOpen = true;
+        setTimeout(() => {
+            (this.$refs.search as HTMLInputElement).focus();
+        }, CSS_ANIMATION_MENU_DURATION);
+    }
+
+    private closeSearch(): void {
+        this.searchOpen = false;
+        setTimeout(() => {
+            this.searchModel = '';
+        }, CSS_ANIMATION_MENU_DURATION);
+    }
+
     @Watch('$route')
     private closeMenu(): void {
         if (this.menuOpen) {
