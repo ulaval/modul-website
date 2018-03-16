@@ -84,9 +84,9 @@ export type CategoryOrder = {
 
 const ORDER: CategoryOrder = {
     [CATEGORY_CONTENT]: 1,
-    [CATEGORY_LAYOUT]: 2,
+    [CATEGORY_NAVIGATION]: 2,
     [CATEGORY_FORMS]: 3,
-    [CATEGORY_NAVIGATION]: 4,
+    [CATEGORY_LAYOUT]: 4,
     [CATEGORY_WINDOWS]: 5,
     [CATEGORY_MIXINS]: 6
 };
