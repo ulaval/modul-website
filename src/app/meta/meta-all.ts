@@ -36,7 +36,6 @@ import {
     PROGRESS_NAME,
     RADIO_GROUP_NAME,
     RADIO_NAME,
-    RADIO_STYLE_NAME,
     SCROLL_TOP_NAME,
     SIDEBAR_NAME,
     SPINNER_NAME,
@@ -456,13 +455,6 @@ export class MetaAll implements PluginObject<any> {
             CATEGORY_FORMS,
             ModulComponentStatus.Production,
             true
-        );
-        this.mergeComponentMeta(
-            RADIO_STYLE_NAME,
-            require('@ulaval/modul-components/dist/components/radio-style/radio-style.meta.json'),
-            CATEGORY_FORMS,
-            ModulComponentStatus.Alpha,
-            false
         );
         this.mergeComponentMeta(
             SCROLL_TOP_NAME,
