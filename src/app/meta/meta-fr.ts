@@ -112,14 +112,6 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
-                require('./components/navbar/navbar.meta.fr.json')
-            );
-            i18n.addMessages(
-                FRENCH,
-                require('./components/navbar-item/navbar-item.meta.fr.json')
-            );
-            i18n.addMessages(
-                FRENCH,
                 require('./components/menu/menu.meta.fr.json')
             );
             i18n.addMessages(
@@ -128,15 +120,23 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/modal/modal.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/navbar/navbar.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/navbar-item/navbar-item.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/panel/panel.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
                 require('./components/phone-number/phone-number.meta.fr.json')
-            );
-            i18n.addMessages(
-                FRENCH,
-                require('./components/sidebar/sidebar.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
@@ -160,11 +160,15 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
-                require('./components/modal/modal.meta.fr.json')
+                require('./components/scroll-top/scroll-top.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
-                require('./components/scroll-top/scroll-top.meta.fr.json')
+                require('./components/sidebar/sidebar.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/slider/slider.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,

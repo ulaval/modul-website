@@ -38,6 +38,7 @@ import {
     RADIO_NAME,
     SCROLL_TOP_NAME,
     SIDEBAR_NAME,
+    SLIDER_NAME,
     SPINNER_NAME,
     STATUS_NAME,
     STEP_NAME,
@@ -467,6 +468,13 @@ export class MetaAll implements PluginObject<any> {
             SIDEBAR_NAME,
             require('@ulaval/modul-components/dist/components/sidebar/sidebar.meta.json'),
             CATEGORY_WINDOWS,
+            ModulComponentStatus.Beta,
+            true
+        );
+        this.mergeComponentMeta(
+            SLIDER_NAME,
+            require('@ulaval/modul-components/dist/components/slider/slider.meta.json'),
+            CATEGORY_CONTENT,
             ModulComponentStatus.Beta,
             true
         );
