@@ -24,7 +24,11 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
-                require('./components/list-item/list-item.meta.fr.json')
+                require('./components/carousel/carousel.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/carousel-item/carousel-item.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
@@ -57,6 +61,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(
                 FRENCH,
                 require('./components/dynamic-template/dynamic-template.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/edit-window/edit-window.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
@@ -96,6 +104,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/list-item/list-item.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/message/message.meta.fr.json')
             );
             i18n.addMessages(
@@ -120,6 +132,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/phone-number/phone-number.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/sidebar/sidebar.meta.fr.json')
             );
             i18n.addMessages(
@@ -141,6 +157,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(
                 FRENCH,
                 require('./components/radio-group/radio-group.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/radio-style/radio-style.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,

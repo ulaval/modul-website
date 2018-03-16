@@ -3,6 +3,8 @@ import {
     ACCORDION_NAME,
     BUTTON_GROUP_NAME,
     BUTTON_NAME,
+    CAROUSEL_NAME,
+    CAROUSEL_ITEM_NAME,
     CHECKBOX_NAME,
     DATEFIELDS_NAME,
     DATEPICKER_NAME,
@@ -11,6 +13,7 @@ import {
     DROPDOWN_ITEM_NAME,
     DROPDOWN_NAME,
     DYNAMIC_TEMPLATE_NAME,
+    EDIT_WINDOW_NAME,
     FILE_SELECT_NAME,
     FILE_UPLOAD_NAME,
     FLEX_TEMPLATE_NAME,
@@ -27,11 +30,13 @@ import {
     NAVBAR_ITEM_NAME,
     NAVBAR_NAME,
     PANEL_NAME,
+    PHONE_NUMBER_NAME,
     POPPER_NAME,
     POPUP_NAME,
     PROGRESS_NAME,
     RADIO_GROUP_NAME,
     RADIO_NAME,
+    RADIO_STYLE_NAME,
     SCROLL_TOP_NAME,
     SIDEBAR_NAME,
     SPINNER_NAME,
@@ -225,6 +230,20 @@ export class MetaAll implements PluginObject<any> {
             true
         );
         this.mergeComponentMeta(
+            CAROUSEL_NAME,
+            require('@ulaval/modul-components/dist/components/carousel/carousel.meta.json'),
+            CATEGORY_CONTENT,
+            ModulComponentStatus.Beta,
+            false
+        );
+        this.mergeComponentMeta(
+            CAROUSEL_ITEM_NAME,
+            require('@ulaval/modul-components/dist/components/carousel-item/carousel-item.meta.json'),
+            CATEGORY_CONTENT,
+            ModulComponentStatus.Beta,
+            false
+        );
+        this.mergeComponentMeta(
             CHECKBOX_NAME,
             require('@ulaval/modul-components/dist/components/checkbox/checkbox.meta.json'),
             CATEGORY_FORMS,
@@ -279,6 +298,13 @@ export class MetaAll implements PluginObject<any> {
             CATEGORY_LAYOUT,
             ModulComponentStatus.Beta,
             false
+        );
+        this.mergeComponentMeta(
+            EDIT_WINDOW_NAME,
+            require('@ulaval/modul-components/dist/components/edit-window/edit-window.meta.json'),
+            CATEGORY_WINDOWS,
+            ModulComponentStatus.Beta,
+            true
         );
         this.mergeComponentMeta(
             FILE_SELECT_NAME,
@@ -390,6 +416,13 @@ export class MetaAll implements PluginObject<any> {
             true
         );
         this.mergeComponentMeta(
+            PHONE_NUMBER_NAME,
+            require('@ulaval/modul-components/dist/components/phone-number/phone-number.meta.json'),
+            CATEGORY_FORMS,
+            ModulComponentStatus.Alpha,
+            true
+        );
+        this.mergeComponentMeta(
             POPPER_NAME,
             require('@ulaval/modul-components/dist/components/popper/popper.meta.json'),
             CATEGORY_WINDOWS,
@@ -423,6 +456,13 @@ export class MetaAll implements PluginObject<any> {
             CATEGORY_FORMS,
             ModulComponentStatus.Production,
             true
+        );
+        this.mergeComponentMeta(
+            RADIO_STYLE_NAME,
+            require('@ulaval/modul-components/dist/components/radio-style/radio-style.meta.json'),
+            CATEGORY_FORMS,
+            ModulComponentStatus.Alpha,
+            false
         );
         this.mergeComponentMeta(
             SCROLL_TOP_NAME,
