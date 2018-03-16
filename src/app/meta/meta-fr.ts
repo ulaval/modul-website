@@ -229,6 +229,14 @@ const FrenchMetaPlugin: PluginObject<any> = {
 
             i18n.addMessages(
                 FRENCH,
+                require('./directives/file-drop/file-drop.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./directives/popup/popup.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./directives/ripple-effect/ripple-effect.meta.fr.json')
             );
             i18n.addMessages(
