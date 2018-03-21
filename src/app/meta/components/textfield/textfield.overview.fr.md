@@ -6,7 +6,7 @@ Un champ de saisie permet à l'utilisateur de saisir de l'information sur une se
 Autant que possible, utiliser un libellé court et descriptif (un mot ou deux). Si le libellé ne suffit à clarifier l'information à saisir il est possible d'utiliser une des 3 alternatives ci-dessous.
 
 **Précision**
-<p>La précision est affichée d'emblée et reste disponible tout au long de la saisie, l'utilisateur peut donc s'y référer en tout temps. Elle est efficace lorsqu'un court texte suffit à mettre l'utilisateur en contexte.<p>
+<p>La précision est affichée d'emblée et reste disponible tout au long de la saisie, l'utilisateur peut donc s'y référer en tout temps. Elle est efficace lorsqu'un court texte (souvent un exemple) suffit à mettre l'utilisateur en contexte.<p>
 
 <modul-demo>
 
@@ -19,25 +19,8 @@ Autant que possible, utiliser un libellé court et descriptif (un mot ou deux). 
 
 </modul-demo>
 
-**Texte de remplissage**
-<p>Si vos champs de saisie ne peuvent pas être accompagnés d'un libellé (comme pour l'<em><modul-go name="m-inplaceedit"></modul-go></em>), l'utilisation d'un texte remplissage lorsque le champs est vide est recommandé. Ce texte par défaut disparait dès que le premier caractère est saisi.</p>
-
-<modul-demo>
-
-```html
-
-<p>
-    <m-textfield type="text" placeholder="Note sans titre"></m-textfield>
-</p>
-<p>
-    <m-textfield type="text" placeholder="Saisir la description de la note"></m-textfield>
-</p>
-```
-
-</modul-demo>
-
 **Infobulle**
-<p>Lorsque le libellé porte à confusion et qu'une précision n'est pas suffisante, il est possible de lever l'ambiguïté à l'aide d'une <em><modul-go name="m-tooltip"></modul-go></em>.</p>
+<p>Lorsqu'une précision n'est pas suffisante pour clarifier la signification du libellé, il est possible de lever l'ambiguïté à l'aide d'une <em><modul-go name="m-tooltip"></modul-go></em>.</p>
 
 <modul-demo>
 
@@ -57,6 +40,23 @@ Autant que possible, utiliser un libellé court et descriptif (un mot ou deux). 
         <strong>Participant au MOOC</strong><br />
         Si vous avez créé un compte pour vous inscrire à un MOOC, votre identifiant est le courriel saisi lors de la création du compte. Si vous vous êtes inscrit au MOOC avec votre IDUL, utilisez plutôt ce dernier pour vous connecter.
     </m-tooltip>
+</p>
+```
+
+</modul-demo>
+
+**Texte de remplissage**
+<p>Si vos champs de saisie ne peuvent pas être accompagnés d'un libellé (comme pour l'<em><modul-go name="m-inplaceedit"></modul-go></em>), l'utilisation d'un texte remplissage lorsque le champs est vide est recommandé. Ce texte par défaut disparait dès que le premier caractère est saisi.</p>
+
+<modul-demo>
+
+```html
+
+<p>
+    <m-textfield type="text" placeholder="Note sans titre"></m-textfield>
+</p>
+<p>
+    <m-textfield type="text" placeholder="Saisir la description de la note"></m-textfield>
 </p>
 ```
 
