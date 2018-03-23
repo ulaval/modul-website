@@ -7,12 +7,7 @@ import ComponentsPlugin from '@ulaval/modul-components/dist/components';
 import DirectivesPlugin from '@ulaval/modul-components/dist/directives';
 import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils';
-import I18nPlugin, {
-    currentLang,
-    DebugMode,
-    FRENCH,
-    MessagesPluginOptions
-} from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import I18nPlugin, { DebugMode, FRENCH, I18nPluginOptions } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Vue from 'vue';
 import { VueRouter } from 'vue-router/types/router';
 
@@ -43,7 +38,8 @@ const utilsPluginOptions: UtilsPluginOptions = {
 async function main() {
     Vue.config.productionTip = false;
 
-    let i18nOptions: MessagesPluginOptions = {
+    let i18nOptions: I18nPluginOptions = {
+        curLang: FRENCH,
         debug:
             process.env && (process.env.NODE_ENV as any).dev
                 ? DebugMode.Throw
@@ -68,7 +64,6 @@ async function main() {
     Vue.component(HIGHLIGHT_NAME, MHighlight);
     Vue.component(ICON_GALLERY_NAME, MIconGallery);
 
-    currentLang(FRENCH);
     await store.dispatchAsync(ComponentActions.MESSAGES_GET, FRENCH);
     await store.dispatchAsync(ComponentActions.ICONS_GET, 'website');
     await store.dispatchAsync(ComponentActions.COMPONENTS_META_GET, FRENCH);

@@ -11,7 +11,7 @@
 
             <header>
                 <h2 class="modul-category-list__title modul-u--h2">
-                    <m-i18n :k="meta.name"></m-i18n>
+                    <m-i18n class="modul-category-list__title__i18n" :k="meta.name"></m-i18n>&nbsp;<span v-if="!isProduction(meta.status)" class="modul-logo__beta modul-category-list__beta-tag">{{ meta.status }}</span>
                 </h2>
                 <p class="modul-category-list__tagname">{{meta.tag}}</p>
             </header>

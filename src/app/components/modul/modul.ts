@@ -4,7 +4,7 @@ import WithRender from './modul.html?style=./modul.scss';
 import * as ModulActions from '@/app/store/modules/components/actions';
 import { Watch } from 'vue-property-decorator';
 import { RoutePathMap } from '@/app/router';
-import MetaAll from '../../meta/meta-all';
+import MetaAll, { ModulComponentStatus } from '../../meta/meta-all';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
@@ -234,11 +234,29 @@ export default class Modul extends ModulWebsite {
         return this.searchOpen;
     }
 
+    private isProduction(status): boolean {
+        return status === ModulComponentStatus.Production;
+    }
+
     private toggleSearch(): void {
         this.searchOpen = !this.searchOpen;
         if (this.searchOpen) {
             this.components = this.searchData();
         }
+    }
+
+    private openSearch(): void {
+        this.searchOpen = true;
+        setTimeout(() => {
+            (this.$refs.search as HTMLInputElement).focus();
+        }, CSS_ANIMATION_MENU_DURATION);
+    }
+
+    private closeSearch(): void {
+        this.searchOpen = false;
+        setTimeout(() => {
+            this.searchModel = '';
+        }, CSS_ANIMATION_MENU_DURATION);
     }
 
     @Watch('$route')
