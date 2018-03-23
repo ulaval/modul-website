@@ -1,23 +1,23 @@
-L'édition sur place permet à l'utilisateur de basculer entre le mode lecture et édition sans avoir à passer par un formulaire complexe.
+L'édition sur place permet à l'utilisateur de modifier un texte dans son contexte, sans effectuer de navigation supplémentaire. Il peut en tout temps se référer au reste de l'interface et s'assurer du rendu visuel du texte qu'il est en train d'éditer.
+
+Il est possible de modifier plusieurs textes en même temps dans la page lorsqu'ils appartiennent à un petit regroupement logique. Par exemple, le titre et la description d'une section.
 
 <modul-do>
     <ul>
-        <li>Il est recommendé d'appliquer le même formattage sur le champs d'édition que celui appliqué sur le champs en mode lecture seulement lors que l'édition est en mode desktop, sinon appliquer le style par défaut des zones d'édition.</li>
-        <li>Laisser les comportement par défaut des champs de saisie et utiliser leur fonctionnalité de gestion des erreurs.</li>
+        <li>Utiliser ce composant lorsque le nombre de champs à éditer est limité (de 1 à 3).</li>
+        <li>Utiliser ce composant lorsque l'utilisateur a besoin de se référer au reste de la page pour réaliser sa tâche. Par exemple, lorsqu'il édite un texte faisant partie d'une série.</li>
     </ul>
 </modul-do>
 
 <modul-dont>
-<ul>
-        <li>Quoiqu'il soit possible de passer plusieurs champs dans la "slot" associée aux modes lecture et écriture, il ne faut pas dépasser 3 champs à la fois pour respecter le concept derrière l'édition rapide, si plus de champs doivent être édités en même temps, faire un formulaire complet.</li>
-        <li>Ne pas effectuer d'action liées à la confirmation/enregistrement et annulation de la saisie lors d'événement clavier comme "entrée" et "échappe".</li>
+    <ul>
+        <li>Lorsqu'un regroupement logique contient trop de champs, il est alors préférable de présenter tous les champs éditables d'emblée dans un formulaire classique.</li>
     </ul>
 </modul-dont>
 
-## Caractéristiques
+### Donner accès au mode édition
 
-### Mode
-La propriété "editMode" est ce qui contrôle le basculement entre le mode édition et le mode lecture. Cette propriété n'est pas géré par le composant et la valeur doit être maintenue par le parent lors des différents événements levés.
+Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion de contenu, il est recommandé de suivre le comportement habituel de l'application. Par exemple, dans les sites de cours, le menu d'édition est privilégié pour donner accès au mode édition.<br />
 
 <modul-demo>
 
@@ -30,64 +30,239 @@ La propriété "editMode" est ce qui contrôle le basculement entre le mode édi
 }
 ```
 
+```css
+.modul-demo__inplace-edit-component.modul-demo__inplace-edit-component {
+    padding: 10px;
+}
+.modul-demo__inplace-edit-read-mode {
+    position: relative;
+}
+.modul-demo__inplace-edit-title {
+    padding-right: 44px;
+}
+.modul-demo__inplace-edit-button.modul-demo__inplace-edit-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+```
+
 ```html
-<m-button @click="editMode = !editMode" style="margin-bottom: 20px;">Basculer mode lecture/écriture</m-button>
-<m-button @click="errorPresent = !errorPresent" style="margin-bottom: 20px;">Basculer mode erreur/sans erreur</m-button>
+<m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false" class="modul-demo__inplace-edit-component">
+    <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
+        <p class="modul-demo__inplace-edit-title">La déforestation des espaces protégés</p>
+        <m-menu placement="bottom-end" class="modul-demo__inplace-edit-button">
+            <m-menu-item @click="editMode = true" title="Modifier le titre de la section">Modifier</m-menu-item>
+            <m-menu-item>Supprimer</m-menu-item>
+        </m-menu>
+    </div>
+    <div slot="editMode">
+        <m-textfield max-width="none" value="La déforestation des espaces protégés"></m-textfield>
+    </div>
+</m-inplace-edit>
+
+```
+
+</modul-demo>
+
+Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rapport à la clarté de l'interface. Si l'action d'édition est prioritaire, l'utilisation d'un bouton pourrait être justifié. Au contraire, s'il y a beaucoup d'élément éditables, et que l'on souhaite préserver la clarté de l'interface, un bouton icône pourrait être une meilleure option. L'apparition au survol est déconseillée, puisque le survol est non supporté par les écrans tactiles, en plus de présenter un obstacle à l'accessibilité.
+
+<modul-demo>
+
+```javascript
+{
+    data: {
+        editMode: false,
+        errorPresent: false,
+        text: "Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation."
+    }
+}
+```
+
+```css
+.modul-demo__inplace-edit-component.modul-demo__inplace-edit-component {
+    padding: 10px;
+}
+.modul-demo__inplace-edit-read-mode {
+    position: relative;
+}
+.modul-demo__inplace-edit-title {
+    padding-right: 44px;
+}
+.modul-demo__inplace-edit-button.modul-demo__inplace-edit-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+```
+
+```html
+<m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false" class="modul-demo__inplace-edit-component">
+    <div slot="readMode">
+        <div class="modul-demo__inplace-edit-read-mode">
+            <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode = true" icon-name="m-edit" title="Modifier la section"></m-icon-button>
+            <h3 class="modul-demo__inplace-edit-title m-u--no-margin">La déforestation des espaces protégés</h3>
+        </div>
+        <div class="m-u--margin-top">
+            <p>Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
+        </div>
+    </div>
+    <div slot="editMode">
+        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3"></m-textfield>
+        <m-textarea max-width="none" class="m-u--margin-top" :value="text"></m-textarea>
+    </div>
+</m-inplace-edit>
+
+```
+
+</modul-demo>
+
+#### Accessibilité
+Les utilisateurs ayant recours à une assistance technique pour la lecture d'écran doivent être informés du type de contenu qu'ils pourront éditer.
+
+### Petits écrans
+Sur petits écrans, la notion de page est beaucoup moins omniprésente, et la navigation vers un nouvel écran est plus naturelle. Elle permet d'isoler la tâche, de réduire la charge mentale et facilite ainsi l'édition. Lorsque sur grand écran, l'édition se fait sur place, elle se fera automatiquement dans une fenêtre secondaire sur petit écran. Le titre de la fenêtre secondaire sera alors le nom de l'élément, ou du regroupement d'éléments à éditer.
+
+### Grands écrans
+Sur grands écrans, l'utilisateur pourrait décider de naviguer vers une autre page alors qu'il est en train d'éditer un texte. Dans ce cas, un message d'avertissement est affiché pour prévenir la perte de données.
+
+### Enregistrement et validation
+Lorsque des validations s'appliquent, elles sont traitées comme pour un formulaire classique : au sortir du champs et à l'enregistrement.
+Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les messages d'erreur sont toujours placés en dessous de chaque champ, jamais dans un message global.
+
+<modul-demo>
+
+```javascript
+{
+    data: {
+        editMode: true,
+        errorPresent: true
+    }
+}
+```
+
+```css
+.modul-demo__inplace-edit-read-mode {
+    position: relative;
+}
+.modul-demo__inplace-edit-title {
+    padding-right: 44px;
+}
+.modul-demo__inplace-edit-button.modul-demo__inplace-edit-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+```
+
+```html
+<m-inplace-edit :editMode="editMode" @confirm="editMode" @cancel="editMode" :error="errorPresent">
+    <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
+        <p class="modul-demo__inplace-edit-title"></p>
+        <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode" icon-name="m-edit" title="Modifier le courriel"></m-icon-button>
+    </div>
+    <div slot="editMode">
+        <m-textfield max-width="none" value="" :required-marker="true" label="Courriel" :error="errorPresent" error-message="Le champ courriel est obligatoire."></m-textfield>
+    </div>
+</m-inplace-edit>
+
+```
+
+</modul-demo>
+
+### Cas particuliers
+#### Champ vide
+Lors de l'édition d'un champ vide, il est recommandé d'utiliser un texte de remplissage (m-textfield.placeHolder) pour assurer une transition fluide entre le mode de consultation et le mode d’édition. Le texte par défaut du champ en mode consultation et placé comme texte de remplissage en mode édition.
+
+<modul-demo>
+
+```javascript
+{
+    data: {
+        editMode: false,
+        errorPresent: false
+    }
+}
+```
+
+```css
+.modul-demo__inplace-edit-component.modul-demo__inplace-edit-component {
+    padding: 10px;
+}
+.modul-demo__inplace-edit-read-mode {
+    position: relative;
+}
+.modul-demo__inplace-edit-title {
+    padding-right: 44px;
+}
+.modul-demo__inplace-edit-button.modul-demo__inplace-edit-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+```
+
+```html
+<m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false" class="modul-demo__inplace-edit-component">
+    <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
+        <h3 class="modul-demo__inplace-edit-title m-u--no-margin">Je suis un sous-titre</h3>
+        <m-icon-button @click="editMode = true" icon-name="m-edit" title="Modifier le sous-titre" class="modul-demo__inplace-edit-button"></m-icon-button>
+    </div>
+    <div slot="editMode">
+        <m-textfield max-width="none" placeholder="Je suis un sous-titre" tag-style="h3" :focus="true"></m-textfield>
+    </div>
+</m-inplace-edit>
+
+```
+
+</modul-demo>
+
+#### Champ facultatif
+Lors de l'édition de plusieurs éléments dont un est facultatif , le champ peut-être masqué en consultation. Si c'est le cas, il devrait apparaître à sa place en mode édition.
+
+<modul-demo>
+
+```javascript
+{
+    data: {
+        editMode: false,
+        errorPresent: false,
+        text: "Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation."
+    }
+}
+```
+
+```css
+.modul-demo__inplace-edit-read-mode {
+    position: relative;
+}
+.modul-demo__inplace-edit-title {
+    padding-right: 44px;
+}
+.modul-demo__inplace-edit-button.modul-demo__inplace-edit-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+```
+
+```html
 <m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false">
-<div slot="readMode">Mon contenu</div>
-<m-textfield slot="editMode" value="Mon contenu"></m-textfield>
+    <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
+        <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode = true" icon-name="m-edit" title="Modifier le titre de la section"></m-icon-button>
+        <p class="modul-demo__inplace-edit-title m-u--padding">Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
+    </div>
+    <div slot="editMode">
+        <m-textfield max-width="none" placeholder="Titre facultatif" tag-style="h3"></m-textfield>
+        <m-textarea max-width="none" class="m-u--margin-top" :value="text"></m-textarea>
+    </div>
 </m-inplace-edit>
-```
 
-</modul-demo>
-
-### États et messages de validation
-Ce composent ne gère pas les états (en attente, désactivé, erreur, valide) ni les messages de validation, ils doivent être gérés par le parent fournissant le contenu.
-
-### Initialisation par défault
-<modul-demo>
-
-```html
-<m-inplace-edit @cancel="" @confirm="">
-    <m-textfield slot="editMode" value="Contenu Slot écriture"></m-textfield>
-    <h2 slot="readMode">Contenu Slot lecture</h2>
-</m-inplace-edit>
-```
-
-</modul-demo>
-
-### Initialisation en mode lecture
-<modul-demo>
-
-```html
-<m-inplace-edit :editMode="false" @cancel="" @confirm="">
-    <m-textfield slot="editMode">Contenu Slot écriture</m-textfield>
-    <h2 slot="readMode">Contenu Slot lecture</h2>
-</m-inplace-edit>
-```
-
-</modul-demo>
-
-### Initialisation en mode écriture avec titre par défaut
-<modul-demo>
-
-```html
-<m-inplace-edit :editMode="true" @cancel="" @confirm="">
-    <m-textfield slot="editMode">Contenu Slot écriture</m-textfield>
-    <h2 slot="readMode">Contenu Slot lecture</h2>
-</m-inplace-edit>
-```
-
-</modul-demo>
-
-### Initialisation en mode écriture avec titre de modale spécifié
-<modul-demo>
-
-```html
-<m-inplace-edit :editMode="true" title="Titre fenêtre dialog mobile"  @cancel="" @confirm="">
-    <m-textfield slot="editMode">Contenu Slot écriture</m-textfield>
-    <h2 slot="readMode">Contenu Slot lecture</h2>
-</m-inplace-edit>
 ```
 
 </modul-demo>
