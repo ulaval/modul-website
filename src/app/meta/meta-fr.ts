@@ -24,7 +24,11 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
-                require('./components/list-item/list-item.meta.fr.json')
+                require('./components/carousel/carousel.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/carousel-item/carousel-item.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
@@ -57,6 +61,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             i18n.addMessages(
                 FRENCH,
                 require('./components/dynamic-template/dynamic-template.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/edit-window/edit-window.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
@@ -96,15 +104,11 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/list-item/list-item.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/message/message.meta.fr.json')
-            );
-            i18n.addMessages(
-                FRENCH,
-                require('./components/navbar/navbar.meta.fr.json')
-            );
-            i18n.addMessages(
-                FRENCH,
-                require('./components/navbar-item/navbar-item.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
@@ -116,11 +120,23 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/modal/modal.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/navbar/navbar.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/navbar-item/navbar-item.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/panel/panel.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
-                require('./components/sidebar/sidebar.meta.fr.json')
+                require('./components/phone-number/phone-number.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
@@ -144,11 +160,15 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
-                require('./components/modal/modal.meta.fr.json')
+                require('./components/scroll-top/scroll-top.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
-                require('./components/scroll-top/scroll-top.meta.fr.json')
+                require('./components/sidebar/sidebar.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/slider/slider.meta.fr.json')
             );
             i18n.addMessages(
                 FRENCH,
@@ -207,6 +227,14 @@ const FrenchMetaPlugin: PluginObject<any> = {
                 require('./components/validation-message/validation-message.meta.fr.json')
             );
 
+            i18n.addMessages(
+                FRENCH,
+                require('./directives/file-drop/file-drop.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./directives/popup/popup.meta.fr.json')
+            );
             i18n.addMessages(
                 FRENCH,
                 require('./directives/ripple-effect/ripple-effect.meta.fr.json')
