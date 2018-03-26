@@ -1,6 +1,6 @@
 L'édition sur place permet à l'utilisateur de modifier un texte dans son contexte, sans effectuer de navigation supplémentaire. Il peut en tout temps se référer au reste de l'interface et s'assurer du rendu visuel du texte qu'il est en train d'éditer.
 
-Il est possible de modifier plusieurs textes en même temps dans la page lorsqu'ils appartiennent à un petit regroupement logique. Par exemple, le titre et la description d'une section.
+Il est possible de modifier plusieurs textes en même temps lorsqu'ils appartiennent à un petit regroupement logique. Par exemple, le titre et la description d'une section.
 
 <modul-do>
     <ul>
@@ -17,7 +17,7 @@ Il est possible de modifier plusieurs textes en même temps dans la page lorsqu'
 
 ### Donner accès au mode édition
 
-Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion de contenu, il est recommandé de suivre le comportement habituel de l'application. Par exemple, dans les sites de cours, le menu d'édition est privilégié pour donner accès au mode édition.<br />
+Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion de contenu, il est recommandé de suivre le comportement habituel du système. Par exemple, dans les sites de cours, le menu d'options est privilégié pour donner accès au mode édition.<br />
 
 <modul-demo>
 
@@ -123,13 +123,10 @@ Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rap
 Les utilisateurs ayant recours à une assistance technique pour la lecture d'écran doivent être informés du type de contenu qu'ils pourront éditer.
 
 ### Petits écrans
-Sur petits écrans, la notion de page est beaucoup moins omniprésente, et la navigation vers un nouvel écran est plus naturelle. Elle permet d'isoler la tâche, de réduire la charge mentale et facilite ainsi l'édition. Lorsque sur grand écran, l'édition se fait sur place, elle se fera automatiquement dans une fenêtre secondaire sur petit écran. Le titre de la fenêtre secondaire sera alors le nom de l'élément, ou du regroupement d'éléments à éditer.
-
-### Grands écrans
-Sur grands écrans, l'utilisateur pourrait décider de naviguer vers une autre page alors qu'il est en train d'éditer un texte. Dans ce cas, un message d'avertissement est affiché pour prévenir la perte de données.
+Sur petits écrans, la notion de page est beaucoup moins omniprésente, et la navigation vers un nouvel écran est plus naturelle. Elle permet d'isoler la tâche, de réduire la charge mentale et facilite ainsi l'édition. Lorsque sur grand écran, l'édition se fait sur place, elle se fera automatiquement dans une fenêtre secondaire sur petit écran. Le titre de la fenêtre secondaire portera alors le nom de l'élément, ou du regroupement d'éléments à éditer.
 
 ### Enregistrement et validation
-Lorsque des validations s'appliquent, elles sont traitées comme pour un formulaire classique : au sortir du champs et à l'enregistrement.
+Lorsque des validations s'appliquent, elles sont traitées comme pour un formulaire classique : au sortir du champs et après avoir cliqué sur le bouton *Enregistrer*.
 Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les messages d'erreur sont toujours placés en dessous de chaque champ, jamais dans un message global.
 
 <modul-demo>
@@ -165,7 +162,7 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
         <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode" icon-name="m-edit" title="Modifier le courriel"></m-icon-button>
     </div>
     <div slot="editMode">
-        <m-textfield max-width="none" value="" :required-marker="true" label="Courriel" :error="errorPresent" error-message="Le champ courriel est obligatoire."></m-textfield>
+        <m-textfield max-width="none" value="" :required-marker="true" label="Courriel" :error="errorPresent" error-message="Le courriel est obligatoire."></m-textfield>
     </div>
 </m-inplace-edit>
 
@@ -173,9 +170,11 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
 
 </modul-demo>
 
+Pour éviter la perte de donnée, un message d'avertissement est affiché lorsque l'utilisateur décide de naviguer vers une autre page avant d'avoir enregistré (ou annulé) ses modifications.
+
 ### Cas particuliers
 #### Champ vide
-Lors de l'édition d'un champ vide, il est recommandé d'utiliser un texte de remplissage (m-textfield.placeHolder) pour assurer une transition fluide entre le mode de consultation et le mode d’édition. Le texte par défaut du champ en mode consultation et placé comme texte de remplissage en mode édition.
+Lors de l'édition d'un champ vide, il est recommandé d'utiliser un texte de remplissage pour assurer une transition fluide entre le mode de consultation et le mode d’édition. Le texte par défaut du champ en mode consultation et placé comme texte de remplissage en mode édition.
 
 <modul-demo>
 
