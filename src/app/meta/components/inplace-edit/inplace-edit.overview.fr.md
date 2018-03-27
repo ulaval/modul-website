@@ -257,7 +257,7 @@ Lors de l'édition de plusieurs éléments dont un est facultatif , le champ peu
         <p class="modul-demo__inplace-edit-title m-u--padding">Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
     </div>
     <div slot="editMode">
-        <m-textfield max-width="none" placeholder="Titre facultatif" tag-style="h3"></m-textfield>
+        <m-textfield max-width="none" placeholder="Je suis un sous-titre" tag-style="h3"></m-textfield>
         <m-textarea max-width="none" class="m-u--margin-top" :value="text"></m-textarea>
     </div>
 </m-inplace-edit>
