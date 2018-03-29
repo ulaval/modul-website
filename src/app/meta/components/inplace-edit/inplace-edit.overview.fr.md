@@ -75,7 +75,25 @@ Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rap
     data: {
         editMode: false,
         errorPresent: false,
+        isFocusTitle: false,
+        isFocusDesc: false,
         text: "Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation."
+    },
+    methods: {
+        onClick(element) {
+            this.editMode = true;
+            if (element == "title") {
+                this.isFocusTitle = true;
+            }
+            if (element == "desc") {
+                this.isFocusDesc = true;
+            }
+        },
+        cancelConfirm() {
+            this.editMode = false;
+            this.isFocusDesc = false;
+            this.isFocusTitle = false;
+        }
     }
 }
 ```
@@ -108,19 +126,19 @@ Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rap
 ```
 
 ```html
-<m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false" class="modul-demo__inplace-edit-component">
-    <div slot="readMode" @click="editMode = true" title="Modifier la section" class="modul-demo__inplace-edit-zone">
-        <div class="modul-demo__inplace-edit-read-mode">
+<m-inplace-edit :editMode="editMode" @confirm="cancelConfirm" @cancel="cancelConfirm" class="modul-demo__inplace-edit-component">
+    <div slot="readMode" title="Modifier la section" class="modul-demo__inplace-edit-zone" @click="onClick('title')">
+        <div class="modul-demo__inplace-edit-read-mode" @click="onClick('title')">
             <m-icon-button class="modul-demo__inplace-edit-button" icon-name="m-edit"></m-icon-button>
             <h3 class="modul-demo__inplace-edit-title m-u--no-margin">La déforestation des espaces protégés</h3>
         </div>
-        <div class="m-u--margin-top">
+        <div class="m-u--margin-top" @click="onClick('desc')">
             <p>Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
         </div>
     </div>
     <div slot="editMode">
-        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3" :focus="true"></m-textfield>
-        <m-textarea max-width="none" class="m-u--margin-top" :value="text"></m-textarea>
+        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3" :focus="isFocusTitle"></m-textfield>
+        <m-textarea max-width="none" class="m-u--margin-top" :value="text" :focus="isFocusDesc"></m-textarea>
     </div>
 </m-inplace-edit>
 
