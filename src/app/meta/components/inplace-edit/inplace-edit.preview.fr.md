@@ -38,7 +38,7 @@
         </div>
     </div>
     <div slot="editMode">
-        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3"></m-textfield>
+        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3" :focus="true"></m-textfield>
         <m-textarea max-width="none" class="m-u--margin-top" :value="text"></m-textarea>
     </div>
 </m-inplace-edit>

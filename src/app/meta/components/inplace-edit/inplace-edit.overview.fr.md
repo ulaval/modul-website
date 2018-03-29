@@ -58,7 +58,7 @@ Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion
         </m-menu>
     </div>
     <div slot="editMode">
-        <m-textfield max-width="none" value="La déforestation des espaces protégés"></m-textfield>
+        <m-textfield max-width="none" value="La déforestation des espaces protégés" :focus="true"></m-textfield>
     </div>
 </m-inplace-edit>
 
@@ -66,7 +66,7 @@ Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion
 
 </modul-demo>
 
-Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rapport à la clarté de l'interface. Si l'action d'édition est prioritaire, l'utilisation d'un bouton pourrait être justifié. Au contraire, s'il y a beaucoup d'élément éditables, et que l'on souhaite préserver la clarté de l'interface, un bouton icône pourrait être une meilleure option. L'apparition au survol est déconseillée, puisque le survol est non supporté par les écrans tactiles, en plus de présenter un obstacle à l'accessibilité.
+Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rapport à la clarté de l'interface. Si l'action d'édition est prioritaire, l'utilisation d'un bouton pourrait être justifié. Au contraire, s'il y a beaucoup d'élément éditables, et que l'on souhaite préserver la clarté de l'interface, un bouton icône pourrait être une meilleure option. Un effet au survol peut également faciliter la compréhension.
 
 <modul-demo>
 
@@ -96,13 +96,22 @@ Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rap
     right: 0;
     transform: translateY(-50%);
 }
+.modul-demo__inplace-edit-zone {
+    margin: -10px !important;
+    padding : 10px;
+    cursor: text;
+    transition: background-color 0.3s;
+}
+.modul-demo__inplace-edit-zone:hover {
+    background-color: #fff8e6;
+}
 ```
 
 ```html
 <m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false" class="modul-demo__inplace-edit-component">
-    <div slot="readMode">
+    <div slot="readMode" @click="editMode = true" title="Modifier la section" class="modul-demo__inplace-edit-zone">
         <div class="modul-demo__inplace-edit-read-mode">
-            <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode = true" icon-name="m-edit" title="Modifier la section"></m-icon-button>
+            <m-icon-button class="modul-demo__inplace-edit-button" icon-name="m-edit"></m-icon-button>
             <h3 class="modul-demo__inplace-edit-title m-u--no-margin">La déforestation des espaces protégés</h3>
         </div>
         <div class="m-u--margin-top">
@@ -110,7 +119,7 @@ Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rap
         </div>
     </div>
     <div slot="editMode">
-        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3"></m-textfield>
+        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3" :focus="true"></m-textfield>
         <m-textarea max-width="none" class="m-u--margin-top" :value="text"></m-textarea>
     </div>
 </m-inplace-edit>
@@ -118,6 +127,9 @@ Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rap
 ```
 
 </modul-demo>
+
+#### Focus
+Sur grands écrans uniquement, le premier champ éditable reçoit toujours le focus. Ce comportement n'est pas recommandé sur petits écrans afin d'éviter de masquer des éléments importants du formulaire derrière le clavier.
 
 #### Accessibilité
 Les utilisateurs ayant recours à une assistance technique pour la lecture d'écran doivent être informés du type de contenu qu'ils pourront éditer.
@@ -257,7 +269,7 @@ Lors de l'édition de plusieurs éléments dont un est facultatif , le champ peu
         <p class="modul-demo__inplace-edit-title m-u--padding">Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
     </div>
     <div slot="editMode">
-        <m-textfield max-width="none" placeholder="Je suis un sous-titre" tag-style="h3"></m-textfield>
+        <m-textfield max-width="none" placeholder="Je suis un sous-titre" tag-style="h3" :focus="true"></m-textfield>
         <m-textarea max-width="none" class="m-u--margin-top" :value="text"></m-textarea>
     </div>
 </m-inplace-edit>
