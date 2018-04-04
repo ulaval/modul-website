@@ -31,8 +31,6 @@ import {
     NAVBAR_NAME,
     PANEL_NAME,
     PHONE_NUMBER_NAME,
-    POPPER_NAME,
-    POPUP_NAME,
     PROGRESS_NAME,
     RADIO_GROUP_NAME,
     RADIO_NAME,
@@ -420,20 +418,6 @@ export class MetaAll implements PluginObject<any> {
             require('@ulaval/modul-components/dist/components/phone-number/phone-number.meta.json'),
             CATEGORY_FORMS,
             ModulComponentStatus.Alpha,
-            true
-        );
-        this.mergeComponentMeta(
-            POPPER_NAME,
-            require('@ulaval/modul-components/dist/components/popper/popper.meta.json'),
-            CATEGORY_WINDOWS,
-            ModulComponentStatus.Beta,
-            true
-        );
-        this.mergeComponentMeta(
-            POPUP_NAME,
-            require('@ulaval/modul-components/dist/components/popup/popup.meta.json'),
-            CATEGORY_WINDOWS,
-            ModulComponentStatus.Beta,
             true
         );
         this.mergeComponentMeta(

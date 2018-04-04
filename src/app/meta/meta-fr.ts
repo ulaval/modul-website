@@ -140,14 +140,6 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
-                require('./components/popper/popper.meta.fr.json')
-            );
-            i18n.addMessages(
-                FRENCH,
-                require('./components/popup/popup.meta.fr.json')
-            );
-            i18n.addMessages(
-                FRENCH,
                 require('./components/progress/progress.meta.fr.json')
             );
             i18n.addMessages(
