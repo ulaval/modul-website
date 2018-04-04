@@ -66,7 +66,7 @@ Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion
 
 </modul-demo>
 
-Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rapport à la clarté de l'interface. Si l'action d'édition est prioritaire, l'utilisation d'un bouton pourrait être justifié. Au contraire, s'il y a beaucoup d'élément éditables, et que l'on souhaite préserver la clarté de l'interface, un bouton icône pourrait être une meilleure option. Un effet au survol peut également faciliter la compréhension.
+Dans les autres cas, considérer l'importance de l'action d'éditer par rapport à la clarté de l'interface. Si l'action d'édition est prioritaire, l'utilisation d'un bouton pourrait être justifié. Au contraire, s'il y a beaucoup d'élément éditables, et que l'on souhaite préserver la clarté de l'interface, une icône cliquable sera plus discrête. Un effet visuel au survol du texte à éditer peut également faciliter la compréhension.
 
 <modul-demo>
 
@@ -202,7 +202,7 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
 
 </modul-demo>
 
-Pour éviter la perte de donnée, un message d'avertissement est affiché lorsque l'utilisateur décide de naviguer vers une autre page avant d'avoir enregistré (ou annulé) ses modifications.
+Pour éviter la perte de données, un message d'avertissement devrait-être affiché lorsque l'utilisateur décide de naviguer vers une autre page avant d'avoir enregistré (ou annulé) ses modifications.
 
 ### Cas particuliers
 #### Champ vide
@@ -253,7 +253,7 @@ Lors de l'édition d'un champ vide, il est recommandé d'utiliser un texte de re
 </modul-demo>
 
 #### Champ facultatif
-Lors de l'édition de plusieurs éléments dont un est facultatif , le champ peut-être masqué en consultation. Si c'est le cas, il devrait apparaître à sa place en mode édition.
+Lors de l'édition de plusieurs éléments dont un est facultatif, le champ peut-être masqué en consultation is aucune valeur n'a été définie. Si c'est le cas, il devrait réapparaître au moment de l'édition.
 
 <modul-demo>
 
