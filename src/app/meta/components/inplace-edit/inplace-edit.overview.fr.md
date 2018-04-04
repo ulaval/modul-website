@@ -147,13 +147,15 @@ Dans les autres cas, il faut évaluer l'importance de l'action d'éditer par rap
 </modul-demo>
 
 #### Focus
-Sur grands écrans uniquement, le premier champ éditable reçoit toujours le focus. Ce comportement n'est pas recommandé sur petits écrans afin d'éviter de masquer des éléments importants du formulaire derrière le clavier.
+Lorsqu'un bouton permet d'accéder à l'édition, le premier champ éditable reçoit le focus. Si toute la zone est réactive comme dans l'exemple ci-dessus, le focus est donné au champ survolé au moment du clic.
+
+Il est déconseillé de donner le focus automatiquement sur petits écrans, afin d'éviter de masquer des éléments importants du formulaire derrière le clavier.
 
 #### Accessibilité
 Les utilisateurs ayant recours à une assistance technique pour la lecture d'écran doivent être informés du type de contenu qu'ils pourront éditer.
 
 ### Petits écrans
-Sur petits écrans, la notion de page est beaucoup moins omniprésente, et la navigation vers un nouvel écran est plus naturelle. Elle permet d'isoler la tâche, de réduire la charge mentale et facilite ainsi l'édition. Lorsque sur grand écran, l'édition se fait sur place, elle se fera automatiquement dans une fenêtre secondaire sur petit écran. Le titre de la fenêtre secondaire portera alors le nom de l'élément, ou du regroupement d'éléments à éditer.
+Sur petits écrans, la notion de page est beaucoup moins omniprésente, et la navigation vers un nouvel écran est plus naturelle. Elle permet d'isoler la tâche, de réduire la charge mentale et facilite ainsi l'édition. Lorsque sur grand écran, l'édition se fait sur place, elle se fera automatiquement dans une fenêtre secondaire sur petit écran. Il est recommandé d'ajuster le titre par défaut de la fenêtre secondaire pour le nom de l'élément, ou du regroupement d'éléments à éditer.
 
 ### Enregistrement et validation
 Lorsque des validations s'appliquent, elles sont traitées comme pour un formulaire classique : au sortir du champs et après avoir cliqué sur le bouton *Enregistrer*.
