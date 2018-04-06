@@ -25,7 +25,10 @@ Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion
 {
     data: {
         editMode: false,
-        errorPresent: false
+
+    },
+    methods: {
+        onSave: () => { return Promise.resolve(); }
     }
 }
 ```
@@ -49,12 +52,11 @@ Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion
 ```
 
 ```html
-<m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false" class="modul-demo__inplace-edit-component">
+<m-inplace-edit :editMode.sync="editMode" :save-fn="onSave" class="modul-demo__inplace-edit-component">
     <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
         <p class="modul-demo__inplace-edit-title">La déforestation des espaces protégés</p>
         <m-menu placement="bottom-end" class="modul-demo__inplace-edit-button">
             <m-menu-item @click="editMode = true" title="Modifier le titre de la section">Modifier</m-menu-item>
-            <m-menu-item>Supprimer</m-menu-item>
         </m-menu>
     </div>
     <div slot="editMode">
@@ -73,8 +75,7 @@ Dans les autres cas, considérer l'importance de l'action d'éditer par rapport 
 ```javascript
 {
     data: {
-        editMode: false,
-        errorPresent: false,
+        internalEditMode: false,
         isFocusTitle: false,
         isFocusDesc: false,
         text: "Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation."
@@ -89,10 +90,22 @@ Dans les autres cas, considérer l'importance de l'action d'éditer par rapport 
                 this.isFocusDesc = true;
             }
         },
-        cancelConfirm() {
-            this.editMode = false;
+        onSave() {
             this.isFocusDesc = false;
             this.isFocusTitle = false;
+            return Promise.resolve();
+        }
+    },
+    computed:{
+        editMode: {
+            get: function() {
+                return this.internalEditMode;
+            },
+            set: function(value) {
+                this.isFocusDesc = false;
+                this.isFocusTitle = false;
+                this.internalEditMode = value;
+            }
         }
     }
 }
@@ -126,13 +139,13 @@ Dans les autres cas, considérer l'importance de l'action d'éditer par rapport 
 ```
 
 ```html
-<m-inplace-edit :editMode="editMode" @confirm="cancelConfirm" @cancel="cancelConfirm" class="modul-demo__inplace-edit-component">
+<m-inplace-edit :editMode.sync="editMode" :save-fn="onSave" class="modul-demo__inplace-edit-component">
     <div slot="readMode" title="Modifier la section" class="modul-demo__inplace-edit-zone" @click="onClick('title')">
-        <div class="modul-demo__inplace-edit-read-mode" @click="onClick('title')">
+        <div class="modul-demo__inplace-edit-read-mode" @click.stop="onClick('title')">
             <m-icon-button class="modul-demo__inplace-edit-button" icon-name="m-edit"></m-icon-button>
             <h3 class="modul-demo__inplace-edit-title m-u--no-margin">La déforestation des espaces protégés</h3>
         </div>
-        <div class="m-u--margin-top" @click="onClick('desc')">
+        <div class="m-u--margin-top" @click.stop="onClick('desc')">
             <p>Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
         </div>
     </div>
@@ -166,8 +179,25 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
 ```javascript
 {
     data: {
-        editMode: true,
-        errorPresent: true
+        internalEditMode: false,
+        errorMessage: '',
+    },
+    methods: {
+        onSave() {
+            this.errorMessage = 'Le courriel est obligatoire.';
+            return Promise.reject('une raison');
+        },
+    },
+    computed:{
+        editMode: {
+            get: function() {
+                return this.internalEditMode;
+            },
+            set: function(value) {
+                this.errorMessage = '';
+                this.internalEditMode = value;
+            }
+        }
     }
 }
 ```
@@ -188,13 +218,15 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
 ```
 
 ```html
-<m-inplace-edit :editMode="editMode" @confirm="editMode" @cancel="editMode" :error="errorPresent">
+<m-inplace-edit :editMode.sync="editMode" :save-fn="onSave">
     <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
-        <p class="modul-demo__inplace-edit-title"></p>
-        <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode" icon-name="m-edit" title="Modifier le courriel"></m-icon-button>
+        <div class="m-u--margin-top modul-demo__inplace-edit-title" @click.stop="onClick('desc')">
+            <p>Éditer pour saisir un courriel (laisser vide pour exemple)</p>
+        </div>
+        <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode = true" icon-name="m-edit" title="Modifier le courriel"></m-icon-button>
     </div>
     <div slot="editMode">
-        <m-textfield max-width="none" value="" :required-marker="true" label="Courriel" :error="errorPresent" error-message="Le courriel est obligatoire."></m-textfield>
+        <m-textfield max-width="none" value="" :required-marker="true" label="Courriel" :error-message="errorMessage"></m-textfield>
     </div>
 </m-inplace-edit>
 
@@ -213,8 +245,22 @@ Lors de l'édition d'un champ vide, il est recommandé d'utiliser un texte de re
 ```javascript
 {
     data: {
-        editMode: false,
-        errorPresent: false
+        internalEditMode: false,
+    },
+    methods: {
+        onSave() {
+            return Promise.resolve();
+        }
+    },
+    computed:{
+        editMode: {
+            get: function() {
+                return this.internalEditMode;
+            },
+            set: function(value) {
+                this.internalEditMode = value;
+            }
+        }
     }
 }
 ```
@@ -238,7 +284,7 @@ Lors de l'édition d'un champ vide, il est recommandé d'utiliser un texte de re
 ```
 
 ```html
-<m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false" class="modul-demo__inplace-edit-component">
+<m-inplace-edit :editMode.sync="editMode" :save-fn="onSave" class="modul-demo__inplace-edit-component">
     <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
         <h3 class="modul-demo__inplace-edit-title m-u--no-margin">Je suis un sous-titre</h3>
         <m-icon-button @click="editMode = true" icon-name="m-edit" title="Modifier le sous-titre" class="modul-demo__inplace-edit-button"></m-icon-button>
@@ -260,9 +306,23 @@ Lors de l'édition de plusieurs éléments dont un est facultatif, le champ peut
 ```javascript
 {
     data: {
-        editMode: false,
-        errorPresent: false,
+        internalEditMode: false,
         text: "Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation."
+    },
+    methods: {
+        onSave() {
+            return Promise.resolve();
+        }
+    },
+    computed:{
+        editMode: {
+            get: function() {
+                return this.internalEditMode;
+            },
+            set: function(value) {
+                this.internalEditMode = value;
+            }
+        }
     }
 }
 ```
@@ -283,14 +343,14 @@ Lors de l'édition de plusieurs éléments dont un est facultatif, le champ peut
 ```
 
 ```html
-<m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false">
+<m-inplace-edit :editMode.sync="editMode" :save-fn="onSave">
     <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
         <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode = true" icon-name="m-edit" title="Modifier le titre de la section"></m-icon-button>
         <p class="modul-demo__inplace-edit-title m-u--padding">Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
     </div>
     <div slot="editMode">
         <m-textfield max-width="none" placeholder="Je suis un sous-titre" tag-style="h3" :focus="true"></m-textfield>
-        <m-textarea max-width="none" class="m-u--margin-top" :value="text"></m-textarea>
+        <m-textarea max-width="none" class="m-u--margin-top" v-model="text"></m-textarea>
     </div>
 </m-inplace-edit>
 
