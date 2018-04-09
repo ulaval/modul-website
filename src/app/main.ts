@@ -28,13 +28,6 @@ import store from './store';
 import * as ComponentActions from './store/modules/components/actions';
 import * as PageActions from './store/modules/pages/actions';
 
-const utilsPluginOptions: UtilsPluginOptions = {
-    securityPluginOptions: {
-        protectedUrls: ['<url>'],
-        getToken: () => '<token>'
-    }
-};
-
 async function main() {
     Vue.config.productionTip = false;
 
@@ -48,7 +41,7 @@ async function main() {
     Vue.use(I18nPlugin, i18nOptions);
     Vue.use(ComponentsPlugin);
     Vue.use(DirectivesPlugin);
-    Vue.use(UtilsPlugin, utilsPluginOptions);
+    Vue.use(UtilsPlugin);
 
     Vue.use(svc);
 
