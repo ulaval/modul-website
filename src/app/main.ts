@@ -35,7 +35,7 @@ async function main() {
         curLang: FRENCH,
         debug:
             process.env && (process.env.NODE_ENV as any).dev
-                ? DebugMode.Throw
+                ? DebugMode.Warn
                 : DebugMode.Prod
     };
     Vue.use(I18nPlugin, i18nOptions);
