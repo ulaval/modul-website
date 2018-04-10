@@ -24,11 +24,23 @@ Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion
 ```javascript
 {
     data: {
-        editMode: false,
+        internalEditMode: false,
 
     },
     methods: {
         onSave: () => { return Promise.resolve(); }
+    },
+    computed:{
+        editMode: {
+            get: function() {
+                return this.internalEditMode;
+            },
+            set: function(value) {
+                this.isFocusDesc = false;
+                this.isFocusTitle = false;
+                this.internalEditMode = value;
+            }
+        }
     }
 }
 ```
@@ -57,6 +69,7 @@ Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion
         <p class="modul-demo__inplace-edit-title">La déforestation des espaces protégés</p>
         <m-menu placement="bottom-end" class="modul-demo__inplace-edit-button">
             <m-menu-item @click="editMode = true" title="Modifier le titre de la section">Modifier</m-menu-item>
+            <m-menu-item title="Supprimer le titre de la section">Supprimer</m-menu-item>
         </m-menu>
     </div>
     <div slot="editMode">
@@ -186,7 +199,7 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
         onSave() {
             this.errorMessage = 'Le courriel est obligatoire.';
             return Promise.reject('une raison');
-        },
+        }
     },
     computed:{
         editMode: {
@@ -229,7 +242,6 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
         <m-textfield max-width="none" value="" :required-marker="true" label="Courriel" :error-message="errorMessage"></m-textfield>
     </div>
 </m-inplace-edit>
-
 ```
 
 </modul-demo>
