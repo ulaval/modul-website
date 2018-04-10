@@ -36,8 +36,6 @@ Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion
                 return this.internalEditMode;
             },
             set: function(value) {
-                this.isFocusDesc = false;
-                this.isFocusTitle = false;
                 this.internalEditMode = value;
             }
         }
@@ -73,6 +71,7 @@ Lorsque l'on décide d'utiliser l'édition sur place dans un système de gestion
         </m-menu>
     </div>
     <div slot="editMode">
+      <!-- pour :focus ==> utiliser isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile (au lieu de true en tout temps) -->
         <m-textfield max-width="none" value="La déforestation des espaces protégés" :focus="true"></m-textfield>
     </div>
 </m-inplace-edit>
@@ -163,6 +162,7 @@ Dans les autres cas, considérer l'importance de l'action d'éditer par rapport 
         </div>
     </div>
     <div slot="editMode">
+      <!-- pour :focus ==> ajouter isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile -->
         <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3" :focus="isFocusTitle"></m-textfield>
         <m-textarea max-width="none" class="m-u--margin-top" :value="text" :focus="isFocusDesc"></m-textarea>
     </div>
@@ -239,7 +239,8 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
         <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode = true" icon-name="m-edit" title="Modifier le courriel"></m-icon-button>
     </div>
     <div slot="editMode">
-        <m-textfield max-width="none" value="" :required-marker="true" label="Courriel" :error-message="errorMessage"></m-textfield>
+      <!-- pour :focus ==> utiliser isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile (au lieu de true en tout temps) -->
+        <m-textfield max-width="none" value="" :required-marker="true" label="Courriel" :error-message="errorMessage" :focus="true"></m-textfield>
     </div>
 </m-inplace-edit>
 ```
@@ -302,6 +303,7 @@ Lors de l'édition d'un champ vide, il est recommandé d'utiliser un texte de re
         <m-icon-button @click="editMode = true" icon-name="m-edit" title="Modifier le sous-titre" class="modul-demo__inplace-edit-button"></m-icon-button>
     </div>
     <div slot="editMode">
+      <!-- pour :focus ==> utiliser isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile (au lieu de true en tout temps) -->
         <m-textfield max-width="none" placeholder="Je suis un sous-titre" tag-style="h3" :focus="true"></m-textfield>
     </div>
 </m-inplace-edit>
@@ -361,6 +363,7 @@ Lors de l'édition de plusieurs éléments dont un est facultatif, le champ peut
         <p class="modul-demo__inplace-edit-title m-u--padding">Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
     </div>
     <div slot="editMode">
+      <!-- pour :focus ==> utiliser isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile (au lieu de true en tout temps) -->
         <m-textfield max-width="none" placeholder="Je suis un sous-titre" tag-style="h3" :focus="true"></m-textfield>
         <m-textarea max-width="none" class="m-u--margin-top" v-model="text"></m-textarea>
     </div>
