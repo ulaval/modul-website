@@ -27,16 +27,7 @@ export class ComponentDetails extends ModulWebsite {
     }
 
     private get currentTab(): string {
-        let propertiesRoute: string = this.$i18n.translate(ROUTER_PROPERTIES);
-        let overviewRoute: string = this.$i18n.translate(ROUTER_OVERVIEW);
-        let url = (this.$route.fullPath as string).match(/\/([^\/]+)\/?$/)[1];
-        let tab;
-        if (url == overviewRoute) {
-            tab = 'overview';
-        } else if (url == propertiesRoute) {
-            tab = 'properties';
-        }
-        return tab;
+        return this.$route.meta.type == ROUTER_OVERVIEW ? 'overview' : 'properties';
     }
 
     private get codePreviewOpen(): boolean {
