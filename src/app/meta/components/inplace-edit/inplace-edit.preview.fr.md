@@ -4,9 +4,21 @@
 ```javascript
 {
     data: {
-        editMode: false,
-        errorPresent: false,
+        internalEditMode: false,
         text: "Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation."
+    },
+    methods: {
+        onSave: () => { return Promise.resolve(); }
+    },
+    computed:{
+        editMode: {
+            get: function() {
+                return this.internalEditMode;
+            },
+            set: function(value) {
+                this.internalEditMode = value;
+            }
+        }
     }
 }
 ```
@@ -27,7 +39,7 @@
 ```
 
 ```html
-<m-inplace-edit :editMode="editMode" @confirm="editMode = false" @cancel="editMode = false" style="padding:10px;">
+<m-inplace-edit :editMode.sync="editMode" :save-fn="onSave" style="padding:10px;">
     <div slot="readMode">
         <div class="modul-demo__inplace-edit-read-mode">
             <m-button skin="secondary" class="modul-demo__inplace-edit-button" @click="editMode = true" title="Modifier le titre et la description de la section">Modifier le texte</m-button>
@@ -38,7 +50,8 @@
         </div>
     </div>
     <div slot="editMode">
-        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3" :focus="true"></m-textfield>
+    <!-- pour :focus ==> utiliser isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile (au lieu de true en tout temps) -->
+        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3" :focus="isMqMinS"></m-textfield>
         <m-textarea max-width="none" class="m-u--margin-top" :value="text"></m-textarea>
     </div>
 </m-inplace-edit>
