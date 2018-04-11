@@ -4,6 +4,7 @@ import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import MetaAll, { ModulComponentStatus } from '../../meta/meta-all';
 import Component from 'vue-class-component';
+import { Watch } from 'vue-property-decorator';
 
 import { ModulWebsite } from '../modul-website';
 import WithRender from './component-details.html?style=./component-details.scss';
@@ -13,9 +14,6 @@ import WithRender from './component-details.html?style=./component-details.scss'
 export class ComponentDetails extends ModulWebsite {
 
     private intenalCodePreviewOpen: boolean = false;
-    private isOpened: boolean = false;
-
-    private currentTab: string = 'overview';
 
     protected beforeUpdate(): void {
         this.$store.dispatch(ComponentsActions.COMPONENT_PREVIEW_GET, {
@@ -23,12 +21,20 @@ export class ComponentDetails extends ModulWebsite {
         });
     }
 
+    @Watch('$route')
+    private routeChanged(route): void {
+        this.intenalCodePreviewOpen = false;
+    }
+
+    private get currentTab(): string {
+        return this.$route.meta.type == ROUTER_OVERVIEW ? 'overview' : 'properties';
+    }
+
     private get codePreviewOpen(): boolean {
         return this.intenalCodePreviewOpen;
     }
 
     private toggleOpenCodePreview(event: MouseEvent): void {
-        this.isOpened = !this.isOpened;
         this.intenalCodePreviewOpen = !this.intenalCodePreviewOpen;
         (event.currentTarget as HTMLElement).blur();
     }
@@ -62,7 +68,7 @@ export class ComponentDetails extends ModulWebsite {
     }
 
     private get openCloseLabel(): string {
-        if (this.isOpened) {
+        if (this.intenalCodePreviewOpen) {
             return this.$i18n.translate('modul:close-label');
         } else {
             return this.$i18n.translate('modul:code-label');
