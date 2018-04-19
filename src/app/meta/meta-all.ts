@@ -605,34 +605,17 @@ export class MetaAll implements PluginObject<any> {
         let categories: string[] = Object.keys(this.categories).filter(key =>
             this.categories.hasOwnProperty(key)
         );
-        if (!(process.env && (process.env.NODE_ENV as any).dev)) {
-            categories = categories.filter(category =>
-                this.categories[category].some(
-                    component => component.status === ModulComponentStatus.Production
-                )
-            );
-        }
         return categories.sort((a, b) => {
             return ORDER[a] > ORDER[b] ? 1 : ORDER[a] === ORDER[b] ? 0 : -1;
         });
     }
 
     public getMetaByCategory(category: string): ComponentMetaEx[] {
-        return process.env && (process.env.NODE_ENV as any).dev
-            ? this.categories[category]
-            : this.categories[category].filter(
-                  component => component.status === ModulComponentStatus.Production
-              );
+        return this.categories[category];
     }
 
     public getAllMeta(): ComponentMetaEx[] {
-        return this.baseMeta
-            .getMeta()
-            .filter(
-                m =>
-                    (process.env && (process.env.NODE_ENV as any).dev) ||
-                    (m as ComponentMetaEx).status === ModulComponentStatus.Production
-            );
+        return this.baseMeta.getMeta();
     }
 
     public getEnum(name: string): string[] {

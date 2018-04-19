@@ -1,5 +1,12 @@
 {
     "m-portal-meta": {
-        "name": "Portal"
+        "name": "Portal",
+        "openTrigger": "Déclencheur d'ouverture",
+        "open": "Propriété pour ouvrir ou fermer la composante",
+        "id": "Identifiant unique de la composante",
+        "disabled": "Propriété pour désactiver la composante",
+        "trigger": "L'élément HTML pour déclencher l'ouverture",
+        "className": "Nom de classe ajouter sur la composante portal",
+        "preload": "Précharger ou non la composante"
     }
 }

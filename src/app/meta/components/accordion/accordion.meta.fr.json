@@ -1,5 +1,15 @@
 {
     "m-accordion-meta": {
-        "name": "Accordéon"
+        "name": "Accordéon",
+        "id": "Identifiant unique de l'accordéon",
+        "open": "Propriété pour ouvrir ou fermer l'accordéon",
+        "disabled": "Propriété pour désactiver l'accordéon",
+        "skin": "Propriété pour changer le visuel de l'accordéon",
+        "iconPosition": "Propriété pour positioner l'icône",
+        "iconBorder": "Propriété pour enlever ou mettre une bordure sur l'icône",
+        "iconSize": "Propriété pour changer la grosse de l'icône",
+        "padding": "Propriété pour enlever ou mettre de l'espacement",
+        "paddingHeader": "Propriété pour enlever ou mettre de l'espacement sur l'entête",
+        "paddingBody": "Propriété pour enlever ou mettre de l'espacement sur le corps"
     }
 }
