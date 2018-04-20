@@ -1,10 +1,10 @@
 {
     "m-modal-meta": {
         "name": "Fenêtre modale",
-        "title": "Titre de la fenêtre de dialogue",
+        "title": "Titre de la fenêtre modale",
         "message": "Message de la fenêtre modale",
         "okLabel": "Texte du champs ok",
         "cancelLabel": "Texte du champs cancel",
-        "negativeLink": "Afficher ou non un champs negatif"
+        "negativeLink": "Afficher ou non le bouton d'abandon"
     }
 }

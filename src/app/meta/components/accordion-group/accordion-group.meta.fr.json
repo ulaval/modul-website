@@ -3,7 +3,7 @@
         "name": "Groupe d'accordéons",
         "disabled": "Propriété pour désactiver l'accordéon",
         "skin": "Propriété pour changer le visuel de l'accordéon",
-        "concurrent": "Propriété pour mettre lr groupe en mode simultanée",
+        "concurrent": "Propriété pour mettre le groupe en mode simultanée",
         "openedIds": "Liste des identifiants des accordéons ouverts"
     }
 }
