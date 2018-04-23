@@ -63,7 +63,7 @@ export class ComponentProperties extends ModulWebsite {
         }
     }
 
-    private get isStatusProd(): boolean {
-        return this.component['status'] == ModulComponentStatus.Production;
+    private get hideDescription(): boolean {
+        return (process.env && (process.env.NODE_ENV as any).prod) ? this.component['status'] == ModulComponentStatus.Production ? true : false : true;
     }
 }

@@ -37,7 +37,7 @@ export class ComponentOverview extends ModulWebsite {
         return this.component['status'] == ModulComponentStatus.Beta;
     }
 
-    private get isDev(): boolean {
-        return !(process.env && (process.env.NODE_ENV as any).dev);
+    private get isProd(): boolean {
+        return (process.env && (process.env.NODE_ENV as any).prod);
     }
 }
