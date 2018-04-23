@@ -24,9 +24,7 @@
                     <span v-for="(value, index) in getValues(attribute)" :class="{ 'm-u--font-weight--bold': isDefault(attribute, value)}"><span v-if="index > 0">/</span>{{value}}</span>
                 </td>
                 <td>
-                    <span>
-                        <m-i18n :k="attribute.description"></m-i18n>
-                    </span>
+                    <m-i18n v-if="showDescription" :k="attribute.description"></m-i18n>
                 </td>
             </tr>
         </tbody>

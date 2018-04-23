@@ -18,6 +18,7 @@
         "preview-button-open": "Cacher le code du composant",
         "preview-button-close": "Afficher le code du composant",
         "no-properties": "Ce composant n'utilise aucune propriété",
+        "in-development": "Ce composant est présentement en développement, sa documentation viendra sous peu.",
         "do": "À faire",
         "dont": "À éviter",
         "hex": "HEX",
