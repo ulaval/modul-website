@@ -20,6 +20,7 @@ import {
     I18N_NAME,
     ICON_BUTTON_NAME,
     ICON_NAME,
+    INPUT_STYLE_NAME,
     LIMIT_TEXT_NAME,
     LINK_NAME,
     LIST_ITEM_NAME,
@@ -36,6 +37,7 @@ import {
     PROGRESS_NAME,
     RADIO_GROUP_NAME,
     RADIO_NAME,
+    RADIO_STYLE_NAME,
     SCROLL_TOP_NAME,
     SIDEBAR_NAME,
     SLIDER_NAME,
@@ -84,9 +86,9 @@ export type CategoryOrder = {
 
 const ORDER: CategoryOrder = {
     [CATEGORY_CONTENT]: 1,
-    [CATEGORY_NAVIGATION]: 2,
+    [CATEGORY_LAYOUT]: 2,
     [CATEGORY_FORMS]: 3,
-    [CATEGORY_LAYOUT]: 4,
+    [CATEGORY_NAVIGATION]: 4,
     [CATEGORY_WINDOWS]: 5,
     [CATEGORY_MIXINS]: 6
 };
@@ -111,7 +113,6 @@ export type CategoryComponentMap = {
 
 export enum ModulComponentStatus {
     Production = 'production',
-    Alpha = 'alpha',
     Beta = 'beta'
 }
 
@@ -226,7 +227,7 @@ export class MetaAll implements PluginObject<any> {
             BUTTON_GROUP_NAME,
             require('@ulaval/modul-components/dist/components/button-group/button-group.meta.json'),
             CATEGORY_FORMS,
-            ModulComponentStatus.Production,
+            ModulComponentStatus.Beta,
             true
         );
         this.mergeComponentMeta(
@@ -261,7 +262,7 @@ export class MetaAll implements PluginObject<any> {
             DATEPICKER_NAME,
             require('@ulaval/modul-components/dist/components/datepicker/datepicker.meta.json'),
             CATEGORY_FORMS,
-            ModulComponentStatus.Production,
+            ModulComponentStatus.Beta,
             true
         );
         this.mergeComponentMeta(
@@ -275,14 +276,14 @@ export class MetaAll implements PluginObject<any> {
             DROPDOWN_NAME,
             require('@ulaval/modul-components/dist/components/dropdown/dropdown.meta.json'),
             CATEGORY_FORMS,
-            ModulComponentStatus.Production,
+            ModulComponentStatus.Beta,
             true
         );
         this.mergeComponentMeta(
             DROPDOWN_ITEM_NAME,
             require('@ulaval/modul-components/dist/components/dropdown-item/dropdown-item.meta.json'),
             CATEGORY_FORMS,
-            ModulComponentStatus.Production,
+            ModulComponentStatus.Beta,
             false
         );
         this.mergeComponentMeta(
@@ -346,6 +347,13 @@ export class MetaAll implements PluginObject<any> {
             true
         );
         this.mergeComponentMeta(
+            INPUT_STYLE_NAME,
+            require('@ulaval/modul-components/dist/components/input-style/input-style.meta.json'),
+            CATEGORY_FORMS,
+            ModulComponentStatus.Beta,
+            true
+        );
+        this.mergeComponentMeta(
             LIMIT_TEXT_NAME,
             require('@ulaval/modul-components/dist/components/limit-text/limit-text.meta.json'),
             CATEGORY_CONTENT,
@@ -377,7 +385,7 @@ export class MetaAll implements PluginObject<any> {
             MENU_ITEM_NAME,
             require('@ulaval/modul-components/dist/components/menu-item/menu-item.meta.json'),
             CATEGORY_WINDOWS,
-            ModulComponentStatus.Production,
+            ModulComponentStatus.Beta,
             false
         );
         this.mergeComponentMeta(
@@ -419,7 +427,7 @@ export class MetaAll implements PluginObject<any> {
             PHONE_NUMBER_NAME,
             require('@ulaval/modul-components/dist/components/phone-number/phone-number.meta.json'),
             CATEGORY_FORMS,
-            ModulComponentStatus.Alpha,
+            ModulComponentStatus.Beta,
             true
         );
         this.mergeComponentMeta(
@@ -455,6 +463,13 @@ export class MetaAll implements PluginObject<any> {
             require('@ulaval/modul-components/dist/components/radio-group/radio-group.meta.json'),
             CATEGORY_FORMS,
             ModulComponentStatus.Production,
+            true
+        );
+        this.mergeComponentMeta(
+            RADIO_STYLE_NAME,
+            require('@ulaval/modul-components/dist/components/radio-style/radio-style.meta.json'),
+            CATEGORY_FORMS,
+            ModulComponentStatus.Beta,
             true
         );
         this.mergeComponentMeta(
@@ -496,7 +511,7 @@ export class MetaAll implements PluginObject<any> {
             STEP_NAME,
             require('@ulaval/modul-components/dist/components/step/step.meta.json'),
             CATEGORY_CONTENT,
-            ModulComponentStatus.Production,
+            ModulComponentStatus.Beta,
             true
         );
         this.mergeComponentMeta(
@@ -590,34 +605,17 @@ export class MetaAll implements PluginObject<any> {
         let categories: string[] = Object.keys(this.categories).filter(key =>
             this.categories.hasOwnProperty(key)
         );
-        if (!(process.env && (process.env.NODE_ENV as any).dev)) {
-            categories = categories.filter(category =>
-                this.categories[category].some(
-                    component => component.status === ModulComponentStatus.Production
-                )
-            );
-        }
         return categories.sort((a, b) => {
             return ORDER[a] > ORDER[b] ? 1 : ORDER[a] === ORDER[b] ? 0 : -1;
         });
     }
 
     public getMetaByCategory(category: string): ComponentMetaEx[] {
-        return process.env && (process.env.NODE_ENV as any).dev
-            ? this.categories[category]
-            : this.categories[category].filter(
-                  component => component.status === ModulComponentStatus.Production
-              );
+        return this.categories[category];
     }
 
     public getAllMeta(): ComponentMetaEx[] {
-        return this.baseMeta
-            .getMeta()
-            .filter(
-                m =>
-                    (process.env && (process.env.NODE_ENV as any).dev) ||
-                    (m as ComponentMetaEx).status === ModulComponentStatus.Production
-            );
+        return this.baseMeta.getMeta();
     }
 
     public getEnum(name: string): string[] {

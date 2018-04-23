@@ -1,7 +1,16 @@
 {
     "m-link-meta": {
         "name": "Lien",
-        "vanilla-desc": "Value should be 'true' only if the link may be displayed on more than one line.",
-        "iconSize-desc": "Default value is '12px'."
+        "url": "URL du lien",
+        "mode": "Propriété pour changer le mode du lien",
+        "disabled": "Propriété pour désactiver le lien",
+        "unvisited": "Propriété pour mettre ou non le lien visité",
+        "underline": "Propriété pour afficher ou cacher le soulignement",
+        "skin": "Propriété pour changer le visuel du lien",
+        "target": "Propriété pour mettre le lien externe",
+        "icon": "Propriété pour mettre ou non une icône",
+        "iconName": "Nom de l'icône",
+        "iconPosition": "Propriété pour positioner l'icône",
+        "iconSize": "Propriété pour changer la grosseur de l'icône"
     }
 }
