@@ -1,0 +1,58 @@
+<div class="modul-icon-gallery">
+    <section class="modul-icon-gallery__header" :class="{ 'modul--is-search-field-focus': focus}">
+        <m-textfield class="modul-icon-gallery__header__search-field"
+                     icon-name="search"
+                     :label="searchIconsText"
+                     @focus="onFocus"
+                     @blur="onBlur"
+                     v-model="searchModel"></m-textfield>
+        <m-dropdown class="modul-icon-gallery__header__size-field" v-model="iconSize" :width="sizeFieldWidth">
+            <m-dropdown-item value="16px"></m-dropdown-item>
+            <m-dropdown-item value="20px"></m-dropdown-item>
+            <m-dropdown-item value="32px"></m-dropdown-item>
+            <m-dropdown-item value="64px"></m-dropdown-item>
+        </m-dropdown>
+        <m-icon-button class="modul-icon-gallery__header__view-mode-button"
+                       :icon-name="iconViewMode"
+                       :button-size="viewModeButtonWidth"
+                       @click="toggleViewMode()"
+                       v-if="isMqMinS"></m-icon-button>
+    </section>
+    <section class="modul-icon-gallery__body">
+        <ul :class="[ 'modul-icon-gallery__' + viewMode ]">
+            <li class="modul-icon-gallery__item"
+                v-for="(icon, index) in searchResult"
+                tabindex="0"
+                @click="openDialog(icon.name, icon.nameFr)"
+                @keydown.enter="openDialog(icon.name, icon.nameFr)"
+                v-if="isViewModeBlock">
+                <m-popper open-trigger="hover" :shadow="false" :focus-management="false">
+                    <span class="modul-icon-gallery__icon" slot="trigger" :style="{ width: iconSize + 22, height: iconSize + 22 }">
+                        <m-icon :name="icon.name" :size="iconSize"></m-icon>
+                    </span>
+                    <p class="modul-icon-gallery__label">{{ icon.name }}</p>
+                </m-popper>
+            </li>
+            <m-list-item class="modul-icon-gallery__item" v-for="(icon, index) in searchResult" v-if="!isViewModeBlock">
+                <div class="modul-icon-gallery__item__content">
+                    <m-icon :name="icon.name" :size="iconSize"></m-icon>
+                    <p class="modul-icon-gallery__label" aria-hidden="true"><span>{{ icon.nameFr }}&nbsp;/&nbsp;</span><m-link mode="button" slot="trigger" @click="openDialog(icon.name, icon.nameFr)"> {{ icon.name }}</m-link></p>
+                </div>
+            </m-list-item>
+        </ul>
+    </section>
+
+    <m-dialog :title="previewName" :open.sync="dialogOpen">
+        <div class="modul-icon-gallery__preview">
+            <div class="modul-icon-gallery__preview__header">
+                <m-icon :name="previewTag" :size="previewIconSize + 'px'" :svg-title="previewTag"></m-icon>
+            </div>
+            <p class="modul-icon-gallery__preview__body">&lt;m-icon <strong>name="{{ previewTag }}" size="{{ previewIconSize }}px"</strong>&gt;&lt;/m-icon&gt;</p>
+        </div>
+        <div class="modul-icon-gallery__preview__footer" slot="footer">
+            <m-icon-button @click="setSmallIconSize" :icon-name="previewTag" icon-size="16px"></m-icon-button>
+            <m-slider v-model="previewIconSize" max="64"></m-slider>
+            <m-icon-button @click="setLargeIconSize" :icon-name="previewTag" icon-size="32px"></m-icon-button>
+        </div>
+    </m-dialog>
+</div>

@@ -28,53 +28,49 @@ Utilisation : accentuer un élément ou une nouveauté
 ## Couleurs active
 Utilisation :  états (p. ex. action en cours,  sélectionné)
 
-<modul-color name="$m-color--active-dark" hex="#edaf00" ></modul-color>
 <modul-color name="$m-color--active" hex="#ffc103" ></modul-color>
-<modul-color name="$m-color--active-light" hex="#ffd517" ></modul-color>
-<modul-color name="$m-color--active-lightest" hex="#fffdcf" ></modul-color>
+
+## Couleurs désactif
+Utilisation :  états désactivés
+
+<modul-color name="$m-color--disabled" hex="#d7d7d7" ></modul-color>
+<modul-color name="$m-color--disabled-light" hex="#f4f4f4" ></modul-color>
 
 ## Couleurs de succès
 Utilisation : message de succès, indicateur de réussite, état publié
 
-<modul-color name="$m-color--success-dark" hex="#55b26c" ></modul-color>
-<modul-color name="$m-color--success" hex="#1dcd8d" ></modul-color>
-<modul-color name="$m-color--success-light" hex="#50e2a7" ></modul-color>
-<modul-color name="$m-color--success-lightest" hex="#abe5c3" ></modul-color>
+<modul-color name="$m-color--success-dark" hex="#009962" ></modul-color>
+<modul-color name="$m-color--success" hex="#00c77f" ></modul-color>
+<modul-color name="$m-color--success-light" hex="#cdf3e3" ></modul-color>
+<modul-color name="$m-color--success-lightest" hex="#eaf9f1" ></modul-color>
 
 ## Couleurs avertissement
 Utilisation : avertissement
 
-<modul-color name="$m-color--warning-dark" hex="#edaf00" ></modul-color>
 <modul-color name="$m-color--warning" hex="#ffc103" ></modul-color>
-<modul-color name="$m-color--warning-light" hex="#ffd517" ></modul-color>
-<modul-color name="$m-color--warning-lightest" hex="#fffdcf" ></modul-color>
+<modul-color name="$m-color--warning-lightest" hex="#fff8e6" ></modul-color>
 
 ## Couleurs d’erreur
 Utilisation : message d’erreur, indicateur d’échec, état (non publié, conflit)
 
-<modul-color name="$m-color--error-dark" hex="#cc0000" ></modul-color>
+<modul-color name="$m-color--error-dark" hex="#b3040f" ></modul-color>
 <modul-color name="$m-color--error" hex="#e30513" ></modul-color>
-<modul-color name="$m-color--error-light" hex="#f7081f" ></modul-color>
-<modul-color name="$m-color--error-lightest" hex="#ffdcdc" ></modul-color>
+<modul-color name="$m-color--error-lightest" hex="#fcf2f3" ></modul-color>
 
 ## Couleurs d’arrière-plan
 Utilisation : arrière-plan
 
-<modul-color name="$m-color--black-grey-darker" hex="#232323" ></modul-color>
-<modul-color name="$m-color--black-grey-dark" hex="#2e2e2e" ></modul-color>
-<modul-color name="$m-color--black-grey" hex="#3d3d3d" ></modul-color>
-<modul-color name="$m-color--black-grey-light" hex="#4f4f4f" ></modul-color>
-<modul-color name="$m-color--black-grey-lighter" hex="#666" ></modul-color>
-<modul-color name="$m-color--grey-darker" hex="#999" ></modul-color>
-<modul-color name="$m-color--grey-dark" hex="#b0b0b0" ></modul-color>
-<modul-color name="$m-color--grey" hex="#dadada" ></modul-color>
-<modul-color name="$m-color--grey-light" hex="#e8e8e8" ></modul-color>
-<modul-color name="$m-color--grey-lighter" hex="#f1f1f1" ></modul-color>
-<modul-color name="$m-color--grey-lightest" hex="#f7f7f7" ></modul-color>
+<modul-color name="$m-color--grey-darkest" hex="#1f1f1f" ></modul-color>
+<modul-color name="$m-color--grey-darker" hex="#3d3d3d" ></modul-color>
+<modul-color name="$m-color--grey-dark" hex="#696969" ></modul-color>
+<modul-color name="$m-color--grey" hex="#929292" ></modul-color>
+<modul-color name="$m-color--grey-light" hex="#d7d7d7" ></modul-color>
+<modul-color name="$m-color--grey-lighter" hex="#f4f4f4" ></modul-color>
+<modul-color name="$m-color--grey-lightest" hex="#f9f9f9" ></modul-color>
 
 ## Autres couleurs
 Utilisation : titre,  libellé, texte, etc.
 
-<modul-color name="$m-color--text" hex="#000" ></modul-color>
+<modul-color name="$m-color--text" hex="#3d3d3d" ></modul-color>
 <modul-color name="$m-color--black" hex="#000" ></modul-color>
 <modul-color name="$m-color--white" hex="#fff" ></modul-color>

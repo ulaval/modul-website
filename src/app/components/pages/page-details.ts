@@ -1,8 +1,6 @@
-import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './page-details.html?style=./page-details.scss';
 import { ModulWebsite } from '../modul-website';
-import { ROUTES, STANDARDS } from '@/app/router';
 import * as PagesActions from '@/app/store/modules/pages/actions';
 import * as PagesGetters from '@/app/store/modules/pages/getters';
 
@@ -11,10 +9,6 @@ import * as PagesGetters from '@/app/store/modules/pages/getters';
 export class PageDetails extends ModulWebsite {
     private get section(): string {
         return this.$store.getters[PagesGetters.GET_SECTION] + '/';
-    }
-
-    private get sectionRoute(): string {
-        return this.$store.getters[PagesGetters.GET_SECTION_ROUTE];
     }
 
     private get page(): string {
@@ -30,11 +24,11 @@ export class PageDetails extends ModulWebsite {
     }
 
     private getRoute(tabId: string): string {
-        return `/${ROUTES[this.sectionRoute]}/${ROUTES[this.page]}/${ROUTES[tabId]}`;
+        return this.$routerIndex.for(tabId, _ => this.page);
     }
 
     private getKey(tabId: string): string {
-        return `name:${this.page}.${tabId}`;
+        return `pages:${this.page}.${tabId}`;
     }
 
     private onClick(tabId: string): void {

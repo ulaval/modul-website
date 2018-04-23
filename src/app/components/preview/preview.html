@@ -1,2 +1,8 @@
-<!-- <m-dynamic-template :template="preview"></m-dynamic-template> -->
-<component :is="preview"></component>
+<div class="modul-preview">
+    <div class="m-u--visually-hidden">
+        <slot></slot>
+    </div>
+    <div class="modul-preview__code">
+        <div ref="demoContent"></div>
+    </div>
+</div>

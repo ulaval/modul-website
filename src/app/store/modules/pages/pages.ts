@@ -32,7 +32,6 @@ const actions: ActionTree<PagesState, PagesState> = {
 const getters: GetterTree<PagesState, PagesState> = {
     [Getters.GET_PAGES_TEXT]: Getters.getPagesText,
     [Getters.GET_PAGE]: Getters.getPage,
-    [Getters.GET_PAGE_ROUTES]: Getters.getPageRoutes,
     [Getters.GET_TABS]: Getters.getTabs,
     [Getters.GET_TAB]: Getters.getTab,
     [Getters.GET_MARKDOWN_SUMMARY]: Getters.getMarkdownSummary,

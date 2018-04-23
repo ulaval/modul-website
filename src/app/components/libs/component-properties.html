@@ -1,5 +1,8 @@
 <div class="modul-component-properties">
-    <table class="m-u--table">
+    <m-message v-if="!hasAttributes" skin="light" state="information">
+        <m-i18n k="modul:no-properties"></m-i18n>
+    </m-message>
+    <table v-else class="m-u--table">
         <thead>
             <th>
                 <m-i18n k="modul:attribute"></m-i18n>
@@ -12,15 +15,16 @@
             </th>
         </thead>
         <tbody>
-            <tr v-for="attribute in getAttributes(component)">
-                <td><strong>{{attribute}}</strong>:{{getAttribute(attribute).type}}</td>
+            <tr v-for="attribute in attributes">
+                <td>
+                    <strong>{{attribute.name}}</strong>:{{attribute.type}}
+                    <p v-if="attribute.origin" class="modul-component-properties__origin-attibute">({{attribute.origin.tag}})</p>
+                </td>
                 <td style="text-align: center">
-                    <span v-for="(value, index) in getValues(getAttribute(attribute))" :class="{ 'm-u--font-weight--bold': isDefault(getAttribute(attribute), value)}">{{value}}
-                            <span v-if="index < getValuesCount(getAttribute(attribute)) - 1">/</span>
-                    </span>
+                    <span v-for="(value, index) in getValues(attribute)" :class="{ 'm-u--font-weight--bold': isDefault(attribute, value)}"><span v-if="index > 0">/</span>{{value}}</span>
                 </td>
                 <td>
-                    <span><m-i18n :k="getAttribute(attribute).description"></m-i18n></span>
+                    <m-i18n v-if="showDescription" :k="attribute.description"></m-i18n>
                 </td>
             </tr>
         </tbody>

@@ -1,32 +1,38 @@
-import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './component-properties.html?style=./component-properties.scss';
 import { ModulWebsite } from '../modul-website';
-import Meta, { ComponentMeta, ComponentAttribute, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
-import * as ComponentsGetters from '@/app/store/modules/components/getters';
+import Meta, { ComponentAttribute } from '@ulaval/modul-components/dist/meta/meta';
+import MetaAll, { ComponentMetaEx, ModulComponentStatus } from '../../meta/meta-all';
+import { GET_COMPONENT } from '@/app/store/modules/components/getters';
 
 const BOOLEAN_TYPE: string = 'boolean';
+
+interface ComponentAttributeEx extends ComponentAttribute {
+    name: string;
+}
 
 @WithRender
 @Component
 export class ComponentProperties extends ModulWebsite {
 
-    private get component(): ComponentMeta | null {
-        return this.$store.getters[ComponentsGetters.GET_COMPONENT];
+    private get component(): ComponentMetaEx | null {
+        return this.$store.getters[GET_COMPONENT];
     }
 
-    private getAttributes(meta: ComponentMeta): string[] {
-        return Meta.getComponentAttributes(meta);
+    private get hasAttributes(): boolean {
+        return Meta.getComponentAttributes(this.component).length != 0;
     }
 
-    private getAttribute(tag: string): ComponentAttribute | undefined {
-        let result: ComponentAttribute | undefined;
-
-        if (this.component && this.component.attributes) {
-            result = this.component.attributes[tag];
-        }
-
-        return result;
+    private get attributes(): ComponentAttributeEx[] {
+        let attr: string[] = Meta.getComponentAttributes(this.component);
+        return attr.map(a => {
+            let attrObj: ComponentAttribute = this.component.attributes[a];
+            return {
+                name: a,
+                description: (attrObj.origin ? (attrObj.origin as ComponentMetaEx).metaKey : this.component.metaKey) + a,
+                ...attrObj
+            };
+        });
     }
 
     private isDefault(attribute: ComponentAttribute, value: any): boolean {
@@ -41,6 +47,10 @@ export class ComponentProperties extends ModulWebsite {
         if (attribute.type == BOOLEAN_TYPE) {
             return ['true', 'false'];
         } else {
+            let enumValues: string[] = MetaAll.getEnum(attribute.type);
+            if (enumValues) {
+                return enumValues;
+            }
             return attribute.values;
         }
     }
@@ -51,5 +61,9 @@ export class ComponentProperties extends ModulWebsite {
         } else {
             return attribute.values.length;
         }
+    }
+
+    private get showDescription(): boolean {
+        return (process.env && (process.env.NODE_ENV as any).dev) || this.component['status'] == ModulComponentStatus.Production;
     }
 }

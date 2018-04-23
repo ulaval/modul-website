@@ -1,0 +1,177 @@
+@import '../../styles/shared-styles';
+@import '../../styles/components/do-dont';
+
+.modul-icon-gallery {
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        height: 53px; // Magic number
+
+        &__search-field {
+            transition: flex 0.3s ease;
+            margin-right: $m-margin;
+
+            @media (max-width: $m-mq--max--xs) {
+                flex: 1 1 auto;
+            }
+
+            @media (min-width: $m-mq--min--xs) {
+                min-width: 250px;
+            }
+        }
+
+        &__size-field,
+        &__view-mode-button.m-icon-button {
+            transition: opacity $m-transition-duration--l ease, width $m-transition-duration--l ease, color $m-transition-duration ease;
+        }
+
+        &.modul--is-search-field-focus {
+            .modul-icon-gallery__header {
+                &__search-field {
+                    flex: 1 1 auto;
+                }
+
+                &__size-field,
+                &__view-mode-button {
+                    overflow: hidden;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &__body {
+        margin-top: $m-padding--l;
+    }
+
+    &__block,
+    &__list {
+        padding: 0;
+    }
+
+    &__block {
+        display: flex;
+        flex-wrap: wrap;
+
+        .modul-icon-gallery {
+            &__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &__label {
+                text-align: center;
+            }
+        }
+    }
+
+    &__list {
+        width: 100%;
+
+        .modul-icon-gallery {
+            &__label {
+                margin: 0 0 0 $m-margin--l;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        list-style: none;
+        outline: none;
+
+        &__content {
+            display: flex;
+            align-content: center;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        &:hover,
+        &:focus {
+            .modul-icon-gallery__icon {
+                @media (min-width: $m-mq--min--s) {
+                    background: $modul-color--grey;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    &__icon {
+        transition: background $m-transition-duration ease, border-radius $m-transition-duration ease, opacity $m-transition-duration ease;
+        padding: $m-padding--s;
+        text-align: center;
+        min-width: 58px;
+        min-height: 58px;
+        cursor: pointer;
+
+        @media (min-width: $m-mq--min--s) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .m-icon {
+            color: $modul-color--black-grey;
+        }
+    }
+
+    &__label {
+        margin: 0;
+    }
+
+    &__preview {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @media (max-width: $m-mq--max--s) {
+            position: absolute;
+            top: $m-padding;
+            right: $m-padding;
+            bottom: $m-padding;
+            left: $m-padding;
+        }
+
+        &__header {
+            padding: $m-padding;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex: 1 1 auto;
+            background: $m-color--grey-lighter;
+            min-height: 100px;
+
+            @media (min-width: $m-mq--min--s) {
+                min-height: 230px;
+            }
+        }
+
+        &__body {
+            margin: 0;
+            padding: $m-padding;
+            background: $m-color--grey-light;
+            width: 100%;
+        }
+
+        &__footer {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            > :first-child {
+                margin-right: $m-margin;
+            }
+
+            > :last-child {
+                margin-left: $m-margin;
+            }
+        }
+    }
+}

@@ -1,3 +1,6 @@
 <div class="modul-component-overview">
-    <m-markdown :template="overviewMarkdown"></m-markdown>
+    <m-message v-if="isBeta && isProd" skin="light" state="information">
+        <m-i18n k="modul:in-development"></m-i18n>
+    </m-message>
+    <m-markdown v-else :template="overviewMarkdown"></m-markdown>
 </div>

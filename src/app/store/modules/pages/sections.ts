@@ -21,10 +21,10 @@ const actions: ActionTree<SectionsState, SectionsState> = {
 
 const getters: GetterTree<SectionsState, SectionsState> = {
     [Getters.GET_SECTIONS]: Getters.getSections,
-    [Getters.GET_SECTION]: Getters.getSection,
-    [Getters.GET_SECTION_ROUTE]: Getters.getSectionRoute
+    [Getters.GET_SECTION]: Getters.getSection
 };
 
+console.debug('TODO: review module names');
 export const sections = {
     state: sectionsState,
     mutations:  mutations,
@@ -32,7 +32,7 @@ export const sections = {
     getters:  getters,
     strict: true,
     modules: {
-        gettingStarted: pages,
-        standards: pages
+        'getting-started-section': pages,
+        'standards': pages
     }
 };

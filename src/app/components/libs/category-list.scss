@@ -41,6 +41,10 @@
 
     &__title {
         margin-top: 0;
+
+        &__i18n {
+            vertical-align: middle;
+        }
     }
 
     &__figure {
@@ -68,5 +72,10 @@
         font-size: $m-font-size--s;
         color: $m-color--grey-darker;
         font-style: italic;
+    }
+
+    &__beta-tag {
+        display: inline;
+        vertical-align: middle;
     }
 }

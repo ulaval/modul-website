@@ -148,3 +148,41 @@ Lorsque le temps de retard écoulé doit être affiché après une date limite, 
 
 La durée doit être affichée en rouge.
 Il est suggéré d'afficher minutes, heures, jours et semaines au complet, mais il est possible d'utiliser l'abéviation si l'espace est un enjeu.
+
+## Durée d'une vidéo
+
+Pour éviter qu'une unité de durée se retrouve sur ligne différente, une espace insécable doit systématiquement séparer la valeur de son unité.
+
+**Moins d'une minute**&nbsp;: affichage en secondes.
+
+<m-panel class="m-u--margin-top">
+    <p>
+        15&nbsp;s
+    </p>
+</m-panel>
+
+**Moins de 60 minutes&nbsp;:** affichage en minutes.
+
+<m-panel class="m-u--margin-top">
+    <p>
+        8&nbsp;min
+    </p>
+</m-panel>
+
+Lorsque la durée d'une vidéo est de plus d'une minute, les secondes sont simplement ignorées, sans arrondir le nombre de minutes. Dans l'exemple ci-dessus, la durée initiale de la vidéo aurait pu être 00:08:12 ou 00:08:57.
+
+**Plus de 60 minutes&nbsp;:** affichage en heures et minutes.
+
+<m-panel class="m-u--margin-top">
+    <p>
+        1&nbsp;h 8&nbsp;min
+    </p>
+</m-panel>
+
+<m-panel class="m-u--margin-top">
+    <p>
+        3&nbsp;h
+    </p>
+</m-panel>
+
+Lorsque la première minute de l'heure n'est pas dépassée, on affiche uniquement le nombre d'heures. Dans l'exemple ci-dessus, la durée initiale de la vidéo aurait pu être 03:00:12 ou 03:00:57.

@@ -1,17 +1,18 @@
-import Vue from 'vue';
 import { ModulWebsite } from '../modul-website';
 import Component from 'vue-class-component';
 import WithRender from './modul.html?style=./modul.scss';
 import * as ModulActions from '@/app/store/modules/components/actions';
 import { Watch } from 'vue-property-decorator';
-import { ROUTES, COMPONENTS, ECOSYSTEM, GETTING_STARTED, STANDARDS } from '@/app/router';
-import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import { RoutePathMap } from '@/app/router';
+import MetaAll, { ModulComponentStatus } from '../../meta/meta-all';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import * as PagesGetters from '@/app/store/modules/pages/getters';
 import { Page, Standards, GettingStarted } from '@/app/components/pages/page';
 import { read } from 'fs';
+
+console.debug('TODO: eliminate regex to identify current page');
 
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: Number = 100;
@@ -60,22 +61,18 @@ export default class Modul extends ModulWebsite {
     private menuFirstStep: boolean = true;
 
     protected beforeMount(): void {
-        Meta.getCategories().forEach(category => {
+        MetaAll.getCategories().forEach(category => {
             this.categoriesComponent.push({
                 id: category,
                 text: this.$i18n.translate(category)
             });
         });
 
-        // this.categoriesComponent.sort((a, b) => {
-        //     return this.$i18n.translate(a.text) < this.$i18n.translate(b.text) ? -1 : (this.$i18n.translate(a.text) > this.$i18n.translate(b.text) ? 1 : 0);
-        // });
-
-        // Aller chercher les pages des normes pour le menu
+        // For menu
         Standards.getPages().forEach(page => {
             this.pagesStandards.push({
                 id: page,
-                text: this.$i18n.translate('name:' + page)
+                text: this.$i18n.translate(`pages:${page}`)
             });
         });
     }
@@ -118,48 +115,39 @@ export default class Modul extends ModulWebsite {
     }
 
     private get isBlackHeader(): boolean {
-        let isBlackHeader = false;
-        if (this.$route.path == '/' || (this.$route.path as any).startsWith(this.gettingStarted) || (this.$route.path as any).startsWith(this.standards)) {
-            isBlackHeader = true;
-        }
-        return isBlackHeader;
+        return this.$route.meta.page === undefined || this.$route.meta.sectionObj === GettingStarted || this.$route.meta.sectionObj === Standards;
     }
 
     private get gettingStarted(): string {
-        return '/' + ROUTES[GETTING_STARTED] + '/' + ROUTES[GETTING_STARTED];
-    }
-
-    private get standards(): string {
-        return '/' + ROUTES[STANDARDS];
+        return this.$routerIndex.for(GettingStarted.pages[0].id);
     }
 
     private getCategoryComponents(category): any {
-        return Meta.getMetaByCategory(category).sort((a, b) => {
+        return MetaAll.getMetaByCategory(category).sort((a, b) => {
             return this.$i18n.translate(a.name) < this.$i18n.translate(b.name) ? -1 : (this.$i18n.translate(a.name) > this.$i18n.translate(b.name) ? 1 : 0);
         });
-
     }
 
     private onComponentClick(tag: string): void {
-        this.$router.push(this.$store.getters[ComponentsGetters.GET_COMPONENT_ROUTES][tag].url);
+        this.$router.push(this.$routerIndex.for(tag));
         this.searchOpen = false;
         this.closeMenu();
     }
 
     private onComponentCategoryClick(category: Category): void {
-        this.$router.push(this.$store.getters[ComponentsGetters.GET_CATEGORY_ROUTES][category.id].url);
+        this.$router.push(this.$routerIndex.for(category.id));
         this.closeMenu();
     }
 
     private onPageClick(event: MouseEvent, page: Page, menuSection: string): void {
-        this.$router.push(this.$store.getters[menuSection + '/' + PagesGetters.GET_PAGE_ROUTES][page.id].url);
+        this.$router.push(this.$routerIndex.for(page.id));
         this.searchOpen = false;
         this.closeMenu();
+        event.preventDefault();
         (event.currentTarget as HTMLElement).blur();
     }
 
     private navigateTo(event: MouseEvent, menuSection: string) {
-
         switch (menuSection) {
             case ModulMenuSection.Home:
                 this.$router.push('/');
@@ -210,44 +198,25 @@ export default class Modul extends ModulWebsite {
         this.menuFirstStep = true;
     }
 
+    // TODO: another way to index?
     private searchData(): any[] {
-        if ((process.env.NODE_ENV as any).dev) {
-            return Object.keys(Meta.getMeta()).map(key => {
-                let nameObj: {};
-                if (Meta.getMeta()[key].name && Meta.getMeta()[key].category) {
-                    nameObj = {
-                        tag: Meta.getMeta()[key].tag,
-                        category: this.$i18n.translate(Meta.getMeta()[key].category),
-                        text: this.$i18n.translate(Meta.getMeta()[key].name)
-                    };
-                } else {
-                    nameObj = {
-                        tag: Meta.getMeta()[key].tag,
-                        category: undefined,
-                        text: undefined
-                    };
-                }
-                return nameObj;
-            }, this);
-        } else {
-            return Object.keys(Meta.getMetaForProd()).map(key => {
-                let nameObj: {};
-                if (Meta.getMetaForProd()[key].name && Meta.getMetaForProd()[key].category) {
-                    nameObj = {
-                        tag: Meta.getMetaForProd()[key].tag,
-                        category: this.$i18n.translate(Meta.getMetaForProd()[key].category),
-                        text: this.$i18n.translate(Meta.getMetaForProd()[key].name)
-                    };
-                } else {
-                    nameObj = {
-                        tag: Meta.getMetaForProd()[key].tag,
-                        category: undefined,
-                        text: undefined
-                    };
-                }
-                return nameObj;
-            }, this);
-        }
+        return MetaAll.getAllMeta().map(metaData => {
+            let nameObj: {};
+            if (metaData.name && metaData.category) {
+                nameObj = {
+                    tag: metaData.tag,
+                    category: this.$i18n.translate(metaData.category),
+                    text: this.$i18n.translate(metaData.name)
+                };
+            } else {
+                nameObj = {
+                    tag: metaData.tag,
+                    category: undefined,
+                    text: undefined
+                };
+            }
+            return nameObj;
+        });
     }
 
     private get searchResult(): any[] {
@@ -265,11 +234,29 @@ export default class Modul extends ModulWebsite {
         return this.searchOpen;
     }
 
+    private isProduction(status): boolean {
+        return status === ModulComponentStatus.Production;
+    }
+
     private toggleSearch(): void {
         this.searchOpen = !this.searchOpen;
         if (this.searchOpen) {
             this.components = this.searchData();
         }
+    }
+
+    private openSearch(): void {
+        this.searchOpen = true;
+        setTimeout(() => {
+            (this.$refs.search as HTMLInputElement).focus();
+        }, CSS_ANIMATION_MENU_DURATION);
+    }
+
+    private closeSearch(): void {
+        this.searchOpen = false;
+        setTimeout(() => {
+            this.searchModel = '';
+        }, CSS_ANIMATION_MENU_DURATION);
     }
 
     @Watch('$route')

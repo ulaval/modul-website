@@ -3,7 +3,8 @@ import { ModulWebsite } from '../modul-website';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import WithRender from './go.html?style=./go.scss';
-import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import Meta from '@ulaval/modul-components/dist/meta/meta';
+import { ComponentMetaEx } from '../../meta/meta-all';
 
 @WithRender
 @Component
@@ -15,31 +16,22 @@ export class MGo extends ModulWebsite {
     @Prop()
     public tab: string;
 
-    private get URL(): string | undefined {
-        for (let section of (this.$router as any).options.routes) {
-            if (section.children) {
-                for (let route of section.children) {
-                    if (route.meta && route.meta.page == this.name) {
-                        let path: string = route.path;
-
-                        if (this.tab) {
-                            path += '/' + this.tab;
-                        }
-
-                        return path;
-                    }
-                }
-            }
+    private get url(): string | undefined {
+        let result: string;
+        if (this.tab) {
+            result = this.$routerIndex.for(this.tab, _ => this.name);
+        } else {
+            result = this.$routerIndex.for(this.name);
         }
-        return undefined;
+        return result ? result : undefined;
     }
 
-    private get meta(): ComponentMeta {
+    private get meta(): ComponentMetaEx {
         return Meta.getMetaByTag(this.name);
     }
 
     private get label(): string {
-        return this.meta ? this.$i18n.translate(this.meta.tag + '-meta:name').toLowerCase() : this.$i18n.translate('name:' + this.name).toLowerCase();
+        return this.meta ? this.$i18n.translate(this.meta.name).toLowerCase() : this.$i18n.translate('pages:' + this.name).toLowerCase();
     }
 
     private get tag(): string {

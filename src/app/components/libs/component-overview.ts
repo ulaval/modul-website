@@ -2,7 +2,8 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './component-overview.html?style=./component-overview.scss';
 import { ModulWebsite } from '../modul-website';
-import Meta, { ComponentMeta, Overview, OverviewType } from '@ulaval/modul-components/dist/meta/meta';
+import { ModulComponentStatus } from '../../meta/meta-all';
+import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import * as ComponentsActions from '@/app/store/modules/components/actions';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 
@@ -26,5 +27,17 @@ export class ComponentOverview extends ModulWebsite {
 
     private get overviewMarkdown(): string {
         return this.$store.getters[ComponentsGetters.GET_MARKDOWN_OVERVIEW];
+    }
+
+    private get component(): ComponentMeta | null {
+        return this.$store.getters[ComponentsGetters.GET_COMPONENT];
+    }
+
+    private get isBeta(): boolean {
+        return this.component['status'] == ModulComponentStatus.Beta;
+    }
+
+    private get isProd(): boolean {
+        return (process.env && (process.env.NODE_ENV as any).prod);
     }
 }

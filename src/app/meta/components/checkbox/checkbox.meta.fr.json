@@ -1,6 +1,7 @@
 {
     "m-checkbox-meta": {
         "name": "Case à cocher",
-        "position-desc": "Default value is 'left'."
+        "value": "Valeur de la case à cocher",
+        "position": "Position de la case à chocher par rapport au texte"
     }
 }

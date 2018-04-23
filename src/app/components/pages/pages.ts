@@ -4,11 +4,10 @@ import WithRender from './pages.html';
 import { Watch } from 'vue-property-decorator';
 import * as PagesActions from '@/app/store/modules/pages/actions';
 import * as PagesGetters from '@/app/store/modules/pages/getters';
-import { KeyMap, RouteMap } from '@/app/store/modules/components/components-state';
+import { KeyMap } from '@/app/store/modules/components/components-state';
 import { ModulWebsite } from '../modul-website';
 import { Page, Standards } from './page';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
-import { STANDARDS, GETTING_STARTED } from './../../router';
 
 const ZINDEX: number = 200;
 
@@ -31,15 +30,8 @@ export class PageViewer extends ModulWebsite {
     @Watch('$route')
     private getMeta(): void {
         let pagesObj: Pages = this.$route.meta.sectionObj;
-        let route: string | null;
 
-        if (pagesObj.section === 'standards') {
-            route = STANDARDS;
-        } else if (pagesObj.section === 'gettingStarted') {
-            route = GETTING_STARTED;
-        }
-
-        this.$store.dispatch(PagesActions.SECTION_GET, { section: pagesObj.section, route: route });
+        this.$store.dispatch(PagesActions.SECTION_GET, { section: pagesObj.section });
 
         this.$store.dispatch(this.section + PagesActions.PAGE_GET, this.$route.meta.page);
         this.$store.dispatch(this.section + PagesActions.PAGE_SUMMARY_GET, {
@@ -66,7 +58,7 @@ export class PageViewer extends ModulWebsite {
 
     private set selectedPage(id: string | undefined) {
         if (id) {
-            this.$router.push(this.$store.getters[this.section + PagesGetters.GET_PAGE_ROUTES][id].url);
+            this.$router.push(this.$routerIndex.for(id));
         }
     }
 
@@ -141,7 +133,6 @@ export class Pages {
         for (let page of this.pages) {
             if (page.id == idPage) {
                 tabs = page.tabs;
-
             }
         }
 
