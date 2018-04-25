@@ -194,10 +194,12 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
     data: {
         internalEditMode: false,
         errorMessage: '',
+        helperMessage: 'Format : prenom.nom.1@ulaval.ca',
     },
     methods: {
         onSave() {
-            this.errorMessage = 'Le courriel est obligatoire.';
+            this.helperMessage = '';
+            this.errorMessage = 'Le courriel doit respecter le format prenom.nom.1@ulaval.ca';
             return Promise.reject('une raison');
         }
     },
@@ -207,6 +209,7 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
                 return this.internalEditMode;
             },
             set: function(value) {
+                this.helperMessage= 'Format : prenom.nom.1@ulaval.ca';
                 this.errorMessage = '';
                 this.internalEditMode = value;
             }
@@ -216,6 +219,10 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
 ```
 
 ```css
+.modul-demo__inplace-edit-component.modul-demo__inplace-edit-component {
+    padding: 10px;
+}
+
 .modul-demo__inplace-edit-read-mode {
     position: relative;
 }
@@ -231,16 +238,16 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
 ```
 
 ```html
-<m-inplace-edit :editMode.sync="editMode" :save-fn="onSave">
+<m-inplace-edit :editMode.sync="editMode" :save-fn="onSave" class="modul-demo__inplace-edit-component">
     <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
         <div class="m-u--margin-top modul-demo__inplace-edit-title" @click.stop="onClick('desc')">
-            <p>Éditer pour saisir un courriel (laisser vide pour exemple)</p>
+            <p class="modul-demo__inplace-edit-title">info@ulaval.ca</p>
         </div>
         <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode = true" icon-name="m-edit" title="Modifier le courriel"></m-icon-button>
     </div>
     <div slot="editMode">
       <!-- pour :focus ==> utiliser isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile (au lieu de true en tout temps) -->
-        <m-textfield max-width="none" value="" :required-marker="true" label="Courriel" :error-message="errorMessage" :focus="true"></m-textfield>
+        <m-textfield max-width="none" value="info@ulaval.ca" :required-marker="true" label="Courriel" :error-message="errorMessage" :helperMessage="helperMessage" :focus="true"></m-textfield>
     </div>
 </m-inplace-edit>
 ```
