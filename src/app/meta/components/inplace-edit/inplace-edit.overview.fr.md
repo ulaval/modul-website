@@ -247,7 +247,7 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
     </div>
     <div slot="editMode">
       <!-- pour :focus ==> utiliser isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile (au lieu de true en tout temps) -->
-        <m-textfield max-width="none" value="info@ulaval.ca" :required-marker="true" label="Courriel" :error-message="errorMessage" :helperMessage="helperMessage" :focus="true"></m-textfield>
+        <m-textfield max-width="none" value="info@ulaval.ca" :error-message="errorMessage" :helperMessage="helperMessage" :focus="true"></m-textfield>
     </div>
 </m-inplace-edit>
 ```
