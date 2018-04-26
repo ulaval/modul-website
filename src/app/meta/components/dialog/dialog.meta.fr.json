@@ -1,5 +1,13 @@
 {
     "m-dialog-meta": {
-        "name": "Fenêtre de dialogue"
+        "name": "Fenêtre de dialogue",
+        "size": "Grosseur de la fenêtre de dialogue",
+        "closeOnBackdrop": "Fermer ou non la fenêtre sur le clique en arrière plan",
+        "title": "Titre de la fenêtre de dialogue",
+        "bodyMaxWidth": "Largeur maximale du corps",
+        "padding": "Propriété pour enlever ou mettre de l'espacement",
+        "paddingHeader": "Propriété pour enlever ou mettre de l'espacement sur l'entête",
+        "paddingBody": "Propriété pour enlever ou mettre de l'espacement sur le corps",
+        "paddingFooter": "Propriété pour enlever ou mettre de l'espacement sur le bas de page"
     }
 }

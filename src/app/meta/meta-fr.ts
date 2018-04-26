@@ -160,6 +160,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/radio-style/radio-style.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/scroll-top/scroll-top.meta.fr.json')
             );
             i18n.addMessages(
