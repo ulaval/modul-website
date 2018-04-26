@@ -20,6 +20,7 @@ import {
     I18N_NAME,
     ICON_BUTTON_NAME,
     ICON_NAME,
+    INPLACE_EDIT,
     INPUT_STYLE_NAME,
     LIMIT_TEXT_NAME,
     LINK_NAME,
@@ -590,6 +591,13 @@ export class MetaAll implements PluginObject<any> {
             CATEGORY_FORMS,
             ModulComponentStatus.Beta,
             false
+        );
+        this.mergeComponentMeta(
+            INPLACE_EDIT,
+            require('@ulaval/modul-components/dist/components/inplace-edit/inplace-edit.meta.json'),
+            CATEGORY_FORMS,
+            ModulComponentStatus.Beta,
+            true
         );
 
         // this.mergeComponentMeta(

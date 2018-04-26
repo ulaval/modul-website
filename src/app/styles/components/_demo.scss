@@ -1,6 +1,6 @@
 .modul-demo {
     &__preview {
-        div > :first-child {
+        div:first-child > :first-child {
             margin-top: 0;
         }
     }
