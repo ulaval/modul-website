@@ -1,6 +1,6 @@
 {
     "m-message-meta": {
-        "name": "Message",
+        "website-name": "Message",
         "state": "État du message",
         "skin": "Propriété pour changer le visuel de l'accordéon",
         "icon": "Propriété pour mettre ou non une icône",

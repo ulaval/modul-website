@@ -1,6 +1,6 @@
 {
     "m-panel-meta": {
-        "name": "Boîte",
+        "website-name": "Boîte",
         "skin": "Propriété pour changer le visuel de la boîte",
         "highlighted": "Propriété pour ajouter un trait dans le haut de la boîte",
         "shadow": "Propriété pour enlever ou mettre une ombre portée",

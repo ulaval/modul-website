@@ -1,9 +1,9 @@
 {
     "m-radio-meta": {
-        "name": "Radio",
+        "website-name": "Radio",
+        "name": "Attribut nom du bouton radio",
         "modelValue": "Modèle du bouton radio",
         "value": "Valeur du bouton radio",
-        "name-2": "Propritété nom de l'entrée de données",
         "position": "Position du bouton radio avec le texte",
         "iconName": "Nom de l'icône",
         "iconPosition": "Position de l'icône"

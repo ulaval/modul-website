@@ -1,6 +1,6 @@
 {
     "m-progress-meta": {
-        "name": "Barre de progression",
+        "website-name": "Barre de progression",
         "value": "Valeur de progression en pourcentage",
         "indeterminate": "Détermine si la valeur est connue ou non",
         "size": "Hauteur de la barre de progression",

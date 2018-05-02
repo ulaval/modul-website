@@ -1,6 +1,6 @@
 {
     "m-accordion-meta": {
-        "name": "Accordéon",
+        "website-name": "Accordéon",
         "id": "Identifiant unique de l'accordéon",
         "open": "Propriété pour ouvrir ou fermer l'accordéon",
         "disabled": "Propriété pour désactiver l'accordéon",
