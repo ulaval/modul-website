@@ -1,6 +1,6 @@
 {
     "m-accordion-group-meta": {
-        "name": "Groupe d'accordéons",
+        "website-name": "Groupe d'accordéons",
         "disabled": "Propriété pour désactiver l'accordéon",
         "skin": "Propriété pour changer le visuel de l'accordéon",
         "concurrent": "Propriété pour mettre le groupe en mode simultanée",

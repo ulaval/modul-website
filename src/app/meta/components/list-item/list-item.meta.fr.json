@@ -1,6 +1,6 @@
 {
     "m-list-item-meta": {
-        "name": "Liste de contenu",
+        "website-name": "Liste de contenu",
         "iconName": "Nom de l'icône",
         "iconHiddenText": "Texte caché de l'icône",
         "disabled": "Propriété pour désactiver l'item de la liste",

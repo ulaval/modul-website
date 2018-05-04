@@ -1,6 +1,6 @@
 {
     "m-link-meta": {
-        "name": "Lien",
+        "website-name": "Lien",
         "url": "URL du lien",
         "mode": "Propriété pour changer le mode du lien",
         "disabled": "Propriété pour désactiver le lien",

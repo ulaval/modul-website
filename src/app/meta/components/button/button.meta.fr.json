@@ -1,6 +1,6 @@
 {
     "m-button-meta": {
-        "name": "Bouton",
+        "website-name": "Bouton",
         "type": "Type de bouton",
         "skin": "Propriété pour changer le visuel du bouton",
         "disabled": "Propriété pour désactiver le bouton",

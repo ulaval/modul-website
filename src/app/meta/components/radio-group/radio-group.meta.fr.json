@@ -1,6 +1,6 @@
 {
     "m-radio-group-meta": {
-        "name": "Groupe de boutons radio",
+        "website-name": "Groupe de boutons radio",
         "value": "Valeur du groupe de boutons radio",
         "position": "Position du bouton radio par rapport au texte",
         "inline": "Positionne ou non le groupe sur une ligne",

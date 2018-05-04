@@ -1,6 +1,6 @@
 {
     "m-modal-meta": {
-        "name": "Fenêtre modale",
+        "website-name": "Fenêtre modale",
         "title": "Titre de la fenêtre modale",
         "message": "Message de la fenêtre modale",
         "okLabel": "Texte du champs ok",

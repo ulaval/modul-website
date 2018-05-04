@@ -1,6 +1,6 @@
 {
     "m-dynamic-template-meta": {
-        "name": "Gabarit dynamique",
+        "website-name": "Gabarit dynamique",
         "template-desc": "Gabarit pouvant contenir des balises HTML, des composants et/ou directives VueJs."
     }
 }
