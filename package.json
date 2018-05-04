@@ -7,6 +7,7 @@
     "scripts": {
         "setup": "npm install --no-optional",
         "clean": "rimraf dist",
+        "reset": "rmdir /S /Q node_modules",
         "relink": "rimraf node_modules/@ulaval/modul-components && npm run setup",
         "dev": "npm run mdToAssets && webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 8083 --open --history-api-fallback --env.dev",
         "build": "npm run mdToAssets && npm run assetsToDist && webpack --config conf/webpack.config.js --colors --optimize-minimize --env.prod",
