@@ -1,0 +1,8 @@
+{
+    "m-inplace-edit-meta": {
+        "website-name": "Édition sur place",
+        "editMode": "Permet de basculer entre les modes de consultation et d'édition. Cette propriété doit être gérée en fonction des actions posées par l'utilisateur.<br> DOIT ÊTRE SYNC.",
+        "saveFn": "Fonction appelée pour l'enregistrement du champ en édition. Doit retourner une Promise.resolve() en cas de succès et une Promise.reject() en cas d'échec (erreur dans le champs ou erreur au serveur).",
+        "title": "Permet de définir le titre de la fenêtre d'édition sur petits écrans. Il est conseillé de modifier la valeur par défaut pour préciser le type d'élément qui est édité."
+        }
+}

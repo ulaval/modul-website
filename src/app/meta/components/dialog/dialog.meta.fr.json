@@ -1,6 +1,6 @@
 {
     "m-dialog-meta": {
-        "name": "Fenêtre de dialogue",
+        "website-name": "Fenêtre de dialogue",
         "size": "Grosseur de la fenêtre de dialogue",
         "closeOnBackdrop": "Fermer ou non la fenêtre sur le clique en arrière plan",
         "title": "Titre de la fenêtre de dialogue",

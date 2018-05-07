@@ -1,6 +1,6 @@
 {
     "m-portal-meta": {
-        "name": "Portal",
+        "website-name": "Portal",
         "openTrigger": "Déclencheur d'ouverture",
         "open": "Propriété pour ouvrir ou fermer la composante",
         "id": "Identifiant unique de la composante",

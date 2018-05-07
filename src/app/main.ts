@@ -8,6 +8,7 @@ import DirectivesPlugin from '@ulaval/modul-components/dist/directives';
 import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils';
 import I18nPlugin, { DebugMode, FRENCH, I18nPluginOptions } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import LoggerPlugin from '@ulaval/modul-components/dist/utils/logger/logger';
 import Vue from 'vue';
 import { VueRouter } from 'vue-router/types/router';
 
@@ -31,6 +32,7 @@ import * as PageActions from './store/modules/pages/actions';
 async function main() {
     Vue.config.productionTip = false;
 
+    Vue.use(LoggerPlugin);
     let i18nOptions: I18nPluginOptions = {
         curLang: FRENCH,
         debug:
