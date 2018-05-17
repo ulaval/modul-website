@@ -1,5 +1,5 @@
-import { PluginObject } from 'vue';
 import { FRENCH, Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import { PluginObject } from 'vue';
 
 const FrenchMetaPlugin: PluginObject<any> = {
     install(v, options) {
