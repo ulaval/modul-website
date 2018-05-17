@@ -1,26 +1,33 @@
-import Component from 'vue-class-component';
-import WithRender from './component-details.html?style=./component-details.scss';
-import { ModulWebsite } from '../modul-website';
-import { ROUTER_PROPERTIES, ROUTER_OVERVIEW } from '@/app/router';
-import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import { ROUTER_OVERVIEW, ROUTER_PROPERTIES } from '@/app/router';
 import * as ComponentsActions from '@/app/store/modules/components/actions';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
-import { TransitionAccordion } from '@ulaval/modul-components/dist/mixins/transition-accordion/transition-accordion';
+import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
+import MetaAll, { ModulComponentStatus } from '../../meta/meta-all';
+import Component from 'vue-class-component';
+import { Watch } from 'vue-property-decorator';
+
+import { ModulWebsite } from '../modul-website';
+import WithRender from './component-details.html?style=./component-details.scss';
 
 @WithRender
-@Component({
-    mixins: [TransitionAccordion]
-})
+@Component
 export class ComponentDetails extends ModulWebsite {
 
     private intenalCodePreviewOpen: boolean = false;
-
-    private currentTab: string = 'overview';
 
     protected beforeUpdate(): void {
         this.$store.dispatch(ComponentsActions.COMPONENT_PREVIEW_GET, {
             restAdapter: this.$http
         });
+    }
+
+    @Watch('$route')
+    private routeChanged(route): void {
+        this.intenalCodePreviewOpen = false;
+    }
+
+    private get currentTab(): string {
+        return this.$route.meta.type == ROUTER_OVERVIEW ? 'overview' : 'properties';
     }
 
     private get codePreviewOpen(): boolean {
@@ -48,11 +55,23 @@ export class ComponentDetails extends ModulWebsite {
         return this.$routerIndex.for(ROUTER_OVERVIEW, _ => this.component.tag);
     }
 
+    private isProduction(status): boolean {
+        return status === ModulComponentStatus.Production;
+    }
+
     private get htmlTag(): string {
         if (this.component) {
             return `<${this.component.tag}></${this.component.tag}>`;
         } else {
             return '';
+        }
+    }
+
+    private get openCloseLabel(): string {
+        if (this.intenalCodePreviewOpen) {
+            return this.$i18n.translate('modul:close-label');
+        } else {
+            return this.$i18n.translate('modul:code-label');
         }
     }
 }

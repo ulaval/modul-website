@@ -1,5 +1,9 @@
 {
     "m-menu-meta": {
-        "name": "Menu d'options"
+        "website-name": "Menu d'options",
+        "placement": "Position du menu par rapport à l'icône",
+        "skin": "Propriété pour changer le visuel de menu",
+        "disabled": "Propriété pour désactiver le menu",
+        "size": "Grosseur de l'icône"
     }
 }

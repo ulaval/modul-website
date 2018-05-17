@@ -1,5 +1,12 @@
 {
     "m-spinner-meta": {
-        "name": "Action en cours"
+        "website-name": "Action en cours",
+        "title": "Propriété pour afficher ou non le titre",
+        "titleMessage": "Texte pour le titre",
+        "description": "Propriété pour afficher ou non la description",
+        "descriptionMessage": "Texte pour la description",
+        "skin": "Propriété pour changer le visuel",
+        "size": "Grossir ou réduire la dimension",
+        "processing": "Propriété pour mettre le mode traitement est en cours"
     }
 }

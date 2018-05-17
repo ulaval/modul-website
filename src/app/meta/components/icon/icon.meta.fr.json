@@ -1,9 +1,8 @@
 {
     "m-icon-meta": {
-        "name": "Icône",
-        "name-desc": "SVG file name.",
-        "svg-title-desc": "SVG title for accessibility.",
-        "width-desc": "Default value is '1em'.",
-        "heigth-desc": "Default value is '1em'."
+        "website-name": "Icône",
+        "name": "ID du SVG",
+        "svgTitle": "Texte de l'attribut titre",
+        "size": "Grosseur de l'icône"
     }
 }

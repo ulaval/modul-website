@@ -1,5 +1,7 @@
 {
     "m-input-width-meta": {
-        "name": "Input width"
+        "website-name": "Largeur de champ de saisie",
+        "width": "Largeur de la composante",
+        "maxWidth": "Largeur maximale de la composante"
     }
 }

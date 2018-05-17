@@ -4,14 +4,12 @@
         <h1 v-if="isHomePage" class="modul-logo">
             <a href="#" @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
-                <span class="modul-logo__beta">Beta</span>
             </a>
         </h1>
         {{isComponentPage}}
         <span v-if="!isHomePage" class="modul-logo">
             <a href="#" @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
-                <span class="modul-logo__beta">Beta</span>
             </a>
         </span>
 
@@ -48,11 +46,11 @@
             <m-icon name="search"></m-icon>
         </button>
 
-        <m-sidebar :open="searchOpen" @open="searchOpen = true" @close="searchOpen = false" origin="right" :close-button="false"
+        <m-sidebar :open="searchOpen" @open="openSearch" @close="closeSearch" origin="right" :close-button="false"
             :width="searchWidth" :padding="false">
             <div class="modul-search__header" slot="header">
                 <m-icon name="search" svg-title="Rechercher"></m-icon>
-                <input type="text" v-model="searchModel" placeholder="Rechercher" value="Rechercher un composant" class="modul-search__header__input">
+                <input type="text" v-model="searchModel" placeholder="Rechercher" value="Rechercher un composant" class="modul-search__header__input" ref="search">
                 <button @click="toggleSearch" class="modul-search__header__close-button m-u--button-primary">
                     <m-icon name="default"></m-icon>
                 </button>
@@ -82,8 +80,10 @@
                     <ul>
                         <li v-for="component in getCategoryComponents(category.id)">
                             <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
-                                <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
-                                <span class="modul-menu__label modul-menu__tag">{{ component.tag }}</span>
+                                <span class="modul-menu__wrapper">
+                                    <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>&nbsp;<span v-if="!isProduction(component.status)" class="modul-logo__beta modul-menu__beta-tag">{{ component.status }}</span>
+                                </span>
+                                <span class="modul-menu__tag">{{ component.tag }}</span>
                             </a>
                         </li>
                     </ul>
@@ -129,7 +129,9 @@
                                 <ul>
                                     <li v-for="component in getCategoryComponents(category.id)">
                                         <a href="#" @click.prevent="onComponentClick(component.tag)" class="modul-menu__link">
-                                            <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>
+                                            <span class="modul-menu__wrapper">
+                                                <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>&nbsp;<span v-if="!isProduction(component.status)" class="modul-logo__beta modul-menu__beta-tag">{{ component.status }}</span>
+                                            </span>
                                             <span class="modul-menu__tag">{{ component.tag }}</span>
                                         </a>
                                     </li>

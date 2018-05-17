@@ -1,0 +1,8 @@
+{
+    "m-file-upload-meta": {
+        "website-name": "Téléverseur",
+        "extensions": "Limite les fichiers ayant seulement les extensions spécifiées",
+        "maxSizeKb": "Limite les fichiers ne dépassant pas la taille spécifiée en kb",
+        "maxFiles": "Limite le nombre de fichiers total pouvant être téléversés"
+    }
+}

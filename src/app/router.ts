@@ -136,12 +136,18 @@ const routerFactory: RouterFactoryFn = () => {
             config.children = [];
             pushRoute(ROUTER_PROPERTIES, config.children, {
                 path: propertiesRoute,
-                meta: { page: componentMeta.tag },
+                meta: {
+                    page: componentMeta.tag,
+                    type: ROUTER_PROPERTIES
+                },
                 component: ComponentProperties
             });
             pushRoute(ROUTER_OVERVIEW, config.children, {
                 path: overviewRoute,
-                meta: { page: componentMeta.tag },
+                meta: {
+                    page: componentMeta.tag,
+                    type: ROUTER_OVERVIEW
+                },
                 component: ComponentOverview
             });
             config.children.push({

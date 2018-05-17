@@ -1,5 +1,13 @@
 {
     "m-list-item-meta": {
-        "name": "Liste de contenu"
+        "website-name": "Liste de contenu",
+        "iconName": "Nom de l'icône",
+        "iconHiddenText": "Texte caché de l'icône",
+        "disabled": "Propriété pour désactiver l'item de la liste",
+        "waiting": "Propriété pour mettre en attente",
+        "fullWidth": "Propriété pour prendre la pleine largeur du conteneur",
+        "fullHeight": "Propriété pour prendre la pleine hauteur du conteneur",
+        "borderTop": "Propriété pour mettre une bordure du haut",
+        "borderBottom": "Propriété pour mettre une bordure du bas"
     }
 }

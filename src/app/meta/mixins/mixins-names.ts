@@ -1,5 +1,6 @@
 // necessary because of minification, should match class names
 export const ELEMENT_QUERIES: string = 'ElementQueries';
+export const INPUT_LABEL: string = 'InputLabel';
 export const INPUT_MANAGEMENT: string = 'InputManagement';
 export const INPUT_POPUP: string = 'InputPopup';
 export const INPUT_STATE: string = 'InputState';

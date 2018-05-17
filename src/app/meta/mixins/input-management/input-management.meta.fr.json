@@ -1,5 +1,9 @@
 {
     "m-input-management-meta": {
-        "name": "Input management"
+        "website-name": "Gestionnaire de champ de saisie",
+        "value": "Largeur de la composante",
+        "placeholder": "Largeur maximale de la composante",
+        "readonly": "Mettre la composante en lecture seulement",
+        "focus": "Mettre ou non le focus sur la composante"
     }
 }

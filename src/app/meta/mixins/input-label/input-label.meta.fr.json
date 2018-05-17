@@ -1,0 +1,8 @@
+{
+    "m-input-label-meta": {
+        "website-name": "Marqueur de champ de saisie",
+        "label": "Texte du label de la composante",
+        "iconName": "Nom de l'icône",
+        "requiredMarker": "Propriété pour afficher ou non un marqueur requis"
+    }
+}

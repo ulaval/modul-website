@@ -1,6 +1,15 @@
 {
     "m-panel-meta": {
-        "name": "Boîte",
-        "mode-desc": "Default value is 'primary'."
+        "website-name": "Boîte",
+        "skin": "Propriété pour changer le visuel de la boîte",
+        "highlighted": "Propriété pour ajouter un trait dans le haut de la boîte",
+        "shadow": "Propriété pour enlever ou mettre une ombre portée",
+        "border": "Propriété pour enlever ou mettre une bordure",
+        "borderLarge": "Propriété pour changer le visuel de l'accordéon",
+        "padding": "Propriété pour enlever ou mettre de l'espacement",
+        "paddingLarge": "Propriété pour enlever ou mettre un espacement large",
+        "paddingHeader": "Propriété pour enlever ou mettre de l'espacement sur l'entête",
+        "paddingBody": "Propriété pour enlever ou mettre de l'espacement sur le corps",
+        "paddingFooter": "Propriété pour enlever ou mettre de l'espacement sur le pied de page"
     }
 }

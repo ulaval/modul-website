@@ -6,36 +6,93 @@ import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
 import DynamicTemplate from '@ulaval/modul-components/dist/components/dynamic-template/dynamic-template';
 import { log } from 'util';
 
+const enum Tabs {
+    HTML = 'html',
+    CSS = 'css',
+    JS = 'js'
+}
+
 @WithRender
 @Component
 export class MPreview extends Vue {
-    @Prop()
-    public src: string;
+    public htmlHl: string = '';
+    public jsHl: string = '';
+    public cssHl: string = '';
 
-    private template: any = {};
-    private js: any = {};
-    private jim: string = 'carrey';
+    public isOpened: boolean = false;
+    public activeTab: Tabs = Tabs.HTML;
 
-    private a = {
-        template: `<div id="A"></div>`
+    $refs: {
+        demoContent: HTMLElement;
     };
 
-    protected created() {
-        this.template = this.a;
+    protected async mounted(): Promise<void> {
+        const html = this.extractContent('hlhtml');
+        const js = this.extractContent('hljavascript');
+        const css = this.extractContent('hlcss');
+
+        this.appendStyle(css);
+        await this.activateDemo(js, html);
     }
 
-    protected mounted(): void {
-        let s: string = this.src;
-        (require as any)(['bundle-loader!../../../assets/md/' + s + '.js'], (waitForChunk) => {
-            waitForChunk((chunk) => {
-                this.template = chunk.default;
-            });
-        });
+    private appendStyle(cssText: string): void {
+        let style: HTMLStyleElement = document.createElement('style');
+        style.innerHTML = cssText;
+        this.$el.appendChild(style);
     }
 
-    private get preview(): string {
-        this.template = Vue.component(this.jim, this.template);
-        return this.jim;
+    private async activateDemo(
+        jsText: string,
+        htmlText: string
+    ): Promise<void> {
+        let options = {};
+
+        if (jsText && jsText.trim().length > 0) {
+            // tslint:disable-next-line:no-eval
+            options = eval(`'use strict'; var opt = ${jsText}; opt;`);
+        }
+
+        const vueExports = await import('vue');
+        new vueExports.default({
+            template: `<div>${htmlText}</div>`,
+            ...options,
+            el: this.$refs.demoContent
+        }).$mount();
+    }
+
+    private extractContent(className: string): string {
+        let text = '';
+
+        const els = this.$el.getElementsByClassName(className);
+        if (els.length > 0) {
+            text = (els[0] as HTMLElement).innerText;
+        }
+
+        return '\n\r' + text;
+    }
+
+    private get hasJs(): boolean {
+        return this.jsHl.trim().length > 0;
+    }
+
+    private get hasCss(): boolean {
+        return this.cssHl.trim().length > 0;
+    }
+
+    private get htmlActive(): boolean {
+        return this.activeTab === Tabs.HTML;
+    }
+
+    private get jsActive(): boolean {
+        return this.activeTab === Tabs.JS;
+    }
+
+    private get cssActive(): boolean {
+        return this.activeTab === Tabs.CSS;
+    }
+
+    private switchTab(tab: Tabs): void {
+        this.activeTab = tab;
     }
 
 }

@@ -18,20 +18,93 @@ Le composant *boîte* est utilisé pour mettre en évidence un court texte. Il n
 
 ### Entête
 Il est possible d'utiliser le composant *boite* avec un entête et un titre, mais ce n'est pas obligatoire. Le style du titre n'est pas normé et est à la discrétion de l'analyste.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-panel>
+    <h2 slot="header">Titre</h2>
+    Do consectetur aute pariatur amet ut pariatur Lorem. Commodo exercitation et incididunt tempor aliqua culpa culpa. Do sint exercitation quis amet.
+</m-panel>
+```
+
+</modul-demo>
 
 ### Marges internes (padding)
 La largeur des marges internes est ajustée selon les points de rupture. Par exemple, pour les petits écrans, les marges seront automatiquement réduites. Il est également possible de retirer les marges internes de la boîte, lorsque celles-ci ne répondent pas au besoin.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-panel :padding="false">
+    Do consectetur aute pariatur amet ut pariatur Lorem. Commodo exercitation et incididunt tempor aliqua culpa culpa. Do sint exercitation quis amet.
+</m-panel>
+```
+
+</modul-demo>
 
 ### Mise en évidence
 Pour attirer l'attention sur une boîte en particulier, il est possible d'ajouter une bordure orange qui mettra en évidence la boîte.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-panel :highlighted="true">
+    Do consectetur aute pariatur amet ut pariatur Lorem. Commodo exercitation et incididunt tempor aliqua culpa culpa. Do sint exercitation quis amet.
+</m-panel>
+```
+
+</modul-demo>
 
 ### Couleurs
 Le composant *boîte* offre trois couleurs&nbsp;: blanc, gris pâle et gris foncé.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-panel skin="light">
+    Do consectetur aute pariatur amet ut pariatur Lorem. Commodo exercitation et incididunt tempor aliqua culpa culpa. Do sint exercitation quis amet.
+</m-panel>
+<m-panel skin="dark">
+    Do consectetur aute pariatur amet ut pariatur Lorem. Commodo exercitation et incididunt tempor aliqua culpa culpa. Do sint exercitation quis amet.
+</m-panel>
+<m-panel skin="darker">
+    Do consectetur aute pariatur amet ut pariatur Lorem. Commodo exercitation et incididunt tempor aliqua culpa culpa. Do sint exercitation quis amet.
+</m-panel>
+```
+
+```css
+.m-panel {
+    margin-top: 12px;
+}
+```
+
+</modul-demo>
 
 ### Bordures et ombre portée
 Les bordures et l'ombre portée permettent à la boîte d'obtenir un plus grand contraste avec son environnement. Les bordures possèdent également deux largeurs&nbsp;: régulière et large.
-<m-message class="m-u--margin-top" skin="light" state="information">Exemple à venir</m-message>
+
+<modul-demo>
+
+```html
+<m-panel :border-large="false">
+    Do consectetur aute pariatur amet ut pariatur Lorem. Commodo exercitation et incididunt tempor aliqua culpa culpa. Do sint exercitation quis amet.
+</m-panel>
+<m-panel :border-large="true">
+    Do consectetur aute pariatur amet ut pariatur Lorem. Commodo exercitation et incididunt tempor aliqua culpa culpa. Do sint exercitation quis amet.
+</m-panel>
+<m-panel :shadow="false">
+    Do consectetur aute pariatur amet ut pariatur Lorem. Commodo exercitation et incididunt tempor aliqua culpa culpa. Do sint exercitation quis amet.
+</m-panel>
+<m-panel :shadow="true">
+    Do consectetur aute pariatur amet ut pariatur Lorem. Commodo exercitation et incididunt tempor aliqua culpa culpa. Do sint exercitation quis amet.
+</m-panel>
+```
+
+```css
+.m-panel {
+    margin-top: 12px;
+}
+```
+
+</modul-demo>

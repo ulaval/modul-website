@@ -1,6 +1,13 @@
 {
     "m-input-state-meta": {
-        "name": "État champ de saisie",
-        "disabled": "Détermine si la composante est désactivée ou non"
+        "website-name": "État champ de saisie",
+        "disabled": "Détermine si la composante est désactivée ou non",
+        "waiting": "Détermine si la composante est en attente ou non",
+        "error": "Détermine si la composante est en erreur ou non",
+        "valid": "Détermine si la composante est valide ou non",
+        "errorMessage": "Message d'erreur",
+        "validMessage": "Message de validation",
+        "helperMessage": "Message d'aide",
+        "tagStyle": "Balide de style pour le texte de la composante"
     }
 }
