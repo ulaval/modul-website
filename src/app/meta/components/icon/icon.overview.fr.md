@@ -12,9 +12,9 @@ Les icônes augmentent la clarté d’une interface en donnant des repères visu
 ## Caractéristiques
 
 ### Choix d'une icône
-Un ensemble d'icônes est à votre disposition dans la <m-link mode="link" url='/normes/normes-graphiques/iconographie/'>librairie</m-link>, que nous vous invitons à consulter comme première étape de votre démarche de choix.
+<m-link mode="link" url='/normes/normes-graphiques/iconographie/'>L'iconographie</m-link> est votre point de départ, elle met à votre disposition un ensemble d'icônes communément utilisées dans la conception d'une interface.
 
-#### Icônes normés
+#### Icônes normées
 Il arrive parfois que pour une même notion, plusieurs symboles reconnus s'appliquent. Par exemple, pour l'action de suppression, c'est l'icône de poubelle qui est la plus populaire, mais on rencontre relativemenet souvent une croix en forme de x. Dans le but d'offrir des repères cohérents à l'utilisateur, il est recommandé d'utiliser systématiquement les icônes ci-dessous pour accompagner ces notions&nbsp;:
 
 <modul-demo>
@@ -28,25 +28,17 @@ Il arrive parfois que pour une même notion, plusieurs symboles reconnus s'appli
 #### Icônes de fichier
 Lorsqu'on affiche un lien vers un fichier, une icône illustrant le type de fichier est un repère efficace pour l'utilisateur. Pour faciliter l'utilisation cohérente de ces icônes, il est possible d'utiliser le composant <modul-go name="m-icon-file"></modul-go>.
 
-#### Ajout d'icônes personnalisées
-Bien que l'utilisation d'icônes de la <m-link mode="link" url='/normes/normes-graphiques/iconographie/'>librairie existante</m-link> soit à privilégier, de nouvelles icônes peuvent être créées pour répondre à des besoins spécifiques. Ces nouvelles icônes devront être créées en respectant une grille de 30 par 30 pixels, puis enregistrées en format SVG.
-
-#### Pourquoi le format SVG ?
-Il est recommandé d’utiliser le format SVG (Scalable Vector Graphics) plutôt qu’une police d'icônes pour les raisons suivantes&nbsp;:
-* format facilement redimensionnable
-* grande variété  de couleurs
-* contrôle de chaque tracé (path) qui compose l’icône
-* contrôle de l’épaisseur du trait
-* possibilité d’animer les icônes
-
+#### Icônes personnalisées
+Il est possible de créer de nouvelles icônes pour un besoin spécifique, des indications sont dispobibles dans <m-link mode="link" url='/normes/normes-graphiques/iconographie/'>l'iconographie</m-link>.
 
 ### Couleurs
-De façon générale, les icônes héritent de la couleur de la police de caractères. Par exemple, une icône qui accompagne un lien cliquable sera de la couleur de la police appliquée aux liens. La seule exception à cette règle concerne les icônes de fichier représentant une marque déposée comme les docouments PDF ou Word. Ces icônes doivent rester de leur couleur originale, afin de conserver leur identité propre, qui en facilite la compréhension.
+De façon générale, les icônes héritent de la couleur de la police de caractères. Par exemple, une icône qui accompagne un lien cliquable sera de la couleur de la police appliquée aux liens. La seule exception à cette règle concerne les icônes de fichiers représentant une marque déposée comme les docouments PDF ou Word. Ces icônes doivent concerver leur couleur originale bien reconnaissable.
 
 <modul-demo>
 
 ```html
-<m-link mode="link" url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf"><m-icon-file size="16px" extension="pdf"></m-icon-file>Règlement des études</m-link>
+<m-link mode="link" url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf"><m-icon-file class="m-u--margin-right--s" size="16px" extension="pdf"></m-icon-file>Règlement des études</m-link><br/>
+<m-link class="m-u--margin-top" mode="link" url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf"><m-icon-file class="m-u--margin-right--s" size="16px" extension="default"></m-icon-file>Fichier non reconnu</m-link>
 ```
 
 </modul-demo>
@@ -55,6 +47,7 @@ De façon générale, les icônes héritent de la couleur de la police de caract
 ### Pastilles
 Une pastille est un petit disque de couleur que l'on superpose à une icône pour illustrer un état parmi les suivants&nbsp;:
 
+#### États d'une pastille
 * **complété/succès** (cercle vert avec crochet)
 * **avertissement** (triangle jaune avec un point d’exclamation)
 * **erreur** (cercle rouge avec un point d’exclamation)
@@ -77,6 +70,7 @@ Les états suivants sont également prévus&nbsp;:
 * **non publié** (cercle rouge)
 * **nouveauté/nouvel item** (pastille orange avec un chiffre)
 
+#### Positionnement de la pastille
 Par défaut, la pastille est positionnée automatiquement à l'emplacement adéquat. Si cette position ne convient pas, il est possible de l'ajuster.
 
 <modul-demo>
