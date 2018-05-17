@@ -1,1 +1,1 @@
-<m-icon-file state="completed"></m-icon-file>
+<m-icon-file extension="pdf"></m-icon-file>

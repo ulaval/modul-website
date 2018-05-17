@@ -1,9 +1,8 @@
 {
     "m-icon-file-meta": {
-        "name": "Icône de fichier",
+        "website-name": "Icône de fichier",
+        "extension": "Extension du fichier",
         "size": "Grosseur de l'icône en pixel",
-        "chipSize": "Grosseur de la pastille en pixel",
-        "svgTitle": "Titre du SVG pour l'accessibilité",
-        "state": "État de la pastille"
+        "svgTitle": "Titre du SVG pour l'accessibilité"
     }
 }
