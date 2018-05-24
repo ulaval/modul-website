@@ -16,7 +16,7 @@ export enum MIconGalleryViewMode {
 })
 export class MIconGallery extends ModulWebsite {
 
-    private iconSize: string = '20px';
+    private iconSize: string = '24px';
     private focus: boolean = false;
     private searchModel: string = '';
     private intenalViewMode: string = MIconGalleryViewMode.Block;
@@ -25,7 +25,7 @@ export class MIconGallery extends ModulWebsite {
     private previewIconSize: number = 32;
     private previewName: string = '';
     private previewTag: string = '';
-    private sizeLabel = this.$i18n.translate('modul:icon-size');
+    private maxWidth: string = 'regular';
 
     private iconList = [
         {
@@ -77,7 +77,7 @@ export class MIconGallery extends ModulWebsite {
             'nameFr': 'Fermer'
         },
         {
-            'name': 'tag-chevrons',
+            'name': 'code-chevrons',
             'nameFr': 'Chevrons de balisage'
         },
         {
@@ -157,10 +157,12 @@ export class MIconGallery extends ModulWebsite {
 
     private onFocus(): void {
         this.focus = true;
+        this.maxWidth = '100%';
     }
 
     private onBlur(): void {
         this.focus = false;
+        this.maxWidth = 'regular';
     }
 
     private setLargeIconSize(): void {
