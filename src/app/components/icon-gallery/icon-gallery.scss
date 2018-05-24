@@ -61,10 +61,6 @@ $modul-icon-gallery--color-active: $m-color--grey-lightest !default;
                 border: $m-border-width--s solid $m-color--border;
                 cursor: pointer;
 
-                &:nth-child(5n) {
-                    margin-right: $m-margin;
-                }
-
                 &:nth-child(4n) {
                     margin-right: 0;
                 }
@@ -72,12 +68,12 @@ $modul-icon-gallery--color-active: $m-color--grey-lightest !default;
                 @media (min-width: $m-mq--min--m) {
                     min-width: calc(20% - 9.6px);
 
-                    &:nth-child(5n) {
-                        margin-right: 0;
-                    }
-
                     &:nth-child(4n) {
                         margin-right: $m-margin;
+                    }
+
+                    &:nth-child(5n) {
+                        margin-right: 0;
                     }
                 }
             }
