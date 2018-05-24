@@ -1,22 +1,28 @@
 <div class="modul-icon-gallery">
-    <section class="modul-icon-gallery__header" :class="{ 'modul--is-search-field-focus': focus}">
+    <section class="modul-icon-gallery__header">
         <m-textfield class="modul-icon-gallery__header__search-field"
                      icon-name="search"
                      :label="searchIconsText"
                      @focus="onFocus"
                      @blur="onBlur"
-                     v-model="searchModel"></m-textfield>
-        <m-dropdown class="modul-icon-gallery__header__size-field" v-model="iconSize" :width="sizeFieldWidth">
-            <m-dropdown-item value="16px"></m-dropdown-item>
-            <m-dropdown-item value="20px"></m-dropdown-item>
-            <m-dropdown-item value="32px"></m-dropdown-item>
-            <m-dropdown-item value="64px"></m-dropdown-item>
-        </m-dropdown>
-        <m-icon-button class="modul-icon-gallery__header__view-mode-button"
-                       :icon-name="iconViewMode"
-                       :button-size="viewModeButtonWidth"
-                       @click="toggleViewMode()"
-                       v-if="isMqMinS"></m-icon-button>
+                     v-model="searchModel">
+        </m-textfield>
+        <div class="modul-icon-gallery__header__right-wrapper">
+            <m-dropdown class="modul-icon-gallery__header__size-field" v-model="iconSize" width="124px" :label="sizeLabel">
+                <m-dropdown-item value="16px"></m-dropdown-item>
+                <m-dropdown-item value="20px"></m-dropdown-item>
+                <m-dropdown-item value="32px"></m-dropdown-item>
+                <m-dropdown-item value="64px"></m-dropdown-item>
+            </m-dropdown>
+            <m-icon-button class="modul-icon-gallery__header__view-mode-button"
+                icon-size="32px"
+                :icon-name="iconViewMode"
+                button-size="32px"
+                @click="toggleViewMode()"
+                v-if="isMqMinS">
+            </m-icon-button>
+        </div>
+
     </section>
     <section class="modul-icon-gallery__body">
         <ul :class="[ 'modul-icon-gallery__' + viewMode ]">
@@ -26,12 +32,13 @@
                 @click="openDialog(icon.name, icon.nameFr)"
                 @keydown.enter="openDialog(icon.name, icon.nameFr)"
                 v-if="isViewModeBlock">
-                <m-popper open-trigger="hover" :shadow="false" :focus-management="false">
-                    <span class="modul-icon-gallery__icon" slot="trigger" :style="{ width: iconSize + 22, height: iconSize + 22 }">
-                        <m-icon :name="icon.name" :size="iconSize"></m-icon>
-                    </span>
-                    <p class="modul-icon-gallery__label">{{ icon.name }}</p>
-                </m-popper>
+                <span class="modul-icon-gallery__icon">
+                    <m-icon :name="icon.name" :size="iconSize"></m-icon>
+                </span>
+                <div class="modul-icon-gallery__bloc-label" aria-hidden="true">
+                    <p class="modul-icon-gallery__label">{{ icon.nameFr }}</p>
+                    <m-link mode="button" :underline="false">{{ icon.name }}</m-link>
+                </div>
             </li>
             <m-list-item class="modul-icon-gallery__item" v-for="(icon, index) in searchResult" v-if="!isViewModeBlock">
                 <div class="modul-icon-gallery__item__content">

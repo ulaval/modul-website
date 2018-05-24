@@ -1,11 +1,13 @@
 @import '../../styles/shared-styles';
 @import '../../styles/components/do-dont';
 
+$modul-item-size: 157px;
+
 .modul-icon-gallery {
     &__header {
         display: flex;
         align-items: flex-end;
-        height: 53px; // Magic number
+        justify-content: space-between;
 
         &__search-field {
             transition: flex 0.3s ease;
@@ -20,28 +22,19 @@
             }
         }
 
-        &__size-field,
-        &__view-mode-button.m-icon-button {
-            transition: opacity $m-transition-duration--l ease, width $m-transition-duration--l ease, color $m-transition-duration ease;
+        &__right-wrapper {
+            display: flex;
+            align-items: flex-end;
         }
 
-        &.modul--is-search-field-focus {
-            .modul-icon-gallery__header {
-                &__search-field {
-                    flex: 1 1 auto;
-                }
-
-                &__size-field,
-                &__view-mode-button {
-                    overflow: hidden;
-                    opacity: 0;
-                }
-            }
+        &__size-field {
+            margin-right: $m-margin--l;
         }
     }
 
     &__body {
         margin-top: $m-padding--l;
+        text-align: center;
     }
 
     &__block,
@@ -50,15 +43,29 @@
     }
 
     &__block {
-        display: flex;
-        flex-wrap: wrap;
+        display: inline-block;
+        margin-top: 0;
+        column-count: 4;
+        column-gap: $m-margin;
+
+        @media (min-width: $m-mq--min--m) {
+            column-count: 5;
+        }
 
         .modul-icon-gallery {
             &__item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-between;
+                height: $modul-item-size;
+                width: $modul-item-size;
+                border: $m-border-width--s solid $m-color--border;
+                -webkit-column-break-inside: avoid;
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: $m-margin;
+                cursor: pointer;
             }
 
             &__label {
@@ -93,28 +100,13 @@
 
         &:hover,
         &:focus {
-            .modul-icon-gallery__icon {
-                @media (min-width: $m-mq--min--s) {
-                    background: $modul-color--grey;
-                    border-radius: 50%;
-                }
-            }
+            //
         }
     }
 
     &__icon {
-        transition: background $m-transition-duration ease, border-radius $m-transition-duration ease, opacity $m-transition-duration ease;
         padding: $m-padding--s;
-        text-align: center;
-        min-width: 58px;
-        min-height: 58px;
-        cursor: pointer;
-
-        @media (min-width: $m-mq--min--s) {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        margin-top: $m-margin--l;
 
         .m-icon {
             color: $modul-color--black-grey;
