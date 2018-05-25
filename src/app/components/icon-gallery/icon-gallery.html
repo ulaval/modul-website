@@ -8,7 +8,7 @@
                      v-model="searchModel"
                      :max-width="isMqMinS ? maxWidth : '100%'">
         </m-textfield>
-        <div class="modul-icon-gallery__header__right-wrapper" v-if="isMqMinS">
+        <div class="modul-icon-gallery__header__right-wrapper">
             <m-dropdown class="modul-icon-gallery__header__size-field" v-model="iconSize" width="72px" :label="$i18n.translate('modul:icon-size')">
                 <m-dropdown-item value="16px"></m-dropdown-item>
                 <m-dropdown-item value="24px"></m-dropdown-item>
@@ -16,6 +16,7 @@
                 <m-dropdown-item value="64px"></m-dropdown-item>
             </m-dropdown>
             <m-icon-button class="modul-icon-gallery__header__view-mode-button"
+            v-if="isMqMinS"
                 icon-size="32px"
                 :icon-name="iconViewMode"
                 button-size="32px"
@@ -25,7 +26,7 @@
 
     </section>
     <section class="modul-icon-gallery__body">
-        <ul class="modul-icon-gallery__block" v-if="isViewModeBlock">
+        <ul class="modul-icon-gallery__block" v-if="isViewModeBlock && hasSearchResult">
             <li class="modul-icon-gallery__item"
                 v-for="(icon, index) in searchResult"
                 tabindex="0"
@@ -40,7 +41,7 @@
                 </div>
             </li>
         </ul>
-        <ul class="modul-icon-gallery__list" v-else>
+        <ul class="modul-icon-gallery__list" v-else-if="!isViewModeBlock && hasSearchResult">
             <li class="modul-icon-gallery__item"
                 v-for="(icon, index) in searchResult"
                 tabindex="0"
@@ -53,6 +54,9 @@
                 </p>
             </li>
         </ul>
+        <p class="modul-icon-gallery__no-result" v-else-if="!hasSearchResult">
+            <m-i18n k="modul:search-icons-no-result"></m-i18n>
+        </p>
     </section>
 
     <m-dialog :title="previewName" :open.sync="dialogOpen">

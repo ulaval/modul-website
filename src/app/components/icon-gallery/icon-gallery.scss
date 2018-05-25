@@ -14,10 +14,7 @@ $modul-icon-gallery--color-active: $m-color--grey-lightest !default;
 
         &__search-field {
             transition: max-width 0.3s ease;
-
-            @media (min-width: $m-mq--min--xs) {
-                margin-right: $m-margin--l;
-            }
+            margin-right: $m-margin--l;
         }
 
         &__right-wrapper {
@@ -26,7 +23,11 @@ $modul-icon-gallery--color-active: $m-color--grey-lightest !default;
         }
 
         &__size-field {
-            margin-right: $m-margin--l;
+            margin-right: 0;
+
+            @media (min-width: $m-mq--min--s) {
+                margin-right: $m-margin--l;
+            }
         }
     }
 
@@ -121,6 +122,11 @@ $modul-icon-gallery--color-active: $m-color--grey-lightest !default;
                 }
             }
         }
+    }
+
+    &__no-result {
+        text-align: left;
+        margin-top: $m-padding--l;
     }
 
     &__item {

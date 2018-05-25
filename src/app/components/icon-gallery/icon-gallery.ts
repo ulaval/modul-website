@@ -184,6 +184,10 @@ export class MIconGallery extends ModulWebsite {
         return filtereComponents;
     }
 
+    private get hasSearchResult(): boolean {
+        return this.searchResult.length > 0;
+    }
+
     private openDialog(name, nameFr) {
         this.dialogOpen = true;
         this.previewName = nameFr;
