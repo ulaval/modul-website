@@ -11,28 +11,17 @@ Les icônes augmentent la clarté d’une interface en donnant des repères visu
 
 ## Caractéristiques
 
-### Choix d'une icône
-<m-link mode="link" url='/normes/normes-graphiques/iconographie/'>L'iconographie</m-link> est votre point de départ, elle met à votre disposition un ensemble d'icônes communément utilisées dans la conception d'une interface.
-
-#### Icônes normées
-Il arrive parfois que pour une même notion, plusieurs symboles reconnus s'appliquent. Par exemple, pour l'action de suppression, c'est l'icône de poubelle qui est la plus populaire, mais on rencontre relativemenet souvent une croix en forme de x. Dans le but d'offrir des repères cohérents à l'utilisateur, il est recommandé d'utiliser systématiquement les icônes ci-dessous pour accompagner ces notions&nbsp;:
-
-<modul-demo>
-
-```html
-<div class="m-u--margin"><m-icon class="m-u--margin-right" name="trash"></m-icon><span>Supprimer</span></div>
-<div class="m-u--margin"><m-icon class="m-u--margin-right" name="m-edit"></m-icon><span>Modifier</span></div>
-```
-</modul-demo>
+### Choix
+<m-link mode="link" url='/normes/normes-graphiques/iconographie/'>L'iconographie</m-link> est votre point de départ, elle met à votre disposition un ensemble d'icônes communément utilisées dans la conception d'une interface. Afin d'éviter toute confusion et d'encourager la cohérence, chaque icône est nommée en fonction de l'action ou la notion qu'elle représente. Par exemple, l'icône de poubelle est nommée <em>supprimer</em>, la croix en forme de x <em>fermer/vider le champ</em>.
 
 #### Icônes de fichier
-Lorsqu'on affiche un lien vers un fichier, une icône illustrant le type de fichier est un repère efficace pour l'utilisateur. Pour faciliter l'utilisation cohérente de ces icônes, il est possible d'utiliser le composant <modul-go name="m-icon-file"></modul-go>.
+Les icônes illustrant le type d'un fichier sont un repère efficace pour l'utilisateur, il est recommandé de les utiliser vis-à-vis du nom d'un fichier. Pour faciliter l'utilisation de ces icônes, il est possible d'utiliser le composant <modul-go name="m-icon-file"></modul-go>, qui associe la bonne icône en fonction de l'extension du fichier.
 
 #### Icônes personnalisées
-Il est possible de créer de nouvelles icônes pour un besoin spécifique, des indications sont dispobibles dans <m-link mode="link" url='/normes/normes-graphiques/iconographie/'>l'iconographie</m-link>.
+Bien qu'il soit recommandé d'utiliser le plus plus possible les icônes de la librairie existante, il est possible de créer une nouvelle icône pour un besoin spécifique. La marche à suivre est décrite à la page <m-link mode="link" url='/normes/normes-graphiques/iconographie/'>iconographie</m-link>.
 
 ### Couleurs
-De façon générale, les icônes héritent de la couleur de la police de caractères. Par exemple, une icône qui accompagne un lien cliquable sera de la couleur de la police appliquée aux liens. La seule exception à cette règle concerne les icônes de fichiers représentant une marque déposée comme les docouments PDF ou Word. Ces icônes doivent concerver leur couleur originale bien reconnaissable.
+De façon générale, les icônes héritent de la couleur de la police de caractères. Par exemple, une icône qui accompagne un lien cliquable sera de la couleur de la police appliquée aux liens. Quelques exceptions confirment cette règle. Par exemple, les icônes de fichiers qui représentent une marque déposée comme les docouments PDF ou Word sont de la couleur originale de la marque. Certaines icônes de création sont bleues. Ces icônes doivent concerver leur couleur originale bien reconnaissable.
 
 <modul-demo>
 
@@ -63,7 +52,7 @@ Une pastille est un petit disque de couleur que l'on superpose à une icône pou
 
 </modul-demo>
 
-Les états suivants sont également prévus&nbsp;:
+Les états suivants sont également prévus, mais pas encore réalisés&nbsp;:
 
 * **publié** (cercle vert)
 * **partiellement publié** (cercle orange avec point d’exclamation)
@@ -71,7 +60,7 @@ Les états suivants sont également prévus&nbsp;:
 * **nouveauté/nouvel item** (pastille orange avec un chiffre)
 
 #### Positionnement de la pastille
-Par défaut, la pastille est positionnée automatiquement à l'emplacement adéquat. Si cette position ne convient pas, il est possible de l'ajuster.
+Par défaut, la pastille est positionnée automatiquement à l'emplacement désigné par son concepteur. Si cette position ne convient pas, il est possible de l'ajuster.
 
 <modul-demo>
 
