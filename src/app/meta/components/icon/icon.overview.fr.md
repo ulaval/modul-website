@@ -4,7 +4,7 @@ Les icônes augmentent la clarté d’une interface en donnant des repères visu
     <ul>
         <li>Utiliser une icône pour attirer l'attention, sur un message important par exemple.</li>
         <li>Utiliser une icône pour résumer une notion complexe comme un panier d'achats.</li>
-        <li>Utiliser une icône pour donner des indices facilement repérables, un crayon pour modifier, une poubelle pour supprimer, etc.</li>
+        <li>Utiliser une icône pour donner des repères intuitifs, un crayon pour modifier, une poubelle pour supprimer, etc.</li>
         <li>Toujours utiliser la même icône pour représenter une même notion.</li>
     </ul>
 </modul-do>

@@ -9,17 +9,47 @@ Bien que l'utilisation d'icônes de la librairie existante soit à privilégier,
 L'icône doit être créée à l'intérieur d'un cadre de 24x24 pixels, au format SVG. Au minimum, une des deux dimensions  doit être occupée entièrement par l'icône.
 
 ### Choix du nom
-Le nom d'une icône doit désigner l'action ou la notion qu'elle symbolise. Par exemple, l'icône de crayon représente l'action de modification d'un élément, son nom est  donc <em>m-svg__edit</em>. Les noms d'icônes dans la librairie MOD<strong>UL</strong> sont en anglais.
+Le nom d'une icône doit désigner l'action ou la notion qu'elle symbolise. Par exemple, l'icône de crayon est utilisée pour symboliser la modification d'un élément, son nom en français est donc <em>Modifier</em>. Une fois le nom français de l'icône choisi, il reste à déterminer son identifiant SVG.
 
-### Règles de nomenclature
-Tous les icônes de la librairie MOD<strong>UL</strong> sont préfixés de <em>m-svg__</em>. Il est également possible d'ajouter un suffixe en utilisant deux tirets avant la dernière partie du nom. Par exemple, pour indiquer la direction d'une même flèche <em>m-svg__arrow--top<em>.
+### Identifiant SVG
+Les identifiants SVG des icônes de la librairie MOD<strong>UL</strong> sont en anglais et suivent la nomenclature suivante :
+
+<pre>m-svg__&lt;name&gt;-&lt;outline-shape&gt;-&lt;filled&gt;--&lt;direction&gt;</pre>
+
+* &lt;name&gt;<br>Nom désignant l'action ou la notion que l'icône symbolise (voir la section <em>Choix du nom</em>).
+* &lt;outline-shape&gt;<br>Forme du contour entourant l'icône, un cercle ou un carré par exemple. Veuillez porter une attention particulière car souvent, le contour extérieur fait partie intégrante de l'icône. Dans ce cas, la forme n'est pas mentionnée dans le nom (l'horloge ou l'avertissment par exemple).
+* &lt;filled&gt;<br>Identifie une icône « pleine », en opposition à sa version filaire.
+* &lt;direction&gt;<br>Une même icône peut avoir une direction différente. Les directions possibles sont down, left, right ou up.
+
+
+#### Exemples
+##### Icônes sans contour, filaires
+* Forme extérieure irrégulière :<br>
+   <m-icon name="m-svg__edit" size="24px"></m-icon><m-icon name="m-svg__video" size="24px"></m-icon>
+* Forme extérieure régulière mais qui n'est pas un contour (l'horloge par exemple) :<br>
+   <m-icon name="m-svg__clock" size="24px"></m-icon><m-icon name="m-svg__warning" size="24px"></m-icon>
+
+##### Icônes avec contour, filaires
+<m-icon name="m-svg__video-square" size="24px"></m-icon><m-icon name="m-svg__image-square" size="24px"></m-icon>
+
+##### Icônes « pleines » :
+* Sans contour :<br>
+   <m-icon name="m-svg__video-filled" size="24px"></m-icon><m-icon name="m-svg__arrow-head-filled" size="24px"></m-icon>
+* Avec contour :<br>
+   <m-icon name="m-svg__add-circle-filled" size="24px">
+
+##### Même icône, directions différentes :
+<m-icon name="m-svg__chevron-circle--down" size="24px"></m-icon>
+<m-icon name="m-svg__chevron-circle--left" size="24px"></m-icon>
+<m-icon name="m-svg__chevron-circle--right" size="24px"></m-icon>
+<m-icon name="m-svg__chevron-circle--up" size="24px"></m-icon>
 
 ### Pastille
-Si vous souhaitez Il est possible de superposer une pastille sur une icône afin d'indiquer un état ou (voir <modul-go name="m-icon"></modul-go>), il est possible de définir ses coordonnées exactes à même le format SVG :
+Une pastille permet d'associer un état à la notion représentée par l'icône (voir <modul-go name="m-icon"></modul-go>). Si votre nouvelle icône est succeptible d'afficher un état, il est recommandé de définir ses coordonnées exactes à même le format SVG en utilisant l'attribut <pre class="m-u--display--inline">data-badge-coordonates</pre> :
 <pre>
-<svg>
-   <symbol id="m-edit" viewBox="0 0 24 24" data-badge-coordonates="20 23"></symbol>
-</svg>
+&lt;svg&gt;
+   &lt;symbol id="m-edit" viewBox="0 0 24 24" data-badge-coordonates="20 23"&gt;&lt;/symbol&gt;
+&lt;/svg&gt;
 </pre>
 
 ### Pourquoi le format SVG ?
