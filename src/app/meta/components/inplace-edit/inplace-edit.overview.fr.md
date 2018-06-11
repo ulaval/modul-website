@@ -256,6 +256,42 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
 
 Pour éviter la perte de données, un message d'avertissement devrait-être affiché lorsque l'utilisateur décide de naviguer vers une autre page avant d'avoir enregistré (ou annulé) ses modifications.
 
+### États
+#### En erreur
+
+<modul-demo>
+
+```html
+<m-inplace-edit :editMode="true" :error="true" class="modul-demo__inplace-edit-component">
+    <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
+        <h3 class="modul-demo__inplace-edit-title m-u--no-margin">Je suis un sous-titre</h3>
+    </div>
+    <div slot="editMode">
+        <m-textfield error-message="Ce champ est requis." max-width="none" placeholder="Je suis un sous-titre" tag-style="h3"></m-textfield>
+    </div>
+</m-inplace-edit>
+
+```
+
+</modul-demo>
+
+#### En attente
+
+<modul-demo>
+
+```html
+<m-inplace-edit :editMode="true" :waiting="true" class="modul-demo__inplace-edit-component">
+    <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
+        <h3 class="modul-demo__inplace-edit-title m-u--no-margin">Je suis un sous-titre</h3>
+    </div>
+    <div slot="editMode">
+        <m-textfield waiting="true" max-width="none" placeholder="Je suis un sous-titre" tag-style="h3" ></m-textfield>
+    </div>
+</m-inplace-edit>
+```
+
+</modul-demo>
+
 ### Cas particuliers
 #### Champ vide
 Lors de l'édition d'un champ vide, il est recommandé d'utiliser un texte de remplissage pour assurer une transition fluide entre le mode de consultation et le mode d’édition. Le texte par défaut du champ en mode consultation et placé comme texte de remplissage en mode édition.
