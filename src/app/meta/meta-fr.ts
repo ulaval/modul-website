@@ -92,6 +92,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/icon-file/icon-file.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/input-style/input-style.meta.fr.json')
             );
             i18n.addMessages(

@@ -1,9 +1,9 @@
-import { ModulWebsite } from '../modul-website';
-import Component from 'vue-class-component';
-import WithRender from './icon-gallery.html?style=./icon-gallery.scss';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
-import { start } from 'repl';
+import Component from 'vue-class-component';
+
+import { ModulWebsite } from '../modul-website';
+import WithRender from './icon-gallery.html?style=./icon-gallery.scss';
 
 export enum MIconGalleryViewMode {
     List = 'list',
@@ -16,7 +16,7 @@ export enum MIconGalleryViewMode {
 })
 export class MIconGallery extends ModulWebsite {
 
-    private iconSize: string = '20px';
+    private iconSize: string = '24px';
     private focus: boolean = false;
     private searchModel: string = '';
     private intenalViewMode: string = MIconGalleryViewMode.Block;
@@ -25,6 +25,7 @@ export class MIconGallery extends ModulWebsite {
     private previewIconSize: number = 32;
     private previewName: string = '';
     private previewTag: string = '';
+    private maxWidth: string = 'regular';
 
     private iconList = [
         {
@@ -76,7 +77,7 @@ export class MIconGallery extends ModulWebsite {
             'nameFr': 'Fermer'
         },
         {
-            'name': 'tag-chevrons',
+            'name': 'code-chevrons',
             'nameFr': 'Chevrons de balisage'
         },
         {
@@ -142,14 +143,6 @@ export class MIconGallery extends ModulWebsite {
         return this.viewMode == MIconGalleryViewMode.Block ? 'm-radio' : 'm-panel';
     }
 
-    private get sizeFieldWidth(): string {
-        return this.focus ? '0' : '64px';
-    }
-
-    private get viewModeButtonWidth(): string {
-        return this.focus ? '0' : '44px';
-    }
-
     private get isViewModeBlock(): boolean {
         return this.as<MediaQueriesMixin>().isMqMinS && (this.viewMode == MIconGalleryViewMode.Block);
     }
@@ -164,10 +157,12 @@ export class MIconGallery extends ModulWebsite {
 
     private onFocus(): void {
         this.focus = true;
+        this.maxWidth = '100%';
     }
 
     private onBlur(): void {
         this.focus = false;
+        this.maxWidth = 'regular';
     }
 
     private setLargeIconSize(): void {
@@ -187,6 +182,10 @@ export class MIconGallery extends ModulWebsite {
             });
         }
         return filtereComponents;
+    }
+
+    private get hasSearchResult(): boolean {
+        return this.searchResult.length > 0;
     }
 
     private openDialog(name, nameFr) {

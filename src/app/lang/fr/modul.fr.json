@@ -25,13 +25,15 @@
         "rgb": "RVB",
         "cmyk": "CMJN",
         "search": "Rechercher",
-        "search-icons": "Recherche d'icônes",
+        "search-icons": "Rechercher une icône",
+        "search-icons-no-result": "Aucune icône ne correspond à votre recherche.",
         "responsive-design": "Design {0}adaptatif",
         "responsive-design-desc": "Des fonctionnalités et des affichages de contenu adaptés à tout appareil.",
         "responsive-design-link": "En savoir plus",
         "powered-by": "Propulsé par",
         "terms-of-use": "Conditions d'utilisation",
         "version": "version",
-        "documentation-to-come": " - à&nbsp;venir"
+        "documentation-to-come": " - à&nbsp;venir",
+        "icon-size": "Taille"
     }
 }
