@@ -6,7 +6,7 @@
 Bien que l'utilisation d'icônes de la librairie existante soit à privilégier, de nouvelles icônes peuvent être créées pour répondre à des besoins spécifiques.
 
 ### Taille
-L'icône doit être créée à l'intérieur d'un cadre de 24x24 pixels, au format SVG. Au minimum, une des deux dimensions  doit être occupée entièrement par l'icône.
+L'icône doit être créée à l'intérieur d'un cadre de 24x24 pixels, au format SVG. Au minimum, l'icône doit occuper entièrement une des deux dimensions.
 
 ### Choix du nom
 Le nom d'une icône doit désigner l'action ou la notion qu'elle symbolise. Par exemple, l'icône de crayon est utilisée pour symboliser la modification d'un élément, son nom en français est donc <em>Modifier</em>. Une fois le nom français de l'icône choisi, il reste à déterminer son identifiant SVG.
@@ -16,10 +16,10 @@ Les identifiants SVG des icônes de la librairie MOD<strong>UL</strong> sont en 
 
 <pre>m-svg__&lt;name&gt;-&lt;outline-shape&gt;-&lt;filled&gt;--&lt;direction&gt;</pre>
 
-* &lt;name&gt;<br>Nom désignant l'action ou la notion que l'icône symbolise (voir la section <em>Choix du nom</em>).
-* &lt;outline-shape&gt;<br>Forme du contour entourant l'icône, un cercle ou un carré par exemple. Veuillez porter une attention particulière car souvent, le contour extérieur fait partie intégrante de l'icône. Dans ce cas, la forme n'est pas mentionnée dans le nom (l'horloge ou l'avertissment par exemple).
-* &lt;filled&gt;<br>Identifie une icône « pleine », en opposition à sa version filaire.
-* &lt;direction&gt;<br>Une même icône peut avoir une direction différente. Les directions possibles sont down, left, right ou up.
+* **&lt;name&gt;**<br>Nom désignant l'action ou la notion que l'icône symbolise (voir la section <em>Choix du nom</em>).
+* **&lt;outline-shape&gt;**<br>Forme du contour entourant l'icône, un cercle ou un carré par exemple (circle, square, etc.). Veuillez porter une attention particulière car souvent, le contour extérieur fait partie intégrante de l'icône. Dans ce cas, la forme n'est pas mentionnée dans le nom (l'horloge ou l'avertissment par exemple).
+* **&lt;filled&gt;**<br>Identifie une icône « pleine », en opposition à sa version filaire.
+* **&lt;direction&gt;**<br>Une même icône (de flèche) peut avoir une direction différente. Les directions possibles sont down, left, right ou up.
 
 
 #### Exemples
@@ -45,7 +45,7 @@ Les identifiants SVG des icônes de la librairie MOD<strong>UL</strong> sont en 
 <m-icon name="m-svg__chevron-circle--up" size="24px"></m-icon>
 
 ### Pastille
-Une pastille permet d'associer un état à la notion représentée par l'icône (voir <modul-go name="m-icon"></modul-go>). Si votre nouvelle icône est succeptible d'afficher un état, il est recommandé de définir ses coordonnées exactes à même le format SVG en utilisant l'attribut <pre class="m-u--display--inline">data-badge-coordonates</pre> :
+Une pastille permet d'associer un état à la notion représentée par l'icône (voir <modul-go name="m-icon"></modul-go>). Si votre nouvelle icône est succeptible d'afficher un état, il est recommandé de définir ses coordonnées exactes à même le format SVG en utilisant l'attribut <pre class="m-u--display--inline">data-badge-coordonates</pre> en prenant comme origine le coin haut gauche de l'icône.
 <pre>
 &lt;svg&gt;
    &lt;symbol id="m-edit" viewBox="0 0 24 24" data-badge-coordonates="20 23"&gt;&lt;/symbol&gt;

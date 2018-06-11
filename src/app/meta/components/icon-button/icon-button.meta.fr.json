@@ -1,5 +1,12 @@
 {
     "m-icon-button-meta": {
-        "website-name": "Bouton icône"
+        "website-name": "Icône cliquable",
+        "skin": "light/dark/primary/secondary/link",
+        "disabled": "boolean",
+        "buttonSize": "string",
+        "iconName": "string",
+        "iconSize": "string",
+        "ripple": "boolean",
+        "title": "string"
     }
 }

@@ -12,16 +12,16 @@ Les icônes augmentent la clarté d’une interface en donnant des repères visu
 ## Caractéristiques
 
 ### Choix
-<m-link mode="link" url='/normes/normes-graphiques/iconographie/'>L'iconographie</m-link> est votre point de départ, elle met à votre disposition un ensemble d'icônes communément utilisées dans la conception d'une interface. Afin d'éviter toute confusion et d'encourager la cohérence, chaque icône est nommée en fonction de l'action ou la notion qu'elle représente. Par exemple, l'icône de poubelle est nommée <em>supprimer</em>, la croix en forme de x <em>fermer/vider le champ</em>.
+Le choix d'une icône est important, dans un même écosytème, unnnne icpone devrait représenter toujours le même contexte. Pour encourager cette pratique, <m-link mode="link" url='/normes/normes-graphiques/iconographie/librairie'>la librairie d'icônes</m-link> met à votre disposition un ensemble d'icônes communément utilisées dans la conception d'une interface. Afin d'éviter toute confusion et d'encourager la cohérence, chaque icône est nommée en fonction de l'action ou la notion qu'elle représente. Par exemple, l'icône de poubelle est nommée <em>supprimer</em>, la croix en forme de x <em>fermer/vider le champ</em>.
 
 #### Icônes de fichier
-Les icônes illustrant le type d'un fichier sont un repère efficace pour l'utilisateur, il est recommandé de les utiliser vis-à-vis du nom d'un fichier. Pour faciliter l'utilisation de ces icônes, il est possible d'utiliser le composant <modul-go name="m-icon-file"></modul-go>, qui associe la bonne icône en fonction de l'extension du fichier.
+Pour illustrer le type d'un fichier, il est recommandé d'utiliser le composant <modul-go name="m-icon-file"></modul-go>, qui associe la bonne icône automatiquement en fonction de l'extension du fichier.
 
 #### Icônes personnalisées
-Bien qu'il soit recommandé d'utiliser le plus plus possible les icônes de la librairie existante, il est possible de créer une nouvelle icône pour un besoin spécifique. La marche à suivre est décrite à la page <m-link mode="link" url='/normes/normes-graphiques/iconographie/'>iconographie</m-link>.
+Bien qu'il soit recommandé d'utiliser le plus plus possible les icônes de <m-link mode="link" url='/normes/normes-graphiques/iconographie/librairie'>la librairie existante</m-link>, il est possible de créer une nouvelle icône pour un besoin spécifique. La marche à suivre est décrite à la page <m-link mode="link" url='/normes/normes-graphiques/iconographie/icone-personnalisee'>icône personnalisée</m-link>.
 
-### Couleurs
-De façon générale, les icônes héritent de la couleur de la police de caractères. Par exemple, une icône qui accompagne un lien cliquable sera de la couleur de la police appliquée aux liens. Quelques exceptions confirment cette règle. Par exemple, les icônes de fichiers qui représentent une marque déposée comme les docouments PDF ou Word sont de la couleur originale de la marque. Certaines icônes de création sont bleues. Ces icônes doivent concerver leur couleur originale bien reconnaissable.
+### Couleur
+De façon générale, les icônes héritent de la couleur de la police de caractères. Par exemple, une icône qui accompagne un lien cliquable sera de la couleur de la police appliquée aux liens. Quelques exceptions confirment cette règle. Par exemple, les icônes de fichiers qui représentent une marque déposée comme les docouments PDF ou Word sont de la couleur originale de la marque. Certaines icônes de création sont bleues. Ces icônes conservent leur couleur originale car elle les rend plus facilement reconnaissables.
 
 <modul-demo>
 
@@ -29,9 +29,7 @@ De façon générale, les icônes héritent de la couleur de la police de caract
 <m-link mode="link" url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf"><m-icon-file class="m-u--margin-right--s" size="16px" extension="pdf"></m-icon-file>Règlement des études</m-link><br/>
 <m-link class="m-u--margin-top" mode="link" url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf"><m-icon-file class="m-u--margin-right--s" size="16px" extension="default"></m-icon-file>Fichier non reconnu</m-link>
 ```
-
 </modul-demo>
-
 
 ### Pastilles
 Une pastille est un petit disque de couleur que l'on superpose à une icône pour illustrer un état parmi les suivants&nbsp;:
@@ -74,5 +72,17 @@ Par défaut, la pastille est positionnée automatiquement à l'emplacement dési
 
 </modul-demo>
 
+# Icône de fichier
+<!-- Exemple d'une liste d'icône de fichier avec non de fichier en libellé comme dans le téléverseur -->
 
+Les icônes de fichier sont un repère efficace pour identifier rapidement le type d'un fichier. Il est recommandé de les utiliser vis-à-vis du nom du fichier, particulièrement lorsqu'ils sont affichés sous forme de liste. Afin de préserver la cohérence des interfaces, l'association entre l'extension du fichier et l'icône est toujours la même. Si le type de votre fichier n'est pas supporté, une icône par défaut est affichée.
 
+## Caractéristiques
+
+### Couleur
+De façon générale, les icônes fichiers héritent de la couleur de la police de caractères du contexte dans lequel elles sont utilisée. Par exemple, une icône qui accompagne un lien cliquable sera de la couleur de la police appliquée aux liens. Quelques exceptions confirment cette règle pour les types de fichier qui représentent une marque déposée comme les docouments PDF ou Word. Ces icônes sont de la couleur originale de la marque pour les rendre encore plus facilement reconnaissables.
+<!-- Exemple d'icône de fichier Word et PDF et d'autre dans la couleur d'origine. -->
+
+### Pastille
+Une pastille peut-être appliquée à une icône de fichier, par exemple afin de représenter un fichier téléversé avec succès. Voir <modul-go name=""></modul-go> pour plus de détail.
+<!-- Exemple d'icône de fichier avec pastille comme dans le téléverseur succès et error -->
