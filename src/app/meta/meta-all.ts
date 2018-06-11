@@ -275,7 +275,7 @@ export class MetaAll implements PluginObject<any> {
             ICON_FILE_NAME,
             require('@ulaval/modul-components/dist/components/icon-file/icon-file.meta.json'),
             CATEGORY_CONTENT,
-            ModulComponentStatus.Beta,
+            ModulComponentStatus.Production,
             true
         );
         this.mergeComponentMeta(
