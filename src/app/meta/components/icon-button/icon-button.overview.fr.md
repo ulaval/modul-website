@@ -1,17 +1,17 @@
-L'icône cliquable est un contrôle qui a comme seul libellé l'icône elle-même. Le choix de l'icône est donc essentiel afin de bien représenter l'action ou le contenu qui sera accessible lorsque l'utilisateur interagira avec lui. Elle est plus discrête qu'un bouton standard, tout en offrant le même type de fonctionnalité.
+L'icône cliquable est un contrôle plus discrêt qu'un bouton standard, tout en offrant le même type de fonctionnalité.
 
 <modul-do>
 <ul>
-<li>Utiliser une icône cliquable pour ouvrir une fenêtre contextuelle, comme une liste de notifications.</li>
-<li> Utiliser l'icône cliquable pour effectuer une action, comme la modification d'un élément.
-<li>Utiliser l'icône cliquable pour ouvrir une palette d'outils.</li>
+<li>Utiliser l'icône cliquable là où un bouton serait trop imposant, comme l'accès au profil.</li>
+<li>Utiliser l'icône cliquable lorsqu'une action est répétée dans une page, comme la modification d'une section.</li>
+<li>Utiliser une icône cliquable pour afficher de l'information détaillée dans une fenêtre contextuelle, comme une liste de notifications.</li>
+<li>Utiliser une icône cliquable lorsqu'il existe une image bien comprise qui illustre un concept complexe, comme un panier d'achat.</li>
 </ul>
 </modul-do>
 
 ## Caractéristiques
 ### Traitements visuels
 Le composant *icône cliquable* offre plusieurs traitements visuels.
-
 
 <modul-demo>
 
@@ -65,8 +65,9 @@ Le composant *icône cliquable* offre plusieurs traitements visuels.
 </modul-demo>
 
 ### Taille
-Bien qu'il soit préférable de ne pas modifier la taille du bouton icône, il est tout de même possible de modifier la taille de la zone cliquable ou la taille de l'icône.
+Tout comme une <modul-go name="m-icon"></modul-go>, la taille de l'icône cliquable n'est pas normée. Cependant, sur les appareils tactiles, il est important de conserver une zone cliquable minimum de 44px. L'utilisation des doigts pour interagir avec l'appareil offre peu de précision, ce minimum garantit une expérience utilisateur optimale sur ce genre d'appareil.
 
+<!-- Mettre un exemple du plus petit icône pour préserver le 44px minimum
 <modul-demo>
 
 ```html
@@ -75,7 +76,7 @@ Bien qu'il soit préférable de ne pas modifier la taille du bouton icône, il e
 <m-icon-button iconSize="32px" icon-name="calendar" title="Afficher le calendrier">Calendrier</m-icon-button>
 ```
 
-</modul-demo>
+</modul-demo>-->
 
 ### Accessibilité
-Il est obligatoire de définir un libellé qui sera affiché au survol de l'icône et lu aux personnes utilisant un lecteur vocal. Comme pour un <modul-go name="m-button"></modul-go>, le libellé devrait être un verbe d'action à l'infinitif désignant l'action effectuée lorsque l'utilisateur clique sur l'icône.
+Afin d'améliorer l'expérience des personnes utilisant un lecteur vocal, il est obligatoire de définir le libellé alternatif d'une icône cliquable. Comme pour un <modul-go name="m-button"></modul-go>, le libellé devrait être un verbe d'action à l'infinitif désignant l'action effectuée lorsque l'utilisateur clique sur l'icône.
