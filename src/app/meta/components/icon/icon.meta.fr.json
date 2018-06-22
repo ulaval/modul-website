@@ -1,8 +1,8 @@
 {
     "m-icon-meta": {
         "website-name": "Icône",
-        "name": "Nom de l'icône, par exemple « m-svg__edit ». Si l'icône fait partie de la librairie MODUL, le préfixe n'est pas nécessaire, vous pouvez utiliser uniquement sa désignation « edit ». Consulter la <modul-go url='/normes/normes-graphiques/iconographie/'>librairie</modul-go> pour la liste complète des icônes disponibles dans MODUL.",
-        "size": "Taille de l'icône en pixels, par exemple « 30px ».",
+        "name": "Nom de l'icône, par exemple «&nbsp;m-svg__edit&nbsp;». Si l'icône fait partie de la librairie MODUL, le préfixe n'est pas nécessaire, vous pouvez utiliser uniquement sa désignation «&nbsp;edit&nbsp;». Consulter la <modul-go url='/normes/normes-graphiques/iconographie/'>librairie</modul-go> pour la liste complète des icônes disponibles.",
+        "size": "Taille de l'icône en pixels, par exemple «&nbsp;30px&nbsp;».",
         "svgTitle": "Libellé affiché au survol de l'icône et lu aux personnes utilisant un lecteur vocal. Il est obligatoire lorsque l'icône n'est pas accompagnée d'un libellé dans l'interface."
     }
 }
