@@ -7,11 +7,11 @@
         <template v-if="!isMqMinS">{{ getComponentName(selectedComponent) }}</template>
     </h1>
     <button slot="leftArrow" @click="getPreviousComponent()" class="m-u--button-primary">
-        <m-icon name="left-chevron"></m-icon>
+        <m-icon name="m-svg__chevron--left"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie précédent</span> -->
     </button>
     <button slot="rightArrow" @click="getNextComponent()" class="m-u--button-primary">
-        <m-icon name="chevron"></m-icon>
+        <m-icon name="m-svg__chevron--right"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la catégorie suivante</span> -->
     </button>
     <transition name="modul-u--light-template-transition" appear>

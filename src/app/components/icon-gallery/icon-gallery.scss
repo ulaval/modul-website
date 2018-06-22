@@ -164,6 +164,11 @@ $modul-icon-gallery--color-active: $m-color--grey-lightest !default;
         flex-direction: column;
         align-items: center;
         margin-bottom: $m-margin;
+        max-width: 158px;
+
+        @media (min-width: $m-mq--min--m) {
+            max-width: 144px;
+        }
     }
 
     &__icon {
