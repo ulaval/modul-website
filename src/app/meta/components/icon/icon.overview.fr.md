@@ -45,9 +45,9 @@ Une pastille est un petit disque de couleur que l'on superpose à une icône pou
 <modul-demo>
 
 ```html
-<m-icon name="calendar" v-m-badge="{ state: 'completed'}"></m-icon>
-<m-icon name="calendar" v-m-badge="{ state: 'warning'}"></m-icon>
-<m-icon name="calendar" v-m-badge="{ state: 'error'}"></m-icon>
+<m-icon name="m-svg__calendar" v-m-badge="{ state: 'completed'}"></m-icon>
+<m-icon name="m-svg__calendar" v-m-badge="{ state: 'warning'}"></m-icon>
+<m-icon name="m-svg__calendar" v-m-badge="{ state: 'error'}"></m-icon>
 
 ```
 
@@ -67,9 +67,9 @@ Par défaut, la pastille est positionnée automatiquement à l'emplacement dési
 
 ```html
 <h5>Position par défaut</h5>
-<m-icon name="clock" v-m-badge="{ state: 'completed'}" size="48px"></m-icon>
+<m-icon name="m-svg__clock" v-m-badge="{ state: 'completed'}" size="48px"></m-icon>
 <h5>Après ajustement</h5>
-<m-icon name="clock" v-m-badge="{ state: 'completed', offsetX: '-4px', offsetY: '-2px'}" size="48px"></m-icon>
+<m-icon name="m-svg__clock" v-m-badge="{ state: 'completed', offsetX: '-4px', offsetY: '-2px'}" size="48px"></m-icon>
 
 ```
 
