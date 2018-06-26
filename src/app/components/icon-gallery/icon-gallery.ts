@@ -34,351 +34,351 @@ export class MIconGallery extends ModulWebsite {
         },
         {
             'name': 'm-svg__arrow--down',
-            'nameFr': 'Flèche'
+            'nameFr': 'Flèche bas'
         },
         {
             'name': 'm-svg__arrow--left',
-            'nameFr': 'Calendrier'
+            'nameFr': 'Flèche gauche'
         },
         {
             'name': 'm-svg__arrow--right',
-            'nameFr': 'Valide'
+            'nameFr': 'Flèche droite'
         },
         {
             'name': 'm-svg__arrow--up',
-            'nameFr': 'Chevron'
+            'nameFr': 'Flèche haut'
         },
         {
             'name': 'm-svg__arrow-head-filled--down',
-            'nameFr': 'Pastille de validation'
+            'nameFr': 'Flèche triangle bas'
         },
         {
             'name': 'm-svg__arrow-head-filled--left',
-            'nameFr': 'Pastille de fermeture'
+            'nameFr': 'Flèche triangle gauche'
         },
         {
             'name': 'm-svg__arrow-head-filled--right',
-            'nameFr': 'Pastille d\'erreur'
+            'nameFr': 'Flèche triangle droite'
         },
         {
             'name': 'm-svg__arrow-head-filled--up',
-            'nameFr': 'Pastille d\'information'
+            'nameFr': 'Flèche triangle haut'
         },
         {
             'name': 'm-svg__arrow-thin--down',
-            'nameFr': 'Pastille d\'avertisement'
+            'nameFr': 'Flèche mince bas'
         },
         {
             'name': 'm-svg__arrow-thin--left',
-            'nameFr': 'Horlogue'
+            'nameFr': 'Flèche mince gauche'
         },
         {
             'name': 'm-svg__arrow-thin--right',
-            'nameFr': 'Fermer'
+            'nameFr': 'Flèche mince droite'
         },
         {
             'name': 'm-svg__arrow-thin--up',
-            'nameFr': 'Chevrons de balisage'
+            'nameFr': 'Flèche mince haut'
         },
         {
             'name': 'm-svg__attachment',
-            'nameFr': 'Flèche vers le bas'
+            'nameFr': 'Pièce jointe'
         },
         {
             'name': 'm-svg__calendar',
-            'nameFr': 'Erreur'
+            'nameFr': 'Calendrier'
         },
         {
             'name': 'm-svg__chevron--down',
-            'nameFr': 'Chevron vers le bas'
+            'nameFr': 'Chevron bas'
         },
         {
             'name': 'm-svg__chevron--left',
-            'nameFr': 'Héraldique'
+            'nameFr': 'Chevron gauche'
         },
         {
             'name': 'm-svg__chevron--right',
-            'nameFr': 'Information'
+            'nameFr': 'Chevron droit'
         },
         {
             'name': 'm-svg__chevron--up',
-            'nameFr': 'Flèche vers la gauche'
+            'nameFr': 'Chevron haut'
         },
         {
             'name': 'm-svg__chevron-circle--down',
-            'nameFr': 'Chevron vers la gauche'
+            'nameFr': 'Chevron cercle bas'
         },
         {
             'name': 'm-svg__chevron-circle--left',
-            'nameFr': 'Menu d\'options'
+            'nameFr': 'Chevron cercle gauche'
         },
         {
             'name': 'm-svg__chevron-circle--right',
-            'nameFr': 'Recherche'
+            'nameFr': 'Chevron cercle droit'
         },
         {
             'name': 'm-svg__chevron-circle--up',
-            'nameFr': 'Flèche vers le haut'
+            'nameFr': 'Chevron cercle haut'
         },
         {
             'name': 'm-svg__clock',
-            'nameFr': 'Chevron vers le haut'
+            'nameFr': 'Horloge'
         },
         {
             'name': 'm-svg__close-clear',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fermer / Vider'
         },
         {
             'name': 'm-svg__code-tag',
-            'nameFr': 'Chevron'
+            'nameFr': 'Balise de code '
         },
         {
             'name': 'm-svg__completed-filled',
-            'nameFr': 'Chevron'
+            'nameFr': 'Pastille complété'
         },
         {
             'name': 'm-svg__confirmation',
-            'nameFr': 'Chevron'
+            'nameFr': 'Confirmation'
         },
         {
             'name': 'm-svg__delete',
-            'nameFr': 'Chevron'
+            'nameFr': 'Supprimer'
         },
         {
             'name': 'm-svg__dragndrop',
-            'nameFr': 'Chevron'
+            'nameFr': 'Glisser déposer'
         },
         {
             'name': 'm-svg__edit',
-            'nameFr': 'Chevron'
+            'nameFr': 'Modifier'
         },
         {
             'name': 'm-svg__email',
-            'nameFr': 'Chevron'
+            'nameFr': 'Courriel'
         },
         {
             'name': 'm-svg__error-filled',
-            'nameFr': 'Chevron'
+            'nameFr': 'Pastille erreur'
         },
         {
             'name': 'm-svg__error',
-            'nameFr': 'Chevron'
+            'nameFr': 'Erreur'
         },
         {
             'name': 'm-svg__evaluation',
-            'nameFr': 'Chevron'
+            'nameFr': 'Évaluation'
         },
         {
             'name': 'm-svg__file-access',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier Acces'
         },
         {
             'name': 'm-svg__file-default',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier'
         },
         {
             'name': 'm-svg__file-dwg',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier DWG'
         },
         {
             'name': 'm-svg__file-excel',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier Excel'
         },
         {
             'name': 'm-svg__file-flash',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier Flash'
         },
         {
             'name': 'm-svg__file-image',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier image'
         },
         {
             'name': 'm-svg__file-mediaplayer',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier Mediaplayer'
         },
         {
-            'name': 'm-svg__file-music',
-            'nameFr': 'Chevron'
+            'name': 'm-svg__file-audio',
+            'nameFr': 'Fichier audio'
         },
         {
             'name': 'm-svg__file-openoffice-base',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier OpenOffice base'
         },
         {
             'name': 'm-svg__file-openoffice-calc',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier OpenOffice calc'
         },
         {
             'name': 'm-svg__file-openoffice-default',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier OpenOffice'
         },
         {
             'name': 'm-svg__file-openoffice-draw',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier OpenOffice draw'
         },
         {
             'name': 'm-svg__file-openoffice-impress',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier OpenOffice impress'
         },
         {
             'name': 'm-svg__file-openoffice-math',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier OpenOffice math'
         },
         {
             'name': 'm-svg__file-openoffice-writter',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier OpenOffice writter'
         },
         {
             'name': 'm-svg__file-pdf',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier PDF '
         },
         {
             'name': 'm-svg__file-powerpoint',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier PowerPoint'
         },
         {
             'name': 'm-svg__file-quicktime',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier Quicktime'
         },
         {
             'name': 'm-svg__file-realplayer',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier Realplayer'
         },
         {
             'name': 'm-svg__file-text',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier texte'
         },
         {
             'name': 'm-svg__file-video',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier vidéo'
         },
         {
             'name': 'm-svg__file-visio',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier Visio'
         },
         {
             'name': 'm-svg__file-word',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier Word'
         },
         {
             'name': 'm-svg__file-zip',
-            'nameFr': 'Chevron'
+            'nameFr': 'Fichier ZIP'
         },
         {
             'name': 'm-svg__full-screen',
-            'nameFr': 'Chevron'
+            'nameFr': 'Plein écran'
         },
         {
             'name': 'm-svg__good-answer',
-            'nameFr': 'Chevron'
+            'nameFr': 'Bonne réponse'
         },
         {
             'name': 'm-svg__good-answer2',
-            'nameFr': 'Chevron'
+            'nameFr': 'Bonne réponse'
         },
         {
             'name': 'm-svg__grouping',
-            'nameFr': 'Chevron'
+            'nameFr': 'Regroupement'
         },
         {
             'name': 'm-svg__heraldry',
-            'nameFr': 'Chevron'
+            'nameFr': 'Blason'
         },
         {
             'name': 'm-svg__hide',
-            'nameFr': 'Chevron'
+            'nameFr': 'Masquer'
         },
         {
             'name': 'm-svg__image-slideshow',
-            'nameFr': 'Chevron'
+            'nameFr': 'Galerie image'
         },
         {
             'name': 'm-svg__image-square',
-            'nameFr': 'Chevron'
+            'nameFr': 'Image'
         },
         {
             'name': 'm-svg__image1-filled',
-            'nameFr': 'Chevron'
+            'nameFr': 'Image'
         },
         {
             'name': 'm-svg__image2-filled',
-            'nameFr': 'Chevron'
+            'nameFr': 'Image'
         },
         {
             'name': 'm-svg__information-filled',
-            'nameFr': 'Chevron'
+            'nameFr': 'Pastille information'
         },
         {
             'name': 'm-svg__information',
-            'nameFr': 'Chevron'
+            'nameFr': 'Information'
         },
         {
             'name': 'm-svg__leave-full-screen',
-            'nameFr': 'Chevron'
+            'nameFr': 'Quitter plein écran'
         },
         {
             'name': 'm-svg__logout',
-            'nameFr': 'Chevron'
+            'nameFr': 'Se déconnecter'
         },
         {
             'name': 'm-svg__notification',
-            'nameFr': 'Chevron'
+            'nameFr': 'Notification'
         },
         {
             'name': 'm-svg__options',
-            'nameFr': 'Chevron'
+            'nameFr': 'Menu d\'options'
         },
         {
             'name': 'm-svg__panel',
-            'nameFr': 'Chevron'
+            'nameFr': 'Palette'
         },
         {
             'name': 'm-svg__profile',
-            'nameFr': 'Chevron'
+            'nameFr': 'Profil'
         },
         {
             'name': 'm-svg__search',
-            'nameFr': 'Chevron'
+            'nameFr': 'Rechercher'
         },
         {
             'name': 'm-svg__show',
-            'nameFr': 'Chevron'
+            'nameFr': 'Afficher'
         },
         {
             'name': 'm-svg__subtitle',
-            'nameFr': 'Chevron'
+            'nameFr': 'Sous-titre'
         },
         {
             'name': 'm-svg__text1',
-            'nameFr': 'Chevron'
+            'nameFr': 'Texte'
         },
         {
             'name': 'm-svg__text2',
-            'nameFr': 'Chevron'
+            'nameFr': 'Texte'
         },
         {
             'name': 'm-svg__tip',
-            'nameFr': 'Chevron'
+            'nameFr': 'Conseil'
         },
         {
             'name': 'm-svg__video-filled',
-            'nameFr': 'Chevron'
+            'nameFr': 'Vidéo'
         },
         {
             'name': 'm-svg__video-slideshow',
-            'nameFr': 'Chevron'
+            'nameFr': 'Galerie vidéo'
         },
         {
             'name': 'm-svg__video',
-            'nameFr': 'Chevron'
+            'nameFr': 'Vidéo'
         },
         {
             'name': 'm-svg__warning-filled',
-            'nameFr': 'Chevron'
+            'nameFr': 'Pastille avertissement'
         },
         {
             'name': 'm-svg__warning',
-            'nameFr': 'Chevron'
+            'nameFr': 'Avertissement'
         }
     ];
 
