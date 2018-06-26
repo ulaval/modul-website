@@ -534,7 +534,7 @@ export class MetaAll implements PluginObject<any> {
             INPLACE_EDIT,
             require('@ulaval/modul-components/dist/components/inplace-edit/inplace-edit.meta.json'),
             CATEGORY_FORMS,
-            ModulComponentStatus.Beta,
+            ModulComponentStatus.Production,
             true
         );
 
