@@ -40,10 +40,6 @@ export class MIconGallery extends ModulWebsite {
         this.intenalViewMode = value;
     }
 
-    private get iconViewMode(): string {
-        return this.viewMode == MIconGalleryViewMode.Block ? 'm-radio' : 'm-panel';
-    }
-
     private get isViewModeBlock(): boolean {
         return this.as<MediaQueriesMixin>().isMqMinS && (this.viewMode == MIconGalleryViewMode.Block);
     }

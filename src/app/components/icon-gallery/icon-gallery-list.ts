@@ -249,6 +249,14 @@ export class ModulIconList {
             'nameFr': 'Bonne réponse'
         },
         {
+            'name': 'm-svg__grid-filled',
+            'nameFr': 'Affichage grille'
+        },
+        {
+            'name': 'm-svg__grid',
+            'nameFr': 'Affichage grille'
+        },
+        {
             'name': 'm-svg__grouping',
             'nameFr': 'Regroupement'
         },
@@ -287,6 +295,14 @@ export class ModulIconList {
         {
             'name': 'm-svg__leave-full-screen',
             'nameFr': 'Quitter plein écran'
+        },
+        {
+            'name': 'm-svg__list-filled',
+            'nameFr': 'Affichage liste'
+        },
+        {
+            'name': 'm-svg__list',
+            'nameFr': 'Affichage liste'
         },
         {
             'name': 'm-svg__logout',
