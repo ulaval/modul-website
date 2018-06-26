@@ -24,7 +24,7 @@ export class MIconGallery extends ModulWebsite {
 
     private dialogOpen: boolean = false;
     private previewIconSize: number = 32;
-    private previewName: string = '';
+    private previewName: string = 'title';
     private previewTag: string = '';
     private maxWidth: string = 'regular';
 

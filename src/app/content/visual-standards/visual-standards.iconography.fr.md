@@ -30,13 +30,13 @@ Les identifiants SVG des icônes de la librairie MOD<strong>UL</strong> sont en 
    <m-icon name="m-svg__clock" size="24px"></m-icon><m-icon name="m-svg__warning" size="24px"></m-icon>
 
 ##### Icônes avec contour, filaires
-<m-icon name="m-svg__video-square" size="24px"></m-icon><m-icon name="m-svg__image-square" size="24px"></m-icon>
+<m-icon name="m-svg__image-square" size="24px"></m-icon>
 
 ##### Icônes « pleines » :
 * Sans contour :<br>
-   <m-icon name="m-svg__video-filled" size="24px"></m-icon><m-icon name="m-svg__arrow-head-filled" size="24px"></m-icon>
+   <m-icon name="m-svg__video-filled" size="24px"></m-icon><m-icon name="m-svg__arrow-head-filled--down" size="24px"></m-icon>
 * Avec contour :<br>
-   <m-icon name="m-svg__add-circle-filled" size="24px">
+   <m-icon name="m-svg__add-circle-filled" size="24px"></m-icon>
 
 ##### Même icône, directions différentes :
 <m-icon name="m-svg__chevron-circle--down" size="24px"></m-icon>
