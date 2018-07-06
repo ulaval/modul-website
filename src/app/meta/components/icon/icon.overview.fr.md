@@ -12,7 +12,7 @@ Les icônes augmentent la clarté d’une interface en donnant des repères visu
 ## Caractéristiques
 
 ### Choix
-La <m-link mode="link" url='/normes/normes-graphiques/iconographie'>librairie d'icônes</m-link> met à votre disposition un ensemble d'icônes communément utilisées dans la conception d'une interface. Dans un même écosytème, une icône devrait être utilisée pour représenter la même notion. Afin d'encourager cette pratique, chaque icône est nommée en fonction de l'action ou la notion qu'elle représente. Par exemple, l'icône de poubelle est nommée <em>supprimer</em>, la croix en forme de x <em>fermer/vider le champ</em>.
+La <m-link mode="link" url='/normes/normes-graphiques/iconographie'>librairie d'icônes</m-link> met à votre disposition un ensemble d'icônes communément utilisées dans la conception d'une interface. Dans un même écosytème, une icône devrait être utilisée pour représenter la même notion. Afin d'encourager cette pratique, chaque icône est nommée en fonction de l'action ou la notion qu'elle représente. Par exemple, l'icône de poubelle est nommée <em>Supprimer</em>.
 
 #### Icônes de fichier
 Pour illustrer le type d'un fichier, il est recommandé d'utiliser le composant <modul-go name="m-icon-file"></modul-go>, qui associe la bonne icône automatiquement en fonction de l'extension du fichier.
@@ -29,8 +29,12 @@ De façon générale, les icônes héritent de la couleur de la police de caract
 <modul-demo>
 
 ```html
-<m-link mode="link" url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf"><m-icon-file class="m-u--margin-right--s" size="16px" extension="pdf"></m-icon-file>Règlement des études</m-link><br/>
-<m-link class="m-u--margin-top" mode="link" url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf"><m-icon-file class="m-u--margin-right--s" size="16px" extension="default"></m-icon-file>Fichier non reconnu</m-link>
+<a name="demo-colored-icon"></a>
+<m-link class="m--is-unvisited" mode="link"  icon="true" icon-name="file-pdf" iconPosition="left" icon-size="24px"url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf">Règlement des études</m-link><br/>
+<m-link class="m-u--margin-top m--is-unvisited" mode="link"  icon="true" icon-name="file-default" iconPosition="left" icon-size="24px"url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf">Fichier non reconnu</m-link>
+<br><br>
+<m-link mode="link" url="#demo-colored-icon" icon="true" icon-name="add-circle-filled" iconPosition="left" icon-size="24px" class="m--is-unvisited">Ajouter une galerie d'images</m-link><br/>
+
 ```
 </modul-demo>
 
@@ -45,9 +49,9 @@ Une pastille est un petit disque de couleur que l'on superpose à une icône pou
 <modul-demo>
 
 ```html
-<m-icon name="m-svg__calendar" v-m-badge="{ state: 'completed'}"></m-icon>
-<m-icon name="m-svg__calendar" v-m-badge="{ state: 'warning'}"></m-icon>
-<m-icon name="m-svg__calendar" v-m-badge="{ state: 'error'}"></m-icon>
+<m-icon name="m-svg__calendar" v-m-badge="{ state: 'completed'}" size="30px"></m-icon>
+<m-icon name="m-svg__calendar" v-m-badge="{ state: 'warning'}" size="30px" class="m-u--margin-left"></m-icon>
+<m-icon name="m-svg__calendar" v-m-badge="{ state: 'error'}" size="30px" class="m-u--margin-left"></m-icon>
 
 ```
 
