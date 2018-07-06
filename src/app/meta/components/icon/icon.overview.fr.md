@@ -24,16 +24,14 @@ Bien qu'il soit recommandé d'utiliser le plus plus possible les icônes de <m-l
 La taille d'une icône n'est pas normée. Sa valeur par défaut de 18px peut être ajustée en fonction du contexte. Pour des tailles inférieures à 18px, assurez-vous cependant de préserver la lisibilité de l'icône.
 
 ### Couleur
-De façon générale, les icônes héritent de la couleur de la police de caractères. Par exemple, une icône qui accompagne un lien cliquable sera de la couleur de la police appliquée aux liens. Quelques exceptions confirment cette règle. Par exemple, les icônes de fichiers qui représentent une marque déposée comme les docouments PDF ou Word sont de la couleur originale de la marque. Certaines icônes de création sont bleues. Ces icônes conservent leur couleur originale car elle les rend plus facilement reconnaissables.
+La couleur par défaut des icônes est le gris. Lorsqu'elles sont utilisées avec du texte, elles héritent de la couleur de la police de caractères. Par exemple, une icône qui accompagne un lien cliquable sera de la couleur de la police appliquée aux liens. Certaines icônes possèdent couleur propre, comme les icônes de fichiers qui représentent une marque déposée (documents PDF ou Word). Dans ce cas, la couleur originale doit être conservée car elle constitue l'identité de l'icône.
 
 <modul-demo>
 
 ```html
 <a name="demo-colored-icon"></a>
-<m-link class="m--is-unvisited" mode="link"  icon="true" icon-name="file-pdf" iconPosition="left" icon-size="24px"url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf">Règlement des études</m-link><br/>
-<m-link class="m-u--margin-top m--is-unvisited" mode="link"  icon="true" icon-name="file-default" iconPosition="left" icon-size="24px"url="https://www.ulaval.ca/fileadmin/Secretaire_general/Reglements/Reglement_des_etudes.pdf">Fichier non reconnu</m-link>
-<br><br>
-<m-link mode="link" url="#demo-colored-icon" icon="true" icon-name="add-circle-filled" iconPosition="left" icon-size="24px" class="m--is-unvisited">Ajouter une galerie d'images</m-link><br/>
+<m-link class="m-u--margin-top m--is-unvisited" mode="link"  icon="true" icon-name="file-audio" iconPosition="left" icon-size="24px" url="#demo-colored-icon">Balado de la semaine 2</m-link><br/>
+<m-link class="m--is-unvisited" mode="link"  icon="true" icon-name="file-pdf" iconPosition="left" icon-size="24px"url="#demo-colored-icon">Règlement des études</m-link><br/>
 
 ```
 </modul-demo>
