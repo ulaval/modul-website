@@ -56,16 +56,18 @@
                 </button>
             </div>
             <transition-group name="modul--is" tag="ul">
-                <li tabindex="0" class="modul-search-card" @click="onComponentClick(item.tag)" @keyup.enter="onComponentClick(item.tag)"
+                <li tabindex="0" @click="closeMenu()" @keyup.enter="closeMenu()"
                     v-for="item in searchResult" key="item.tag" v-if="item.category">
-                    <div class="modul-search-card__img" aria-hidden="true">
-                        <m-icon size="90px" :name="item.tag"></m-icon>
-                    </div>
-                    <div class="modul-search-card__content">
-                        <p class="modul-search-card__content__category">{{ item.category }}</p>
-                        <h2 class="modul-search-card__content__title modul-u--h3">{{ item.text }}</h2>
-                        <p class="modul-search-card__content__tagname">{{ item.tag }}</p>
-                    </div>
+                    <router-link :to="getRouterIndex(item.tag)" class="modul-search-card">
+                        <div class="modul-search-card__img" aria-hidden="true">
+                            <m-icon size="90px" :name="item.tag"></m-icon>
+                        </div>
+                        <div class="modul-search-card__content">
+                            <p class="modul-search-card__content__category">{{ item.category }}</p>
+                            <h2 class="modul-search-card__content__title modul-u--h3">{{ item.text }}</h2>
+                            <p class="modul-search-card__content__tagname">{{ item.tag }}</p>
+                        </div>
+                    </router-link>
                 </li>
             </transition-group>
         </m-sidebar>
@@ -74,23 +76,27 @@
         <section class="modul-menu" v-if="animMenuOpen" tabindex="0" ref="menu">
             <div class="modul-menu__wrap" v-if="isMqMinS">
                 <nav class="modul-menu__list" v-for="category in categoriesComponent" v-if="menuSection == 'components'">
-                    <h2 @click="onComponentCategoryClick(category)" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
-                        <span>{{category.text}}</span>
+                    <h2 class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
+                        <router-link :to="getRouterIndex(category.id)" tabindex="0"><span>{{category.text}}</span></router-link>
                     </h2>
                     <ul>
-                        <li v-for="component in getCategoryComponents(category.id)">
-                            <a href="#" @click.prevent="onComponentClick(component.tag)" to="/" class="modul-menu__link">
+                        <li v-for="component in getCategoryComponents(category.id)"
+                            @click.prevent="closeMenu()">
+                            <router-link
+                                :to="getRouterIndex(component.tag)"
+                                :tag="a"
+                                class="modul-menu__link">
                                 <span class="modul-menu__wrapper">
                                     <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>&nbsp;<span v-if="!isProduction(component.status)" class="modul-logo__beta modul-menu__beta-tag">{{ component.status }}</span>
                                 </span>
                                 <span class="modul-menu__tag">{{ component.tag }}</span>
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                 </nav>
                 <nav class="modul-menu__list" v-for="page in pagesStandards" v-if="menuSection != 'components'">
-                    <h2 @click="onPageClick($event, page, 'standards')" tabindex="0" class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
-                        <span>{{ page.text }}</span>
+                    <h2 class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
+                        <router-link :to="getRouterIndex(page.id)" tabindex="0"><span>{{ page.text }}</span></router-link>
                     </h2>
                 </nav>
             </div>
@@ -124,16 +130,19 @@
                         <div class="modul-mobile-menu__body">
                             <m-accordion class="modul-mobile-menu__elem" skin="plain" v-for="category in categoriesComponent" v-if="menuSection == 'components'">
                                 <h2 slot="header">
-                                    <span @click="onComponentCategoryClick(category)">{{category.text}}</span>
+                                    <router-link :to="getRouterIndex(category.id)"><span>{{category.text}}</span></router-link>
                                 </h2>
                                 <ul>
-                                    <li v-for="component in getCategoryComponents(category.id)">
-                                        <a href="#" @click.prevent="onComponentClick(component.tag)" class="modul-menu__link">
+                                    <li v-for="component in getCategoryComponents(category.id)"
+                                        @click="closeMenu()" @keyup.enter="closeMenu()">
+                                        <router-link
+                                            :to="getRouterIndex(component.tag)"
+                                            class="modul-menu__link">
                                             <span class="modul-menu__wrapper">
                                                 <m-i18n :k="component.name" class="modul-menu__label"></m-i18n>&nbsp;<span v-if="!isProduction(component.status)" class="modul-logo__beta modul-menu__beta-tag">{{ component.status }}</span>
                                             </span>
                                             <span class="modul-menu__tag">{{ component.tag }}</span>
-                                        </a>
+                                        </router-link>
                                     </li>
                                 </ul>
                             </m-accordion>

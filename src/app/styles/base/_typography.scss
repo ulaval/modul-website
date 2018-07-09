@@ -138,6 +138,11 @@
     cursor: pointer;
     outline: none;
 
+    > a {
+        text-decoration: none;
+        color: $m-color--white;
+    }
+
     @include modul-highlighted-title();
 
     &:active {

@@ -78,6 +78,10 @@
         }
     }
 
+    &__link {
+        display: flex;
+    }
+
     &__content {
         padding: $m-padding--l $m-padding;
         border-bottom: 1px solid $m-color--grey-light;
