@@ -1,0 +1,8 @@
+{
+    "m-icon-file-meta": {
+        "website-name": "Icône de fichier",
+        "extension": "Extension du fichier, par exemple «&nbsp;pdf&nbsp;». Le choix de l'icône se base sur l'extension du fichier, ce qui garanti d'afficher la même icône pour les fichiers d'un même type.",
+        "size": "Taille de l'icône en pixels, par exemple «&nbsp;30px&nbsp;».",
+        "svgTitle": "Libellé affiché au survol de l'icône et lu aux personnes utilisant un lecteur vocal. Une valeur par défaut est prévue pour chaque type de fichier, sur le modèle suivant : «&nbsp;Type de fichier : tableur excel&nbsp;»."
+    }
+}
