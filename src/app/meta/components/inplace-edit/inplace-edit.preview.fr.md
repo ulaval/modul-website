@@ -51,7 +51,8 @@
     </div>
     <div slot="editMode">
     <!-- pour :focus ==> utiliser isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile (au lieu de true en tout temps) -->
-        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3" :focus="isMqMinS"></m-textfield>
+    <!-- note: il s'avère que 'isMqMinS' ne fonctionne pas puisque le rendu de la page est fait via le markdown, et il n'y a pas de isMqMinS dans le contexte -->
+        <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3"></m-textfield>
         <m-textarea max-width="none" class="m-u--margin-top" :value="text"></m-textarea>
     </div>
 </m-inplace-edit>
