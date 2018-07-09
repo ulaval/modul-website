@@ -1,16 +1,12 @@
-import { ModulWebsite } from '../modul-website';
-import Component from 'vue-class-component';
-import WithRender from './modul.html?style=./modul.scss';
-import * as ModulActions from '@/app/store/modules/components/actions';
-import { Watch } from 'vue-property-decorator';
-import { RoutePathMap } from '@/app/router';
-import MetaAll, { ModulComponentStatus } from '../../meta/meta-all';
+import { GettingStarted, Standards } from '@/app/components/pages/page';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
-import * as ComponentsGetters from '@/app/store/modules/components/getters';
-import * as PagesGetters from '@/app/store/modules/pages/getters';
-import { Page, Standards, GettingStarted } from '@/app/components/pages/page';
-import { read } from 'fs';
+import Component from 'vue-class-component';
+import { Watch } from 'vue-property-decorator';
+
+import MetaAll, { ModulComponentStatus } from '../../meta/meta-all';
+import { ModulWebsite } from '../modul-website';
+import WithRender from './modul.html?style=./modul.scss';
 
 console.debug('TODO: eliminate regex to identify current page');
 
@@ -128,23 +124,8 @@ export default class Modul extends ModulWebsite {
         });
     }
 
-    private onComponentClick(tag: string): void {
-        this.$router.push(this.$routerIndex.for(tag));
-        this.searchOpen = false;
-        this.closeMenu();
-    }
-
-    private onComponentCategoryClick(category: Category): void {
-        this.$router.push(this.$routerIndex.for(category.id));
-        this.closeMenu();
-    }
-
-    private onPageClick(event: MouseEvent, page: Page, menuSection: string): void {
-        this.$router.push(this.$routerIndex.for(page.id));
-        this.searchOpen = false;
-        this.closeMenu();
-        event.preventDefault();
-        (event.currentTarget as HTMLElement).blur();
+    private getRouterIndex(tag: string): string {
+        return this.$routerIndex.for(tag);
     }
 
     private navigateTo(event: MouseEvent, menuSection: string) {
@@ -261,6 +242,7 @@ export default class Modul extends ModulWebsite {
 
     @Watch('$route')
     private closeMenu(): void {
+        this.searchOpen = false;
         if (this.menuOpen) {
             this.animMenuOpen = false;
             let anim = setTimeout(() => {

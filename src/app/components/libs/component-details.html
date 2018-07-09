@@ -2,8 +2,8 @@
     <div class="modul-component" v-if="component">
         <header class="modul-component-details__header" :class="{ 'm--has-no-preview': !component.preview }">
             <h2 class="modul-component-details__title">
-                <m-icon name="left-chevron" class="modul-component-details__title__arrow"></m-icon>{{component.tag}}
-                <m-icon name="chevron" class="modul-component-details__title__arrow"></m-icon>
+                <m-icon name="m-svg__chevron--left" class="modul-component-details__title__arrow"></m-icon>{{component.tag}}
+                <m-icon name="m-svg__chevron--right" class="modul-component-details__title__arrow"></m-icon>
                 <span v-if="!isProduction(component.status)" class="modul-logo__beta modul-component-details__title__beta-tag">{{ component.status }}</span>
             </h2>
             <button @click="toggleOpenCodePreview" v-if="component.preview" class="modul-component-details__title__button">{{ openCloseLabel }}</button>

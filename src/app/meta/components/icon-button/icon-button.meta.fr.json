@@ -1,5 +1,12 @@
 {
     "m-icon-button-meta": {
-        "website-name": "Bouton icône"
+        "website-name": "Icône cliquable",
+        "skin": "Traitement visuel appliqué à l'icône cliquable.",
+        "disabled": "Permet d'activer ou désactiver l'icône cliquable.",
+        "buttonSize": "Taille de la zone cliquable de l'icône en pixels, par exemple «&nbsp;52px&nbsp;». Un minimum de 44px est exigé pour préserver l'utilisabilité sur petits écrans.",
+        "iconName": "Nom de l'icône, consulter la <modul-go url='/normes/normes-graphiques/iconographie/'>librairie</modul-go> pour la liste complète des icônes disponibles. Une icône cliquable devrait être choisie parmi la catégorie <em>Application</em>",
+        "iconSize": "Taille de l'icône en pixels, par exemple «&nbsp;30px&nbsp;».",
+        "ripple": "Permet de désactiver l'effet visuel qui confirme que l'utilisateur a cliqué sur l'icône.",
+        "title": "Libellé affiché au survol de l'icône cliquable et lu aux utilisateur de lecteur vocal. Comme pour un bouton, le libellé devrait être un verbe d'action à l'infinitif désignant l'action effectuée lorsque l'utilisateur clique sur l'icône."
     }
 }

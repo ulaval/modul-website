@@ -1,9 +1,10 @@
-import { ModulWebsite } from '../modul-website';
-import Component from 'vue-class-component';
-import WithRender from './icon-gallery.html?style=./icon-gallery.scss';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
-import { start } from 'repl';
+import Component from 'vue-class-component';
+
+import { ModulWebsite } from '../modul-website';
+import { ModulIconList } from './icon-gallery-list';
+import WithRender from './icon-gallery.html?style=./icon-gallery.scss';
 
 export enum MIconGalleryViewMode {
     List = 'list',
@@ -16,115 +17,16 @@ export enum MIconGalleryViewMode {
 })
 export class MIconGallery extends ModulWebsite {
 
-    private iconSize: string = '20px';
+    private iconSize: string = '24px';
     private focus: boolean = false;
     private searchModel: string = '';
     private intenalViewMode: string = MIconGalleryViewMode.Block;
 
     private dialogOpen: boolean = false;
     private previewIconSize: number = 32;
-    private previewName: string = '';
+    private previewName: string = 'title';
     private previewTag: string = '';
-
-    private iconList = [
-        {
-            'name': 'default',
-            'nameFr': 'Défaut'
-        },
-        {
-            'name': 'arrow',
-            'nameFr': 'Flèche'
-        },
-        {
-            'name': 'calendar',
-            'nameFr': 'Calendrier'
-        },
-        {
-            'name': 'check',
-            'nameFr': 'Valide'
-        },
-        {
-            'name': 'chevron',
-            'nameFr': 'Chevron'
-        },
-        {
-            'name': 'chip-check',
-            'nameFr': 'Pastille de validation'
-        },
-        {
-            'name': 'chip-close',
-            'nameFr': 'Pastille de fermeture'
-        },
-        {
-            'name': 'chip-error',
-            'nameFr': 'Pastille d\'erreur'
-        },
-        {
-            'name': 'chip-info',
-            'nameFr': 'Pastille d\'information'
-        },
-        {
-            'name': 'chip-warning',
-            'nameFr': 'Pastille d\'avertisement'
-        },
-        {
-            'name': 'clock',
-            'nameFr': 'Horlogue'
-        },
-        {
-            'name': 'close',
-            'nameFr': 'Fermer'
-        },
-        {
-            'name': 'tag-chevrons',
-            'nameFr': 'Chevrons de balisage'
-        },
-        {
-            'name': 'down-arrow',
-            'nameFr': 'Flèche vers le bas'
-        },
-        {
-            'name': 'down-chevron',
-            'nameFr': 'Chevron vers le bas'
-        },
-        {
-            'name': 'error',
-            'nameFr': 'Erreur'
-        },
-        {
-            'name': 'heraldry',
-            'nameFr': 'Héraldique'
-        },
-        {
-            'name': 'information',
-            'nameFr': 'Information'
-        },
-        {
-            'name': 'left-arrow',
-            'nameFr': 'Flèche vers la gauche'
-        },
-        {
-            'name': 'left-chevron',
-            'nameFr': 'Chevron vers la gauche'
-        },
-        {
-            'name': 'options',
-            'nameFr': 'Menu d\'options'
-        },
-        {
-            'name': 'search',
-            'nameFr': 'Recherche'
-        },
-        {
-            'name': 'top-arrow',
-            'nameFr': 'Flèche vers le haut'
-        },
-        {
-            'name': 'top-chevron',
-            'nameFr': 'Chevron vers le haut'
-        }
-
-    ];
+    private maxWidth: string = 'regular';
 
     private toggleViewMode(): void {
         this.viewMode = this.viewMode == MIconGalleryViewMode.List ? MIconGalleryViewMode.Block : this.viewMode == MIconGalleryViewMode.Block ? MIconGalleryViewMode.List : MIconGalleryViewMode.Block;
@@ -136,18 +38,6 @@ export class MIconGallery extends ModulWebsite {
 
     private set viewMode(value: string) {
         this.intenalViewMode = value;
-    }
-
-    private get iconViewMode(): string {
-        return this.viewMode == MIconGalleryViewMode.Block ? 'm-radio' : 'm-panel';
-    }
-
-    private get sizeFieldWidth(): string {
-        return this.focus ? '0' : '64px';
-    }
-
-    private get viewModeButtonWidth(): string {
-        return this.focus ? '0' : '44px';
     }
 
     private get isViewModeBlock(): boolean {
@@ -164,10 +54,12 @@ export class MIconGallery extends ModulWebsite {
 
     private onFocus(): void {
         this.focus = true;
+        this.maxWidth = '100%';
     }
 
     private onBlur(): void {
         this.focus = false;
+        this.maxWidth = 'regular';
     }
 
     private setLargeIconSize(): void {
@@ -179,14 +71,18 @@ export class MIconGallery extends ModulWebsite {
     }
 
     private get searchResult(): any[] {
-        let filtereComponents: any[] = this.iconList;
+        let filtereComponents: any[] = ModulIconList.iconList;
         if (this.searchModel != '') {
-            filtereComponents = this.iconList.filter((element) => {
+            filtereComponents = ModulIconList.iconList.filter((element) => {
                 let textToSearch = element.name + ' ' + element.nameFr;
                 return normalizeString(textToSearch).match(normalizeString(this.searchModel));
             });
         }
         return filtereComponents;
+    }
+
+    private get hasSearchResult(): boolean {
+        return this.searchResult.length > 0;
     }
 
     private openDialog(name, nameFr) {

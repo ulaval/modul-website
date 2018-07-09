@@ -8,11 +8,11 @@
     <h1 class="modul-dark-template__header__title" slot="header" v-if="!showNav"> {{ getPageName(pages[0]) }}</h1>
     <m-markdown slot="introduction" :template="summaryMarkdown"></m-markdown>
     <button slot="leftArrow" v-if="showNav" @click="getPreviousPage()" class="m-u--button-primary">
-        <m-icon name="left-chevron"></m-icon>
+        <m-icon name="m-svg__chevron--left"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la page précédente</span> -->
     </button>
     <button slot="rightArrow" v-if="showNav" @click="getNextPage()" class="m-u--button-primary">
-        <m-icon name="chevron"></m-icon>
+        <m-icon name="m-svg__chevron--right"></m-icon>
         <!-- TODO:i18n <span class="m-u--visually-hidden">Naviguer vers la prochaine page</span> -->
     </button>
     <router-view></router-view>
