@@ -120,3 +120,21 @@ Cet état est utilisé lorsque la progression a rencontré une erreur.
 ```
 
 </modul-demo>
+
+### Coins arrondis
+Sur la *barre de progression* en mode **horizontale**, il est possible d'enlever ou de mettre les coins ronds. Par défaut, les coins sont ronds.
+
+<modul-demo>
+
+```html
+<m-progress value="75" size="18" :border-radius="true"></m-progress>
+<m-progress value="75" size="18" :border-radius="false"></m-progress>
+```
+
+```css
+.m-progress {
+    margin-top: 12px;
+}
+```
+
+</modul-demo>

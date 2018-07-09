@@ -7,7 +7,7 @@
         "circle": "Détermine le mode d'affichage",
         "diameter": "Diamètre du cercle",
         "stroke": "Largeur du trait du cercle",
-        "state": "État de la barre de progression"
-
+        "state": "État de la barre de progression",
+        "borderRadius": "Ajouter ou enlever les coins arrondis"
     }
 }
