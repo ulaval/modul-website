@@ -1,4 +1,4 @@
-import { ACCORDION_GROUP_NAME, ACCORDION_NAME, BUTTON_GROUP_NAME, BUTTON_NAME, CAROUSEL_ITEM_NAME, CAROUSEL_NAME, CHECKBOX_NAME, DATEFIELDS_NAME, DATEPICKER_NAME, DIALOG_NAME, DROPDOWN_GROUP_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, DYNAMIC_TEMPLATE_NAME, EDIT_WINDOW_NAME, FILE_SELECT_NAME, FILE_UPLOAD_NAME, FLEX_TEMPLATE_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_NAME, INPLACE_EDIT, INPUT_STYLE_NAME, LIMIT_TEXT_NAME, LINK_NAME, LIST_ITEM_NAME, MENU_ITEM_NAME, MENU_NAME, MESSAGE_NAME, MODAL_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME, PANEL_NAME, PHONE_NUMBER_NAME, POPPER_NAME, POPUP_NAME, PROGRESS_NAME, RADIO_GROUP_NAME, RADIO_NAME, RADIO_STYLE_NAME, SCROLL_TOP_NAME, SIDEBAR_NAME, SLIDER_NAME, SPINNER_NAME, STATUS_NAME, STEP_NAME, STEPPERS_ITEM_NAME, STEPPERS_NAME, SWITCH_NAME, TAB_PANEL_NAME, TABS_NAME, TEMPLATE_NAME, TEXTAREA_NAME, TEXTFIELD_NAME, TIMEPICKER_NAME, TOOLTIP_NAME, VALIDATION_MESSAGE_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { ACCORDION_GROUP_NAME, ACCORDION_NAME, BUTTON_GROUP_NAME, BUTTON_NAME, CAROUSEL_ITEM_NAME, CAROUSEL_NAME, CHECKBOX_NAME, DATEFIELDS_NAME, DATEPICKER_NAME, DIALOG_NAME, DROPDOWN_GROUP_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, DYNAMIC_TEMPLATE_NAME, EDIT_WINDOW_NAME, FILE_SELECT_NAME, FILE_UPLOAD_NAME, FLEX_TEMPLATE_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_NAME, INPUT_STYLE_NAME, LIMIT_TEXT_NAME, LINK_NAME, LIST_ITEM_NAME, MENU_ITEM_NAME, MENU_NAME, MESSAGE_NAME, MODAL_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME, PANEL_NAME, PHONE_NUMBER_NAME, POPPER_NAME, POPUP_NAME, PROGRESS_NAME, RADIO_GROUP_NAME, RADIO_NAME, RADIO_STYLE_NAME, RICH_TEXT_EDIT, SCROLL_TOP_NAME, SIDEBAR_NAME, SLIDER_NAME, SPINNER_NAME, STATUS_NAME, STEP_NAME, STEPPERS_ITEM_NAME, STEPPERS_NAME, SWITCH_NAME, TAB_PANEL_NAME, TABS_NAME, TEMPLATE_NAME, TEXTAREA_NAME, TEXTFIELD_NAME, TIMEPICKER_NAME, TOOLTIP_NAME, VALIDATION_MESSAGE_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { ComponentMeta, Meta, Preview } from '@ulaval/modul-components/dist/meta/meta';
 import { PluginObject } from 'vue';
 
@@ -405,6 +405,13 @@ export class MetaAll implements PluginObject<any> {
             true
         );
         this.mergeComponentMeta(
+            RICH_TEXT_EDIT,
+            require('@ulaval/modul-components/dist/components/rich-text-edit/rich-text-edit.meta.json'),
+            CATEGORY_FORMS,
+            ModulComponentStatus.Beta,
+            true
+        );
+        this.mergeComponentMeta(
             SCROLL_TOP_NAME,
             require('@ulaval/modul-components/dist/components/scroll-top/scroll-top.meta.json'),
             CATEGORY_NAVIGATION,
@@ -523,13 +530,13 @@ export class MetaAll implements PluginObject<any> {
             ModulComponentStatus.Beta,
             false
         );
-        this.mergeComponentMeta(
-            INPLACE_EDIT,
-            require('@ulaval/modul-components/dist/components/inplace-edit/inplace-edit.meta.json'),
-            CATEGORY_FORMS,
-            ModulComponentStatus.Production,
-            true
-        );
+        // this.mergeComponentMeta(
+        //     INPLACE_EDIT,
+        //     require('@ulaval/modul-components/dist/components/inplace-edit/inplace-edit.meta.json'),
+        //     CATEGORY_FORMS,
+        //     ModulComponentStatus.Production,
+        //     true
+        // );
 
         // this.mergeComponentMeta(
         //     SCROLL_TO_NAME,

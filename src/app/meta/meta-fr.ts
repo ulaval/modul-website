@@ -164,6 +164,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/rich-text_EDIT/rich-text_EDIT.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/scroll-top/scroll-top.meta.fr.json')
             );
             i18n.addMessages(
