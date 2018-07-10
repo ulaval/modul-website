@@ -3,7 +3,7 @@
     "version": "1.0.0-beta.7",
     "description": "modUL web application.",
     "author": "Martin Simard <martin.simard@dti.ulaval.ca>",
-    "private": true,
+    "private": false,
     "scripts": {
         "setup": "npm install",
         "clean": "rimraf dist",
