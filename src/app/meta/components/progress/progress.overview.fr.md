@@ -1,22 +1,24 @@
-La *barre de progression* (ou barre de chargement) est un composant graphique qui permet d'indiquer à l'utilisateur l'état d'avancement d'un travail exécuté dans l'application. Au début la barre est complètement vide, puis elle se remplit au fur et à mesure de l'avancement de la tâche pour finir complètement remplie lorsque le travail est terminé.
+L'indicateur de progression permet d'informer l'utilisateur qu'une opération est en cours de traitement, et peut indiquer le pourcentage d'avancement. Cette information tient l'utilisateur inforen haleine, et évite l'incertitude et l'impatience générée par l'absence de rétroaction.
 
 <modul-do>
     <ul>
-        <li>Définir si la valeur de progression est déterminée ou indéterminée</li>
-        <li>Établir le mode d'affichage de la barre de progression</li>
+        <li>Lorsque cela est possible, toujours indiquer le pourcentage d'avancement.</li>
     </ul>
 </modul-do>
 
 ## Caractéristiques
 
-### Mode
-La *barre de progression* peut être représentée de 2 manières soit par une barre horizontale ou par un cercle.
+### Forme
+L'indicateur de progression peut être représenté sous la forme d'une barre horizontale d'un cercle en fonction de l'espace disponible.
 
 <modul-demo>
 
 ```html
-<m-progress value="75"></m-progress>
-<m-progress value="75" :circle="true"></m-progress>
+<div class="m-u--display--flex" style="justify-content: space-between;">
+    <div style="width: 50%; padding-top:40px;"><m-progress value="25"></m-progress></div>
+    <div style="width: 25%"><m-progress circle="true" value="67"></m-progress></div>
+</div>
+
 ```
 
 ```css
@@ -27,14 +29,21 @@ La *barre de progression* peut être représentée de 2 manières soit par une b
 
 </modul-demo>
 
-### Indéterminé
-La *barre de progression* peut représenter une valeur déterminée ou indéterminée. Lorsque la *barre de progression* est indéterminée, il demande à l'utilisateur d'attendre que quelque chose se termine sans qu'il soit nécessaire d'indiquer la progression.
+### Pourcentage d'avancement
+L'indicateur de progression devrait indiquer le pourcentage d'avancement lorsque cela est possible. Si le pourcentage d'avancement n'est pas disponible, ou trop imprécis, il est possible d'afficher l'indicateur de progression avec un mouvement perpétuel, informant l'utilisateur que le traitement de l'opération est en cours.
 
 <modul-demo>
 
 ```html
-<m-progress value="50" :indeterminate="true"></m-progress>
-<m-progress value="50" :circle="true" :indeterminate="true"></m-progress>
+<div class="m-u--display--flex" style="justify-content: space-between;">
+    <div style="width: 50%; padding-top:40px;"><m-progress value="25"></m-progress></div>
+    <div style="width: 25%"><m-progress circle="true" value="67"></m-progress></div>
+</div>
+<div class="m-u--display--flex" style="justify-content: space-between;">
+    <div style="width: 50%; padding-top:40px;"><m-progress indeterminate="true"></m-progress></div>
+    <div style="width: 25%"><m-progress indeterminate="true" circle="true"></m-progress></div>
+</div>
+
 ```
 
 ```css
@@ -45,15 +54,16 @@ La *barre de progression* peut représenter une valeur déterminée ou indéterm
 
 </modul-demo>
 
-### Dimension
-La *barre de progression* en mode barre horizontale a une hauteur de 6 pixels et prend la pleine largeur de son conteneur. Il est possible de modifier la hauteur au besoin. L'indicateur de progression en mode cercle a un diamètre de 50 pixels et la largeur de son trait est de 4 pixels par défaut.
-Il est également possible de modifier les dimensions du cercle.
+### Dimensions et épaisseur du trait
+La barre de progression prend la pleine largeur de son conteneur et une épaisseur de trait par défaut de 6 pixels. Le cercle a un diamètre de 50 pixels et une épaisseur de trait de 4 pixels par défaut. Toutes ces valeur peuvent être ajustées selon le contexte d'utilisation.
 
 <modul-demo>
 
 ```html
-<m-progress value="75" size="18"></m-progress>
-<m-progress value="75" :circle="true" diameter="100" stroke="10"></m-progress>
+<div class="m-u--display--flex" style="justify-content: space-between;">
+    <div style="width: 50%; padding-top:60px;"><m-progress value="25" size="18"></m-progress></div>
+    <div style="width: 25%"><m-progress circle="true" value="67" diameter="100" stroke="10"></m-progress></div>
+</div>
 ```
 
 ```css
@@ -64,77 +74,28 @@ Il est également possible de modifier les dimensions du cercle.
 
 </modul-demo>
 
-### État
-Différents états de *barre de progression* sont disponibles en fonction du type d'information à transmettre. L'état de la *barre de progression* affiché se distingue par sa couleur.
+### États
+Différents états sont disponibles en fonction du type d'information à transmettre.
 
-#### Complété
-Cet état est utilisé lorsque le travail a été effectué avec succès.
+ * **Complété** : lorsque l'opération s'est effectuée avec succès.
+ * **En cours** : lorsque l'opération est en cours.
+ * **En erreur** : lorsqu'une erreur a empêché l'opération de se terminer correctement.
 
 <modul-demo>
 
 ```html
-<m-progress value="75" state="completed"></m-progress>
-<m-progress value="75" :circle="true" state="completed"></m-progress>
+<m-progress value="100" style="width: 50%" state="completed"></m-progress>
+<m-progress value="33" style="width: 50%" state="in-progress"></m-progress>
+<m-progress value="67" style="width: 50%" state="error"></m-progress>
+<m-message skin="light" state="error">Espace insiffisant.</m-message>
 ```
 
 ```css
 .m-progress {
-    margin-top: 12px;
+    margin-top: 22px;
 }
 ```
 
 </modul-demo>
 
-#### En cours
-Cet état est utilisé lorsque le travail est en cours de progression.
-
-<modul-demo>
-
-```html
-<m-progress value="75" state="in-progress"></m-progress>
-<m-progress value="75" :circle="true" state="in-progress"></m-progress>
-```
-
-```css
-.m-progress {
-    margin-top: 12px;
-}
-```
-
-</modul-demo>
-
-#### Erreur
-Cet état est utilisé lorsque la progression a rencontré une erreur.
-
-<modul-demo>
-
-```html
-<m-progress value="75" state="error"></m-progress>
-<m-progress value="75" :circle="true" state="error"></m-progress>
-```
-
-```css
-.m-progress {
-    margin-top: 12px;
-}
-```
-
-</modul-demo>
-
-### Coins arrondis
-Sur la *barre de progression* en mode **horizontale**, il est possible d'enlever ou de mettre les coins ronds. Par défaut, les coins sont ronds.
-
-<modul-demo>
-
-```html
-<m-progress value="75" size="18" :border-radius="true"></m-progress>
-<m-progress value="75" size="18" :border-radius="false"></m-progress>
-```
-
-```css
-.m-progress {
-    margin-top: 12px;
-}
-```
-
-</modul-demo>
+Lorsqu'une erreur a empêché l'opération de se terminer correctement, un message devrait toujours informer l'utilisateur de la raison de l'échec.
