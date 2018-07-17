@@ -1,13 +1,13 @@
 {
     "m-progress-meta": {
-        "website-name": "Barre de progression",
-        "value": "Valeur de progression en pourcentage",
-        "indeterminate": "Détermine si la valeur est connue ou non",
-        "size": "Hauteur de la barre de progression",
-        "circle": "Détermine le mode d'affichage",
-        "diameter": "Diamètre du cercle",
-        "stroke": "Largeur du trait du cercle",
-        "state": "État de la barre de progression"
-
+        "website-name": "Indicateur de progression",
+        "value": "Pourcentage de progression.",
+        "indeterminate": "L'indicateur progresse indéfinement lorsque le pourcentage d'avancement n'est pas disponible.",
+        "size": "Épaisseur du trait de la barre de progression lorsque l'indicateur est affiché sous cette forme. Par exemple « 5px ».",
+        "circle": "Affiche la progression à l'intérieur d'un cercle plutôt que sous forme d'une ligne horizontale.",
+        "diameter": "Diamètre du cercle lorsque l'indicateur est affiché sous cette forme.",
+        "stroke": "Épaisseur du trait du cercle lorsque l'indicateur est affiché sous cette forme.",
+        "state": "L'état de l'indicateur de progression peut représenter une tâche en cours, complétée et en erreur.",
+        "borderRadius": "Permet d'enlever les coins arrondis aux extrémités de la barre lorsque l'indicateur est affiché sous la forme d'une barre de progression."
     }
 }
