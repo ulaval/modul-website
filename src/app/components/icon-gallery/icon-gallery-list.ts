@@ -241,10 +241,6 @@ export class ModulIconList {
             'nameFr': 'Plein écran'
         },
         {
-            'name': 'm-svg__right-answer',
-            'nameFr': 'Bonne réponse'
-        },
-        {
             'name': 'm-svg__grid-filled',
             'nameFr': 'Affichage grille'
         },
@@ -319,6 +315,10 @@ export class ModulIconList {
         {
             'name': 'm-svg__profile',
             'nameFr': 'Profil'
+        },
+        {
+            'name': 'm-svg__right-answer',
+            'nameFr': 'Bonne réponse'
         },
         {
             'name': 'm-svg__search',
