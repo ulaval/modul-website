@@ -241,7 +241,7 @@ export class ModulIconList {
             'nameFr': 'Plein écran'
         },
         {
-            'name': 'm-svg__good-answer',
+            'name': 'm-svg__right-answer',
             'nameFr': 'Bonne réponse'
         },
         {
