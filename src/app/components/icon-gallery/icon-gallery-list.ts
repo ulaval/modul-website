@@ -245,10 +245,6 @@ export class ModulIconList {
             'nameFr': 'Bonne réponse'
         },
         {
-            'name': 'm-svg__good-answer2',
-            'nameFr': 'Bonne réponse'
-        },
-        {
             'name': 'm-svg__grid-filled',
             'nameFr': 'Affichage grille'
         },
@@ -367,6 +363,10 @@ export class ModulIconList {
         {
             'name': 'm-svg__warning',
             'nameFr': 'Avertissement'
+        },
+        {
+            'name': 'm-svg__wrong-answer',
+            'nameFr': 'Mauvaise réponse'
         }
     ];
 }
