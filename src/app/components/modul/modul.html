@@ -2,35 +2,35 @@
     :dynamic-header="false">
     <div slot="header" ref="header" class="modul-header">
         <h1 v-if="isHomePage" class="modul-logo">
-            <a href="#" @click.prevent="navigateTo($event, 'home')">MOD
+            <a href @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
             </a>
         </h1>
         {{isComponentPage}}
         <span v-if="!isHomePage" class="modul-logo">
-            <a href="#" @click.prevent="navigateTo($event, 'home')">MOD
+            <a href @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
             </a>
         </span>
 
         <nav class="modul-header__nav">
-            <a href="#" @click.prevent="toggleMobileMenu" v-if="!isMqMinS" class="modul-header__nav__link">
+            <a href @click.prevent="toggleMobileMenu" v-if="!isMqMinS" class="modul-header__nav__link">
                 <m-i18n k="modul:menu-label" v-if="!headerAnimationCompleted"></m-i18n>
                 <m-i18n k="modul:close-label" v-if="headerAnimationCompleted"></m-i18n>
             </a>
             <ul v-if="isMqMinS">
                 <li>
-                    <a href="#" @click.prevent="navigateTo($event, 'gettingStarted')" class="modul-header__nav__link" :class="{ 'm--is-active' : isGettingStartedPage }">
+                    <a href @click.prevent="navigateTo($event, 'gettingStarted')" class="modul-header__nav__link" :class="{ 'm--is-active' : isGettingStartedPage }">
                         <m-i18n k="pages:getting-started"></m-i18n>
                     </a>
                 </li>
                 <li>
-                    <a href="#" @click.prevent="navigateTo($event, 'components')" class="modul-header__nav__link" :class="{ 'm--is-active' : isComponentsPage }">
+                    <a href @click.prevent="navigateTo($event, 'components')" class="modul-header__nav__link" :class="{ 'm--is-active' : isComponentsPage }">
                         <m-i18n k="modul:components"></m-i18n>
                     </a>
                 </li>
                 <li>
-                    <a href="#" @click.prevent="navigateTo($event, 'standards')" class="modul-header__nav__link" :class="{ 'm--is-active' : isStandardsPage }">
+                    <a href @click.prevent="navigateTo($event, 'standards')" class="modul-header__nav__link" :class="{ 'm--is-active' : isStandardsPage }">
                         <m-i18n k="modul:standards"></m-i18n>
                     </a>
                 </li>
@@ -110,13 +110,13 @@
                                 </router-link>
                             </li>
                             <li class="modul-mobile-menu__elem">
-                                <a href="#" @click.prevent="showSecondStep('components')" class="modul-mobile-menu__elem__link">
+                                <a href @click.prevent="showSecondStep('components')" class="modul-mobile-menu__elem__link">
                                     <m-i18n k="modul:components"></m-i18n>
                                     <m-icon name="m-svg__chevron--right"></m-icon>
                                 </a>
                             </li>
                             <li class="modul-mobile-menu__elem">
-                                <a href="#" @click.prevent="showSecondStep('standards')" class="modul-mobile-menu__elem__link">
+                                <a href @click.prevent="showSecondStep('standards')" class="modul-mobile-menu__elem__link">
                                     <m-i18n k="modul:standards"></m-i18n>
                                     <m-icon name="m-svg__chevron--right"></m-icon>
                                 </a>
@@ -149,7 +149,7 @@
                             <nav v-if="menuSection != 'components'">
                                 <ul>
                                     <li v-for="page in pagesStandards" class="modul-mobile-menu__elem">
-                                        <a href="#" @click="onPageClick($event, page, 'standards')" class="modul-mobile-menu__elem__link">
+                                        <a href @click="onPageClick($event, page, 'standards')" class="modul-mobile-menu__elem__link">
                                             <span>{{ page.text }}</span>
                                         </a>
                                     </li>
