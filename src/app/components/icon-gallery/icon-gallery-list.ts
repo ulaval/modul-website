@@ -241,14 +241,6 @@ export class ModulIconList {
             'nameFr': 'Plein écran'
         },
         {
-            'name': 'm-svg__good-answer',
-            'nameFr': 'Bonne réponse'
-        },
-        {
-            'name': 'm-svg__good-answer2',
-            'nameFr': 'Bonne réponse'
-        },
-        {
             'name': 'm-svg__grid-filled',
             'nameFr': 'Affichage grille'
         },
@@ -325,6 +317,10 @@ export class ModulIconList {
             'nameFr': 'Profil'
         },
         {
+            'name': 'm-svg__right-answer',
+            'nameFr': 'Bonne réponse'
+        },
+        {
             'name': 'm-svg__search',
             'nameFr': 'Rechercher'
         },
@@ -367,6 +363,10 @@ export class ModulIconList {
         {
             'name': 'm-svg__warning',
             'nameFr': 'Avertissement'
+        },
+        {
+            'name': 'm-svg__wrong-answer',
+            'nameFr': 'Mauvaise réponse'
         }
     ];
 }
