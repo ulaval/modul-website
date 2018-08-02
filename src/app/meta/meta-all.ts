@@ -1,4 +1,4 @@
-import { ACCORDION_GROUP_NAME, ACCORDION_NAME, BUTTON_GROUP_NAME, BUTTON_NAME, CAROUSEL_ITEM_NAME, CAROUSEL_NAME, CHECKBOX_NAME, DATEFIELDS_NAME, DATEPICKER_NAME, DIALOG_NAME, DROPDOWN_GROUP_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, DYNAMIC_TEMPLATE_NAME, EDIT_WINDOW_NAME, FILE_SELECT_NAME, FILE_UPLOAD_NAME, FLEX_TEMPLATE_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_FILE_NAME, ICON_NAME, INPLACE_EDIT_NAME, INPUT_STYLE_NAME, LIMIT_TEXT_NAME, LINK_NAME, LIST_ITEM_NAME, MENU_ITEM_NAME, MENU_NAME, MESSAGE_NAME, MODAL_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME, PANEL_NAME, PHONE_NUMBER_NAME, POPPER_NAME, POPUP_NAME, PROGRESS_NAME, RADIO_GROUP_NAME, RADIO_NAME, RADIO_STYLE_NAME, SCROLL_TOP_NAME, SIDEBAR_NAME, SLIDER_NAME, SPINNER_NAME, STATUS_NAME, STEP_NAME, STEPPERS_ITEM_NAME, STEPPERS_NAME, SWITCH_NAME, TAB_PANEL_NAME, TABS_NAME, TEMPLATE_NAME, TEXTAREA_NAME, TEXTFIELD_NAME, TIMEPICKER_NAME, TOOLTIP_NAME, VALIDATION_MESSAGE_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { ACCORDION_GROUP_NAME, ACCORDION_NAME, BUTTON_GROUP_NAME, BUTTON_NAME, CAROUSEL_ITEM_NAME, CAROUSEL_NAME, CHECKBOX_NAME, DATEFIELDS_NAME, DATEPICKER_NAME, DIALOG_NAME, DROPDOWN_GROUP_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, DYNAMIC_TEMPLATE_NAME, EDIT_WINDOW_NAME, ERROR_ACCESS_DENIED_NAME, ERROR_BROWSER_NOT_SUPPORTED_NAME, ERROR_CONFIG_NOT_SUPPORTED_NAME, ERROR_COOKIES_NOT_SUPPORTED_NAME, ERROR_PAGE_NOT_FOUND_NAME, ERROR_TEMPLATE_NAME, FILE_SELECT_NAME, FILE_UPLOAD_NAME, FLEX_TEMPLATE_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_FILE_NAME, ICON_NAME, INPLACE_EDIT_NAME, INPUT_STYLE_NAME, LIMIT_TEXT_NAME, LINK_NAME, LIST_ITEM_NAME, MENU_ITEM_NAME, MENU_NAME, MESSAGE_NAME, MODAL_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME, PANEL_NAME, PHONE_NUMBER_NAME, POPPER_NAME, POPUP_NAME, PROGRESS_NAME, RADIO_GROUP_NAME, RADIO_NAME, RADIO_STYLE_NAME, SCROLL_TOP_NAME, SIDEBAR_NAME, SLIDER_NAME, SPINNER_NAME, STATUS_NAME, STEP_NAME, STEPPERS_ITEM_NAME, STEPPERS_NAME, SWITCH_NAME, TAB_PANEL_NAME, TABS_NAME, TEMPLATE_NAME, TEXTAREA_NAME, TEXTFIELD_NAME, TIMEPICKER_NAME, TOOLTIP_NAME, VALIDATION_MESSAGE_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { ComponentMeta, Meta, Preview } from '@ulaval/modul-components/dist/meta/meta';
 import { PluginObject } from 'vue';
 
@@ -11,6 +11,7 @@ export const CATEGORY_NAVIGATION: string = 'categories:navigation';
 export const CATEGORY_LAYOUT: string = 'categories:layout';
 export const CATEGORY_WINDOWS: string = 'categories:windows';
 export const CATEGORY_MIXINS: string = 'categories:mixins';
+export const CATEGORY_ERROR: string = 'categories:error';
 
 export type CategoryOrder = {
     [key: string]: number
@@ -22,7 +23,8 @@ const ORDER: CategoryOrder = {
     [CATEGORY_FORMS]: 3,
     [CATEGORY_NAVIGATION]: 4,
     [CATEGORY_WINDOWS]: 5,
-    [CATEGORY_MIXINS]: 6
+    [CATEGORY_MIXINS]: 6,
+    [CATEGORY_ERROR]: 7
 };
 
 export interface ComponentMetaEx extends ComponentMeta {
@@ -237,6 +239,48 @@ export class MetaAll implements PluginObject<any> {
             require('@ulaval/modul-components/dist/components/edit-window/edit-window.meta.json'),
             CATEGORY_WINDOWS,
             ModulComponentStatus.Beta,
+            true
+        );
+        this.mergeComponentMeta(
+            ERROR_ACCESS_DENIED_NAME,
+            require('@ulaval/modul-components/dist/components/error-access-denied/error-access-denied.meta.json'),
+            CATEGORY_ERROR,
+            ModulComponentStatus.Production,
+            true
+        );
+        this.mergeComponentMeta(
+            ERROR_BROWSER_NOT_SUPPORTED_NAME,
+            require('@ulaval/modul-components/dist/components/error-browser-not-supported/error-browser-not-supported.meta.json'),
+            CATEGORY_ERROR,
+            ModulComponentStatus.Production,
+            true
+        );
+        this.mergeComponentMeta(
+            ERROR_CONFIG_NOT_SUPPORTED_NAME,
+            require('@ulaval/modul-components/dist/components/error-config-not-supported/error-config-not-supported.meta.json'),
+            CATEGORY_ERROR,
+            ModulComponentStatus.Production,
+            true
+        );
+        this.mergeComponentMeta(
+            ERROR_COOKIES_NOT_SUPPORTED_NAME,
+            require('@ulaval/modul-components/dist/components/error-cookies-not-supported/error-cookies-not-supported.meta.json'),
+            CATEGORY_ERROR,
+            ModulComponentStatus.Production,
+            true
+        );
+        this.mergeComponentMeta(
+            ERROR_PAGE_NOT_FOUND_NAME,
+            require('@ulaval/modul-components/dist/components/error-page-not-found/error-page-not-found.meta.json'),
+            CATEGORY_ERROR,
+            ModulComponentStatus.Production,
+            true
+        );
+        this.mergeComponentMeta(
+            ERROR_TEMPLATE_NAME,
+            require('@ulaval/modul-components/dist/components/error-template/error-template.meta.json'),
+            CATEGORY_ERROR,
+            ModulComponentStatus.Production,
             true
         );
         this.mergeComponentMeta(

@@ -11,6 +11,8 @@
         "layout": "Mise en page",
         "layout-route": "mise-en-page",
         "windows": "Fenêtres",
-        "windows-route": "fenetres"
+        "windows-route": "fenetres",
+        "error": "Pannes et erreurs techniques",
+        "error-route": "pannes-et-erreurs-techniques"
     }
 }

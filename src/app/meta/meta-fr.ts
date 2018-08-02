@@ -68,6 +68,10 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/error-template/error-template.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/file-select/file-select.meta.fr.json')
             );
             i18n.addMessages(
