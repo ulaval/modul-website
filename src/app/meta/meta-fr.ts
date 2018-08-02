@@ -68,6 +68,26 @@ const FrenchMetaPlugin: PluginObject<any> = {
             );
             i18n.addMessages(
                 FRENCH,
+                require('./components/error-access-denied/error-access-denied.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/error-browser-not-supported/error-browser-not-supported.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/error-config-not-supported/error-config-not-supported.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/error-cookies-not-supported/error-cookies-not-supported.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
+                require('./components/error-page-not-found/error-page-not-found.meta.fr.json')
+            );
+            i18n.addMessages(
+                FRENCH,
                 require('./components/error-template/error-template.meta.fr.json')
             );
             i18n.addMessages(
