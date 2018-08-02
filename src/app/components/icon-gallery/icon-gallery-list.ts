@@ -301,6 +301,14 @@ export class ModulIconList {
             'nameFr': 'Se déconnecter'
         },
         {
+            'name': 'm-svg__multimedia',
+            'nameFr': 'Multimédia'
+        },
+        {
+            'name': 'm-svg__multimedia-filled',
+            'nameFr': 'Multimédia'
+        },
+        {
             'name': 'm-svg__notification',
             'nameFr': 'Notification'
         },
