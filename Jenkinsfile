@@ -14,10 +14,12 @@ pipeline {
     environment {
         // Pour éviter une erreur: EACCES: permission denied, mkdir '/.npm'
         npm_config_cache = 'npm-cache'
-        DOCKER_REPOSITORY = '<docker-repo>'
-        DOCKER_REPOSITORY_URL = '<docker-repo-url>'
+        DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
+        DOCKER_REPOSITORY_URL = 'https://docker-local.maven.at.ulaval.ca'
 
-        POST_RECIPIENTS = '<recipients-email>'
+        POST_RECIPIENTS = 'martin.simard@dti.ulaval.ca'
+
+        // env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
     }
 
     stages {
