@@ -14,15 +14,17 @@ pipeline {
     environment {
         // Pour éviter une erreur: EACCES: permission denied, mkdir '/.npm'
         npm_config_cache = 'npm-cache'
-        DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
-        DOCKER_REPOSITORY_URL = 'https://docker-local.maven.at.ulaval.ca'
+        DOCKER_REPOSITORY = '<docker-repo>'
+        DOCKER_REPOSITORY_URL = '<docker-repo-url>'
+
+        POST_RECIPIENTS = '<recipients-email>'
     }
 
     stages {
         stage('Build') {
             when {
                 expression {
-                    env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
+                    env.BRANCH_NAME == 'feature/jenkins-webhook'
                 }
             }
 
@@ -35,15 +37,21 @@ pipeline {
             steps {
                 sh 'rm -rf dist node_modules'
                 sh 'npm install'
-                sh 'npm run build'
+                sh 'npm pack'
             }
         }
     }
 
     post {
         always {
-            echo 'Build status'
-            step([$class: 'Mailer', recipients: ['martin.simard@dti.ulaval.ca', emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])].join(' ')])
+            script {
+                emailext subject: '$DEFAULT_SUBJECT',
+                        body: '$DEFAULT_CONTENT',
+                        replyTo: '$DEFAULT_REPLYTO',
+                        to: "${POST_RECIPIENTS}"
+                recipientProviders:
+                [[$class: 'DevelopersRecipientProvider']]
+            }
         }
     }
 }
