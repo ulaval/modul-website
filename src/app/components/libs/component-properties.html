@@ -7,10 +7,11 @@
             <th>
                 <m-i18n k="modul:attribute"></m-i18n>
             </th>
-            <th style="text-align: center">
+            <th style="text-align: center;">
                 <m-i18n k="modul:value"></m-i18n>
             </th>
-            <th style="text-align: center">
+
+            <th style="text-align: center;">
                 <m-i18n k="modul:description"></m-i18n>
             </th>
         </thead>
@@ -20,8 +21,9 @@
                     <strong>{{attribute.name}}</strong>:{{attribute.type}}
                     <p v-if="attribute.origin" class="modul-component-properties__origin-attibute">({{attribute.origin.tag}})</p>
                 </td>
-                <td style="text-align: center">
-                    <span v-for="(value, index) in getValues(attribute)" :class="{ 'm-u--font-weight--bold': isDefault(attribute, value)}"><span v-if="index > 0">/</span>{{value}}</span>
+                <td style="text-align: center;">
+                    <span v-for="(value, index) in getValues(attribute)" ><span v-if="index > 0">/</span>{{value}}</span>
+                    <p v-if="attribute.defaultValue" class="modul-component-properties__origin-attibute"><m-i18n k="modul:defaut"></m-i18n> : ({{attribute.defaultValue}})</p>
                 </td>
                 <td>
                     <m-i18n v-if="showDescription" :k="attribute.description"></m-i18n>

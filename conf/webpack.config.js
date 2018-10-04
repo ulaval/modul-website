@@ -31,10 +31,14 @@ module.exports = function (env) {
             }
         },
 
-        devtool: 'source-map',
+        devtool: 'eval-source-maps',
 
         module: {
-            rules: [
+            rules: [{
+                    test: /\.js$/,
+                    use: ["source-map-loader"],
+                    enforce: "pre"
+                },
                 {
                     enforce: 'post',
                     test: /\.css$/,
