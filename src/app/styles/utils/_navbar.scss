@@ -26,18 +26,17 @@
         }
     }
 
-    .m--is-skin-arrow {
-        .m-navbar-item {
-            .modul-u--navbar__item {
-                padding: 20px 0; //Magic Number
-                font-weight: $m-font-weight--black;
-                text-transform: uppercase;
-                color: $modul-color--grey-dark;
+    .m-navbar-item {
+        .modul-u--navbar__item {
+            padding: 20px 0; //Magic Number
+            font-weight: $m-font-weight--black;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $modul-color--grey-dark;
 
-                &:hover,
-                &:focus {
-                    color: $modul-color--grey-darker;
-                }
+            &:hover,
+            &:focus {
+                color: $modul-color--grey-darker;
             }
         }
     }
