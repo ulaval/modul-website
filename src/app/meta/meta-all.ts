@@ -1,4 +1,4 @@
-import { ACCORDION_GROUP_NAME, ACCORDION_NAME, BUTTON_GROUP_NAME, BUTTON_NAME, CAROUSEL_ITEM_NAME, CAROUSEL_NAME, CHECKBOX_NAME, DATEFIELDS_NAME, DATEPICKER_NAME, DIALOG_NAME, DROPDOWN_GROUP_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, DYNAMIC_TEMPLATE_NAME, EDIT_WINDOW_NAME, FILE_SELECT_NAME, FILE_UPLOAD_NAME, FLEX_TEMPLATE_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_FILE_NAME, ICON_NAME, INPLACE_EDIT_NAME, INPUT_STYLE_NAME, LIMIT_TEXT_NAME, LINK_NAME, LIST_ITEM_NAME, MENU_ITEM_NAME, MENU_NAME, MESSAGE_NAME, MODAL_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME, PANEL_NAME, PHONE_NUMBER_NAME, POPPER_NAME, POPUP_NAME, PROGRESS_NAME, RADIO_GROUP_NAME, RADIO_NAME, RADIO_STYLE_NAME, SCROLL_TOP_NAME, SIDEBAR_NAME, SLIDER_NAME, SPINNER_NAME, STATUS_NAME, STEP_NAME, STEPPERS_ITEM_NAME, STEPPERS_NAME, SWITCH_NAME, TAB_PANEL_NAME, TABS_NAME, TEMPLATE_NAME, TEXTAREA_NAME, TEXTFIELD_NAME, TIMEPICKER_NAME, TOOLTIP_NAME, VALIDATION_MESSAGE_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { ACCORDION_GROUP_NAME, ACCORDION_NAME, BUTTON_GROUP_NAME, BUTTON_NAME, CAROUSEL_ITEM_NAME, CAROUSEL_NAME, CHECKBOX_NAME, DATEFIELDS_NAME, DATEPICKER_NAME, DIALOG_NAME, DROPDOWN_GROUP_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, DYNAMIC_TEMPLATE_NAME, FILE_SELECT_NAME, FILE_UPLOAD_NAME, FLEX_TEMPLATE_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_FILE_NAME, ICON_NAME, INPLACE_EDIT_NAME, INPUT_STYLE_NAME, LIMIT_TEXT_NAME, LINK_NAME, LIST_ITEM_NAME, MENU_ITEM_NAME, MENU_NAME, MESSAGE_NAME, MODAL_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME, OVERLAY_NAME, PANEL_NAME, PHONE_NUMBER_NAME, POPPER_NAME, POPUP_NAME, PROGRESS_NAME, RADIO_GROUP_NAME, RADIO_NAME, RADIO_STYLE_NAME, SCROLL_TOP_NAME, SIDEBAR_NAME, SLIDER_NAME, SPINNER_NAME, STATUS_NAME, STEP_NAME, STEPPERS_ITEM_NAME, STEPPERS_NAME, SWITCH_NAME, TAB_PANEL_NAME, TABS_NAME, TEMPLATE_NAME, TEXTAREA_NAME, TEXTFIELD_NAME, TIMEPICKER_NAME, TOOLTIP_NAME, VALIDATION_MESSAGE_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { ComponentMeta, Meta, Preview } from '@ulaval/modul-components/dist/meta/meta';
 import { Meta as Meta2, MetaV2, MetaV2Converter } from '@ulaval/modul-components/dist/meta/v2';
 import { PluginObject } from 'vue';
@@ -53,6 +53,7 @@ export class MetaAll implements PluginObject<any> {
     private categories: CategoryComponentMap = {};
     private baseMeta: Meta;
     private enums: EnumMap = {};
+    private modulVersion: string;
 
     public install(v, options) {
         if (!options) {
@@ -64,6 +65,9 @@ export class MetaAll implements PluginObject<any> {
 
         let metaV2 = new MetaV2(require('@ulaval/modul-components/dist/modul-meta.json') as Meta2);
         let metaV2Converter = new MetaV2Converter(metaV2);
+
+        // get the modulVersion from v2
+        this.modulVersion = metaV2.meta.modulVersion;
 
         // mixins should be registered first, starting with the lowest order in the mixin hierarchy
         // if this doesn't work anymore, we'll have to add a meta.complete() method that will complete the attributes merge
@@ -238,8 +242,8 @@ export class MetaAll implements PluginObject<any> {
             false
         );
         this.mergeComponentMeta(
-            EDIT_WINDOW_NAME,
-            metaV2Converter.extractComponentMetaFromV2(EDIT_WINDOW_NAME),
+            OVERLAY_NAME,
+            metaV2Converter.extractComponentMetaFromV2(OVERLAY_NAME),
             CATEGORY_WINDOWS,
             ModulComponentStatus.Beta,
             true
@@ -567,6 +571,10 @@ export class MetaAll implements PluginObject<any> {
 
     public getAllMeta(): ComponentMetaEx[] {
         return this.baseMeta.getMeta();
+    }
+
+    public getModulVersion(): string {
+        return this.modulVersion;
     }
 
     public getEnum(name: string): string[] {
