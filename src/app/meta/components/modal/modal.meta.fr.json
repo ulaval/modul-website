@@ -1,9 +1,9 @@
 {
     "m-modal-meta": {
-        "website-name": "Fenêtre modal",
-        "size": "Grosseur de la fenêtre modal",
+        "website-name": "Fenêtre modale",
+        "size": "Grosseur de la fenêtre modale",
         "closeOnBackdrop": "Fermer ou non la fenêtre sur le clique en arrière plan",
-        "title": "Titre de la fenêtre modal",
+        "title": "Titre de la fenêtre modale",
         "bodyMaxWidth": "Largeur maximale du corps",
         "padding": "Propriété pour enlever ou mettre de l'espacement",
         "paddingHeader": "Propriété pour enlever ou mettre de l'espacement sur l'entête",

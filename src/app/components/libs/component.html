@@ -1,7 +1,8 @@
 <modul-light-template>
-    <m-link slot="backlink" mode="button" iconName="left-chevron" @click="back(component.category)">{{translatedCategory}}</m-link>
+    <m-link slot="backlink" mode="button" iconName="left-chevron" @click="back(getCurrentComponent().category)">{{translatedCategory}}</m-link>
     <h1 slot="header">
-        <m-dropdown v-if="isMqMinS" class="modul-u--dropdown-light" v-model="selectedComponent" @open="onOpen" @close="onClose" width="auto" max-width="none">
+
+         <m-dropdown v-if="isMqMinS" class="modul-u--dropdown-light" v-model="selectedComponentTag" @change="onChange" @open="onOpen" @close="onClose" width="auto" max-width="none">
             <m-dropdown-item v-for="component in components" :value="component" :label="getComponentName(component)"></m-dropdown-item>
         </m-dropdown>
         <template v-if="!isMqMinS">{{ getComponentName(selectedComponent) }}</template>
