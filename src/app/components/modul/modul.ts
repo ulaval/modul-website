@@ -77,6 +77,11 @@ export default class Modul extends ModulWebsite {
         this.isMqMinSChanged(this.as<MediaQueriesMixin>().isMqMinS);
     }
 
+    // computed
+    get modulVersion() {
+        return MetaAll.getModulVersion();
+    }
+
     @Watch('isMqMinS')
     private isMqMinSChanged(value): void {
         this.searchWidth = value ? '400px' : '100%';
