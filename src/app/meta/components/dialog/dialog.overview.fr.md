@@ -1,59 +1,45 @@
-Une *fenêtre de dialogue* est utilisée pour afficher du contenu complémentaire tout en gardant l'utilisateur en contexte de la page en cours.
+Une *fenêtre de dialogue* amorce toujours un dialogue avec l'utilisateur suite à une action posée dans l'interface. Par exemple, elle est utilisée pour poser une question, demander la confirmation d'une opération, avertir d'une erreur ou encore pour proposer de nouvelles actions à l'utilisateur. De plus, l'utilisateur ne peut continuer à travailler tant qu'il n'a pas accusé réception du message à l'aide des boutons ou du lien de fermeture, s'il est disponible.
 
-<modul-dont>
-    <ul>
-        <li>Une <em>fenêtre de dialogue</em> ne doit pas être utilisée pour initier un dialogue avec l'utilisateur. Dans ce cas, il faut plutôt utiliser le composant <em><modul-go name="m-modal"></modul-go></em>.</li>
-        <li>Il n'est pas permis d'utiliser une <em>fenêtre de dialogue</em> à l'intérieur d'une autre <em>fenêtre de dialogue</em>.</li>
-    </ul>
-</modul-dont>
+Pour tous les autres cas où il faut afficher du contenu tout en gardant l'utilisateur en contexte de la page, il faut utiliser le composant *<modul-go name="m-modal"></modul-go>*.
+
+</modul-do>
 
 ## Caractéristiques
-### Dimensions de la fenêtre
-La dimension de la fenêtre doit varier en fonction du contenu qui est affiché à l'intérieur de la fenêtre. Quatre dimensions sont disponibles: **plein écran**, **large**, **régulier** et **petit**.
+### Contenu
+Une *fenêtre de dialogue* doit contenir au minimum un énoncé principal et un bouton. Il est également possible de faire afficher un message supplémentaire (information ou avertissement), une zone de conseils et un lien permettant de fermer la fenêtre. Le message supplémentaire et la zone de conseils doivent se trouver sous l'énoncé principal.
+
+Puisque plusieurs cas d'utilisation sont possibles, voici quelques principes de présentation de contenu à respecter :
+* Lorsque la situation ayant déclenché l'affichage de la *fenêtre de dialogue* a une conséquence directe sur le cheminement de l'étudiant, sa réussite, son dossier financier, etc., il est important d'utiliser le composant *<modul-go name="m-message"></modul-go>* en mode *avertissement* pour afficher l'énoncé principal.
 
 <modul-demo>
 
 ```html
-<p>
-    <m-dialog title="Titre" size="large">
-        <m-button slot="trigger">Large</m-button>
-        <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</p>
-        <span slot="footer">Consectetur dolore commodo voluptate est laborum ex nulla.</span>
-    </m-dialog>
-</p>
-
-<p>
-    <m-dialog title="Titre" size="regular">
-        <m-button slot="trigger">Régulier</m-button>
-        <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</p>
-        <span slot="footer">Consectetur dolore commodo voluptate est laborum ex nulla.</span>
-    </m-dialog>
-</p>
-<p>
-    <m-dialog title="Titre" size="small">
-        <m-button slot="trigger">Petit</m-button>
-        <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</p>
-        <span slot="footer">Consectetur dolore commodo voluptate est laborum ex nulla.</span>
-    </m-dialog>
-</p>
+<m-dialog>
+    <m-button slot="trigger">Ouvrir</m-button>
+    <m-message state="warning">Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi animelit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</m-message>
+</m-dialog>
 ```
 
 </modul-demo>
 
-### Petits écrans
-La *fenêtre de dialogue* s'affiche à l'aide d'une animation arrivant du bas et venant s'afficher complètement par-dessus la fenêtre principale.
+* Afin de permettre à l'utilisateur de se concentrer sur une tâche à la fois, il est important d'essayer de véhiculer un seul message par fenêtre. Par exemple, en évitant d'utiliser une zone de message (information ou avertissement) et une zone de conseils en même temps.
+* Idéalement, il faut utiliser un nom de bouton représentant l'action qui sera effectuée, plutôt que des libellés génériques tels que OK, Oui, Non, etc.
 
-### Grands écrans
-La *fenêtre de dialogue* est affichée par dessus la fenêtre principale, avec un effet de semi-transparence.
+<modul-demo>
 
-### Titre
-Le titre de la *fenêtre de dialogue* dépend de son contenu. S'il y a une action à poser dans la fenêtre, il est suggéré d'utiliser un verbe à l'infinitif pour indiquer quelle est l'action à faire. Dans le cas où il n'y a pas d'action à faire et qu'on affiche un complément d'information, il est suggéré d'utiliser le nom du sujet sur lequel porte le complément.
+```html
+<m-dialog okLabel="Continuer" cancelLabel="Revenir">
+    <m-button slot="trigger">Ouvrir</m-button>
+    <m-message state="warning">Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi animelit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</m-message>
+</m-dialog>
+```
 
-### Contenu
-Une *fenêtre de dialogue* peut contenir du texte, des images, des boutons, etc. N'importe quel type de contenu est permis, du moment que la distinction avec la *<modul-go name="m-modal"></modul-go>* est respecté.
+</modul-demo>
+
+* Lorsqu'un seul bouton est disponible et qu'il n'y a pas de lien de fermeture, il est permis d'utiliser le libellé OK s'il n'y a pas d'alternative préférable.
 
 ### Défilement
-Lorsqu'il n'est pas possible de voir l'ensemble du contenu dans l'espace visible (viewport), il doit être possible de faire défiler le contenu. L'entête de la fenêtre est figée afin de permettre un accès rapide au bouton de fermeture.
+Le contenu d'une *fenêtre de dialog* doit toujours être un complètement visible dans la fenêtre d'affichage (viewport). Il ne doit donc pas être possible de défiler.
 
 ### Fermeture
-Un bouton de fermeture (X en haut à droite) doit être disponible en tout temps. De plus, il est possible de fermer la fenêtre en cliquant à l'extérieur de celle-ci (grands écrans seulement).
+Une *fenêtre de dialog* ne contient jamais de bouton de fermeture, puisque idéalement l'utilisateur doit intervenir. Il est néanmoins permis d'utiliser un lien *Fermer* centré sous les boutons, permettant de fermer la fenêtre lorsque les actions proposées sont facultatives. Toutefois, lorsqu'un bouton Annuler est présent, il est fortement déconseillé d'utiliser le lien de fermeture, puisque ces options sont mutuellement exclusives.

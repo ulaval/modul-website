@@ -33,7 +33,7 @@ Cette version livre une première version sur website des composants suivants&nb
 * <modul-go name="m-file-upload"></modul-go>
 * <modul-go name="m-popup"></modul-go>
 * <modul-go name="m-sidebar"></modul-go>
-* <modul-go name="m-edit-window"></modul-go>
+* <modul-go name="m-overlay"></modul-go>
 * <modul-go name="m-tooltip"></modul-go>
 * <modul-go name="m-popper"></modul-go>
 * <modul-go name="m-menu-item"></modul-go>
