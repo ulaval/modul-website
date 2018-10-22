@@ -383,6 +383,10 @@ export class ModulIconList {
         {
             'name': 'm-svg__arrow-return',
             'nameFr': 'Retour'
+        },
+        {
+            'name': 'm-svg__no-data',
+            'nameFr': 'Aucune donnée à afficher'
         }
     ];
 }
