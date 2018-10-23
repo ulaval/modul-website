@@ -385,8 +385,8 @@ export class ModulIconList {
             'nameFr': 'Retour'
         },
         {
-            'name': 'm-svg__no-data',
-            'nameFr': 'Aucune donnée à afficher'
+            'name': 'm-svg__data',
+            'nameFr': 'Donnée'
         }
     ];
 }
