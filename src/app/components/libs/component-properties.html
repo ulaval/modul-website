@@ -22,8 +22,9 @@
                     <p v-if="attribute.origin" class="modul-component-properties__origin-attibute">({{attribute.origin.tag}})</p>
                 </td>
                 <td style="text-align: center;">
-                    <span v-for="(value, index) in getValues(attribute)" ><span v-if="index > 0">/</span>{{value}}</span>
-                    <p v-if="attribute.defaultValue" class="modul-component-properties__origin-attibute"><m-i18n k="modul:defaut"></m-i18n> : ({{attribute.defaultValue}})</p>
+
+                    <span v-html="getValues(attribute)"></span>
+                    <span v-if="attribute.defaultValue" class="modul-component-properties__origin-attibute"><br/><m-i18n k="modul:defaut"></m-i18n> : ({{attribute.defaultValue}})</span>
                 </td>
                 <td>
                     <m-i18n v-if="showDescription" :k="attribute.description"></m-i18n>

@@ -1,9 +1,10 @@
-import Component from 'vue-class-component';
-import WithRender from './component-properties.html?style=./component-properties.scss';
-import { ModulWebsite } from '../modul-website';
-import Meta, { ComponentAttribute } from '@ulaval/modul-components/dist/meta/meta';
-import MetaAll, { ComponentMetaEx, ModulComponentStatus } from '../../meta/meta-all';
 import { GET_COMPONENT } from '@/app/store/modules/components/getters';
+import Meta, { ComponentAttribute } from '@ulaval/modul-components/dist/meta/meta';
+import Component from 'vue-class-component';
+
+import MetaAll, { ComponentMetaEx, ModulComponentStatus } from '../../meta/meta-all';
+import { ModulWebsite } from '../modul-website';
+import WithRender from './component-properties.html?style=./component-properties.scss';
 
 const BOOLEAN_TYPE: string = 'boolean';
 
@@ -43,16 +44,18 @@ export class ComponentProperties extends ModulWebsite {
         }
     }
 
-    private getValues(attribute: ComponentAttribute): string[] {
+    private getValues(attribute: ComponentAttribute): string {
+        let values = [];
         if (attribute.type == BOOLEAN_TYPE) {
-            return ['true', 'false'];
+            values = ['true', 'false'];
         } else {
             let enumValues: string[] = MetaAll.getEnum(attribute.type);
             if (enumValues) {
-                return enumValues;
+                values = [...enumValues];
             }
-            return attribute.values;
+            values = [...attribute.values];
         }
+        return values.map((value) => value.replace('-', '&#8209;')).join('&nbsp;/ ');
     }
 
     private getValuesCount(attribute: ComponentAttribute): number {
