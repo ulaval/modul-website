@@ -49,7 +49,6 @@ export class ComponentProperties extends ModulWebsite {
         if (attribute.type == BOOLEAN_TYPE) {
             values = ['true', 'false'];
         } else {
-            // let enumValues: string[] = MetaAll.getEnum(attribute.type);
             if (attribute.values && attribute.values.length > 0) {
                 values = [...attribute.values];
             } else {
