@@ -49,11 +49,12 @@ export class ComponentProperties extends ModulWebsite {
         if (attribute.type == BOOLEAN_TYPE) {
             values = ['true', 'false'];
         } else {
-            let enumValues: string[] = MetaAll.getEnum(attribute.type);
-            if (enumValues) {
-                values = [...enumValues];
+            // let enumValues: string[] = MetaAll.getEnum(attribute.type);
+            if (attribute.values && attribute.values.length > 0) {
+                values = [...attribute.values];
+            } else {
+                values = ['-'];
             }
-            values = [...attribute.values];
         }
         return values.map((value) => value.replace('-', '&#8209;')).join('&nbsp;/ ');
     }
