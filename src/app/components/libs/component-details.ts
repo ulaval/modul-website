@@ -1,11 +1,11 @@
-import { ROUTER_OVERVIEW, ROUTER_PROPERTIES } from '@/app/router';
+import { ROUTER_EVENTS, ROUTER_OVERVIEW, ROUTER_PROPERTIES, ROUTER_SLOTS } from '@/app/router';
 import * as ComponentsActions from '@/app/store/modules/components/actions';
 import * as ComponentsGetters from '@/app/store/modules/components/getters';
 import Meta, { ComponentMeta } from '@ulaval/modul-components/dist/meta/meta';
-import MetaAll, { ModulComponentStatus } from '../../meta/meta-all';
 import Component from 'vue-class-component';
 import { Watch } from 'vue-property-decorator';
 
+import MetaAll, { ModulComponentStatus } from '../../meta/meta-all';
 import { ModulWebsite } from '../modul-website';
 import WithRender from './component-details.html?style=./component-details.scss';
 
@@ -27,7 +27,17 @@ export class ComponentDetails extends ModulWebsite {
     }
 
     private get currentTab(): string {
-        return this.$route.meta.type == ROUTER_OVERVIEW ? 'overview' : 'properties';
+        switch (this.$route.meta.type) {
+            case ROUTER_PROPERTIES:
+                return 'properties';
+            case ROUTER_EVENTS:
+                return 'events';
+            case ROUTER_SLOTS:
+                return 'slots';
+            default:
+                return 'overview';
+        }
+
     }
 
     private get codePreviewOpen(): boolean {
@@ -49,6 +59,12 @@ export class ComponentDetails extends ModulWebsite {
 
     private get properties(): string {
         return this.$routerIndex.for(ROUTER_PROPERTIES, _ => this.component.tag);
+    }
+    private get slots(): string {
+        return this.$routerIndex.for(ROUTER_SLOTS, _ => this.component.tag);
+    }
+    private get events(): string {
+        return this.$routerIndex.for(ROUTER_EVENTS, _ => this.component.tag);
     }
 
     private get overview(): string {
