@@ -61,14 +61,14 @@ export class ComponentDetails extends ModulWebsite {
         return this.$routerIndex.for(ROUTER_PROPERTIES, _ => this.component.tag);
     }
     private get slots(): string {
-        return this.$routerIndex.for(ROUTER_SLOTS, _ => this.component.tag);
+        return this.$routerIndex.for(ROUTER_SLOTS, () => this.component.tag);
     }
     private get events(): string {
-        return this.$routerIndex.for(ROUTER_EVENTS, _ => this.component.tag);
+        return this.$routerIndex.for(ROUTER_EVENTS, () => this.component.tag);
     }
 
     private get overview(): string {
-        return this.$routerIndex.for(ROUTER_OVERVIEW, _ => this.component.tag);
+        return this.$routerIndex.for(ROUTER_OVERVIEW, () => this.component.tag);
     }
 
     private isProduction(status): boolean {

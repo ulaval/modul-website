@@ -5,10 +5,11 @@
                 <m-icon name="m-svg__chevron--left" class="modul-component-details__title__arrow"></m-icon>{{component.tag}}
                 <m-icon name="m-svg__chevron--right" class="modul-component-details__title__arrow"></m-icon>
                 <span v-if="!isProduction(component.status)" class="modul-logo__beta modul-component-details__title__beta-tag">
-                    {{component.status }}</span>
+                    {{component.status }}
+                </span>
             </h2>
-            <button @click="toggleOpenCodePreview" v-if="component.preview" class="modul-component-details__title__button">
-                {{openCloseLabel }}</button>
+            <button @click="toggleOpenCodePreview" v-if="component.preview" class="modul-component-details__title__button">{{openCloseLabel}}
+            </button>
         </header>
         <m-accordion-transition>
             <div v-if="codePreviewOpen && component.preview">

@@ -7,14 +7,15 @@
             <th>
                 <m-i18n k="modul:slots-name"></m-i18n>
             </th>
-            <th >
+            <th>
                 <m-i18n k="modul:description"></m-i18n>
             </th>
         </thead>
         <tbody>
             <tr v-for="slot in slots">
                 <td>
-                    <strong v-if="slot.isDefault">{{slot.name}}</strong><span v-else>{{slot.name}}</span>
+                    <strong v-if="slot.isDefault">{{slot.name}}</strong>
+                    <span v-else>{{slot.name}}</span>
                 </td>
                 <td>
                     <m-i18n :k="getSlotDescriptionKey(slot)"></m-i18n>

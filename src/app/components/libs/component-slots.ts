@@ -23,7 +23,7 @@ export class ComponentSlots extends ModulWebsite {
     }
 
     private getSlotDescriptionKey(slot: MetaSlot): string {
-        return this.component.metaKey + 'slot_' + slot.name;
+        return `${this.component.metaKey}slot_${slot.name}`;
     }
 
 }

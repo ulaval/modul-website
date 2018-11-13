@@ -22,8 +22,6 @@
                 </td>
                 <td style="text-align: center;">
                     <span v-for="argument in event.arguments"><strong>{{argument.name}}</strong>:{{argument.type}}<br/></span>
-                    <!-- <span v-html="getValues(attribute)"></span>
-                    <span v-if="attribute.defaultValue" class="modul-component-properties__origin-attibute"><br/><m-i18n k="modul:defaut"></m-i18n> : {{attribute.defaultValue}}</span> -->
                 </td>
                 <td>
                     <m-i18n :k="getEventDescriptionKey(event)"></m-i18n>

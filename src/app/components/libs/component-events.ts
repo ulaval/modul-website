@@ -23,7 +23,7 @@ export class ComponentEvents extends ModulWebsite {
     }
 
     private getEventDescriptionKey(event: MetaEvent): string {
-        return this.component.metaKey + 'event_' + event.name;
+        return `${this.component.metaKey}event_${event.name}`;
     }
 
 }
