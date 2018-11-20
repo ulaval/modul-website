@@ -1,24 +1,42 @@
 {
     "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "strict": false,
+        "jsx": "preserve",
+        "importHelpers": true,
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
         "baseUrl": ".",
+        "types": [
+            "webpack-env",
+            "jest"
+        ],
         "paths": {
+            "*": ["types/*"],
             "@/*": [
                 "src/*"
             ]
         },
-        "target": "es5",
-        "module": "esnext",
-        "moduleResolution": "node",
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true,
-        "strictNullChecks": false,
-        "types": [
-            "es6-promise",
-            "node",
-            "jasmine"
-        ],
-        "typeRoots": [
-            "node_modules/@types"
+        "lib": [
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "scripthost"
         ]
-    }
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }

@@ -1,0 +1,67 @@
+import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import Vue from 'vue';
+import { Mutation } from 'vuex';
+import { PagesState } from './pages-state';
+import { SectionsState } from './sections-state';
+
+export const SECTIONS_META_GET: string = 'M_SECTIONS_META_GET';
+export const getMetaSections: Mutation<SectionsState> = (state: SectionsState, payload) => {
+    if (payload.sectionsObj != undefined && payload.language != undefined) {
+        state.sections = payload.sectionsObj;
+        state.messagesLanguageLoaded = payload.language;
+    }
+};
+
+export const SECTIONS_GET: string = 'M_SECTIONS_GET';
+export const getSections: Mutation<SectionsState> = (state: SectionsState, sections: string[]) => {
+    if (sections != undefined) {
+        state.sections = sections;
+    }
+};
+
+export const SECTION_GET: string = 'M_SECTION_GET';
+export const getSection: Mutation<SectionsState> = (state: SectionsState, payload) => {
+    if (payload.section != undefined) {
+        state.section = payload.section;
+    }
+};
+
+export const PAGES_META_GET_SUCCESS: string = 'M_PAGES_META_GET_SUCCESS';
+export const getPagesMetaSucces: Mutation<PagesState> = (state: PagesState, payload) => {
+    let i18n: Messages = (Vue.prototype as any).$i18n;
+
+    payload.pagesObj.getPages().forEach(page => {
+        state.pagesText[page] = i18n.translate('pages:' + page);
+    });
+};
+
+export const PAGE_GET: string = 'M_PAGE_GET';
+export const getPage: Mutation<PagesState> = (state: PagesState, idPage: string) => {
+    if (idPage != undefined && Object.keys(idPage).length > 0) {
+        state.page = idPage;
+        state.pageSummaryMarkdown = null;
+    }
+};
+
+export const TAB_GET: string = 'M_TAB_GET';
+export const getTab: Mutation<PagesState> = (state: PagesState, tab: string) => {
+    state.tab = tab;
+    state.tabMarkdown = null;
+};
+
+export const PAGE_SUMMARY_GET_SUCCESS: string = 'M_PAGE_SUMMARY_GET_SUCCESS';
+export const getPageSummarySuccess: Mutation<PagesState> = (state: PagesState, markdown: string) => {
+    state.pageSummaryMarkdown = markdown;
+};
+
+export const PAGE_TABS_GET: string = 'M_PAGE_TABS_GET';
+export const getPageTabs: Mutation<PagesState> = (state: PagesState, tabs: string[]) => {
+    state.tabs = tabs;
+    state.tab = null;
+    state.tabMarkdown = null;
+};
+
+export const PAGE_TAB_GET_SUCCESS: string = 'M_PAGE_TAB_GET_SUCCESS';
+export const getPageTabSuccess: Mutation<PagesState> = (state: PagesState, markdown: string) => {
+    state.tabMarkdown = markdown;
+};
