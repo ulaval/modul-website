@@ -1,21 +1,23 @@
+import { GettingStarted, Standards } from '@/app/components/pages/page';
+import Meta from '@ulaval/modul-components/dist/meta/meta';
+import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Vue from 'vue';
 import Router, { RouteConfig } from 'vue-router';
+import { VueRouter } from 'vue-router/types/router';
+
 import { HomePage } from './components/home/home';
-import { CategoryList } from './components/libs/category-list';
 import { Category } from './components/libs/category';
+import { CategoryList } from './components/libs/category-list';
 import { ComponentViewer } from './components/libs/component';
 import { ComponentDetails } from './components/libs/component-details';
+import { ComponentEvents } from './components/libs/component-events';
 import { ComponentOverview } from './components/libs/component-overview';
 import { ComponentProperties } from './components/libs/component-properties';
-import { PageViewer } from './components/pages/pages';
+import { ComponentSlots } from './components/libs/component-slots';
 import { PageDetails } from './components/pages/page-details';
 import { PageTab } from './components/pages/page-tab';
-import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
-import Meta from '@ulaval/modul-components/dist/meta/meta';
-import MetaAll, { CATEGORY_CONTENT, CATEGORY_FORMS, CATEGORY_LAYOUT, CATEGORY_NAVIGATION, CATEGORY_WINDOWS } from './meta/meta-all';
-import { Standards, GettingStarted } from '@/app/components/pages/page';
-import { log } from 'util';
-import { VueRouter } from 'vue-router/types/router';
+import { PageViewer } from './components/pages/pages';
+import MetaAll from './meta/meta-all';
 
 console.debug('TODO: detect lang (or add route FR/EN basepath)');
 
@@ -75,6 +77,8 @@ export interface ModulRouter {
 // must match router.<lang>.json
 export const ROUTER_COMPONENTS: string = 'router:components';
 export const ROUTER_PROPERTIES: string = 'router:properties';
+export const ROUTER_SLOTS: string = 'router:slots';
+export const ROUTER_EVENTS: string = 'router:events';
 export const ROUTER_OVERVIEW: string = 'router:overview';
 export const ROUTER_ECOSYSTEM: string = 'router:ecosystem';
 
@@ -92,6 +96,9 @@ const routerFactory: RouterFactoryFn = () => {
     let i18n: Messages = Vue.prototype.$i18n;
     let componentsRoute: string = i18n.translate(ROUTER_COMPONENTS);
     let propertiesRoute: string = i18n.translate(ROUTER_PROPERTIES);
+    let slotsRoute: string = i18n.translate(ROUTER_SLOTS);
+    let eventsRoute: string = i18n.translate(ROUTER_EVENTS);
+
     let overviewRoute: string = i18n.translate(ROUTER_OVERVIEW);
 
     let routeIndex: RoutePathMap = {};
@@ -134,6 +141,22 @@ const routerFactory: RouterFactoryFn = () => {
                 component: ComponentDetails
             });
             config.children = [];
+            pushRoute(ROUTER_SLOTS, config.children, {
+                path: slotsRoute,
+                meta: {
+                    page: componentMeta.tag,
+                    type: ROUTER_SLOTS
+                },
+                component: ComponentSlots
+            });
+            pushRoute(ROUTER_EVENTS, config.children, {
+                path: eventsRoute,
+                meta: {
+                    page: componentMeta.tag,
+                    type: ROUTER_EVENTS
+                },
+                component: ComponentEvents
+            });
             pushRoute(ROUTER_PROPERTIES, config.children, {
                 path: propertiesRoute,
                 meta: {
