@@ -5,7 +5,6 @@ import { GET_COMPONENT } from '../../store/modules/components/getters';
 import { ModulWebsite } from '../modul-website';
 import WithRender from './component-events.html?style=./component-events.scss';
 
-
 @WithRender
 @Component
 export class ComponentEvents extends ModulWebsite {
