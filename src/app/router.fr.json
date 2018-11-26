@@ -3,6 +3,8 @@
         "components": "composants",
         "properties": "proprietes",
         "overview": "portrait",
-        "ecosystem": "ecosysteme"
+        "ecosystem": "ecosysteme",
+        "slots": "slots",
+        "events": "evenements"
     }
 }

@@ -10,6 +10,8 @@
         "iconSize": "Propriété pour changer la grosseur de l'icône",
         "padding": "Propriété pour enlever ou mettre de l'espacement",
         "paddingHeader": "Propriété pour enlever ou mettre de l'espacement sur l'entête",
-        "paddingBody": "Propriété pour enlever ou mettre de l'espacement sur le corps"
+        "paddingBody": "Propriété pour enlever ou mettre de l'espacement sur le corps",
+        "event_click": "Évènement click sur l'accordéon",
+        "slot_default": "Le contenu de l'accordéon"
     }
 }

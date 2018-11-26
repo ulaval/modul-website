@@ -1,0 +1,27 @@
+<div class="modul-component-slots">
+    <m-message v-if="!hasSlots" skin="light" state="information">
+        <m-i18n k="modul:no-slots"></m-i18n>
+    </m-message>
+    <table v-else class="m-u--table">
+        <thead>
+            <th>
+                <m-i18n k="modul:slots-name"></m-i18n>
+            </th>
+            <th>
+                <m-i18n k="modul:description"></m-i18n>
+            </th>
+        </thead>
+        <tbody>
+            <tr v-for="slot in slots">
+                <td>
+                    <strong v-if="slot.isDefault">{{slot.name}}</strong>
+                    <span v-else>{{slot.name}}</span>
+                </td>
+                <td>
+                    <m-i18n :k="getSlotDescriptionKey(slot)"></m-i18n>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

@@ -1,0 +1,33 @@
+<div class="modul-component-events">
+    <m-message v-if="!hasEvents" skin="light" state="information">
+        <m-i18n k="modul:no-events"></m-i18n>
+    </m-message>
+    <table v-else class="m-u--table">
+        <thead>
+            <th>
+                <m-i18n k="modul:events"></m-i18n>
+            </th>
+            <th style="text-align: center;">
+                <m-i18n k="modul:parameters"></m-i18n>
+            </th>
+
+            <th style="text-align: center;">
+                <m-i18n k="modul:description"></m-i18n>
+            </th>
+        </thead>
+        <tbody>
+            <tr v-for="event in events">
+                <td>
+                    <strong>{{event.name}}</strong>
+                </td>
+                <td style="text-align: center;">
+                    <span v-for="argument in event.arguments"><strong>{{argument.name}}</strong>:{{argument.type}}<br/></span>
+                </td>
+                <td>
+                    <m-i18n :k="getEventDescriptionKey(event)"></m-i18n>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

@@ -375,6 +375,14 @@ export class ModulIconList {
         {
             'name': 'm-svg__wrong-answer',
             'nameFr': 'Mauvaise réponse'
+        },
+        {
+            'name': 'm-svg__arrow-head-circle--right',
+            'nameFr': 'Fleche cercle droite '
+        },
+        {
+            'name': 'm-svg__arrow-return',
+            'nameFr': 'Retour'
         }
     ];
 }
