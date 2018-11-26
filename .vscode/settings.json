@@ -11,11 +11,11 @@
     "tslint.autoFixOnSave": true,
     "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
     "files.exclude": {
-        "**/dist/": true,
         "**/.vs/": true
     },
     "search.exclude": {
         "package-lock.json": true,
+        "**/dist/": true,
     },
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
