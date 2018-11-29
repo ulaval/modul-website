@@ -1,7 +1,6 @@
 import Meta from '@ulaval/modul-components/dist/meta/meta';
 import { RestAdapter } from '@ulaval/modul-components/dist/utils/http/rest';
 import { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
-import Vue from 'vue';
 import { Action, ActionContext } from 'vuex';
 import { CATEGORY_MIXINS, ComponentMetaEx } from '../../../meta/meta-all';
 import { ComponentsState } from './components-state';
@@ -21,9 +20,7 @@ export const getComponentsMetaAction: Action<ComponentsState, ComponentsState> =
             context.commit(Mutations.COMPONENTS_META_GET);
 
             (require as any).ensure(['../../../meta/meta-fr'], () => {
-                let languageModule = require('../../../meta/meta-fr');
-                Vue.use(languageModule.default);
-
+                //     let languageModule = require('../../../meta/meta-fr');
                 context.commit(Mutations.COMPONENTS_META_GET_SUCCESS, FRENCH);
 
                 if (context.state.component) {
@@ -80,8 +77,6 @@ export const getMessagesAction: Action<ComponentsState, ComponentsState> = async
             context.commit(Mutations.MESSAGES_GET);
 
             (require as any).ensure(['../../../lang/fr/fr'], () => {
-                let languageModule = require('../../../lang/fr/fr');
-                Vue.use(languageModule.default);
                 context.commit(Mutations.MESSAGES_GET_SUCCESS, FRENCH);
                 resolve();
             });
@@ -98,8 +93,7 @@ export const getIconsAction: Action<ComponentsState, ComponentsState> = async (c
             context.commit(Mutations.ICONS_GET);
 
             (require as any).ensure(['../../../utils/svg'], () => {
-                let svgModule = require('../../../utils/svg');
-                Vue.use(svgModule.default);
+
                 context.commit(Mutations.ICONS_GET_SUCCESS, icons);
                 resolve();
             });

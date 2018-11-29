@@ -5,10 +5,10 @@
 // ======================================================================
 
 // https://github.com/webpack-contrib/sass-loader#imports
-@import
-    '~@ulaval/modul-components/dist/styles/abstracts/variables',
-    '~@ulaval/modul-components/dist/styles/abstracts/var-color-calendar',
-    '~@ulaval/modul-components/dist/styles/abstracts/mixins';
+// @import
+//     '~@ulaval/modul-components/dist/styles/abstracts/variables',
+//     '~@ulaval/modul-components/dist/styles/abstracts/var-color-calendar',
+//     '~@ulaval/modul-components/dist/styles/abstracts/mixins';
 // local import
 @import
     'abstracts/mixins',
@@ -17,7 +17,7 @@
 // ======================================================================
 //  HTML overide
 // ======================================================================
-@import 'scoped-override';
+//@import 'scoped-override';
 
 // ======================================================================
 //  vendor / plugins
@@ -28,21 +28,21 @@
 //  Base
 // ======================================================================
 
-@import
-    '~@ulaval/modul-components/dist/styles/base/fonts',
-    '~@ulaval/modul-components/dist/styles/base/base',
-    '~@ulaval/modul-components/dist/styles/base/typography',
-    '~@ulaval/modul-components/dist/styles/base/layout',
-    '~@ulaval/modul-components/dist/styles/base/animations',
-    '~@ulaval/modul-components/dist/styles/utils/utils';
+// @import
+//     '~@ulaval/modul-components/dist/styles/base/fonts',
+//     '~@ulaval/modul-components/dist/styles/base/base',
+//     '~@ulaval/modul-components/dist/styles/base/typography',
+//     '~@ulaval/modul-components/dist/styles/base/layout',
+//     '~@ulaval/modul-components/dist/styles/base/animations',
+//     '~@ulaval/modul-components/dist/styles/utils/utils';
 @import
     'base/base',
     'base/typography',
     'base/animations',
     'base/dropdown',
     'base/preview-img';
-@import
-    'abstracts/custom-properties';
+// @import
+//     'abstracts/custom-properties';
 
 // ======================================================================
 //  Layout
