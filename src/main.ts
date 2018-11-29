@@ -6,8 +6,7 @@ import '@ulaval/modul-components/dist/utils/polyfills';
 import Vue from 'vue';
 import { VueRouter } from 'vue-router/types/router';
 import Modul from './components/modul/modul';
-import { GettingStarted, Sections, Standards } from './components/pages/page';
-import { Pages } from './components/pages/pages';
+import { Sections } from './components/pages/page';
 import WebsiteComponentsPlugin from './components/website-components-plugins';
 import FrenchPlugin from './lang/fr/fr';
 import FrenchMetaPlugin from './meta/meta-fr';
@@ -41,24 +40,24 @@ function main() {
         sectionsObj: Sections
     });
 
-    console.debug(
-        'TODO: to remove, mode or add a generic way to define routes'
-    );
-    Sections.forEach(section => {
-        let pagesObj: Pages | null = null;
+    // console.debug(
+    //     'TODO: to remove, mode or add a generic way to define routes'
+    // );
+    // Sections.forEach(section => {
+    //     let pagesObj: Pages | null = null;
 
-        if (section === 'standards') {
-            pagesObj = Standards;
-        } else if (section === 'getting-started-section') {
-            pagesObj = GettingStarted;
-        }
+    //     if (section === 'standards') {
+    //         pagesObj = Standards;
+    //     } else if (section === 'getting-started-section') {
+    //         pagesObj = GettingStarted;
+    //     }
 
-        if (pagesObj) {
-            store.dispatch(section + '/' + PageActions.PAGES_META_GET, {
-                /* route: route,*/ pagesObj: pagesObj
-            });
-        }
-    });
+    //     if (pagesObj) {
+    //         store.dispatch(section + '/' + PageActions.PAGES_META_GET, {
+    //             /* route: route,*/ pagesObj: pagesObj
+    //         });
+    //     }
+    // });
 
     let modulRouter: ModulRouter = routerFactory();
     let router: VueRouter = modulRouter.router;
