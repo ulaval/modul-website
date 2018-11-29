@@ -5,12 +5,6 @@ import { Mutation } from 'vuex';
 import MetaAll, { ComponentMetaEx } from '../../../meta/meta-all';
 import { ComponentsState } from './components-state';
 
-export const MESSAGES_GET: string = 'MESSAGES_GET';
-export const MESSAGES_GET_SUCCESS: string = 'MESSAGES_GET_SUCCESS';
-
-export const ICONS_GET: string = 'ICONS_GET';
-export const ICONS_GET_SUCCESS: string = 'ICONS_GET_SUCCESS';
-
 export const COMPONENTS_META_GET: string = 'M_COMPONENTS_META_GET';
 export const getComponentsMeta: Mutation<ComponentsState> = (state: ComponentsState) => {
     state.metaLanguageLoaded = null;
@@ -59,20 +53,22 @@ export const getComponentPreviewSuccess: Mutation<ComponentsState> = (state: Com
     state.componentMarkdownPreview = markdown;
 };
 
-// Messages
+export const MESSAGES_GET: string = 'MESSAGES_GET';
 export const getMessages: Mutation<ComponentsState> = (state: ComponentsState) => {
     state.messagesLanguageLoaded = null;
 };
 
+export const MESSAGES_GET_SUCCESS: string = 'MESSAGES_GET_SUCCESS';
 export const getMessagesSucces: Mutation<ComponentsState> = (state: ComponentsState, language: string) => {
     state.messagesLanguageLoaded = language;
 };
 
-// Icons
+export const ICONS_GET: string = 'ICONS_GET';
 export const getIcons: Mutation<ComponentsState> = (state: ComponentsState) => {
     state.iconsLoaded = null;
 };
 
+export const ICONS_GET_SUCCESS: string = 'ICONS_GET_SUCCESS';
 export const getIconsSucces: Mutation<ComponentsState> = (state: ComponentsState, icons: string) => {
     state.iconsLoaded = icons;
 };

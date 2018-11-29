@@ -28,7 +28,6 @@ export const getSectionAction: Action<SectionsState, SectionsState> = (context: 
 
 export const PAGES_META_GET: string = 'A_PAGES_META_GET';
 export const getPagesMetaAction: Action<PagesState, PagesState> = (context: ActionContext<PagesState, PagesState>, payload) => {
-
     context.commit(Mutations.PAGES_META_GET_SUCCESS, payload);
 };
 

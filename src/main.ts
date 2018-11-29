@@ -36,7 +36,6 @@ function main() {
     store.dispatch(ComponentActions.MESSAGES_GET, FRENCH);
     store.dispatch(ComponentActions.ICONS_GET, 'website');
     store.dispatch(ComponentActions.COMPONENTS_META_GET, FRENCH);
-
     store.dispatch(PageActions.SECTIONS_META_GET, {
         language: FRENCH,
         sectionsObj: Sections

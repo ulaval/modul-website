@@ -18,12 +18,11 @@ export const getComponentsMetaAction: Action<ComponentsState, ComponentsState> =
 
     if (!context.state.metaLanguageLoaded || context.state.metaLanguageLoaded != language) {
         context.commit(Mutations.COMPONENTS_META_GET);
-        //     let languageModule = require('../../../meta/meta-fr');
         context.commit(Mutations.COMPONENTS_META_GET_SUCCESS, FRENCH);
 
-        if (context.state.component) {
-            context.commit(Mutations.COMPONENT_GET, context.state.component.tag);
-        }
+        // if (context.state.component) {
+        //     context.commit(Mutations.COMPONENT_GET, context.state.component.tag);
+        // }
     }
 };
 
