@@ -18,7 +18,7 @@ import * as PageActions from './store/modules/pages/actions';
 import './styles/main.scss';
 import SvgPlugin from './utils/svg';
 
-async function main() {
+function main() {
     Vue.config.productionTip = false;
 
     Vue.use(UtilsPlugin, { propagateVueParserErrors: true, i18PluginOptions: { curLang: FRENCH } });
@@ -33,11 +33,11 @@ async function main() {
     Vue.use(SvgPlugin);
     Vue.use(FrenchMetaPlugin);
 
-    await store.dispatchAsync(ComponentActions.MESSAGES_GET, FRENCH);
-    await store.dispatchAsync(ComponentActions.ICONS_GET, 'website');
-    await store.dispatchAsync(ComponentActions.COMPONENTS_META_GET, FRENCH);
+    store.dispatch(ComponentActions.MESSAGES_GET, FRENCH);
+    store.dispatch(ComponentActions.ICONS_GET, 'website');
+    store.dispatch(ComponentActions.COMPONENTS_META_GET, FRENCH);
 
-    store.dispatchAsync(PageActions.SECTIONS_META_GET, {
+    store.dispatch(PageActions.SECTIONS_META_GET, {
         language: FRENCH,
         sectionsObj: Sections
     });
@@ -55,7 +55,7 @@ async function main() {
         }
 
         if (pagesObj) {
-            store.dispatchAsync(section + '/' + PageActions.PAGES_META_GET, {
+            store.dispatch(section + '/' + PageActions.PAGES_META_GET, {
                 /* route: route,*/ pagesObj: pagesObj
             });
         }

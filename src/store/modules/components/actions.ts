@@ -14,29 +14,21 @@ interface MarkdownPayload {
 declare const __webpack_public_path__: string;
 
 export const COMPONENTS_META_GET: string = 'A_COMPONENTS_META_GET';
-export const getComponentsMetaAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, language: string) => {
-    return new Promise((resolve, reject) => {
-        if (!context.state.metaLanguageLoaded || context.state.metaLanguageLoaded != language) {
-            context.commit(Mutations.COMPONENTS_META_GET);
+export const getComponentsMetaAction: Action<ComponentsState, ComponentsState> = (context: ActionContext<ComponentsState, ComponentsState>, language: string) => {
 
-            (require as any).ensure(['../../../meta/meta-fr'], () => {
-                //     let languageModule = require('../../../meta/meta-fr');
-                context.commit(Mutations.COMPONENTS_META_GET_SUCCESS, FRENCH);
+    if (!context.state.metaLanguageLoaded || context.state.metaLanguageLoaded != language) {
+        context.commit(Mutations.COMPONENTS_META_GET);
+        //     let languageModule = require('../../../meta/meta-fr');
+        context.commit(Mutations.COMPONENTS_META_GET_SUCCESS, FRENCH);
 
-                if (context.state.component) {
-                    context.commit(Mutations.COMPONENT_GET, context.state.component.tag);
-                }
-
-                resolve();
-            });
-        } else {
-            resolve();
+        if (context.state.component) {
+            context.commit(Mutations.COMPONENT_GET, context.state.component.tag);
         }
-    });
+    }
 };
 
 export const COMPONENT_GET: string = 'A_COMPONENT_GET';
-export const getComponentAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, tag: string) => {
+export const getComponentAction: Action<ComponentsState, ComponentsState> = (context: ActionContext<ComponentsState, ComponentsState>, tag: string) => {
     if (context.state.component == null || context.state.component.tag != tag) {
         let meta: ComponentMetaEx = Meta.getMetaByTag(tag) as ComponentMetaEx;
         context.commit(Mutations.CATEGORY_GET, meta.category);
@@ -45,7 +37,7 @@ export const getComponentAction: Action<ComponentsState, ComponentsState> = asyn
 };
 
 export const COMPONENT_OVERVIEW_GET: string = 'A_COMPONENT_OVERVIEW_GET';
-export const getComponentOverviewAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, markdown: MarkdownPayload) => {
+export const getComponentOverviewAction: Action<ComponentsState, ComponentsState> = (context: ActionContext<ComponentsState, ComponentsState>, markdown: MarkdownPayload) => {
     if (context.state.componentMarkdownOverview == null) {
         let category: string = context.state.category == CATEGORY_MIXINS ? 'mixins' : 'components';
         let url: string = process.env && (process.env.NODE_ENV as any).dev ?
@@ -71,34 +63,18 @@ export const getComponentPreviewAction: Action<ComponentsState, ComponentsState>
 };
 
 export const MESSAGES_GET: string = 'A_MESSAGES_GET';
-export const getMessagesAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, language: string) => {
-    return new Promise((resolve, reject) => {
-        if (!context.state.messagesLanguageLoaded || context.state.messagesLanguageLoaded != language) {
-            context.commit(Mutations.MESSAGES_GET);
-
-            (require as any).ensure(['../../../lang/fr/fr'], () => {
-                context.commit(Mutations.MESSAGES_GET_SUCCESS, FRENCH);
-                resolve();
-            });
-        } else {
-            resolve();
-        }
-    });
+export const getMessagesAction: Action<ComponentsState, ComponentsState> = (context: ActionContext<ComponentsState, ComponentsState>, language: string) => {
+    if (!context.state.messagesLanguageLoaded || context.state.messagesLanguageLoaded != language) {
+        context.commit(Mutations.MESSAGES_GET);
+        context.commit(Mutations.MESSAGES_GET_SUCCESS, FRENCH);
+    } else {
+    }
 };
 
 export const ICONS_GET: string = 'A_ICONS_GET';
-export const getIconsAction: Action<ComponentsState, ComponentsState> = async (context: ActionContext<ComponentsState, ComponentsState>, icons: string) => {
-    return new Promise((resolve, reject) => {
-        if (!context.state.iconsLoaded || context.state.iconsLoaded != icons) {
-            context.commit(Mutations.ICONS_GET);
-
-            (require as any).ensure(['../../../utils/svg'], () => {
-
-                context.commit(Mutations.ICONS_GET_SUCCESS, icons);
-                resolve();
-            });
-        } else {
-            resolve();
-        }
-    });
+export const getIconsAction: Action<ComponentsState, ComponentsState> = (context: ActionContext<ComponentsState, ComponentsState>, icons: string) => {
+    if (!context.state.iconsLoaded || context.state.iconsLoaded != icons) {
+        context.commit(Mutations.ICONS_GET);
+        context.commit(Mutations.ICONS_GET_SUCCESS, icons);
+    }
 };
