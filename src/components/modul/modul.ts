@@ -1,3 +1,4 @@
+import { ROUTER_PHILOSOPHY } from '@/router';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import Component from 'vue-class-component';
@@ -31,7 +32,7 @@ type CategoryIndexMap = {
 
 export enum ModulMenuSection {
     Home = 'home',
-    GettingStarted = 'gettingStarted',
+    Philosophy = 'philosophy',
     Components = 'components',
     Standards = 'standards'
 }
@@ -106,13 +107,13 @@ export default class Modul extends ModulWebsite {
         return regExp.test(this.$route.path);
     }
 
-    private get isGettingStartedPage(): boolean {
-        let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/premier[\-]pas[\/]?)([a-z\-?\/]+)?');
-        if (this.menuOpen) {
-            return this.menuSection == ModulMenuSection.GettingStarted;
-        }
-        return regExp.test(this.$route.path);
-    }
+    // private get isGettingStartedPage(): boolean {
+    //     let regExp: RegExp = new RegExp('([a-z\:0-9\/]+)?(\/premier[\-]pas[\/]?)([a-z\-?\/]+)?');
+    //     if (this.menuOpen) {
+    //         return this.menuSection == ModulMenuSection.GettingStarted;
+    //     }
+    //     return regExp.test(this.$route.path);
+    // }
 
     private get isBlackHeader(): boolean {
         return this.$route.meta.page === undefined || this.$route.meta.sectionObj === GettingStarted || this.$route.meta.sectionObj === Standards;
@@ -138,8 +139,8 @@ export default class Modul extends ModulWebsite {
                 this.$router.push('/');
                 this.closeMenu();
                 break;
-            case ModulMenuSection.GettingStarted:
-                this.$router.push(this.gettingStarted);
+            case ModulMenuSection.Philosophy:
+                this.$router.push(this.$routerIndex.for(ROUTER_PHILOSOPHY));
                 this.closeMenu();
                 break;
             default:

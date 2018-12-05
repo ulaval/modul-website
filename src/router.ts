@@ -3,7 +3,6 @@ import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Vue from 'vue';
 import Router, { RouteConfig } from 'vue-router';
 import { VueRouter } from 'vue-router/types/router';
-import { HomePage } from './components/home/home';
 import { Category } from './components/libs/category';
 import { CategoryList } from './components/libs/category-list';
 import { ComponentViewer } from './components/libs/component';
@@ -12,13 +11,9 @@ import { ComponentEvents } from './components/libs/component-events';
 import { ComponentOverview } from './components/libs/component-overview';
 import { ComponentProperties } from './components/libs/component-properties';
 import { ComponentSlots } from './components/libs/component-slots';
-import { GettingStarted, Standards } from './components/pages/page';
-import { PageDetails } from './components/pages/page-details';
-import { PageTab } from './components/pages/page-tab';
-import { PageViewer } from './components/pages/pages';
 import MetaAll from './meta/meta-all';
-
-console.debug('TODO: detect lang (or add route FR/EN basepath)');
+import { MWHomePage } from './pages/home/home';
+import { MWPhilosophyPage } from './pages/philosophy/philosophy';
 
 declare module 'vue/types/vue' {
     interface Vue {
@@ -79,7 +74,8 @@ export const ROUTER_PROPERTIES: string = 'router:properties';
 export const ROUTER_SLOTS: string = 'router:slots';
 export const ROUTER_EVENTS: string = 'router:events';
 export const ROUTER_OVERVIEW: string = 'router:overview';
-export const ROUTER_ECOSYSTEM: string = 'router:ecosystem';
+export const ROUTER_PHILOSOPHY: string = 'router:philosophy';
+export const ROUTER_STANDARDS: string = 'router:standards';
 
 type RouterFactoryFn = () => ModulRouter;
 type PushRouteFn = (key: string, routesConfig: RouteConfig[], config: RouteConfig, staticParent?: string) => RouteConfig;
@@ -88,7 +84,7 @@ const routerFactory: RouterFactoryFn = () => {
 
     const modulRoutes: RouteConfig[] = [];
     const categoryRoutes: RouteConfig[] = [];
-    const gettingStartedRoutes: RouteConfig[] = [];
+
     const componentRoutes: RouteConfig[] = [];
     const standardsRoutes: RouteConfig[] = [];
 
@@ -181,105 +177,100 @@ const routerFactory: RouterFactoryFn = () => {
         });
     });
 
-    let gettingStartedRoute: string = i18n.translate(`pages:${GettingStarted.section}-route`);
-    GettingStarted.getPages().forEach((page, index) => {
-        let pageRoute: string = i18n.translate(`pages:${page}-route`);
+    // let gettingStartedRoute: string = i18n.translate(`pages:${GettingStarted.section}-route`);
+    // GettingStarted.getPages().forEach((page, index) => {
+    //     let pageRoute: string = i18n.translate(`pages:${page}-route`);
 
-        pushRoute(page, gettingStartedRoutes, {
-            path: `/${gettingStartedRoute}/${pageRoute}`,
-            meta: { page: page, sectionObj: GettingStarted },
-            component: PageDetails
-        });
+    //     pushRoute(page, gettingStartedRoutes, {
+    //         path: `/${gettingStartedRoute}/${pageRoute}`,
+    //         meta: { page: page, sectionObj: GettingStarted },
+    //         component: PageDetails
+    //     });
 
-        let tabs: string[] = GettingStarted.getPageTabs(page);
+    //     let tabs: string[] = GettingStarted.getPageTabs(page);
 
-        if (tabs.length > 0) {
-            gettingStartedRoutes[index].children = [];
+    //     if (tabs.length > 0) {
+    //         gettingStartedRoutes[index].children = [];
 
-            let defaultTabRoute: string = '';
-            tabs.forEach((tab, tabIndex) => {
-                let tabRoute: string = i18n.translate(`pages:${page}.${tab}-route`);
+    //         let defaultTabRoute: string = '';
+    //         tabs.forEach((tab, tabIndex) => {
+    //             let tabRoute: string = i18n.translate(`pages:${page}.${tab}-route`);
 
-                pushRoute(tab, gettingStartedRoutes[index].children, {
-                    path: tabRoute,
-                    meta: { page: page, sectionObj: GettingStarted, tab: tab },
-                    component: PageTab
-                });
+    //             pushRoute(tab, gettingStartedRoutes[index].children, {
+    //                 path: tabRoute,
+    //                 meta: { page: page, sectionObj: GettingStarted, tab: tab },
+    //                 component: PageTab
+    //             });
 
-                if (tabIndex == 0) {
-                    defaultTabRoute = tabRoute;
-                }
-            });
+    //             if (tabIndex == 0) {
+    //                 defaultTabRoute = tabRoute;
+    //             }
+    //         });
 
-            gettingStartedRoutes[index].children.push({
-                path: '',
-                redirect: defaultTabRoute
-            });
-        }
-    });
+    //         gettingStartedRoutes[index].children.push({
+    //             path: '',
+    //             redirect: defaultTabRoute
+    //         });
+    //     }
+    // });
 
-    let standardRoute: string = i18n.translate(`pages:${Standards.section}-route`);
-    Standards.getPages().forEach((page, index) => {
-        let pageRoute: string = i18n.translate(`pages:${page}-route`);
+    // let standardRoute: string = i18n.translate(`pages:${Standards.section}-route`);
+    // Standards.getPages().forEach((page, index) => {
+    //     let pageRoute: string = i18n.translate(`pages:${page}-route`);
 
-        pushRoute(page, standardsRoutes, {
-            path: `/${standardRoute}/${pageRoute}`,
-            meta: { page: page, sectionObj: Standards },
-            component: PageDetails
-        });
+    //     pushRoute(page, standardsRoutes, {
+    //         path: `/${standardRoute}/${pageRoute}`,
+    //         meta: { page: page, sectionObj: Standards },
+    //         component: PageDetails
+    //     });
 
-        let tabs: string[] = Standards.getPageTabs(page);
+    //     let tabs: string[] = Standards.getPageTabs(page);
 
-        if (tabs.length > 0) {
-            standardsRoutes[index].children = [];
+    //     if (tabs.length > 0) {
+    //         standardsRoutes[index].children = [];
 
-            let defaultTabRoute: string = '';
-            tabs.forEach((tab, tabIndex) => {
-                let tabRoute: string = i18n.translate(`pages:${page}.${tab}-route`);
+    //         let defaultTabRoute: string = '';
+    //         tabs.forEach((tab, tabIndex) => {
+    //             let tabRoute: string = i18n.translate(`pages:${page}.${tab}-route`);
 
-                pushRoute(tab, standardsRoutes[index].children, {
-                    path: tabRoute,
-                    meta: { page: page, sectionObj: Standards, tab: tab },
-                    component: PageTab
-                });
+    //             pushRoute(tab, standardsRoutes[index].children, {
+    //                 path: tabRoute,
+    //                 meta: { page: page, sectionObj: Standards, tab: tab },
+    //                 component: PageTab
+    //             });
 
-                if (tabIndex === 0) {
-                    defaultTabRoute = tabRoute;
-                }
-            });
+    //             if (tabIndex === 0) {
+    //                 defaultTabRoute = tabRoute;
+    //             }
+    //         });
 
-            standardsRoutes[index].children.push({
-                path: '',
-                redirect: defaultTabRoute
-            });
-        }
-    });
+    //         standardsRoutes[index].children.push({
+    //             path: '',
+    //             redirect: defaultTabRoute
+    //         });
+    //     }
+    // });
 
     pushRoute('/', modulRoutes, {
         path: '/',
-        component: HomePage
-    });
-    pushRoute(GettingStarted.section, modulRoutes, {
-        path: '/' + gettingStartedRoute,
-        meta: { page: GettingStarted.getPages()[0], sectionObj: GettingStarted },
-        component: PageViewer,
-        children: gettingStartedRoutes
+        component: MWHomePage
     });
     pushRoute(ROUTER_COMPONENTS, modulRoutes, {
         path: '/' + componentsRoute,
         component: Category,
         children: categoryRoutes
     });
-    pushRoute(Standards.section, modulRoutes, {
-        path: '/' + standardRoute,
-        meta: { sectionObj: Standards },
-        component: PageViewer,
-        children: standardsRoutes
+    pushRoute(ROUTER_PHILOSOPHY, modulRoutes, {
+        path: '/' + i18n.translate(ROUTER_PHILOSOPHY),
+        component: MWPhilosophyPage
     });
-    pushRoute(ROUTER_ECOSYSTEM, modulRoutes, {
-        path: '/' + i18n.translate(ROUTER_ECOSYSTEM),
-        component: PageViewer
-    });
+
+    // pushRoute(Standards.section, modulRoutes, {
+    //     path: '/' + standardRoute,
+    //     meta: { sectionObj: Standards },
+    //     component: PageViewer,
+    //     children: standardsRoutes
+    // });
 
     let vueRouter: VueRouter = new Router({
         mode: 'history',

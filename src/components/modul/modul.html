@@ -33,10 +33,9 @@
             <ul v-if="isMqMinS">
                 <li>
                     <a href
-                       @click.prevent="navigateTo($event, 'gettingStarted')"
-                       class="modul-header__nav__link"
-                       :class="{ 'm--is-active' : isGettingStartedPage }">
-                        <m-i18n k="pages:getting-started"></m-i18n>
+                       @click.prevent="navigateTo($event, 'philosophy')"
+                       class="modul-header__nav__link">
+                        <m-i18n k="website:philosophy"></m-i18n>
                     </a>
                 </li>
                 <li>
@@ -47,14 +46,14 @@
                         <m-i18n k="modul:components"></m-i18n>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href
                        @click.prevent="navigateTo($event, 'standards')"
                        class="modul-header__nav__link"
                        :class="{ 'm--is-active' : isStandardsPage }">
                         <m-i18n k="modul:standards"></m-i18n>
                     </a>
-                </li>
+                </li> -->
                 <!-- <li>
                     <router-link :to="ecosystem" class="modul-header__nav__link">
                         <m-i18n k="modul:ecosystem"></m-i18n>

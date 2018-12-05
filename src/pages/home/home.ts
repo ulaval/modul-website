@@ -2,16 +2,13 @@ import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/m
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { ElementQueries } from 'css-element-queries/src/ElementQueries';
 import Component from 'vue-class-component';
-import { CATEGORY_CONTENT } from '../../meta/meta-all';
-import { ROUTER_ECOSYSTEM } from '../../router';
-import { CODING_STANDARDS, GETTING_STARTED, RESPONSIVE_DESIGN, UNIFIED_EXPERIENCE, VISUAL_STANDARDS, WRITING_STANDARDS } from '../pages/page';
 import WithRender from './home.html?style=./home.scss';
 
 @WithRender
 @Component({
     mixins: [MediaQueries]
 })
-export class HomePage extends ModulVue {
+export class MWHomePage extends ModulVue {
 
     private experimentTitlePosition: number = 1;
     private experimentContentPosition: number = 1;
@@ -58,35 +55,35 @@ export class HomePage extends ModulVue {
         this.$router.push(route);
     }
 
-    private get visualStandards(): string {
-        return this.$routerIndex.for(VISUAL_STANDARDS);
-    }
+    // private get visualStandards(): string {
+    //     return this.$routerIndex.for(VISUAL_STANDARDS);
+    // }
 
-    private get writingStandards(): string {
-        return this.$routerIndex.for(WRITING_STANDARDS);
-    }
+    // private get writingStandards(): string {
+    //     return this.$routerIndex.for(WRITING_STANDARDS);
+    // }
 
-    private get components(): string {
-        return this.$routerIndex.for(CATEGORY_CONTENT);
-    }
+    // private get components(): string {
+    //     return this.$routerIndex.for(CATEGORY_CONTENT);
+    // }
 
-    private get ecosystem(): string {
-        return this.$routerIndex.for(ROUTER_ECOSYSTEM);
-    }
+    // private get ecosystem(): string {
+    //     return this.$routerIndex.for(ROUTER_ECOSYSTEM);
+    // }
 
-    private get codingStandards(): string {
-        return this.$routerIndex.for(CODING_STANDARDS);
-    }
+    // private get codingStandards(): string {
+    //     return this.$routerIndex.for(CODING_STANDARDS);
+    // }
 
-    private get gettingStarted(): string {
-        return this.$routerIndex.for(GETTING_STARTED);
-    }
+    // private get gettingStarted(): string {
+    //     return this.$routerIndex.for(GETTING_STARTED);
+    // }
 
-    private get unifiedExperience(): string {
-        return this.$routerIndex.for(UNIFIED_EXPERIENCE);
-    }
+    // private get unifiedExperience(): string {
+    //     return this.$routerIndex.for(UNIFIED_EXPERIENCE);
+    // }
 
-    private get responsiveDesign(): string {
-        return this.$routerIndex.for(RESPONSIVE_DESIGN);
-    }
+    // private get responsiveDesign(): string {
+    //     return this.$routerIndex.for(RESPONSIVE_DESIGN);
+    // }
 }

@@ -27,12 +27,13 @@ function main() {
     Vue.use(FiltersPlugin);
 
     Vue.use(svc);
-
-    Vue.use(WebsiteComponentsPlugin);
     Vue.use(FrenchPlugin);
     Vue.use(SvgPlugin);
     Vue.use(FrenchMetaPlugin);
 
+    Vue.use(WebsiteComponentsPlugin);
+
+    // @TODO store initialization to refactor
     store.dispatch(ComponentActions.MESSAGES_GET, FRENCH);
     store.dispatch(ComponentActions.ICONS_GET, 'website');
     store.dispatch(ComponentActions.COMPONENTS_META_GET, FRENCH);
@@ -41,9 +42,6 @@ function main() {
         sectionsObj: Sections
     });
 
-    console.debug(
-        'TODO: to remove, mode or add a generic way to define routes'
-    );
     Sections.forEach(section => {
         let pagesObj: Pages | null = null;
 
@@ -60,6 +58,8 @@ function main() {
             });
         }
     });
+
+    // END @TODO store initialization to refactor
 
     let modulRouter: ModulRouter = routerFactory();
     let router: VueRouter = modulRouter.router;
