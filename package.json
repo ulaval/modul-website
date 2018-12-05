@@ -19,7 +19,7 @@
         "print_version_nx": "echo $npm_package_version"
     },
     "dependencies": {
-        "@ulaval/modul-components": "^1.0.0-beta.68",
+        "@ulaval/modul-components": "^1.0.0-beta.71",
         "css-element-queries": "^0.4.0",
         "highlight.js": "^9.12.0",
         "markdown-it": "^8.4.0",
