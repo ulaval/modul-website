@@ -14,6 +14,7 @@ import { ComponentSlots } from './components/libs/component-slots';
 import MetaAll from './meta/meta-all';
 import { MWHomePage } from './pages/home/home';
 import { MWPhilosophyPage } from './pages/philosophy/philosophy';
+import { MWStandardsPage } from './pages/standards/standards';
 
 declare module 'vue/types/vue' {
     interface Vue {
@@ -263,6 +264,10 @@ const routerFactory: RouterFactoryFn = () => {
     pushRoute(ROUTER_PHILOSOPHY, modulRoutes, {
         path: '/' + i18n.translate(ROUTER_PHILOSOPHY),
         component: MWPhilosophyPage
+    });
+    pushRoute(ROUTER_STANDARDS, modulRoutes, {
+        path: '/' + i18n.translate(ROUTER_STANDARDS),
+        component: MWStandardsPage
     });
 
     // pushRoute(Standards.section, modulRoutes, {

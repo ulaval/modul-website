@@ -1,4 +1,4 @@
-import { ROUTER_PHILOSOPHY } from '@/router';
+import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS } from '@/router';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import Component from 'vue-class-component';
@@ -141,6 +141,10 @@ export default class Modul extends ModulWebsite {
                 break;
             case ModulMenuSection.Philosophy:
                 this.$router.push(this.$routerIndex.for(ROUTER_PHILOSOPHY));
+                this.closeMenu();
+                break;
+            case ModulMenuSection.Standards:
+                this.$router.push(this.$routerIndex.for(ROUTER_STANDARDS));
                 this.closeMenu();
                 break;
             default:
