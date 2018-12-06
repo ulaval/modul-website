@@ -1,62 +1,10 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
-
-.modul {
-    &.modul--is-menu-open,
-    &.modul--is-black-template {
-        .modul-header {
-            background: $modul-color--black-grey-dark;
-
-            &__nav__link {
-                &,
-                &:visited {
-                    color: $modul-color--grey-dark;
-                }
-
-                &:hover,
-                &:focus,
-                &.m--is-active {
-                    color: $m-color--white;
-                }
-
-                &:hover::after {
-                    background-color: $m-color--white;
-                }
-            }
-        }
-
-        .modul-logo {
-            &,
-            a,
-            a:visited,
-            b {
-                color: $m-color--white;
-            }
-        }
-    }
-
-    &.modul--is-light-template:not(.modul--is-menu-open) {
-        .modul-header {
-            box-shadow: $m-box-shadow--s;
-
-            &__nav__link {
-                &.m--is-active {
-                    color: $modul-color--black-grey-dark;
-                }
-            }
-        }
-    }
-}
-
-.modul-header {
+.w-header {
     // menu opening animation
     transition: background-color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
-    width: 100%;
     height: $modul-header--height--s;
-    background: $m-color--white;
+    background: $modul-color--black-grey-dark;
     display: flex;
-    align-content: space-between;
+    justify-content: space-between;
     align-items: center;
     padding-left: $m-padding;
 
@@ -68,53 +16,36 @@
         padding-left: $m-padding--l;
     }
 
-    &__nav {
+    &__item {
         display: flex;
-        height: 100%;
-        align-content: space-between;
-        align-items: center;
-        margin-right: $m-padding;
+        align-items: inherit;
+    }
 
-        @media (min-width: #{$m-mq--min--s}) {
-            margin-right: $m-padding--l;
+    &__link {
+        font-weight: $m-font-weight--black;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+        outline: none;
+        margin-right: $m-margin--l;
+
+        &,
+        &:visited {
+            color: $modul-color--grey-dark;
         }
 
-        ul {
-            display: flex;
-            list-style: none;
-
-            li {
-                &:not(:last-child) {
-                    margin-right: $m-margin--l;
-                }
-            }
+        &:hover,
+        &:focus,
+        &.router-link-active {
+            color: $m-color--white;
         }
 
-        &__link {
-            font-weight: $m-font-weight--black;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
-            outline: none;
+        &.router-link-active::after {
+            background-color: $m-color--active;
+        }
 
-            &,
-            &:visited {
-                color: $modul-color--grey-dark;
-            }
-
-            &:hover,
-            &:focus,
-            &.router-link-active {
-                color: $m-color--black;
-            }
-
-            &.router-link-active::after {
-                background-color: $m-color--active;
-            }
-
-            &:hover::after {
-                background-color: $m-color--black;
-            }
+        &:hover::after {
+            background-color: $m-color--black;
         }
     }
 }
@@ -157,54 +88,3 @@
         padding: 2px 3px;
     }
 }
-
-// .modul-search-sidebar.modul-search-sidebar {
-//     .m-base-window {
-//         &__article {
-//             bottom: 0;
-//         }
-
-//         &__header {
-//             display: flex !important;
-//             height: $modul-header--height--s;
-//             padding-right: $modul-header--height--s !important;
-//             flex: 0 0 $modul-header--height--s;
-//             font-size: 18px;
-
-//             @media (min-width: $m-mq--min--xs) {
-//                 height: $modul-header--height;
-//                 padding-right: $modul-header--height !important;
-//                 flex: 0 0 $modul-header--height;
-//             }
-
-//             &__close-button {
-//                 &.m-button.m-button {
-//                     transition: background 0.3s ease;
-//                     background: $m-color--ul-blue;
-//                     border-radius: 0;
-//                     height: $modul-header--height--s;
-//                     width: $modul-header--height--s;
-//                     color: $m-color--white;
-
-//                     @media (min-width: $m-mq--min--xs) {
-//                         height: $modul-header--height;
-//                         width: $modul-header--height;
-//                     }
-
-//                     &:hover {
-//                         background: $m-color--interactive-light;
-//                     }
-
-//                     &:active,
-//                     &:focus {
-//                         background: $m-color--interactive-dark;
-//                     }
-
-//                     &::after {
-//                         display: none;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }

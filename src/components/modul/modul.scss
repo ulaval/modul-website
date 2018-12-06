@@ -42,6 +42,7 @@
         width: $modul-header--height--s;
         height: $modul-header--height--s;
         font-size: 18px; // magic number
+        margin-left: spacing();
 
         @media (min-width: #{$m-mq--min--xs}) {
             width: $modul-header--height;
