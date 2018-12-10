@@ -1,77 +1,10 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the footer of the site/application.
-// -----------------------------------------------------------------------------
-.modul {
-    &.modul--is-black-template {
-        .modul-footer__version {
-            background-color: $modul-color--black-grey;
-            color: $modul-color--grey;
-        }
-    }
-}
-
-.modul-footer {
+.w-footer {
     position: relative;
     z-index: 3;
-    background-color: $modul-color--grey;
-
-    &__logo {
-        span {
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-
-        &__link {
-            width: 100px;
-            margin-left: $m-padding;
-            transition: transform $m-transition-duration ease;
-
-            svg {
-                width: 100%;
-            }
-
-            &:hover,
-            &:focus {
-                transform: scale(1.05);
-                outline: none;
-            }
-
-            &:active {
-                transform: none;
-            }
-        }
-    }
-
-    &__body {
-        background-color: $m-color--white;
-        border-top: $m-border-width--s solid $m-color--grey;
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-        padding: $m-padding $m-padding--l;
-
-        @media (max-width: $m-mq--max--s) {
-            justify-content: center;
-        }
-    }
-
-    &__link {
-        &,
-        &:visited {
-            color: $modul-color--black-grey;
-            text-decoration: none;
-        }
-    }
-
-    &__version {
-        padding: $m-padding--s $m-padding;
-        text-align: center;
-
-        &,
-        .modul-logo {
-            font-size: $m-font-size--s;
-        }
-    }
+    background-color: $modul-color--black-grey-light;
+    padding: m-spacing(xxl);
+    display: flex;
+    justify-content: center;
+    color: m-color(white);
+    text-transform: uppercase;
 }

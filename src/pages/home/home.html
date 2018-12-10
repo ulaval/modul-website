@@ -1,42 +1,61 @@
 <div class="modul-home">
-    <section class="modul-home-experiment">
-        <article class="modul-home-experiment__body">
-            <header class="modul-home-experiment__body__header-container" :style="{ top: experimentTitlePosition + 'px'}">
-                <h2 tabindex="0" class="modul-home-experiment__body__header" @keydown.enter="onRoute(unifiedExperience)" @click="onRoute(unifiedExperience)">
-                    <m-i18n class="modul-home-experiment__body__header-title" k="pages:unified-experience-title-a"></m-i18n>
-                    <m-i18n class="modul-home-experiment__body__header-subtitle" k="pages:unified-experience-title-b"></m-i18n>
-                    <span class="modul-home-experiment__body__header-pixel">
-                        <span>270px</span>
-                    </span>
-                </h2>
-            </header>
-            <div class="modul-home-experiment__body__content" :style="{ top: experimentContentPosition + 'px'}">
-                <p>
-                    <m-i18n k="pages:unified-experience-desc"></m-i18n>
-                </p>
+    <section class="w-headline">
+        <article class="w-headline__body">
+
+            <div>
+                <h1 class="w-headline__title">MODUL</h1>
+                <p class="w-headline__subtitle">Une expérience unifiée</p>
             </div>
+
+            <table class="w-logo">
+                <tr>
+                    <td class="w-logo__item"></td>
+                    <td class="w-logo__item w--is-yellow"></td>
+                    <td class="w-logo__item w--is-red">
+                        <span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w-logo__item"></td>
+                    <td class="w-logo__item w--is-yellow"></td>
+                    <td class="w-logo__item w--is-yellow"></td>
+                </tr>
+                <tr>
+                    <td class="w-logo__item"></td>
+                    <td class="w-logo__item"></td>
+                    <td class="w-logo__item w--is-yellow"></td>
+                </tr>
+            </table>
 
         </article>
 
-        <div class="modul-home-experiment__footer"
+        <div class="w-headline__footer"
              :style="{ bottom: designButtonPosition + 'px' }"
              v-m-scroll-to:design="'slow'"
              v-if="isMqMinS">
-            <m-icon class="modul-home-experiment__footer__arrow" name="m-svg__chevron--down"></m-icon>
-            <m-icon class="modul-home-experiment__footer__arrow" name="m-svg__chevron--down"></m-icon>
-            <m-icon class="modul-home-experiment__footer__arrow" name="m-svg__chevron--down"></m-icon>
-            <button class="modul-home-experiment__footer__button m-u--button-primary">
-                <m-i18n k="modul:responsive-design" :params="[' ']"></m-i18n>
+            <m-icon class="w-headline__footer__arrow"
+                    name="m-svg__chevron--down"></m-icon>
+            <m-icon class="w-headline__footer__arrow"
+                    name="m-svg__chevron--down"></m-icon>
+            <m-icon class="w-headline__footer__arrow"
+                    name="m-svg__chevron--down"></m-icon>
+            <button class="w-headline__footer__button m-u--button-primary">
+                <m-i18n k="modul:responsive-design"
+                        :params="[' ']"></m-i18n>
             </button>
         </div>
     </section>
 
-    <section class="modul-home-design" ref="design">
+    <section class="modul-home-design"
+             ref="design">
         <article class="modul-home-design__article">
-            <section class="modul-home-design__template-container" aria-hidden="true">
-                <article class="modul-home-design__template" :style="{ width: designTemplateWidth + 'px' }">
+            <section class="modul-home-design__template-container"
+                     aria-hidden="true">
+                <article class="modul-home-design__template"
+                         :style="{ width: designTemplateWidth + 'px' }">
                     <header class="modul-home-design__template__header">
-                        <m-icon class="modul-home-design__template__header-logo" name="m-svg__heraldry"></m-icon>
+                        <m-icon class="modul-home-design__template__header-logo"
+                                name="m-svg__heraldry"></m-icon>
                         <nav class="modul-home-design__template__header-nav">
                             <ul>
                                 <li></li>
@@ -52,9 +71,15 @@
                     <footer class="modul-home-design__template__footer"></footer>
                 </article>
             </section>
-            <section class="modul-home-design__body" ref="designBody">
-                <h2 class="modul-u--h2 modul-u--highlighted-title-link" tabindex="0" @keydown.enter="onRoute(responsiveDesign)" @click="onRoute(responsiveDesign)">
-                    <m-i18n k="modul:responsive-design" :params="['<br>']" :html-encode="false"></m-i18n>
+            <section class="modul-home-design__body"
+                     ref="designBody">
+                <h2 class="modul-u--h2 modul-u--highlighted-title-link"
+                    tabindex="0"
+                    @keydown.enter="onRoute(responsiveDesign)"
+                    @click="onRoute(responsiveDesign)">
+                    <m-i18n k="modul:responsive-design"
+                            :params="['<br>']"
+                            :html-encode="false"></m-i18n>
                 </h2>
                 <p>
                     <m-i18n k="modul:responsive-design-desc"></m-i18n>
@@ -62,37 +87,68 @@
             </section>
         </article>
     </section>
+
     <section class="modul-home-content-container">
         <div class="modul-home-content">
-            <article class="modul-home-content__panel" tabindex="0" @click="onRoute(visualStandards)">
+            <article class="modul-home-content__panel"
+                     tabindex="0"
+                     @click="onRoute(visualStandards)">
                 <header>
-                    <h2 class="modul-u--h2"><m-i18n k="pages:visual-standards"></m-i18n></h2>
+                    <h2 class="modul-u--h2">
+                        <m-i18n k="pages:visual-standards"></m-i18n>
+                    </h2>
                 </header>
-                <p><m-i18n k="pages:visual-standards-desc"></m-i18n></p>
+                <p>
+                    <m-i18n k="pages:visual-standards-desc"></m-i18n>
+                </p>
             </article>
-            <article class="modul-home-content__panel" tabindex="0" @click="onRoute(components)">
+            <article class="modul-home-content__panel"
+                     tabindex="0"
+                     @click="onRoute(components)">
                 <header>
-                    <h2 class="modul-u--h2"><m-i18n k="modul:components"></m-i18n></h2>
+                    <h2 class="modul-u--h2">
+                        <m-i18n k="modul:components"></m-i18n>
+                    </h2>
                 </header>
-                <p><m-i18n k="modul:components-desc"></m-i18n></p>
+                <p>
+                    <m-i18n k="modul:components-desc"></m-i18n>
+                </p>
             </article>
-            <article class="modul-home-content__panel" tabindex="0" @click="onRoute(writingStandards)">
+            <article class="modul-home-content__panel"
+                     tabindex="0"
+                     @click="onRoute(writingStandards)">
                 <header>
-                    <h2 class="modul-u--h2"><m-i18n k="pages:writing-standards"></m-i18n></h2>
+                    <h2 class="modul-u--h2">
+                        <m-i18n k="pages:writing-standards"></m-i18n>
+                    </h2>
                 </header>
-                <p><m-i18n k="pages:writing-standards-desc"></m-i18n></p>
+                <p>
+                    <m-i18n k="pages:writing-standards-desc"></m-i18n>
+                </p>
             </article>
-            <article class="modul-home-content__panel" tabindex="0" @click="onRoute(gettingStarted)">
+            <article class="modul-home-content__panel"
+                     tabindex="0"
+                     @click="onRoute(gettingStarted)">
                 <header>
-                    <h2 class="modul-u--h2"><m-i18n k="pages:getting-started"></m-i18n></h2>
+                    <h2 class="modul-u--h2">
+                        <m-i18n k="pages:getting-started"></m-i18n>
+                    </h2>
                 </header>
-                <p><m-i18n k="pages:getting-started-desc"></m-i18n></p>
+                <p>
+                    <m-i18n k="pages:getting-started-desc"></m-i18n>
+                </p>
             </article>
-            <article class="modul-home-content__panel" tabindex="0" @click="onRoute(codingStandards)">
+            <article class="modul-home-content__panel"
+                     tabindex="0"
+                     @click="onRoute(codingStandards)">
                 <header>
-                    <h2 class="modul-u--h2"><m-i18n k="pages:coding-standards"></m-i18n></h2>
+                    <h2 class="modul-u--h2">
+                        <m-i18n k="pages:coding-standards"></m-i18n>
+                    </h2>
                 </header>
-                <p><m-i18n k="pages:coding-standards-desc"></m-i18n></p>
+                <p>
+                    <m-i18n k="pages:coding-standards-desc"></m-i18n>
+                </p>
             </article>
             <!-- <article class="modul-home-content__panel" tabindex="0" @click="onRoute(ecosystem)">
                 <header>

@@ -23,19 +23,31 @@ $modul-home-design--width--l: 270px;
     margin: 0 auto;
 }
 
-.modul-home-experiment {
+.w-headline {
     position: relative;
     z-index: 1;
     display: flex;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     overflow-y: auto;
     padding: $m-padding--l $m-padding $m-padding--xl $m-padding;
     background-color: $modul-color--black-grey-dark;
     background-image: url(./grid.svg);
+    color: #fff;
 
-    @media (max-width: $m-mq--max--s) {
-        align-items: center;
+    &-title,
+    &-subtitle {
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-size: 144px;
+        line-height: 1;
+    }
+
+    &__subtitle {
+        font-size: 28px;
     }
 
     @media (min-width: $m-mq--min--s) {
@@ -63,164 +75,9 @@ $modul-home-design--width--l: 270px;
 
     &__body {
         position: relative;
-
-        @media (min-width: $m-mq--min--s) {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        &__header {
-            transition: transform $m-transition-duration ease;
-            width: $modul-home-design--width;
-            margin: 0;
-            cursor: pointer;
-            outline: none;
-
-            @media (min-width: $m-mq--min--xs) {
-                width: $modul-home-design--width--l;
-            }
-
-            &:hover,
-            &:focus {
-                .modul-home-experiment__body__header-subtitle::before {
-                    margin-left: 280px;
-                }
-            }
-
-            &:active {
-                transform: scale(0.96);
-            }
-
-            &-container {
-                position: relative;
-                display: flex;
-                justify-content: center;
-
-                @media (min-width: $m-mq--min--s) {
-                    justify-content: flex-end;
-                }
-            }
-
-            &-title,
-            &-subtitle {
-                text-transform: uppercase;
-            }
-
-            &-title {
-                display: block;
-                color: $m-color--white;
-                font-weight: 300;
-                font-size: 28px;
-                letter-spacing: 6px;
-                margin-bottom: 4px;
-
-                @media (min-width: $m-mq--min--xs) {
-                    font-size: 43px;
-                }
-            }
-
-            &-subtitle {
-                position: relative;
-                overflow: hidden;
-                color: $modul-color--black-grey;
-                background: $modul-color--yellow;
-                font-weight: $m-font-weight--black;
-                font-size: 48px;
-                padding: 13px 14px 14px 14px; // Magic number
-                text-align: center;
-                display: inline-block;
-                min-width: $modul-home-design--width;
-
-                @media (min-width: $m-mq--min--xs) {
-                    font-size: 60px;
-                    min-width: $modul-home-design--width--l;
-                }
-
-                &::before {
-                    transition: margin 0.45s ease;
-                    position: absolute;
-                    margin-left: -80px;
-                    top: -20px;
-                    width: 20px;
-                    height: 130px;
-                    transform: rotate(28deg);
-                    content: '';
-                    background: rgba($m-color--white, 0.5);
-                }
-            }
-
-            &-pixel {
-                color: $modul-color--yellow;
-                text-align: center;
-                margin-top: 12px;
-                display: flex;
-                align-items: center;
-                font-size: 12px;
-                text-transform: lowercase;
-                position: relative;
-                border-left: 1px solid $modul-color--yellow;
-                border-right: 1px solid $modul-color--yellow;
-
-                span {
-                    padding: 0 8px;
-                }
-
-                &::before,
-                &::after {
-                    content: '';
-                    display: block;
-                    background: $modul-color--yellow;
-                    height: 1px;
-                    z-index: 1;
-                    flex: 1;
-                }
-            }
-        }
-
-        &__content {
-            position: relative;
-            color: $m-color--white;
-
-            @media (max-width: $m-mq--max--s) {
-                max-width: $modul-home-design--max-width;
-                margin: $m-margin--xl auto 0 auto;
-            }
-
-            @media (max-width: $m-mq--max--xs) {
-                margin-top: $m-padding--l;
-                text-align: center;
-            }
-
-            @media (min-width: $m-mq--min--xs) {
-                padding: $m-margin--l;
-                border: 2px dashed $modul-color--yellow;
-            }
-
-            @media (min-width: $m-mq--min--s) {
-                padding: $m-padding--l;
-            }
-
-            h3 {
-                color: $m-color--white;
-                margin-top: 0;
-                font-size: 20px;
-                line-height: 1.4;
-            }
-
-            p {
-                font-size: $m-font-size;
-                line-height: 1.4;
-
-                @media (min-width: $m-mq--min--xs) {
-                    font-size: 20px;
-                }
-            }
-
-            > :first-child {
-                margin-top: 0;
-            }
-        }
+        display: flex;
+        align-items: flex-start;
+        text-align: right;
     }
 
     &__footer {
@@ -259,6 +116,45 @@ $modul-home-design--width--l: 270px;
             &:nth-child(2) {
                 top: 6px;
                 font-size: 30px;
+            }
+        }
+    }
+}
+
+.w-logo {
+    $w-logo-item-width: 30px;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-left: m-spacing(xxxl);
+    margin-top: 26px;
+
+    &__item {
+        height: $w-logo-item-width;
+        width: $w-logo-item-width;
+        border: 3px solid white;
+        border-collapse: collapse;
+        border-spacing: 0;
+        transform-origin: 0 0;
+        background-color: m-color(ul, blue);
+
+        &.w--is-yellow {
+            background-color: m-color(ul, yellow);
+        }
+
+        &.w--is-red {
+            background-color: transparent;
+            border: 0;
+
+            span {
+                background-color: m-color(ul, red);
+                border: 3px solid white;
+                display: block;
+                bottom: 8px;
+                left: 8px;
+                width: inherit;
+                height: inherit;
+                position: relative;
             }
         }
     }

@@ -1,10 +1,11 @@
-<m-flex-template class="modul"
-                 :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHomePage, 'modul--is-black-template' : isBlackHeader, 'modul--is-light-template' : !isBlackHeader}"
+<m-flex-template class="modul-website"
+                 :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHomePage}"
                  :dynamic-header="false">
     <div slot="header"
          ref="header"
-         class="modul-header">
-        <h1 v-if="isHomePage"
+         class="w-header">
+
+        <!-- <h1 v-if="isHomePage"
             class="modul-logo">
             <a href
                @click.prevent="navigateTo($event, 'home')">MOD
@@ -18,30 +19,31 @@
                @click.prevent="navigateTo($event, 'home')">MOD
                 <b>UL</b>
             </a>
-        </span>
+        </span> -->
 
-        <nav class="modul-header__nav">
-            <a href
-               @click.prevent="toggleMobileMenu"
-               v-if="!isMqMinS"
-               class="modul-header__nav__link">
-                <m-i18n k="modul:menu-label"
-                        v-if="!headerAnimationCompleted"></m-i18n>
-                <m-i18n k="modul:close-label"
-                        v-if="headerAnimationCompleted"></m-i18n>
-            </a>
-            <ul v-if="isMqMinS">
+        <a href
+           @click.prevent="toggleMobileMenu"
+           v-if="!isMqMinS"
+           class="w-header__link">
+            <m-i18n k="modul:menu-label"
+                    v-if="!headerAnimationCompleted"></m-i18n>
+            <m-i18n k="modul:close-label"
+                    v-if="headerAnimationCompleted"></m-i18n>
+        </a>
+        <nav>
+            <ul class="w-header__item"
+                v-if="isMqMinS">
                 <li>
                     <a href
                        @click.prevent="navigateTo($event, 'philosophy')"
-                       class="modul-header__nav__link">
+                       class="w-header__link">
                         <m-i18n k="website:philosophy"></m-i18n>
                     </a>
                 </li>
                 <li>
                     <a href
                        @click.prevent="navigateTo($event, 'components')"
-                       class="modul-header__nav__link"
+                       class="w-header__link"
                        :class="{ 'm--is-active' : isComponentsPage }">
                         <m-i18n k="modul:components"></m-i18n>
                     </a>
@@ -49,78 +51,78 @@
                 <li>
                     <a href
                        @click.prevent="navigateTo($event, 'standards')"
-                       class="modul-header__nav__link">
-                        <m-i18n k="website:standards"></m-i18n>
-                    </a>
-                </li>
-                <!-- <li>
-                    <a href
-                       @click.prevent="navigateTo($event, 'standards')"
-                       class="modul-header__nav__link"
+                       class="w-header__link"
                        :class="{ 'm--is-active' : isStandardsPage }">
                         <m-i18n k="modul:standards"></m-i18n>
                     </a>
-                </li> -->
-                <!-- <li>
-                    <router-link :to="ecosystem" class="modul-header__nav__link">
-                        <m-i18n k="modul:ecosystem"></m-i18n>
-                    </router-link>
-                </li> -->
+                </li>
             </ul>
         </nav>
 
-        <button @click="toggleSearch"
-                class="modul-search__open-button m-u--button-primary">
-            <m-icon name="m-svg__search"></m-icon>
-        </button>
+        <div class="w-header__item">
 
-        <m-sidebar :open="searchOpen"
-                   @open="openSearch"
-                   @close="closeSearch"
-                   origin="right"
-                   :close-button="false"
-                   :width="searchWidth"
-                   :padding="false">
-            <div class="modul-search__header"
-                 slot="header">
-                <m-icon name="m-svg__search"
-                        svg-title="Rechercher"></m-icon>
-                <input type="text"
-                       v-model="searchModel"
-                       placeholder="Rechercher"
-                       value="Rechercher un composant"
-                       class="modul-search__header__input"
-                       ref="search">
-                <button @click="toggleSearch"
-                        class="modul-search__header__close-button m-u--button-primary">
-                    <m-icon name="m-svg__close-clear"></m-icon>
-                </button>
-            </div>
-            <transition-group name="modul--is"
-                              tag="ul">
-                <li tabindex="0"
-                    @click="closeMenu()"
-                    @keyup.enter="closeMenu()"
-                    v-for="item in searchResult"
-                    key="item.tag"
-                    v-if="item.category">
-                    <router-link :to="getRouterIndex(item.tag)"
-                                 class="modul-search-card">
-                        <div class="modul-search-card__img"
-                             aria-hidden="true">
-                            <m-icon size="90px"
-                                    :name="item.tag"></m-icon>
-                        </div>
-                        <div class="modul-search-card__content">
-                            <p class="modul-search-card__content__category">{{ item.category }}</p>
-                            <h2 class="modul-search-card__content__title modul-u--h3">{{ item.text }}</h2>
-                            <p class="modul-search-card__content__tagname">{{ item.tag }}</p>
-                        </div>
-                    </router-link>
-                </li>
-            </transition-group>
-        </m-sidebar>
+            <a href="https://github.com/ulaval/modul-components/releases"
+               class="w-header__link"
+               target="_blank"
+               :class="{ 'm--is-active' : isStandardsPage }">
+                <m-i18n k="modul:version"></m-i18n> {{modulVersion}}
+            </a>
+
+            <button @click="toggleSearch"
+                    class="modul-search__open-button m-u--button-primary">
+                <m-icon name="m-svg__search"></m-icon>
+            </button>
+        </div>
+
     </div>
+
+    <m-sidebar :open="searchOpen"
+               @open="openSearch"
+               @close="closeSearch"
+               origin="right"
+               :close-button="false"
+               :width="searchWidth"
+               :padding="false">
+        <div class="modul-search__header"
+             slot="header">
+            <m-icon name="m-svg__search"
+                    svg-title="Rechercher"></m-icon>
+            <input type="text"
+                   v-model="searchModel"
+                   placeholder="Rechercher"
+                   value="Rechercher un composant"
+                   class="modul-search__header__input"
+                   ref="search">
+            <button @click="toggleSearch"
+                    class="modul-search__header__close-button m-u--button-primary">
+                <m-icon name="m-svg__close-clear"></m-icon>
+            </button>
+        </div>
+        <transition-group name="modul--is"
+                          tag="ul">
+            <li tabindex="0"
+                @click="closeMenu()"
+                @keyup.enter="closeMenu()"
+                v-for="item in searchResult"
+                key="item.tag"
+                v-if="item.category">
+                <router-link :to="getRouterIndex(item.tag)"
+                             class="modul-search-card">
+                    <div class="modul-search-card__img"
+                         aria-hidden="true">
+                        <m-icon size="90px"
+                                :name="item.tag"></m-icon>
+                    </div>
+                    <div class="modul-search-card__content">
+                        <p class="modul-search-card__content__category">{{ item.category }}</p>
+                        <h2 class="modul-search-card__content__title modul-u--h3">{{ item.text }}</h2>
+                        <p class="modul-search-card__content__tagname">{{ item.tag }}</p>
+                    </div>
+                </router-link>
+            </li>
+        </transition-group>
+    </m-sidebar>
+
     <transition name="modul--is">
         <section class="modul-menu"
                  v-if="animMenuOpen"
@@ -240,36 +242,22 @@
         </section>
     </transition>
 
-    <div class="modul-body">
+    <div class="w-body">
         <router-view></router-view>
     </div>
 
-    <div slot="footer"
-         class="modul-footer">
-        <section class="modul-footer__body">
-            <div class="modul-footer__logo">
-                <span>
-                    <m-i18n k="modul:powered-by"></m-i18n>
-                    <a class="modul-footer__logo__link"
-                       href="https://www.ulaval.ca/"
-                       target="_blank">
-                        <img :src="logo"
-                             alt="l'Université Laval"
-                             title="l'Université Laval">
-                    </a>
-                </span>
-            </div>
-            <!-- <div class="modul-footer__nav" v-if="isMqMinS">
-                <a class="modul-footer__link" href=""><m-i18n k="modul:terms-of-use"></m-i18n></a>
-            </div> -->
-        </section>
-        <section class="modul-footer__version">
-            <span class="modul-logo">
-                <a href="">MOD<b>UL</b></a>
-            </span>
-            <span>
-                <m-i18n k="modul:version"></m-i18n> {{modulVersion}}
-            </span>
-        </section>
-    </div>
+    <footer slot="footer"
+            class="w-footer">
+        <div>
+            <p class="m-u--margin-bottom">
+                <m-i18n k="modul:powered-by"></m-i18n>
+            </p>
+            <a href="https://www.ulaval.ca/"
+               target="_blank">
+                <img :src="logo"
+                     alt="l'Université Laval"
+                     title="l'Université Laval" />
+            </a>
+        </div>
+    </footer>
 </m-flex-template>
