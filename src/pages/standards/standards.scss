@@ -1,3 +1,24 @@
-.website-standards {
+$w-sidebar-max-width: 320px;
+$w-sidebar-max-width--l: 400px;
+$w-sidebar-max-width--s: 100%;
+
+.w-website-standards {
+    display: flex;
     width: 100%;
+
+    &.__sidemenu {
+        flex: 0 0 $w-sidebar-max-width;
+
+        // @media (max-width: $m-mq--max--s) {
+        //     flex: 0 0 $w-sidebar-max-width--s;
+        // }
+
+        // @media (min-width: 1520px) {
+        //     flex: 0 0 $w-sidebar-max-width--l;
+        // }
+    }
+
+    &.__conteneur {
+        flex: 1 1 auto;
+    }
 }

@@ -1,6 +1,7 @@
 {
     "website": {
         "philosophy": "philosophie",
-        "standards": "normes"
+        "standards": "normes",
+        "standards-ui": "normes graphiques"
     }
 }

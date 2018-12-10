@@ -1,3 +1,14 @@
-<div class="website-standards">
-    website-standards
+<div class="w-website-standards">
+    <nav class="w-website-standards__sidemenu">
+        <p>Normes</p>
+        <p>Normes graphiques</p>
+        <router-link :to="getRouterIndex('router:standards-ui-colors')"><span>- Couleurs et thèmes</span></router-link>
+
+        <p>Normes éditoriales</p>
+        <p>Normes de développement</p>
+        <p>Normes d'accessibilité</p>
+    </nav>
+    <div class="w-website-standards__conteneur">
+        <router-view></router-view>
+    </div>
 </div>

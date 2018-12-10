@@ -6,6 +6,10 @@
         "slots": "slots",
         "events": "evenements",
         "philosophy": "philosophie",
-        "standards": "normes"
+        "standards": "normes",
+        "standards-development": "developement",
+        "standards-editorial": "editorial",
+        "standards-ui": "ui",
+        "standards-ui-colors": "couleurs-et-themes"
     }
 }

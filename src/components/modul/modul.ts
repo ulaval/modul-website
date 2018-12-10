@@ -1,4 +1,4 @@
-import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS } from '@/router';
+import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_UI } from '@/router';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import Component from 'vue-class-component';
@@ -65,12 +65,12 @@ export default class Modul extends ModulWebsite {
         });
 
         // For menu
-        Standards.getPages().forEach(page => {
-            this.pagesStandards.push({
-                id: page,
-                text: this.$i18n.translate(`pages:${page}`)
-            });
+
+        this.pagesStandards.push({
+            id: ROUTER_STANDARDS_UI,
+            text: this.$i18n.translate(`website:standards-ui`)
         });
+
     }
 
     protected mounted(): void {
@@ -143,10 +143,10 @@ export default class Modul extends ModulWebsite {
                 this.$router.push(this.$routerIndex.for(ROUTER_PHILOSOPHY));
                 this.closeMenu();
                 break;
-            case ModulMenuSection.Standards:
-                this.$router.push(this.$routerIndex.for(ROUTER_STANDARDS));
-                this.closeMenu();
-                break;
+            // case ModulMenuSection.Standards:
+            //     this.$router.push(this.$routerIndex.for(ROUTER_STANDARDS));
+            //     this.closeMenu();
+            //     break;
             default:
                 if (this.menuOpen && this.menuSection == menuSection) {
                     this.closeMenu();

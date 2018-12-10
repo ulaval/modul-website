@@ -15,6 +15,7 @@ import MetaAll from './meta/meta-all';
 import { MWHomePage } from './pages/home/home';
 import { MWPhilosophyPage } from './pages/philosophy/philosophy';
 import { MWStandardsPage } from './pages/standards/standards';
+import { MWStandardsUiColorsPage } from './pages/standards/standards-ui/colors/standards-ui-colors';
 
 declare module 'vue/types/vue' {
     interface Vue {
@@ -77,6 +78,10 @@ export const ROUTER_EVENTS: string = 'router:events';
 export const ROUTER_OVERVIEW: string = 'router:overview';
 export const ROUTER_PHILOSOPHY: string = 'router:philosophy';
 export const ROUTER_STANDARDS: string = 'router:standards';
+export const ROUTER_STANDARDS_DEVELOPMENT: string = 'router:standards-development';
+export const ROUTER_STANDARDS_EDITORIAL: string = 'router:standards-editorial';
+export const ROUTER_STANDARDS_UI: string = 'router:standards-ui';
+export const ROUTER_STANDARDS_UI_COLORS: string = 'router:standards-ui-colors';
 
 type RouterFactoryFn = () => ModulRouter;
 type PushRouteFn = (key: string, routesConfig: RouteConfig[], config: RouteConfig, staticParent?: string) => RouteConfig;
@@ -267,7 +272,16 @@ const routerFactory: RouterFactoryFn = () => {
     });
     pushRoute(ROUTER_STANDARDS, modulRoutes, {
         path: '/' + i18n.translate(ROUTER_STANDARDS),
-        component: MWStandardsPage
+        component: MWStandardsPage,
+        children: [
+            pushRoute(ROUTER_STANDARDS, undefined, { path: '', component: MWStandardsUiColorsPage }),
+            pushRoute(ROUTER_STANDARDS_UI, undefined, {
+                path: `${i18n.translate(ROUTER_STANDARDS_UI)}`, component: MWStandardsUiColorsPage
+            }, ROUTER_STANDARDS),
+            pushRoute(ROUTER_STANDARDS_UI_COLORS, undefined, {
+                path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_COLORS)}`, component: MWStandardsUiColorsPage
+            }, ROUTER_STANDARDS)
+        ]
     });
 
     // pushRoute(Standards.section, modulRoutes, {
