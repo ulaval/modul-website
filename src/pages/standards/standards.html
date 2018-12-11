@@ -2,7 +2,10 @@
     <nav class="w-website-standards__sidemenu">
         <p>Normes</p>
         <p>Normes graphiques</p>
-        <router-link :to="getRouterIndex('router:standards-ui-colors')"><span>- Couleurs et thèmes</span></router-link>
+        <router-link :to="{name :'router:standards-ui-colors'}"><span>Couleurs et thèmes</span></router-link><br />
+        <router-link :to="{name :'standards-ui-iconography'}"><span>Iconography</span></router-link><br />
+        <router-link :to="{name :'standards-ui-typography'}"><span>Typography</span></router-link><br />
+        <router-link :to="{name :'standards-ui-breakpoints'}"><span>Breakpoints</span></router-link><br />
 
         <p>Normes éditoriales</p>
         <p>Normes de développement</p>

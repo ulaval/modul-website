@@ -157,7 +157,7 @@
                      v-for="page in pagesStandards"
                      v-if="menuSection != 'components'">
                     <h2 class="modul-menu__title modul-u--h2 modul-u--highlighted-title-link">
-                        <router-link :to="getRouterIndex(page.id)"
+                        <router-link :to="{ name : page.id }"
                                      tabindex="0"><span>{{ page.text }}</span></router-link>
                     </h2>
                 </nav>

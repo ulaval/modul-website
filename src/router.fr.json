@@ -9,7 +9,10 @@
         "standards": "normes",
         "standards-development": "developement",
         "standards-editorial": "editorial",
-        "standards-ui": "ui",
-        "standards-ui-colors": "couleurs-et-themes"
+        "standards-ui": "graphique",
+        "standards-ui-colors": "couleurs-et-themes",
+        "standards-ui-iconography": "iconographie",
+        "standards-ui-typography": "typographie-et-styles",
+        "standards-ui-breakpoints": "points-de-rupture"
     }
 }

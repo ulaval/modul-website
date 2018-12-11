@@ -6,7 +6,7 @@ $w-sidebar-max-width--s: 100%;
     display: flex;
     width: 100%;
 
-    &.__sidemenu {
+    &__sidemenu {
         flex: 0 0 $w-sidebar-max-width;
 
         // @media (max-width: $m-mq--max--s) {
@@ -16,9 +16,15 @@ $w-sidebar-max-width--s: 100%;
         // @media (min-width: 1520px) {
         //     flex: 0 0 $w-sidebar-max-width--l;
         // }
+
+        .router-link-active {
+            span::before {
+                content: "-";
+            }
+        }
     }
 
-    &.__conteneur {
+    &__conteneur {
         flex: 1 1 auto;
     }
 }

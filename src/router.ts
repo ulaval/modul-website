@@ -15,7 +15,10 @@ import MetaAll from './meta/meta-all';
 import { MWHomePage } from './pages/home/home';
 import { MWPhilosophyPage } from './pages/philosophy/philosophy';
 import { MWStandardsPage } from './pages/standards/standards';
-import { MWStandardsUiColorsPage } from './pages/standards/standards-ui/colors/standards-ui-colors';
+import { MWStandardsUiBreakpointsPage } from './pages/standards/visual-standards/visual-standards-breakpoints/standards-ui-breakpoints';
+import { MWStandardsUiColorsPage } from './pages/standards/visual-standards/visual-standards-colors/standards-ui-colors';
+import { MWStandardsUiIconographyPage } from './pages/standards/visual-standards/visual-standards-iconography/standards-ui-iconography';
+import { MWStandardsUiTypographyPage } from './pages/standards/visual-standards/visual-standards-typography/standards-ui-typography';
 
 declare module 'vue/types/vue' {
     interface Vue {
@@ -82,6 +85,9 @@ export const ROUTER_STANDARDS_DEVELOPMENT: string = 'router:standards-developmen
 export const ROUTER_STANDARDS_EDITORIAL: string = 'router:standards-editorial';
 export const ROUTER_STANDARDS_UI: string = 'router:standards-ui';
 export const ROUTER_STANDARDS_UI_COLORS: string = 'router:standards-ui-colors';
+export const ROUTER_STANDARDS_UI_ICONOGRAPHY: string = 'standards-ui-iconography';
+export const ROUTER_STANDARDS_UI_TYPOGRAPHY: string = 'standards-ui-typography';
+export const ROUTER_STANDARDS_UI_BREAKPOINTS: string = 'standards-ui-breakpoints';
 
 type RouterFactoryFn = () => ModulRouter;
 type PushRouteFn = (key: string, routesConfig: RouteConfig[], config: RouteConfig, staticParent?: string) => RouteConfig;
@@ -274,13 +280,31 @@ const routerFactory: RouterFactoryFn = () => {
         path: '/' + i18n.translate(ROUTER_STANDARDS),
         component: MWStandardsPage,
         children: [
-            pushRoute(ROUTER_STANDARDS, undefined, { path: '', component: MWStandardsUiColorsPage }),
-            pushRoute(ROUTER_STANDARDS_UI, undefined, {
-                path: `${i18n.translate(ROUTER_STANDARDS_UI)}`, component: MWStandardsUiColorsPage
-            }, ROUTER_STANDARDS),
-            pushRoute(ROUTER_STANDARDS_UI_COLORS, undefined, {
-                path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_COLORS)}`, component: MWStandardsUiColorsPage
-            }, ROUTER_STANDARDS)
+            {
+                path: '',
+                component: MWStandardsUiColorsPage
+            },
+            {
+                name: ROUTER_STANDARDS_UI_COLORS,
+                path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_COLORS)}`,
+                component: MWStandardsUiColorsPage
+            },
+            {
+                name: ROUTER_STANDARDS_UI_ICONOGRAPHY,
+                path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_ICONOGRAPHY)}`,
+                component: MWStandardsUiIconographyPage
+            },
+            {
+                name: ROUTER_STANDARDS_UI_TYPOGRAPHY,
+                path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_TYPOGRAPHY)}`,
+                component: MWStandardsUiTypographyPage
+            },
+            {
+                name: ROUTER_STANDARDS_UI_BREAKPOINTS,
+                path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_BREAKPOINTS)}`,
+                component: MWStandardsUiBreakpointsPage
+            }
+
         ]
     });
 

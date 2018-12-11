@@ -1,4 +1,4 @@
-import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_UI } from '@/router';
+import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_UI_COLORS } from '@/router';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import Component from 'vue-class-component';
@@ -67,7 +67,7 @@ export default class Modul extends ModulWebsite {
         // For menu
 
         this.pagesStandards.push({
-            id: ROUTER_STANDARDS_UI,
+            id: ROUTER_STANDARDS_UI_COLORS,
             text: this.$i18n.translate(`website:standards-ui`)
         });
 
