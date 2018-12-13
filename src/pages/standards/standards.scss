@@ -1,6 +1,11 @@
-$w-sidebar-max-width: 320px;
-$w-sidebar-max-width--l: 400px;
+@import '../../styles/shared-styles';
+
+$w-sidebar-max-width: 360px;
 $w-sidebar-max-width--s: 100%;
+
+$w-content-padding-top: 60px;
+$w-content-padding-bottom: 120px;
+$w-content-max-width: $modul-max-width;
 
 .w-website-standards {
     display: flex;
@@ -26,5 +31,10 @@ $w-sidebar-max-width--s: 100%;
 
     &__conteneur {
         flex: 1 1 auto;
+    }
+
+    &__content {
+        margin: $w-content-padding-top auto $w-content-padding-bottom;
+        max-width: $w-content-max-width;
     }
 }

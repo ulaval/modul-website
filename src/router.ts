@@ -3,6 +3,7 @@ import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Vue from 'vue';
 import Router, { RouteConfig } from 'vue-router';
 import { VueRouter } from 'vue-router/types/router';
+import { MIconGallery } from './components/icon-gallery/icon-gallery';
 import { Category } from './components/libs/category';
 import { CategoryList } from './components/libs/category-list';
 import { ComponentViewer } from './components/libs/component';
@@ -15,10 +16,8 @@ import MetaAll from './meta/meta-all';
 import { MWHomePage } from './pages/home/home';
 import { MWPhilosophyPage } from './pages/philosophy/philosophy';
 import { MWStandardsPage } from './pages/standards/standards';
-import { MWStandardsUiBreakpointsPage } from './pages/standards/visual-standards/visual-standards-breakpoints/standards-ui-breakpoints';
-import { MWStandardsUiColorsPage } from './pages/standards/visual-standards/visual-standards-colors/standards-ui-colors';
 import { MWStandardsUiIconographyPage } from './pages/standards/visual-standards/visual-standards-iconography/standards-ui-iconography';
-import { MWStandardsUiTypographyPage } from './pages/standards/visual-standards/visual-standards-typography/standards-ui-typography';
+import { MWMarkdownPage } from './pages/templates/markdown-page/markdown-page';
 
 declare module 'vue/types/vue' {
     interface Vue {
@@ -85,9 +84,11 @@ export const ROUTER_STANDARDS_DEVELOPMENT: string = 'router:standards-developmen
 export const ROUTER_STANDARDS_EDITORIAL: string = 'router:standards-editorial';
 export const ROUTER_STANDARDS_UI: string = 'router:standards-ui';
 export const ROUTER_STANDARDS_UI_COLORS: string = 'router:standards-ui-colors';
-export const ROUTER_STANDARDS_UI_ICONOGRAPHY: string = 'standards-ui-iconography';
-export const ROUTER_STANDARDS_UI_TYPOGRAPHY: string = 'standards-ui-typography';
-export const ROUTER_STANDARDS_UI_BREAKPOINTS: string = 'standards-ui-breakpoints';
+export const ROUTER_STANDARDS_UI_ICONOGRAPHY: string = 'router:standards-ui-iconography';
+export const ROUTER_STANDARDS_UI_TYPOGRAPHY: string = 'router:standards-ui-typography';
+export const ROUTER_STANDARDS_UI_BREAKPOINTS: string = 'router:standards-ui-breakpoints';
+export const ROUTER_STANDARDS_UI_ICONOGRAPHY_DOCUMENTATION: string = 'router:standards-ui-iconography-documentation';
+export const ROUTER_STANDARDS_UI_ICONOGRAPHY_ICONS: string = 'router:standards-ui-iconography-icons';
 
 type RouterFactoryFn = () => ModulRouter;
 type PushRouteFn = (key: string, routesConfig: RouteConfig[], config: RouteConfig, staticParent?: string) => RouteConfig;
@@ -282,27 +283,67 @@ const routerFactory: RouterFactoryFn = () => {
         children: [
             {
                 path: '',
-                component: MWStandardsUiColorsPage
+                redirect: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_COLORS)}`
             },
             {
                 name: ROUTER_STANDARDS_UI_COLORS,
                 path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_COLORS)}`,
-                component: MWStandardsUiColorsPage
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:standards-colors-and-themes'),
+                    markupFileName: 'standards/visual-standards/visual-standards.colors.fr.md'
+                }
             },
             {
                 name: ROUTER_STANDARDS_UI_ICONOGRAPHY,
                 path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_ICONOGRAPHY)}`,
-                component: MWStandardsUiIconographyPage
+                redirect: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_ICONOGRAPHY)}/${i18n.translate(ROUTER_STANDARDS_UI_ICONOGRAPHY_DOCUMENTATION)}`,
+                component: MWStandardsUiIconographyPage,
+                meta: {
+                    title: i18n.translate('website:standards-iconography')
+                },
+                props: {
+                    markupFileName: 'standards/visual-standards/visual-standards.iconography.fr.md'
+                },
+                children: [
+                    {
+                        path: '',
+                        redirect: `${i18n.translate(ROUTER_STANDARDS_UI_ICONOGRAPHY_DOCUMENTATION)}`
+                    },
+                    {
+                        name: ROUTER_STANDARDS_UI_ICONOGRAPHY_DOCUMENTATION,
+                        path: `${i18n.translate(ROUTER_STANDARDS_UI_ICONOGRAPHY_DOCUMENTATION)}`,
+                        component: MWMarkdownPage,
+                        meta: {
+                            title: i18n.translate('website:standards-iconography'),
+                            markupFileName: 'standards/visual-standards/visual-standars-iconography/visual-standars-iconography-documentations.fr.md'
+                        }
+                    }, {
+                        name: ROUTER_STANDARDS_UI_ICONOGRAPHY_ICONS,
+                        path: `${i18n.translate(ROUTER_STANDARDS_UI_ICONOGRAPHY_ICONS)}`,
+                        component: MIconGallery,
+                        meta: {
+                            title: i18n.translate('website:standards-iconography')
+                        }
+                    }]
             },
             {
                 name: ROUTER_STANDARDS_UI_TYPOGRAPHY,
                 path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_TYPOGRAPHY)}`,
-                component: MWStandardsUiTypographyPage
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:standards-typography-and-styles'),
+                    markupFileName: 'standards/visual-standards/visual-standards.typography-styles.fr.md'
+                }
             },
             {
                 name: ROUTER_STANDARDS_UI_BREAKPOINTS,
                 path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_BREAKPOINTS)}`,
-                component: MWStandardsUiBreakpointsPage
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:standards-breakpoints'),
+                    markupFileName: 'standards/visual-standards/visual-standards.breakpoints.fr.md'
+                }
             }
 
         ]
@@ -327,6 +368,19 @@ const routerFactory: RouterFactoryFn = () => {
             }
             return { x: 0, y: 0 };
         }
+    });
+
+    vueRouter.beforeEach((to, from, next) => {
+
+        let title = '';
+
+        if (to.meta && to.meta.title) {
+            document.title = `${to.meta.title} - MODUL`;
+        } else {
+            document.title = i18n.translate('website:title');
+        }
+
+        next();
     });
 
     return {

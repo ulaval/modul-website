@@ -3,15 +3,20 @@
         <p>Normes</p>
         <p>Normes graphiques</p>
         <router-link :to="{name :'router:standards-ui-colors'}"><span>Couleurs et thèmes</span></router-link><br />
-        <router-link :to="{name :'standards-ui-iconography'}"><span>Iconography</span></router-link><br />
-        <router-link :to="{name :'standards-ui-typography'}"><span>Typography</span></router-link><br />
-        <router-link :to="{name :'standards-ui-breakpoints'}"><span>Breakpoints</span></router-link><br />
+        <router-link :to="{name :'router:standards-ui-iconography'}"><span>Iconography</span></router-link><br />
+        <router-link :to="{name :'router:standards-ui-typography'}"><span>Typography</span></router-link><br />
+        <router-link :to="{name :'router:standards-ui-breakpoints'}"><span>Breakpoints</span></router-link><br />
 
         <p>Normes éditoriales</p>
         <p>Normes de développement</p>
         <p>Normes d'accessibilité</p>
     </nav>
     <div class="w-website-standards__conteneur">
-        <router-view></router-view>
+        <div class="w-website-standards__content">
+            <!-- the :key allow the page to reload each time -->
+
+            <router-view></router-view>
+
+        </div>
     </div>
 </div>

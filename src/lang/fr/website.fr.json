@@ -1,7 +1,14 @@
 {
     "website": {
+        "title": "MODUL",
         "philosophy": "philosophie",
         "standards": "normes",
-        "standards-ui": "normes graphiques"
+        "standards-ui": "normes graphiques",
+        "standards-colors-and-themes": "Couleurs et thèmes",
+        "standards-iconography": "Iconographie",
+        "standards-typography-and-styles": "Typographie et styles",
+        "standards-breakpoints": "Points de rupture",
+        "documentation": "Documentation",
+        "icons": "Icons"
     }
 }

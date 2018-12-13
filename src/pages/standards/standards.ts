@@ -6,8 +6,4 @@ import WithRender from './standards.html?style=./standards.scss';
 @WithRender
 @Component
 export class MWStandardsPage extends ModulVue {
-    private getRouterIndex(tag: string): string {
-        return this.$routerIndex.for(tag);
-    }
-
 }
