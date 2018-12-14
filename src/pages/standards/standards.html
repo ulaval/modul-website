@@ -1,5 +1,6 @@
 <div class="w-website-standards">
-    <nav class="w-website-standards__sidemenu">
+    <div class="w-website-standards__sidemenu "
+         :class="{'is-displayed': showMenu}">
         <p>Normes</p>
         <p>Normes graphiques</p>
         <router-link :to="{name :'router:standards-ui-colors'}"><span>Couleurs et thèmes</span></router-link><br />
@@ -10,11 +11,14 @@
         <p>Normes éditoriales</p>
         <p>Normes de développement</p>
         <p>Normes d'accessibilité</p>
-    </nav>
-    <div class="w-website-standards__conteneur">
-        <div class="w-website-standards__content">
-            <!-- the :key allow the page to reload each time -->
+    </div>
+    <div class="w-website-standards__conteneur"
+         :class="{'is-full-width': !showMenu}">
 
+        <div class="w-website-standards__content">
+            <button class="btn"
+                    @click="toggleMenu()">Toggle</button>
+            <!-- the :key allow the page to reload each time -->
             <router-view></router-view>
 
         </div>

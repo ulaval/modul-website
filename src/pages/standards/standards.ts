@@ -6,4 +6,14 @@ import WithRender from './standards.html?style=./standards.scss';
 @WithRender
 @Component
 export class MWStandardsPage extends ModulVue {
+
+    showMenu = false;
+
+    mounted() {
+        this.showMenu = true;
+    }
+
+    toggleMenu() {
+        this.showMenu = !this.showMenu;
+    }
 }

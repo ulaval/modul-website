@@ -7,20 +7,25 @@ $w-content-padding-top: 60px;
 $w-content-padding-bottom: 120px;
 $w-content-max-width: $modul-max-width;
 
+// @mixin transitionAll() {
+//     transition: all 0.3s ease-out;
+// }
+
 .w-website-standards {
     display: flex;
     width: 100%;
+    box-sizing: border-box;
 
     &__sidemenu {
-        flex: 0 0 $w-sidebar-max-width;
+        flex-shrink: 0;
+        width: 0;
+        transition: width 0.3s ease-in;
+        overflow-x: hidden;
 
-        // @media (max-width: $m-mq--max--s) {
-        //     flex: 0 0 $w-sidebar-max-width--s;
-        // }
-
-        // @media (min-width: 1520px) {
-        //     flex: 0 0 $w-sidebar-max-width--l;
-        // }
+        &.is-displayed {
+            width: $w-sidebar-max-width;
+            transition: width 0.3s ease-out;
+        }
 
         .router-link-active {
             span::before {
@@ -30,7 +35,9 @@ $w-content-max-width: $modul-max-width;
     }
 
     &__conteneur {
-        flex: 1 1 auto;
+        display: flex;
+        width: 100%;
+        height: 100%;
     }
 
     &__content {
