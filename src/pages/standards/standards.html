@@ -8,22 +8,61 @@
                            icon-size="20px"
                            button-size="20px">
             </m-icon-button>
+        </div>
+        <div class="w-website-standards__sidemenu-content">
+            <div class="w-website-standards__sidemenu-title">Normes</div>
+            <m-accordion skin="plain"
+                         icon-position="right"
+                         icon-size="small"
+                         :open="urlMatch('router:standards-ui-colors', 'router:standards-ui-iconography','router:standards-ui-typography', 'router:standards-ui-breakpoints')">
+                <p class="w-website-standards__sidemenu-sub-title"
+                   slot="header">Normes graphiques</p>
+                <div class="w-website-standards__sidemenu-sub-items">
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:standards-ui-colors'}"
+                                     @click.native="onSideMenuSelection()"><span>Couleurs et thèmes</span></router-link>
+                    </div>
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:standards-ui-iconography'}"
+                                     @click.native="onSideMenuSelection()"><span>Iconography</span></router-link>
+                    </div>
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:standards-ui-typography'}"
+                                     @click.native="onSideMenuSelection()"><span>Typography</span></router-link>
+                    </div>
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:standards-ui-breakpoints'}"
+                                     @click.native="onSideMenuSelection()"><span>Breakpoints</span></router-link>
+                    </div>
+                </div>
+            </m-accordion>
+
+            <m-accordion skin="plain"
+                         icon-position="right"
+                         icon-size="small"
+                         :open="urlMatch('router:standards-editorial')">
+                <p class="w-website-standards__sidemenu-sub-title"
+                   slot="header">Normes éditoriales</p>
+                <div>asdasd</div>
+            </m-accordion>
+            <m-accordion skin="plain"
+                         icon-position="right"
+                         icon-size="small"
+                         :open="urlMatch('router:standards-editorial')">
+                <p class="w-website-standards__sidemenu-sub-title"
+                   slot="header">Normes de développemen</p>
+                <div>asdasd</div>
+            </m-accordion>
+            <m-accordion skin="plain"
+                         icon-position="right"
+                         icon-size="small"
+                         :open="urlMatch('router:standards-editorial')">
+                <p class="w-website-standards__sidemenu-sub-title"
+                   slot="header">Normes d'accessibilité</p>
+                <div>asdasd</div>
+            </m-accordion>
 
         </div>
-        <p>Normes</p>
-        <p>Normes graphiques</p>
-        <router-link :to="{name :'router:standards-ui-colors'}"
-                     @click.native="onSideMenuSelection()"><span>Couleurs et thèmes</span></router-link><br />
-        <router-link :to="{name :'router:standards-ui-iconography'}"
-                     @click.native="onSideMenuSelection()"><span>Iconography</span></router-link><br />
-        <router-link :to="{name :'router:standards-ui-typography'}"
-                     @click.native="onSideMenuSelection()"><span>Typography</span></router-link><br />
-        <router-link :to="{name :'router:standards-ui-breakpoints'}"
-                     @click.native="onSideMenuSelection()"><span>Breakpoints</span></router-link><br />
-
-        <p>Normes éditoriales</p>
-        <p>Normes de développement</p>
-        <p>Normes d'accessibilité</p>
     </div>
     <div class="w-website-standards__conteneur"
          :class="{'is-menu': showMenu}">
