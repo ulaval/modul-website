@@ -28,16 +28,13 @@ $w-content-max-width: $modul-max-width;
             font-size: $m-font-size--l;
             text-transform: uppercase;
             font-weight: $m-font-weight--black;
-            margin-bottom: 5px;
         }
 
         &-sub-title {
+            margin-top: 16px;
+            margin-bottom: 8px;
             font-size: $m-font-size--l;
             font-weight: $m-font-weight--black;
-        }
-
-        &-sub-items {
-            margin-top: 8px;
         }
 
         &-item {
@@ -45,7 +42,7 @@ $w-content-max-width: $modul-max-width;
                 display: block;
                 height: 50px;
                 line-height: 50px;
-                padding-left: 16px;
+                padding-left: 12px;
                 border-left: 2px solid $m-color--grey-light;
                 margin-left: 1px;
                 font-size: $m-font-size;

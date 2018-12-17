@@ -81,7 +81,7 @@ export const ROUTER_OVERVIEW: string = 'router:overview';
 export const ROUTER_PHILOSOPHY: string = 'router:philosophy';
 export const ROUTER_STANDARDS: string = 'router:standards';
 export const ROUTER_STANDARDS_DEVELOPMENT: string = 'router:standards-development';
-export const ROUTER_STANDARDS_EDITORIAL: string = 'router:standards-editorial';
+
 export const ROUTER_STANDARDS_UI: string = 'router:standards-ui';
 export const ROUTER_STANDARDS_UI_COLORS: string = 'router:standards-ui-colors';
 export const ROUTER_STANDARDS_UI_ICONOGRAPHY: string = 'router:standards-ui-iconography';
@@ -89,6 +89,13 @@ export const ROUTER_STANDARDS_UI_TYPOGRAPHY: string = 'router:standards-ui-typog
 export const ROUTER_STANDARDS_UI_BREAKPOINTS: string = 'router:standards-ui-breakpoints';
 export const ROUTER_STANDARDS_UI_ICONOGRAPHY_DOCUMENTATION: string = 'router:standards-ui-iconography-documentation';
 export const ROUTER_STANDARDS_UI_ICONOGRAPHY_ICONS: string = 'router:standards-ui-iconography-icons';
+
+export const ROUTER_STANDARDS_EDITORIAL: string = 'router:standards-editorial';
+export const ROUTER_STANDARDS_EDITORIAL_TONE: string = 'router:standards-editorial-tone';
+export const ROUTER_STANDARDS_EDITORIAL_FORMAT: string = 'router:standards-editorial-format';
+export const ROUTER_STANDARDS_EDITORIAL_GLOSSARY: string = 'router:standards-editorial-glossary';
+export const ROUTER_STANDARDS_EDITORIAL_MESSAGE_BANK: string = 'router:standards-editorial-message-bank';
+export const ROUTER_STANDARDS_EDITORIAL_MESSAGE_PUNCTUATION: string = 'router:standards-editorial-punctuation';
 
 type RouterFactoryFn = () => ModulRouter;
 type PushRouteFn = (key: string, routesConfig: RouteConfig[], config: RouteConfig, staticParent?: string) => RouteConfig;
@@ -344,8 +351,52 @@ const routerFactory: RouterFactoryFn = () => {
                     title: i18n.translate('website:standards-breakpoints'),
                     markupFileName: 'standards/visual-standards/visual-standards.breakpoints.fr.md'
                 }
+            },
+            {
+                name: ROUTER_STANDARDS_EDITORIAL_TONE,
+                path: `${i18n.translate(ROUTER_STANDARDS_EDITORIAL)}/${i18n.translate(ROUTER_STANDARDS_EDITORIAL_TONE)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:standards-editorial-tone'),
+                    markupFileName: 'standards/editorial-standards/editorial-standards.formats.fr.md'
+                }
+            },
+            {
+                name: ROUTER_STANDARDS_EDITORIAL_FORMAT,
+                path: `${i18n.translate(ROUTER_STANDARDS_EDITORIAL)}/${i18n.translate(ROUTER_STANDARDS_EDITORIAL_FORMAT)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:standards-editorial-format'),
+                    markupFileName: 'standards/editorial-standards/editorial-standards.formats.fr.md'
+                }
+            },
+            {
+                name: ROUTER_STANDARDS_EDITORIAL_GLOSSARY,
+                path: `${i18n.translate(ROUTER_STANDARDS_EDITORIAL)}/${i18n.translate(ROUTER_STANDARDS_EDITORIAL_GLOSSARY)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:standards-editorial-glossary'),
+                    markupFileName: 'standards/editorial-standards/editorial-standards.glossary.fr.md'
+                }
+            },
+            {
+                name: ROUTER_STANDARDS_EDITORIAL_MESSAGE_BANK,
+                path: `${i18n.translate(ROUTER_STANDARDS_EDITORIAL)}/${i18n.translate(ROUTER_STANDARDS_EDITORIAL_MESSAGE_BANK)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:standards-editorial-message-bank'),
+                    markupFileName: 'standards/editorial-standards/editorial-standards.message-bank.fr.md'
+                }
+            },
+            {
+                name: ROUTER_STANDARDS_EDITORIAL_MESSAGE_PUNCTUATION,
+                path: `${i18n.translate(ROUTER_STANDARDS_EDITORIAL)}/${i18n.translate(ROUTER_STANDARDS_EDITORIAL_MESSAGE_PUNCTUATION)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:standards-editorial-punctuation'),
+                    markupFileName: 'standards/editorial-standards/editorial-standards.punctuation.fr.md'
+                }
             }
-
         ]
     });
 

@@ -15,9 +15,9 @@
                          icon-position="right"
                          icon-size="small"
                          :open="urlMatch('router:standards-ui-colors', 'router:standards-ui-iconography','router:standards-ui-typography', 'router:standards-ui-breakpoints')">
-                <p class="w-website-standards__sidemenu-sub-title"
-                   slot="header">Normes graphiques</p>
-                <div class="w-website-standards__sidemenu-sub-items">
+                <div class="w-website-standards__sidemenu-sub-title"
+                     slot="header">Normes graphiques</div>
+                <div>
                     <div class="w-website-standards__sidemenu-item">
                         <router-link :to="{name :'router:standards-ui-colors'}"
                                      @click.native="onSideMenuSelection()"><span>Couleurs et thèmes</span></router-link>
@@ -40,25 +40,59 @@
             <m-accordion skin="plain"
                          icon-position="right"
                          icon-size="small"
+                         :open="urlMatch('router:standards-editorial-tone', 'router:standards-editorial-format', 'router:standards-editorial-glossary', 'router:standards-editorial-message-bank', 'router:standards-editorial-punctuation')">
+                <div class="w-website-standards__sidemenu-sub-title"
+                     slot="header">
+                    <m-i18n k="website:standards-editorial"></m-i18n>
+                </div>
+                <div>
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:standards-editorial-tone'}"
+                                     @click.native="onSideMenuSelection()">
+                            <m-i18n k="website:standards-editorial-tone"></m-i18n>
+                        </router-link>
+                    </div>
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:standards-editorial-format'}"
+                                     @click.native="onSideMenuSelection()">
+                            <m-i18n k="website:standards-editorial-format"></m-i18n>
+                        </router-link>
+                    </div>
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:standards-editorial-punctuation'}"
+                                     @click.native="onSideMenuSelection()">
+                            <m-i18n k="website:standards-editorial-punctuation"></m-i18n>
+                        </router-link>
+                    </div>
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:standards-editorial-glossary'}"
+                                     @click.native="onSideMenuSelection()">
+                            <m-i18n k="website:standards-editorial-glossary"></m-i18n>
+                        </router-link>
+                    </div>
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:standards-editorial-message-bank'}"
+                                     @click.native="onSideMenuSelection()">
+                            <m-i18n k="website:standards-editorial-message-bank"></m-i18n>
+                        </router-link>
+                    </div>
+
+                </div>
+            </m-accordion>
+            <m-accordion skin="plain"
+                         icon-position="right"
+                         icon-size="small"
                          :open="urlMatch('router:standards-editorial')">
-                <p class="w-website-standards__sidemenu-sub-title"
-                   slot="header">Normes éditoriales</p>
+                <div class="w-website-standards__sidemenu-sub-title"
+                     slot="header">Normes de développement</div>
                 <div>asdasd</div>
             </m-accordion>
             <m-accordion skin="plain"
                          icon-position="right"
                          icon-size="small"
                          :open="urlMatch('router:standards-editorial')">
-                <p class="w-website-standards__sidemenu-sub-title"
-                   slot="header">Normes de développemen</p>
-                <div>asdasd</div>
-            </m-accordion>
-            <m-accordion skin="plain"
-                         icon-position="right"
-                         icon-size="small"
-                         :open="urlMatch('router:standards-editorial')">
-                <p class="w-website-standards__sidemenu-sub-title"
-                   slot="header">Normes d'accessibilité</p>
+                <div class="w-website-standards__sidemenu-sub-title"
+                     slot="header">Normes d'accessibilité</div>
                 <div>asdasd</div>
             </m-accordion>
 
