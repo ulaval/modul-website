@@ -1,23 +1,43 @@
 <div class="w-website-standards">
-    <div class="w-website-standards__sidemenu "
+    <div class="w-website-standards__sidemenu"
          :class="{'is-displayed': showMenu}">
+
+        <div class="w-website-standards__sidemenu-close">
+            <m-icon-button @click="toggleMenu()"
+                           icon-name="m-svg__close-clear"
+                           icon-size="20px"
+                           button-size="20px">
+            </m-icon-button>
+
+        </div>
         <p>Normes</p>
         <p>Normes graphiques</p>
-        <router-link :to="{name :'router:standards-ui-colors'}"><span>Couleurs et thèmes</span></router-link><br />
-        <router-link :to="{name :'router:standards-ui-iconography'}"><span>Iconography</span></router-link><br />
-        <router-link :to="{name :'router:standards-ui-typography'}"><span>Typography</span></router-link><br />
-        <router-link :to="{name :'router:standards-ui-breakpoints'}"><span>Breakpoints</span></router-link><br />
+        <router-link :to="{name :'router:standards-ui-colors'}"
+                     @click.native="onSideMenuSelection()"><span>Couleurs et thèmes</span></router-link><br />
+        <router-link :to="{name :'router:standards-ui-iconography'}"
+                     @click.native="onSideMenuSelection()"><span>Iconography</span></router-link><br />
+        <router-link :to="{name :'router:standards-ui-typography'}"
+                     @click.native="onSideMenuSelection()"><span>Typography</span></router-link><br />
+        <router-link :to="{name :'router:standards-ui-breakpoints'}"
+                     @click.native="onSideMenuSelection()"><span>Breakpoints</span></router-link><br />
 
         <p>Normes éditoriales</p>
         <p>Normes de développement</p>
         <p>Normes d'accessibilité</p>
     </div>
     <div class="w-website-standards__conteneur"
-         :class="{'is-full-width': !showMenu}">
+         :class="{'is-menu': showMenu}">
+        <div class="w-website-standards__conteneur-close">
+            <m-icon-button @click="toggleMenu()"
+                           icon-name="m-standard-edit"
+                           skin="light"
+                           icon-size="20px"
+                           button-size="20px">
+            </m-icon-button>
 
-        <div class="w-website-standards__content">
-            <button class="btn"
-                    @click="toggleMenu()">Toggle</button>
+        </div>
+        <div class="w-website-standards__conteneur-content">
+
             <!-- the :key allow the page to reload each time -->
             <router-view></router-view>
 
