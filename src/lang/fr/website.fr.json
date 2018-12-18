@@ -2,7 +2,7 @@
     "website": {
         "title": "MODUL",
         "philosophy": "philosophie",
-        "standards": "normes",
+        "standards": "Normes",
         "standards-ui": "normes graphiques",
         "standards-colors-and-themes": "Couleurs et thèmes",
         "standards-iconography": "Iconographie",
@@ -15,6 +15,13 @@
         "standards-editorial-format": "Format",
         "standards-editorial-glossary": "Glossaire",
         "standards-editorial-message-bank": "Banque de messages",
-        "standards-editorial-punctuation": "Ponctuation"
+        "standards-editorial-punctuation": "Ponctuation",
+        "standards-development": "Normes de développement",
+        "standards-development-css-sass": "CSS / SASS",
+        "standards-development-typescript": "Typescript",
+        "accessibility-standards": "Normes d'accessibilité",
+        "accessibility-standards-cheatsheet": "Aide-mémoire",
+        "accessibility-standards-implementation": "Implémentation",
+        "accessibility-standards-why": "Pourquoi l'accessibilité?"
     }
 }

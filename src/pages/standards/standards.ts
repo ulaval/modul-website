@@ -14,7 +14,10 @@ export class MWStandardsPage extends ModulVue {
 
     showMenu = false;
 
+    routesMatchedOnMount: RouteRecord[];
+
     mounted() {
+        this.routesMatchedOnMount = this.$route.matched;
         this.isMqMinMChanged(this.as<MediaQueriesMixin>().isMqMinM);
     }
 
@@ -30,7 +33,10 @@ export class MWStandardsPage extends ModulVue {
     }
 
     urlMatch(...args) {
-        return this.$route.matched.map((record: RouteRecord) => record.name).some(name => args.indexOf(name) !== -1);
+        if (this.routesMatchedOnMount) {
+            return this.routesMatchedOnMount.map((record: RouteRecord) => record.name).some(name => args.indexOf(name) !== -1);
+        }
+        return false;
     }
 
     toggleMenu() {

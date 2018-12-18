@@ -4,17 +4,13 @@
         <m-navbar skin="tab-arrow"
                   :arrow-mobile="false"
                   :auto-select="true">
-            <m-navbar-item value="standards-ui-iconography-documentation">
-                <router-link class="modul-u--navbar__item"
-                             :to="{name :'router:standards-ui-iconography-documentation'}">
-                    <m-i18n k="website:documentation"></m-i18n>
-                </router-link>
+            <m-navbar-item value="standards-ui-iconography-documentation"
+                           :url="{name :'router:standards-ui-iconography-documentation'}">
+                <m-i18n k="website:documentation"></m-i18n>
             </m-navbar-item>
-            <m-navbar-item value="standards-ui-iconography-icons">
-                <router-link class="modul-u--navbar__item"
-                             :to="{name :'router:standards-ui-iconography-icons'}">
-                    <m-i18n k="website:icons"></m-i18n>
-                </router-link>
+            <m-navbar-item value="standards-ui-iconography-icons"
+                           :url="{name :'router:standards-ui-iconography-icons'}">
+                <m-i18n k="website:icons"></m-i18n>
             </m-navbar-item>
         </m-navbar>
     </div>

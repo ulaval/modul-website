@@ -80,7 +80,6 @@ export const ROUTER_EVENTS: string = 'router:events';
 export const ROUTER_OVERVIEW: string = 'router:overview';
 export const ROUTER_PHILOSOPHY: string = 'router:philosophy';
 export const ROUTER_STANDARDS: string = 'router:standards';
-export const ROUTER_STANDARDS_DEVELOPMENT: string = 'router:standards-development';
 
 export const ROUTER_STANDARDS_UI: string = 'router:standards-ui';
 export const ROUTER_STANDARDS_UI_COLORS: string = 'router:standards-ui-colors';
@@ -96,6 +95,15 @@ export const ROUTER_STANDARDS_EDITORIAL_FORMAT: string = 'router:standards-edito
 export const ROUTER_STANDARDS_EDITORIAL_GLOSSARY: string = 'router:standards-editorial-glossary';
 export const ROUTER_STANDARDS_EDITORIAL_MESSAGE_BANK: string = 'router:standards-editorial-message-bank';
 export const ROUTER_STANDARDS_EDITORIAL_MESSAGE_PUNCTUATION: string = 'router:standards-editorial-punctuation';
+
+export const ROUTER_STANDARDS_DEVELOPMENT: string = 'router:development-standards';
+export const ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS: string = 'router:development-standards-css-sass';
+export const ROUTER_STANDARDS_DEVELOPMENT_TYPESCRIPT: string = 'router:development-standards-typescript';
+
+export const ROUTER_STANDARDS_ACCESSIBILITY: string = 'router:accessibility-standards';
+export const ROUTER_STANDARDS_ACCESSIBILITY_CHEATSHEET: string = 'router:accessibility-standards-cheatsheet';
+export const ROUTER_STANDARDS_ACCESSIBILITY_IMPLEMENTATION: string = 'router:accessibility-standards-implementation';
+export const ROUTER_STANDARDS_ACCESSIBILITY_WHY: string = 'router:accessibility-standards-why';
 
 type RouterFactoryFn = () => ModulRouter;
 type PushRouteFn = (key: string, routesConfig: RouteConfig[], config: RouteConfig, staticParent?: string) => RouteConfig;
@@ -358,7 +366,7 @@ const routerFactory: RouterFactoryFn = () => {
                 component: MWMarkdownPage,
                 meta: {
                     title: i18n.translate('website:standards-editorial-tone'),
-                    markupFileName: 'standards/editorial-standards/editorial-standards.formats.fr.md'
+                    markupFileName: 'standards/editorial-standards/editorial-standards.tone.fr.md'
                 }
             },
             {
@@ -395,6 +403,51 @@ const routerFactory: RouterFactoryFn = () => {
                 meta: {
                     title: i18n.translate('website:standards-editorial-punctuation'),
                     markupFileName: 'standards/editorial-standards/editorial-standards.punctuation.fr.md'
+                }
+            },
+            {
+                name: ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS,
+                path: `${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT)}/${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:standards-development-css-sass'),
+                    markupFileName: 'standards/developement-standards/developement-standards.css-sass.fr.md'
+                }
+            },
+            {
+                name: ROUTER_STANDARDS_DEVELOPMENT_TYPESCRIPT,
+                path: `${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT)}/${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT_TYPESCRIPT)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:standards-development-typescript'),
+                    markupFileName: 'standards/developement-standards/developement-standards.typescript.fr.md'
+                }
+            },
+            {
+                name: ROUTER_STANDARDS_ACCESSIBILITY_CHEATSHEET,
+                path: `${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY)}/${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY_CHEATSHEET)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:accessibility-standards-cheatsheet'),
+                    markupFileName: 'standards/accessibility-standards/accessibility-standards.cheatsheet.fr.md'
+                }
+            },
+            {
+                name: ROUTER_STANDARDS_ACCESSIBILITY_IMPLEMENTATION,
+                path: `${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY)}/${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY_IMPLEMENTATION)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:accessibility-standards-implementation'),
+                    markupFileName: 'standards/accessibility-standards/accessibility-standards.implementation.fr.md'
+                }
+            },
+            {
+                name: ROUTER_STANDARDS_ACCESSIBILITY_WHY,
+                path: `${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY)}/${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY_WHY)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:accessibility-standards-why'),
+                    markupFileName: 'standards/accessibility-standards/accessibility-standards.why.fr.md'
                 }
             }
         ]

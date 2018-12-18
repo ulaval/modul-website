@@ -20,6 +20,13 @@
         "standards-editorial-format": "format",
         "standards-editorial-glossary": "glossaire",
         "standards-editorial-message-bank": "banque-de-messages",
-        "standards-editorial-punctuation": "ponctuation"
+        "standards-editorial-punctuation": "ponctuation",
+        "development-standards": "developpement",
+        "development-standards-css-sass": "css-sass",
+        "development-standards-typescript": "typescript",
+        "accessibility-standards": "accessibilite",
+        "accessibility-standards-cheatsheet": "aide-memoire",
+        "accessibility-standards-implementation": "implementation",
+        "accessibility-standards-why": "pourquoi-l-accessibilite"
     }
 }

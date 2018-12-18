@@ -106,6 +106,7 @@ $w-content-max-width: $modul-max-width;
             margin: $w-content-padding-top auto $w-content-padding-bottom;
             padding-left: 16px;
             padding-right: 16px;
+            width: 100%;
             max-width: $w-content-max-width - 32px;
         }
     }

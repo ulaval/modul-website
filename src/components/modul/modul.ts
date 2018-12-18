@@ -65,7 +65,6 @@ export default class Modul extends ModulWebsite {
         });
 
         // For menu
-
         this.pagesStandards.push({
             id: ROUTER_STANDARDS_UI_COLORS,
             text: this.$i18n.translate(`website:standards-ui`)

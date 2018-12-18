@@ -10,7 +10,9 @@
             </m-icon-button>
         </div>
         <div class="w-website-standards__sidemenu-content">
-            <div class="w-website-standards__sidemenu-title">Normes</div>
+            <div class="w-website-standards__sidemenu-title">
+                <m-i18n k="website:standards"></m-i18n>
+            </div>
             <m-accordion skin="plain"
                          icon-position="right"
                          icon-size="small"
@@ -20,19 +22,27 @@
                 <div>
                     <div class="w-website-standards__sidemenu-item">
                         <router-link :to="{name :'router:standards-ui-colors'}"
-                                     @click.native="onSideMenuSelection()"><span>Couleurs et thèmes</span></router-link>
+                                     @click.native="onSideMenuSelection()"><span>
+                                <m-i18n k="website:standards-colors-and-themes"></m-i18n>
+                            </span></router-link>
                     </div>
                     <div class="w-website-standards__sidemenu-item">
                         <router-link :to="{name :'router:standards-ui-iconography'}"
-                                     @click.native="onSideMenuSelection()"><span>Iconography</span></router-link>
+                                     @click.native="onSideMenuSelection()"><span>
+                                <m-i18n k="website:standards-iconography"></m-i18n>
+                            </span></router-link>
                     </div>
                     <div class="w-website-standards__sidemenu-item">
                         <router-link :to="{name :'router:standards-ui-typography'}"
-                                     @click.native="onSideMenuSelection()"><span>Typography</span></router-link>
+                                     @click.native="onSideMenuSelection()"><span>
+                                <m-i18n k="website:standards-typography-and-styles"></m-i18n>
+                            </span></router-link>
                     </div>
                     <div class="w-website-standards__sidemenu-item">
                         <router-link :to="{name :'router:standards-ui-breakpoints'}"
-                                     @click.native="onSideMenuSelection()"><span>Breakpoints</span></router-link>
+                                     @click.native="onSideMenuSelection()"><span>
+                                <m-i18n k="website:standards-breakpoints"></m-i18n>
+                            </span></router-link>
                     </div>
                 </div>
             </m-accordion>
@@ -82,18 +92,60 @@
             <m-accordion skin="plain"
                          icon-position="right"
                          icon-size="small"
-                         :open="urlMatch('router:standards-editorial')">
+                         :open="urlMatch('router:development-standards-css-sass','router:development-standards-typescript')">
                 <div class="w-website-standards__sidemenu-sub-title"
-                     slot="header">Normes de développement</div>
-                <div>asdasd</div>
+                     slot="header">
+                    <m-i18n k="website:standards-development"></m-i18n>
+                </div>
+                <div>
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:development-standards-css-sass'}"
+                                     @click.native="onSideMenuSelection()">
+                            <m-i18n k="website:standards-development-css-sass"></m-i18n>
+                        </router-link>
+                    </div>
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:development-standards-typescript'}"
+                                     @click.native="onSideMenuSelection()">
+                            <m-i18n k="website:standards-development-typescript"></m-i18n>
+                        </router-link>
+                    </div>
+                </div>
             </m-accordion>
             <m-accordion skin="plain"
                          icon-position="right"
                          icon-size="small"
-                         :open="urlMatch('router:standards-editorial')">
+                         :open="urlMatch('router:accessibility-standards-why','router:accessibility-standards-implementation', 'router:accessibility-standards-cheatsheet')">
                 <div class="w-website-standards__sidemenu-sub-title"
-                     slot="header">Normes d'accessibilité</div>
-                <div>asdasd</div>
+                     slot="header">
+                    <m-i18n k="website:accessibility-standards"></m-i18n>
+                </div>
+                <div>
+
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:accessibility-standards-why'}"
+                                     @click.native="onSideMenuSelection()">
+                            <m-i18n k="website:accessibility-standards-why"></m-i18n>
+                        </router-link>
+                    </div>
+
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:accessibility-standards-implementation'}"
+                                     @click.native="onSideMenuSelection()">
+                            <m-i18n k="website:accessibility-standards-implementation"></m-i18n>
+                        </router-link>
+                    </div>
+
+                    <div class="w-website-standards__sidemenu-item">
+                        <router-link :to="{name :'router:accessibility-standards-cheatsheet'}"
+                                     @click.native="onSideMenuSelection()">
+                            <m-i18n k="website:accessibility-standards-cheatsheet"></m-i18n>
+                        </router-link>
+                    </div>
+
+
+
+                </div>
             </m-accordion>
 
         </div>
@@ -110,10 +162,7 @@
 
         </div>
         <div class="w-website-standards__conteneur-content">
-
-            <!-- the :key allow the page to reload each time -->
             <router-view></router-view>
-
         </div>
     </div>
 </div>
