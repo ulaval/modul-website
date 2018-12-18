@@ -301,6 +301,11 @@ const routerFactory: RouterFactoryFn = () => {
                 redirect: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_COLORS)}`
             },
             {
+                name: ROUTER_STANDARDS_UI,
+                path: `${i18n.translate(ROUTER_STANDARDS_UI)}`,
+                redirect: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_COLORS)}`
+            },
+            {
                 name: ROUTER_STANDARDS_UI_COLORS,
                 path: `${i18n.translate(ROUTER_STANDARDS_UI)}/${i18n.translate(ROUTER_STANDARDS_UI_COLORS)}`,
                 component: MWMarkdownPage,
@@ -361,6 +366,11 @@ const routerFactory: RouterFactoryFn = () => {
                 }
             },
             {
+                name: ROUTER_STANDARDS_EDITORIAL,
+                path: `${i18n.translate(ROUTER_STANDARDS_EDITORIAL)}`,
+                redirect: `${i18n.translate(ROUTER_STANDARDS_EDITORIAL)}/${i18n.translate(ROUTER_STANDARDS_EDITORIAL_TONE)}`
+            },
+            {
                 name: ROUTER_STANDARDS_EDITORIAL_TONE,
                 path: `${i18n.translate(ROUTER_STANDARDS_EDITORIAL)}/${i18n.translate(ROUTER_STANDARDS_EDITORIAL_TONE)}`,
                 component: MWMarkdownPage,
@@ -406,6 +416,11 @@ const routerFactory: RouterFactoryFn = () => {
                 }
             },
             {
+                name: ROUTER_STANDARDS_DEVELOPMENT,
+                path: `${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT)}`,
+                redirect: `${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT)}/${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS)}`
+            },
+            {
                 name: ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS,
                 path: `${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT)}/${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS)}`,
                 component: MWMarkdownPage,
@@ -424,6 +439,20 @@ const routerFactory: RouterFactoryFn = () => {
                 }
             },
             {
+                name: ROUTER_STANDARDS_ACCESSIBILITY,
+                path: `${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY)}`,
+                redirect: `${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY)}/${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY_WHY)}`
+            },
+            {
+                name: ROUTER_STANDARDS_ACCESSIBILITY_WHY,
+                path: `${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY)}/${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY_WHY)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:accessibility-standards-why'),
+                    markupFileName: 'standards/accessibility-standards/accessibility-standards.why.fr.md'
+                }
+            },
+            {
                 name: ROUTER_STANDARDS_ACCESSIBILITY_CHEATSHEET,
                 path: `${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY)}/${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY_CHEATSHEET)}`,
                 component: MWMarkdownPage,
@@ -439,15 +468,6 @@ const routerFactory: RouterFactoryFn = () => {
                 meta: {
                     title: i18n.translate('website:accessibility-standards-implementation'),
                     markupFileName: 'standards/accessibility-standards/accessibility-standards.implementation.fr.md'
-                }
-            },
-            {
-                name: ROUTER_STANDARDS_ACCESSIBILITY_WHY,
-                path: `${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY)}/${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY_WHY)}`,
-                component: MWMarkdownPage,
-                meta: {
-                    title: i18n.translate('website:accessibility-standards-why'),
-                    markupFileName: 'standards/accessibility-standards/accessibility-standards.why.fr.md'
                 }
             }
         ]

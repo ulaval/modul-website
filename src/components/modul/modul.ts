@@ -1,4 +1,4 @@
-import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_UI_COLORS } from '@/router';
+import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import Component from 'vue-class-component';
@@ -65,10 +65,26 @@ export default class Modul extends ModulWebsite {
         });
 
         // For menu
-        this.pagesStandards.push({
-            id: ROUTER_STANDARDS_UI_COLORS,
-            text: this.$i18n.translate(`website:standards-ui`)
-        });
+        this.pagesStandards.push(
+            {
+                id: ROUTER_STANDARDS_UI,
+                text: this.$i18n.translate(`website:standards-ui`)
+            },
+            {
+                id: ROUTER_STANDARDS_EDITORIAL,
+                text: this.$i18n.translate(`website:standards-editorial`)
+            }
+            ,
+            {
+                id: ROUTER_STANDARDS_DEVELOPMENT,
+                text: this.$i18n.translate(`website:standards-development`)
+            }
+            ,
+            {
+                id: ROUTER_STANDARDS_ACCESSIBILITY,
+                text: this.$i18n.translate(`website:accessibility-standards`)
+            }
+        );
 
     }
 
