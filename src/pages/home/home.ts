@@ -1,6 +1,5 @@
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
-import { ElementQueries } from 'css-element-queries/src/ElementQueries';
 import Component from 'vue-class-component';
 import WithRender from './home.html?style=./home.scss';
 
@@ -21,12 +20,11 @@ export class MWHomePage extends ModulVue {
     protected mounted(): void {
         this.setParallaxEffect();
         this.$modul.event.$on('scroll', this.onScroll);
-        ElementQueries.init();
     }
 
     protected beforeDestroy(): void {
         this.$modul.event.$off('scroll', this.onScroll);
-        ElementQueries.detach(this.$el);
+
     }
 
     private onScroll(): void {
