@@ -8,7 +8,6 @@
     "less.validate": false,
     "scss.validate": false,
     "tslint.configFile": "tslint.json",
-    "tslint.autoFixOnSave": true,
     "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
     "files.exclude": {
         "**/.vs/": true
