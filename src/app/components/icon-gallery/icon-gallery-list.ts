@@ -391,6 +391,10 @@ export class ModulIconList {
         { 
             'name': 'm-svg__role-assignation',
             'nameFr': 'Assigner rôle'
+        },
+        { 
+            'name': 'm-svg__remove-assignation',
+            'nameFr': 'Retirer rôle'
         }
     ];
 }
