@@ -105,6 +105,10 @@ export class ModulIconList {
             'nameFr': 'Balise de code '
         },
         {
+            'name': 'm-svg__completed-white-filled',
+            'nameFr': 'Pastille complété fond blanc'
+        },
+        {
             'name': 'm-svg__completed-filled',
             'nameFr': 'Pastille complété'
         },
@@ -127,6 +131,10 @@ export class ModulIconList {
         {
             'name': 'm-svg__email',
             'nameFr': 'Courriel'
+        },
+        {
+            'name': 'm-svg__error-white-filled',
+            'nameFr': 'Pastille erreur fond blanc'
         },
         {
             'name': 'm-svg__error-filled',
@@ -277,6 +285,10 @@ export class ModulIconList {
             'nameFr': 'Image'
         },
         {
+            'name': 'm-svg__information-white-filled',
+            'nameFr': 'Pastille information fond blanc'
+        },
+        {
             'name': 'm-svg__information-filled',
             'nameFr': 'Pastille information'
         },
@@ -363,6 +375,10 @@ export class ModulIconList {
         {
             'name': 'm-svg__video',
             'nameFr': 'Vidéo'
+        },
+        {
+            'name': 'm-svg__warning-white-filled',
+            'nameFr': 'Pastille avertissement fond blanc'
         },
         {
             'name': 'm-svg__warning-filled',
