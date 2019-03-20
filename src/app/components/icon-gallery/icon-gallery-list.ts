@@ -349,8 +349,8 @@ export class ModulIconList {
             'nameFr': 'Texte'
         },
         {
-            'name': 'm-svg__tip',
-            'nameFr': 'Conseil'
+            'name': 'm-svg__hint',
+            'nameFr': 'Indice'
         },
         {
             'name': 'm-svg__video-filled',
