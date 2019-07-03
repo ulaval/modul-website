@@ -7,6 +7,7 @@ import { DONT_NAME, MDont } from './dont/dont';
 import { MDynamicTemplate } from './dynamic-template/dynamic-template';
 import { MFlexTemplate } from './flex-template/flex-template';
 import { GO_NAME, MGo } from './go/go';
+import { MWHeader, MWHEADER_NAME } from './header/header';
 import { HIGHLIGHT_NAME, MHighlight } from './highlight/highlight';
 import { ICON_GALLERY_NAME, MIconGallery } from './icon-gallery/icon-gallery';
 import { LIGHT_TEMPLATE_NAME, MLightTemplate } from './light-template/light-template';
@@ -23,6 +24,7 @@ const WebsiteComponentsPlugin: PluginObject<any> = {
         Vue.component(MARKDOWN_NAME, MMarkdown);
         Vue.component(PREVIEW_NAME, MPreview);
         Vue.component(DARK_TEMPLATE_NAME, MDarkTemplate);
+        Vue.component(MWHEADER_NAME, MWHeader);
         Vue.component(LIGHT_TEMPLATE_NAME, MLightTemplate);
         Vue.component(HIGHLIGHT_NAME, MHighlight);
         Vue.component(ICON_GALLERY_NAME, MIconGallery);

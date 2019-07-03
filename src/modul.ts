@@ -1,7 +1,8 @@
 import { ComponentsPlugin } from '@ulaval/modul-components/dist/components';
 import { DirectivesPlugin } from '@ulaval/modul-components/dist/directives';
 import { FiltersPlugin } from '@ulaval/modul-components/dist/filters';
-import { FRENCH, UtilsPlugin } from '@ulaval/modul-components/dist/utils';
+import { UtilsPlugin } from '@ulaval/modul-components/dist/utils';
+import { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Vue, { PluginObject } from 'vue';
 
 const ModulPlugin: PluginObject<any> = {

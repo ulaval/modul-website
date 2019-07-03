@@ -1,4 +1,4 @@
-@import '../../styles/shared-styles';
+@import '../../styles/commons';
 $modul-home-design--max-width: 460px;
 $modul-home-design--width: 200px;
 $modul-home-design--width--l: 270px;
@@ -51,7 +51,7 @@ $modul-home-design--width--l: 270px;
     }
 
     @media (min-width: $m-mq--min--s) {
-        position: fixed;
+        // position: fixed;
         top: 0;
         bottom: 0;
         padding-right: $m-padding--l;

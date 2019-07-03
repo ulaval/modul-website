@@ -1,4 +1,4 @@
-import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
+import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import Component from 'vue-class-component';
 import WithRender from './home.html?style=./home.scss';
@@ -17,37 +17,37 @@ export class MWHomePage extends ModulVue {
     private widthStep: number = 1;
     private designButtonPosition: number = 1;
 
-    protected mounted(): void {
-        this.setParallaxEffect();
-        this.$modul.event.$on('scroll', this.onScroll);
-    }
+    // protected mounted(): void {
+    //     this.setParallaxEffect();
+    //     this.$modul.event.$on('scroll', this.onScroll);
+    // }
 
-    protected beforeDestroy(): void {
-        this.$modul.event.$off('scroll', this.onScroll);
+    // protected beforeDestroy(): void {
+    //     this.$modul.event.$off('scroll', this.onScroll);
 
-    }
+    // }
 
-    private onScroll(): void {
-        this.setParallaxEffect();
-    }
+    // private onScroll(): void {
+    //     this.setParallaxEffect();
+    // }
 
-    private setParallaxEffect() {
-        if (this.as<MediaQueriesMixin>().isMqMinS) {
-            let windowHeight: number = window.innerHeight;
-            let scrollY: number = this.$modul.scrollPosition == 0 ? this.$modul.stopScrollPosition : this.$modul.scrollPosition;
-            let designTop: number = (this.$refs.design as HTMLElement).getBoundingClientRect().top - 70;
-            let designTemplateMaxWidth: number = (this.$refs.designBody as HTMLElement).clientWidth;
-            let designTemplateWidthRemaining: number = designTemplateMaxWidth - this.designTemplateMinWidth;
-            this.experimentContentPosition = scrollY / 18;
-            this.experimentTitlePosition = - (scrollY / 18);
-            this.designButtonPosition = (designTop - 60) <= windowHeight ? ((designTop - 60) - windowHeight) / 2 : 1;
-            if (designTop >= 0) {
-                this.designTemplateWidth = designTop <= designTemplateWidthRemaining ? designTemplateMaxWidth - designTop : this.designTemplateMinWidth;
-            } else {
-                this.designTemplateWidth = designTemplateMaxWidth;
-            }
-        }
-    }
+    // private setParallaxEffect() {
+    //     if (this.as<MediaQueriesMixin>().isMqMinS) {
+    //         let windowHeight: number = window.innerHeight;
+    //         let scrollY: number = this.$modul.scrollPosition == 0 ? this.$modul.stopScrollPosition : this.$modul.scrollPosition;
+    //         let designTop: number = (this.$refs.design as HTMLElement).getBoundingClientRect().top - 70;
+    //         let designTemplateMaxWidth: number = (this.$refs.designBody as HTMLElement).clientWidth;
+    //         let designTemplateWidthRemaining: number = designTemplateMaxWidth - this.designTemplateMinWidth;
+    //         this.experimentContentPosition = scrollY / 18;
+    //         this.experimentTitlePosition = - (scrollY / 18);
+    //         this.designButtonPosition = (designTop - 60) <= windowHeight ? ((designTop - 60) - windowHeight) / 2 : 1;
+    //         if (designTop >= 0) {
+    //             this.designTemplateWidth = designTop <= designTemplateWidthRemaining ? designTemplateMaxWidth - designTop : this.designTemplateMinWidth;
+    //         } else {
+    //             this.designTemplateWidth = designTemplateMaxWidth;
+    //         }
+    //     }
+    // }
 
     private onRoute(route: string): void {
         this.$router.push(route);

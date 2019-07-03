@@ -1,6 +1,6 @@
 import svc from '@ulaval/modul-components/dist/services/component-meta-impl';
 import '@ulaval/modul-components/dist/styles/main.scss';
-import { FRENCH } from '@ulaval/modul-components/dist/utils';
+import { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import '@ulaval/modul-components/dist/utils/polyfills';
 import Vue from 'vue';
 import { VueRouter } from 'vue-router/types/router';

@@ -1,3 +1,5 @@
+@import '../../styles/commons';
+
 .mw-header {
     // menu opening animation
     transition: background-color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;

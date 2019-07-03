@@ -46,48 +46,6 @@
         </div>
     </section>
 
-    <section class="modul-home-design"
-             ref="design">
-        <article class="modul-home-design__article">
-            <section class="modul-home-design__template-container"
-                     aria-hidden="true">
-                <article class="modul-home-design__template"
-                         :style="{ width: designTemplateWidth + 'px' }">
-                    <header class="modul-home-design__template__header">
-                        <m-icon class="modul-home-design__template__header-logo"
-                                name="m-svg__heraldry"></m-icon>
-                        <nav class="modul-home-design__template__header-nav">
-                            <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </nav>
-                    </header>
-                    <div class="modul-home-design__template__body">
-                        <div class="modul-home-design__template__body-content"></div>
-                        <aside class="modul-home-design__template__body-aside"></aside>
-                    </div>
-                    <footer class="modul-home-design__template__footer"></footer>
-                </article>
-            </section>
-            <section class="modul-home-design__body"
-                     ref="designBody">
-                <h2 class="modul-u--h2 modul-u--highlighted-title-link"
-                    tabindex="0"
-                    @keydown.enter="onRoute(responsiveDesign)"
-                    @click="onRoute(responsiveDesign)">
-                    <m-i18n k="modul:responsive-design"
-                            :params="['<br>']"
-                            :html-encode="false"></m-i18n>
-                </h2>
-                <p>
-                    <m-i18n k="modul:responsive-design-desc"></m-i18n>
-                </p>
-            </section>
-        </article>
-    </section>
-
     <section class="modul-home-content-container">
         <div class="modul-home-content">
             <article class="modul-home-content__panel"

@@ -21,7 +21,7 @@ Cette version livre une première version sur website des composants suivants&nb
 * <modul-go name="m-datefields"></modul-go>
 * <modul-go name="m-phone-number"></modul-go>
 * <modul-go name="m-dropdown-group"></modul-go>
-* <modul-go name="m-button-group"></modul-go>
+<!-- * <modul-go name="m-button-group"></modul-go> -->
 * <modul-go name="m-radio-group"></modul-go>
 * <modul-go name="m-switch"></modul-go>
 * <modul-go name="m-validation-message"></modul-go>

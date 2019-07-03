@@ -1,82 +1,8 @@
-<mw-flex-template class="modul-website"
-                  :class="{'modul--is-menu-open' : menuOpen, 'modul--is-home-page' : isHomePage}"
-                  :dynamic-header="false">
-    <div slot="header"
-         ref="header"
-         class="w-header">
-
-        <!-- <h1 v-if="isHomePage"
-            class="modul-logo">
-            <a href
-               @click.prevent="navigateTo($event, 'home')">MOD
-                <b>UL</b>
-            </a>
-        </h1>
-
-        <span v-if="!isHomePage"
-              class="modul-logo">
-            <a href
-               @click.prevent="navigateTo($event, 'home')">MOD
-                <b>UL</b>
-            </a>
-        </span> -->
-
-        <a href
-           @click.prevent="toggleMobileMenu"
-           v-if="!isMqMinS"
-           class="w-header__link">
-            <m-i18n k="modul:menu-label"
-                    v-if="!headerAnimationCompleted"></m-i18n>
-            <m-i18n k="modul:close-label"
-                    v-if="headerAnimationCompleted"></m-i18n>
-        </a>
-        <nav>
-            <ul class="w-header__item"
-                v-if="isMqMinS">
-                <li>
-                    <a href
-                       @click.prevent="navigateTo($event, 'philosophy')"
-                       class="w-header__link">
-                        <m-i18n k="website:philosophy"></m-i18n>
-                    </a>
-                </li>
-                <li>
-                    <a href
-                       @click.prevent="navigateTo($event, 'components')"
-                       class="w-header__link"
-                       :class="{ 'm--is-active' : isComponentsPage }">
-                        <m-i18n k="modul:components"></m-i18n>
-                    </a>
-                </li>
-                <li>
-                    <a href
-                       @click.prevent="navigateTo($event, 'standards')"
-                       class="w-header__link"
-                       :class="{ 'm--is-active' : isStandardsPage }">
-                        <m-i18n k="modul:standards"></m-i18n>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="w-header__item">
-
-            <a href="https://github.com/ulaval/modul-components/releases"
-               class="w-header__link"
-               target="_blank"
-               :class="{ 'm--is-active' : isStandardsPage }">
-                <m-i18n k="modul:version"></m-i18n> {{modulVersion}}
-            </a>
-
-            <button @click="toggleSearch"
-                    class="modul-search__open-button m-u--button-primary">
-                <m-icon name="m-svg__search"></m-icon>
-            </button>
-        </div>
-
-    </div>
-
-    <m-sidebar :open="searchOpen"
+<div class="modul-website">
+    <header class="modul-website__header">
+        <mw-header></mw-header>
+    </header>
+    <!-- <m-sidebar :open="searchOpen"
                @open="openSearch"
                @close="closeSearch"
                origin="right"
@@ -121,9 +47,9 @@
                 </router-link>
             </li>
         </transition-group>
-    </m-sidebar>
+    </m-sidebar> -->
 
-    <transition name="modul--is">
+    <!-- <transition name="modul--is">
         <section class="modul-menu"
                  v-if="animMenuOpen"
                  tabindex="0"
@@ -240,14 +166,13 @@
                 </transition>
             </template>
         </section>
-    </transition>
+    </transition> -->
 
-    <div class="w-body">
+    <main class="mw-body">
         <router-view></router-view>
-    </div>
+    </main>
 
-    <footer slot="footer"
-            class="w-footer">
+    <footer class="mw-footer">
         <div>
             <p class="m-u--margin-bottom">
                 <m-i18n k="modul:powered-by"></m-i18n>
@@ -260,4 +185,4 @@
             </a>
         </div>
     </footer>
-</mw-flex-template>
+</div>

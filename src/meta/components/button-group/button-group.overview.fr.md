@@ -28,7 +28,7 @@ L'utilisation de ce composant nécessite un minimum de 2 boutons et un maximum d
 Il est possible de fixer la largeur des boutons, afin qu'elle soit identique pour chaque bouton. Toutefois, cette pratique est recommandée lorsqu'il y a peu de boutons.
 
 
-<modul-demo>
+<!-- <modul-demo>
 
 ```html
 <m-button-group :full-size="true">
@@ -38,4 +38,4 @@ Il est possible de fixer la largeur des boutons, afin qu'elle soit identique pou
 </m-button-group>
 ```
 
-</modul-demo>
+</modul-demo> -->
