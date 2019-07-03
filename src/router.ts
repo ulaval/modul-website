@@ -1,18 +1,9 @@
-import Meta from '@ulaval/modul-components/dist/meta/meta';
 import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Vue from 'vue';
 import Router, { RouteConfig } from 'vue-router';
 import { VueRouter } from 'vue-router/types/router';
 import { MIconGallery } from './components/icon-gallery/icon-gallery';
 import { Category } from './components/libs/category';
-import { CategoryList } from './components/libs/category-list';
-import { ComponentViewer } from './components/libs/component';
-import { ComponentDetails } from './components/libs/component-details';
-import { ComponentEvents } from './components/libs/component-events';
-import { ComponentOverview } from './components/libs/component-overview';
-import { ComponentProperties } from './components/libs/component-properties';
-import { ComponentSlots } from './components/libs/component-slots';
-import MetaAll from './meta/meta-all';
 import { MWHomePage } from './pages/home/home';
 import { MWPhilosophyPage } from './pages/philosophy/philosophy';
 import { MWStandardsPage } from './pages/standards/standards';
@@ -26,7 +17,7 @@ declare module 'vue/types/vue' {
 }
 
 Vue.use(Router);
-Vue.use(MetaAll, Meta);
+// Vue.use(MetaAll, Meta);
 
 export interface RoutePath {
     path: string;
@@ -142,68 +133,68 @@ const routerFactory: RouterFactoryFn = () => {
         return config;
     };
 
-    MetaAll.getCategories().forEach(category => {
-        let categoryRoute: string = i18n.translate(category + '-route');
+    // MetaAll.getCategories().forEach(category => {
+    //     let categoryRoute: string = i18n.translate(category + '-route');
 
-        pushRoute(category, categoryRoutes, {
-            path: categoryRoute,
-            meta: { page: category },
-            component: CategoryList
-        }, ROUTER_COMPONENTS);
+    //     pushRoute(category, categoryRoutes, {
+    //         path: categoryRoute,
+    //         meta: { page: category },
+    //         component: CategoryList
+    //     }, ROUTER_COMPONENTS);
 
-        // /all is not used, but serves as parent for all components (master/detail view)
-        // /category (root level) displays another view
-        pushRoute(category + '-all', modulRoutes, {
-            path: `/${componentsRoute}/${categoryRoute}/all`,
-            component: ComponentViewer,
-            children: componentRoutes
-        });
+    //     // /all is not used, but serves as parent for all components (master/detail view)
+    //     // /category (root level) displays another view
+    //     pushRoute(category + '-all', modulRoutes, {
+    //         path: `/${componentsRoute}/${categoryRoute}/all`,
+    //         component: ComponentViewer,
+    //         children: componentRoutes
+    //     });
 
-        MetaAll.getMetaByCategory(category).forEach(componentMeta => {
-            let config: RouteConfig = pushRoute(componentMeta.tag, componentRoutes, {
-                path: `/${componentsRoute}/${categoryRoute}/${componentMeta.tag}`,
-                meta: { page: componentMeta.tag },
-                component: ComponentDetails
-            });
-            config.children = [];
-            pushRoute(ROUTER_SLOTS, config.children, {
-                path: slotsRoute,
-                meta: {
-                    page: componentMeta.tag,
-                    type: ROUTER_SLOTS
-                },
-                component: ComponentSlots
-            });
-            pushRoute(ROUTER_EVENTS, config.children, {
-                path: eventsRoute,
-                meta: {
-                    page: componentMeta.tag,
-                    type: ROUTER_EVENTS
-                },
-                component: ComponentEvents
-            });
-            pushRoute(ROUTER_PROPERTIES, config.children, {
-                path: propertiesRoute,
-                meta: {
-                    page: componentMeta.tag,
-                    type: ROUTER_PROPERTIES
-                },
-                component: ComponentProperties
-            });
-            pushRoute(ROUTER_OVERVIEW, config.children, {
-                path: overviewRoute,
-                meta: {
-                    page: componentMeta.tag,
-                    type: ROUTER_OVERVIEW
-                },
-                component: ComponentOverview
-            });
-            config.children.push({
-                path: '',
-                redirect: overviewRoute
-            });
-        });
-    });
+    //     MetaAll.getMetaByCategory(category).forEach(componentMeta => {
+    //         let config: RouteConfig = pushRoute(componentMeta.tag, componentRoutes, {
+    //             path: `/${componentsRoute}/${categoryRoute}/${componentMeta.tag}`,
+    //             meta: { page: componentMeta.tag },
+    //             component: ComponentDetails
+    //         });
+    //         config.children = [];
+    //         pushRoute(ROUTER_SLOTS, config.children, {
+    //             path: slotsRoute,
+    //             meta: {
+    //                 page: componentMeta.tag,
+    //                 type: ROUTER_SLOTS
+    //             },
+    //             component: ComponentSlots
+    //         });
+    //         pushRoute(ROUTER_EVENTS, config.children, {
+    //             path: eventsRoute,
+    //             meta: {
+    //                 page: componentMeta.tag,
+    //                 type: ROUTER_EVENTS
+    //             },
+    //             component: ComponentEvents
+    //         });
+    //         pushRoute(ROUTER_PROPERTIES, config.children, {
+    //             path: propertiesRoute,
+    //             meta: {
+    //                 page: componentMeta.tag,
+    //                 type: ROUTER_PROPERTIES
+    //             },
+    //             component: ComponentProperties
+    //         });
+    //         pushRoute(ROUTER_OVERVIEW, config.children, {
+    //             path: overviewRoute,
+    //             meta: {
+    //                 page: componentMeta.tag,
+    //                 type: ROUTER_OVERVIEW
+    //             },
+    //             component: ComponentOverview
+    //         });
+    //         config.children.push({
+    //             path: '',
+    //             redirect: overviewRoute
+    //         });
+    //     });
+    // });
 
     // let gettingStartedRoute: string = i18n.translate(`pages:${GettingStarted.section}-route`);
     // GettingStarted.getPages().forEach((page, index) => {

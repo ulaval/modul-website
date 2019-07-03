@@ -6,13 +6,13 @@ $modul-home-design--width--l: 270px;
 .modul-home {
     width: 100%;
 
-    &::before {
-        @media (min-width: $m-mq--min--s) {
-            content: '';
-            display: block;
-            height: 120vh;
-        }
-    }
+    // &::before {
+    //     @media (min-width: $m-mq--min--s) {
+    //         content: '';
+    //         display: block;
+    //         height: 120vh;
+    //     }
+    // }
 }
 
 .modul-home-experiment__body,
