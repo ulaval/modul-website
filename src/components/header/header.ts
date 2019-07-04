@@ -1,4 +1,4 @@
-import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
+import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import { PluginObject } from 'vue';
@@ -159,10 +159,10 @@ export class MWHeader extends ModulWebsite {
                 this.$router.push(this.$routerIndex.for(ROUTER_PHILOSOPHY));
                 this.closeMenu();
                 break;
-            // case ModulMenuSection.Standards:
-            //     this.$router.push(this.$routerIndex.for(ROUTER_STANDARDS));
-            //     this.closeMenu();
-            //     break;
+            case ModulMenuSection.Standards:
+                this.$router.push(this.$routerIndex.for(ROUTER_STANDARDS));
+                this.closeMenu();
+                break;
             default:
                 if (this.menuOpen && this.menuSection == menuSection) {
                     this.closeMenu();
