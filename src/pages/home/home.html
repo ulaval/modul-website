@@ -1,44 +1,22 @@
-<div class="modul-home">
-    <section class="w-headline">
-        <article class="w-headline__body">
-
-            <div>
-                <h1 class="w-headline__title">MODUL</h1>
-                <p class="w-headline__subtitle">Une expérience unifiée</p>
-            </div>
-
-            <table class="w-logo">
-                <tr>
-                    <td class="w-logo__item"></td>
-                    <td class="w-logo__item w--is-yellow"></td>
-                    <td class="w-logo__item w--is-red">
-                        <span></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="w-logo__item"></td>
-                    <td class="w-logo__item w--is-yellow"></td>
-                    <td class="w-logo__item w--is-yellow"></td>
-                </tr>
-                <tr>
-                    <td class="w-logo__item"></td>
-                    <td class="w-logo__item"></td>
-                    <td class="w-logo__item w--is-yellow"></td>
-                </tr>
-            </table>
-
+<div>
+    <section class="mw-headline">
+        <article class="mw-headline__body">
+            <h1>
+                <mw-logo size="large"></mw-logo>
+            </h1>
+            <p class="mw-headline__subtitle">Une expérience unifiée</p>
         </article>
 
-        <div class="w-headline__footer"
+        <div class="mw-headline__footer"
              :style="{ bottom: designButtonPosition + 'px' }"
              v-if="isMqMinS">
-            <m-icon class="w-headline__footer__arrow"
+            <m-icon class="mw-headline__footer__arrow"
                     name="m-svg__chevron--down"></m-icon>
-            <m-icon class="w-headline__footer__arrow"
+            <m-icon class="mw-headline__footer__arrow"
                     name="m-svg__chevron--down"></m-icon>
-            <m-icon class="w-headline__footer__arrow"
+            <m-icon class="mw-headline__footer__arrow"
                     name="m-svg__chevron--down"></m-icon>
-            <button class="w-headline__footer__button m-u--button-primary">
+            <button class="mw-headline__footer__button m-u--button-primary">
                 <m-i18n k="modul:responsive-design"
                         :params="[' ']"></m-i18n>
             </button>

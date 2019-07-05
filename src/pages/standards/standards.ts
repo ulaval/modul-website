@@ -1,10 +1,12 @@
 
+import ExpandableLayoutPlugin from '@ulaval/modul-components/dist/components/expandable-layout/expandable-layout';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import Component from 'vue-class-component';
-import { Watch } from 'vue-property-decorator';
+import { Vue, Watch } from 'vue-property-decorator';
 import { RouteRecord } from 'vue-router';
 import WithRender from './standards.html?style=./standards.scss';
+Vue.use(ExpandableLayoutPlugin);
 
 @WithRender
 @Component({

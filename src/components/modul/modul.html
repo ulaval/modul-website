@@ -1,7 +1,9 @@
 <div class="modul-website">
-    <header class="modul-website__header">
-        <mw-header></mw-header>
+    <header>
+        <mw-header :show-logo="!isHomePage"
+                   @search="toggleSearch"></mw-header>
     </header>
+    <!-- TODO créer un composant avec le  -->
     <!-- <m-sidebar :open="searchOpen"
                @open="openSearch"
                @close="closeSearch"
@@ -169,7 +171,12 @@
     </transition> -->
 
     <main class="mw-body">
-        <router-view></router-view>
+        <m-expandable-layout :open="searchOpen"
+                             panel-position="right"
+                             panel-width="360px">
+            <router-view></router-view>
+            <template slot="panel">panel content</template>
+        </m-expandable-layout>
     </main>
 
     <footer class="mw-footer">

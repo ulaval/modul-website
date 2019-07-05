@@ -1,26 +1,40 @@
 @import '../../styles/commons';
 
 .mw-header {
+    $mw-header-height: 80px;
+
     // menu opening animation
     transition: background-color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
-    height: $modul-header--height--s;
+    min-height: $mw-header-height;
     background: $modul-color--black-grey-dark;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: $m-padding;
+    padding-left: $mw-header-height;
 
-    @media (min-width: $m-mq--min--xs) {
-        height: $modul-header--height;
+    &__nav,
+    &__logo,
+    &__aside {
+        display: flex;
+        align-items: center;
     }
 
-    @media (min-width: $m-mq--min--s) {
-        padding-left: $m-padding--l;
+    &__nav {
+        flex: 1;
+        padding: m-spacing();
+    }
+
+    &__logo {
+        a {
+            text-decoration: none;
+        }
+
+        max-width: $mw-sidebar-width - $mw-header-height;
+        width: 100%;
     }
 
     &__item {
         display: flex;
         align-items: inherit;
+        margin: 0;
     }
 
     &__link {
@@ -50,43 +64,16 @@
             background-color: $m-color--black;
         }
     }
-}
 
-.modul-logo {
-    font-size: 20px;
-    flex: 1;
-    user-select: none;
-    margin: 0;
-    transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+    &__search-button {
+        width: $mw-header-height;
+        align-self: stretch;
 
-    &,
-    a,
-    a:visited {
-        text-decoration: none;
-        font-weight: $m-font-weight;
-        color: $modul-color--black-grey-dark;
-    }
+        @include m-button();
+        @include m-button--primary();
 
-    b {
-        font-weight: $m-font-weight--black;
-        color: $modul-color--black-grey-dark;
-    }
-
-    a {
-        display: inline-flex;
-        align-items: center;
-    }
-
-    &__beta {
-        display: inline-flex;
-        align-items: center;
-        height: 12px; // Magic number
-        margin-left: $m-margin--s;
-        text-transform: uppercase;
-        font-size: 8px; // Mafic number
-        font-weight: $m-font-weight--black;
-        color: $modul-color--black-grey-dark;
-        background: $m-color--ul-yellow;
-        padding: 2px 3px;
+        &:hover {
+            @include m-button--hover();
+        }
     }
 }

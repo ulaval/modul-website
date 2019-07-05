@@ -52,7 +52,7 @@ export class MetaAll implements PluginObject<any> {
     private categories: CategoryComponentMap = {};
     private baseMeta: Meta;
     private enums: EnumMap = {};
-    private modulVersion: string;
+    public modulVersion: string;
 
     public install(v, options) {
         if (!options) {

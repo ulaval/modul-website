@@ -7,7 +7,7 @@
         .m-navbar {
             margin: 0 auto;
             width: 100%;
-            max-width: $modul-max-width;
+            max-width: $mw-max-width;
             padding: 0 $m-padding; // Magic number
 
             @media (min-width: $m-mq--min--s) {
@@ -18,7 +18,7 @@
 
     &__body {
         margin: 0 auto;
-        max-width: $modul-max-width;
+        max-width: $mw-max-width;
         padding: $m-margin $m-padding $m-padding--l $m-padding;
 
         @media (min-width: $m-mq--min--s) {

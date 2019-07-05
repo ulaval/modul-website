@@ -3,7 +3,7 @@
 .modul-light-template {
     width: 100%;
     margin: 0 auto;
-    max-width: $modul-max-width;
+    max-width: $mw-max-width;
 
     @media (min-width: $m-mq--min--s) {
         padding: 0 $m-padding--l $m-padding--xl $m-padding--l;

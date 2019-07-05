@@ -1,12 +1,15 @@
-import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
+import { ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
+import ExpandableLayoutPlugin from '@ulaval/modul-components/dist/components/expandable-layout/expandable-layout';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import Component from 'vue-class-component';
-import { Watch } from 'vue-property-decorator';
+import { Vue, Watch } from 'vue-property-decorator';
 import { GettingStarted, Standards } from '../../components/pages/page';
 import MetaAll, { ModulComponentStatus } from '../../meta/meta-all';
 import { ModulWebsite } from '../modul-website';
 import WithRender from './modul.html?style=./modul.scss';
+
+Vue.use(ExpandableLayoutPlugin);
 
 console.debug('TODO: eliminate regex to identify current page');
 
@@ -102,7 +105,7 @@ export default class Modul extends ModulWebsite {
         this.searchWidth = value ? '400px' : '100%';
     }
 
-    private get isHomePage(): boolean {
+    get isHomePage(): boolean {
         return this.$route.path == '/';
     }
 
@@ -146,31 +149,6 @@ export default class Modul extends ModulWebsite {
 
     private getRouterIndex(tag: string): string {
         return this.$routerIndex.for(tag);
-    }
-
-    private navigateTo(event: MouseEvent, menuSection: string) {
-        switch (menuSection) {
-            case ModulMenuSection.Home:
-                this.$router.push('/');
-                this.closeMenu();
-                break;
-            case ModulMenuSection.Philosophy:
-                this.$router.push(this.$routerIndex.for(ROUTER_PHILOSOPHY));
-                this.closeMenu();
-                break;
-            // case ModulMenuSection.Standards:
-            //     this.$router.push(this.$routerIndex.for(ROUTER_STANDARDS));
-            //     this.closeMenu();
-            //     break;
-            default:
-                if (this.menuOpen && this.menuSection == menuSection) {
-                    this.closeMenu();
-                } else {
-                    this.openMenu();
-                }
-        }
-        this.menuSection = menuSection;
-        (event.currentTarget as HTMLElement).blur();
     }
 
     private openMenu(): void {
@@ -245,9 +223,9 @@ export default class Modul extends ModulWebsite {
 
     private toggleSearch(): void {
         this.searchOpen = !this.searchOpen;
-        if (this.searchOpen) {
-            this.components = this.searchData();
-        }
+        // if (this.searchOpen) {
+        //     this.components = this.searchData();
+        // }
     }
 
     private openSearch(): void {

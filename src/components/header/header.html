@@ -1,22 +1,14 @@
-<div class="modul-website__header mw-header">
+<div class="mw-header">
 
-    <!-- <h1 v-if="isHomePage"
-            class="modul-logo">
-            <a href
-               @click.prevent="navigateTo($event, 'home')">MOD
-                <b>UL</b>
-            </a>
-        </h1>
+    <div v-if="showLogo"
+         class="mw-header__logo">
+        <a href
+           @click.prevent="navigateTo($event, 'home')">
+            <mw-logo size="small"></mw-logo>
+        </a>
+    </div>
 
-        <span v-if="!isHomePage"
-              class="modul-logo">
-            <a href
-               @click.prevent="navigateTo($event, 'home')">MOD
-                <b>UL</b>
-            </a>
-        </span> -->
-
-    <a href
+    <!-- <a href
        @click.prevent="toggleMobileMenu"
        v-if="!isMqMinS"
        class="mw-header__link">
@@ -24,8 +16,9 @@
                 v-if="!headerAnimationCompleted"></m-i18n>
         <m-i18n k="modul:close-label"
                 v-if="headerAnimationCompleted"></m-i18n>
-    </a>
-    <nav>
+    </a> -->
+
+    <nav class="mw-header__nav">
         <ul class="mw-header__item"
             v-if="isMqMinS">
             <li>
@@ -52,18 +45,18 @@
         </ul>
     </nav>
 
-    <div class="mw-header__item">
+    <aside class="mw-header__aside">
 
         <a href="https://github.com/ulaval/modul-components/releases"
-           class="mw-header__link"
+           class="mw-header__link mw-header__version"
            target="_blank">
             <m-i18n k="modul:version"></m-i18n> {{modulVersion}}
         </a>
 
-        <button @click="toggleSearch"
-                class="modul-search__open-button m-u--button-primary">
+        <button @click="onSearch"
+                class="mw-header__search-button">
             <m-icon name="m-svg__search"></m-icon>
         </button>
-    </div>
+    </aside>
 
 </div>

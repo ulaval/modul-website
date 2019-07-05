@@ -5,24 +5,28 @@ $w-sidebar-max-width--s: 100%;
 
 $w-content-padding-top: 60px;
 $w-content-padding-bottom: 120px;
-$w-content-max-width: $modul-max-width;
+$w-content-max-width: $mw-max-width;
 
-.w-website-standards {
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
+.mw-standards {
+    background-color: white;
+
+    &__content {
+        margin: $w-content-padding-top auto $w-content-padding-bottom;
+        padding: 0 m-spacing();
+        max-width: $w-content-max-width;
+    }
+
+    &__button {
+        margin: m-spacing();
+        color: #e8e8e8;
+        float: left;
+    }
 
     &__sidemenu {
         position: relative;
-        background-color: #f4f4f4;
-        flex-shrink: 0;
-        width: 0;
-        transition: width 0.3s ease-in;
-        overflow-x: hidden;
-
-        &-content {
-            padding: 32px;
-        }
+        height: 100%;
+        background-color: #f9f9f9;
+        padding: m-spacing(l);
 
         &-title {
             font-size: $m-font-size--l;
@@ -60,54 +64,6 @@ $w-content-max-width: $modul-max-width;
                     margin-left: 0;
                 }
             }
-        }
-
-        &-close {
-            @media (min-width: $m-mq--min--m) {
-                display: none;
-            }
-
-            top: 16px;
-            right: 16px;
-            position: absolute;
-        }
-
-        &.is-displayed {
-            width: 100%;
-
-            @media (min-width: $m-mq--min--m) {
-                width: $w-sidebar-max-width;
-            }
-
-            transition: width 0.3s ease-out;
-        }
-    }
-
-    &__conteneur {
-        display: flex;
-        position: relative;
-        height: 100%;
-        width: 100%;
-
-        &.is-menu {
-            @media (max-width: $m-mq--max--m) {
-                width: 0;
-                overflow-x: hidden;
-            }
-        }
-
-        &-close {
-            top: 16px;
-            left: 16px;
-            position: absolute;
-        }
-
-        &-content {
-            margin: $w-content-padding-top auto $w-content-padding-bottom;
-            padding-left: 16px;
-            padding-right: 16px;
-            width: 100%;
-            max-width: $w-content-max-width - 32px;
         }
     }
 }
