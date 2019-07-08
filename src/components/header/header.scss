@@ -9,6 +9,8 @@
     background: $modul-color--black-grey-dark;
     display: flex;
     padding-left: $mw-header-height;
+    position: relative;
+    z-index: 10;
 
     &__nav,
     &__logo,

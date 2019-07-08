@@ -1,18 +1,17 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the footer of the site/application.
-// -----------------------------------------------------------------------------
+@import '../../styles/commons';
+
 $modul-menu--list-max-width: 300px;
 $modul-menu-offset-left: $m-padding--s + 2;
 $modul-menu-beta-width: 24px;
 $modul-menu-transition-duration: 0.7s;
 
-.modul-menu {
+.mw-mega-menu {
     position: fixed;
-    top: $modul-header--height--s;
+    top: 80px;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 99;
+    z-index: 9;
     overflow-y: auto;
     overflow-x: hidden;
     background: $modul-color--black-grey;
@@ -21,7 +20,7 @@ $modul-menu-transition-duration: 0.7s;
     box-shadow: $m-box-shadow--l;
 
     @media (min-width: #{$m-mq--min--xs}) {
-        top: $modul-header--height;
+        top: 80px;
     }
 
     @media (min-width: #{$m-mq--min--s}) {

@@ -1,10 +1,9 @@
-import { ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
 import ExpandableLayoutPlugin from '@ulaval/modul-components/dist/components/expandable-layout/expandable-layout';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import Component from 'vue-class-component';
 import { Vue, Watch } from 'vue-property-decorator';
-import { GettingStarted, Standards } from '../../components/pages/page';
+import { GettingStarted } from '../../components/pages/page';
 import MetaAll, { ModulComponentStatus } from '../../meta/meta-all';
 import { ModulWebsite } from '../modul-website';
 import WithRender from './modul.html?style=./modul.scss';
@@ -16,7 +15,6 @@ console.debug('TODO: eliminate regex to identify current page');
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_HEADER_DURATION: number = 100;
 const CSS_ANIMATION_MENU_DURATION: number = 650;
-const MENU_ID: string = 'ModulMenu';
 
 type Category = {
     id: string;
@@ -50,46 +48,13 @@ export default class Modul extends ModulWebsite {
     private searchOpen: boolean = false;
     private animMenuOpen: boolean = false;
     private menuSection: string = '';
-    private categoriesComponent: Category[] = [];
-    private pagesStandards: Category[] = [];
+
     private searchModel: string = '';
     private searchWidth: string = '400px';
 
     private components: Component[] = [];
     private logo: any = require('./logo-ul.svg');
     private menuFirstStep: boolean = true;
-
-    protected beforeMount(): void {
-        MetaAll.getCategories().forEach(category => {
-            this.categoriesComponent.push({
-                id: category,
-                text: this.$i18n.translate(category)
-            });
-        });
-
-        // For menu
-        this.pagesStandards.push(
-            {
-                id: ROUTER_STANDARDS_UI,
-                text: this.$i18n.translate(`website:standards-ui`)
-            },
-            {
-                id: ROUTER_STANDARDS_EDITORIAL,
-                text: this.$i18n.translate(`website:standards-editorial`)
-            }
-            ,
-            {
-                id: ROUTER_STANDARDS_DEVELOPMENT,
-                text: this.$i18n.translate(`website:standards-development`)
-            }
-            ,
-            {
-                id: ROUTER_STANDARDS_ACCESSIBILITY,
-                text: this.$i18n.translate(`website:accessibility-standards`)
-            }
-        );
-
-    }
 
     protected mounted(): void {
         this.isMqMinSChanged(this.as<MediaQueriesMixin>().isMqMinS);
@@ -133,10 +98,6 @@ export default class Modul extends ModulWebsite {
     //     return regExp.test(this.$route.path);
     // }
 
-    private get isBlackHeader(): boolean {
-        return this.$route.meta.page === undefined || this.$route.meta.sectionObj === GettingStarted || this.$route.meta.sectionObj === Standards;
-    }
-
     private get gettingStarted(): string {
         return this.$routerIndex.for(GettingStarted.pages[0].id);
     }
@@ -147,30 +108,14 @@ export default class Modul extends ModulWebsite {
         });
     }
 
-    private getRouterIndex(tag: string): string {
-        return this.$routerIndex.for(tag);
-    }
-
-    private openMenu(): void {
-        this.menuOpen = true;
-        let anim = setTimeout(() => {
-            this.animMenuOpen = true;
-            this.$emit('openMenu');
-            this.$nextTick(() => {
-                let menu: HTMLElement = this.$refs.menu as HTMLElement;
-                menu.focus();
-            });
-        }, CSS_ANIMATION_HEADER_DURATION);
-    }
-
-    private toggleMobileMenu(): void {
-        this.menuFirstStep = true;
-        if (!this.menuOpen) {
-            this.openMenu();
-        } else {
-            this.closeMenu();
-        }
-    }
+    // private toggleMobileMenu(): void {
+    //     this.menuFirstStep = true;
+    //     if (!this.menuOpen) {
+    //         this.openMenu();
+    //     } else {
+    //         this.closeMenu();
+    //     }
+    // }
 
     private showSecondStep(menuSection: string): void {
         this.menuSection = menuSection;
@@ -240,18 +185,5 @@ export default class Modul extends ModulWebsite {
         setTimeout(() => {
             this.searchModel = '';
         }, CSS_ANIMATION_MENU_DURATION);
-    }
-
-    @Watch('$route')
-    private closeMenu(): void {
-        this.searchOpen = false;
-        if (this.menuOpen) {
-            this.animMenuOpen = false;
-            let anim = setTimeout(() => {
-                this.menuOpen = false;
-                // this.$modul.deleteWindow(MENU_ID);
-                this.$emit('closeMenu');
-            }, CSS_ANIMATION_MENU_DURATION);
-        }
     }
 }

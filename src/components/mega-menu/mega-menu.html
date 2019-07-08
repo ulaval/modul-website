@@ -1,0 +1,117 @@
+<transition name="modul--is">
+    <section class="modul-menu mw-mega-menu"
+             v-if="Open"
+             tabindex="0"
+             ref="menu">
+        <div class=" mw-mega-menu__wrap"
+             v-if="isMqMinS">
+            <nav class=" mw-mega-menu__list"
+                 v-for="category in categoriesComponent"
+                 v-if="menuSection == 'components'">
+                <h2 class=" mw-mega-menu__title modul-u--h2 modul-u--highlighted-title-link">
+                    <router-link :to="getRouterIndex(category.id)"
+                                 tabindex="0"><span>{{category.text}}</span></router-link>
+                </h2>
+                <ul>
+                    <li v-for="component in getCategoryComponents(category.id)">
+                        <router-link :to="getRouterIndex(component.tag)"
+                                     tag="a"
+                                     class=" mw-mega-menu__link">
+                            <span class=" mw-mega-menu__wrapper">
+                                <m-i18n :k="component.name"
+                                        class=" mw-mega-menu__label"></m-i18n>&nbsp;<span v-if="!isProduction(component.status)"
+                                      class="modul-logo__beta  mw-mega-menu__beta-tag">{{ component.status }}</span>
+                            </span>
+                            <span class=" mw-mega-menu__tag">{{ component.tag }}</span>
+                        </router-link>
+                    </li>
+                </ul>
+            </nav>
+            <nav class=" mw-mega-menu__list"
+                 v-for="page in pagesStandards"
+                 v-if="menuSection != 'components'">
+                <h1 class=" mw-mega-menu__title modul-u--h1 modul-u--highlighted-title-link">
+                    <router-link :to="{ name : page.id }"
+                                 tabindex="0"><span>{{ page.text }}</span></router-link>
+                </h1>
+            </nav>
+        </div>
+        <template v-if="!isMqMinS">
+            <transition name="modul--is">
+                <nav class="modul-mobile-menu modul--is-first-step"
+                     v-if="menuFirstStep">
+                    <ul>
+                        <li class="modul-mobile-menu__elem">
+                            <router-link :to="gettingStarted"
+                                         class="modul-mobile-menu__elem__link">
+                                <m-i18n k="pages:getting-started"></m-i18n>
+                            </router-link>
+                        </li>
+                        <li class="modul-mobile-menu__elem">
+                            <a href
+                               @click.prevent="showSecondStep('components')"
+                               class="modul-mobile-menu__elem__link">
+                                <m-i18n k="modul:components"></m-i18n>
+                                <m-icon name="m-svg__chevron--right"></m-icon>
+                            </a>
+                        </li>
+                        <li class="modul-mobile-menu__elem">
+                            <a href
+                               @click.prevent="showSecondStep('standards')"
+                               class="modul-mobile-menu__elem__link">
+                                <m-i18n k="modul:standards"></m-i18n>
+                                <m-icon name="m-svg__chevron--right"></m-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="modul-mobile-menu modul--is-second-step"
+                     v-if="!menuFirstStep">
+                    <header class="modul-mobile-menu__header">
+                        <m-link mode="button"
+                                :underline="false"
+                                icon-name="left-chevron"
+                                @click="showFirstStep">Menu</m-link>
+                    </header>
+                    <div class="modul-mobile-menu__body">
+                        <m-accordion class="modul-mobile-menu__elem"
+                                     skin="plain"
+                                     v-for="category in categoriesComponent"
+                                     v-if="menuSection == 'components'">
+                            <h2 slot="header">
+                                <router-link :to="getRouterIndex(category.id)"><span>{{category.text}}</span></router-link>
+                            </h2>
+                            <ul>
+                                <li v-for="component in getCategoryComponents(category.id)"
+                                    @click="closeMenu()"
+                                    @keyup.enter="closeMenu()">
+                                    <router-link :to="getRouterIndex(component.tag)"
+                                                 class=" mw-mega-menu__link">
+                                        <span class=" mw-mega-menu__wrapper">
+                                            <m-i18n :k="component.name"
+                                                    class=" mw-mega-menu__label"></m-i18n>&nbsp;<span v-if="!isProduction(component.status)"
+                                                  class="modul-logo__beta  mw-mega-menu__beta-tag">{{ component.status }}</span>
+                                        </span>
+                                        <span class=" mw-mega-menu__tag">{{ component.tag }}</span>
+                                    </router-link>
+                                </li>
+                            </ul>
+                        </m-accordion>
+                        <nav v-if="menuSection != 'components'">
+                            <ul>
+                                <li v-for="page in pagesStandards"
+                                    class="modul-mobile-menu__elem">
+                                    <a href
+                                       @click="onPageClick($event, page, 'standards')"
+                                       class="modul-mobile-menu__elem__link">
+                                        <span>{{ page.text }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </transition>
+        </template>
+    </section>
+</transition>
