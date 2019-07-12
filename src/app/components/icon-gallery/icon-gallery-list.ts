@@ -383,6 +383,14 @@ export class ModulIconList {
         {
             'name': 'm-svg__arrow-return',
             'nameFr': 'Retour'
+        },
+        { 
+            'name': 'm-svg__email-send',
+            'nameFr': 'Envoyer courriel'
+        },
+        { 
+            'name': 'm-svg__role-assignation',
+            'nameFr': 'Assigner rôle'
         }
     ];
 }
