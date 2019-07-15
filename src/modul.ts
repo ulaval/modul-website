@@ -8,6 +8,7 @@ import MessagePlugin from '@ulaval/modul-components/dist/components/message/mess
 import ModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
 import NavbarPlugin from '@ulaval/modul-components/dist/components/navbar/navbar';
 import PanelPlugin from '@ulaval/modul-components/dist/components/panel/panel';
+import SearchfieldPlugin from '@ulaval/modul-components/dist/components/searchfield/searchfield';
 import SliderPlugin from '@ulaval/modul-components/dist/components/slider/slider';
 import TextfieldPlugin from '@ulaval/modul-components/dist/components/textfield/textfield';
 import { UtilsPlugin } from '@ulaval/modul-components/dist/utils';
@@ -30,6 +31,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(TextfieldPlugin);
         Vue.use(PanelPlugin);
         Vue.use(MessagePlugin);
+        Vue.use(SearchfieldPlugin);
     }
 };
 

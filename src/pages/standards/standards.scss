@@ -14,6 +14,15 @@ $w-content-max-width: $mw-max-width;
         min-height: 100vh;
     }
 
+    &__search {
+        background-color: $modul-color--black-grey;
+        margin-top: - m-spacing(l);
+        margin-left: - m-spacing(l);
+        margin-right: - m-spacing(l);
+        margin-bottom: m-spacing(l);
+        padding: m-spacing(l);
+    }
+
     &__content {
         margin: $w-content-padding-top auto $w-content-padding-bottom;
         padding: 0 m-spacing();

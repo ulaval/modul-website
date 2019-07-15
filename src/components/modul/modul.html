@@ -4,6 +4,12 @@
                    @search="toggleSearch"></mw-header>
     </header>
 
+    <m-sidebar :open="searchOpen"
+               origin="right"
+               :width="searchWidth">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum voluptates velit esse non nobis sequi dolores quia dolorum omnis quod? Nostrum, eius ex non voluptas sunt labore. Totam, doloribus nobis.
+    </m-sidebar>
+
     <!-- <m-sidebar :open="searchOpen"
                @open="openSearch"
                @close="closeSearch"
@@ -52,14 +58,7 @@
     </m-sidebar> -->
 
     <main class="modul-website__body">
-        <m-expandable-layout :open="searchOpen"
-                             panel-position="right"
-                             panel-width="360px">
-            <router-view></router-view>
-            <template slot="panel">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis esse alias eveniet voluptatibus similique commodi quasi eos minus quisquam aspernatur itaque, deserunt quaerat corrupti fugit at rem? Maxime, sit modi.
-            </template>
-        </m-expandable-layout>
+        <router-view></router-view>
     </main>
 
     <footer class="modul-website__footer">
