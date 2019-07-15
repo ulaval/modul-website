@@ -10,6 +10,10 @@ $w-content-max-width: $mw-max-width;
 .mw-standards {
     background-color: white;
 
+    &__body {
+        min-height: 100vh;
+    }
+
     &__content {
         margin: $w-content-padding-top auto $w-content-padding-bottom;
         padding: 0 m-spacing();
