@@ -70,7 +70,7 @@ module.exports = {
             {
                 test: /\.svg$/,
                 loader: 'svg-inline-loader',
-                exclude: /(logo-ul|grid)\.svg$/,
+                exclude: /(logo-ul|grid|brain|castle|square-and-pen)\.svg$/,
                 options: {
                     removeTags: true,
                     removingTags: ['desc', 'defs', 'style'],
@@ -78,7 +78,7 @@ module.exports = {
                 }
             },
             {
-                test: /(logo-ul\.svg|grid\.svg|\.png)$/,
+                test: /(logo-ul\.svg|grid\.svg|brain\.svg|castle\.svg|square-and-pen\.svg|\.png)$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000

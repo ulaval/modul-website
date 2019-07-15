@@ -22,7 +22,12 @@ export class MWLogo extends ModulWebsite {
             value === MWLogoSize.Small ||
             value === MWLogoSize.Large
     })
-    public size: string;
+    public size: MWLogoSize;
+
+    @Prop({
+        default: false
+    })
+    public tagline: string;
 
 }
 

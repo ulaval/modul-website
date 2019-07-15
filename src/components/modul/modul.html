@@ -1,5 +1,5 @@
 <div class="modul-website">
-    <header>
+    <header class="modul-website__header">
         <mw-header :show-logo="!isHomePage"
                    @search="toggleSearch"></mw-header>
     </header>
@@ -51,16 +51,16 @@
         </transition-group>
     </m-sidebar> -->
 
-    <main class="mw-body">
+    <main class="modul-website__body">
         <m-expandable-layout :open="searchOpen"
                              panel-position="right"
                              panel-width="360px">
             <router-view></router-view>
-            <template slot="panel">panel content</template>
+            <template slot="panel"></template>
         </m-expandable-layout>
     </main>
 
-    <footer class="mw-footer">
+    <footer class="modul-website__footer">
         <div>
             <p class="m-u--margin-bottom">
                 <m-i18n k="modul:powered-by"></m-i18n>

@@ -1,5 +1,5 @@
+import { ModulWebsite } from '@/components/modul-website';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
-import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import Component from 'vue-class-component';
 import WithRender from './home.html?style=./home.scss';
 
@@ -7,15 +7,16 @@ import WithRender from './home.html?style=./home.scss';
 @Component({
     mixins: [MediaQueries]
 })
-export class MWHomePage extends ModulVue {
+export class MWHomePage extends ModulWebsite {
 
-    private experimentTitlePosition: number = 1;
-    private experimentContentPosition: number = 1;
     private designTemplateMinWidth: number = 270;
     private designTemplateWidth: number = this.designTemplateMinWidth;
     private scrollDesignStart: boolean = false;
     private widthStep: number = 1;
-    private designButtonPosition: number = 1;
+    public designButtonPosition: number = 1;
+    public componentIcon: any = require('./castle.svg');
+    public normesIcon: any = require('./square-and-pen.svg');
+    public philoIcon: any = require('./brain.svg');
 
     // protected mounted(): void {
     //     this.setParallaxEffect();

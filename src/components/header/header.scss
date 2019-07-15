@@ -1,16 +1,22 @@
 @import '../../styles/commons';
 
 .mw-header {
-    $mw-header-height: 80px;
-
-    // menu opening animation
-    transition: background-color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
     min-height: $mw-header-height;
-    background: $modul-color--black-grey-dark;
-    display: flex;
-    padding-left: $mw-header-height;
-    position: relative;
-    z-index: 10;
+
+    &__body {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    &__content {
+        display: flex;
+        min-height: $mw-header-height;
+        padding-left: $mw-header-height;
+        background: $modul-color--black-grey-dark;
+    }
 
     &__nav,
     &__logo,

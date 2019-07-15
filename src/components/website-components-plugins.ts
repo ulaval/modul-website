@@ -1,4 +1,5 @@
 import Vue, { PluginObject } from 'vue';
+import { MWCard, MWCARD_NAME } from './card/card';
 import { COLOR_NAME, MColor } from './color/color';
 import { DEMO_NAME, MDemo } from './demo/demo';
 import { DO_NAME, MDo } from './do/do';
@@ -25,6 +26,7 @@ const WebsiteComponentsPlugin: PluginObject<any> = {
         Vue.component(MWHEADER_NAME, MWHeader);
         Vue.component(MWMEGAMENU_NAME, MWMegaMenu);
         Vue.component(MWLOGO_NAME, MWLogo);
+        Vue.component(MWCARD_NAME, MWCard);
         Vue.component(HIGHLIGHT_NAME, MHighlight);
         Vue.component(ICON_GALLERY_NAME, MIconGallery);
         Vue.component('mw-dynamic-template', MDynamicTemplate);

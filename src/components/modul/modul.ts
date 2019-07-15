@@ -53,7 +53,7 @@ export default class Modul extends ModulWebsite {
     private searchWidth: string = '400px';
 
     private components: Component[] = [];
-    private logo: any = require('./logo-ul.svg');
+    public logo: any = require('./logo-ul.svg');
     private menuFirstStep: boolean = true;
 
     protected mounted(): void {

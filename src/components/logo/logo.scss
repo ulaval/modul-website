@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass:600,700');
 
 .mw-logo {
-    display: flex;
-    align-items: center;
     font-size: var(--mw-logo-font-size);
     color: white;
+    display: grid;
+    align-items: center;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
     // font-family: 'Overpass', $m-font-family, sans-serif;
 
     &.mw-is--large {
@@ -21,24 +23,31 @@
     }
 
     &__title {
-        line-height: 0;
         font-size: inherit;
         font-weight: normal;
         margin: 0;
         text-transform: uppercase;
     }
 
+    &__tagline {
+        font-size: 28px;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+    }
+
     &__logo {
         border-collapse: collapse;
         border-spacing: 0;
         margin-left: 0.5em;
+        table-layout: fixed;
+        position: relative;
     }
 
     &__item {
         height: var(--mw-logo-item-width);
         width: var(--mw-logo-item-width);
         border: var(--mw-logo-item-border-width);
-        border-collapse: collapse;
         border-spacing: 0;
         transform-origin: 0 0;
         background-color: m-color(ul, blue);
@@ -49,6 +58,7 @@
 
         &.mw--is-red {
             background-color: transparent;
+            position: relative;
             border: 0;
 
             span {
@@ -57,9 +67,9 @@
                 display: block;
                 bottom: 0.06em;
                 left: 0.06em;
-                width: inherit;
-                height: inherit;
-                position: relative;
+                height: var(--mw-logo-item-width);
+                width: var(--mw-logo-item-width);
+                position: absolute;
             }
         }
     }
