@@ -1,6 +1,8 @@
 @import '../../styles/commons';
 
 .mw-header {
+    $mw-header-padding: m-spacing();
+
     min-height: $mw-header-height;
 
     &__body {
@@ -14,10 +16,12 @@
     &__content {
         display: flex;
         min-height: $mw-header-height;
-        padding-left: $mw-header-height;
+        justify-content: space-between;
         background: $modul-color--black-grey-dark;
+        padding-left: $mw-header-padding;
     }
 
+    &__button-menu,
     &__nav,
     &__logo,
     &__aside {
@@ -27,7 +31,13 @@
 
     &__nav {
         flex: 1;
-        padding: m-spacing();
+        padding-left: $mw-header-padding;
+    }
+
+    &__nav,
+    &__menu {
+        padding-top: $mw-header-padding;
+        padding-bottom: $mw-header-padding;
     }
 
     &__logo {
@@ -35,8 +45,9 @@
             text-decoration: none;
         }
 
-        max-width: $mw-sidebar-width - $mw-header-height;
         width: 100%;
+        padding-left: $mw-header-padding;
+        max-width: $mw-sidebar-width - $mw-header-padding;
     }
 
     &__item {
@@ -83,5 +94,9 @@
         &:hover {
             @include m-button--hover();
         }
+    }
+
+    &__version {
+        white-space: nowrap;
     }
 }

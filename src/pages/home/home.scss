@@ -81,16 +81,29 @@
     }
 
     &__body {
-        padding: $m-spacing--xl;
-        display: flex;
-        justify-content: center;
+        padding: $m-spacing--l;
         color: white;
         z-index: 2;
         position: relative;
+        background-color: $modul-color--black-grey;
+
+        @media (min-width: $m-mq--min--m) {
+            display: flex;
+            justify-content: center;
+            padding-top: $mw-header-height;
+            padding-bottom: $mw-header-height;
+        }
     }
 
     &__icon {
         display: block;
         margin: 0 auto m-spacing(8);
     }
+}
+
+#mw-home__anchor {
+    display: block;
+    position: absolute;
+    top: - $mw-header-height;
+    left: - $mw-header-height;
 }

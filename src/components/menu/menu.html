@@ -1,0 +1,25 @@
+<nav class="mw-menu">
+    <ul class="mw-menu__item">
+        <li>
+            <a href
+               @click.prevent="navigateTo($event, 'philosophy')"
+               class="mw-menu__link">
+                <m-i18n k="website:philosophy"></m-i18n>
+            </a>
+        </li>
+        <li>
+            <a href
+               @click.prevent="emitOpen"
+               class="mw-menu__link">
+                <m-i18n k="modul:components"></m-i18n>
+            </a>
+        </li>
+        <li>
+            <a href
+               @click.prevent="navigateTo($event, 'standards')"
+               class="mw-menu__link">
+                <m-i18n k="modul:standards"></m-i18n>
+            </a>
+        </li>
+    </ul>
+</nav>

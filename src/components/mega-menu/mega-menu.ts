@@ -1,6 +1,5 @@
 import MetaAll from '@/meta/meta-all';
-import { ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
-import ExpandableLayoutPlugin from '@ulaval/modul-components/dist/components/expandable-layout/expandable-layout';
+import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
 import IconButtonPlugin from '@ulaval/modul-components/dist/components/icon-button/icon-button';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { PluginObject } from 'vue';
@@ -20,17 +19,6 @@ type Component = {
     text: string;
 };
 
-type CategoryIndexMap = {
-    [id: string]: number;
-};
-
-export enum ModulMenuSection {
-    Home = 'home',
-    Philosophy = 'philosophy',
-    Components = 'components',
-    Standards = 'standards'
-}
-
 @WithRender
 @Component({
     mixins: [MediaQueries]
@@ -40,6 +28,7 @@ export class MWMegaMenu extends ModulWebsite {
     private categoriesComponent: Category[] = [];
     private pagesStandards: Category[] = [];
     private menuSection: string = '';
+    private menuLevelOne: boolean = true;
 
     @Prop()
     public list: [];
@@ -54,7 +43,6 @@ export class MWMegaMenu extends ModulWebsite {
             });
         });
 
-        // For menu
         this.pagesStandards.push(
             {
                 id: ROUTER_STANDARDS_UI,
@@ -78,21 +66,40 @@ export class MWMegaMenu extends ModulWebsite {
 
     }
 
-    private getRouterIndex(tag: string): string {
+    getRouterIndex(tag: string): string {
         return this.$routerIndex.for(tag);
     }
 
-    get Open(): boolean {
+    get isOpen(): boolean {
         return this.open;
     }
 
-    set Open(value: boolean) {
+    get routerPhilosophy(): string {
+        return this.$routerIndex.for(ROUTER_PHILOSOPHY);
+    }
+
+    set isOpen(value: boolean) {
         this.$emit('update:open', value);
+    }
+
+    showMenuLevelTwo(menuSection: string): void {
+        this.menuSection = menuSection;
+        this.menuLevelOne = false;
+    }
+
+    showMenuLevelOne(): void {
+        this.menuLevelOne = true;
+    }
+
+    calise() {
+        console.log('calise');
+
     }
 
     @Watch('$route')
     close(value: boolean) {
-        this.Open = false;
+        this.isOpen = false;
+        this.menuLevelOne = true;
     }
 }
 
@@ -101,7 +108,6 @@ export const MWMEGAMENU_NAME: string = 'mw-mega-menu';
 const MWMegaMenuPlugin: PluginObject<any> = {
     install(v, options) {
         v.use(IconButtonPlugin);
-        v.use(ExpandableLayoutPlugin);
         v.component(MWMEGAMENU_NAME, MWMegaMenu);
     }
 };

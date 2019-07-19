@@ -1,5 +1,7 @@
 <div class="mw-header">
+
     <mw-mega-menu :open.sync="openMegaMenu"></mw-mega-menu>
+
     <div class="mw-header__body">
 
         <div class="mw-header__content">
@@ -11,18 +13,9 @@
                 </a>
             </div>
 
-            <!-- <a href
-                                          @click.prevent="toggleMobileMenu"
-                                          v-if="!isMqMinS"
-                                          class="mw-header__link">
-                                           <m-i18n k="modul:menu-label"
-                                                   v-if="!headerAnimationCompleted"></m-i18n>
-                                           <m-i18n k="modul:close-label"
-                                                   v-if="headerAnimationCompleted"></m-i18n>
-                                       </a> -->
-
             <nav class="mw-header__nav">
-                <ul class="mw-header__item">
+                <ul v-if="isMqMinS"
+                    class="mw-header__item">
                     <li>
                         <a href
                            @click.prevent="navigateTo($event, 'philosophy')"
@@ -49,10 +42,18 @@
 
             <aside class="mw-header__aside">
 
-                <a href="https://github.com/ulaval/modul-components/releases"
+                <a v-if="isMqMinS"
+                   href="https://github.com/ulaval/modul-components/releases"
                    class="mw-header__link mw-header__version"
                    target="_blank">
-                    <m-i18n k="modul:version"></m-i18n> {{modulVersion}}
+                    <m-i18n k="modul:version"></m-i18n> 1.0.0 {{modulVersion}}
+                </a>
+
+                <a href
+                   v-else
+                   @click.prevent="toggleMegaMenu"
+                   class="mw-header__link mw-header__menu">
+                    <m-i18n k="modul:menu-label"></m-i18n>
                 </a>
 
                 <button @click="onSearch"

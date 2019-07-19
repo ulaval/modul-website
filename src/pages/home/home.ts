@@ -1,3 +1,4 @@
+import { MWCardDirections } from '@/components/card/card';
 import { ModulWebsite } from '@/components/modul-website';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import Component from 'vue-class-component';
@@ -17,6 +18,10 @@ export class MWHomePage extends ModulWebsite {
     public componentIcon: any = require('./castle.svg');
     public normesIcon: any = require('./square-and-pen.svg');
     public philoIcon: any = require('./brain.svg');
+
+    public get cardDirection(): MWCardDirections {
+        return !this.as<MediaQueries>().isMqMinM ? MWCardDirections.Column : MWCardDirections.Row;
+    }
 
     // protected mounted(): void {
     //     this.setParallaxEffect();

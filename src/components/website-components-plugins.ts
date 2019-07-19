@@ -12,6 +12,8 @@ import { ICON_GALLERY_NAME, MIconGallery } from './icon-gallery/icon-gallery';
 import { MWLogo, MWLOGO_NAME } from './logo/logo';
 import { MARKDOWN_NAME, MMarkdown } from './markdown/markdown';
 import { MWMegaMenu, MWMEGAMENU_NAME } from './mega-menu/mega-menu';
+import { MWMenu, MWMENU_NAME } from './menu/menu';
+import { MWPanel, MWPANEL_NAME } from './panel/panel';
 import { MPreview, PREVIEW_NAME } from './preview/preview';
 
 const WebsiteComponentsPlugin: PluginObject<any> = {
@@ -27,6 +29,8 @@ const WebsiteComponentsPlugin: PluginObject<any> = {
         Vue.component(MWMEGAMENU_NAME, MWMegaMenu);
         Vue.component(MWLOGO_NAME, MWLogo);
         Vue.component(MWCARD_NAME, MWCard);
+        Vue.component(MWPANEL_NAME, MWPanel);
+        Vue.component(MWMENU_NAME, MWMenu);
         Vue.component(HIGHLIGHT_NAME, MHighlight);
         Vue.component(ICON_GALLERY_NAME, MIconGallery);
         Vue.component('mw-dynamic-template', MDynamicTemplate);

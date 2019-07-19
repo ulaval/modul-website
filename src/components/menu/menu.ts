@@ -1,12 +1,10 @@
-import MetaAll from '@/meta/meta-all';
 import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS } from '@/router';
-import IconButtonPlugin from '@ulaval/modul-components/dist/components/icon-button/icon-button';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit } from 'vue-property-decorator';
 import { ModulWebsite } from '../modul-website';
-import WithRender from './header.html?style=./header.scss';
+import WithRender from './menu.html?style=./menu.scss';
 
 export enum ModulMenuSection {
     Home = 'home',
@@ -19,55 +17,42 @@ export enum ModulMenuSection {
 @Component({
     mixins: [MediaQueries]
 })
-export class MWHeader extends ModulWebsite {
+export class MWMenu extends ModulWebsite {
 
-    @Prop({ default: false })
-    public showLogo: boolean;
-
-    openSearch: boolean = false;
-    openMegaMenu: boolean = false;
-
-    @Emit('search')
-    private onSearch(): void {
-        this.openSearch = !this.openSearch;
-    }
-
-    public toggleMegaMenu(): void {
-        this.openMegaMenu = !this.openMegaMenu;
-    }
-
-    get toggleSearch(): boolean {
-        return this.openSearch;
-    }
+    @Emit('open')
+    public emitOpen(): void { }
 
     private navigateTo(event: MouseEvent, menuSection: string) {
         switch (menuSection) {
             case ModulMenuSection.Home:
                 this.$router.push('/');
+                // this.closeMenu();
                 break;
             case ModulMenuSection.Philosophy:
                 this.$router.push(this.$routerIndex.for(ROUTER_PHILOSOPHY));
+                // this.closeMenu();
                 break;
             case ModulMenuSection.Standards:
                 this.$router.push(this.$routerIndex.for(ROUTER_STANDARDS));
+                // this.closeMenu();
                 break;
-            default:
-                this.$router.push('/');
+            // default:
+            //     if (this.menuOpen && this.menuSection == menuSection) {
+            //         // this.closeMenu();
+            //     } else {
+            //         // this.openMenu();
+            //     }
         }
     }
 
-    get modulVersion(): string {
-        return MetaAll.getModulVersion();
-    }
 }
 
-export const MWHEADER_NAME: string = 'mw-header';
+export const MWMENU_NAME: string = 'mw-menu';
 
-const MWHeaderPlugin: PluginObject<any> = {
+const MWMenuPlugin: PluginObject<any> = {
     install(v, options) {
-        v.use(IconButtonPlugin);
-        v.component(MWHEADER_NAME, MWHeader);
+        v.component(MWMENU_NAME, MWMenu);
     }
 };
 
-export default MWHeaderPlugin;
+export default MWMenuPlugin;

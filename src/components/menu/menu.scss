@@ -1,0 +1,43 @@
+@import '../../styles/commons';
+
+.mw-menu {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: m-spacing();
+    z-index: 3;
+
+    &__item {
+        display: flex;
+        align-items: inherit;
+        margin: 0;
+    }
+
+    &__link {
+        font-weight: $m-font-weight--black;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+        outline: none;
+        margin-right: $m-margin--l;
+
+        &,
+        &:visited {
+            color: $modul-color--grey-dark;
+        }
+
+        &:hover,
+        &:focus,
+        &.router-link-active {
+            color: $m-color--white;
+        }
+
+        &.router-link-active::after {
+            background-color: $m-color--active;
+        }
+
+        &:hover::after {
+            background-color: $m-color--black;
+        }
+    }
+}

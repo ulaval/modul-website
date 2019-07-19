@@ -130,11 +130,11 @@
 //  links
 // ======================================================================
 
-.modul-u--highlighted-title {
-    @include modul-highlighted-title();
+.mw-u--highlighted-title {
+    @include mw-highlighted-title();
 }
 
-.modul-u--highlighted-title-link {
+.mw-u--highlighted-title-link {
     cursor: pointer;
     outline: none;
 
@@ -143,7 +143,7 @@
         color: $m-color--white;
     }
 
-    @include modul-highlighted-title();
+    @include mw-highlighted-title();
 
     &:active {
         outline: none;

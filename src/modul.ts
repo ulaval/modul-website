@@ -4,6 +4,7 @@ import I18nPlugin from '@ulaval/modul-components/dist/components/i18n/i18n';
 import IconButtonPlugin from '@ulaval/modul-components/dist/components/icon-button/icon-button';
 import IconPlugin from '@ulaval/modul-components/dist/components/icon/icon';
 import LinkPlugin from '@ulaval/modul-components/dist/components/link/link';
+import MenuPlugin from '@ulaval/modul-components/dist/components/menu/menu';
 import MessagePlugin from '@ulaval/modul-components/dist/components/message/message';
 import ModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
 import NavbarPlugin from '@ulaval/modul-components/dist/components/navbar/navbar';
@@ -29,6 +30,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(SliderPlugin);
         Vue.use(DropdownPlugin);
         Vue.use(TextfieldPlugin);
+        Vue.use(MenuPlugin);
         Vue.use(PanelPlugin);
         Vue.use(MessagePlugin);
         Vue.use(SearchfieldPlugin);
