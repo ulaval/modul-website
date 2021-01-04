@@ -32,7 +32,7 @@
         "@ulaval/modul-components": "^1.0.0-beta.68",
         "ajv": "^6.4.0",
         "awesome-typescript-loader": "^3.4.1",
-        "axios": "^0.17.1",
+        "axios": "^0.21.1",
         "bundle-loader": "^0.5.5",
         "chromedriver": "^2.33.2",
         "compression-webpack-plugin": "^1.0.1",
