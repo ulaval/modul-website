@@ -54,7 +54,7 @@
         "karma-phantomjs-launcher": "^1.0.4",
         "karma-spec-reporter": "^0.0.31",
         "karma-webpack": "^3.0.0",
-        "markdown-it": "^8.4.0",
+        "markdown-it": "^12.3.2",
         "moment": "^2.19.3",
         "nightwatch": "^1.0.6",
         "node-sass": "^4.9.2",
